@@ -1,0 +1,1908 @@
+
+%\newtheorem{definition}[subsection]{Definition}
+%\newtheorem{example}[subsection]{Example}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{pro}[subsection]{Proposition}
+\newtheorem{theo}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+%\newtheorem{rem}[subsection]{Remark}
+
+\definecolor{main}{HTML}{5989cf}    % setting main color to be used
+\definecolor{sub}{HTML}{cde4ff}     % setting sub color to be used
+
+\tcbset{
+    sharp corners,
+    colback = white,
+    before skip = 0.2cm,    % add extra space before the box
+    after skip = 0.5cm      % add extra space after the box
+}                           % setting global options for tcolorbox
+
+% You can copy any following box you like to your code.
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+
+\newtcolorbox{boxB}{
+    fontupper = \bf\color{main}, % font color
+    boxrule = 1.5pt,
+    colframe = main,
+    rounded corners,
+    arc = 5pt   % corners roundness
+}
+\newtcolorbox{boxC}{
+    colback = sub, % background color
+    boxrule = 0pt  % no borders
+}
+
+\newtcolorbox{boxD}{
+    colback = sub, 
+    colframe = main, 
+    boxrule = 0pt, 
+    toprule = 3pt, % top rule weight
+    bottomrule = 3pt % bottom rule weight
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+
+\coursetitle{\mtthreeiii}{MT303}
+\developers{Wyclife Rao}
+\reviewers{Dr Irene Sitawa}
+\modulenumber{7}
+\modulename{Initial-Value Problems for Ordinary Differential Equations}
+
+\input{modulecoverpage}
+
+%\input{modulemessage}
+
+
+\mddescription
+This module guides you into a detailed discussion of the concepts of nemrical methods for initial-value problems for ordinary differential equations. Specificcally you will learn about
+\begin{itemize}
+\item higher-order Taylor methods
+\item Runge-Kutta methods
+\item error control and Runge-Kutta-Fehlberg method
+\item multistep methods 
+\end{itemize}
+%\expectations
+%\begin{objenumerate}
+%
+%\end{objenumerate}
+
+\begin{mlos}
+\item Define the Runge-Kutta family of methods and multistep approaches.
+\item Explain error control strategies in Runge-Kutta methods.
+\item Implement Runge-Kutta and multistep methods to solve ODE initial value problems.
+\item Assess the impact of variable step-size on the accuracy and efficiency of numerical solvers. 
+\end{mlos}
+
+\section{Higer-Order Taylor Methods}
+\activities
+Read on on higher-order Taylor methods in the reference provided in the link below in Section 3.3 and then attempt the subsequent quiz.
+\begin{activity}[\cg Reading]
+\end{activity}
+\mylink{https://math.libretexts.org/Bookshelves/Differential\_Equations/\\A\_First\_Course\_in\_Differential\_Equations\_for\_Scientists\_and\_Engineers\_(Herman)}
+
+%\videolesson
+%\begin{selfvideo}[1]
+%%LESSON 3: 
+%This video presents a discussion on higher-order Taylo methods. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{selfvideo}
+%\begin{boxB}Question: \end{boxB}
+\begin{myexercise}%\label{Comprehensionquiz2}
+Use Taylor's method of order two to approximate the solutions for each of the following initial-value problems.\\
+\begin{enumerate}[label=(\alph*)]
+\item $ y^{\prime}=t e^{3 t}-2 y, \quad 0 \leq t \leq 1, \quad y(0)=0$, with $h=0.5$\\
+\item $y^{\prime}=1+(t-y)^{2}, \quad 2 \leq t \leq 3, \quad y(2)=1$, with $h=0.5$
+%\item  $y^{\prime}=1+y / t, \quad 1 \leq t \leq 2, \quad y(1)=2$, with $h=0.25$\\
+%\item $y^{\prime}=\cos 2 t+\sin 3 t, \quad 0 \leq t \leq 1, \quad y(0)=1$, with $h=0.25$
+\end{enumerate}
+
+
+\begin{mysolution}
+\begin{enumerate}[label=(\alph*)]
+\item
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+\hline
+0.50 & 0.12500000 & 0.28361652 \\
+1.00 & 2.02323897 & 3.21909932 \\
+\hline
+\end{tabular}
+\end{center}
+
+\vspace{2mm}
+
+\item
+\begin{center}
+\begin{tabular}{ccc}
+\hline\hline
+$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+\hline
+1.25 & 2.78125000 & 2.77892944 \\
+1.50 & 3.61250000 & 3.60819766 \\
+1.75 & 4.48541667 & 4.47932763 \\
+2.00 & 5.39404762 & 5.38629436 \\
+\hline
+\end{tabular}
+\end{center}
+
+%\vspace{2mm}
+%
+%\item
+%\begin{center}
+%\begin{tabular}{ccc}
+%\hline
+%$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+%\hline
+%2.50 & 1.75000000 & 1.83333333 \\
+%3.00 & 2.42578125 & 2.50000000 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%
+%\vspace{2mm}
+%
+%\item
+%\begin{center}
+%\begin{tabular}{ccc}
+%\hline\hline
+%$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+%\hline
+%0.25 & 1.34375000 & 1.32914981 \\
+%0.50 & 1.77218707 & 1.73048976 \\
+%0.75 & 2.11067606 & 2.04147203 \\
+%1.00 & 2.20164395 & 2.11797955 \\
+%\end{tabular}
+%\end{center}
+\end{enumerate}
+\end{mysolution}
+\end{myexercise}
+
+\section{Runge-Kutta Methods}
+%\begin{youtube}
+%This video presents a discussion on Runge-Kutta methods. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{youtube}
+\activities
+Read on on Runge-Kutta methods in the reference provided in the link below in Section 3.4 and then attempt the subsequent quiz.
+\begin{activity}[\cg Reading]
+\end{activity}
+\mylink{https://math.libretexts.org/Bookshelves/Differential\_Equations/\\A\_First\_Course\_in\_Differential\_Equations\_for\_Scientists\_and\_Engineers\_(Herman)}
+
+\begin{myexercise}%\label{Comprehensionquiz2}
+Use the Modified Euler method to approximate the solutions to each of the following initial-value problems, and compare the results to the actual values.
+\begin{enumerate}[label=(\alph*)]
+\item  $y^{\prime}=t e^{3 t}-2 y$, $0 \leq t \leq 1$, $y(0)=0$, with $h=0.5$; actual solution $y(t)=\frac{1}{5} t e^{3 t}-\frac{1}{25} e^{3 t}+\frac{1}{25} e^{-2 t}$.\\
+\item $y^{\prime}=1+(t-y)^{2}$, $2 \leq t \leq 3$, $y(2)=1$, with $h=0.5$; actual solution $y(t)=t+\frac{1}{1-t}$.
+%\item $y^{\prime}=1+y / t$, $1 \leq t \leq 2$, $y(1)=2$, with $h=0.25$; actual solution $y(t)=t \ln t+2 t$.\\
+%\item $y^{\prime}=\cos 2 t+\sin 3 t$, $0 \leq t \leq 1$, $y(0)=1$, with $h=0.25$; actual solution $y(t)=\frac{1}{2} \sin 2 t-\frac{1}{3} \cos 3 t+\frac{4}{3}$.
+ \end{enumerate}
+
+\begin{mysolution}
+\begin{enumerate}[label=(\alph*)]
+\item 
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+$t$ & Modified Euler & $y(t)$ \\
+\hline
+0.5 & 0.5602111 & 0.2836165 \\
+1.0 & 5.3014898 & 3.2190993 \\
+\hline
+\end{tabular}
+\end{center}
+\item
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+$t$ & Modified Euler & $y(t)$ \\
+\hline
+2.5 & 1.8125000 & 1.8333333 \\
+3.0 & 2.4815531 & 2.5000000 \\
+\hline
+\end{tabular}
+\end{center}
+%\item
+%\begin{center}
+%\begin{tabular}{ccc}
+%\hline
+%$t$ & Modified Euler & $y(t)$ \\
+%\hline
+%1.25 & 2.7750000 & 2.7789294 \\
+%1.50 & 3.6008333 & 3.6081977 \\
+%1.75 & 4.4688294 & 4.4793276 \\
+%2.00 & 5.3728586 & 5.3862944 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%\item
+%\begin{center}
+%\begin{tabular}{ccc}
+%\hline
+%$t$ & Modified Euler & $y(t)$ \\
+%\hline
+%0.25 & 1.3199027 & 1.3291498 \\
+%0.50 & 1.7070300 & 1.7304898 \\
+%0.75 & 2.0053560 & 2.0414720 \\
+%1.00 & 2.0770789 & 2.1179795 \\
+%\hline
+%\end{tabular}
+%\end{center}
+\end{enumerate}
+\end{mysolution}
+\end{myexercise}
+
+
+
+\section{Error Control and the Runge-Kutta-Fehlberg Method}
+%\activities
+%Read on error control and the Runge-Kutta-Fehlberg method in pages \textcolor{red}{\bf page $293-300$} of the following reference and then attempt the subsequent quiz.
+%\begin{activity}[\cg Reading]
+%\begin{enumerate}
+%\item Burden, R. L., Faires, J. D., Burden, A. M. (2015). Numerical Analysis. Tenth Edition, Cengage Learning.\\
+%\end{enumerate}
+%\end{activity}
+\videolesson
+\begin{selfvideo}[1]
+%LESSON 3: 
+This video presents a discussion on error control and the Runge-Kutta-Fehlberg method. Follow the discussion and then solve the problems in the subsequent quiz.
+\end{selfvideo}
+
+In the previous section we saw that the appropriate use of varying step sizes for integral approximations produced efficient methods. In itself, this might not be sufficient to favour these methods due to the increased complication of applying them. However, they have another feature that makes them worthwhile. They incorporate in the step-size procedure an estimate of the truncation error that does not require the approximation of the higher derivatives of the function. These methods are called adaptive because they adapt the number and position of the nodes used in the approximation to ensure that the truncation error is kept within a specified bound.
+
+%There is a close connection between the problem of approximating the value of a definite integral and that of approximating the solution to an initial-value problem. It is not surprising, then, that there are adaptive methods for approximating the solutions to initial-value problems and that these methods are not only efficient, but also incorporate the control of error.
+
+Any one-step method for approximating the solution, $y(t)$, of the initial-value problem
+
+$$
+y^{\prime}=f(t, y), \quad \text { for } a \leq t \leq b, \quad \text { with } y(a)=\alpha
+$$
+
+can be expressed in the form
+
+$$
+w_{i+1}=w_{i}+h_{i} \phi\left(t_{i}, w_{i}, h_{i}\right), \quad \text { for } i=0,1, \ldots, N-1,
+$$
+
+for some function $\phi$.\\
+An ideal difference-equation method
+
+$$
+w_{i+1}=w_{i}+h_{i} \phi\left(t_{i}, w_{i}, h_{i}\right), \quad i=0,1, \ldots, N-1,
+$$
+
+for approximating the solution, $y(t)$, to the initial-value problem
+
+$$
+y^{\prime}=f(t, y), \quad a \leq t \leq b, \quad y(a)=\alpha,
+$$
+
+would have the property that, given a tolerance $\varepsilon>0$, a minimal number of mesh points could be used to ensure that the global error, $\left|y\left(t_{i}\right)-w_{i}\right|$, did not exceed $\varepsilon$ for any $i=$ $0,1, \ldots, N$. 
+%Having a minimal number of mesh points and also controlling the global error of a difference method is, not surprisingly, inconsistent with the points being equally spaced in the interval. 
+In this section we examine techniques used to control the error of a differenceequation method in an efficient manner by the appropriate choice of mesh points.
+
+%Although we cannot generally determine the global error of a method, we will see in Section 5.10 that there is a close connection between the local truncation error and the global error. By using methods of differing order we can predict the local truncation error and, using this prediction, choose a step size that will keep it and the global error in check.
+
+To illustrate the technique, suppose that we have two approximation techniques. The first is obtained from an $n$ th-order Taylor method of the form
+
+$$
+y\left(t_{i+1}\right)=y\left(t_{i}\right)+h \phi\left(t_{i}, y\left(t_{i}\right), h\right)+O\left(h^{n+1}\right),
+$$
+
+and produces approximations with local truncation error $\tau_{i+1}(h)=O\left(h^{n}\right)$. It is given by
+
+$$
+\begin{aligned}
+w_{0} & =\alpha \\
+w_{i+1} & =w_{i}+h \phi\left(t_{i}, w_{i}, h\right), \quad \text { for } i>0
+\end{aligned}
+$$
+
+In general, the method is generated by applying a Runge-Kutta modification to the Taylor method, but the specific derivation is unimportant.
+
+The second method is similar but one order higher; it comes from an ( $n+1$ )st-order Taylor method of the form
+
+$$
+y\left(t_{i+1}\right)=y\left(t_{i}\right)+h \tilde{\phi}\left(t_{i}, y\left(t_{i}\right), h\right)+O\left(h^{n+2}\right),
+$$
+
+and produces approximations with local truncation error $\tilde{\tau}_{i+1}(h)=O\left(h^{n+1}\right)$. It is given by
+
+$$
+\begin{aligned}
+\tilde{w}_{0} & =\alpha \\
+\tilde{w}_{i+1} & =\tilde{w}_{i}+h \tilde{\phi}\left(t_{i}, \tilde{w}_{i}, h\right), \quad \text { for } i>0 .
+\end{aligned}
+$$
+
+We first make the assumption that $w_{i} \approx y\left(t_{i}\right) \approx \tilde{w}_{i}$ and choose a fixed step size $h$ to generate the approximations $w_{i+1}$ and $\tilde{w}_{i+1}$ to $y\left(t_{i+1}\right)$. Then
+
+$$
+\begin{aligned}
+\tau_{i+1}(h) & =\frac{y\left(t_{i+1}\right)-y\left(t_{i}\right)}{h}-\phi\left(t_{i}, y\left(t_{i}\right), h\right) \\
+& =\frac{y\left(t_{i+1}\right)-w_{i}}{h}-\phi\left(t_{i}, w_{i}, h\right) \\
+& =\frac{y\left(t_{i+1}\right)-\left[w_{i}+h \phi\left(t_{i}, w_{i}, h\right)\right]}{h} \\
+& =\frac{1}{h}\left(y\left(t_{i+1}\right)-w_{i+1}\right)
+\end{aligned}
+$$
+
+In a similar manner, we have
+
+$$
+\tilde{\tau}_{i+1}(h)=\frac{1}{h}\left(y\left(t_{i+1}\right)-\tilde{w}_{i+1}\right) .
+$$
+
+As a consequence, we have
+
+$$
+\begin{aligned}
+\tau_{i+1}(h) & =\frac{1}{h}\left(y\left(t_{i+1}\right)-w_{i+1}\right) \\
+& =\frac{1}{h}\left[\left(y\left(t_{i+1}\right)-\tilde{w}_{i+1}\right)+\left(\tilde{w}_{i+1}-w_{i+1}\right)\right] \\
+& =\tilde{\tau}_{i+1}(h)+\frac{1}{h}\left(\tilde{w}_{i+1}-w_{i+1}\right)
+\end{aligned}
+$$
+
+But $\tau_{i+1}(h)$ is $O\left(h^{n}\right)$ and $\tilde{\tau}_{i+1}(h)$ is $O\left(h^{n+1}\right)$, so the significant portion of $\tau_{i+1}(h)$ must come from
+
+$$
+\frac{1}{h}\left(\tilde{w}_{i+1}-w_{i+1}\right)
+$$
+
+This gives us an easily computed approximation for the local truncation error of the $O\left(h^{n}\right)$ method:
+
+$$
+\tau_{i+1}(h) \approx \frac{1}{h}\left(\tilde{w}_{i+1}-w_{i+1}\right)
+$$
+
+The object, however, is not simply to estimate the local truncation error but to adjust the step size to keep it within a specified bound. To do this we now assume that since $\tau_{i+1}(h)$ is $O\left(h^{n}\right)$, a number $K$, independent of $h$, exists with
+
+$$
+\tau_{i+1}(h) \approx K h^{n}
+$$
+
+Then the local truncation error produced by applying the $n$ th-order method with a new step size $q h$ can be estimated using the original approximations $w_{i+1}$ and $\tilde{w}_{i+1}$ :
+
+$$
+\tau_{i+1}(q h) \approx K(q h)^{n}=q^{n}\left(K h^{n}\right) \approx q^{n} \tau_{i+1}(h) \approx \frac{q^{n}}{h}\left(\tilde{w}_{i+1}-w_{i+1}\right)
+$$
+
+To bound $\tau_{i+1}(q h)$ by $\varepsilon$, we choose $q$ so that
+
+$$
+\frac{q^{n}}{h}\left|\tilde{w}_{i+1}-w_{i+1}\right| \approx\left|\tau_{i+1}(q h)\right| \leq \varepsilon
+$$
+
+that is, so that
+
+
+\begin{equation}\label{eqn:RungeKuttaerrorcorrecteq1}
+q \leq\left(\frac{\varepsilon h}{\left|\tilde{w}_{i+1}-w_{i+1}\right|}\right)^{1 / n}
+\end{equation}
+
+
+\subsection*{Runge-Kutta-Fehlberg Method}
+One popular technique that uses Inequality \ref{eqn:RungeKuttaerrorcorrecteq1} for error control is the Runge-KuttaFehlberg method. This technique uses a Runge-Kutta method with local truncation error of order five,
+
+$$
+\tilde{w}_{i+1}=w_{i}+\frac{16}{135} k_{1}+\frac{6656}{12825} k_{3}+\frac{28561}{56430} k_{4}-\frac{9}{50} k_{5}+\frac{2}{55} k_{6}
+$$
+
+to estimate the local error in a Runge-Kutta method of order four given by
+
+$$
+w_{i+1}=w_{i}+\frac{25}{216} k_{1}+\frac{1408}{2565} k_{3}+\frac{2197}{4104} k_{4}-\frac{1}{5} k_{5}
+$$
+
+where the coefficient equations are
+
+$$
+\begin{aligned}
+& k_{1}=h f\left(t_{i}, w_{i}\right) \\
+& k_{2}=h f\left(t_{i}+\frac{h}{4}, w_{i}+\frac{1}{4} k_{1}\right) \\
+& k_{3}=h f\left(t_{i}+\frac{3 h}{8}, w_{i}+\frac{3}{32} k_{1}+\frac{9}{32} k_{2}\right) \\
+& k_{4}=h f\left(t_{i}+\frac{12 h}{13}, w_{i}+\frac{1932}{2197} k_{1}-\frac{7200}{2197} k_{2}+\frac{7296}{2197} k_{3}\right) \\
+& k_{5}=h f\left(t_{i}+h, w_{i}+\frac{439}{216} k_{1}-8 k_{2}+\frac{3680}{513} k_{3}-\frac{845}{4104} k_{4}\right) \\
+& k_{6}=h f\left(t_{i}+\frac{h}{2}, w_{i}-\frac{8}{27} k_{1}+2 k_{2}-\frac{3544}{2565} k_{3}+\frac{1859}{4104} k_{4}-\frac{11}{40} k_{5}\right)
+\end{aligned}
+$$
+
+An advantage to this method is that only six evaluations of $f$ are required per step. Arbitrary Runge-Kutta methods of orders four and five used together require at least four evaluations of $f$ for the fourth-order method and an additional six for the fifth-order method, for a total of at least ten function evaluations. So the Runge-KuttaFehlberg method has at least a $40 \%$ decrease in the number of function evaluations over the use of a pair of arbitrary fourth- and fifth-order methods.
+
+In the error-control theory, an initial value of $h$ at the $i$ th step is used to find the first values of $w_{i+1}$ and $\tilde{w}_{i+1}$, which leads to the determination of $q$ for that step, and then the calculations were repeated. This procedure requires twice the number of function evaluations per step as without the error control. In practice, the value of $q$ to be used is chosen somewhat differently in order to make the increased function-evaluation cost worthwhile. The value of $q$ determined at the $i$ th step is used for two purposes:
+
+\begin{itemize}
+  \item When $q<1$ : to reject the initial choice of $h$ at the $i$ th step and repeat the calculations using $q h$, and
+  \item When $q \geq 1$ : to accept the computed value at the $i$ th step using the step size $h$, but change the step size to $q h$ for the $(i+1)$ st step.
+\end{itemize}
+
+Because of the penalty in terms of function evaluations that must be paid if the steps are repeated, $q$ tends to be chosen conservatively. In fact, for the Runge-Kutta-Fehlberg method with $n=4$, a common choice is
+
+$$
+q=\left(\frac{\varepsilon h}{2\left|\tilde{w}_{i+1}-w_{i+1}\right|}\right)^{1 / 4}=0.84\left(\frac{\varepsilon h}{\left|\tilde{w}_{i+1}-w_{i+1}\right|}\right)^{1 / 4} .
+$$
+
+%In Algorithm 5.3 for the Runge-Kutta-Fehlberg method, Step 9 is added to eliminate large modifications in step size. This is done to avoid spending too much time with small step sizes in regions with irregularities in the derivatives of $y$, and to avoid large step sizes, which can result in skipping sensitive regions between the steps. The step-size increase procedure could be omitted completely from the algorithm, and the step-size decrease procedure used only when needed to bring the error under control.
+%
+%\section*{Runge-Kutta-Fehlberg}
+%To approximate the solution of the initial-value problem
+%
+%$$
+%y^{\prime}=f(t, y), \quad a \leq t \leq b, \quad y(a)=\alpha,
+%$$
+%
+%with local truncation error within a given tolerance:
+%
+%INPUT endpoints $a, b$; initial condition $\alpha$; tolerance TOL; maximum step size hmax; minimum step size hmin.
+%
+%OUTPUT $t, w, h$ where $w$ approximates $y(t)$ and the step size $h$ was used, or a message that the minimum step size was exceeded.
+%
+%Step 1 Set $t=a$;\\
+%$w=\alpha ;$\\
+%$h=h \max$;\\
+%$F L A G=1 ;$\\
+%$\operatorname{OUTPUT}(t, w)$.\\
+%Step 2 While (FLAG = 1) do Steps 3-11.\\
+%Step 3 Set $K_{1}=h f(t, w)$;
+%
+%$$
+%\begin{aligned}
+%& K_{2}=h f\left(t+\frac{1}{4} h, w+\frac{1}{4} K_{1}\right) \\
+%& K_{3}=h f\left(t+\frac{3}{8} h, w+\frac{3}{32} K_{1}+\frac{9}{32} K_{2}\right) \\
+%& K_{4}=h f\left(t+\frac{12}{13} h, w+\frac{1932}{2197} K_{1}-\frac{7200}{2197} K_{2}+\frac{7296}{2197} K_{3}\right) \\
+%& K_{5}=h f\left(t+h, w+\frac{439}{216} K_{1}-8 K_{2}+\frac{3680}{513} K_{3}-\frac{845}{4104} K_{4}\right) \\
+%& K_{6}=h f\left(t+\frac{1}{2} h, w-\frac{8}{27} K_{1}+2 K_{2}-\frac{3544}{2565} K_{3}+\frac{1859}{4104} K_{4}-\frac{11}{40} K_{5}\right)
+%\end{aligned}
+%$$
+%
+%Step 4 Set $R=\frac{1}{h}\left|\frac{1}{360} K_{1}-\frac{128}{4275} K_{3}-\frac{2197}{75240} K_{4}+\frac{1}{50} K_{5}+\frac{2}{55} K_{6}\right|$.\\
+%(Note: $R=\frac{1}{h}\left|\tilde{w}_{i+1}-w_{i+1}\right|$.)\\
+%Step 5 If $R \leq T O L$ then do Steps 6 and 7 .\\
+%Step 6 Set $t=t+h$; (Approximation accepted.)
+%
+%$$
+%w=w+\frac{25}{216} K_{1}+\frac{1408}{2565} K_{3}+\frac{2197}{4104} K_{4}-\frac{1}{5} K_{5} .
+%$$
+%
+%\begin{verbatim}
+%Step 7 OUTPUT $(t, w, h)$.
+%Step 8 Set $\delta=0.84(\text { TOL } / R)^{1 / 4}$.
+%Step 9 If $\delta \leq 0.1$ then set $h=0.1 h$
+%    else if $\delta \geq 4$ then set $h=4 h$
+%        else set $h=\delta h . \quad$ (Calculate new $h$.
+%Step 10 If $h>h m a x$ then set $h=h m a x$.
+%Step 11 If $t \geq b$ then set FLAG $=0$
+%    else if $t+h>b$ then set $h=b-t$
+%        else if $h<h m i n$ then
+%            set $F L A G=0$;
+%                OUTPUT ('minimum h exceeded').
+%\end{verbatim}
+%
+%\begin{verbatim}
+%            (Procedure completed unsuccessfully.)
+%\end{verbatim}
+%
+%Step 12 (The procedure is complete.) STOP.
+%
+\begin{example}
+Use the Runge-Kutta-Fehlberg method with a tolerance $T O L=10^{-5}$, a maximum step size $h m a x=0.25$, and a minimum step size $h m i n=0.01$ to approximate the solution to the initial-value problem
+
+$$
+y^{\prime}=y-t^{2}+1, \quad 0 \leq t \leq 2, \quad y(0)=0.5,
+$$
+
+and compare the results with the exact solution $y(t)=(t+1)^{2}-0.5 e^{t}$.
+\end{example}
+
+\begin{mysolution}
+We will work through the first step of the calculations
+% and then apply Algorithm 5.3 to determine the remaining results. 
+The initial condition gives $t_{0}=0$ and $w_{0}=0.5$. To determine $w_{1}$ using $h=0.25$, the maximum allowable stepsize, we compute
+
+$$
+\begin{aligned}
+k_{1} & =h f\left(t_{0}, w_{0}\right)=0.25\left(0.5-0^{2}+1\right)=0.375 \\
+k_{2} & =h f\left(t_{0}+\frac{1}{4} h, w_{0}+\frac{1}{4} k_{1}\right)=0.25\left(\frac{1}{4} 0.25,0.5+\frac{1}{4} 0.375\right)=0.3974609 \\
+k_{3} & =h f\left(t_{0}+\frac{3}{8} h, w_{0}+\frac{3}{32} k_{1}+\frac{9}{32} k_{2}\right) \\
+& =0.25\left(0.09375,0.5+\frac{3}{32} 0.375+\frac{9}{32} 0.3974609\right)=0.4095383 \\
+k_{4} & =h f\left(t_{0}+\frac{12}{13} h, w_{0}+\frac{1932}{2197} k_{1}-\frac{7200}{2197} k_{2}+\frac{7296}{2197} k_{3}\right) \\
+& =0.25\left(0.2307692,0.5+\frac{1932}{2197} 0.375-\frac{7200}{2197} 0.3974609+\frac{7296}{2197} 0.4095383\right) \\
+& =0.4584971 ; 
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+k_{5} & =h f\left(t_{0}+h, w_{0}+\frac{439}{216} k_{1}-8 k_{2}+\frac{3680}{513} k_{3}-\frac{845}{4104} k_{4}\right) \\
+& =0.25\left(0.25,0.5+\frac{439}{216} 0.375-8(0.3974609)+\frac{3680}{513} 0.4095383-\frac{845}{4104} 0.4584971\right) \\
+& =0.4658452 ;\\
+k_{6}= & h f\left(t_{0}+\frac{1}{2} h, w_{0}-\frac{8}{27} k_{1}+2 k_{2}-\frac{3544}{2565} k_{3}+\frac{1859}{4104} k_{4}-\frac{11}{40} k_{5}\right) \\
+= & 0.25\left(0.125,0.5-\frac{8}{27} 0.375+2(0.3974609)-\frac{3544}{2565} 0.4095383\right. \\
+& \left.+\frac{1859}{4104} 0.4584971-\frac{11}{40} 0.4658452\right) \\
+= & 0.4204789
+\end{aligned}
+$$
+
+The two approximations to $y(0.25)$ are then found to be
+
+$$
+\begin{aligned}
+\tilde{w}_{1}= & w_{0}+\frac{16}{135} k_{1}+\frac{6656}{12825} k_{3}+\frac{28561}{56430} k_{4}-\frac{9}{50} k_{5}+\frac{2}{55} k_{6} \\
+= & 0.5+\frac{16}{135} 0.375+\frac{6656}{12825} 0.4095383+\frac{28561}{56430} 0.4584971-\frac{9}{50} 0.4658452 \\
+& +\frac{2}{55} 0.4204789 \\
+= & 0.9204870
+\end{aligned}
+$$
+
+and
+
+$$
+\begin{aligned}
+w_{1} & =w_{0}+\frac{25}{216} k_{1}+\frac{1408}{2565} k_{3}+\frac{2197}{4104} k_{4}-\frac{1}{5} k_{5} \\
+& =0.5+\frac{25}{216} 0.375+\frac{1408}{2565} 0.4095383+\frac{2197}{4104} 0.4584971-\frac{1}{5} 0.4658452 \\
+& =0.9204886
+\end{aligned}
+$$
+
+This also implies that
+
+$$
+\begin{aligned}
+R & =\frac{1}{0.25}\left|\frac{1}{360} k_{1}-\frac{128}{4275} k_{3}-\frac{2197}{75240} k_{4}+\frac{1}{50} k_{5}+\frac{2}{55} k_{6}\right| \\
+& =4\left|\frac{1}{360} 0.375-\frac{128}{4275} 0.4095383-\frac{2197}{75240} 0.4584971+\frac{1}{50} 0.4658452+\frac{2}{55} 0.4204789\right| \\
+& =0.00000621388,
+\end{aligned}
+$$
+
+and
+
+$$
+q=0.84\left(\frac{\varepsilon}{R}\right)^{1 / 4}=0.84\left(\frac{0.00001}{0.00000621388}\right)^{1 / 4}=0.9461033291
+$$
+
+Since $q<1$ we can accept the approximation 0.9204886 for $y(0.25)$ but we should adjust the step size for the next iteration to $h=0.9461033291(0.25) \approx 0.2365258$. However, only the leading $5$ digits of this result would be expected to be accurate because $R$ has only about $5$ digits of accuracy. Because we are effectively subtracting the nearly equal numbers $w_{i}$ and $\tilde{w}_{i}$ when we compute $R$, there is a good likelihood of round-off error. This is an additional reason for being conservative when computing $q$.
+
+The results from the algorithm are shown in Table \ref{tab:rungekuttafelberg}. Increased accuracy has been used to ensure that the calculations are accurate to all listed places. The last two columns in Table $1$ show the results of the fifth-order method. For small values of $t$, the error is less than the error in the fourth-order method, but the error exceeds that of the fourth-order method when $t$ increases.
+\end{mysolution}
+%Table 5.11
+
+\begin{table}
+\scriptsize
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|l|}
+\hline
+$t_{i}$ & $y_{i}=y\left(t_{i}\right)$ & RKF-4 $w_{i}$ & $h_{i}$ & $R_{i}$ & $\left|y_{i}-w_{i}\right|$ & RKF-5 $\hat{w}_{i}$ & $\left|y_{i}-\hat{w}_{i}\right|$ \\
+\hline
+0 & 0.5 & 0.5 &  &  & 0.5 &  &  \\
+\hline
+0.2500000 & 0.9204873 & 0.9204886 & 0.2500000 & $6.2 \times 10^{-6}$ & $1.3 \times 10^{-6}$ & 0.9204870 & $2.424 \times 10^{-7}$ \\
+\hline
+0.4865522 & 1.3964884 & 1.3964910 & 0.2365522 & $4.5 \times 10^{-6}$ & $2.6 \times 10^{-6}$ & 1.3964900 & $1.510 \times 10^{-6}$ \\
+\hline
+0.7293332 & 1.9537446 & 1.9537488 & 0.2427810 & $4.3 \times 10^{-6}$ & $4.2 \times 10^{-6}$ & 1.9537477 & $3.136 \times 10^{-6}$ \\
+\hline
+0.9793332 & 2.5864198 & 2.5864260 & 0.2500000 & $3.8 \times 10^{-6}$ & $6.2 \times 10^{-6}$ & 2.5864251 & $5.242 \times 10^{-6}$ \\
+\hline
+1.2293332 & 3.2604520 & 3.2604605 & 0.2500000 & $2.4 \times 10^{-6}$ & $8.5 \times 10^{-6}$ & 3.2604599 & $7.895 \times 10^{-6}$ \\
+\hline
+1.4793332 & 3.9520844 & 3.9520955 & 0.2500000 & $7 \times 10^{-7}$ & $1.11 \times 10^{-5}$ & 3.9520954 & $1.096 \times 10^{-5}$ \\
+\hline
+1.7293332 & 4.6308127 & 4.6308268 & 0.2500000 & $1.5 \times 10^{-6}$ & $1.41 \times 10^{-5}$ & 4.6308272 & $1.446 \times 10^{-5}$ \\
+\hline
+1.9793332 & 5.2574687 & 5.2574861 & 0.2500000 & $4.3 \times 10^{-6}$ & $1.73 \times 10^{-5}$ & 5.2574871 & $1.839 \times 10^{-5}$ \\
+\hline
+2.0000000 & 5.3054720 & 5.3054896 & 0.0206668 &  & $1.77 \times 10^{-5}$ & 5.3054896 & $1.768 \times 10^{-5}$ \\
+\hline
+\end{tabular}
+\caption{\scriptsize Table $1$}
+\label{tab:rungekuttafelberg}
+\end{table}
+\normalsize
+
+%An implementation of the Runge-Kutta-Fehlberg method is also available in Maple using the InitialValueProblem command. However, it differs from our presentation because it does not require the specification of a tolerance for the solution. For our example problem it is called with\\
+%$C:=$ InitialValueProblem $($ deq $, y(0)=0.5, t=2$, method $=$ rungekutta, submethod $=$ rkf, numsteps $=10$, output $=$ information, digits $=8$ )
+%
+%As usual, the information is placed in a table that is accessed by double clicking on the output. The results can be printed in the method outlined in precious sections.
+\begin{myexercise}%\label{Comprehensionquiz2}
+Use the Runge-Kutta-Fehlberg method with tolerance $T O L=10^{-4}, h \max =0.25$, and $h \min =0.05$ to approximate the solutions to the following initial-value problems. Compare the results to the actual values.\\
+\begin{enumerate}[label=(\alph*)]
+\item $y^{\prime}=t e^{3 t}-2 y$, $0 \leq t \leq 1$, $y(0)=0$; actual solution $y(t)=\frac{1}{5} t e^{3 t}-\frac{1}{25} e^{3 t}+\frac{1}{25} e^{-2 t}$.\\
+\item $y^{\prime}=1+(t-y)^{2}$, $2 \leq t \leq 3$, $y(2)=1$; actual solution $y(t)=t+1 /(1-t)$.\\
+%\item $y^{\prime}=1+y / t$, $1 \leq t \leq 2$, $y(1)=2$; actual solution $y(t)=t \ln t+2 t$.\\
+%\item $y^{\prime}=\cos 2 t+\sin 3 t$, $0 \leq t \leq 1$, $y(0)=1 ;$ actual solution $y(t)=\frac{1}{2} \sin 2 t-\frac{1}{3} \cos 3 t+\frac{4}{3}$.
+\end{enumerate}
+
+\begin{mysolution}
+The Runge-Kutta-Fehlberg Algorithm gives the results in the following tables.\\
+\begin{enumerate}[label=(\alph*)]
+\item. 
+
+
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+$i$ & $t_{i}$ & $w_{i}$ & $h_{i}$ & $y_{i}$ \\
+\hline
+1 & 0.2093900 & 0.0298184 & 0.2093900 & 0.0298337 \\
+3 & 0.5610469 & 0.4016438 & 0.1777496 & 0.4016860 \\
+5 & 0.8387744 & 1.5894061 & 0.1280905 & 1.5894600 \\
+7 & 1.0000000 & 3.2190497 & 0.0486737 & 3.2190993 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item.
+
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+$i$ & $t_{i}$ & $w_{i}$ & $h_{i}$ & $y_{i}$ \\
+\hline
+1 & 2.2500000 & 1.4499988 & 0.2500000 & 1.4500000 \\
+2 & 2.5000000 & 1.8333332 & 0.2500000 & 1.8333333 \\
+3 & 2.7500000 & 2.1785718 & 0.2500000 & 2.1785714 \\
+4 & 3.0000000 & 2.5000005 & 0.2500000 & 2.5000000 \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{enumerate}
+\end{mysolution}
+\end{myexercise}
+
+
+\section{Multistep Methods}
+\videolesson
+\begin{selfvideo}[2]
+%LESSON 3: 
+This video presents a discussion on multistep method. Follow the discussion and then solve the problems in the subsequent quiz.
+\end{selfvideo}
+%\begin{boxB}Question: \end{boxB}
+The methods discussed to this point in the in numerical methods for IVPs are called one-step methods because the approximation for the mesh point $t_{i+1}$ involves information from only one of the previous mesh points, $t_{i}$. Although these methods might use function evaluation information at points between $t_{i}$ and $t_{i+1}$, they do not retain that information for direct use in future approximations. All the information used by these methods is obtained within the subinterval over which the solution is being approximated.
+
+The approximate solution is available at each of the mesh points $t_{0}, t_{1}, \ldots, t_{i}$ before the approximation at $t_{i+1}$ is obtained, and because the error $\left|w_{j}-y\left(t_{j}\right)\right|$ tends to increase with $j$, so it seems reasonable to develop methods that use these more accurate previous data when approximating the solution at $t_{i+1}$.
+
+Methods using the approximation at more than one previous mesh point to determine the approximation at the next point are called multistep methods. The precise definition of these methods follows, together with the definition of the two types of multistep methods.
+
+\begin{definition}
+An $\boldsymbol{m}$-step multistep method for solving the initial-value problem
+
+\begin{equation}\label{eqn:stepmultistepdefeq1}
+y^{\prime}=f(t, y), \quad a \leq t \leq b, \quad y(a)=\alpha,
+\end{equation}
+
+has a difference equation for finding the approximation $w_{i+1}$ at the mesh point $t_{i+1}$ represented by the following equation, where $m$ is an integer greater than 1 :
+
+
+\begin{equation}\label{eqn:stepmultistepdefeq2}
+\begin{split}
+w_{i+1}= & a_{m-1} w_{i}+a_{m-2} w_{i-1}+\cdots+a_{0} w_{i+1-m} \\
+& +h\left[b_{m} f\left(t_{i+1}, w_{i+1}\right)+b_{m-1} f\left(t_{i}, w_{i}\right)\right. \\
+& \left.+\cdots+b_{0} f\left(t_{i+1-m}, w_{i+1-m}\right)\right] 
+\end{split}
+\end{equation}
+
+
+for $i=m-1, m, \ldots, N-1$, where $h=(b-a) / N$, the $a_{0}, a_{1}, \ldots, a_{m-1}$ and $b_{0}, b_{1}, \ldots, b_{m}$ are constants, and the starting values
+
+$$
+w_{0}=\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2}, \quad \ldots, \quad w_{m-1}=\alpha_{m-1}
+$$
+
+are specified.
+\end{definition}
+When $b_{m}=0$ the method is called explicit, or open, because Eq. \ref{eqn:stepmultistepdefeq2} then gives $w_{i+1}$ explicitly in terms of previously determined values. When $b_{m} \neq 0$ the method is called {\bf implicit, or closed}, because wi+1 occurs on both sides of Eq. (5.243), so wi+1 is specified
+ only implicitly.
+
+ For example, the equations
+\begin{equation}\label{eqn:multistepimplicitclosedeq1}
+\begin{split}
+w_0 &=\alpha,\quad w_1 =\alpha_1,\quad w_2 =\alpha_2,\quad w_3 =\alpha_3,\\
+ w_{i+1} &= w_i + \frac{h}{24}[55f(t_i,w_i) - 59f(t_{i-1},w_{i-1}) + 37f(t_{i-2},w_{i-2}) − 9f(t_{i-3},w_{i-3})],
+\end{split}
+\end{equation}
+for each $i = 3, 4, \ldots, N-1$, define an explicit four-step method known as the {\bf fourth-order Adams-Bashforth technique}. The equations
+
+\begin{equation}\label{eqn:multistepimplicitclosedeq2}
+\begin{split}
+w_0 &=\alpha,\quad w_1 =\alpha_1,\quad w_2 =\alpha_2,\\
+ w_{i+1} &= w_i + \frac{h}{24}[9f(t_{i+1},w_{i+1}) +19f(t_i,w_i)-5f(t_{i-1},w_{i-1})+f(t_{i-2},w_{i-2})],
+\end{split}
+\end{equation}
+for each $i = 2, 3, \ldots, N-1$, define an implicit four-step method known as the {\bf fourth-order Adams-Moulton technique}. 
+
+The starting values in either \ref{eqn:multistepimplicitclosedeq1} or \ref{eqn:multistepimplicitclosedeq2} must be specified, generally by assuming $w_0 =\alpha$ and generating the remaining values by either a Runge-Kutta or Taylor method. We will see that the implicit methods are generally more accurate then the explicit methods, but to apply an implicit method such as \ref{eqn:multistepimplicitclosedeq1} directly, we must solve the implicit equation for $w_{i+1}$. This is not always possible,and even when it can be done the solution for $w_{i+1}$ may not be unique.
+
+
+Consider the problem of using the Runge-Kutta method of order four with $h=0.2, N=10$, and $t_{i}=0.2 i$ to obtain approximations to the solution of the initial-value problem
+
+$$
+y^{\prime}=y-t^{2}+1, \quad 0 \leq t \leq 2, \quad y(0)=0.5 .
+$$
+
+The approximation to $y(0.2)$ is obtained by
+
+$$
+\begin{aligned}
+w_{0} & =0.5 \\
+k_{1} & =0.2 f(0,0.5)=0.2(1.5)=0.3 \\
+k_{2} & =0.2 f(0.1,0.65)=0.328 \\
+k_{3} & =0.2 f(0.1,0.664)=0.3308 \\
+k_{4} & =0.2 f(0.2,0.8308)=0.35816 \\
+w_{1} & =0.5+\frac{1}{6}(0.3+2(0.328)+2(0.3308)+0.35816)=0.8292933
+\end{aligned}
+$$
+
+The remaining results and their errors are listed in Table \ref{}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+$t_{i}$ & Exact $y_{i}=y\left(t_{i}\right)$ & Runge-Kutta Order Four $w_{i}$ & Error $\left|y_{i}-w_{i}\right|$ \\
+\hline
+0.0 & 0.5000000 & 0.5000000 & 0 \\
+\hline
+0.2 & 0.8292986 & 0.8292933 & 0.0000053 \\
+\hline
+0.4 & 1.2140877 & 1.2140762 & 0.0000114 \\
+\hline
+0.6 & 1.6489406 & 1.6489220 & 0.0000186 \\
+\hline
+0.8 & 2.1272295 & 2.1272027 & 0.0000269 \\
+\hline
+1.0 & 2.6408591 & 2.6408227 & 0.0000364 \\
+\hline
+1.2 & 3.1799415 & 3.1798942 & 0.0000474 \\
+\hline
+1.4 & 3.7324000 & 3.7323401 & 0.0000599 \\
+\hline
+1.6 & 4.2834838 & 4.2834095 & 0.0000743 \\
+\hline
+1.8 & 4.8151763 & 4.8150857 & 0.0000906 \\
+\hline
+2.0 & 5.3054720 & 5.3053630 & 0.0001089 \\
+\hline
+\end{tabular}
+\caption{\scriptsize Table $2$}
+\label{}
+\end{table}
+
+
+%The Adams-Bashforth techniques are due to John Couch Adams (1819-1892), who did significant work in mathematics and astronomy. He developed these numerical techniques to approximate the solution of a fluid-flow problem posed by Bashforth.
+%
+%Forest Ray Moulton (1872-1952) was in charge of ballistics at the Aberdeen Proving Grounds in Maryland during World War I. He was a prolific author, writing numerous books in mathematics and astronomy, and developed improved multistep methods for solving ballistic equations.
+%
+\begin{example}
+In Example \ref{} of Section \ref{} of Module \ref{} (see Table \ref{} ) we used the Runge-Kutta method of order four with $h=0.2$ to approximate the solutions to the initial value problem
+
+The first four approximations were found to be $y(0)=w_{0}=0.5, y(0.2) \approx w_{1}=$ $0.8292933, y(0.4) \approx w_{2}=1.2140762$, and $y(0.6) \approx w_{3}=1.6489220$. Use these as starting values for the fourth-order Adams-Bashforth method to compute new approximatons for $y(0.8)$ and $y(1.0)$, and compare these new approximations to those produced by the Runge-Kutta method of order four.
+\end{example}
+
+%implicit, or closed, because $w_{i+1}$ occurs on both sides of Eq. (5.243), so $w_{i+1}$ is specified only implicitly.
+
+
+\begin{mysolution}
+For the fourth-order Adams-Bashforth we have
+
+$$
+\begin{aligned}
+y(0.8) \approx w_{4}= & w_{3}+\frac{0.2}{24}\left(55 f\left(0.6, w_{3}\right)-59 f\left(0.4, w_{2}\right)+37 f\left(0.2, w_{1}\right)-9 f\left(0, w_{0}\right)\right) \\
+= & 1.6489220+\frac{0.2}{24}(55 f(0.6,1.6489220)-59 f(0.4,1.2140762) \\
+& +37 f(0.2,0.8292933)-9 f(0,0.5)) \\
+= & 1.6489220+0.0083333(55(2.2889220)-59(2.0540762) \\
+& +37(1.7892933)-9(1.5)) \\
+= & 2.1272892
+\end{aligned}
+$$
+
+ and
+
+$$
+\begin{aligned}
+y(1.0) \approx w_{5}= & w_{4}+\frac{0.2}{24}\left(55 f\left(0.8, w_{4}\right)-59 f\left(0.6, w_{3}\right)+37 f\left(0.4, w_{2}\right)-9 f\left(0.2, w_{1}\right)\right) \\
+= & 2.1272892+\frac{0.2}{24}(55 f(0.8,2.1272892)-59 f(0.6,1.6489220) \\
+& +37 f(0.4,1.2140762)-9 f(0.2,0.8292933)) \\
+= & 2.1272892+0.0083333(55(2.4872892)-59(2.2889220) \\
+& +37(2.0540762)-9(1.7892933)) \\
+= & 2.6410533
+\end{aligned}
+$$
+
+The error for these approximations at $t=0.8$ and $t=1.0$ are, respectively
+
+$$
+|2.1272295-2.1272892|=5.97 \times 10^{-5} \text { and }|2.6410533-2.6408591|=1.94 \times 10^{-4}
+$$
+
+The corresponding Runge-Kutta approximations had errors
+
+$$
+|2.1272027-2.1272892|=2.69 \times 10^{-5} \text { and }|2.6408227-2.6408591|=3.64 \times 10^{-5} .
+$$\qed
+\end{mysolution}
+
+%For example, the equations
+%
+%
+%\begin{align*}
+%w_{0} & =\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2}, \quad w_{3}=\alpha_{3} \\
+%w_{i+1} & =w_{i}+\frac{h}{24}\left[55 f\left(t_{i}, w_{i}\right)-59 f\left(t_{i-1}, w_{i-1}\right)+37 f\left(t_{i-2}, w_{i-2}\right)-9 f\left(t_{i-3}, w_{i-3}\right)\right] \tag{5.25}
+%\end{align*}
+%
+%
+%for each $i=3,4, \ldots, N-1$, define an explicit four-step method known as the fourth-order Adams-Bashforth technique. The equations
+%
+%
+%\begin{align*}
+%w_{0} & =\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2} \\
+%w_{i+1} & =w_{i}+\frac{h}{24}\left[9 f\left(t_{i+1}, w_{i+1}\right)+19 f\left(t_{i}, w_{i}\right)-5 f\left(t_{i-1}, w_{i-1}\right)+f\left(t_{i-2}, w_{i-2}\right)\right] \tag{5.26}
+%\end{align*}
+%
+%
+%for each $i=2,3, \ldots, N-1$, define an implicit three-step method known as the fourth-order Adams-Moulton technique.
+%
+%The starting values in either (5.25) or (5.26) must be specified, generally by assuming $w_{0}=\alpha$ and generating the remaining values by either a Runge-Kutta or Taylor method. We will see that the implicit methods are generally more accurate then the explicit methods, but to apply an implicit method such as (5.25) directly, we must solve the implicit equation for $w_{i+1}$. This is not always possible, and even when it can be done the solution for $w_{i+1}$ may not be unique.
+%
+%$$
+%y^{\prime}=y-t^{2}+1, \quad 0 \leq t \leq 2, \quad y(0)=0.5
+%$$
+%
+%:\\
+%\includegraphics[max width=\textwidth, center]{2025_05_15_5266fa2c85d567bd073dg-45(3)}\\
+%$\qquad$\\
+%$y(0)=w_{0}=0.5, \quad y(0.2) \approx$\\
+%\includegraphics[max width=\textwidth]{2025_05_15_5266fa2c85d567bd073dg-45}\includegraphics[max width=\textwidth]{2025_05_15_5266fa2c85d567bd073dg-45(2)}\\
+%\includegraphics[max width=\textwidth, center]{2025_05_15_5266fa2c85d567bd073dg-45(1)}
+%
+%Adams was particularly interested in the using his ability for accurate numerical calculations to investigate the orbits of the planets. He predicted the existence of Neptune by analyzing the irregularities in the planet Uranus, and developed various numerical integration techniques to assist in the approximation of the solution of differential equations.\\
+%and
+%
+
+%
+
+%
+To begin the derivation of a multistep method, note that the solution to the initial-value problem
+
+$$
+y^{\prime}=f(t, y), \quad a \leq t \leq b, \quad y(a)=\alpha,
+$$
+
+if integrated over the interval $\left[t_{i}, t_{i+1}\right]$, has the property that
+
+$$
+y\left(t_{i+1}\right)-y\left(t_{i}\right)=\int_{t_{i}}^{t_{i+1}} y^{\prime}(t) d t=\int_{t_{i}}^{t_{i+1}} f(t, y(t)) d t
+$$
+
+Consequently,
+
+
+\begin{equation}\label{eqn:multistepeq7}
+y\left(t_{i+1}\right)=y\left(t_{i}\right)+\int_{t_{i}}^{t_{i+1}} f(t, y(t)) d t
+\end{equation}
+
+
+However we cannot integrate $f(t, y(t))$ without knowing $y(t)$, the solution to the problem, so we instead integrate an interpolating polynomial $P(t)$ to $f(t, y(t))$, one that is determined by some of the previously obtained data points $\left(t_{0}, w_{0}\right),\left(t_{1}, w_{1}\right), \ldots,\left(t_{i}, w_{i}\right)$. When we assume, in addition, that $y\left(t_{i}\right) \approx w_{i}$, Eq. (5.27) becomes
+
+
+\begin{equation}\label{eqn:multistepeq8}
+y\left(t_{i+1}\right) \approx w_{i}+\int_{t_{i}}^{t_{i+1}} P(t) d t
+\end{equation}
+
+
+Although any form of the interpolating polynomial can be used for the derivation, it is most convenient to use the Newton backward-difference formula, because this form more easily incorporates the most recently calculated data.
+
+To derive an Adams-Bashforth explicit $m$-step technique, we form the backwarddifference polynomial $P_{m-1}(t)$ through
+
+$$
+\left(t_{i}, f\left(t_{i}, y\left(t_{i}\right)\right)\right), \quad\left(t_{i-1}, f\left(t_{i-1}, y\left(t_{i-1}\right)\right)\right), \ldots, \quad\left(t_{i+1-m}, f\left(t_{i+1-m}, y\left(t_{i+1-m}\right)\right)\right)
+$$
+
+Since $P_{m-1}(t)$ is an interpolatory polynomial of degree $m-1$, some number $\xi_{i}$ in ( $t_{i+1-m}, t_{i}$ ) exists with
+
+$$
+f(t, y(t))=P_{m-1}(t)+\frac{f^{(m)}\left(\xi_{i}, y\left(\xi_{i}\right)\right)}{m!}\left(t-t_{i}\right)\left(t-t_{i-1}\right) \cdots\left(t-t_{i+1-m}\right)
+$$
+
+
+Introducing the variable substitution $t=t_{i}+s h$, with $d t=h d s$, into $P_{m-1}(t)$ and the error term implies that
+
+$$
+\begin{aligned}
+\int_{t_{i}}^{t_{i+1}} f(t, y(t)) d t= & \int_{t_{i}}^{t_{i+1}} \sum_{k=0}^{m-1}(-1)^{k}\binom{-s}{k} \nabla^{k} f\left(t_{i}, y\left(t_{i}\right)\right) d t \\
+& +\int_{t_{i}}^{t_{i+1}} \frac{f^{(m)}\left(\xi_{i}, y\left(\xi_{i}\right)\right)}{m!}\left(t-t_{i}\right)\left(t-t_{i-1}\right) \cdots\left(t-t_{i+1-m}\right) d t \\
+= & \sum_{k=0}^{m-1} \nabla^{k} f\left(t_{i}, y\left(t_{i}\right)\right) h(-1)^{k} \int_{0}^{1}\binom{-s}{k} d s \\
+& +\frac{h^{m+1}}{m!} \int_{0}^{1} s(s+1) \cdots(s+m-1) f^{(m)}\left(\xi_{i}, y\left(\xi_{i}\right)\right) d s
+\end{aligned}
+$$
+
+The integrals $(-1)^{k} \int_{0}^{1}\binom{-s}{k} d s$ for various values of $k$ are easily evaluated and are listed in Table 5.12. For example, when $k=3$,
+
+$$
+\begin{aligned}
+(-1)^{3} \int_{0}^{1}\binom{-s}{3} d s & =-\int_{0}^{1} \frac{(-s)(-s-1)(-s-2)}{1 \cdot 2 \cdot 3} d s \\
+& =\frac{1}{6} \int_{0}^{1}\left(s^{3}+3 s^{2}+2 s\right) d s \\
+& =\frac{1}{6}\left[\frac{s^{4}}{4}+s^{3}+s^{2}\right]_{0}^{1}=\frac{1}{6}\left(\frac{9}{4}\right)=\frac{3}{8}
+\end{aligned}
+$$
+
+As a consequence,
+
+\begin{equation}\label{eqn:multistepeq9}
+\begin{split}
+\int_{t_{i}}^{t_{i+1}} f(t, y(t)) d t= & h\left[f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{1}{2} \nabla f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{5}{12} \nabla^{2} f\left(t_{i}, y\left(t_{i}\right)\right)+\cdots\right] \\
+& +\frac{h^{m+1}}{m!} \int_{0}^{1} s(s+1) \cdots(s+m-1) f^{(m)}\left(\xi_{i}, y\left(\xi_{i}\right)\right) d s 
+\end{split}
+\end{equation}
+
+%Table 5.12
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c|cccccc}
+\hline
+$k$&$0$&$1$&$2$&$3$&$4$&$5$\\\hline
+$\int_{0}^{1}\binom{-s}{k} d s$&$1$&$\frac{1}{2}$&$\frac{5}{12}$&$\frac{3}{8}$&$\frac{251}{720}$&$\frac{95}{288}$\\
+\hline
+\end{tabular}
+\caption{\scriptsize Table $3$}
+\label{tab:multisteptab12}
+\end{table}
+
+
+
+Because $s(s+1) \cdots(s+m-1)$ does not change sign on $[0,1]$, the Weighted Mean Value Theorem for Integrals can be used to deduce that for some number $\mu_{i}$, where $t_{i+1-m}<$ $\mu_{i}<t_{i+1}$, the error term in Eq. \ref{eqn:multistepeq9} becomes
+
+$$
+\begin{aligned}
+\frac{h^{m+1}}{m!} \int_{0}^{1} s(s+1) & \cdots(s+m-1) f^{(m)}\left(\xi_{i}, y\left(\xi_{i}\right)\right) d s \\
+& =\frac{h^{m+1} f^{(m)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)}{m!} \int_{0}^{1} s(s+1) \cdots(s+m-1) d s
+\end{aligned}
+$$
+
+Hence the error in \ref{eqn:multistepeq9} simplifies to
+
+
+\begin{equation}\ref{eqn:multistepeq10}
+h^{m+1} f^{(m)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)(-1)^{m} \int_{0}^{1}\binom{-s}{m} d s 
+\end{equation}
+
+
+But $y\left(t_{i+1}\right)-y\left(t_{i}\right)=\int_{t_{i}}^{t_{i+1}} f(t, y(t)) d t$, so Eq.\ref{eqn:multistepeq7} can be written as
+
+\begin{equation}\label{eqn:multistepeq11}
+\begin{split}
+y\left(t_{i+1}\right)= & y\left(t_{i}\right)+h\left[f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{1}{2} \nabla f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{5}{12} \nabla^{2} f\left(t_{i}, y\left(t_{i}\right)\right)+\cdots\right] \\
+& +h^{m+1} f^{(m)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)(-1)^{m} \int_{0}^{1}\binom{-s}{m} d s 
+\end{split}
+\end{equation}
+
+
+\begin{example}\label{exam:multistepexm2}
+Use Eq. \ref{eqn:multistepeq11} with $m=3$ to derive the three-step Adams-Bashforth technique.
+\end{example}
+
+\begin{mysolution}
+We have
+
+$$
+\begin{aligned}
+y\left(t_{i+1}\right) \approx & y\left(t_{i}\right)+h\left[f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{1}{2} \nabla f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{5}{12} \nabla^{2} f\left(t_{i}, y\left(t_{i}\right)\right)\right] \\
+= & y\left(t_{i}\right)+h\left\{f\left(t_{i}, y\left(t_{i}\right)\right)+\frac{1}{2}\left[f\left(t_{i}, y\left(t_{i}\right)\right)-f\left(t_{i-1}, y\left(t_{i-1}\right)\right)\right]\right. \\
+& \left.+\frac{5}{12}\left[f\left(t_{i}, y\left(t_{i}\right)\right)-2 f\left(t_{i-1}, y\left(t_{i-1}\right)\right)+f\left(t_{i-2}, y\left(t_{i-2}\right)\right)\right]\right\} \\
+= & y\left(t_{i}\right)+\frac{h}{12}\left[23 f\left(t_{i}, y\left(t_{i}\right)\right)-16 f\left(t_{i-1}, y\left(t_{i-1}\right)\right)+5 f\left(t_{i-2}, y\left(t_{i-2}\right)\right)\right]
+\end{aligned}
+$$
+
+The three-step Adams-Bashforth method is, consequently,
+
+$$
+\begin{aligned}
+w_{0} & =\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2} \\
+w_{i+1} & \left.=w_{i}+\frac{h}{12}\left[23 f\left(t_{i}, w_{i}\right)-16 f\left(t_{i-1}, w_{i-1}\right)\right]+5 f\left(t_{i-2}, w_{i-2}\right)\right]
+\end{aligned}
+$$
+
+for $i=2,3, \ldots, N-1$.
+\end{mysolution}
+
+Multistep methods can also be derived using Taylor series. 
+
+The local truncation error for multistep methods is defined analogously to that of one-step methods. As in the case of one-step methods, the local truncation error provides a measure of how the solution to the differential equation fails to solve the difference equation.
+
+\begin{definition}
+If $y(t)$ is the solution to the initial-value problem
+
+$$
+y^{\prime}=f(t, y), \quad a \leq t \leq b, \quad y(a)=\alpha
+$$
+
+and
+
+$$
+\begin{aligned}
+w_{i+1}= & a_{m-1} w_{i}+a_{m-2} w_{i-1}+\cdots+a_{0} w_{i+1-m} \\
+& +h\left[b_{m} f\left(t_{i+1}, w_{i+1}\right)+b_{m-1} f\left(t_{i}, w_{i}\right)+\cdots+b_{0} f\left(t_{i+1-m}, w_{i+1-m}\right)\right]
+\end{aligned}
+$$
+
+is the $(i+1)$ st step in a multistep method, the {\bf local truncation error} at this step is
+
+\begin{equation}\label{eqn:multistepeq12}
+\begin{split}
+\tau_{i+1}(h)= & \frac{y\left(t_{i+1}\right)-a_{m-1} y\left(t_{i}\right)-\cdots-a_{0} y\left(t_{i+1-m}\right)}{h} \\
+& -\left[b_{m} f\left(t_{i+1}, y\left(t_{i+1}\right)\right)+\cdots+b_{0} f\left(t_{i+1-m}, y\left(t_{i+1-m}\right)\right)\right]
+\end{split}
+\end{equation}
+
+
+for each $i=m-1, m, \ldots, N-1$.
+\end{definition}
+
+\begin{example}\label{exam:multistepexm3}.
+Determine the local truncation error for the three-step Adams-Bashforth method derived in Example \ref{exam:multistepexm2}.
+\end{example}
+
+\begin{mysolution}
+Considering the form of the error given in Eq. \ref{eqn:multistepeq10} and the appropriate entry in Table \ref{tab:multisteptab12} gives
+
+$$
+h^{4} f^{(3)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)(-1)^{3} \int_{0}^{1}\binom{-s}{3} d s=\frac{3 h^{4}}{8} f^{(3)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)
+$$
+
+Using the fact that $f^{(3)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)=y^{(4)}\left(\mu_{i}\right)$ and the difference equation derived in Example 2, we have
+
+$$
+\begin{aligned}
+\tau_{i+1}(h) & =\frac{y\left(t_{i+1}\right)-y\left(t_{i}\right)}{h}-\frac{1}{12}\left[23 f\left(t_{i}, y\left(t_{i}\right)\right)-16 f\left(t_{i-1}, y\left(t_{i-1}\right)\right)+5 f\left(t_{i-2}, y\left(t_{i-2}\right)\right)\right] \\
+& =\frac{1}{h}\left[\frac{3 h^{4}}{8} f^{(3)}\left(\mu_{i}, y\left(\mu_{i}\right)\right)\right]=\frac{3 h^{3}}{8} y^{(4)}\left(\mu_{i}\right), \quad \text { for some } \mu_{i} \in\left(t_{i-2}, t_{i+1}\right)
+\end{aligned}
+$$
+\end{mysolution}
+
+\subsection*{Adams-Bashforth Explicit Methods}
+Some of the explicit multistep methods together with their required starting values and local truncation errors are as follows. The derivation of these techniques is similar to the procedure in Examples \ref{exam:multistepexm2} and \ref{exam:multistepexm3}.
+
+\subsubsection*{Adams-Bashforth Two-Step Explicit Method}
+
+\begin{equation}\label{eqn:multistepeq13}
+\begin{split}
+w_{0} & =\alpha, \quad w_{1}=\alpha_{1} \\
+w_{i+1} & =w_{i}+\frac{h}{2}\left[3 f\left(t_{i}, w_{i}\right)-f\left(t_{i-1}, w_{i-1}\right)\right]
+\end{split}
+\end{equation}
+
+where $i=1,2, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=\frac{5}{12} y^{\prime \prime \prime}\left(\mu_{i}\right) h^{2}$, for some $\mu_{i} \in\left(t_{i-1}, t_{i+1}\right)$.
+
+\subsubsection*{Adams-Bashforth Three-Step Explicit Method}
+
+\begin{equation}\label{eqn:multistepeq14}
+\begin{split}
+w_{0} & =\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2} \\
+w_{i+1} & =w_{i}+\frac{h}{12}\left[23 f\left(t_{i}, w_{i}\right)-16 f\left(t_{i-1}, w_{i-1}\right)+5 f\left(t_{i-2}, w_{i-2}\right)\right] 
+\end{split}
+\end{equation}
+
+where $i=2,3, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=\frac{3}{8} y^{(4)}\left(\mu_{i}\right) h^{3}$, for some $\mu_{i} \in\left(t_{i-2}, t_{i+1}\right)$.
+
+\subsubsection*{Adams-Bashforth Four-Step Explicit Method}
+
+\begin{equation}\label{eqn:multistepeq15}
+\begin{split}
+w_{0} & =\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2}, \quad w_{3}=\alpha_{3}  \\
+w_{i+1} & =w_{i}+\frac{h}{24}\left[55 f\left(t_{i}, w_{i}\right)-59 f\left(t_{i-1}, w_{i-1}\right)+37 f\left(t_{i-2}, w_{i-2}\right)-9 f\left(t_{i-3}, w_{i-3}\right)\right]
+\end{split}
+\end{equation}
+
+where $i=3,4, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=\frac{251}{720} y^{(5)}\left(\mu_{i}\right) h^{4}$, for some $\mu_{i} \in\left(t_{i-3}, t_{i+1}\right)$.
+
+\section*{Adams-Bashforth Five-Step Explicit Method}
+
+\begin{equation}\label{eqn:multistepeq16}
+\begin{split}
+w_{0}= & \alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2}, \quad w_{3}=\alpha_{3}, \quad w_{4}=\alpha_{4} \\
+w_{i+1}= & w_{i}+\frac{h}{720}\left[1901 f\left(t_{i}, w_{i}\right)-2774 f\left(t_{i-1}, w_{i-1}\right)\right. \\
+& \left.+2616 f\left(t_{i-2}, w_{i-2}\right)-1274 f\left(t_{i-3}, w_{i-3}\right)+251 f\left(t_{i-4}, w_{i-4}\right)\right]
+\end{split}
+\end{equation}
+
+where $i=4,5, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=\frac{95}{288} y^{(6)}\left(\mu_{i}\right) h^{5}$, for some $\mu_{i} \in\left(t_{i-4}, t_{i+1}\right)$.
+
+\subsection*{Adams-Moulton Implicit Methods}
+Implicit methods are derived by using ( $t_{i+1}, f\left(t_{i+1}, y\left(t_{i+1}\right)\right)$ ) as an additional interpolation node in the approximation of the integral
+
+$$
+\int_{t_{i}}^{t_{i+1}} f(t, y(t)) d t
+$$
+
+Some of the more common implicit methods are as follows.
+
+\subsubsection*{Adams-Moulton Two-Step Implicit Method}
+
+\begin{equation}\label{eqn:multistepeq17}
+\begin{split}
+w_{0} & =\alpha, \quad w_{1}=\alpha_{1} \\
+w_{i+1} & =w_{i}+\frac{h}{12}\left[5 f\left(t_{i+1}, w_{i+1}\right)+8 f\left(t_{i}, w_{i}\right)-f\left(t_{i-1}, w_{i-1}\right)\right] 
+\end{split}
+\end{equation}
+
+where $i=1,2, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=-\frac{1}{24} y^{(4)}\left(\mu_{i}\right) h^{3}$, for some $\mu_{i} \in\left(t_{i-1}, t_{i+1}\right)$.
+
+\subsubsection*{Adams-Moulton Three-Step Implicit Method}
+
+\begin{equation}\label{eqn:multistepeq18}
+\begin{split}
+w_{0} & =\alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2}  \\
+w_{i+1} & =w_{i}+\frac{h}{24}\left[9 f\left(t_{i+1}, w_{i+1}\right)+19 f\left(t_{i}, w_{i}\right)-5 f\left(t_{i-1}, w_{i-1}\right)+f\left(t_{i-2}, w_{i-2}\right)\right]
+\end{split}
+\end{equation}
+
+where $i=2,3, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=-\frac{19}{720} y^{(5)}\left(\mu_{i}\right) h^{4}$, for some $\mu_{i} \in\left(t_{i-2}, t_{i+1}\right)$.
+
+\subsubsection*{Adams-Moulton Four-Step Implicit Method}
+
+\begin{equation}\label{eqn:multistepeq19}
+\begin{split}
+w_{0}= & \alpha, \quad w_{1}=\alpha_{1}, \quad w_{2}=\alpha_{2}, \quad w_{3}=\alpha_{3} \\
+w_{i+1}= & w_{i}+\frac{h}{720}\left[251 f\left(t_{i+1}, w_{i+1}\right)+646 f\left(t_{i}, w_{i}\right)\right.\\
+& \left.-264 f\left(t_{i-1}, w_{i-1}\right)+106 f\left(t_{i-2}, w_{i-2}\right)-19 f\left(t_{i-3}, w_{i-3}\right)\right]
+\end{split}
+\end{equation}
+
+where $i=3,4, \ldots, N-1$. The local truncation error is $\tau_{i+1}(h)=-\frac{3}{160} y^{(6)}\left(\mu_{i}\right) h^{5}$, for some $\mu_{i} \in\left(t_{i-3}, t_{i+1}\right)$.
+
+It is interesting to compare an $m$-step Adams-Bashforth explicit method with an ( $m-1$ )step Adams-Moulton implicit method. Both involve $m$ evaluations of $f$ per step, and both have the terms $y^{(m+1)}\left(\mu_{i}\right) h^{m}$ in their local truncation errors. In general, the coefficients of the terms involving $f$ in the local truncation error are smaller for the implicit methods than for the explicit methods. This leads to greater stability and smaller round-off errors for the implicit methods.
+
+\begin{example}\label{exam:multistepexm4}
+Consider the initial-value problem
+
+$$
+y^{\prime}=y-t^{2}+1, \quad 0 \leq t \leq 2, \quad y(0)=0.5 .
+$$
+
+Use the exact values given from $y(t)=(t+1)^{2}-0.5 e^{t}$ as starting values and $h=0.2$ to compare the approximations from 
+\begin{enumerate}[label=(\alph*)]
+\item by the explicit Adams-Bashforth four-step method and 
+\item the implicit Adams-Moulton three-step method.
+\end{enumerate}
+\end{example}
+
+\begin{mysolution}
+\begin{enumerate}[label=(\alph*)]
+\item The Adams-Bashforth method has the difference equation
+
+$$
+w_{i+1}=w_{i}+\frac{h}{24}\left[55 f\left(t_{i}, w_{i}\right)-59 f\left(t_{i-1}, w_{i-1}\right)+37 f\left(t_{i-2}, w_{i-2}\right)-9 f\left(t_{i-3}, w_{i-3}\right)\right],
+$$
+
+for $i=3,4, \ldots, 9$. When simplified using $f(t, y)=y-t^{2}+1, h=0.2$, and $t_{i}=0.2 i$, it becomes
+
+$$
+w_{i+1}=\frac{1}{24}\left[35 w_{i}-11.8 w_{i-1}+7.4 w_{i-2}-1.8 w_{i-3}-0.192 i^{2}-0.192 i+4.736\right] .
+$$
+
+\item The Adams-Moulton method has the difference equation
+
+$$
+w_{i+1}=w_{i}+\frac{h}{24}\left[9 f\left(t_{i+1}, w_{i+1}\right)+19 f\left(t_{i}, w_{i}\right)-5 f\left(t_{i-1}, w_{i-1}\right)+f\left(t_{i-2}, w_{i-2}\right)\right]
+$$
+
+for $i=2,3, \ldots, 9$. This reduces to
+
+$$
+w_{i+1}=\frac{1}{24}\left[1.8 w_{i+1}+27.8 w_{i}-w_{i-1}+0.2 w_{i-2}-0.192 i^{2}-0.192 i+4.736\right] .
+$$
+
+To use this method explicitly, we meed to solve the equation explicitly solve for $w_{i+1}$. This gives
+
+$$
+w_{i+1}=\frac{1}{22.2}\left[27.8 w_{i}-w_{i-1}+0.2 w_{i-2}-0.192 i^{2}-0.192 i+4.736\right],
+$$
+
+for $i=2,3, \ldots, 9$.\\
+The results in Table 5.13 were obtained using the exact values from $y(t)=(t+1)^{2}-$ $0.5 e^{t}$ for $\alpha, \alpha_{1}, \alpha_{2}$, and $\alpha_{3}$ in the explicit Adams-Bashforth case and for $\alpha, \alpha_{1}$, and $\alpha_{2}$ in the implicit Adams-Moulton case. Note that the implicit Adams-Moulton method gives consistently better results.
+\end{enumerate}
+\end{mysolution}
+
+%Table 5.13
+
+\begin{table}
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$t_{i}$ & Exact & AdamsBashforth $w_{i}$ & Error & AdamsMoulton $w_{i}$ & Error \\
+\hline
+0.0 & 0.5000000 &  &  &  &  \\
+\hline
+0.2 & 0.8292986 &  &  &  &  \\
+\hline
+0.4 & 1.2140877 &  &  &  &  \\
+\hline
+0.6 & 1.6489406 &  &  & 1.6489341 & 0.0000065 \\
+\hline
+0.8 & 2.1272295 & 2.1273124 & 0.0000828 & 2.1272136 & 0.0000160 \\
+\hline
+1.0 & 2.6408591 & 2.6410810 & 0.0002219 & 2.6408298 & 0.0000293 \\
+\hline
+1.2 & 3.1799415 & 3.1803480 & 0.0004065 & 3.1798937 & 0.0000478 \\
+\hline
+1.4 & 3.7324000 & 3.7330601 & 0.0006601 & 3.7323270 & 0.0000731 \\
+\hline
+1.6 & 4.2834838 & 4.2844931 & 0.0010093 & 4.2833767 & 0.0001071 \\
+\hline
+1.8 & 4.8151763 & 4.8166575 & 0.0014812 & 4.8150236 & 0.0001527 \\
+\hline
+2.0 & 5.3054720 & 5.3075838 & 0.0021119 & 5.3052587 & 0.0002132 \\
+\hline
+\end{tabular}
+\caption{\scriptsize Table $4$}
+\label{tab:multistepexm3}
+\end{table}
+
+%
+%Multistep methods are available as options of the InitialValueProblem command, in a manner similar to that of the one step methods. The command for the Adam Bashforth Four Step method applied to our usual example has the form\\
+%$C:=$ InitialValueProblem $($ deq $, y(0)=0.5, t=2$, method $=$ adamsbashforth, submethod $=$ step4, numsteps $=10$, output $=$ information, digits $=8$ )
+%
+%The output from this method is similar to the results in Table 5.13 except that the exact values were used in Table 5.13 and approximations were used as starting values for the Maple approximations.
+%
+%To apply the Adams-Mouton Three Step method to this problem, the options would be changed to method $=$ adamsmoulton , submethod $=$ step3.
+
+\section*{Predictor-Corrector Methods}
+In Example \ref{exam:multistepexm4}. the implicit Adams-Moulton method gave better results than the explicit Adams-Bashforth method of the same order. Although this is generally the case, the implicit methods have the inherent weakness of first having to convert the method algebraically to an explicit representation for $w_{i+1}$. This procedure is not always possible, as can be seen by considering the elementary initial-value problem
+
+$$
+y^{\prime}=e^{y}, \quad 0 \leq t \leq 0.25, \quad y(0)=1
+$$
+
+Because $f(t, y)=e^{y}$, the three-step Adams-Moulton method has
+
+$$
+w_{i+1}=w_{i}+\frac{h}{24}\left[9 e^{w_{i+1}}+19 e^{w_{i}}-5 e^{w_{i-1}}+e^{w_{i-2}}\right]
+$$
+
+as its difference equation, and this equation cannot be algebraically solved for $w_{i+1}$.\\
+We could use Newton's method or the secant method to approximate $w_{i+1}$, but this complicates the procedure considerably. In practice, implicit multistep methods are not used as described above. Rather, they are used to improve approximations obtained by explicit methods. The combination of an explicit method to predict and an implicit to improve the prediction is called a {\bf predictor-corrector method}.
+
+Consider the following fourth-order method for solving an initial-value problem. The first step is to calculate the starting values $w_{0}, w_{1}, w_{2}$, and $w_{3}$ for the four-step explicit Adams-Bashforth method. To do this, we use a fourth-order one-step method, the RungeKutta method of order four. The next step is to calculate an approximation, $w_{4 p}$, to $y\left(t_{4}\right)$ using the explicit Adams-Bashforth method as predictor:
+
+$$
+w_{4 p}=w_{3}+\frac{h}{24}\left[55 f\left(t_{3}, w_{3}\right)-59 f\left(t_{2}, w_{2}\right)+37 f\left(t_{1}, w_{1}\right)-9 f\left(t_{0}, w_{0}\right)\right]
+$$
+
+This approximation is improved by inserting $w_{4 p}$ in the right side of the three-step implicit Adams-Moulton method and using that method as a corrector. This gives
+
+$$
+w_{4}=w_{3}+\frac{h}{24}\left[9 f\left(t_{4}, w_{4 p}\right)+19 f\left(t_{3}, w_{3}\right)-5 f\left(t_{2}, w_{2}\right)+f\left(t_{1}, w_{1}\right)\right]
+$$
+
+The only new function evaluation required in this procedure is $f\left(t_{4}, w_{4 p}\right)$ in the corrector equation; all the other values of $f$ have been calculated for earlier approximations.
+
+The value $w_{4}$ is then used as the approximation to $y\left(t_{4}\right)$, and the technique of using the Adams-Bashforth method as a predictor and the Adams-Moulton method as a corrector is repeated to find $w_{5 p}$ and $w_{5}$, the initial and final approximations to $y\left(t_{5}\right)$. This process is continued until we obtain an approximation $w_{c}$ to $y\left(t_{N}\right)=y(b)$.
+
+Improved approximations to $y\left(t_{i+1}\right)$ might be obtained by iterating the Adams-Moulton formula, but these converge to the approximation given by the implicit formula rather than to the solution $y\left(t_{i+1}\right)$. Hence it is usually more efficient to use a reduction in the step size if improved accuracy is needed.
+
+%Algorithm 5.4 is based on the fourth-order Adams-Bashforth method as predictor and one iteration of the Adams-Moulton method as corrector, with the starting values obtained from the fourth-order Runge-Kutta method.
+%
+%\section*{Adams Fourth-Order Predictor-Corrector}
+%To approximate the solution of the initial-value problem
+%
+%$$
+%y^{\prime}=f(t, y), \quad a \leq t \leq b, \quad y(a)=\alpha,
+%$$
+%
+%at $(N+1)$ equally spaced numbers in the interval $[a, b]$ :\\
+%INPUT endpoints $a, b$; integer $N$; initial condition $\alpha$.\\
+%OUTPUT approximation $w$ to $y$ at the $(N+1)$ values of $t$.\\
+%Step 1 Set $h=(b-a) / N$;
+%
+%$$
+%\begin{aligned}
+%& t_{0}=a ; \\
+%& w_{0}=\alpha ;
+%\end{aligned}
+%$$
+%
+%OUTPUT ( $t_{0}, w_{0}$ ).\\
+%Step 2 For $i=1,2,3$, do Steps 3-5.\\
+%(Compute starting values using Runge-Kutta method.)\\
+%Step 3 Set $K_{1}=h f\left(t_{i-1}, w_{i-1}\right)$;
+%
+%$$
+%\begin{aligned}
+%& K_{2}=h f\left(t_{i-1}+h / 2, w_{i-1}+K_{1} / 2\right) ; \\
+%& K_{3}=h f\left(t_{i-1}+h / 2, w_{i-1}+K_{2} / 2\right) ; \\
+%& K_{4}=h f\left(t_{i-1}+h, w_{i-1}+K_{3}\right) .
+%\end{aligned}
+%$$
+%
+%Step 4 Set $w_{i}=w_{i-1}+\left(K_{1}+2 K_{2}+2 K_{3}+K_{4}\right) / 6 ;$
+%
+%$$
+%t_{i}=a+i h .
+%$$
+%
+%Step 5 OUTPUT $\left(t_{i}, w_{i}\right)$.\\
+%Step 6 For $i=4, \ldots, N$ do Steps 7-10.\\
+%Step 7 Set $t=a+i h$;
+%
+%$$
+%\begin{gathered}
+%w=w_{3}+h\left[55 f\left(t_{3}, w_{3}\right)-59 f\left(t_{2}, w_{2}\right)+37 f\left(t_{1}, w_{1}\right)\right. \\
+%\left.-9 f\left(t_{0}, w_{0}\right)\right] / 24 ; \quad\left(\text { Predict } w_{i} .\right) \\
+%\begin{array}{c}
+%w=w_{3}+h\left[9 f(t, w)+19 f\left(t_{3}, w_{3}\right)-5 f\left(t_{2}, w_{2}\right)\right. \\
+%\left.+f\left(t_{1}, w_{1}\right)\right] / 24 . \quad\left(\text { Correct } w_{i} .\right)
+%\end{array}
+%\end{gathered}
+%$$
+%
+%Step 8 OUTPUT $(t, w)$.\\
+%Step 9 For $j=0,1,2$
+%
+%$$
+%\begin{aligned}
+%& \text { set } t_{j}=t_{j+1} ; \quad \text { (Prepare for next iteration.) } \\
+%& \quad w_{j}=w_{j+1} \text {. }
+%\end{aligned}
+%$$
+%
+%Step 10 Set $t_{3}=t$;
+%
+%$$
+%w_{3}=w .
+%$$
+%
+%\section*{Step 11 STOP.}
+
+\begin{example}\label{exam:multistepexm5}
+Apply the Adams fourth-order predictor-corrector method with $h=0.2$ and starting values from the Runge-Kutta fourth order method to the initial-value problem
+
+$$
+y^{\prime}=y-t^{2}+1, \quad 0 \leq t \leq 2, \quad y(0)=0.5 .
+$$
+\end{example}
+
+\begin{mysolution}
+This is continuation and modification of the problem considered in Example 1 at the beginning of the section. In that example we found that the starting approximations from Runge-Kutta are
+
+$$
+\begin{aligned}
+y(0)=w_{0}=0.5, y(0.2) \approx w_{1}=0.8292933, y(0.4) & \approx w_{2}=1.2140762, \text { and } \\
+y(0.6) & \approx w_{3}=1.6489220 .
+\end{aligned}
+$$
+
+and the fourth-order Adams-Bashforth method gave
+
+$$
+\begin{aligned}
+y(0.8) \approx w_{4 p}= & w_{3}+\frac{0.2}{24}\left(55 f\left(0.6, w_{3}\right)-59 f\left(0.4, w_{2}\right)+37 f\left(0.2, w_{1}\right)-9 f\left(0, w_{0}\right)\right) \\
+= & 1.6489220+\frac{0.2}{24}(55 f(0.6,1.6489220)-59 f(0.4,1.2140762) \\
+& +37 f(0.2,0.8292933)-9 f(0,0.5)) \\
+= & 1.6489220+0.0083333(55(2.2889220)-59(2.0540762) \\
+& +37(1.7892933)-9(1.5)) \\
+= & 2.1272892
+\end{aligned}
+$$
+
+We will now use $w_{4 p}$ as the predictor of the approximation to $y(0.8)$ and determine the corrected value $w_{4}$, from the implicit Adams-Moulton method. This gives
+
+$$
+\begin{aligned}
+y(0.8) \approx w_{4}= & w_{3}+\frac{0.2}{24}\left(9 f\left(0.8, w_{4 p}\right)+19 f\left(0.6, w_{3}\right)-5 f\left(0.4, w_{2}\right)+f\left(0.2, w_{1}\right)\right) \\
+= & 1.6489220+\frac{0.2}{24}(9 f(0.8,2.1272892)+19 f(0.6,1.6489220) \\
+& -5 f(0.4,1.2140762)+f(0.2,0.8292933)) \\
+= & 1.6489220+0.0083333(9(2.4872892)+19(2.2889220)-5(2.0540762) \\
+& +(1.7892933)) \\
+= & 2.1272056
+\end{aligned}
+$$
+
+Now we use this approximation to determine the predictor, $w_{5 p}$, for $y(1.0)$ as
+
+$$
+\begin{aligned}
+y(1.0) \approx w_{5 p}= & w_{4}+\frac{0.2}{24}\left(55 f\left(0.8, w_{4}\right)-59 f\left(0.6, w_{3}\right)+37 f\left(0.4, w_{2}\right)-9 f\left(0.2, w_{1}\right)\right) \\
+= & 2.1272056+\frac{0.2}{24}(55 f(0.8,2.1272056)-59 f(0.6,1.6489220) \\
+& +37 f(0.4,1.2140762)-9 f(0.2,0.8292933)) \\
+= & 2.1272056+0.0083333(55(2.4872056)-59(2.2889220)+37(2.0540762) \\
+& -9(1.7892933)) \\
+= & 2.6409314
+\end{aligned}
+$$
+
+and correct this with
+
+$$
+\begin{aligned}
+y(1.0) \approx w_{5}= & w_{4}+\frac{0.2}{24}\left(9 f\left(1.0, w_{5 p}\right)+19 f\left(0.8, w_{4}\right)-5 f\left(0.6, w_{3}\right)+f\left(0.4, w_{2}\right)\right) \\
+= & 2.1272056+\frac{0.2}{24}(9 f(1.0,2.6409314)+19 f(0.8,2.1272892) \\
+& -5 f(0.6,1.6489220)+f(0.4,1.2140762))
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+= & 2.1272056+0.0083333(9(2.6409314)+19(2.4872056)-5(2.2889220) \\
+& +(2.0540762)) \\
+= & 2.6408286
+\end{aligned}
+$$
+
+In Example \label{exam:multistepexm1} we found that using the explicit Adams-Bashforth method alone produced results that were inferior to those of Runge-Kutta. However, these approximations to $y(0.8)$ and $y(1.0)$ are accurate to within\\
+$|2.1272295-2.1272056|=2.39 \times 10^{-5} \quad$ and $\quad|2.6408286-2.6408591|=3.05 \times 10^{-5}$.\\
+respectively, compared to those of Runge-Kutta, which were accurate, respectively, to within\\
+$|2.1272027-2.1272892|=2.69 \times 10^{-5} \quad$ and $\quad|2.6408227-2.6408591|=3.64 \times 10^{-5}$.\\
+The remaining predictor-corrector approximations were generated using Algorithm \ref{} and are shown in Table \ref{tab:multistepexample5}.
+\end{mysolution}
+%Table 5.14
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|}
+\hline
+$t_{i}$ & $y_{i}=y\left(t_{i}\right)$ & $w_{i}$ & Error $\left|y_{i}-w_{i}\right|$ \\
+\hline
+0.0 & 0.5000000 & 0.5000000 & 0 \\
+\hline
+0.2 & 0.8292986 & 0.8292933 & 0.0000053 \\
+\hline
+0.4 & 1.2140877 & 1.2140762 & 0.0000114 \\
+\hline
+0.6 & 1.6489406 & 1.6489220 & 0.0000186 \\
+\hline
+0.8 & 2.1272295 & 2.1272056 & 0.0000239 \\
+\hline
+1.0 & 2.6408591 & 2.6408286 & 0.0000305 \\
+\hline
+1.2 & 3.1799415 & 3.1799026 & 0.0000389 \\
+\hline
+1.4 & 3.7324000 & 3.7323505 & 0.0000495 \\
+\hline
+1.6 & 4.2834838 & 4.2834208 & 0.0000630 \\
+\hline
+1.8 & 4.8151763 & 4.8150964 & 0.0000799 \\
+\hline
+2.0 & 5.3054720 & 5.3053707 & 0.0001013 \\
+\hline
+\end{tabular}
+\caption{\scriptsize Table $5$}
+\label{tab:multistepexample5}
+\end{table}
+
+%Edward Arthur Milne (1896-1950) worked in ballistic research during World War I, and then for the Solar Physics Observatory at Cambridge. In 1929 he was appointed the W. W. Rouse Ball chair at Wadham College in Oxford.
+%
+%Simpson's name is associated with this technique because it is based on Simpson's rule for integration.
+%
+%Adams Fourth Order Predictor-Corrector method is implemented in Maple for the example problem with\\
+%$C:=$ InitialValueProblem $($ deq $, y(0)=0.5, t=2$, method $=$ adamsbashforthmoulton, submethod $=$ step4, numsteps $=10$, output $=$ information, digits $=8$ )\\
+%and generates the same values as in Table 5.14.\\
+
+Other multistep methods can be derived using integration of interpolating polynomials over intervals of the form [ $t_{j}, t_{i+1}$ ], for $j \leq i-1$, to obtain an approximation to $y\left(t_{i+1}\right)$. When an interpolating polynomial is integrated over $\left[t_{i-3}, t_{i+1}\right]$, the result is the explicit {\bf Milne's method}:
+
+$$
+w_{i+1}=w_{i-3}+\frac{4 h}{3}\left[2 f\left(t_{i}, w_{i}\right)-f\left(t_{i-1}, w_{i-1}\right)+2 f\left(t_{i-2}, w_{i-2}\right)\right]
+$$
+
+which has local truncation error $\frac{14}{45} h^{4} y^{(5)}\left(\xi_{i}\right)$, for some $\xi_{i} \in\left(t_{i-3}, t_{i+1}\right)$.
+
+Milne's method is occasionally used as a predictor for the implicit {\bf Simpson's method},
+
+$$
+w_{i+1}=w_{i-1}+\frac{h}{3}\left[f\left(t_{i+1}, w_{i+1}\right)+4 f\left(t_{i}, w_{i}\right)+f\left(t_{i-1}, w_{i-1}\right)\right]
+$$
+
+which has local truncation error $-\left(h^{4} / 90\right) y^{(5)}\left(\xi_{i}\right)$, for some $\xi_{i} \in\left(t_{i-1}, t_{i+1}\right)$, and is obtained by integrating an interpolating polynomial over $\left[t_{i-1}, t_{i+1}\right]$.
+
+The local truncation error involved with a predictor-corrector method of the MilneSimpson type is generally smaller than that of the Adams-Bashforth-Moulton method. But the technique has limited use because of round-off error problems, which do not occur with the Adams procedure.
+\begin{myexercise}%\label{Comprehensionquiz2}
+Use all the Adams-Bashforth methods to approximate the solutions to the following initial-value problems. In each case use exact starting values, and compare the results to the actual values.\\
+\begin{enumerate}[label=(\alph*)]
+\item $y^{\prime}=t e^{3 t}-2 y$, $0 \leq t \leq 1$, $y(0)=0$, with $h=0.2$; actual solution $y(t)=\frac{1}{5} t e^{3 t}-\frac{1}{25} e^{3 t}+\frac{1}{25} e^{-2 t}$.\\
+\item $y^{\prime}=1+(t-y)^{2}$, $2 \leq t \leq 3$, $y(2)=1$, with $h=0.2$; actual solution $y(t)=t+\frac{1}{1-t}$.
+%\item $y^{\prime}=1+y / t$, $1 \leq t \leq 2$, $y(1)=2$, with $h=0.2$; actual solution $y(t)=t \ln t+2 t$.\\
+%\item $y^{\prime}=\cos 2 t+\sin 3 t$, $0 \leq t \leq 1$, $y(0)=1$, with $h=0.2$; actual solution $y(t)=\frac{1}{2} \sin 2 t-\frac{1}{3} \cos 3 t+\frac{4}{3}$.
+\end{enumerate}
+
+\begin{mysolution}
+The Adams-Bashforth methods give the results in the following tables.\\
+\begin{enumerate}[label=(\alph*)]
+\item
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+\hline
+0.2 & 0.0268128 & 0.0268128 & 0.0268128 & 0.0268128 & 0.0268128 \\
+\hline
+0.4 & 0.1200522 & 0.1507778 & 0.1507778 & 0.1507778 & 0.1507778 \\
+\hline
+0.6 & 0.4153551 & 0.4613866 & 0.4960196 & 0.4960196 & 0.4960196 \\
+\hline
+0.8 & 1.1462844 & 1.2512447 & 1.2961260 & 1.3308570 & 1.3308570 \\
+\hline
+1.0 & 2.8241683 & 3.0360680 & 3.1461400 & 3.1854002 & 3.2190993 \\
+\hline
+\end{tabular}
+\end{center}
+\item
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+\hline
+2.2 & 1.3666667 & 1.3666667 & 1.3666667 & 1.3666667 & 1.3666667 \\
+\hline
+2.4 & 1.6750000 & 1.6857143 & 1.6857143 & 1.6857143 & 1.6857143 \\
+\hline
+2.6 & 1.9632431 & 1.9794407 & 1.9750000 & 1.9750000 & 1.9750000 \\
+\hline
+2.8 & 2.2323184 & 2.2488759 & 2.2423065 & 2.2444444 & 2.2444444 \\
+\hline
+3.0 & 2.4884512 & 2.5051340 & 2.4980306 & 2.5011406 & 2.5000000 \\
+\hline
+\end{tabular}
+\end{center}
+%\item
+%\begin{center}
+%\begin{tabular}{|l|l|l|l|l|l|}
+%\hline
+%$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+%\hline
+%1.2 & 2.6187859 & 2.6187859 & 2.6187859 & 2.6187859 & 2.6187859 \\
+%\hline
+%1.4 & 3.2734823 & 3.2710611 & 3.2710611 & 3.2710611 & 3.2710611 \\
+%\hline
+%1.6 & 3.9567107 & 3.9514231 & 3.9520058 & 3.9520058 & 3.9520058 \\
+%\hline
+%1.8 & 4.6647738 & 4.6569191 & 4.6582078 & 4.6580160 & 4.6580160 \\
+%\hline
+%2.0 & 5.3949416 & 5.3848058 & 5.3866452 & 5.3862177 & 5.3862944 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%\item
+%\begin{center}
+%\begin{tabular}{|l|l|l|l|l|l|}
+%\hline
+%$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+%\hline
+%0.2 & 1.2529306 & 1.2529306 & 1.2529306 & 1.2529306 & 1.2529306 \\
+%\hline
+%0.4 & 1.5986417 & 1.5712255 & 1.5712255 & 1.5712255 & 1.5712255 \\
+%\hline
+%0.6 & 1.9386951 & 1.8827238 & 1.8750869 & 1.8750869 & 1.8750869 \\
+%\hline
+%0.8 & 2.1766821 & 2.0844122 & 2.0698063 & 2.0789180 & 2.0789180 \\
+%\hline
+%1.0 & 2.2369407 & 2.1115540 & 2.0998117 & 2.1180642 & 2.1179795 \\
+%\hline
+%\end{tabular}
+%\end{center}
+\end{enumerate}
+\end{mysolution}
+\end{myexercise}
+
+
+%\discussion
+
+
+\begin{posttest}%[\textcolor{red}{End of Module 7 Quiz}]
+\item Given the initial-value problem
+
+$$
+y^{\prime}=\frac{2}{t} y+t^{2} e^{t}, \quad 1 \leq t \leq 2, \quad y(1)=0
+$$
+
+with exact solution $y(t)=t^{2}\left(e^{t}-e\right)$ :
+\begin{enumerate}[label=(\alph*)]
+\item Use Taylor's method of order two with $h=0.1$ to approximate the solution, and compare it with the actual values of $y$.
+\item Use the answers generated in part (a) and linear interpolation to approximate $y$ at the following values, and compare them to the actual values of $y$.
+\begin{multicols}{3}
+\begin{enumerate}[label=\roman*.]
+\item $y(1.04)$
+\item $\quad y(1.55)$
+\item $\quad y$ (1.97)
+\end{enumerate}
+\end{multicols}
+%\item Use Taylor's method of order four with $h=0.1$ to approximate the solution, and compare it with the actual values of $y$.
+%\item Use the answers generated in part (c) and piecewise cubic Hermite interpolation to approximate $y$ at the following values, and compare them to the actual values of $y$.
+%\begin{multicols}{3}
+%\begin{enumerate}[label=\roman*.]
+%\item $\quad y(1.04)$
+%\item $\quad y(1.55)$
+%\item $\quad y$ (1.97)
+%\end{enumerate}
+%\end{multicols}
+\end{enumerate}
+\item Use the Midpoint method to approximate the solutions to each of the following initial-value problems, and compare the results to the actual values.
+\begin{enumerate}[label=(\alph*)]
+\item $y^{\prime}=y / t-(y / t)^{2}$, $1 \leq t \leq 2$, $y(1)=1$, with $h=0.1$; actual solution $y(t)=t /(1+\ln t)$.\\
+\item $y^{\prime}=1+y / t+(y / t)^{2}$, $1 \leq t \leq 3$, $y(1)=0$, with $h=0.2$; actual solution $y(t)=t \tan (\ln t)$.
+%\item $y^{\prime}=-(y+1)(y+3)$, $0 \leq t \leq 2$, $y(0)=-2$, with $h=0.2$; actual solution $y(t)=-3+2\left(1+e^{-2 t}\right)^{-1}$.\\
+%\item $y^{\prime}=-5 y+5 t^{2}+2 t$, $0 \leq t \leq 1$, $y(0)=\frac{1}{3}$, with $h=0.1$; actual solution $y(t)=t^{2}+\frac{1}{3} e^{-5 t}$.
+\end{enumerate}
+
+\item Use each of the Adams-Bashforth methods to approximate the solutions to the following initial-value problems. In each case use starting values obtained from the Runge-Kutta method of order four. Compare the results to the actual values.\\
+\begin{enumerate}[label=(\alph*)]
+\item $y^{\prime}=y / t-(y / t)^{2}$, $1 \leq t \leq 2$, $y(1)=1$, with $h=0.1$; actual solution $y(t)=\frac{t}{1+\ln t}$.\\
+\item $\quad y^{\prime}=1+y / t+(y / t)^{2}$, $1 \leq t \leq 3$, $y(1)=0$, with $h=0.2$; actual solution $y(t)=t \tan (\ln t)$.
+%\item $\quad y^{\prime}=-(y+1)(y+3)$, $0 \leq t \leq 2$, $y(0)=-2$, with $h=0.1$; actual solution $y(t)=-3+2 /\left(1+e^{-2 t}\right)$.\\
+%\item $y^{\prime}=-5 y+5 t^{2}+2 t$, $0 \leq t \leq 1$, $y(0)=1 / 3$, with $h=0.1$; actual solution $y(t)=t^{2}+\frac{1}{3} e^{-5 t}$.
+\end{enumerate}
+
+
+
+
+
+
+\begin{mysolution}
+\begin{enumerate}[label=\arabic*.]
+\item 
+\begin{enumerate}[label=(\alph*)]
+\item Taylor's method of order two gives the results in the following table.
+
+\begin{center}
+\begin{tabular}{rlll}
+\hline
+$i$ & $t_{i}$ & \multicolumn{1}{c}{$w_{i}$} & \multicolumn{1}{c}{$y\left(t_{i}\right)$} \\
+\hline
+1 & 1.1 & 0.3397852 & 0.3459199 \\
+5 & 1.5 & 3.910985 & 3.967666 \\
+6 & 1.6 & 5.643081 & 5.720962 \\
+9 & 1.9 & 14.15268 & 14.32308 \\
+10 & 2.0 & 18.46999 & 18.68310 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item Linear interpolation gives $y(1.04) \approx 0.1359139$, $y(1.55) \approx 4.777033$, and $y(1.97) \approx 17.17480$. Actual values are $y(1.04)=0.1199875$, $y(1.55)=4.788635$, and $y(1.97)=17.27930$.
+%\item Taylor's method of order four gives the results in the following table.
+%
+%\begin{center}
+%\begin{tabular}{rcc}
+%\hline
+%$i$ & $t_{i}$ & $w_{i}$ \\
+%\hline
+%1 & 1.1 & 0.3459127 \\
+%5 & 1.5 & 3.967603 \\
+%6 & 1.6 & 5.720875 \\
+%9 & 1.9 & 14.32290 \\
+%10 & 2.0 & 18.68287 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%
+%\item Cubic Hermite interpolation gives $y(1.04) \approx 0.1199704$, $y(1.55) \approx 4.788527$, and $y(1.97) \approx 17.27904$.
+\end{enumerate}
+
+\item 
+\begin{multicols}{2}
+\begin{enumerate}[label=(\alph*)]
+\item
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+\multicolumn{3}{c}{Midpoint} \\
+$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+\hline
+1.2 & 1.0153257 & 1.0149523 \\
+1.5 & 1.0677427 & 1.0672624 \\
+1.7 & 1.1111478 & 1.1106551 \\
+2.0 & 1.1817275 & 1.1812322 \\
+\hline
+\end{tabular}
+\end{center}
+\item
+\begin{center}
+\begin{tabular}{ccc}
+\hline
+\multicolumn{3}{c}{Midpoint} \\
+$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+\hline
+1.4 & 0.4861770 & 0.4896817 \\
+2.0 & 1.6438889 & 1.6612818 \\
+2.4 & 2.8364357 & 2.8765514 \\
+3.0 & 5.7386475 & 5.8741000 \\
+\hline
+\end{tabular}
+\end{center}
+%\item
+%\begin{center}
+%\begin{tabular}{ccc}
+%\hline
+%\multicolumn{3}{c}{Midpoint} \\
+%$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+%\hline
+%0.4 & -1.6192966 & -1.6200510 \\
+%1.0 & -1.2402470 & -1.2384058 \\
+%1.4 & -1.1175165 & -1.1146484 \\
+%2.0 & -1.0382227 & -1.0359724 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%\item
+%\begin{center}
+%\begin{tabular}{ccc}
+%\hline
+%\multicolumn{3}{c}{Midpoint} \\
+%$t_{i}$ & $w_{i}$ & $y\left(t_{i}\right)$ \\
+%\hline
+%0.2 & 0.1722396 & 0.1626265 \\
+%0.5 & 0.2848046 & 0.2773617 \\
+%0.7 & 0.5056268 & 0.5000658 \\
+%1.0 & 1.0063347 & 1.0022460 \\
+%\hline
+%\end{tabular}
+%\end{center}
+\end{enumerate}
+\end{multicols}
+
+\item The Adams-Bashforth methods give the results in the following tables.\\
+\begin{enumerate}[label=(\alph*)]
+\item
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+\hline
+1.2 & 1.0161982 & 1.0149520 & 1.0149520 & 1.0149520 & 1.0149523 \\
+\hline
+1.4 & 1.0497665 & 1.0468730 & 1.0477278 & 1.0475336 & 1.0475339 \\
+\hline
+1.6 & 1.0910204 & 1.0875837 & 1.0887567 & 1.0883045 & 1.0884327 \\
+\hline
+1.8 & 1.1363845 & 1.1327465 & 1.1340093 & 1.1334967 & 1.1336536 \\
+\hline
+2.0 & 1.1840272 & 1.1803057 & 1.1815967 & 1.1810689 & 1.1812322 \\
+\hline
+\end{tabular}
+\end{center}
+
+\item
+
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+\hline
+1.4 & 0.4867550 & 0.4896842 & 0.4896842 & 0.4896842 & 0.4896817 \\
+\hline
+1.8 & 1.1856931 & 1.1982110 & 1.1990422 & 1.1994320 & 1.1994386 \\
+\hline
+2.2 & 2.1753785 & 2.2079987 & 2.2117448 & 2.2134792 & 2.2135018 \\
+\hline
+2.6 & 3.5849181 & 3.6617484 & 3.6733266 & 3.6777236 & 3.6784753 \\
+\hline
+3.0 & 5.6491203 & 5.8268008 & 5.8589944 & 5.8706101 & 5.8741000 \\
+\hline
+\end{tabular}
+\end{center}
+
+%\item
+%
+%\begin{center}
+%\begin{tabular}{|l|l|l|l|l|l|}
+%\hline
+%$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+%\hline
+%0.5 & -1.5357010 & -1.5381988 & -1.5379372 & -1.5378676 & -1.5378828 \\
+%\hline
+%1.0 & -1.2374093 & -1.2389605 & -1.2383734 & -1.2383693 & -1.2384058 \\
+%\hline
+%1.5 & -1.0952910 & -1.0950952 & -1.0947925 & -1.0948481 & -1.0948517 \\
+%\hline
+%2.0 & -1.0366643 & -1.0359996 & -1.0359497 & -1.0359760 & -1.0359724 \\
+%\hline
+%\end{tabular}
+%\end{center}
+%
+%\item
+%
+%\begin{center}
+%\begin{tabular}{|l|l|l|l|l|l|}
+%\hline
+%$t$ & 2-step & 3-step & 4-step & 5-step & $y(t)$ \\
+%\hline
+%0.2 & 0.1739041 & 0.1627655 & 0.1627655 & 0.1627655 & 0.1626265 \\
+%\hline
+%0.4 & 0.2144877 & 0.2026399 & 0.2066057 & 0.2052405 & 0.2051118 \\
+%\hline
+%0.6 & 0.3822803 & 0.3747011 & 0.3787680 & 0.3765206 & 0.3765957 \\
+%\hline
+%0.8 & 0.6491272 & 0.6452640 & 0.6487176 & 0.6471458 & 0.6461052 \\
+%\hline
+%1.0 & 1.0037415 & 1.0020894 & 1.0064121 & 1.0073348 & 1.0022460 \\
+%\hline
+%\end{tabular}
+%\end{center}
+\end{enumerate}
+\end{enumerate}
+\end{mysolution}
+\end{posttest}
+
+%share your understanding of properties of functions and their applications to solving rates of change problems in physical phenomenon 
+
+
+%\end{actsoln}
+
+\takehome
+
+\comy{You are now at the last part of this module. Your  task is to do a self-reflection on your learning experience.}
+
+
+
+\references
+\begin{refenumerate}
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+%chapter 1 pg 7-36 functions\\
+%chapter 1 pg 51-83 limits and continuity\\
+%chapter 1 pg 45-50 rates of change\\
+%chapter 2 pg 108-120 the derivative\\
+%\item Mendelson, E. (2022). Schaum's Outline of Calculus. McGraw-Hill Education.
+%chapter 6 51-55 functions
+%chapter 7 59-65 limits
+%chapter 8 69-74 continuity
+%chapter 9 77-81 derivative
+%\item Calculus \mylink{https://math.libretexts.org/Bookshelves/Calculus}
+%\item Chris McMullen, 2021, Essential Calculus Skills Practice Workbook with Full Solutions, Zishka Publishing, ISBN 978-1-941691-24-3
+%\item R. Adams and C. Essex, 2021, Calculus: A complete Course, Addison Wesley, ISBN 13: 978-0135732588
+%\item P. Abbott and H. Neill, 2018, Calculus: A Complete Introduction: The Easy Way to Learn Calculus (Teach Yourself), ISBN 13: 978-1473678446
+\end{refenumerate}
+
+
+
+
+
+%\wrapup
+%To wrap-up, answer the following questions:
+%
+%\begin{enumerate}
+%\item 
+%%when do we say that a limit of a function exists?
+%%\item how do we remove discontinuity in functions?
+%%\item what is the relationship between the gradient of the tangent line and the derivative?
+%\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\newpage
+
+%\facilitation
+
+
+%\input{tutorialsheet-1}
+
+
+
+
+
+
+
+

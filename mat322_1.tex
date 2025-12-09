@@ -1,0 +1,508 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+% Load required packages for TikZ and plots
+\usepackage{tikz}
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.18}
+% \usepackage{multicol}
+
+% \definecolor{main}{HTML}{5989cf}    % setting main color to be used
+% \definecolor{sub}{HTML}{cde4ff}     % setting sub color to be used
+
+% \ifplastex\else
+% \tcbset{
+%     sharp corners,
+%     colback = white,
+%     before skip = 0.2cm,    % add extra space before the box
+%     after skip = 0.5cm      % add extra space after the box
+% }                           % setting global options for tcolorbox
+% \fi
+
+% You can copy any following box you like to your code.
+% \newtcolorbox{boxA}{
+%     fontupper = \bf,
+%     boxrule = 1.5pt,
+%     colframe = black % frame color
+% }
+% \newtcolorbox{theorem}{
+%     colback=red!5!white,
+%     colframe=red!75!black,
+%     title=Theorem,
+%     fonttitle=\bfseries
+% }
+
+
+
+% \coursetitle{\mtthreeiii}{MT303}
+% \developers{Wyclife Rao}
+% \reviewers{Dr. Irene Sitawa}
+% \modulenumber{5}
+% \modulename{Numerical Integration}
+
+\begin{document}
+\section{Gaussian Quadrature}
+%\videolesson
+%\begin{selfvideo}[2]
+%LESSON 3: 
+%\end{selfvideo}
+%\begin{boxB}Question: \end{boxB}
+
+The Newton-Cotes formulas in Section $4$ of Module $4$ were derived by integrating interpolating polynomials. The error term in the interpolating polynomial of degree $n$ involves the $(n+1)$ st derivative of the function being approximated, so a Newton-Cotes formula is exact when approximating the integral of any polynomial of degree less than or equal to $n$.
+
+All the Newton-Cotes formulas use values of the function at equally-spaced points. This restriction is convenient when the formulas are combined to form the composite rules we considered in Section $1$ of this Module, but it can significantly decrease the accuracy of the approximation. Consider, for example, the Trapezoidal rule applied to determine the integrals of the functions whose graphs are shown in Figure \ref{fig:2025_05_15_85b7f7df47271a498e1dg-57}.
+
+%Figure 4.15\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{images/2025_05_15_85b7f7df47271a498e1dg-57}
+\caption{\scriptsize Figure $4$}
+\label{fig:2025_05_15_85b7f7df47271a498e1dg-57}
+\end{figure}
+
+The Trapezoidal rule approximates the integral of the function by integrating the linear function that joins the endpoints of the graph of the function. But this is not likely the best line for approximating the integral. Lines such as those shown in Figure \ref{fig:2025_05_15_85b7f7df47271a498e1dg-57(1)} would likely give much better approximations in most cases.
+
+%Figure 4.16\\
+\begin{figure}[h]
+\centering
+\includegraphics[width=15cm]{images/2025_05_15_85b7f7df47271a498e1dg-57(1)}
+\caption{\scriptsize Figure $5$}
+\label{fig:2025_05_15_85b7f7df47271a498e1dg-57(1)}
+\end{figure}
+
+%Gauss demonstrated his method of efficient numerical integration in a paper that was presented to the Göttingen Society in 1814. He let the nodes as well as the coefficients of the function evaluations be parameters in the summation formula and found the optimal placement of the nodes. Goldstine [Golds], pp 224-232, has an interesting description of his development.
+
+Gaussian quadrature chooses the points for evaluation in an optimal, rather than equally spaced, way. The nodes $x_{1}, x_{2}, \ldots, x_{n}$ in the interval $[a, b]$ and coefficients $c_{1}, c_{2}, \ldots, c_{n}$, are chosen to minimize the expected error obtained in the approximation
+
+$$
+\int_{a}^{b} f(x) d x \approx \sum_{i=1}^{n} c_{i} f\left(x_{i}\right)
+$$
+
+To measure this accuracy, we assume that the best choice of these values produces the exact result for the largest class of polynomials, that is, the choice that gives the greatest degree of precision.
+
+The coefficients $c_{1}, c_{2}, \ldots, c_{n}$ in the approximation formula are arbitrary, and the nodes $x_{1}, x_{2}, \ldots, x_{n}$ are restricted only by the fact that they must lie in $[a, b]$, the interval of integration. This gives us $2 n$ parameters to choose. If the coefficients of a polynomial are\\
+considered parameters, the class of polynomials of degree at most $2 n-1$ also contains $2 n$ parameters. This, then, is the largest class of polynomials for which it is reasonable to expect a formula to be exact. With the proper choice of the values and constants, exactness on this set can be obtained.
+
+To illustrate the procedure for choosing the appropriate parameters, we will show how to select the coefficients and nodes when $n=2$ and the interval of integration is $[-1,1]$. We will then discuss the more general situation for an arbitrary choice of nodes and coefficients and show how the technique is modified when integrating over an arbitrary interval.
+
+Suppose we want to determine $c_{1}, c_{2}, x_{1}$, and $x_{2}$ so that the integration formula
+
+$$
+\int_{-1}^{1} f(x) d x \approx c_{1} f\left(x_{1}\right)+c_{2} f\left(x_{2}\right)
+$$
+
+gives the exact result whenever $f(x)$ is a polynomial of degree $2(2)-1=3$ or less, that is, when
+
+$$
+f(x)=a_{0}+a_{1} x+a_{2} x^{2}+a_{3} x^{3}
+$$
+
+for some collection of constants, $a_{0}, a_{1}, a_{2}$, and $a_{3}$. Because
+
+$$
+\int\left(a_{0}+a_{1} x+a_{2} x^{2}+a_{3} x^{3}\right) d x=a_{0} \int 1 d x+a_{1} \int x d x+a_{2} \int x^{2} d x+a_{3} \int x^{3} d x
+$$
+
+this is equivalent to showing that the formula gives exact results when $f(x)$ is $1, x, x^{2}$, and $x^{3}$. Hence, we need $c_{1}, c_{2}, x_{1}$, and $x_{2}$, so that
+
+$$
+\begin{array}{cc}
+c_{1} \cdot 1+c_{2} \cdot 1=\int_{-1}^{1} 1 d x=2, & c_{1} \cdot x_{1}+c_{2} \cdot x_{2}=\int_{-1}^{1} x d x=0 \\
+c_{1} \cdot x_{1}^{2}+c_{2} \cdot x_{2}^{2}=\int_{-1}^{1} x^{2} d x=\frac{2}{3}, & \text { and } \\
+c_{1} \cdot x_{1}^{3}+c_{2} \cdot x_{2}^{3}=\int_{-1}^{1} x^{3} d x=0
+\end{array}
+$$
+
+A little algebra shows that this system of equations has the unique solution
+
+$$
+c_{1}=1, \quad c_{2}=1, \quad x_{1}=-\frac{\sqrt{3}}{3}, \quad \text { and } \quad x_{2}=\frac{\sqrt{3}}{3},
+$$
+
+which gives the approximation formula
+
+
+\begin{equation}\label{eqngaussquad1}
+\int_{-1}^{1} f(x) d x \approx f\left(\frac{-\sqrt{3}}{3}\right)+f\left(\frac{\sqrt{3}}{3}\right) \tag{4.40}
+\end{equation}
+
+
+This formula has degree of precision 3, that is, it produces the exact result for every polynomial of degree 3 or less.
+
+\subsection*{Legendre Polynomials}
+The technique we have described could be used to determine the nodes and coefficients for formulas that give exact results for higher-degree polynomials, but an alternative method obtains them more easily. The set that is relevant to our problem is the Legendre polynomials, a collection $\left\{P_{0}(x), P_{1}(x), \ldots, P_{n}(x), \ldots,\right\}$ with properties:\\
+\begin{enumerate}[label=(\arabic*)]
+\item For each $n, P_{n}(x)$ is a monic polynomial of degree $n$.
+
+Recall that monic polynomials have leading coefficient 1.
+
+%Adrien-Marie Legendre (1752-1833) introduced this set of polynomials in 1785. He had numerous priority disputes with Gauss, primarily due to Gauss' failure to publish many of his original results until long after he had discovered them.
+\item $\displaystyle\int_{-1}^1P(x)P_n(x)\,dx=0$ whenever $P(x)$ is a polynomial of degree less than $n$.
+\end{enumerate}
+
+The first few Legendre polynomials are
+\[P_0(x)=1,\quad P_1(x)=x,\quad P_2(x)=x^2-\frac13,\]
+\[P_3(x)=x^3-\frac35x,\quad\mbox{ and } \quad P_4(x)=x^4-\frac67x^2+ \frac{3}{35}.\]
+ The roots of these polynomials are distinct, lie in the interval $(-1,1)$, have a symmetry with respect to the origin, and, most importantly, are the correct choice for determining the parameters that give us the nodes and coefficients for our quadrature method.
+
+The nodes $x_1, x_2, \ldots, x_n$ needed to produce an integral approximation formula that gives exact results for any polynomial of degree less than $2n$ are the roots of the $nth-$degree Legendre polynomial. This is established by the following result.
+
+\begin{theorem}\label{thm:Legendpolythm1}
+Suppose that $x_{1}, x_{2}, \ldots, x_{n}$ are the roots of the $n$th Legendre polynomial $P_{n}(x)$ and that for each $i=1,2, \ldots, n$, the numbers $c_{i}$ are defined by
+
+$$
+c_{i}=\int_{-1}^{1} \prod_{\substack{j=1 \\ j \neq i}}^{n} \frac{x-x_{j}}{x_{i}-x_{j}} d x
+$$
+
+If $P(x)$ is any polynomial of degree less than $2 n$, then
+
+$$
+\int_{-1}^{1} P(x) d x=\sum_{i=1}^{n} c_{i} P\left(x_{i}\right)
+$$
+\end{theorem}
+
+%
+%Proof Let us first consider the situation for a polynomial $P(x)$ of degree less than $n$. Rewrite $P(x)$ in terms of $(n-1)$ st Lagrange coefficient polynomials with nodes at the roots of the $n$th Legendre polynomial $P_{n}(x)$. The error term for this representation involves the $n$th derivative of $P(x)$. Since $P(x)$ is of degree less than $n$, the $n$th derivative of $P(x)$ is 0 , and this representation of is exact. So
+%
+%$$
+%P(x)=\sum_{i=1}^{n} P\left(x_{i}\right) L_{i}(x)=\sum_{i=1}^{n} \prod_{\substack{j=1 \\ j \neq i}}^{n} \frac{x-x_{j}}{x_{i}-x_{j}} P\left(x_{i}\right)
+%$$
+%
+%and
+%
+%$$
+%\begin{aligned}
+%\int_{-1}^{1} P(x) d x & =\int_{-1}^{1}\left[\sum_{i=1}^{n} \prod_{\substack{j=1 \\
+%j \neq i}}^{n} \frac{x-x_{j}}{x_{i}-x_{j}} P\left(x_{i}\right)\right] d x \\
+%& =\sum_{i=1}^{n}\left[\int_{-1}^{1} \prod_{\substack{j=1 \\
+%j \neq i}}^{n} \frac{x-x_{j}}{x_{i}-x_{j}} d x\right] P\left(x_{i}\right)=\sum_{i=1}^{n} c_{i} P\left(x_{i}\right)
+%\end{aligned}
+%$$
+%
+%Hence the result is true for polynomials of degree less than $n$.\\
+%Now consider a polynomial $P(x)$ of degree at least $n$ but less than $2 n$. Divide $P(x)$ by the $n$th Legendre polynomial $P_{n}(x)$. This gives two polynomials $Q(x)$ and $R(x)$, each of degree less than $n$, with
+%
+%$$
+%P(x)=Q(x) P_{n}(x)+R(x)
+%$$
+%
+%Note that $x_{i}$ is a root of $P_{n}(x)$ for each $i=1,2, \ldots, n$, so we have
+%
+%$$
+%P\left(x_{i}\right)=Q\left(x_{i}\right) P_{n}\left(x_{i}\right)+R\left(x_{i}\right)=R\left(x_{i}\right) .
+%$$
+%
+%We now invoke the unique power of the Legendre polynomials. First, the degree of the polynomial $Q(x)$ is less than $n$, so (by Legendre property (2)),
+%
+%$$
+%\int_{-1}^{1} Q(x) P_{n}(x) d x=0
+%$$
+%
+%Then, since $R(x)$ is a polynomial of degree less than $n$, the opening argument implies that
+%
+%$$
+%\int_{-1}^{1} R(x) d x=\sum_{i=1}^{n} c_{i} R\left(x_{i}\right)
+%$$
+%
+%Putting these facts together verifies that the formula is exact for the polynomial $P(x)$ :
+%
+%$$
+%\int_{-1}^{1} P(x) d x=\int_{-1}^{1}\left[Q(x) P_{n}(x)+R(x)\right] d x=\int_{-1}^{1} R(x) d x=\sum_{i=1}^{n} c_{i} R\left(x_{i}\right)=\sum_{i=1}^{n} c_{i} P\left(x_{i}\right)
+%$$
+%
+The constants $c_{i}$ needed for the quadrature rule can be generated from the equation in Theorem \ref{thm:Legendpolythm1}, but both these constants and the roots of the Legendre polynomials are extensively tabulated. Table \ref{legendpolytable1} lists these values for $n=2,3,4$, and 5 .
+
+%\newpage
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+$n$ & Roots $r_{n, i}$ & Coefficients $c_{n, i}$ \\
+\hline
+2 & 0.5773502692 & 1.0000000000 \\
+\hline
+2 & -0.5773502692 & 1.0000000000 \\
+\hline
+3 & 0.7745966692 & 0.555555556 \\
+\hline
+3 & 0.0000000000 & 0.888888889 \\
+\hline
+3 & -0.7745966692 & 0.555555556 \\
+\hline
+4 & 0.8611363116 & 0.3478548451 \\
+\hline
+4 & 0.3399810436 & 0.6521451549 \\
+\hline
+4 & -0.3399810436 & 0.6521451549 \\
+\hline
+4 & -0.8611363116 & 0.3478548451 \\
+\hline
+5 & 0.9061798459 & 0.2369268850 \\
+\hline
+5 & 0.5384693101 & 0.4786286705 \\
+\hline
+5 & 0.0000000000 & 0.5688888889 \\
+\hline
+5 & -0.5384693101 & 0.4786286705 \\
+\hline
+5 & -0.9061798459 & 0.2369268850 \\
+\hline
+\end{tabular}
+\caption{\scriptsize Table $1$}
+\label{legendpolytable1}
+\end{table}
+
+\begin{example}
+Approximate $\int_{-1}^{1} e^{x} \cos x d x$ using Gaussian quadrature with $n=3$.
+
+
+\textbf{Solution:}
+The entries in Table \ref{legendpolytable1} give us
+
+$$
+\begin{aligned}
+\int_{-1}^{1} e^{x} \cos x d x \approx & 0 . \overline{5} e^{0.774596692} \cos 0.774596692 \\
+& +0 . \overline{8} \cos 0+0 . \overline{5} e^{-0.774596692} \cos (-0.774596692) \\
+= & 1.9333904
+\end{aligned}
+$$
+
+Integration by parts can be used to show that the true value of the integral is 1.9334214 , so the absolute error is less than $3.2 \times 10^{-5}$.
+\end{example}
+
+\subsection*{Gaussian Quadrature on Arbitrary Intervals}
+An integral $\int_{a}^{b} f(x) d x$ over an arbitrary $[a, b]$ can be transformed into an integral over $[-1,1]$ by using the change of variables (see Figure \ref{fig:2025_05_15_85b7f7df47271a498e1dg-61}):
+
+$$
+t=\frac{2 x-a-b}{b-a} \Longleftrightarrow x=\frac{1}{2}[(b-a) t+a+b]
+$$
+
+
+\begin{figure}
+\centering
+\includegraphics[width=7cm]{images/2025_05_15_85b7f7df47271a498e1dg-61}
+\caption{\scriptsize Figure $6$}
+\label{fig:2025_05_15_85b7f7df47271a498e1dg-61}
+\end{figure}
+
+This permits Gaussian quadrature to be applied to any interval $[a, b]$, because
+
+
+\begin{equation}\label{eqn:Gausquad2}
+\int_{a}^{b} f(x) d x=\int_{-1}^{1} f\left(\frac{(b-a) t+(b+a)}{2}\right) \frac{(b-a)}{2} d t
+\end{equation}
+
+
+\begin{example}
+Consider the integral $\int_{1}^{3} x^{6}-x^{2} \sin (2 x) d x=317.3442466$.\\
+\begin{enumerate}[label=(\alph*)]
+\item Compare the results for the closed Newton-Cotes formula with $n=1$, the open Newton-Cotes formula with $n=1$, and Gaussian Quadrature when $n=2$.\\
+\item Compare the results for the closed Newton-Cotes formula with $n=2$, the open Newton-Cotes formula with $n=2$, and Gaussian Quadrature when $n=3$.
+\end{enumerate}
+
+
+\textbf{Solution:}
+\begin{enumerate}[label=(\alph*)]
+\item Each of the formulas in this part requires 2 evaluations of the function $f(x)=$ $x^{6}-x^{2} \sin (2 x)$. The Newton-Cotes approximations are
+
+$$
+\begin{aligned}
+\text { Closed } n=1: & \frac{2}{2}[f(1)+f(3)]=731.6054420 \\
+\text { Open } n=1: & \frac{3(2 / 3)}{2}[f(5 / 3)+f(7 / 3)]=188.7856682
+\end{aligned}
+$$
+
+Gaussian quadrature applied to this problem requires that the integral first be transformed into a problem whose interval of integration is $[-1,1]$. Using Eq.\ref{eqn:Gausquad2} gives
+
+$$
+\int_{1}^{3} x^{6}-x^{2} \sin (2 x) d x=\int_{-1}^{1}(t+2)^{6}-(t+2)^{2} \sin (2(t+2)) d t
+$$
+
+Gaussian quadrature with $n=2$ then gives\\
+$\int_{1}^{3} x^{6}-x^{2} \sin (2 x) d x \approx f(-0.5773502692+2)+f(0.5773502692+2)=306.8199344 ;$\\
+\item Each of the formulas in this part requires 3 function evaluations. The Newton-Cotes approximations are
+
+$$
+\begin{aligned}
+\text { Closed } n=2: & \frac{(1)}{3}[f(1)+4 f(2)+f(3)]=333.2380940 \\
+\text { Open } n=2: & \frac{4(1 / 2)}{3}[2 f(1.5)-f(2)+2 f(2.5)]=303.5912023
+\end{aligned}
+$$
+
+Gaussian quadrature with $n=3$, once the transformation has been done, gives
+
+$$
+\begin{aligned}
+\int_{1}^{3} x^{6}-x^{2} \sin (2 x) d x \approx & 0 . \overline{5} f(-0.7745966692+2)+0 . \overline{8} f(2) \\
+& +0 . \overline{5} f(0.7745966692+2)=317.2641516
+\end{aligned}
+$$
+
+The Gaussian quadrature results are clearly superior in each instance.
+\end{enumerate}
+\end{example}
+%
+%Maple has Composite Gaussian Quadrature in the NumericalAnalysis subpackage of Maple's Student package. The default for the number of partitions in the command is 10, so the results in Example 2 would be found for $n=2$ with\\
+%$f:=x^{6}-x^{2} \sin (2 x) ; a:=1 ; b:=3:$\\
+%Quadrature $(f(x), x=a . . b$, method $=$ gaussian $[2]$, partition $=1$, output $=$ information $)$\\
+%which returns the approximation, what Maple assumes is the exact value of the integral, the absolute, and relative errors in the approximations, and the number of function evaluations.
+%
+%The result when $n=3$ is, of course, obtained by replacing the statement method $=$ gaussian[2] with method = gaussian [3].
+%\subsection*{Exercise}
+%\begin{enumerate}
+%Approximate the following integrals using Gaussian quadrature with $n=2$, and compare your results to the exact values of the integrals.
+%\begin{multicols}{2}
+%\begin{enumerate}[label=(\alph*)]
+%\item $\int_{1}^{1.5} x^{2} \ln x d x$
+%\item $\int_{0}^{1} x^{2} e^{-x} d x$
+%\item $\int_{0}^{0.35} \frac{2}{x^{2}-4} d x$
+%\item $\int_{0}^{\pi / 4} x^{2} \sin x d x$
+%%\item $\int_{0}^{\pi / 4} e^{3 x} \sin 2 x d x$
+%%\item $\int_{1}^{1.6} \frac{2 x}{x^{2}-4} d x$
+%%\item $\int_{3}^{3.5} \frac{x}{\sqrt{x^{2}-4}} d x$
+%%\item $\int_{0}^{\pi / 4}(\cos x)^{2} d x$
+%\end{enumerate}
+
+%\discussion
+
+
+%\begin{myposttest}[\textcolor{red}{End of Module 5 Quiz}]
+%\item Approximate $\int_{0}^{2} x^{2} \ln \left(x^{2}+1\right) d x$ using $h=0.25$. Use
+%\begin{enumerate}[label=(\alph*)]
+%\item Composite Trapezoidal rule.
+%\item Composite Simpson's rule.
+%\item Composite Midpoint rule.
+%\end{enumerate}
+%
+%\item Use Romberg integration to compute $R_{4,4}$ for the following integrals.
+%\begin{multicols}{2}
+%\begin{enumerate}[label=(\alph*)]
+%\item  $\quad \int_{1}^{1.5} x^{2} \ln x d x$\\
+%\item $\int_{0}^{1} x^{2} e^{-x} d x$\\
+%\item $\quad \int_{0}^{0.35} \frac{2}{x^{2}-4} d x$\\
+%\item $\quad \int_{0}^{\pi / 4} x^{2} \sin x d x$\\
+%%\item $\quad \int_{0}^{\pi / 4} e^{3 x} \sin 2 x d x$\\
+%%\item $\quad \int_{1}^{1.6} \frac{2 x}{x^{2}-4} d x$\\
+%%\item $\quad \int_{3}^{3.5} \frac{x}{\sqrt{x^{2}-4}} d x$\\
+%%\item $\int_{0}^{\pi / 4}(\cos x)^{2} d x$
+%\end{enumerate}
+%\end{multicols}
+%
+%\item Use Adaptive quadrature to approximate the following integrals to within $10^{-5}$.
+%\begin{multicols}{2}
+%\begin{enumerate}[label=(\alph*)]
+%\item $\int_{1}^{3} e^{2 x} \sin 3 x d x$\\
+%\item $\int_{1}^{3} e^{3 x} \sin 2 x d x$\\
+%\item $\quad \int_{0}^{5}\left(2 x \cos (2 x)-(x-2)^{2}\right) d x$\\
+%\item $\quad \int_{0}^{5}\left(4 x \cos (2 x)-(x-2)^{2}\right) d x$
+%\end{enumerate}
+%\end{multicols}
+%
+%\item Determine constants $a, b, c$, and $d$ that will produce a quadrature formula
+%
+%$$
+%\int_{-1}^{1} f(x) d x=a f(-1)+b f(1)+c f^{\prime}(-1)+d f^{\prime}(1)
+%$$
+%
+%that has degree of precision $3$.
+%\textbf{Solution:}
+%\begin{enumerate}[label=\arabic*.]
+%\item
+%\begin{multicols}{3}
+%\begin{enumerate}[label=(\alph*)]
+%\item $3.15947567$
+%\item $3.10933713$
+%\item $3.00906003$
+%\end{enumerate}
+%\end{multicols}
+%
+%\item
+%\begin{multicols}{2}
+%\begin{enumerate}[label=(\alph*)]
+%\item $0.1922594$ \item $0.1606028$ \item$-0.1768200$ \item $0.08875528$ 
+%%\item $2.5886272$ \item $-0.7339728$ \item $0.6362134$ \item $0.6426991$
+%\end{enumerate}
+%\end{multicols}
+%
+%\item Adaptive quadrature gives:
+%\begin{multicols}{2}
+%\begin{enumerate}[label=(\alph*)]
+%\item $108.555281$ \item $-1724.966983$  \item$-15.306308$ \item $-18.945949$
+%\end{enumerate}
+%\end{multicols}
+%
+%\item $a =1$, $b =1$, $c = \frac13$, $d =-\frac13$
+%\end{enumerate}
+%
+%
+%\end{example}
+%\end{myposttest}
+
+%share your understanding of properties of functions and their applications to solving rates of change problems in physical phenomenon 
+
+
+%\end{actsoln}
+
+%\takehome
+
+%\comy{You are now at the last part of this module. Your  task is to do a self-reflection on your learning experience.}
+
+
+
+% \references
+% \begin{refenumerate}
+% \item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+% %chapter 1 pg 7-36 functions\\
+% %chapter 1 pg 51-83 limits and continuity\\
+% %chapter 1 pg 45-50 rates of change\\
+% %chapter 2 pg 108-120 the derivative\\
+% %\item Mendelson, E. (2022). Schaum's Outline of Calculus. McGraw-Hill Education.
+% %chapter 6 51-55 functions
+% %chapter 7 59-65 limits
+% %chapter 8 69-74 continuity
+% %chapter 9 77-81 derivative
+% %\item Calculus %\mylink{https://math.libretexts.org/Bookshelves/Calculus}
+% %\item Chris McMullen, 2021, Essential Calculus Skills Practice Workbook with Full Solutions, Zishka Publishing, ISBN 978-1-941691-24-3
+% %\item R. Adams and C. Essex, 2021, Calculus: A complete Course, Addison Wesley, ISBN 13: 978-0135732588
+% %\item P. Abbott and H. Neill, 2018, Calculus: A Complete Introduction: The Easy Way to Learn Calculus (Teach Yourself), ISBN 13: 978-1473678446
+% \end{refenumerate}
+
+
+
+
+
+%\wrapup
+%To wrap-up, answer the following questions:
+%
+%\begin{enumerate}
+%\item 
+%%when do we say that a limit of a function exists?
+%%\item how do we remove discontinuity in functions?
+%%\item what is the relationship between the gradient of the tangent line and the derivative?
+%\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\newpage
+
+%\facilitation
+
+
+%\input{tutorialsheet-1}
+
+
+
+\end{document}

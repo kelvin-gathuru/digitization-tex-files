@@ -1,0 +1,115 @@
+% courses
+\thispagestyle{empty}
+\begin{tikzpicture}[overlay,remember picture,font=\sffamily\bfseries]
+ \draw[ultra thick,c4,name path=big arc] ([xshift=-2mm]current page.north) arc(150:285:11) coordinate[pos=0.225] (x0);
+ \begin{scope}
+  \clip ([xshift=-2mm]current page.north) arc(150:285:11) --(current page.north east);
+  \fill[c4!50,opacity=0.25] ([xshift=4.55cm]x0) circle (4.55);
+  \fill[c4!50,opacity=0.25] ([xshift=3.4cm]x0) circle (3.4);
+  \fill[c4!50,opacity=0.25] ([xshift=2.25cm]x0) circle (2.25);
+  \draw[ultra thick,c4!50] (x0) arc(-90:30:6.5);
+  \draw[ultra thick,c4] (x0) arc(90:-30:8.75);
+  \draw[ultra thick,c4!50,name path=arc1] (x0) arc(90:-90:4.675);
+  \draw[ultra thick,c4!50] (x0) arc(90:-90:2.875);
+  \path[name intersections={of=big arc and arc1,by=x1}];
+  \draw[ultra thick,c4,name path=arc2] (x1) arc(135:-20:4.75);
+  \draw[ultra thick,c4!50] (x1) arc(135:-20:8.75);
+  \path[name intersections={of=big arc and arc2,by={aux,x2}}];
+  \draw[ultra thick,c4!50] (x2) arc(180:50:2.25);
+ \end{scope} 
+ \path[decoration={text along path,text color=c4,
+                 raise = -2.8ex,
+                 text  along path,
+                 text = {},%|\sffamily\bfseries|02/18/2019
+                 text align = center,
+             },
+             decorate
+         ] ([xshift=-2mm]current page.north) arc(150:245:11);
+ %
+ \newcommand\add{4cm}
+ \begin{scope}%[shift={(5,0)}]
+  \path[clip,postaction={fill=c3}]
+  ([xshift=2cm+\add,yshift=-8cm]current page.center) rectangle ++ (4.6,7.7);
+  \draw[c5,ultra thick,fill=c2] ([xshift=0.5cm+\add,yshift=-8cm]current page.center)
+   ([xshift=0.5cm+\add,yshift=-8cm]current page.center)  arc(180:60:2)
+    |- ++ (-3,6) --cycle;
+  \draw[ultra thick,c5] ([xshift=-1.5cm+\add,yshift=-8cm]current page.center) 
+  arc(180:0:2);
+  \draw[ultra thick,c5] ([xshift=0.5cm+\add,yshift=-8cm]current page.center) 
+  arc(180:0:2);
+  \draw[ultra thick,c5] ([xshift=2.5cm+\add,yshift=-8cm]current page.center) 
+  arc(180:0:2);
+  \draw[ultra thick,c5] ([xshift=4.5cm+\add,yshift=-8cm]current page.center) 
+  arc(180:0:2);
+  \fill[white] ([xshift=2.5cm+\add,yshift=-8cm]current page.center) +(60:2) circle(1.5mm)
+  node[above
+  right=0mm,text=c5!80!black]{$\rho:=\dfrac{1+\sqrt{-3}}{2}$};
+ \end{scope}
+ %
+ \fill[c1] ([xshift=2cm+\add,yshift=-8cm]current page.center) rectangle ++ (-30.7,7.7);
+ \node[text=white,anchor=west,scale=2.3,inner sep=0pt] at
+ ([xshift=-10cm,yshift=-1.8cm]current page.center) {\color{ulabgold} LEARNING};
+ \node[text=white,anchor=west,scale=5,inner sep=0pt] at
+ ([xshift=-10cm,yshift=-3.25cm]current page.center) {MODULE \dpmdnumber};
+ \node[text=white,anchor=west,scale=2.5,inner sep=0pt,text width=.4\textwidth] at
+ ([xshift=-10cm,yshift=-6cm]current page.center) {\dpmdname};
+ \node[text=white,anchor=east,scale=2,inner sep=0pt] at
+ ([xshift=5.7cm,yshift=-7.5cm]current page.center) {\color{ulabgold}The Open University of Kenya};
+ %
+% \draw[gray,line width=5mm] 
+% ([xshift=2mm,yshift=-1mm]current page.south west) rectangle ([xshift=-2mm,yshift=1mm]current
+% page.north east);
+\end{tikzpicture}
+
+%\newpage
+\pagenumbering{roman}
+\thispagestyle{empty}%firstpage
+
+
+\begin{center}
+\vspace*{2cm}
+{\Huge\bf BACHELOR OF TECHNOLOGY EDUCATION}\\[3cm]  
+
+
+%{\fontsize{80}{40}\selectfont \dpcoursecode}\\[2cm]
+%
+%{\fontsize{30}{40} \selectfont \dpcoursename}\\[2cm]
+
+%\rule{\textwidth}{1pt}
+%\vspace{2cm}
+
+%{\fontsize{40}{40}\selectfont \bf Module~\dpmdnumber}\\[2cm]
+%
+%{\fontsize{30}{40}\selectfont \bf \dpmdname}\\
+
+\vfill
+\begin{flushright}
+\begin{minipage}{.6\textwidth}
+\begin{tcolorbox}%[text ]
+\begin{tabular}{ll}%\hline
+\subtitle{Developed by:}&\displaydevelopers\\
+&\\
+\subtitle{Reviewed by:}&\makecell[l]{\displayreviewers}\\
+\end{tabular}
+\end{tcolorbox}
+\end{minipage}\hspace*{-3.5cm}
+\end{flushright}
+\vspace*{-2.5cm}
+\end{center}
+
+\newpage
+\thispagestyle{empty}
+\null
+\vfill
+{\renewcommand\arraystretch{1.5}
+\begin{tabular}{|l|l|}\hline
+\subtitle{Programme Title} & Bachelor of Technology Education \\\hline
+\subtitle{Course Title} & \fullcoursename\\\hline
+\subtitle{Learning Module number} & Module \dpmdnumber\\\hline
+\subtitle{Learning module title} & \dpmdname \\\hline
+\subtitle{Module Developer} & \displaydevelopers\\\hline
+\subtitle{Reviewed by} & \displayreviewers\\\hline
+%\subtitle{Vision} & \vision\\\hline
+%\subtitle{Audience description} & \\\hline
+\end{tabular}}
+\clearpage

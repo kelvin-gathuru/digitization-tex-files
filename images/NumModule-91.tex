@@ -1,0 +1,649 @@
+
+%\newtheorem{definition}[subsection]{Definition}
+%\newtheorem{example}[subsection]{Example}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{pro}[subsection]{Proposition}
+\newtheorem{theo}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+%\newtheorem{rem}[subsection]{Remark}
+
+\definecolor{main}{HTML}{5989cf}    % setting main color to be used
+\definecolor{sub}{HTML}{cde4ff}     % setting sub color to be used
+
+\tcbset{
+    sharp corners,
+    colback = white,
+    before skip = 0.2cm,    % add extra space before the box
+    after skip = 0.5cm      % add extra space after the box
+}                           % setting global options for tcolorbox
+
+% You can copy any following box you like to your code.
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+
+\newtcolorbox{boxB}{
+    fontupper = \bf\color{main}, % font color
+    boxrule = 1.5pt,
+    colframe = main,
+    rounded corners,
+    arc = 5pt   % corners roundness
+}
+\newtcolorbox{boxC}{
+    colback = sub, % background color
+    boxrule = 0pt  % no borders
+}
+
+\newtcolorbox{boxD}{
+    colback = sub, 
+    colframe = main, 
+    boxrule = 0pt, 
+    toprule = 3pt, % top rule weight
+    bottomrule = 3pt % bottom rule weight
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+
+\coursetitle{\mtthreeiii}{MT303}
+\developers{Wyclife Rao}
+\reviewers{Dr Irene Sitawa}
+\modulenumber{9}
+\modulename{Numerical Differentiation and Numerical Integration in Python}
+
+\input{modulecoverpage}
+
+%\input{modulemessage}
+
+
+\mddescription
+This module guides you into a detailed discussion of the concepts of numerical differentiation and numerical integration using python. Specifically you will learn about
+\begin{itemize}
+\item finite difference approximation of derivatives and approximation of higher order derivatives
+\item numerical differentiation with noise
+\item Riemann's integral, trapezoidal rule and Simpson's rule
+\item Computing integrals in python. 
+\end{itemize}
+%\expectations
+%\begin{objenumerate}
+%
+%\end{objenumerate}
+
+\begin{mlos}
+\item Identify composite trapezoidal and midpoint methods for numerical integration.
+\item Explain the concept of vectorization and its role in computational speed.
+\item Perform double and triple integrals using numerical methods and vectorized code.
+\item Measure and compare computational speed for different numerical integration implementations. 
+\end{mlos}
+
+\section{Finite Difference and Higher Order Derivatives in Python}
+\videolesson
+\begin{selfvideo}[1]
+%LESSON 3: 
+This video presents a discussion on finite differences approximation of derivatives and approximation of higher order derivatives in python. Follow the discussion and then solve the problems in the subsequent quiz.
+\end{selfvideo}
+%\begin{boxB}Question: \end{boxB}
+%A {\bf numerical grid} is an evenly spaced set of points over the domain of a function, over some interval. The {\bf spacing} or {\bf step size} of a numerical grid is the distance between adjacent points on the grid. For the purpose of this text, if $x$ is a numerical grid, then $x_j$ is the $j$th point in the numerical grid and $h$ is the spacing between $x_{j-1}$ and $x_j$
+%
+%The following figure shows an example of a numerical grid.
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=10cm]{20.01.01-Numerical_grid}
+%\caption{}
+%\label{20.01.01-Numerical_gridfig1}
+%\end{figure}
+%
+%\subsection*{Finite Difference Approximating Derivatives}
+%The derivative $f′(x)$ of a function $f(x)$ at the point $x=a$ is defined as:
+%\[f′(a)=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\]
+%The derivative at $x=a$ is the slope at this point. In {\bf finite difference} approximations of this slope, we can use values of the function in the neighborhood of the point $x=a$ to achieve the goal. There are various finite difference formulas used in different applications, and three of these, where the derivative is calculated using the values of two points, are presented below.
+%
+%The {\bf forward difference} is to estimate the slope of the function at $x_j$ using the line that connects $(x_j,f(x_j))$ and $(x_{j+1},f(x_{j+1}))$:
+%\[f′(x_j)=\frac{f(x_{j+1})-f(x_j)}{x_{j+1}-x_j}\]
+%The {\bf backward difference} is to estimate the slope of the function at $x_j$ using the line that connects $(x_{j-1},f(x_{j-1}))$ and $(x_j,f(x_j))$:
+%\[f′(x_j)=\frac{f(x_{j})-f(x_{j-1})}{x_{j}-x_{j-1}}\]
+%The {\bf central difference} is to estimate the slope of the function at $x_j$ using the line that connects $(x_{j-1},f(x_{j-1}))$ and $(x_{j+1},f(x_{j+1}))$:
+%\[f′(x_j)=\frac{f(x_{j+1})-f(x_{j-1})}{x_{j+1}-x_{j-1}}\]
+%The following figure illustrates the three different type of formulas to estimate the slope.
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=14cm]{20.02.01-Finite-difference}
+%\caption{}
+%\label{20.02.01-Finite-differencefig2}
+%\end{figure}
+%
+%\subsubsection*{Finite Difference Approximating Derivatives with Taylor Series}
+%To derive an approximation for the derivative of $f$, we return to Taylor series. For an arbitrary function $f(x)$ the Taylor series of $f$ around $a=x_j$ is 
+%\[f(x)=\frac{f(x_j)(x-x_j)^0}{0!}+\frac{f'(x_j)(x-x_j)^1}{1!}+\frac{f''(x_j)(x-x_j)^2}{2!}+\frac{f''(x_j)(x-x_j)^3}{3!}+\cdots\]
+%If $x$ is on a grid of points with spacing $h$, we can compute the Taylor series at $x=x_{j+1}$ to get
+%\[f(x_{j+1})=\frac{f(x_j)(x_{j+1}-x_j)^0}{0!}+\frac{f'(x_j)(x_{j+1}-x_j)^1}{1!}+\frac{f''(x_j)(x_{j+1}-x_j)^2}{2!}+\frac{f''(x_j)(x_{j+1}-x_j)^3}{3!}+\cdots\]
+%Substituting $h=x_{j+1}−x_j$ and solving for $f'(x_j)$ gives the equation
+%\[f'(x_j)=\frac{f(x_{j+1})-f(x_j)}{h}+\left(-\frac{f''(x_j)h}{2!}-\frac{f'''(x_j)h^2}{3!}-\cdots\right).\]
+%The terms that are in parentheses, $-\frac{f''(x_j)h}{2!}-\frac{f'''(x_j)h^2}{3!}-\cdots,$ , are called higher order terms of $h$. The higher order terms can be rewritten as
+%\[-\frac{f''(x_j)h}{2!}-\frac{f'''(x_j)h^2}{3!}-\cdots=h(\alpha+\epsilon(h),\]
+%where $\alpha$ is some constant, and $\epsilon(h)$ is a function of $h$ that goes to zero as $h$ goes to $0$. We use the abbreviation $O(h)$ for $h(\alpha+\epsilon(h))$, and in general, we use the abbreviation $O(h^p)$  to denote $h^p(\alpha+\epsilon(h))$.
+%
+%Substituting $O(h)$ into the previous equations gives
+%\[f'(x_j)=\frac{f(x_{j+1})-f(x_j)}{h}+O(h).\]
+%This gives the {\bf forward difference} formula for approximating derivatives as
+%\[f'(x_j)\approx\frac{f(x_{j+1})-f(x_j)}{h},\]
+%and we say this formula is $O(h)$.
+%
+%Here, $O(h)$ describes the {\bf accuracy} of the forward difference formula for approximating derivatives. For an approximation that is $O(h^p)$, we say that $p$ is the order of the accuracy of the approximation. With few exceptions, higher order accuracy is better than lower order. To illustrate this point, assume $q<p$. Then as the spacing, $h>0$, goes to $0$, $h^p$ goes to $0$ faster than $h^q$. Therefore as $h$ goes to $0$, an approximation of a value that is $O(h^p)$ gets closer to the true value faster than one that is $O(h^q)$.
+%
+%By computing the Taylor series around $a=x_j$ at $x=x_{j-1}$ and again solving for $f'(x_j)$, we get the {\bf backward difference} formula
+%\[f'(x_j)\approx\frac{f(x_j)-f(x_{j-1})}{h},\]
+%which is also $O(h)$.
+%
+%Intuitively, the forward and backward difference formulas for the derivative at $x_j$ are just the slopes between the point at $x_j$ and the points $x_{j+1}$ and $x_{j-1}$, respectively.
+%
+%We can construct an improved approximation of the derivative by clever manipulation of Taylor series terms taken at different points. To illustrate, we can compute the Taylor series around $a=x_j$ at both $x_{j+1}$ and $x_{j-1}$. Written out, these equations are
+%\[f(x_{j+1})=f(x_j)+f'(x_j)h+\frac12f''(x_j)h^2+\frac16f'''(x_j)h^3+\cdots\]
+%and
+%\[f(x_{j-1})=f(x_j)-f'(x_j)h+\frac12f''(x_j)h^2-\frac16f'''(x_j)h^3+\cdots\]
+%Subtracting the formulas above gives
+%\[f(x_{j+1})-f(x{j-1})=2f'(x_j)+\frac23f'''(x_j)h^3+\cdots,\]
+%which when solved for $f'(x_j)$ gives the central difference formula
+%\[f'(x_j)\approx\frac{f(x_{j+1})-f(x_{j-1})}{2h}.\]
+%Because of how we subtracted the two equations, the $h$ terms canceled out; therefore, the central difference formula is $O(h^2)$, even though it requires the same amount of computational effort as the forward and backward difference formulas! Thus the central difference formula gets an extra order of accuracy for free. In general, formulas that utilize symmetric points around $x_j$, for example $x_{j-1}$ and $x_{j+1}$, have better accuracy than asymmetric ones, such as the forward and background difference formulas.
+%
+%The following figure shows the forward difference (line joining$ (x_j,y_j)$ and $(x_{j+1},y_{j+1})$), backward difference (line joining $(x_j,y_j)$ and $(x_{j-1},y_{j-1})$), and central difference (line joining $(x_{j-1},y_{j-1})$ and $(x_{j+1},y_{j+1})$) approximation of the derivative of a function $f$. As can be seen, the difference in the value of the slope can be significantly different based on the size of the step $h$ and the nature of the function.
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=10cm]{20.02.01-Forward_difference}
+%\caption{}
+%\label{20.02.01-Forward_differencefig3}
+%\end{figure}
+%
+%\begin{example}
+%Take the Taylor series of $f$ around $a=x_j$ and compute the series at $x=x_{j-2}$, $x_{j-1}$, $x_{j+1}$, $x_{j+2}$. Show that the resulting equations can be combined to form an approximation for $f'(x_j)$ that is $O(h^4)$.
+%\end{example}
+%
+%\begin{mysolution}
+%First, compute the Taylor series at the specified points.
+%\[\begin{split}
+%f(x_{j-2})&=f(x_j)-2hf'(x_j)+\frac{4h^2f''(x_j)}{2}-\frac{8h^3f'''(x_j)}{6}+\frac{16h^4f''''(x_j)}{24}-\frac{32h^5f'''''(x_j)}{120}+\cdots\\[2mm]
+%f(x_{j-1})&=f(x_j)-hf'(x_j)+\frac{h^2f''(x_j)}{2}-\frac{h^3f'''(x_j)}{6}+\frac{h^4f''''(x_j)}{24}-\frac{h^5f'''''(x_j)}{120}+\cdots\\[2mm]
+%f(x_{j+1})&=f(x_j)+hf'(x_j)+\frac{h^2f''(x_j)}{2}+\frac{h^3f'''(x_j)}{6}+\frac{h^4f''''(x_j)}{24}+\frac{32h^5f'''''(x_j)}{120}+\cdots\\[2mm]
+%f(x_{j+2})&=f(x_j)+2hf'(x_j)+\frac{4h^2f''(x_j)}{2}+\frac{8h^3f'''(x_j)}{6}+\frac{16h^4f''''(x_j)}{24}+\frac{32h^5f'''''(x_j)}{120}+\cdots
+%\end{split}\]
+%To get the $h^2$, $h^3$, and $h^4$ terms to cancel out, we can compute
+%\[f(x_{j-2})-8f(x_{j-1})+8f(x_{j-1})-f(x_{j+2})=12hf'(x_j)-\frac{48h^5f'''''(x_j)}{120}\]
+%which can be rearranged to
+%\[f'(x_j)=\frac{f(x_{j-2})-8f(x_{j-1})+8f(x_{j-1})-f(x_{j+2})}{12h}+O(h^4).\]
+%This formula is a better approximation for the derivative at $x_j$ than the central difference formula, but requires twice as many calculations.
+%\end{mysolution}
+
+
+Python uses the following command to compute finite differences directly: for a vector $f$, the command $d=np.diff(f)$ produces an array $d$ in which the entries are the differences of the adjacent elements in the initial array $f$. In other words $d(i)=f(i+1)-f(i)$.
+
+
+
+When using the command $np.diff$, the size of the output is one less than the size of the input since it needs two arguments to produce a difference.
+
+
+\begin{example}
+Consider the function f(x)=cos(x)
+. We know the derivative of cos(x)
+ is −sin(x)
+. Although in practice we may not know the underlying function we are finding the derivative for, we use the simple example to illustrate the aforementioned numerical differentiation methods and their accuracy. The following code computes the derivatives numerically.
+\end{example}
+
+\begin{boxB}
+import numpy as np\\
+import matplotlib.pyplot as plt\\
+plt.style.use('seaborn-poster')\\
+%matplotlib inline\\
+\end{boxB}
+
+\begin{boxB}
+\# step size\\
+$h = 0.1$\\
+\# define grid\\
+$x = np$.arange(0, 2*np.pi, h) \\
+\# compute function\\
+$y = np.cos(x)$ \\
+\\
+\# compute vector of forward differences\\
+forward\_diff = np.diff(y)/h \\
+\# compute corresponding grid\\
+$x_diff = x[:-1:]$ \\
+\# compute exact solution\\
+exact\_solution = -np.sin(x\_diff) \\
+\\
+\# Plot solution\\
+plt.figure(figsize = (12, 8))\\
+plt.plot(x\_diff, forward\_diff, '--', \textbackslash \\
+         \hspace*{2cm}label = 'Finite difference approximation')\\
+plt.plot(x\_diff, exact\_solution, \textbackslash \\
+         \hspace*{2cm}label = 'Exact solution')\\
+plt.legend()\\
+plt.show()\\
+\\
+\# Compute max error between \\
+\# numerical derivative and exact solution\\
+max\_error = max(abs(exact\_solution - forward\_diff))\\
+print(max\_error)\\
+\end{boxB}
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{chapter20.02-Finite-Difference-Approximating-Derivatives_5_0}
+\caption{}
+\label{}
+\end{figure}
+
+0.049984407218554114
+
+As the above figure shows, there is a small offset between the two curves, which results from the numerical error in the evaluation of the numerical derivatives. The maximal error between the two numerical results is of the order $0.05$ and expected to decrease with the size of the step.
+
+As illustrated in the previous example, the finite difference scheme contains a numerical error due to the approximation of the derivative. This difference decreases with the size of the discretization step, which is illustrated in the following example.
+
+\begin{example}
+The following code computes the numerical derivative of $f(x)=\cos(x)$ using the forward difference formula for decreasing step sizes, $h$. It then plots the maximum error between the approximated derivative and the true derivative versus $h$ as shown in the generated figure.
+
+\begin{boxB}
+\# define step size\\
+$h = 1$\\
+\# define number of iterations to perform\\
+iterations = 20 \\
+\# list to store our step sizes\\
+step\_size = [] \\
+\# list to store max error for each step size\\
+max\_error = [] \\
+\\
+for i in range(iterations):\\
+    \hspace*{0.5cm}\# halve the step size\\
+    \hspace*{0.5cm}h /= 2 \\
+    \hspace*{0.5cm}\# store this step size\\
+    \hspace*{0.5cm}step\_size.append(h) \\
+    \hspace*{0.5cm}\# compute new grid\\
+    \hspace*{0.5cm}x = np.arange(0, 2 * np.pi, h) \\
+    \hspace*{0.5cm}\# compute function value at grid\\
+    \hspace*{0.5cm}y = np.cos(x) \\
+    \hspace*{0.5cm}\# compute vector of forward differences\\
+    \hspace*{0.5cm}forward\_diff = np.diff(y)/h \\
+    \hspace*{0.5cm}\# compute corresponding grid\\
+    \hspace*{0.5cm}x\_diff = x[:-1] \\
+    \hspace*{0.5cm}\# compute exact solution\\
+    \hspace*{0.5cm}exact\_solution = -np.sin(x\_diff) \\
+\\    
+    \hspace*{0.5cm}\# Compute max error between \\
+    \hspace*{0.5cm}\# numerical derivative and exact solution\\
+    \hspace*{0.5cm}max\_error.append(\textbackslash \\
+            \hspace*{2cm}max(abs(exact\_solution - forward\_diff)))\\
+\\
+\# produce log-log plot of max error versus step size\\
+plt.figure(figsize = (12, 8))\\
+plt.loglog(step\_size, max\_error, 'v')\\
+plt.show()\\
+\end{boxB}
+
+\begin{center}
+\includegraphics[width=13cm]{chapter20.02-Finite-Difference-Approximating-Derivatives_7_0}
+%\caption{}
+%\label{}
+\end{center}
+The slope of the line in log-log space is $1$; therefore, the error is proportional to $h^1$, which means that, as expected, the forward difference formula is $O(h)$.
+\end{example}
+
+
+%\begin{myexercise}\label{Comprehensionquiz2}
+%%\begin{enumerate}[label=\arabic*.]
+%%\item 
+%%
+%%\end{enumerate}
+%\end{myexercise}
+
+\section{Numerical Differentiation with Noise}
+\videolesson
+\begin{selfvideo}[2]
+%LESSON 3: 
+This video presents a discussion on numerical differentiation with noise. Follow the discussion and then solve the problems in the subsequent quiz.
+\end{selfvideo}
+
+As stated earlier, sometimes $f$ is given as a vector where $f$ is the corresponding function value for independent data values in another vector $x$, which is gridded. Sometimes data can be contaminated with {\bf noise}, meaning its value is off by a small amount from what it would be if it were computed from a pure mathematical function. This can often occur in engineering due to inaccuracies in measurement devices or the data itself can be slightly modified by perturbations outside the system of interest. For example, you may be trying to listen to your friend talk in a crowded room. The signal $f$ might be the intensity and tonal values in your friend’s speech. However, because the room is crowded, noise from other conversations are heard along with your friend’s speech, and he becomes difficult to understand.
+
+To illustrate this point, we numerically compute the derivative of a simple cosine wave corrupted by a small sin wave. Consider the following two functions:
+\[f(x)=\cos(x)\]
+and
+\[f_{\epsilon,\omega}(x)=\cos(x)+\epsilon\sin(\omega x)\]
+where $0<\epsilon\ll1$ is a very small number and $\omega$ is a large number. When $\epsilon$ is small, it is clear that $f\simeq f_{\epsilon,\omega}$. To illustrate this point, we plot $f_{\epsilon,\omega}(x)$ for $\epsilon=0.01$ and $\omega=100$, and we can see it is very close to $f(x)$, as shown in the following figure.
+
+\begin{boxB}
+import numpy as np\\
+import matplotlib.pyplot as plt\\
+plt.style.use('seaborn-poster')\\
+\%matplotlib inline
+\end{boxB}
+
+\begin{boxB}
+x = np.arange(0, 2*np.pi, 0.01) \\
+\# {\it compute function}\\
+omega = 100\\
+epsilon = 0.01\\
+\\
+y = np.cos(x) \\
+y\_noise = y + epsilon*np.sin(omega*x)\\
+\\
+\# {\it Plot solution}\\
+plt.figure(figsize = (12, 8))\\
+plt.plot(x, y\_noise, 'r$^-$', \textbackslash \\
+         \hspace*{1.5cm}label = 'cos(x) + noise')\\
+plt.plot(x, y, 'b-', \textbackslash \\
+         \hspace*{1.5cm}label = 'cos(x)')\\
+\\
+plt.xlabel('x')\\
+plt.ylabel('y')\\
+\\
+plt.legend()\\
+plt.show()\\
+\end{boxB}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{chapter20.04-Numerical-Differentiation-with-Noise_5_0}
+\caption{}
+\label{}
+\end{figure}
+
+
+The derivatives of our two test functions are
+\[f'(x)=-\sin x\quad\mbox{ and }\quad f'_{\epsilon,\omega}(x)=-\sin x+\epsilon\omega\cos(\omega x).\]
+
+Since $\epsilon\omega$ may not be small when $\omega$ is large, the contribution of the noise to the derivative may not be small. As a result, the derivative (analytic and numerical) may not be usable. For instance, the following figure shows $f'(x)$ and $f'_{\epsilon,\omega}(x)$ for $\epsilon=0.01$ and $\omega=100$.
+
+\begin{boxB}
+x = np.arange(0, 2*np.pi, 0.01) \\
+\# compute function\\
+y = -np.sin(x) \\
+y\_noise = y + epsilon*omega*np.cos(omega*x)\\
+\\
+\# Plot solution\\
+plt.figure(figsize = (12, 8))\\
+plt.plot(x, y\_noise, 'r$^-$', \textbackslash \\
+        \hspace*{1.5cm} label = 'Derivative cos(x) + noise')\\
+plt.plot(x, y, 'b-', \textbackslash \\
+        \hspace*{1.5cm} label = 'Derivative of cos(x)')\\
+\\
+plt.xlabel('x')\\
+plt.ylabel('y')\\
+\\
+plt.legend()\\
+plt.show()
+\end{boxB}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=12cm]{chapter20.04-Numerical-Differentiation-with-Noise_7_0}
+\caption{}
+\label{}
+\end{figure}
+
+%\begin{youtube}
+%This video presents a discussion on numerical differentiation with noise. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{youtube}
+
+
+%\begin{myexercise}\label{Comprehensionquiz2}
+%%\begin{enumerate}[label=\arabic*.]
+%%\item 
+%%
+%%\end{enumerate}
+%\end{myexercise}
+
+
+
+\section{Riemann's Integral, Trapezoidal Rule and Simpson's Rule in Python}
+\activities
+Read stated reference on Riemann's integral, trapezoidal rule and Simpson's rule in python in the given web pages and then attempt the subsequent quiz.
+\begin{activity}[\cg Reading]
+\begin{enumerate}
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter21.02-Riemanns-Integral.html}\\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter21.03-Trapezoid-Rule.html}
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter21.04-Simpsons-Rule.html}
+\end{enumerate}
+\end{activity}
+%\begin{myexercise}\label{Comprehensionquiz2}
+%\begin{enumerate}[label=\arabic*.]
+%\item 
+%
+%\end{enumerate}
+%\end{myexercise}
+
+
+
+%\begin{example}
+%
+%\end{example}
+%
+%\begin{mysolution}
+%
+%\end{mysolution}
+%
+%
+%
+%\begin{example}%\label{2ndorderpatderivative}
+%
+%\end{example}
+%
+%\begin{mysolution}
+%
+%\end{mysolution}
+
+
+
+%\begin{myexercise}\label{Comprehensionquiz2}
+%
+%\end{myexercise}
+
+
+\section{Computing Integrals in Python}
+%\videolesson
+%\begin{selfvideo}[2]
+%%LESSON 3: 
+%This video presents a discussion on computing integral in python. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{selfvideo}
+\begin{youtube}
+This video presents a discussion on computing integral in python. Follow the discussion and then solve the problems in the subsequent quiz.
+\end{youtube}
+\mylink{https://www.youtube.com/watch?v=2I44Y9hfQ4Q}
+%\begin{boxB}Question: \end{boxB}
+%\begin{myexercise}\label{Comprehensionquiz2}
+%%\begin{enumerate}[label=\arabic*.]
+%%\item 
+%%
+%%\end{enumerate}
+%\end{myexercise}
+
+
+%\discussion
+
+
+\begin{posttest}[\textcolor{red}{End of Module 9 Quiz}]
+\item Consider the integral $\int_0^1x^2\,dx$. Using the trapezoidal rule write a python code for the definite integral and hence evaluate the integral
+\item Find the work produced (𝑾) in a piston cylinder device using SciPy Module {\bf scipy.integrate}
+\item Evaluate $\int_{-1}^1(𝑥^3 +2𝑥^2-𝑥+3)\,dx$ by writing a python code for both the indefinite and definite integrals.
+\begin{mysolution}
+\begin{enumerate}[label=\arabic*.]
+\item ~\\
+\begin{boxB}
+import numpy as np\\
+% import matplotlib.pyplot as plt\\
+ a = 0; b = 1\\
+ N = 10\\
+\\
+ x = np.linspace(a,b,N+1)\\
+\\
+ y = x**2;\\
+\\
+ y\_right = y[1:]\\
+ y\_left = y[:-1]\\
+\\
+\# Trapezoid Rule\\
+ dx = (b - a)/N\\
+ A = (dx/2) * np.sum(y\_right + y\_left)\\
+ print("A =", A)\\
+%\\
+%plt.plot(x,y)
+% plt.xlim([0,1]); plt.ylim([0,1]);
+\end{boxB}
+
+
+\begin{boxB}
+ import matplotlib.pyplot as plt\\
+ import numpy as np\\
+ xstart = 0\\
+ xstop = 1.1\\
+ increment = 0.1\\
+\\
+ x = np.arange(xstart, xstop, increment)\\
+ y = x**2\\
+\\
+ plt.plot(x, y)\\
+ plt.xlabel('x')\\
+ plt.ylabel('y')\\
+ plt.axis([0, 1, 0, 1])\\
+ plt.fill\_between(x,y)\\
+ plt.show()
+\end{boxB}
+\[f(x)=x^2\quad \int_0^1x^2\,dx=\frac13\approx0.3333\]
+
+
+\begin{center}
+\includegraphics[width=15cm]{EndofMod9Q1sol}
+\end{center}
+Results from the Python code: $A = 0.3350000000000001$
+
+\item ~\\
+\begin{boxB}
+from scipy import integrate\\
+\\
+ V1 = 1 \\
+V2 = 5 \\
+\\
+n = 1\\
+ R = 8.314\\
+ T = 300\\
+\\
+ def work\_eq(V, n, R, T):\\
+\hspace*{1cm} W = (n*R*T)/V  \\
+\hspace*{1cm}return W\\
+\\
+ W, e = integrate.quad(work\_eq, V1, V2, args=(n, R, T,))\\
+\\
+ print("W =", W)
+\end{boxB}
+
+$W = 4014.2600411931353$
+
+\item~\\
+\begin{boxB}
+import numpy.polynomial.polynomial as poly\\
+\\
+ p = [3, -1, 2, 1]\\
+\\
+ \# Find Indefinite integral\\
+ I = poly.polyint(p)\\
+ print("I =", I)\\
+
+ \# Find Definite integral\\
+ a = -1\\
+ b = 1\\
+\\
+ A = poly.polyval(b, I) -poly.polyval(a, I)\\
+ print("A =", A)
+\end{boxB}
+
+The Python solution: 
+\[ I = [ 0.  3.  -0.5  0.66666667  0.25 ],\quad A = 7.333333333333333\]
+\end{enumerate}
+\end{mysolution}
+
+\end{posttest}
+
+%share your understanding of properties of functions and their applications to solving rates of change problems in physical phenomenon 
+
+
+%\end{actsoln}
+
+\takehome
+
+\comy{You are now at the last part of this module. Your  task is to do a self-reflection on your learning experience.}
+
+
+
+\references
+\begin{refenumerate}
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/Index.html}
+%chapter 1 pg 7-36 functions\\
+%chapter 1 pg 51-83 limits and continuity\\
+%chapter 1 pg 45-50 rates of change\\
+%chapter 2 pg 108-120 the derivative\\
+%\item Mendelson, E. (2022). Schaum's Outline of Calculus. McGraw-Hill Education.
+%chapter 6 51-55 functions
+%chapter 7 59-65 limits
+%chapter 8 69-74 continuity
+%chapter 9 77-81 derivative
+%\item Calculus \mylink{https://math.libretexts.org/Bookshelves/Calculus}
+%\item Chris McMullen, 2021, Essential Calculus Skills Practice Workbook with Full Solutions, Zishka Publishing, ISBN 978-1-941691-24-3
+%\item R. Adams and C. Essex, 2021, Calculus: A complete Course, Addison Wesley, ISBN 13: 978-0135732588
+%\item P. Abbott and H. Neill, 2018, Calculus: A Complete Introduction: The Easy Way to Learn Calculus (Teach Yourself), ISBN 13: 978-1473678446
+\end{refenumerate}
+
+
+
+
+
+%\wrapup
+%To wrap-up, answer the following questions:
+%
+%\begin{enumerate}
+%\item 
+%%when do we say that a limit of a function exists?
+%%\item how do we remove discontinuity in functions?
+%%\item what is the relationship between the gradient of the tangent line and the derivative?
+%\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\newpage
+
+%\facilitation
+
+
+%\input{tutorialsheet-1}
+
+
+
+
+
+
+
+

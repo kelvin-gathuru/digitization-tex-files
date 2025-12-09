@@ -1,0 +1,385 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\begin{document}
+
+%\input{modulemessage}
+
+%%\mddescription
+%%
+%%Neural networks are computational models inspired by the human brain, widely used in simulation and predictive modeling. This module explores:
+%%\begin{itemize}
+%%\item Artificial Neural Networks (ANNs): Basic structure and functionality.
+%%\item Neural Network Applications in Simulation: Real-world use cases.
+%%\item Training and Optimizing Neural Models: Techniques for improving performance.
+%%\end{itemize}
+%%
+%%
+%%%\expectations
+%%\begin{mlos}
+%%\item Describe neural networks and their role in simulation.
+%%\item Implement basic neural models using Python.
+%%\item Analyze optimization techniques for training models.
+%%\item Apply neural networks in predictive modeling scenarios.
+%%\end{mlos}
+%
+%%This module begins with definition of Neural Networks, then delves into the types of NN and theur application in simulation. The activities in this module involve: Coding simulation models, group projects, Case study analysis, and Evaluation or assessment of strategies for  model building. Examples of python codes will be provided as a starting point for you.
+%%
+\section{Artificial Neural Networks}
+\subsection{Definition and Characteristics}
+Neural networks are designed using mathematical equations to mimic the biological neurons in the body system. Each neuron is designed to pick a signal, transmit to interpretation center, and send response signal, either to stimulate or suppress the original source of stimulus.
+Artificial Neural Networks (ANN) are computational models created using mathematical equations, that mimic biological neurons.These ANN are characterized by:
+\begin{itemize}
+\item Input Layer: Receives data.
+\item Hidden Layers: Process information.
+\item Output Layer: Produces results.
+\end{itemize}
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.3]{images/NN.png}
+  \caption{Single Neuron Compared with a Biological Neuron: Source. Islam, (2019)}\label{Single NN}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[scale=1.2]{images/ANN2.png}
+  \caption{Neural Network Architecture showing Layers. Source: Islam, (2019)}\label{ANN layers}
+\end{figure}
+%\cite{...}
+Watch the youtube video available in the link below and answer the following question.
+%\begin{youtube}[]
+%\begin{itemize}
+%\item \href{https://youtu.be/bfmFfD2RIcg}{Neural Network definition, architecture and use}
+%\end{itemize}
+%\end{youtube}
+%\discussion
+Youtube Discussion Questions
+\begin{enumerate}
+ \item Which of the following statement does not old true?
+ \begin{itemize}
+ \item Activation functions are threshold functions
+ \item Error is calculated at each layer of the Neural Network
+ \item Both forward and back propagation take place during the training of Neural Network
+ \item Most of the data processing is carried out in the hidden layer
+ \end{itemize}
+ \item List any three applications of neural networks in real life.
+\end{enumerate}
+%\subref
+%\begin{refenumerate}
+%\item Islam, M., Chen, G., \& Jin, S. (2019). An overview of neural network. American Journal of Neural Networks and Applications, 5(1), 7-11.
+%\item \href{https://s.mriquestions.com/what-is-a-neural-network.html}{Neural Network Definition and Components}
+%\end{refenumerate}
+
+The specific form of NN model equations depends on the architecture of the neural network, such as whether it's a feedforward network, a convolutional network, a recurrent network, or a more complex architecture. The equations are used to represent the process of data propagation, learning, and decision-making within the neural network.
+\begin{example}
+\subsection{Practical Worked Example with Python}
+\textbf{Bulding a simple XOR Problem ANN}
+The XOR function is a classic classification problem solved using a neural network. A simple ANN with one hidden layer can learn to classify XOR inputs.
+\begin{verbatim}
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Define model
+model = Sequential([
+    Dense(2, activation='relu', input_shape=(2,)),
+    Dense(1, activation='sigmoid')
+])
+
+# Compile model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Example input
+import numpy as np
+X = np.array([[0,0], [0,1], [1,0], [1,1]])
+y = np.array([0, 1, 1, 0])
+
+# Train model
+model.fit(X, y, epochs=100, verbose=0)
+
+# Predict
+print(model.predict(X))
+\end{verbatim}
+\end{example}
+
+%\begin{youtube}[]
+%\begin{itemize}
+%\item \href{https://bing.com/search?q=Neural+Networks+in+Modeling+and+Simulation+Artificial+Neural+Networks+Neural+Network+Applications+in+Simulation+Training+and+Optimizing+Neural+Models+books+online+APA+format+myloft+perlego}{Introduction to Neural Network}
+%\end{itemize}
+%\end{youtube}
+\textbf{Question:} What is the primary function of an activation function in a neural network?
+%\discussion
+Discussion Questions
+\begin{enumerate}
+ \item How do artificial neural networks differ from traditional algorithms?
+ \item What are the advantages of using ANNs in simulation?
+\end{enumerate}
+
+\section{Neural Network Applications in Simulation}
+\subsection{Definition and Characteristics}
+An artificial Neural Network ANN is a framework of interconnected artificial neurons forming layer. Each neuron receives an input signal, applies weights and passes the resut through activation function. The output signal is adjusted using weights through backpropagation algorithms and gradient descent. Once the error is eliminated, the ANN will have correctly completed the task of image recognition, speech processing, music composition, financial forecasting, or medical diagnosis.
+Artificial Neural Networks (ANNs) are computational models that mimic biological neurons. They consist of:
+\begin{itemize}
+    \item Input Layer: Receives data.
+    \item Hidden Layers: Process information.
+    \item Output Layer: Produces results.
+\end{itemize}
+
+\begin{example}
+\subsection{Worked XOR Example using Python}
+Consider a XOR problem of predicting Stock Prices. A Neural Network can be trained on historical stock data to predict future trends.
+\textbf{Python Stock Price Prediction Code}
+\begin{verbatim}
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM
+
+# Generate dummy data
+X = np.random.rand(100, 10)
+y = np.random.rand(100, 1)
+
+# Define model
+model = Sequential([
+    Dense(10, activation='relu', input_shape=(10,)),
+    Dense(1)
+])
+
+# Compile and train
+model.compile(optimizer='adam', loss='mse')
+model.fit(X, y, epochs=50, verbose=0)
+
+# Predict
+print(model.predict(X[:5]))
+\end{verbatim}
+\end{example}
+
+%\begin{youtube}[]
+%\begin{itemize}
+%\item \href{https://link.springer.com/book/10.1007/978-3-319-28495-8}{Neural Network in Simulation}
+%\end{itemize}
+%\end{youtube}
+\textbf{Question:} What is the primary function of an activation function in a neural network?
+%\discussion
+Discussion Questions
+\begin{enumerate}
+ \item What are the limitations of neural networks in simulation?
+ \item How can neural networks improve decision-making in engineering?
+\end{enumerate}
+
+\section{Training and Optimizing Neural Models}
+Training of neural network is the process which involves adjusting of weights and biases (parameters), so as to predict accurately using provided historical data sets. The data is subdivided into three, namely:
+\begin{enumerate}
+\item A set if input features $X$, which consist of data to be used to make prediction
+\item A set of output target label, $Y$, which is a set of correct values of data targetted
+\item A set of training, validation and test set explained below.
+\begin{itemize}
+\item Training data is a set of data used to adjust the model parameters. This process is called training
+\item This is a st of validation data, which refers to the process of moderating the fitting of the model to the data
+\item Test set is the data used to check the performance of the model whether prediction is accurate
+\end{itemize}
+\end{enumerate}
+\subsection{Optimization}
+Optimization problem involves the evaluation of an objective function, which could be maximization or minimization problem, subject to provided constraints. An optimization problem is formulated with the following components; Objective function, Constraints, and declaration of feasibility space or region. Neural networks are widely used in optimization problems due to their ability to learn complex patterns, approximate functions, and improve decision-making processes. Their applications span various fields, including engineering;(structural design, control systems, and smart grid energy mix), finance (stock price prediction, portfolio management, fraud detection), healthcare (diagnosis, cancer progression, drug discovery, patient management), and artificial intelligence (reinforcement learning, robotics, hyperparameter tunnng, and neural architecture search).
+\subsection{Optimization Techniques}
+Neural networks require optimization for better performance. Some of optimization techniques used include:
+\begin{itemize}
+    \item \textbf{Gradient Descent}. Gradient Descent is a process where the approach to the maximum or minimum poit of a function is based on the gradient (steepness or gentleness) of the slope. The step size towards the optimal point is based on the magnitude of the gradient function. This process is involved in the adjustment of weights to minimize error.
+    \item \textbf{Regularization}. Regularization in neural network optimization technique used to prevent overfitting and improve the model’s ability to generalize to unseen data. Overfitting occurs when a neural network learns the training data too well, including noise, making it perform poorly on new data, or there are unforeseen small changes.
+    \item \textbf{Hyperparameter Tuning}. These are the settings adjusted in the neural network model before training, to determine the rate of training, batch size of data used, and the level of accuracy of prediction. Hyperparameter tunning depends on the complexity of the model, accuracy of the expected results and the desired training time.
+\end{itemize}
+\begin{example}
+Using dropout layers and batch normalization improves model accuracy.
+\bf{Python Example: Optimizing a Neural Network}
+\begin{verbatim}
+from tensorflow.keras.layers import Dropout, BatchNormalization
+
+# Define optimized model
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(10,)),
+    BatchNormalization(),
+    Dropout(0.2),
+    Dense(1)
+])
+
+# Compile and train
+model.compile(optimizer='adam', loss='mse')
+model.fit(X, y, epochs=50, verbose=0)
+\end{verbatim}
+\end{example}
+%\comy{ Having seen the algorithm, let us now discuss how we may use NN Optimization algorithm to estimate the amount of loan an employee qualifies from the bank.}
+%\begin{boxC}
+Formulation of ANN depends on the complexity of the problem to be solved.
+Watch the Youtube video using the link below and atempt the discussion questions given hereunder.
+%\begin{youtube}[]
+%\begin{itemize}
+%\item \href{https://www.geeksforgeeks.org/artificial-neural-networks-and-its-applications/}{Optimizing Neural Network}
+%\end{itemize}
+%\end{youtube}
+\textbf{Question:} What is the purpose of dropout layers in neural networks?
+%\discussion
+Discussion Questions
+\begin{enumerate}
+ \item How does regularization improve neural network performance?
+ \item What are common challenges in training neural networks?
+\end{enumerate}
+%\end{boxC}
+
+%\activities
+%\begin{activity}[\textbf{Nural Network Model}]
+\textbf{Task:} Develop a neural network-based simulation model to predict outcomes in a real-world scenario. The project will involve data collection, model training, optimization, and evaluation using Python.
+Here is an example of a NN Python Code used to predict Stock Market Prices for your guide.
+\begin{verbatim}
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, LSTM
+
+# Generate dummy data
+X = np.random.rand(1000, 10)  # Features
+y = np.random.rand(1000, 1)   # Target (Stock Price)
+
+# Define neural network model
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(10,)),
+    Dense(32, activation='relu'),
+    Dense(1)  # Output layer
+])
+
+# Compile model
+model.compile(optimizer='adam', loss='mse')
+
+# Train model
+model.fit(X, y, epochs=50, batch_size=32)
+
+# Predict
+predictions = model.predict(X[:5])
+print("Predicted Stock Prices:", predictions)
+\end{verbatim}
+%\end{activity}
+
+%\begin{boxD}
+%\comx{To complete this module, take time and attempt the end of module assessment below. \\ This will contribute to your overall assessment.\\This will be a randomized STACK quiz.}
+%\end{boxD}
+
+\section{END OF MODULE ASSESSMENT}
+\begin{enumerate}
+\item What is the primary function of an activation function in a neural network?
+\begin{enumerate}[label=\Alph*).]
+\item To determine whether a neuron should be activated \textbf{Correct Answer}
+\item To add random noise to inputs
+\item To normalize input data
+\item To generate weights for the network
+\end{enumerate}
+\item Which Python library is most commonly used for building neural networks?
+\begin{enumerate}[label=\Alph*).]
+\item NumPy
+\item Pandas
+\item TensorFlow \textbf{Correct Answer}
+\item Matplotlib
+\end{enumerate}
+\item What does backpropagation do in a neural network?
+\begin{enumerate}[label=\Alph*).]
+\item Initializes weights
+\item Updates weights based on errors \textbf{Correct Answer}
+\item Eliminates neurons
+\item Reduces computation speed
+\end{enumerate}
+\item What is the role of a loss function in neural networks?
+\begin{enumerate}[label=\Alph*).]
+\item Converts input into output
+\item Measures the error between predicted and actual values \textbf{Correct Answer}
+\item Adjusts the number of layers dynamically
+\item Prevents overfitting
+\end{enumerate}
+\item Which of the following techniques helps prevent overfitting in neural networks?
+\begin{enumerate}[label=\Alph*).]
+\item Increasing the learning rate
+\item Removing activation functions
+\item Using only one layer
+\item Using dropout layers \textbf{Correct Answer}
+\end{enumerate}
+\end{enumerate}
+\subsection*{Answers to the project task}
+The following is a python code to answer the task in question 6 above.
+\begin{verbatim}
+import tensorflow as tf
+from tensorflow import keras
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Load MNIST dataset
+mnist = keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+# Normalize pixel values
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+# Build Neural Network Model
+model = keras.Sequential([
+    keras.layers.Flatten(input_shape=(28, 28)),  # Input layer
+    keras.layers.Dense(128, activation='relu'),  # Hidden layer
+    keras.layers.Dropout(0.2),  # Dropout to prevent overfitting
+    keras.layers.Dense(10, activation='softmax')  # Output layer
+])
+
+# Compile the model
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+# Train the model
+model.fit(x_train, y_train, epochs=5)
+
+# Evaluate performance
+test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
+print(f"Test Accuracy: {test_acc:.2f}")
+
+# Predict a digit
+prediction = model.predict(np.expand_dims(x_test[0], axis=0))
+plt.imshow(x_test[0], cmap='gray')
+plt.show()
+print(f"Predicted Digit: {np.argmax(prediction)}")
+\end{verbatim}
+
+%%\takehome
+%%%\comy{Hello again, you are now at the last part of this module. Your  task is to do a self-reflection on your learning experience. Here are some prompts to guide your reflection:}
+%
+%%\discussion
+%\begin{itemize}
+%\item Discuss the role of neural networks in modern simulation. Provide an example of a real-world application and explain how optimization techniques improve model performance.
+%\end{itemize}
+
+%%\references
+%%%\begin{refenumerate}
+%%   \item Shanmuganathan, S., \& Samarasinghe, S. (2016). Artificial Neural Network Modelling. SpringerLink.
+%%    \mylink{https://link.springer.com/chapter/10.1007/978-3-319-28495-8\_1}
+%%    \item Rosa, J. L. G. (2016). Artificial Neural Networks - Models and Applications. IntechOpen.
+%%    \mylink{https://www.intechopen.com/books/5191}
+%%    \item Okut, H. (2024). Bayesian Regularized Neural Networks for Small Data. IntechOpen.
+%%    \mylink{https://www.intechopen.com/chapters/50570}
+%%%\end{refenumerate}
+
+%\begin{boxD}
+%\comx{To complete this module, take time end of module assessment below. \\ This will contribute to your overall assessment.\\This will be a randomized STACK quiz.}
+%\end{boxD}
+
+%%\takehome
+%%%\comy{Hello again, congratulations for completing this module successfully. You are now expected to be able to create a simple NN model to classify or optimize a given task. Neural networks are powerful tools for simulation and predictive modeling. Their ability to learn patterns and optimize decision-making makes them essential in various fields.
+%%In the next module, you will be exposed to Fuzzy Set theory and application. This will enhance your modeling skills and their application to more complex systems.
+%%Your  task is to do a self-reflection on your learning experience. Here are some prompts to guide your reflection:}
+%\begin{itemize}
+%\item How does neural network-based simulation compare to traditional simulation methods?
+%\item What challenges arise when training neural networks for predictive modeling?
+%\item How can hyperparameter tuning improve the accuracy of a neural network model?
+%\item What ethical considerations should be taken into account when using AI for simulations?
+%\item Briefly summarize the 2-3 most important concepts you learned in this module.
+%\end{itemize}
+
+
+
+
+\end{document}
+
+
+
+

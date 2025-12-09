@@ -1,0 +1,692 @@
+
+\begin{center}
+  %  {\Large \textbf{SESSION I: Proposition}}\\[2mm]
+%(DEFINITION, DOMAIN, RANGE, PARITY AND PERIODICITY) \\[4mm]
+
+\mycenterbox{5 minute review}%\\[4mm]
+Recap the definition of a proposition.
+\end{center}
+\mycenterbox{Warm-up.}%\\[4mm]
+\problemAnswer{
+
+%\tcbox[tcbox raise base]{Warm-up}
+Translate the given statement into propositional logic using the propositions provided.
+
+ \begin{enumerate}[(i)]
+\item You canot edit a protected Wikipedia entry unless you are an administrator. Express your answer in terms of $p$: ``You can edit a protected Wikipedia entry'' and $q$: ``You are an administrator.''
+\item You can own a car only if you are over $18$ years old or you have the permission of a parent. Express your answer in terms of $p$: ``You can own a car,'' $q$: ``You are over $18$ years old,'' and $r$: ``You have the permission of a parent.''
+\item You can get claer only if you have completed the requirements of your major and you do not owe money to the university and you do not have an overdue library book. Express your answer in terms of $p$: ``You can graduate,'' $q$: ``You owe money to the university,'' $r$: ``You have completed the requirements of your major,'' and $s$: ``You have an overdue library book.''
+\item To use the wireless network in a bank you must pay the daily fee unless you are a subscriber to the service. Express your answer in terms of $p$: ``You can use the wireless network in the bank,'' $q$: ``You pay the daily fee,'' and $r$: ``You are a subscriber to the service.''
+%\item Bharti Airtel Limited had the highest net proﬁt if and only if Safaricom had the least annual revenue.
+\end{enumerate}
+
+
+%\begin{flushright}
+%\begin{tikzpicture}
+%    % A body
+%
+%
+%    % Non-rectangle shapes must be drawn as polygone
+%    \begin{scope}[shift={(3,0)}]
+%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%        % Draw symmetry lines
+%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%        % Dimensions
+%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%        \draw [dimen] (D1) -- (D2) node {6cm};
+%       
+%        
+%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%    \end{scope}
+%\end{tikzpicture}
+%\end{flushright}
+
+}
+
+
+\mycenterbox{Problems. Choose from the below}%
+
+%\begin{center}
+%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%\end{center}
+\problem{Logical Connectives}%
+Suppose that in the previous fiscal year, the annual revenue for Safaricom was $2.5$ billion dollars and its net profit was $250$ million dollars, the annual revenue of Bharti Airtel Limited was $450$ million dollars and its net proﬁt was $20$ million dollars, and the annual revenue of Datacom Group was $1.45$ billion dollars and its net proﬁt was $28$ million dollars. Determine the truth value of each of these propositions for the previous ﬁscal year.
+
+ \begin{enumerate}[(i)]
+\item Datacom Group had the smallest annual revenue.
+\item Bharti Airtel Limited had the highest net proﬁt and Safaricom had the smallest annual revenue.
+\item Safaricom had the least net proﬁt or Datacom Group had the least net proﬁt.
+\item If Datacom Group had the highest net proﬁt, then Safaricom had the smallest annual revenue.
+\item Bharti Airtel Limited had the highest net proﬁt if and only if Safaricom had the least annual revenue.
+\end{enumerate}
+
+\problem{Implication and Biconditional} 
+Construct a truth table for $(p\leftrightarrow q) \leftrightarrow (r \leftrightarrow s)$.
+
+%\newpage
+\problem{Tautologies and Contradictions}%
+%\begin{enumerate}[1.]
+%\item 
+Show that each of these conditional statements is a tautology by using truth tables.
+\begin{enumerate}[(a)]
+\item $(p\land q)\to p$
+\item $p\to(p\lor q)$
+\item $\neg p\to(p\to q)$
+\end{enumerate}
+
+%\item Show that each of these conditional statements is a tautology by using truth tables.
+%\begin{enumerate}[(a)]
+%\item $(p\land q)\to p$
+%\item p\to(p\lor q)$
+%\item \neg p\to(p\to q)
+%\end{enumerate}
+%\end{enumerate}
+
+%\mycenterbox{Selected answers and hints}%
+
+%For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+%$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+%If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+%value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+%
+%\begin{enumerate}
+%\item 
+%\begin{enumerate}[(i)]
+%\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+%\item Even. The range is the interval $[2, 4]$.
+%\item Odd. The range is all of $\mathbb R$.
+%\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+%The range is the nonnegative reals $[0,\infty)$
+%
+%\end{enumerate}
+%\end{enumerate}
+%---------------------------------------------------------------------------------------------------------------------------------------
+%\begin{center}
+%    {\Large \textbf{SESSION II: Logical Connectives}}\\[2mm]
+%%(DEFINITION, DOMAIN, RANGE, PARITY AND PERIODICITY) \\[4mm]
+%
+%%\mycenterbox{5 minute review}%\\[4mm]
+%%Recap the definition of a function, and the meaning of domain, range, even/odd functions and periodicity.
+%\end{center}
+%%\mycenterbox{Warm-up.}%\\[4mm]
+%%\problemAnswer{
+%%
+%%%\tcbox[tcbox raise base]{Warm-up}
+%% An open box is made by folding a square piece of card of side $6\rm{cm}$ as
+%%shown in the  figure. Find a formula for the volume $V(x)$ of the box. What is an
+%%appropriate domain for this function? Sketch $V(x)$ over this
+%%domain. What can you say about the range of $V(x)$?  Show
+%%that $V (1) = 16 \rm{cm}^3$. Write $x = (1 +\epsilon) \rm{cm}$ for $1<\epsilon< 2$,
+%%and rearrange the resulting expression for $V$ to deduce that
+%%the maximum volume is achieved when $\epsilon=0$ $(i.e.\;  x = 1\rm{cm})$.
+%%(Do not allow the use of calculus!)
+%%\begin{flushright}
+%%\begin{tikzpicture}
+%%    % A body
+%%
+%%
+%%    % Non-rectangle shapes must be drawn as polygone
+%%    \begin{scope}[shift={(3,0)}]
+%%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%%        % Draw symmetry lines
+%%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%%        % Dimensions
+%%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%%        \draw [dimen] (D1) -- (D2) node {6cm};
+%%       
+%%        
+%%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%%    \end{scope}
+%%\end{tikzpicture}
+%%\end{flushright}
+%%
+%%}
+%%
+%%
+%%\mycenterbox{Problems. Choose from the below}%
+%%
+%%%\begin{center}
+%%%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%%%\end{center}
+%%\problem{Exploring functions}%
+%%\begin{enumerate}[(a)]
+%%\item Are the following functions even, odd, or neither? What can you say
+%%about their range?
+%%\begin{multicols}{4}
+%% \begin{enumerate}[(i)]
+%%\item $\displaystyle \frac{3x}{x^2+2}$
+%%\item $\displaystyle \cos x+3$
+%%\item $\displaystyle \frac{2x^3}{\cos x+3}$
+%%\item $\displaystyle \frac{3x^4+2x^2}{\sin x+4}$
+%%\end{enumerate}
+%%\end{multicols}
+%%\item Consider the functions $\sin^n x$ and $\cos^n x$, where $n$ is a positive integer.
+%%Which are odd, which are even, and what are their periodicities?
+%%\item What is the periodicity of $f(x) = 2 \cos x+\sin 2x$? Is it even/odd/neither?
+%%
+%%\end{enumerate}
+%%
+%%\problem{Cubic functions} 
+%%Show that $x-1$ is a factor of the cubic function%
+%%$$P(x)=x^3-2x^2-5x+6,$$
+%%and  find the quadratic factor $Q(x)$ such that $P(x) = (x -1)Q(x)$. Factorise
+%%$Q(x)$ and hence sketch $P(x).$
+%%
+%%%\newpage
+%%\problem{Sigmoid functions*.}%
+%%For positive integers $n$, consider the family of functions
+%%$$\displaystyle f_n= \frac{x^n}{2^n+x^n}.$$
+%%\begin{enumerate}[(a)]
+%%\item What are appropriate domains and ranges for $f_n(x)$? Do they depend on $n$?
+%%
+%%\item Is $f_n(x)$ even, odd, or neither? Does this depend on $n$?
+%%
+%%\item Show that for $x\geq 0$, $f_n(x)$ are strictly increasing functions and that
+%%$0\leq f_n(x) < 1.$
+%%\item What is the value of $f_n(2)$? Does it depend on $n$?
+%%
+%%\item By considering the values of $f_n(1.9)$ and $f_n(2.1)$ for $n = 2, 4, 8, 16, 32$ and
+%%$64$, show that the graph of $f_n(x)$ for $x\ge 0$ is an increasing sigmoid (that
+%%is, $S$-shaped) function that approaches a step function as $n\rightarrow \infty$.
+%%\end{enumerate}
+%%
+%%\mycenterbox{Selected answers and hints}%
+%%
+%%For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+%%$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+%%If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+%%value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+%%
+%%\begin{enumerate}
+%%\item 
+%%\begin{enumerate}[(i)]
+%%\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+%%\item Even. The range is the interval $[2, 4]$.
+%%\item Odd. The range is all of $\mathbb R$.
+%%\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+%%The range is the nonnegative reals $[0,\infty)$
+%%
+%%\end{enumerate}
+%%\end{enumerate}
+%%---------------------------------------------------------------------------------------------------------------------------------------
+%\begin{center}
+%    {\Large \textbf{SESSION III: Implications}}\\[2mm]
+%%(DEFINITION, DOMAIN, RANGE, PARITY AND PERIODICITY) \\[4mm]
+%
+%%\mycenterbox{5 minute review}%\\[4mm]
+%%Recap the definition of a function, and the meaning of domain, range, even/odd functions and periodicity.
+%\end{center}
+%%\mycenterbox{Warm-up.}%\\[4mm]
+%%\problemAnswer{
+%%
+%%%\tcbox[tcbox raise base]{Warm-up}
+%% An open box is made by folding a square piece of card of side $6\rm{cm}$ as
+%%shown in the  figure. Find a formula for the volume $V(x)$ of the box. What is an
+%%appropriate domain for this function? Sketch $V(x)$ over this
+%%domain. What can you say about the range of $V(x)$?  Show
+%%that $V (1) = 16 \rm{cm}^3$. Write $x = (1 +\epsilon) \rm{cm}$ for $1<\epsilon< 2$,
+%%and rearrange the resulting expression for $V$ to deduce that
+%%the maximum volume is achieved when $\epsilon=0$ $(i.e.\;  x = 1\rm{cm})$.
+%%(Do not allow the use of calculus!)
+%%\begin{flushright}
+%%\begin{tikzpicture}
+%%    % A body
+%%
+%%
+%%    % Non-rectangle shapes must be drawn as polygone
+%%    \begin{scope}[shift={(3,0)}]
+%%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%%        % Draw symmetry lines
+%%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%%        % Dimensions
+%%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%%        \draw [dimen] (D1) -- (D2) node {6cm};
+%%       
+%%        
+%%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%%    \end{scope}
+%%\end{tikzpicture}
+%%\end{flushright}
+%%
+%%}
+%%
+%%
+%%\mycenterbox{Problems. Choose from the below}%
+%%
+%%%\begin{center}
+%%%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%%%\end{center}
+%%\problem{Exploring functions}%
+%%\begin{enumerate}[(a)]
+%%\item Are the following functions even, odd, or neither? What can you say
+%%about their range?
+%%\begin{multicols}{4}
+%% \begin{enumerate}[(i)]
+%%\item $\displaystyle \frac{3x}{x^2+2}$
+%%\item $\displaystyle \cos x+3$
+%%\item $\displaystyle \frac{2x^3}{\cos x+3}$
+%%\item $\displaystyle \frac{3x^4+2x^2}{\sin x+4}$
+%%\end{enumerate}
+%%\end{multicols}
+%%\item Consider the functions $\sin^n x$ and $\cos^n x$, where $n$ is a positive integer.
+%%Which are odd, which are even, and what are their periodicities?
+%%\item What is the periodicity of $f(x) = 2 \cos x+\sin 2x$? Is it even/odd/neither?
+%%
+%%\end{enumerate}
+%%
+%%\problem{Cubic functions} 
+%%Show that $x-1$ is a factor of the cubic function%
+%%$$P(x)=x^3-2x^2-5x+6,$$
+%%and  find the quadratic factor $Q(x)$ such that $P(x) = (x -1)Q(x)$. Factorise
+%%$Q(x)$ and hence sketch $P(x).$
+%%
+%%%\newpage
+%%\problem{Sigmoid functions*.}%
+%%For positive integers $n$, consider the family of functions
+%%$$\displaystyle f_n= \frac{x^n}{2^n+x^n}.$$
+%%\begin{enumerate}[(a)]
+%%\item What are appropriate domains and ranges for $f_n(x)$? Do they depend on $n$?
+%%
+%%\item Is $f_n(x)$ even, odd, or neither? Does this depend on $n$?
+%%
+%%\item Show that for $x\geq 0$, $f_n(x)$ are strictly increasing functions and that
+%%$0\leq f_n(x) < 1.$
+%%\item What is the value of $f_n(2)$? Does it depend on $n$?
+%%
+%%\item By considering the values of $f_n(1.9)$ and $f_n(2.1)$ for $n = 2, 4, 8, 16, 32$ and
+%%$64$, show that the graph of $f_n(x)$ for $x\ge 0$ is an increasing sigmoid (that
+%%is, $S$-shaped) function that approaches a step function as $n\rightarrow \infty$.
+%%\end{enumerate}
+%%
+%%\mycenterbox{Selected answers and hints}%
+%%
+%%For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+%%$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+%%If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+%%value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+%%
+%%\begin{enumerate}
+%%\item 
+%%\begin{enumerate}[(i)]
+%%\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+%%\item Even. The range is the interval $[2, 4]$.
+%%\item Odd. The range is all of $\mathbb R$.
+%%\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+%%The range is the nonnegative reals $[0,\infty)$
+%%
+%%\end{enumerate}
+%%\end{enumerate}
+%%---------------------------------------------------------------------------------------------------------------------------------------
+%\begin{center}
+%    {\Large \textbf{SESSION IV: Biconditional}}\\[2mm]
+%%(DEFINITION, DOMAIN, RANGE, PARITY AND PERIODICITY) \\[4mm]
+%
+%%\mycenterbox{5 minute review}%\\[4mm]
+%%Recap the definition of a function, and the meaning of domain, range, even/odd functions and periodicity.
+%\end{center}
+%%\mycenterbox{Warm-up.}%\\[4mm]
+%%\problemAnswer{
+%%
+%%%\tcbox[tcbox raise base]{Warm-up}
+%% An open box is made by folding a square piece of card of side $6\rm{cm}$ as
+%%shown in the  figure. Find a formula for the volume $V(x)$ of the box. What is an
+%%appropriate domain for this function? Sketch $V(x)$ over this
+%%domain. What can you say about the range of $V(x)$?  Show
+%%that $V (1) = 16 \rm{cm}^3$. Write $x = (1 +\epsilon) \rm{cm}$ for $1<\epsilon< 2$,
+%%and rearrange the resulting expression for $V$ to deduce that
+%%the maximum volume is achieved when $\epsilon=0$ $(i.e.\;  x = 1\rm{cm})$.
+%%(Do not allow the use of calculus!)
+%%\begin{flushright}
+%%\begin{tikzpicture}
+%%    % A body
+%%
+%%
+%%    % Non-rectangle shapes must be drawn as polygone
+%%    \begin{scope}[shift={(3,0)}]
+%%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%%        % Draw symmetry lines
+%%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%%        % Dimensions
+%%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%%        \draw [dimen] (D1) -- (D2) node {6cm};
+%%       
+%%        
+%%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%%    \end{scope}
+%%\end{tikzpicture}
+%%\end{flushright}
+%%
+%%}
+%%
+%%
+%%\mycenterbox{Problems. Choose from the below}%
+%%
+%%%\begin{center}
+%%%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%%%\end{center}
+%%\problem{Exploring functions}%
+%%\begin{enumerate}[(a)]
+%%\item Are the following functions even, odd, or neither? What can you say
+%%about their range?
+%%\begin{multicols}{4}
+%% \begin{enumerate}[(i)]
+%%\item $\displaystyle \frac{3x}{x^2+2}$
+%%\item $\displaystyle \cos x+3$
+%%\item $\displaystyle \frac{2x^3}{\cos x+3}$
+%%\item $\displaystyle \frac{3x^4+2x^2}{\sin x+4}$
+%%\end{enumerate}
+%%\end{multicols}
+%%\item Consider the functions $\sin^n x$ and $\cos^n x$, where $n$ is a positive integer.
+%%Which are odd, which are even, and what are their periodicities?
+%%\item What is the periodicity of $f(x) = 2 \cos x+\sin 2x$? Is it even/odd/neither?
+%%
+%%\end{enumerate}
+%%
+%%\problem{Cubic functions} 
+%%Show that $x-1$ is a factor of the cubic function%
+%%$$P(x)=x^3-2x^2-5x+6,$$
+%%and  find the quadratic factor $Q(x)$ such that $P(x) = (x -1)Q(x)$. Factorise
+%%$Q(x)$ and hence sketch $P(x).$
+%%
+%%%\newpage
+%%\problem{Sigmoid functions*.}%
+%%For positive integers $n$, consider the family of functions
+%%$$\displaystyle f_n= \frac{x^n}{2^n+x^n}.$$
+%%\begin{enumerate}[(a)]
+%%\item What are appropriate domains and ranges for $f_n(x)$? Do they depend on $n$?
+%%
+%%\item Is $f_n(x)$ even, odd, or neither? Does this depend on $n$?
+%%
+%%\item Show that for $x\geq 0$, $f_n(x)$ are strictly increasing functions and that
+%%$0\leq f_n(x) < 1.$
+%%\item What is the value of $f_n(2)$? Does it depend on $n$?
+%%
+%%\item By considering the values of $f_n(1.9)$ and $f_n(2.1)$ for $n = 2, 4, 8, 16, 32$ and
+%%$64$, show that the graph of $f_n(x)$ for $x\ge 0$ is an increasing sigmoid (that
+%%is, $S$-shaped) function that approaches a step function as $n\rightarrow \infty$.
+%%\end{enumerate}
+%%
+%%\mycenterbox{Selected answers and hints}%
+%%
+%%For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+%%$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+%%If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+%%value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+%%
+%%\begin{enumerate}
+%%\item 
+%%\begin{enumerate}[(i)]
+%%\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+%%\item Even. The range is the interval $[2, 4]$.
+%%\item Odd. The range is all of $\mathbb R$.
+%%\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+%%The range is the nonnegative reals $[0,\infty)$
+%%
+%%\end{enumerate}
+%%\end{enumerate}
+%%---------------------------------------------------------------------------------------------------------------------------------------
+%\begin{center}
+%    {\Large \textbf{SESSION V: Tautologies and Contradictions}}\\[2mm]
+%%(DEFINITION, DOMAIN, RANGE, PARITY AND PERIODICITY) \\[4mm]
+%
+%%\mycenterbox{5 minute review}%\\[4mm]
+%%Recap the definition of a function, and the meaning of domain, range, even/odd functions and periodicity.
+%\end{center}
+%%\mycenterbox{Warm-up.}%\\[4mm]
+%%\problemAnswer{
+%%
+%%%\tcbox[tcbox raise base]{Warm-up}
+%% An open box is made by folding a square piece of card of side $6\rm{cm}$ as
+%%shown in the  figure. Find a formula for the volume $V(x)$ of the box. What is an
+%%appropriate domain for this function? Sketch $V(x)$ over this
+%%domain. What can you say about the range of $V(x)$?  Show
+%%that $V (1) = 16 \rm{cm}^3$. Write $x = (1 +\epsilon) \rm{cm}$ for $1<\epsilon< 2$,
+%%and rearrange the resulting expression for $V$ to deduce that
+%%the maximum volume is achieved when $\epsilon=0$ $(i.e.\;  x = 1\rm{cm})$.
+%%(Do not allow the use of calculus!)
+%%\begin{flushright}
+%%\begin{tikzpicture}
+%%    % A body
+%%
+%%
+%%    % Non-rectangle shapes must be drawn as polygone
+%%    \begin{scope}[shift={(3,0)}]
+%%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%%        % Draw symmetry lines
+%%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%%        % Dimensions
+%%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%%        \draw [dimen] (D1) -- (D2) node {6cm};
+%%       
+%%        
+%%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%%    \end{scope}
+%%\end{tikzpicture}
+%%\end{flushright}
+%%
+%%}
+%%
+%%
+%%\mycenterbox{Problems. Choose from the below}%
+%%
+%%%\begin{center}
+%%%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%%%\end{center}
+%%\problem{Exploring functions}%
+%%\begin{enumerate}[(a)]
+%%\item Are the following functions even, odd, or neither? What can you say
+%%about their range?
+%%\begin{multicols}{4}
+%% \begin{enumerate}[(i)]
+%%\item $\displaystyle \frac{3x}{x^2+2}$
+%%\item $\displaystyle \cos x+3$
+%%\item $\displaystyle \frac{2x^3}{\cos x+3}$
+%%\item $\displaystyle \frac{3x^4+2x^2}{\sin x+4}$
+%%\end{enumerate}
+%%\end{multicols}
+%%\item Consider the functions $\sin^n x$ and $\cos^n x$, where $n$ is a positive integer.
+%%Which are odd, which are even, and what are their periodicities?
+%%\item What is the periodicity of $f(x) = 2 \cos x+\sin 2x$? Is it even/odd/neither?
+%%
+%%\end{enumerate}
+%%
+%%\problem{Cubic functions} 
+%%Show that $x-1$ is a factor of the cubic function%
+%%$$P(x)=x^3-2x^2-5x+6,$$
+%%and  find the quadratic factor $Q(x)$ such that $P(x) = (x -1)Q(x)$. Factorise
+%%$Q(x)$ and hence sketch $P(x).$
+%%
+%%%\newpage
+%%\problem{Sigmoid functions*.}%
+%%For positive integers $n$, consider the family of functions
+%%$$\displaystyle f_n= \frac{x^n}{2^n+x^n}.$$
+%%\begin{enumerate}[(a)]
+%%\item What are appropriate domains and ranges for $f_n(x)$? Do they depend on $n$?
+%%
+%%\item Is $f_n(x)$ even, odd, or neither? Does this depend on $n$?
+%%
+%%\item Show that for $x\geq 0$, $f_n(x)$ are strictly increasing functions and that
+%%$0\leq f_n(x) < 1.$
+%%\item What is the value of $f_n(2)$? Does it depend on $n$?
+%%
+%%\item By considering the values of $f_n(1.9)$ and $f_n(2.1)$ for $n = 2, 4, 8, 16, 32$ and
+%%$64$, show that the graph of $f_n(x)$ for $x\ge 0$ is an increasing sigmoid (that
+%%is, $S$-shaped) function that approaches a step function as $n\rightarrow \infty$.
+%%\end{enumerate}
+%%
+%%\mycenterbox{Selected answers and hints}%
+%%
+%%For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+%%$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+%%If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+%%value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+%%
+%%\begin{enumerate}
+%%\item 
+%%\begin{enumerate}[(i)]
+%%\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+%%\item Even. The range is the interval $[2, 4]$.
+%%\item Odd. The range is all of $\mathbb R$.
+%%\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+%%The range is the nonnegative reals $[0,\infty)$
+%%
+%%\end{enumerate}
+%%\end{enumerate}
+%%-----------------------------------------------------------------------------------------------------------------------------------------
+%\begin{center}
+%    {\Large \textbf{SESSION VI: Logical Equivalences}}\\[2mm]
+%%(DEFINITION, DOMAIN, RANGE, PARITY AND PERIODICITY) \\[4mm]
+%
+%%\mycenterbox{5 minute review}%\\[4mm]
+%%Recap the definition of a function, and the meaning of domain, range, even/odd functions and periodicity.
+%\end{center}
+%%\mycenterbox{Warm-up.}%\\[4mm]
+%%\problemAnswer{
+%%
+%%%\tcbox[tcbox raise base]{Warm-up}
+%% An open box is made by folding a square piece of card of side $6\rm{cm}$ as
+%%shown in the  figure. Find a formula for the volume $V(x)$ of the box. What is an
+%%appropriate domain for this function? Sketch $V(x)$ over this
+%%domain. What can you say about the range of $V(x)$?  Show
+%%that $V (1) = 16 \rm{cm}^3$. Write $x = (1 +\epsilon) \rm{cm}$ for $1<\epsilon< 2$,
+%%and rearrange the resulting expression for $V$ to deduce that
+%%the maximum volume is achieved when $\epsilon=0$ $(i.e.\;  x = 1\rm{cm})$.
+%%(Do not allow the use of calculus!)
+%%\begin{flushright}
+%%\begin{tikzpicture}
+%%    % A body
+%%
+%%
+%%    % Non-rectangle shapes must be drawn as polygone
+%%    \begin{scope}[shift={(3,0)}]
+%%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%%        % Draw symmetry lines
+%%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%%        % Dimensions
+%%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%%        \draw [dimen] (D1) -- (D2) node {6cm};
+%%       
+%%        
+%%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%%    \end{scope}
+%%\end{tikzpicture}
+%%\end{flushright}
+%%
+%%}
+%%
+%%
+%%\mycenterbox{Problems. Choose from the below}%
+%%
+%%%\begin{center}
+%%%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%%%\end{center}
+%%\problem{Exploring functions}%
+%%\begin{enumerate}[(a)]
+%%\item Are the following functions even, odd, or neither? What can you say
+%%about their range?
+%%\begin{multicols}{4}
+%% \begin{enumerate}[(i)]
+%%\item $\displaystyle \frac{3x}{x^2+2}$
+%%\item $\displaystyle \cos x+3$
+%%\item $\displaystyle \frac{2x^3}{\cos x+3}$
+%%\item $\displaystyle \frac{3x^4+2x^2}{\sin x+4}$
+%%\end{enumerate}
+%%\end{multicols}
+%%\item Consider the functions $\sin^n x$ and $\cos^n x$, where $n$ is a positive integer.
+%%Which are odd, which are even, and what are their periodicities?
+%%\item What is the periodicity of $f(x) = 2 \cos x+\sin 2x$? Is it even/odd/neither?
+%%
+%%\end{enumerate}
+%%
+%%\problem{Cubic functions} 
+%%Show that $x-1$ is a factor of the cubic function%
+%%$$P(x)=x^3-2x^2-5x+6,$$
+%%and  find the quadratic factor $Q(x)$ such that $P(x) = (x -1)Q(x)$. Factorise
+%%$Q(x)$ and hence sketch $P(x).$
+%%
+%%%\newpage
+%%\problem{Sigmoid functions*.}%
+%%For positive integers $n$, consider the family of functions
+%%$$\displaystyle f_n= \frac{x^n}{2^n+x^n}.$$
+%%\begin{enumerate}[(a)]
+%%\item What are appropriate domains and ranges for $f_n(x)$? Do they depend on $n$?
+%%
+%%\item Is $f_n(x)$ even, odd, or neither? Does this depend on $n$?
+%%
+%%\item Show that for $x\geq 0$, $f_n(x)$ are strictly increasing functions and that
+%%$0\leq f_n(x) < 1.$
+%%\item What is the value of $f_n(2)$? Does it depend on $n$?
+%%
+%%\item By considering the values of $f_n(1.9)$ and $f_n(2.1)$ for $n = 2, 4, 8, 16, 32$ and
+%%$64$, show that the graph of $f_n(x)$ for $x\ge 0$ is an increasing sigmoid (that
+%%is, $S$-shaped) function that approaches a step function as $n\rightarrow \infty$.
+%%\end{enumerate}
+%%
+%%\mycenterbox{Selected answers and hints}%
+%%
+%%For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+%%$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+%%If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+%%value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+%%
+%%\begin{enumerate}
+%%\item 
+%%\begin{enumerate}[(i)]
+%%\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+%%\item Even. The range is the interval $[2, 4]$.
+%%\item Odd. The range is all of $\mathbb R$.
+%%\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+%%The range is the nonnegative reals $[0,\infty)$
+%%
+%%\end{enumerate}
+%%\end{enumerate}
+%%-----------------------------------------------------------------------------------------------------------------------------------------
+

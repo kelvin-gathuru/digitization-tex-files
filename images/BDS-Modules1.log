@@ -1,0 +1,5105 @@
+This is XeTeX, Version 3.141592653-2.6-0.999996 (MiKTeX 24.3) (preloaded format=xelatex 2024.5.25)  27 MAY 2025 05:06
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./BDS-Modules1.tex
+(BDS-Modules1.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\c@figure=\count190
+\c@table=\count191
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+))
+\Gm@cnth=\count192
+\Gm@cntv=\count193
+\c@Gm@tempcnt=\count194
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks18
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/geometry\geometry.cfg))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
+\@mathmargin=\skip50
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsmath\amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen149
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen150
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count195
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count196
+\leftroot@=\count197
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count198
+\DOTSCASE@=\count199
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen151
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count266
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count267
+\dotsspace@=\muskip16
+\c@parentequation=\count268
+\dspbrk@lvl=\count269
+\tag@help=\toks20
+\row@=\count270
+\column@=\count271
+\maxfields@=\count272
+\andhelp@=\toks21
+\eqnshift@=\dimen152
+\alignsep@=\dimen153
+\tagshift@=\dimen154
+\tagwidth@=\dimen155
+\totwidth@=\dimen156
+\lineht@=\dimen157
+\@envbody=\toks22
+\multlinegap=\skip51
+\multlinetaggap=\skip52
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks29
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontspec\fontspec.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/l3packages/xparse\xparse.
+sty (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/l3kernel\expl3.sty
+Package: expl3 2024-02-20 L3 programming layer (loader) 
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/l3backend\l3backend-xetex
+.def
+File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
+\g__graphics_track_int=\count273
+\l__pdf_internal_box=\box53
+\g__pdf_backend_object_int=\count274
+\g__pdf_backend_annotation_int=\count275
+\g__pdf_backend_link_int=\count276
+))
+Package: xparse 2024-02-18 L3 Experimental document command parser
+)
+Package: fontspec 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTeX
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontspec\fontspec-xetex.s
+ty
+Package: fontspec-xetex 2024/02/13 v2.9a Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count277
+\l__fontspec_language_int=\count278
+\l__fontspec_strnum_int=\count279
+\l__fontspec_tmp_int=\count280
+\l__fontspec_tmpa_int=\count281
+\l__fontspec_tmpb_int=\count282
+\l__fontspec_tmpc_int=\count283
+\l__fontspec_em_int=\count284
+\l__fontspec_emdef_int=\count285
+\l__fontspec_strong_int=\count286
+\l__fontspec_strongdef_int=\count287
+\l__fontspec_tmpa_dim=\dimen158
+\l__fontspec_tmpb_dim=\dimen159
+\l__fontspec_tmpc_dim=\dimen160
+ (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontspec\fontspec.cfg)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/mdframed\mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/zref\zref-abspage.sty
+Package: zref-abspage 2023-09-14 v2.35 Module abspage for zref (HO)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/zref\zref-base.sty
+Package: zref-base 2023-09-14 v2.35 Module base for zref (HO)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/kvdefinekeys\kvdefineke
+ys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pdftexcmds\pdftexcmds.s
+ty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+Package zref Info: New property list: main on input line 767.
+Package zref Info: New property: default on input line 768.
+Package zref Info: New property: page on input line 769.
+)
+\c@abspage=\count289
+Package zref Info: New property: abspage on input line 67.
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/needspace\needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 149.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics-def\xetex.def
+File: xetex.def 2022/09/22 v5.0n Graphics/color driver for xetex
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\mathcolor.ltx))
+\mdf@templength=\skip56
+\c@mdf@globalstyle@cnt=\count290
+\mdf@skipabove@length=\skip57
+\mdf@skipbelow@length=\skip58
+\mdf@leftmargin@length=\skip59
+\mdf@rightmargin@length=\skip60
+\mdf@innerleftmargin@length=\skip61
+\mdf@innerrightmargin@length=\skip62
+\mdf@innertopmargin@length=\skip63
+\mdf@innerbottommargin@length=\skip64
+\mdf@splittopskip@length=\skip65
+\mdf@splitbottomskip@length=\skip66
+\mdf@outermargin@length=\skip67
+\mdf@innermargin@length=\skip68
+\mdf@linewidth@length=\skip69
+\mdf@innerlinewidth@length=\skip70
+\mdf@middlelinewidth@length=\skip71
+\mdf@outerlinewidth@length=\skip72
+\mdf@roundcorner@length=\skip73
+\mdf@footenotedistance@length=\skip74
+\mdf@userdefinedwidth@length=\skip75
+\mdf@needspace@length=\skip76
+\mdf@frametitleaboveskip@length=\skip77
+\mdf@frametitlebelowskip@length=\skip78
+\mdf@frametitlerulewidth@length=\skip79
+\mdf@frametitleleftmargin@length=\skip80
+\mdf@frametitlerightmargin@length=\skip81
+\mdf@shadowsize@length=\skip82
+\mdf@extratopheight@length=\skip83
+\mdf@subtitleabovelinewidth@length=\skip84
+\mdf@subtitlebelowlinewidth@length=\skip85
+\mdf@subtitleaboveskip@length=\skip86
+\mdf@subtitlebelowskip@length=\skip87
+\mdf@subtitleinneraboveskip@length=\skip88
+\mdf@subtitleinnerbelowskip@length=\skip89
+\mdf@subsubtitleabovelinewidth@length=\skip90
+\mdf@subsubtitlebelowlinewidth@length=\skip91
+\mdf@subsubtitleaboveskip@length=\skip92
+\mdf@subsubtitlebelowskip@length=\skip93
+\mdf@subsubtitleinneraboveskip@length=\skip94
+\mdf@subsubtitleinnerbelowskip@length=\skip95
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/mdframed\md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box54
+\mdf@footnotebox=\box55
+\mdf@splitbox@one=\box56
+\mdf@splitbox@two=\box57
+\mdf@splitbox@save=\box58
+\mdfsplitboxwidth=\skip96
+\mdfsplitboxtotalwidth=\skip97
+\mdfsplitboxheight=\skip98
+\mdfsplitboxdepth=\skip99
+\mdfsplitboxtotalheight=\skip100
+\mdfframetitleboxwidth=\skip101
+\mdfframetitleboxtotalwidth=\skip102
+\mdfframetitleboxheight=\skip103
+\mdfframetitleboxdepth=\skip104
+\mdfframetitleboxtotalheight=\skip105
+\mdffootnoteboxwidth=\skip106
+\mdffootnoteboxtotalwidth=\skip107
+\mdffootnoteboxheight=\skip108
+\mdffootnoteboxdepth=\skip109
+\mdffootnoteboxtotalheight=\skip110
+\mdftotallinewidth=\skip111
+\mdfboundingboxwidth=\skip112
+\mdfboundingboxtotalwidth=\skip113
+\mdfboundingboxheight=\skip114
+\mdfboundingboxdepth=\skip115
+\mdfboundingboxtotalheight=\skip116
+\mdf@freevspace@length=\skip117
+\mdf@horizontalwidthofbox@length=\skip118
+\mdf@verticalmarginwhole@length=\skip119
+\mdf@horizontalspaceofbox=\skip120
+\mdfsubtitleheight=\skip121
+\mdfsubsubtitleheight=\skip122
+\c@mdfcountframes=\count291
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- success******
+
+\mdf@envdepth=\count292
+\c@mdf@env@i=\count293
+\c@mdf@env@ii=\count294
+\c@mdf@zref@counter=\count295
+Package zref Info: New property: mdf@pagevalue on input line 895.
+) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/lipsum\lipsum.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/l3packages/l3keys2e\l3key
+s2e.sty
+Package: l3keys2e 2024-02-18 LaTeX2e option processing using LaTeX3 keys
+)
+Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
+\g__lipsum_par_int=\count296
+\l__lipsum_a_int=\count297
+\l__lipsum_b_int=\count298
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/lipsum\lipsum.ltd.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/caption\caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/caption\caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen161
+\captionmargin=\dimen162
+\caption@leftmargin=\dimen163
+\caption@rightmargin=\dimen164
+\caption@width=\dimen165
+\caption@indent=\dimen166
+\caption@parindent=\dimen167
+\caption@hangindent=\dimen168
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count299
+\c@continuedfloat=\count300
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/xcolor\xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 274.
+LaTeX Info: Redefining \color on input line 758.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/xcolor\svgnam.def
+File: svgnam.def 2023/11/15 v3.01 Predefined colors according to SVG 1.1 (UK)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/colortbl\colortbl.sty
+Package: colortbl 2024/02/20 v1.0g Color table columns (DPC)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tools\array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen169
+\ar@mcellbox=\box59
+\extrarowheight=\dimen170
+\NC@list=\toks30
+\extratabsurround=\skip123
+\backup@length=\skip124
+\ar@cellbox=\box60
+)
+\everycr=\toks31
+\minrowclearance=\skip125
+\rownum=\count301
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/basiclayer\pgf.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/utilities\pgfrcs.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgfutil-c
+ommon.tex
+\pgfutil@everybye=\toks32
+\pgfutil@tempdima=\dimen171
+\pgfutil@tempdimb=\dimen172
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgfutil-l
+atex.def
+\pgfutil@abb=\box61
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgfrcs.co
+de.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
+))
+Package: pgf 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/basiclayer\pgfcore.st
+y (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 107.
+)
+\Gin@req@height=\dimen173
+\Gin@req@width=\dimen174
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/systemlayer\pgfsys.st
+y
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgfsys.
+code.tex
+Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgfkeys.c
+ode.tex
+\pgfkeys@pathtoks=\toks33
+\pgfkeys@temptoks=\toks34
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgfkeysli
+braryfiltered.code.tex
+\pgfkeys@tmptoks=\toks35
+))
+\pgf@x=\dimen175
+\pgf@y=\dimen176
+\pgf@xa=\dimen177
+\pgf@ya=\dimen178
+\pgf@xb=\dimen179
+\pgf@yb=\dimen180
+\pgf@xc=\dimen181
+\pgf@yc=\dimen182
+\pgf@xd=\dimen183
+\pgf@yd=\dimen184
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count302
+\c@pgf@countb=\count303
+\c@pgf@countc=\count304
+\c@pgf@countd=\count305
+\t@pgf@toka=\toks36
+\t@pgf@tokb=\toks37
+\t@pgf@tokc=\toks38
+\pgf@sys@id@count=\count306
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgfsys-
+xetex.def
+File: pgfsys-xetex.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgfsys-
+dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgfsys-
+common-pdf.def
+File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
+)
+\pgfsys@objnum=\count307
+)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgfsyss
+oftpath.code.tex
+File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfsyssoftpath@smallbuffer@items=\count308
+\pgfsyssoftpath@bigbuffer@items=\count309
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/systemlayer\pgfsysp
+rotocol.code.tex
+File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcore.
+code.tex
+Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmath.code.t
+ex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathutil.co
+de.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathparser.
+code.tex
+\pgfmath@dimen=\dimen185
+\pgfmath@count=\count310
+\pgfmath@box=\box62
+\pgfmath@toks=\toks39
+\pgfmath@stack@operand=\toks40
+\pgfmath@stack@operation=\toks41
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.basic.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.trigonometric.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.random.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.comparison.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.base.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.round.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.misc.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfunctio
+ns.integerarithmetics.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathcalc.co
+de.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmathfloat.c
+ode.tex
+\c@pgfmathroundto@lastzeros=\count311
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfint.code.te
+x)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorep
+oints.code.tex
+File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@picminx=\dimen186
+\pgf@picmaxx=\dimen187
+\pgf@picminy=\dimen188
+\pgf@picmaxy=\dimen189
+\pgf@pathminx=\dimen190
+\pgf@pathmaxx=\dimen191
+\pgf@pathminy=\dimen192
+\pgf@pathmaxy=\dimen193
+\pgf@xx=\dimen194
+\pgf@xy=\dimen195
+\pgf@yx=\dimen196
+\pgf@yy=\dimen197
+\pgf@zx=\dimen198
+\pgf@zy=\dimen199
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorep
+athconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@path@lastx=\dimen256
+\pgf@path@lasty=\dimen257
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorep
+athusage.code.tex
+File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@shorten@end@additional=\dimen258
+\pgf@shorten@start@additional=\dimen259
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcores
+copes.code.tex
+File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfpic=\box63
+\pgf@hbox=\box64
+\pgf@layerbox@main=\box65
+\pgf@picture@serial@count=\count312
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcoreg
+raphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgflinewidth=\dimen260
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcoret
+ransformations.code.tex
+File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@pt@x=\dimen261
+\pgf@pt@y=\dimen262
+\pgf@pt@temp=\dimen263
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcoreq
+uick.code.tex
+File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcoreo
+bjects.code.tex
+File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorep
+athprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorea
+rrows.code.tex
+File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfarrowsep=\dimen264
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcores
+hade.code.tex
+File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@max=\dimen265
+\pgf@sys@shading@range@num=\count313
+\pgf@shadingcount=\count314
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorei
+mage.code.tex
+File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcoree
+xternal.code.tex
+File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfexternal@startupbox=\box66
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorel
+ayers.code.tex
+File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcoret
+ransparency.code.tex
+File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorep
+atterns.code.tex
+File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/basiclayer\pgfcorer
+df.code.tex
+File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/modules\pgfmodulesh
+apes.code.tex
+File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfnodeparttextbox=\box67
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/modules\pgfmodulepl
+ot.code.tex
+File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/compatibility\pgfcomp
+-version-0-65.sty
+Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
+\pgf@nodesepstart=\dimen266
+\pgf@nodesepend=\dimen267
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/compatibility\pgfcomp
+-version-1-18.sty
+Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tools\verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks42
+\verbatim@line=\toks43
+\verbatim@in@stream=\read3
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/environ\environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/trimspaces\trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box68
+\tcb@upperbox=\box69
+\tcb@lowerbox=\box70
+\tcb@phantombox=\box71
+\c@tcbbreakpart=\count315
+\c@tcblayer=\count316
+\c@tcolorbox@number=\count317
+\l__tcobox_tmpa_box=\box72
+\l__tcobox_tmpa_dim=\dimen268
+\tcb@temp=\box73
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbraster.code.
+tex
+Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
+\c@tcbrastercolumn=\count318
+\c@tcbrasterrow=\count319
+\c@tcbrasternum=\count320
+\c@tcbraster=\count321
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbskins.code.t
+ex
+Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/frontendlayer\tikz.st
+y
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/utilities\pgffor.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/utilities\pgfkeys.sty
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgfkeys.c
+ode.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgf/math\pgfmath.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/math\pgfmath.code.t
+ex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/utilities\pgffor.co
+de.tex
+Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
+\pgffor@iter=\dimen269
+\pgffor@skip=\dimen270
+\pgffor@stack=\toks44
+\pgffor@toks=\toks45
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz\
+tikz.code.tex
+Package: tikz 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+yplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@plot@mark@count=\count322
+\pgfplotmarksize=\dimen271
+)
+\tikz@lastx=\dimen272
+\tikz@lasty=\dimen273
+\tikz@lastxsaved=\dimen274
+\tikz@lastysaved=\dimen275
+\tikz@lastmovetox=\dimen276
+\tikz@lastmovetoy=\dimen277
+\tikzleveldistance=\dimen278
+\tikzsiblingdistance=\dimen279
+\tikz@figbox=\box77
+\tikz@figbox@bg=\box78
+\tikz@tempbox=\box79
+\tikz@tempbox@bg=\box80
+\tikztreelevel=\count323
+\tikznumberofchildren=\count324
+\tikznumberofcurrentchild=\count325
+\tikz@fig@count=\count326
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/modules\pgfmodulema
+trix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count327
+\pgfmatrixcurrentcolumn=\count328
+\pgf@matrix@numberofcolumns=\count329
+)
+\tikz@expandcount=\count330
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tikzfill\tikzfill.image.s
+ty
+Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tikzfill\tikzfill-common.
+sty
+Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tikzfill\tikzlibraryfill.
+image.code.tex
+File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
+\l__tikzfill_img_box=\box81
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbskinsjigsaw.
+code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbbreakable.co
+de.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pdfcol\pdfcol.sty
+Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
+Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
+)
+Package pdfcol Info: pdfTeX's color stacks are not available.
+\tcb@testbox=\box82
+\tcb@totalupperbox=\box83
+\tcb@totallowerbox=\box84
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbhooks.code.t
+ex
+Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbtheorems.cod
+e.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbfitting.code
+.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
+\tcbfitdim=\dimen280
+\tcb@lowerfitdim=\dimen281
+\tcb@upperfitdim=\dimen282
+\tcb@cur@hbadness=\count331
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcblistingsutf8
+.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcblistings.cod
+e.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '6.2.0'
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/listings\listings.sty
+\lst@mode=\count332
+\lst@gtempboxa=\box85
+\lst@token=\toks46
+\lst@length=\count333
+\lst@currlwidth=\dimen283
+\lst@column=\count334
+\lst@pos=\count335
+\lst@lostspace=\dimen284
+\lst@width=\dimen285
+\lst@newlines=\count336
+\lst@lineno=\count337
+\lst@maxwidth=\dimen286
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/listings\lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count338
+\lst@skipnumbers=\count339
+\lst@framebox=\box86
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/listings\listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
+))
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcblistingscore
+.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbprocessing.c
+ode.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
+)
+\c@tcblisting=\count340
+))
+Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. 
+Library `listings` is loaded instead. on input line 29.
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbexternal.cod
+e.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '6.2.0'
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbmagazine.cod
+e.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '6.2.0'
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbvignette.cod
+e.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '6.2.0'
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+yfadings.code.tex
+File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tcolorbox\tcbposter.code.
+tex
+Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
+)) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/psnfss\pifont.sty
+Package: pifont 2020/03/25 PSNFSS-v9.3 Pi font support (SPQR) 
+LaTeX Font Info:    Trying to load font information for U+pzd on input line 63.
+
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
+
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/psnfss\upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgf@layerbox@background=\box87
+\pgf@layerboxsaved@background=\box88
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibraryintersections.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+yintersections.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+yfpu.code.tex)
+\pgf@intersect@solutions=\count341
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarydecorations.text.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarydecorations.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/modules\pgfmodulede
+corations.code.tex
+\pgfdecoratedcompleteddistance=\dimen287
+\pgfdecoratedremainingdistance=\dimen288
+\pgfdecoratedinputsegmentcompleteddistance=\dimen289
+\pgfdecoratedinputsegmentremainingdistance=\dimen290
+\pgf@decorate@distancetomove=\dimen291
+\pgf@decorate@repeatstate=\count342
+\pgfdecorationsegmentamplitude=\dimen292
+\pgfdecorationsegmentlength=\dimen293
+)
+\tikz@lib@dec@box=\box89
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries/decoratio
+ns\pgflibrarydecorations.text.code.tex
+\pgf@lib@dec@text@box=\box90
+)
+\tikz@lib@dec@te@box=\box91
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibraryshapes.callouts.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries/shapes\pg
+flibraryshapes.callouts.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries/shapes\pg
+flibraryshapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries/shapes\pg
+flibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarypatterns.code.tex
+File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+ypatterns.code.tex
+File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+yarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen294
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/framed\framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip126
+\fb@frw=\dimen295
+\fb@frh=\dimen296
+\FrameRule=\dimen297
+\FrameSep=\dimen298
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/makecell\makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+\rotheadsize=\dimen299
+\c@nlinenum=\count343
+\TeXr@lab=\toks47
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count344
+\float@exts=\toks48
+\float@box=\box92
+\@float@everytoks=\toks49
+\@floatcapt=\box93
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/multirow\multirow.sty
+Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
+\multirow@colwidth=\skip127
+\multirow@cntb=\count345
+\multirow@dima=\skip128
+\bigstrutjot=\dimen300
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tools\multicol.sty
+Package: multicol 2023/03/30 v1.9f multicolumn formatting (FMi)
+\c@tracingmulticols=\count346
+\mult@box=\box94
+\multicol@leftmargin=\dimen301
+\c@unbalance=\count347
+\c@collectmore=\count348
+\doublecol@number=\count349
+\multicoltolerance=\count350
+\multicolpretolerance=\count351
+\full@width=\dimen302
+\page@free=\dimen303
+\premulticols=\dimen304
+\postmulticols=\dimen305
+\multicolsep=\skip129
+\multicolbaselineskip=\skip130
+\partial@page=\box95
+\last@line=\box96
+\mc@boxedresult=\box97
+\maxbalancingoverflow=\dimen306
+\mult@rightbox=\box98
+\mult@grightbox=\box99
+\mult@firstbox=\box100
+\mult@gfirstbox=\box101
+\@tempa=\box102
+\@tempa=\box103
+\@tempa=\box104
+\@tempa=\box105
+\@tempa=\box106
+\@tempa=\box107
+\@tempa=\box108
+\@tempa=\box109
+\@tempa=\box110
+\@tempa=\box111
+\@tempa=\box112
+\@tempa=\box113
+\@tempa=\box114
+\@tempa=\box115
+\@tempa=\box116
+\@tempa=\box117
+\@tempa=\box118
+\@tempa=\box119
+\@tempa=\box120
+\@tempa=\box121
+\@tempa=\box122
+\@tempa=\box123
+\@tempa=\box124
+\@tempa=\box125
+\@tempa=\box126
+\@tempa=\box127
+\@tempa=\box128
+\@tempa=\box129
+\@tempa=\box130
+\@tempa=\box131
+\@tempa=\box132
+\@tempa=\box133
+\@tempa=\box134
+\@tempa=\box135
+\@tempa=\box136
+\@tempa=\box137
+\c@minrows=\count352
+\c@columnbadness=\count353
+\c@finalcolumnbadness=\count354
+\last@try=\dimen307
+\multicolovershoot=\dimen308
+\multicolundershoot=\dimen309
+\mult@nat@firstbox=\box138
+\colbreak@box=\box139
+\mc@col@check@num=\count355
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontawesome5\fontawesome5
+.sty
+Package: fontawesome5 2022/05/02 v5.15.4 Font Awesome 5
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontawesome5\fontawesome5
+-utex-helper.sty
+Package: fontawesome5-utex-helper 2022/05/02 v5.15.4 uTeX helper for fontawesom
+e5
+LaTeX Font Info:    Trying to load font information for TU+fontawesomefree on i
+nput line 69.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontawesome5\tufontawesom
+efree.fd)
+LaTeX Font Info:    Trying to load font information for TU+fontawesomebrands on
+ input line 70.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fontawesome5\tufontawesom
+ebrands.fd)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks50
+\inpenc@posthook=\toks51
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/soul\soul.sty
+Package: soul 2023-06-14 v3.1 Permit use of UTF-8 characters in soul (HO)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/soul\soul-ori.sty
+Package: soul-ori 2023-06-14 v3.1 letterspacing/underlining (mf)
+\SOUL@word=\toks52
+\SOUL@lasttoken=\toks53
+\SOUL@syllable=\toks54
+\SOUL@cmds=\toks55
+\SOUL@buffer=\toks56
+\SOUL@token=\toks57
+\SOUL@syllgoal=\dimen310
+\SOUL@syllwidth=\dimen311
+\SOUL@charkern=\dimen312
+\SOUL@hyphkern=\dimen313
+\SOUL@dimen=\dimen314
+\SOUL@dimeni=\dimen315
+\SOUL@minus=\count356
+\SOUL@comma=\count357
+\SOUL@apo=\count358
+\SOUL@grave=\count359
+\SOUL@spaceskip=\skip131
+\SOUL@ttwidth=\dimen316
+\SOUL@uldp=\dimen317
+\SOUL@ulht=\dimen318
+))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tools\longtable.sty
+Package: longtable 2023-11-01 v4.19 Multi-page Table package (DPC)
+\LTleft=\skip132
+\LTright=\skip133
+\LTpre=\skip134
+\LTpost=\skip135
+\LTchunksize=\count360
+\LTcapwidth=\dimen319
+\LT@head=\box140
+\LT@firsthead=\box141
+\LT@foot=\box142
+\LT@lastfoot=\box143
+\LT@gbox=\box144
+\LT@cols=\count361
+\LT@rows=\count362
+\c@LT@tables=\count363
+\c@LT@chunks=\count364
+\LT@p@ftn=\toks58
+)
+(tabularray.sty
+Package: tabularray 2023-03-01 v2023A Typeset tabulars and arrays with LaTeX3
+\l__tblr_a_int=\count365
+\l__tblr_c_int=\count366
+\l__tblr_r_int=\count367
+\l__tblr_d_dim=\dimen320
+\l__tblr_h_dim=\dimen321
+\l__tblr_o_dim=\dimen322
+\l__tblr_p_dim=\dimen323
+\l__tblr_q_dim=\dimen324
+\l__tblr_r_dim=\dimen325
+\l__tblr_s_dim=\dimen326
+\l__tblr_t_dim=\dimen327
+\l__tblr_v_dim=\dimen328
+\l__tblr_w_dim=\dimen329
+\l__tblr_a_box=\box145
+\l__tblr_b_box=\box146
+\l__tblr_c_box=\box147
+\l__tblr_d_box=\box148
+\g__tblr_table_count_int=\count368
+\c@colnum=\count369
+\c@rowcount=\count370
+\c@colcount=\count371
+\abovesep=\dimen330
+\belowsep=\dimen331
+\leftsep=\dimen332
+\rightsep=\dimen333
+\g_tblr_level_int=\count372
+\g__tblr_data_row_key_count_int=\count373
+\g__tblr_data_column_key_count_int=\count374
+\g__tblr_data_cell_key_count_int=\count375
+\g__tblr_array_int=\count376
+\l__tblr_key_count_int=\count377
+\l__tblr_key_quotient_int=\count378
+\l__tblr_key_quotient_two_int=\count379
+\l__tblr_key_remainder_int=\count380
+\g__tblr_data_str_value_count_int=\count381
+\rulewidth=\dimen334
+\l__tblr_strut_dp_dim=\dimen335
+\l__tblr_strut_ht_dim=\dimen336
+\g__tblr_cell_wd_dim=\dimen337
+\g__tblr_cell_ht_dim=\dimen338
+\g__tblr_cell_head_dim=\dimen339
+\g__tblr_cell_foot_dim=\dimen340
+\l__column_target_dim=\dimen341
+\l__tblr_caption_box=\box149
+\l__tblr_caption_left_box=\box150
+\l__tblr_row_head_box=\box151
+\l__tblr_row_foot_box=\box152
+\l__tblr_row_head_foot_dim=\dimen342
+\tablewidth=\dimen343
+\l__tblr_table_firsthead_box=\box153
+\l__tblr_table_middlehead_box=\box154
+\l__tblr_table_lasthead_box=\box155
+\l__tblr_table_firstfoot_box=\box156
+\l__tblr_table_middlefoot_box=\box157
+\l__tblr_table_lastfoot_box=\box158
+\l__tblr_remain_height_dim=\dimen344
+\l__tblr_long_from_int=\count382
+\l__tblr_long_to_int=\count383
+\l__tblr_curr_i_int=\count384
+\l__tblr_prev_i_int=\count385
+\l__tblr_table_page_int=\count386
+\l__tblr_table_head_box=\box159
+\l__tblr_table_foot_box=\box160
+\l__tblr_table_head_foot_dim=\dimen345
+\l__tblr_table_head_body_foot_dim=\dimen346
+\l__tblr_table_box=\box161
+\l__tblr_table_hlines_box=\box162
+\l__tblr_hline_box=\box163
+\l__tblr_row_box=\box164
+\l__tblr_col_o_wd_dim=\dimen347
+\l__tblr_col_b_wd_dim=\dimen348
+\l__tblr_hline_leftskip_dim=\dimen349
+\l__tblr_hline_rightskip_dim=\dimen350
+\l__tblr_row_ht_dim=\dimen351
+\l__tblr_row_dp_dim=\dimen352
+\l__tblr_row_abovesep_dim=\dimen353
+\l__tblr_row_belowsep_dim=\dimen354
+\l__tblr_row_vlines_box=\box165
+\l__tblr_vline_box=\box166
+\l__tblr_cell_box=\box167
+\l__row_upper_dim=\dimen355
+\l__row_lower_dim=\dimen356
+\l__row_vpace_dim=\dimen357
+\l__tblr_vline_aboveskip_dim=\dimen358
+\l__tblr_vline_belowskip_dim=\dimen359
+\l__tblr_cell_wd_dim=\dimen360
+\l__tblr_cell_ht_dim=\dimen361
+\l__tblr_diag_box=\box168
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen362
+\lightrulewidth=\dimen363
+\cmidrulewidth=\dimen364
+\belowrulesep=\dimen365
+\belowbottomsep=\dimen366
+\aboverulesep=\dimen367
+\abovetopsep=\dimen368
+\cmidrulesep=\dimen369
+\cmidrulekern=\dimen370
+\defaultaddspace=\dimen371
+\@cmidla=\count387
+\@cmidlb=\count388
+\@aboverulesep=\dimen372
+\@belowrulesep=\dimen373
+\@thisruleclass=\count389
+\@lastruleclass=\count390
+\@thisrulewidth=\dimen374
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2022/10/17 v1.3a Adjusting TeX boxes (trim, clip, ...)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks59
+\XKV@tempa@toks=\toks60
+)
+\XKV@depth=\count391
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/collectbox\collectbox.sty
+Package: collectbox 2022/10/17 v0.4c Collect macro arguments as boxes
+\collectedbox=\box169
+)
+\tc@llx=\dimen375
+\tc@lly=\dimen376
+\tc@urx=\dimen377
+\tc@ury=\dimen378
+Package trimclip Info: Using driver 'tc-xetex.def'.
+ (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/adjustbox\tc-xetex.def
+File: tc-xetex.def 2019/01/04 v2.2 Clipping driver for xetex
+))
+\adjbox@Width=\dimen379
+\adjbox@Height=\dimen380
+\adjbox@Depth=\dimen381
+\adjbox@Totalheight=\dimen382
+\adjbox@pwidth=\dimen383
+\adjbox@pheight=\dimen384
+\adjbox@pdepth=\dimen385
+\adjbox@ptotalheight=\dimen386
+ (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
+\c@checkoddpage=\count392
+) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box170
+\sift@deathcycles=\count393
+\@vwid@loff=\dimen387
+\@vwid@roff=\dimen388
+)) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/lastpage\lastpage.sty
+Package: lastpage 2023/10/14 v2.0e lastpage: 2.09 or 2e? (HMM)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/lastpage\lastpage2e.sty
+Package: lastpage2e 2023/10/14 v2.0e Decide which 2e lastpage version to use (H
+MM)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/lastpage\lastpagemodern.s
+ty
+Package: lastpagemodern 2023-10-14 v2.0e Refers to last page's name (HMM; JPG)
+\c@lastpagecount=\count394
+) 
+)) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip136
+\f@nch@O@elh=\skip137
+\f@nch@O@erh=\skip138
+\f@nch@O@olh=\skip139
+\f@nch@O@orh=\skip140
+\f@nch@O@elf=\skip141
+\f@nch@O@erf=\skip142
+\f@nch@O@olf=\skip143
+\f@nch@O@orf=\skip144
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgfplots\pgfplotstable.st
+y
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.revis
+ion.tex)
+Package: pgfplotstable 2021/05/15 v1.18.1 Table typesetting and Pretty-printing
+ (1.18.1)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/pgfplots\pgfplots.sty
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.revis
+ion.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.code.
+tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotscore.c
+ode.tex
+\t@pgfplots@toka=\toks61
+\t@pgfplots@tokb=\toks62
+\t@pgfplots@tokc=\toks63
+\pgfplots@tmpa=\dimen389
+\c@pgfplots@coordindex=\count395
+\c@pgfplots@scanlineindex=\count396
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/sys\pgfplotssy
+sgeneric.code.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/libs\pgfplotsl
+ibrary.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/oldpgfcompatib
+\pgfplotsoldpgfsupp_loader.code.tex
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks64
+\t@pgf@tokb=\toks65
+\t@pgf@tokc=\toks66
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/oldpgfcompatib
+\pgfplotsoldpgfsupp_pgfutil-common-lists.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/util\pgfplotsu
+til.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/liststructure\
+pgfplotsliststructure.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/liststructure\
+pgfplotsliststructureext.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/liststructure\
+pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count397
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/liststructure\
+pgfplotsmatrix.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/numtable\pgfpl
+otstableshared.code.tex
+\c@pgfplotstable@counta=\count398
+\t@pgfplotstable@a=\toks67
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/liststructure\
+pgfplotsdeque.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/util\pgfplotsb
+inary.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/util\pgfplotsb
+inary.data.code.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/util\pgfplotsu
+til.verb.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/libs\pgflibrar
+ypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count399
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/sys\pgflibrary
+pgfplots.surfshading.pgfsys-xetex.def
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/sys\pgflibrary
+pgfplots.surfshading.pgfsys-dvipdfmx.def
+\c@pgfplotslibrarysurf@streamlen=\count400
+))))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/util\pgfplotsc
+olormap.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/util\pgfplotsc
+olor.code.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotsstacke
+dplots.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotsplotha
+ndlers.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotsmeshpl
+othandler.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotsmeshpl
+otimage.code.tex)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.scali
+ng.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotscoordp
+rocessing.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.error
+bars.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.marke
+rs.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplotsticks.
+code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots\pgfplots.paths
+.code.tex)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarydecorations.pathmorphing.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries/decoratio
+ns\pgflibrarydecorations.pathmorphing.code.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibrarydecorations.pathreplacing.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries/decoratio
+ns\pgflibrarydecorations.pathreplacing.code.tex))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/libs\tikzlibra
+rypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count401
+\pgfplots@xmin@reg=\dimen390
+\pgfplots@xmax@reg=\dimen391
+\pgfplots@ymin@reg=\dimen392
+\pgfplots@ymax@reg=\dimen393
+\pgfplots@zmin@reg=\dimen394
+\pgfplots@zmax@reg=\dimen395
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/frontendlayer/tikz/
+libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgf/libraries\pgflibrar
+yplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/numtable\pgfpl
+otstable.code.tex
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pgfplots/numtable\pgfpl
+otstable.coltype.code.tex)))
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tools\hhline.sty
+Package: hhline 2020/01/04 v2.04 Table rule package (DPC)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip145
+\enit@outerparindent=\dimen396
+\enit@toks=\toks68
+\enit@inbox=\box171
+\enit@count@id=\count402
+\enitdp@description=\count403
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/wasysym\wasysym.sty
+Package: wasysym 2020/01/19 v2.4 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 93.
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/marvosym\marvosym.sty
+Package: marvosym 2011/07/20 v2.2 Martin Vogel's Symbols font definitions
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/hyperref\nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/gettitlestring\gettitle
+string.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count404
+)
+\@linkdim=\dimen397
+\Hy@linkcounter=\count405
+\Hy@pagecounter=\count406
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count407
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/hyperref\puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Option `bookmarks' set `true' on input line 4062.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4062.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count408
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/url\url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4784.
+\XeTeXLinkMargin=\dimen398
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/bigintcalc\bigintcalc.s
+ty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count409
+\Field@Width=\dimen399
+\Fld@charsize=\dimen400
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring ON on input line 6081.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count410
+\c@Item=\count411
+\c@Hfootnote=\count412
+)
+Package hyperref Info: Driver (autodetected): hxetex.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/hyperref\hxetex.def
+File: hxetex.def 2024-01-20 v7.01h Hyperref driver for XeTeX
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box172
+\c@Hy@AnnotLevel=\count413
+\HyField@AnnotCount=\count414
+\Fld@listcount=\count415
+\c@bookmark@seq@number=\count416
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/rerunfilecheck\rerunfilec
+heck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/uniquecounter\uniquecou
+nter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip146
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tools\tabularx.sty
+Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
+\TX@col@width=\dimen401
+\TX@old@table=\dimen402
+\TX@old@col=\dimen403
+\TX@target=\dimen404
+\TX@delta=\dimen405
+\TX@cols=\count417
+\TX@ftn=\toks69
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/anysize\anysize.sty
+Package: anysize 1994/08/13 setting margin sizes
+
+document style option `anysize' loaded
+Michael Salzenberg, Thomas Esser, Dirk Hillbrecht
+Version 1.0, Aug 13, 1994
+\@Leftmargin=\dimen406
+\@Rightmargin=\dimen407
+\@Topmargin=\dimen408
+\@Bottommargin=\dimen409
+) (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/titlesec\titlesec.sty
+Package: titlesec 2023/10/27 v2.16 Sectioning titles
+\ttl@box=\box173
+\beforetitleunit=\skip147
+\aftertitleunit=\skip148
+\ttl@plus=\dimen410
+\ttl@minus=\dimen411
+\ttl@toksa=\toks70
+\titlewidth=\dimen412
+\titlewidthlast=\dimen413
+\titlewidthfirst=\dimen414
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip149
+\cftbeforetoctitleskip=\skip150
+\cftaftertoctitleskip=\skip151
+\cftbeforepartskip=\skip152
+\cftpartnumwidth=\skip153
+\cftpartindent=\skip154
+\cftbeforesecskip=\skip155
+\cftsecindent=\skip156
+\cftsecnumwidth=\skip157
+\cftbeforesubsecskip=\skip158
+\cftsubsecindent=\skip159
+\cftsubsecnumwidth=\skip160
+\cftbeforesubsubsecskip=\skip161
+\cftsubsubsecindent=\skip162
+\cftsubsubsecnumwidth=\skip163
+\cftbeforeparaskip=\skip164
+\cftparaindent=\skip165
+\cftparanumwidth=\skip166
+\cftbeforesubparaskip=\skip167
+\cftsubparaindent=\skip168
+\cftsubparanumwidth=\skip169
+\cftbeforeloftitleskip=\skip170
+\cftafterloftitleskip=\skip171
+\cftbeforefigskip=\skip172
+\cftfigindent=\skip173
+\cftfignumwidth=\skip174
+\c@lofdepth=\count418
+\c@lotdepth=\count419
+\cftbeforelottitleskip=\skip175
+\cftafterlottitleskip=\skip176
+\cftbeforetabskip=\skip177
+\cfttabindent=\skip178
+\cfttabnumwidth=\skip179
+)
+(preamble.tex
+\c@tcb@cnt@actsoln=\count420
+\c@tcb@cnt@example=\count421
+\c@tcb@cnt@definition=\count422
+\c@tcb@cnt@theorem=\count423
+\c@tcb@cnt@lemma=\count424
+\c@problems=\count425
+\c@Example=\count426
+\c@Activity=\count427
+\c@Topic=\count428
+\c@Subtopic=\count429
+\c@tcb@cnt@oldactivity=\count430
+\c@refenumeratei=\count431
+\c@refenumerateii=\count432
+\enitdp@refenumerate=\count433
+\c@eloenumeratei=\count434
+\c@eloenumerateii=\count435
+\enitdp@eloenumerate=\count436
+\c@objenumeratei=\count437
+\c@objenumerateii=\count438
+\enitdp@objenumerate=\count439
+)
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/xelatex/mathspec\mathspec.sty
+Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
+r XeLaTeX)
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+\c@eu@=\count440
+\c@eu@i=\count441
+\c@mkern=\count442
+)
+
+Package fontspec Info: Font family 'Nunito-Regular.ttf(0)' created for font
+(fontspec)             'Nunito-Regular.ttf' with options
+(fontspec)             [Ligatures=TeX,BoldItalicFont=Nunito-BoldItalic.ttf,Bold
+Font=Nunito-Bold.ttf,ItalicFont=Nunito-SemiBoldItalic.ttf].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[Nunito-Regular.ttf]/OT:script=latn;language=dflt;ma
+pping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"[Nunito-Bold.ttf]/OT:script=latn;language=dflt;mappi
+ng=tex-text;"
+(fontspec)             - 'bold small caps'  (b/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[Nunito-SemiBoldItalic.ttf]/OT:script=latn;language=
+dflt;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/scit) with NFSS spec.: 
+(fontspec)             - 'bold italic' (b/it) with NFSS spec.:
+(fontspec)             <->"[Nunito-BoldItalic.ttf]/OT:script=latn;language=dflt
+;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (b/scit) with NFSS spec.: 
+
+
+
+Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
+(fontspec)                available for font 'Nunito-Regular' with script
+(fontspec)                'CustomDefault' and language 'Default'.
+
+
+Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (pnum) not
+(fontspec)                available for font 'Nunito-Regular' with script
+(fontspec)                'CustomDefault' and language 'Default'.
+
+
+Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
+(fontspec)                available for font 'Nunito-Regular' with script
+(fontspec)                'CustomDefault' and language 'Default'.
+
+
+Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (pnum) not
+(fontspec)                available for font 'Nunito-Regular' with script
+(fontspec)                'CustomDefault' and language 'Default'.
+
+
+Package fontspec Info: Font family 'Nunito-Regular.ttf(1)' created for font
+(fontspec)             'Nunito-Regular.ttf' with options
+(fontspec)             [Ligatures=TeX,Numbers={Lining,Proportional}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[Nunito-Regular.ttf]/OT:script=latn;language=dflt;ma
+pping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+\symDigits:m:n=\mathgroup7
+
+Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (lnum) not
+(fontspec)                available for font 'Nunito-Regular' with script
+(fontspec)                'CustomDefault' and language 'Default'.
+
+
+Package fontspec Warning: OpenType feature 'Numbers=Uppercase' (pnum) not
+(fontspec)                available for font 'Nunito-Regular' with script
+(fontspec)                'CustomDefault' and language 'Default'.
+
+\symLatin:m:n=\mathgroup8
+\symLatin:m:it=\mathgroup9
+(BDS-Modules1.aux
+
+LaTeX Warning: Label `Comprehensionquiz2' multiply defined.
+
+
+LaTeX Warning: Label `Comprehensionquiz2' multiply defined.
+
+
+LaTeX Warning: Label `thm:wellposedcond' multiply defined.
+
+
+LaTeX Warning: Label `thm:wellposedcond' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `Comprehensionquiz2' multiply defined.
+
+
+LaTeX Warning: Label `Comprehensionquiz2' multiply defined.
+
+)
+\openout1 = `BDS-Modules1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 292.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 2
+92.
+ (C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/base\ts1cmr.fd
+File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 292.
+LaTeX Font Info:    ... okay on input line 292.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+*geometry* verbose mode - [ preamble ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=452.9679pt
+* \textheight=682.49564pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-50.58878pt
+* \headheight=13.6pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+Package fontspec Info: Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 292.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 292.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 292.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 292.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 292.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 292.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 292.
+LaTeX Font Info:    Redeclaring math accent \check on input line 292.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 292.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 292.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 292.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 292.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 292.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 292.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/Nunito-Regular.ttf(0)/m/n on input l
+ine 292.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 292.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/Nunito-Regular.ttf(0)/m/n on input 
+line 292.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/Nunito-Regular.ttf(0)/m/n --> TU/Nunito-Regular.ttf(
+0)/m/n on input line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/Nunito-Regular.ttf(0)/m/it on input
+ line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/Nunito-Regular.ttf(0)/b/n on input 
+line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 292.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/Nunito-Regular.ttf(0)/m/n --> TU/Nunito-Regular.ttf(
+0)/b/n on input line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/Nunito-Regular.ttf(0)/b/it on inpu
+t line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 292.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 292.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/caption\ltcaption.sty
+Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
+)
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count443
+
+(ninecolors.sty
+Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
+)
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into 
+your preamble.
+ on input line 292.
+
+Package hyperref Info: Link coloring ON on input line 292.
+(BDS-Modules1.out) (BDS-Modules1.out)
+\@outlinefile=\write4
+\openout4 = `BDS-Modules1.out'.
+
+
+! Undefined control sequence.
+l.371 \mainmatter
+                 
+? s
+OK, entering \scrollmode...
+(NumModule-0.tex (modulecoverpage.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
+
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 46
+.
+
+(C:\Users\Hp\AppData\Local\Programs\MiKTeX1\tex/latex/wasysym\uwasy.fd
+File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
+)
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 46.
+
+
+LaTeX Font Warning: Font shape `TU/Nunito-Regular.ttf(1)/m/it' undefined
+(Font)              using `TU/Nunito-Regular.ttf(1)/m/n' instead on input line 
+46.
+
+[1
+
+] [2])
+Overfull \hbox (14.47514pt too wide) in paragraph at lines 40--41
+[]\TU/Nunito-Regular.ttf(0)/b/n/10.95 Mathematical preliminaries and error anal
+ysis: \TU/Nunito-Regular.ttf(1)/m/n/10.95 Motivation for numerical methods, Sou
+rces
+ []
+
+[3
+
+] [4] [5] (modulemessage.tex [6] [7] [8] [9]
+File: img/audience.png Graphic file (type bmp)
+<img/audience.png>
+
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 181.
+
+File: img/audience.png Graphic file (type bmp)
+<img/audience.png>
+[10])
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--722
+
+ []
+
+) [1] (NumModule-1.tex (modulecoverpage.tex [1]
+Overfull \hbox (77.16544pt too wide) in paragraph at lines 105--115
+[][] 
+ []
+
+[2])
+File: img/target.png Graphic file (type bmp)
+<img/target.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--44
+\TU/Nunito-Regular.ttf(1)/m/it/10.95 the videos whose links are provided.
+ []
+
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+File: img/wteacher.png Graphic file (type bmp)
+<img/wteacher.png>
+[3
+
+] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 95--97
+
+ []
+
+[5] [6]
+Underfull \hbox (badness 5231) in paragraph at lines 138--139
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 The number $\OML/cmm/b/it/10.95 ^^Y$ \TU
+/Nunito-Regular.ttf(1)/m/it/10.95 has an infinite decimal expansion of the form
+ $\OML/cmm/b/it/10.95 ^^Y \OT1/cmr/bx/n/10.95 =
+ []
+
+[7] [8]
+File: Mod1Sec1.jpeg Graphic file (type bmp)
+<Mod1Sec1.jpeg>
+ [9]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [10]
+File: Bisectionmethodpicture1.jpeg Graphic file (type bmp)
+<Bisectionmethodpicture1.jpeg>
+File: Bisectionmethodexampletable.jpeg Graphic file (type bmp)
+<Bisectionmethodexampletable.jpeg>
+ [11]
+Missing character: There is no , in font nullfont!
+[12]
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 498.
+
+Overfull \hbox (45.07083pt too wide) in paragraph at lines 507--511
+[][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://pythonnumericalmethods.student
+org.berkeley.edu/notebooks/chapter19.04-Newton-Raphson-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--511
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--532
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 533--534
+
+ []
+
+[13]
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 608--609
+[]
+ []
+
+
+Overfull \hbox (30.18561pt too wide) in paragraph at lines 608--609
+\OT1/cmr/bx/n/10.95 (149\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 85\OML/cmm/b/i
+t/10.95 ; \OT1/cmr/bx/n/10.95 150\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 15)$ 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
+[]
+ []
+
+
+Overfull \hbox (17.5932pt too wide) in paragraph at lines 609--610
+\OT1/cmr/bx/n/10.95 (899\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 1\OML/cmm/b/it
+/10.95 ; \OT1/cmr/bx/n/10.95 900\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 9)$ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 610--611
+[]
+ []
+
+
+Overfull \hbox (30.18561pt too wide) in paragraph at lines 610--611
+\OT1/cmr/bx/n/10.95 (1498\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 5\OML/cmm/b/i
+t/10.95 ; \OT1/cmr/bx/n/10.95 1501\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 5)$ 
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--612
+[]
+ []
+
+
+Overfull \hbox (17.5932pt too wide) in paragraph at lines 611--612
+\OT1/cmr/bx/n/10.95 (89\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 91\OML/cmm/b/it
+/10.95 ; \OT1/cmr/bx/n/10.95 90\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 09)$ 
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 628--629
+[]$\OT1/cmr/bx/n/10.95 2000$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 629--630
+[]
+ []
+
+
+Overfull \hbox (30.88513pt too wide) in paragraph at lines 629--630
+\OT1/cmr/bx/n/10.95 20\OML/cmm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 000\OML/cmm/b/i
+t/10.95 ; \OT1/cmr/bx/n/10.95 000\OML/cmm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 000$
+
+ []
+
+[15]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+) [16] (NumModule-2.tex
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1] [2])
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [3
+
+]
+File: Erroranalysisiterativemethods.jpeg Graphic file (type bmp)
+<Erroranalysisiterativemethods.jpeg>
+ [4]
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+
+LaTeX Warning: Reference `erroranalysisthm' on page v undefined on input line 1
+58.
+
+[5] [6]
+Missing character: There is no , in font nullfont!
+Missing character: There is no , in font nullfont!
+[7]
+File: erroranalysistable2.jpeg Graphic file (type bmp)
+<erroranalysistable2.jpeg>
+File: erroranalysispic1.jpeg Graphic file (type bmp)
+<erroranalysispic1.jpeg>
+ [8]
+Overfull \hbox (27.08914pt too wide) detected at line 262
+[][] \OT1/cmr/bx/n/10.95 = [][] \OMS/cmsy/b/n/10.95 ^^@ [] \OT1/cmr/bx/n/10.95 
+= 1 \OMS/cmsy/b/n/10.95 ^^@ [] ^^Y ^^@\OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 
+:\OT1/cmr/bx/n/10.95 3421061 \OMS/cmsy/b/n/10.95 ^^B \OT1/cmr/bx/n/10.95 10[]\O
+ML/cmm/b/it/10.95 :
+ []
+
+File: Erroanalysisexampletable3.jpeg Graphic file (type bmp)
+<Erroanalysisexampletable3.jpeg>
+[9] [10]
+Underfull \hbox (badness 1184) in paragraph at lines 313--315
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 This video presents a discussion on tech
+niques of accelerat-
+ []
+
+
+Underfull \hbox (badness 2401) in paragraph at lines 313--315
+\TU/Nunito-Regular.ttf(1)/m/it/10.95 ing convergence in iterative processes. Fo
+llow the discus-
+ []
+
+
+Underfull \hbox (badness 3049) in paragraph at lines 313--315
+\TU/Nunito-Regular.ttf(1)/m/it/10.95 sion and then solve the problems in the su
+bsequent quiz.
+ []
+
+File: Mod2Sec2Comquiz.jpeg Graphic file (type bmp)
+<Mod2Sec2Comquiz.jpeg>
+
+Overfull \hbox (13.65712pt too wide) in paragraph at lines 330--331
+ [] 
+ []
+
+[11]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [12]
+File: InterpolandLagrfig1.jpeg Graphic file (type bmp)
+<InterpolandLagrfig1.jpeg>
+
+Missing character: There is no , in font nullfont!
+[13]
+File: Lagrangepolyexample1.jpeg Graphic file (type bmp)
+<Lagrangepolyexample1.jpeg>
+File: Lagrangepolyexplainfig1.jpeg Graphic file (type bmp)
+<Lagrangepolyexplainfig1.jpeg>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14]
+File: Lagrangepolyexplainfig2.jpeg Graphic file (type bmp)
+<Lagrangepolyexplainfig2.jpeg>
+ [15]
+Missing character: There is no , in font nullfont!
+
+Overfull \hbox (10.42969pt too wide) detected at line 554
+[][]
+ []
+
+[16]
+File: Lagrangepolyexample2.jpeg Graphic file (type bmp)
+<Lagrangepolyexample2.jpeg>
+ [17]
+Missing character: There is no , in font nullfont!
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--667
+
+ []
+
+[18] [19]
+Underfull \hbox (badness 1028) in paragraph at lines 722--723
+[]$[][]\OT1/cmr/bx/n/10.95 ([]) = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 874
+548[]$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ; $[][]\OT1/cmr/bx/n/10.95 ([]) = \O
+MS/cmsy/b/n/10.95 ^^@\OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10
+.95 268961[][] + 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 955236[]$\TU/Nunito-
+Regular.ttf(1)/m/it/10.95 ;
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 723--724
+[]$[][]\OT1/cmr/bx/n/10.95 ([]) = 1\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 031
+121[]$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ; $[][]\OT1/cmr/bx/n/10.95 ([]) = 0\
+OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 615092[][] + 0\OML/cmm/b/it/10.95 :\OT1
+/cmr/bx/n/10.95 846593[]$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ;
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 723--724
+[][]\OT1/cmr/bx/n/10.95 (0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 45) = 0\OML/
+cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 464004$\TU/Nunito-Regular.ttf(1)/m/it/10.95
+ ; $\OMS/cmsy/b/n/10.95 j[]\OT1/cmr/bx/n/10.95 (0\OML/cmm/b/it/10.95 :\OT1/cmr/
+bx/n/10.95 45) \OMS/cmsy/b/n/10.95 ^^@ []\OT1/cmr/bx/n/10.95 1(0\OML/cmm/b/it/1
+0.95 :\OT1/cmr/bx/n/10.95 45)\OMS/cmsy/b/n/10.95 j \OT1/cmr/bx/n/10.95 = 0\OML/
+cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 019051$\TU/Nunito-Regular.ttf(1)/m/it/10.95
+ ;
+ []
+
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+[20]
+File: EndofMod2Q3sol.jpeg Graphic file (type bmp)
+<EndofMod2Q3sol.jpeg>
+
+Overfull \hbox (94.01466pt too wide) in paragraph at lines 767--768
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
+[]$[] \OMS/cmsy/b/n/10.95 ^^T \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cm
+r/bx/n/10.95 135$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--772
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
+[]$[] \OMS/cmsy/b/n/10.95 ^^T \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cm
+r/bx/n/10.95 03375$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 772--773
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
+[]$[] \OMS/cmsy/b/n/10.95 ^^T \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cm
+r/bx/n/10.95 135$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--774
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 774--775
+[]$[] \OMS/cmsy/b/n/10.95 ^^T \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cm
+r/bx/n/10.95 06779$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ;
+ []
+
+[21]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+ [22]
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+) [23] (NumModule-3.tex
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1] [2])
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+
+Underfull \hbox (badness 1281) in paragraph at lines 94--95
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 This video presents a discussion on data
+ approximation and
+ []
+
+
+Overfull \hbox (21.03946pt too wide) detected at line 109
+[][]
+ []
+
+[3
+
+] [4] [5]
+Missing character: There is no , in font nullfont!
+[6]
+Overfull \hbox (10.56834pt too wide) detected at line 278
+[][]
+ []
+
+
+Overfull \hbox (10.56834pt too wide) detected at line 286
+[][]
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 309--311
+
+ []
+
+[8] [9]
+File: CompQuizMod3Sec1.jpeg Graphic file (type bmp)
+<CompQuizMod3Sec1.jpeg>
+
+Overfull \hbox (70.56264pt too wide) in paragraph at lines 439--440
+ [] 
+ []
+
+[10]
+Overfull \hbox (113.88062pt too wide) in paragraph at lines 450--451
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=BAwO
+Gkchq7w&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=66[][] 
+ []
+
+
+Overfull \hbox (103.7409pt too wide) in paragraph at lines 452--453
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=A8rF
+ozfIWmg&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=67[][] 
+ []
+
+
+Overfull \hbox (117.38458pt too wide) in paragraph at lines 454--455
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=h-MO
+4BnQWHs&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=68[][] 
+ []
+
+
+Overfull \hbox (107.09161pt too wide) in paragraph at lines 456--457
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=xVA-
+C1hHu1o&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=69[][] 
+ []
+
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+[11]
+Missing character: There is no , in font nullfont!
+[12]
+Overfull \hbox (46.2221pt too wide) detected at line 605
+[][]
+ []
+
+[13] [14] [15]
+Overfull \hbox (96.11792pt too wide) detected at line 839
+[][]\OT1/cmr/bx/n/10.95 ([]) = 17\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 56492
+ + 3\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 116256([] \OMS/cmsy/b/n/10.95 ^^@ 
+\OT1/cmr/bx/n/10.95 8\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 3) + 0\OML/cmm/b/
+it/10.95 :\OT1/cmr/bx/n/10.95 05948([] \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10
+.95 8\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 3)[] \OMS/cmsy/b/n/10.95 ^^@ \OT1
+/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 00202222([] \OMS/cmsy
+/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 8\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 3[
+]2([] \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 8\OML/cmm/b/it/10.95 :\OT1/cm
+r/bx/n/10.95 6)\OML/cmm/b/it/10.95 :
+ []
+
+File: CompQuizMod3Sec3Sol.jpeg Graphic file (type bmp)
+<CompQuizMod3Sec3Sol.jpeg>
+[16]
+Overfull \hbox (101.53998pt too wide) in paragraph at lines 851--852
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=pBtq
+aK0PzrA&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=77[][] 
+ []
+
+
+Overfull \hbox (104.48547pt too wide) in paragraph at lines 853--854
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=yOUs
+t2672qo&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=78[][] 
+ []
+
+
+Overfull \hbox (105.4491pt too wide) in paragraph at lines 855--856
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=_6_z
+7DzDhUo&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=79[][] 
+ []
+
+[17]
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1674--1677
+
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 1677--1680
+[][]\OT1/cmr/bx/n/10.95 ([]) = [][]([]) \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/1
+0.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 00283891[]$\TU/Nunito-Regular.tt
+f(1)/m/it/10.95 ; $[][]\OT1/cmr/bx/n/10.95 (0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n
+/10.95 25) =
+ []
+
+[18]
+File: EndofMod3Q3sol.jpeg Graphic file (type bmp)
+<EndofMod3Q3sol.jpeg>
+File: EndofMod3Q4sola.jpeg Graphic file (type bmp)
+<EndofMod3Q4sola.jpeg>
+
+Overfull \hbox (65.5619pt too wide) in paragraph at lines 1759--1760
+ [] 
+ []
+
+File: EndofMod3Q4solb.jpeg Graphic file (type bmp)
+<EndofMod3Q4solb.jpeg>
+
+Overfull \hbox (65.5619pt too wide) in paragraph at lines 1763--1764
+ [] 
+ []
+
+File: EndofMod3Q4solc.jpeg Graphic file (type bmp)
+<EndofMod3Q4solc.jpeg>
+
+Overfull \hbox (65.5619pt too wide) in paragraph at lines 1767--1768
+ [] 
+ []
+
+File: EndofMod3Q4sold.jpeg Graphic file (type bmp)
+<EndofMod3Q4sold.jpeg>
+
+Overfull \hbox (65.5619pt too wide) in paragraph at lines 1771--1772
+ [] 
+ []
+
+[19]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+ [20]
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1789--1803
+
+ []
+
+) [21] (NumModule-4.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1] [2])
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+File: 2025_05_15_4109a88b43049bd640d1g-61.JPG Graphic file (type bmp)
+<2025_05_15_4109a88b43049bd640d1g-61.JPG>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3
+
+]
+File: 2025_05_15_4109a88b43049bd640d1g-62.JPG Graphic file (type bmp)
+<2025_05_15_4109a88b43049bd640d1g-62.JPG>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4]
+Overfull \hbox (47.035pt too wide) in paragraph at lines 160--161
+\TU/Nunito-Regular.ttf(1)/m/it/10.95 of each section of the curve. Suppose the 
+curve has $[] \OT1/cmr/bx/n/10.95 + 1$ \TU/Nunito-Regular.ttf(1)/m/it/10.95 dat
+a points $[] \OML/cmm/b/it/10.95 ; [] ; []$\TU/Nunito-Regular.ttf(1)/m/it/10.95
+ ,
+ []
+
+
+Overfull \hbox (36.03993pt too wide) in paragraph at lines 173--174
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 In Figure [][]12[][], the nodes occur at
+ ( $[][]\OML/cmm/b/it/10.95 ; [][]$ \TU/Nunito-Regular.ttf(1)/m/it/10.95 ) and 
+( $[][]\OML/cmm/b/it/10.95 ; [][]$ \TU/Nunito-Regular.ttf(1)/m/it/10.95 ), the 
+guidepoint for ( $[][]\OML/cmm/b/it/10.95 ; [][]$ \TU/Nunito-Regular.ttf(1)/m/i
+t/10.95 ) is $[]$,
+ []
+
+[5]
+File: 2025_05_15_4109a88b43049bd640d1g-63(1).JPG Graphic file (type bmp)
+<2025_05_15_4109a88b43049bd640d1g-63(1).JPG>
+File: 2025_05_15_4109a88b43049bd640d1g-63.jpg Graphic file (type bmp)
+<2025_05_15_4109a88b43049bd640d1g-63.jpg>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[6]
+File: 2025_05_15_4109a88b43049bd640d1g-64.JPG Graphic file (type bmp)
+<2025_05_15_4109a88b43049bd640d1g-64.JPG>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[7] [8]
+Overfull \hbox (102.9635pt too wide) in paragraph at lines 334--335
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=-3Mw
+UJCDjts&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=82[][] 
+ []
+
+
+Overfull \hbox (104.11322pt too wide) in paragraph at lines 336--337
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=bKu_
+MfpdUiQ&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=83[][] 
+ []
+
+
+Overfull \hbox (95.70361pt too wide) in paragraph at lines 338--339
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=VIXi
+LXYLjZY&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=84[][] 
+ []
+
+
+Overfull \hbox (107.9895pt too wide) in paragraph at lines 340--341
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=Avvv
+E3oqHDE&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=86[][] 
+ []
+
+
+Overfull \hbox (111.8877pt too wide) in paragraph at lines 342--343
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=AVvX
+-DyV3wQ&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=87[][] 
+ []
+
+
+Overfull \hbox (101.84656pt too wide) in paragraph at lines 344--345
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=RJhb
+UvyTBf0&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=88[][] 
+ []
+
+
+Overfull \hbox (99.55798pt too wide) in paragraph at lines 346--347
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=L_80
+gD1TJSI&list=PLDea8VeK4MUTppAXQzHBNz3KiyEd9SQms&index=89[][] 
+ []
+
+File: 2025_05_15_85b7f7df47271a498e1dg-03.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-03.jpg>
+[9] [10]
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 435.
+
+Overfull \hbox (106.56868pt too wide) in paragraph at lines 439--440
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://math.libretexts.org/Bookshel
+ves/Calculus/CLP-2_Integral_Calculus_(Feldman_Rechnitzer_and_Yeager)[][] 
+ []
+
+
+Overfull \hbox (35.24089pt too wide) detected at line 451
+[][] \OT1/cmr/bx/n/10.95 = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 1 : [][](1
+\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 8) \OMS/cmsy/b/n/10.95 ^^Y \OT1/cmr/bx
+/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 5406722\OML/cmm/b/it/10.95 ;
+  [] [][] \OT1/cmr/bx/n/10.95 = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 05 : 
+[][](1\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 8) \OMS/cmsy/b/n/10.95 ^^Y \OT1/
+cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 5479795\OML/cmm/b/it/1
+0.95 :
+ []
+
+
+Overfull \hbox (58.94849pt too wide) detected at line 466
+[][]
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 476--477
+
+ []
+
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 586--587
+
+ []
+
+File: 2025_05_15_85b7f7df47271a498e1dg-22.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-22.jpg>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: 2025_05_15_85b7f7df47271a498e1dg-23.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-23.jpg>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 689--690
+
+ []
+
+[16] [17]
+File: 2025_05_15_85b7f7df47271a498e1dg-26.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-26.jpg>
+ [18]
+Missing character: There is no , in font nullfont!
+[19]
+File: 2025_05_15_85b7f7df47271a498e1dg-28.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-28.jpg>
+
+Missing character: There is no , in font nullfont!
+[20]
+Overfull \hbox (52.18578pt too wide) detected at line 941
+[][]
+ []
+
+
+Overfull \hbox (3.59433pt too wide) detected at line 952
+[]
+ []
+
+[21]
+Overfull \hbox (7.43947pt too wide) in paragraph at lines 960--970
+ [][] 
+ []
+
+[22]
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1013
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1014
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1014--1015
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1052--1053
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1055
+
+ []
+
+File: EndofMod4Q2sol.jpeg Graphic file (type bmp)
+<EndofMod4Q2sol.jpeg>
+
+Overfull \hbox (94.01466pt too wide) in paragraph at lines 1089--1090
+ [] 
+ []
+
+[24]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1129--1143
+
+ []
+
+) [25] (NumModule-5.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1] [2])
+File: img/target.png Graphic file (type bmp)
+<img/target.png>
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [3
+
+] [4]
+File: 2025_05_15_85b7f7df47271a498e1dg-32.JPG Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-32.JPG>
+ [5]
+Missing character: There is no , in font nullfont!
+[6]
+Missing character: There is no , in font nullfont!
+File: 2025_05_15_85b7f7df47271a498e1dg-35(1).jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-35(1).jpg>
+File: 2025_05_15_85b7f7df47271a498e1dg-35.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-35.jpg>
+[7]
+Missing character: There is no , in font nullfont!
+
+Overfull \hbox (3.12001pt too wide) detected at line 295
+[] \OML/cmm/b/it/10.95 < \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/
+n/10.95 00002 [][] \OML/cmm/b/it/10.95 > [][] \OMS/cmsy/b/n/10.95 ^^Y \OT1/cmr/
+bx/n/10.95 359\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 44
+ []
+
+
+Overfull \hbox (20.36621pt too wide) detected at line 314
+[] \OML/cmm/b/it/10.95 < \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/
+n/10.95 00002 [] [] \OML/cmm/b/it/10.95 > [][] \OMS/cmsy/b/n/10.95 ^^Y \OT1/cmr
+/bx/n/10.95 17\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 07
+ []
+
+
+Overfull \hbox (10.22815pt too wide) detected at line 321
+[][] [] [][][] \OMS/cmsy/b/n/10.95 ^^Y [] [] \OT1/cmr/bx/n/10.95 = 2\OML/cmm/b/
+it/10.95 :\OT1/cmr/bx/n/10.95 0000104
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 327--356
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 420--421
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 424--425
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+[10]
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 450.
+
+Overfull \hbox (106.56868pt too wide) in paragraph at lines 454--455
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://math.libretexts.org/Bookshel
+ves/Calculus/CLP-2_Integral_Calculus_(Feldman_Rechnitzer_and_Yeager)[][] 
+ []
+
+
+Underfull \hbox (badness 7168) in paragraph at lines 473--474
+[]$[]\OT1/cmr/bx/n/10.95 (1\OML/cmm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 1\OML/cmm/
+b/it/10.95 :\OT1/cmr/bx/n/10.95 5) = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 
+19224530$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , $[]\OT1/cmr/bx/n/10.95 (1\OML/c
+mm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 1\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 2
+5) = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 039372434$\TU/Nunito-Regular.ttf
+(1)/m/it/10.95 ,
+ []
+
+
+Underfull \hbox (badness 5756) in paragraph at lines 475--476
+[]\OT1/cmr/bx/n/10.95 (0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 175\OML/cmm/b/
+it/10.95 ; \OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 35) = 
+\OMS/cmsy/b/n/10.95 ^^@\OT1/cmr/bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/
+10.95 089095736$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , and the actual valueis
+ []
+
+
+Underfull \hbox (badness 4013) in paragraph at lines 476--477
+[]$[] [] \OT1/cmr/bx/n/10.95 = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 087995
+669$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , $[] [] \OT1/cmr/bx/n/10.95 = 0\OML/c
+mm/b/it/10.95 :\OT1/cmr/bx/n/10.95 0058315797$\TU/Nunito-Regular.ttf(1)/m/it/10
+.95 ,
+ []
+
+
+Underfull \hbox (badness 5105) in paragraph at lines 478--479
+[]$[]\OT1/cmr/bx/n/10.95 (1\OML/cmm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 1\OML/cmm/
+b/it/10.95 :\OT1/cmr/bx/n/10.95 6) = \OMS/cmsy/b/n/10.95 ^^@\OT1/cmr/bx/n/10.95
+ 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 73910533$\TU/Nunito-Regular.ttf(1)/m
+/it/10.95 , $[]\OT1/cmr/bx/n/10.95 (1\OML/cmm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 
+1\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 3) = \OMS/cmsy/b/n/10.95 ^^@\OT1/cmr/
+bx/n/10.95 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 26141244$\TU/Nunito-Regula
+r.ttf(1)/m/it/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+[]$[]\OT1/cmr/bx/n/10.95 (3\OML/cmm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 3\OML/cmm/
+b/it/10.95 :\OT1/cmr/bx/n/10.95 5) = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 
+63623873$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , $[]\OT1/cmr/bx/n/10.95 (3\OML/c
+mm/b/it/10.95 ; \OT1/cmr/bx/n/10.95 3\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 2
+5) = 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 32567095$\TU/Nunito-Regular.ttf(
+1)/m/it/10.95 ,
+ []
+
+[11]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [12]
+File: 2025_05_15_85b7f7df47271a498e1dg-57.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-57.jpg>
+File: 2025_05_15_85b7f7df47271a498e1dg-57(1).jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-57(1).jpg>
+ [13]
+Overfull \hbox (32.24153pt too wide) in paragraph at lines 525--527
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 The coefficients $[][]\OML/cmm/b/it/10.9
+5 ; [][]; [] ; [][]$ \TU/Nunito-Regular.ttf(1)/m/it/10.95 in the approximation 
+formula are arbitrary, and the nodes $[][]\OML/cmm/b/it/10.95 ; [][]; [] ; [][]
+$
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
+
+ []
+
+Missing character: There is no , in font nullfont!
+[15] [16]
+File: 2025_05_15_85b7f7df47271a498e1dg-61.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-61.jpg>
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--737
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--739
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--762
+
+ []
+
+[17] [18]
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 830--831
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 831--832
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 832--833
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--834
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 834--835
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--836
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 836--837
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 844--845
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 845--846
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 846--847
+
+ []
+
+[19]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 903--917
+
+ []
+
+) [20] (NumModule-6.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1] [2])
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+File: 2025_05_15_85b7f7df47271a498e1dg-63.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-63.jpg>
+ [3
+
+] [4]
+File: 2025_05_15_85b7f7df47271a498e1dg-64.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-64.jpg>
+ [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+File: 2025_05_15_85b7f7df47271a498e1dg-67.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-67.jpg>
+
+Overfull \hbox (53.30707pt too wide) detected at line 280
+\OMS/cmsy/b/n/10.95 j[]j ^^T [] [] ^^T \OT1/cmr/bx/n/10.95 4\OML/cmm/b/it/10.95
+ :\OT1/cmr/bx/n/10.95 72 \OMS/cmsy/b/n/10.95 ^^B \OT1/cmr/bx/n/10.95 10[]
+ []
+
+[8] [9] [10]
+File: 2025_05_15_85b7f7df47271a498e1dg-69.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-69.jpg>
+ [11]
+File: 2025_05_15_85b7f7df47271a498e1dg-72(1).jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-72(1).jpg>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: tripleintegrlas1.jpeg Graphic file (type bmp)
+<tripleintegrlas1.jpeg>
+[12] [13]
+File: 2025_05_15_85b7f7df47271a498e1dg-75.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-75.jpg>
+ [14]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [15]
+File: 2025_05_15_85b7f7df47271a498e1dg-78.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-78.jpg>
+
+Overfull \hbox (4.27205pt too wide) detected at line 797
+[][][][][] [][][] \OT1/cmr/bx/n/10.95 = [] [][] []([] \OMS/cmsy/b/n/10.95 ^^@ [
+]\OT1/cmr/bx/n/10.95 )[][][] = [] []([] \OMS/cmsy/b/n/10.95 ^^@ []\OT1/cmr/bx/n
+/10.95 )[]
+ []
+
+[16] [17]
+Overfull \hbox (46.71916pt too wide) detected at line 857
+[][]
+ []
+
+[18]
+File: 2025_05_15_85b7f7df47271a498e1dg-81.jpg Graphic file (type bmp)
+<2025_05_15_85b7f7df47271a498e1dg-81.jpg>
+ [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1007
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1009
+
+ []
+
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+[21] [22]
+File: 2025_05_15_5266fa2c85d567bd073dg-03.jpg Graphic file (type bmp)
+<2025_05_15_5266fa2c85d567bd073dg-03.jpg>
+
+Missing character: There is no , in font nullfont!
+[23]
+Missing character: There is no , in font nullfont!
+[24] [25]
+Missing character: There is no , in font nullfont!
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1282--1283
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1284
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1284--1285
+
+ []
+
+[27]
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+ [28]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 1317.
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+ [29]
+Underfull \hbox (badness 10000) in paragraph at lines 1394--1395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1396--1397
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1425--1426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1426--1427
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1427--1428
+
+ []
+
+[30]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1516--1530
+
+ []
+
+) [31] (NumModule-7.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1]
+Overfull \hbox (23.06148pt too wide) in paragraph at lines 105--115
+[][] 
+ []
+
+[2])
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 93.
+
+Overfull \hbox (257.88397pt too wide) in paragraph at lines 95--96
+[][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://math.libretexts.org/Bookshelve
+s/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientist
+s_and_Engineers_(Herman)[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+[3
+
+]
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 181.
+
+Overfull \hbox (257.88397pt too wide) in paragraph at lines 183--184
+[][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://math.libretexts.org/Bookshelve
+s/Differential_Equations/A_First_Course_in_Differential_Equations_for_Scientist
+s_and_Engineers_(Herman)[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+[4]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [5] [6] [7] [8]
+Overfull \hbox (69.21413pt too wide) detected at line 526
+[][]
+ []
+
+
+Overfull \hbox (12.35553pt too wide) detected at line 546
+[][]
+ []
+
+
+Overfull \hbox (70.73825pt too wide) detected at line 566
+[][]
+ []
+
+[9] [10]
+
+LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 583.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
+
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 620--621
+[]$[][] \OT1/cmr/bx/n/10.95 = [][][] \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.9
+5 2[]$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , $\OT1/cmr/bx/n/10.95 0 \OMS/cmsy/b
+/n/10.95 ^^T [] ^^T \OT1/cmr/bx/n/10.95 1$\TU/Nunito-Regular.ttf(1)/m/it/10.95 
+, $[]\OT1/cmr/bx/n/10.95 (0) = 0$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ; actual 
+solution $[]\OT1/cmr/bx/n/10.95 ([]) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 621--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--628
+
+ []
+
+[11]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [12] [13]
+Overfull \hbox (36.85104pt too wide) detected at line 751
+[][]
+ []
+
+
+Overfull \hbox (46.64514pt too wide) detected at line 764
+[][]
+ []
+
+
+Overfull \hbox (34.75064pt too wide) detected at line 770
+\OMS/cmsy/b/n/10.95 j\OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10
+.95 1272295 \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 :\
+OT1/cmr/bx/n/10.95 1272892\OMS/cmsy/b/n/10.95 j \OT1/cmr/bx/n/10.95 = 5\OML/cmm
+/b/it/10.95 :\OT1/cmr/bx/n/10.95 97 \OMS/cmsy/b/n/10.95 ^^B \OT1/cmr/bx/n/10.95
+ 10[][]\OMS/cmsy/b/n/10.95 j\OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 :\OT1/cmr/
+bx/n/10.95 6410533 \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/1
+0.95 :\OT1/cmr/bx/n/10.95 6408591\OMS/cmsy/b/n/10.95 j \OT1/cmr/bx/n/10.95 = 1\
+OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 94 \OMS/cmsy/b/n/10.95 ^^B \OT1/cmr/bx/
+n/10.95 10[]
+ []
+
+
+Overfull \hbox (38.24854pt too wide) detected at line 776
+\OMS/cmsy/b/n/10.95 j\OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10
+.95 1272027 \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 :\
+OT1/cmr/bx/n/10.95 1272892\OMS/cmsy/b/n/10.95 j \OT1/cmr/bx/n/10.95 = 2\OML/cmm
+/b/it/10.95 :\OT1/cmr/bx/n/10.95 69 \OMS/cmsy/b/n/10.95 ^^B \OT1/cmr/bx/n/10.95
+ 10[][]\OMS/cmsy/b/n/10.95 j\OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/10.95 :\OT1/cmr/
+bx/n/10.95 6408227 \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.95 2\OML/cmm/b/it/1
+0.95 :\OT1/cmr/bx/n/10.95 6408591\OMS/cmsy/b/n/10.95 j \OT1/cmr/bx/n/10.95 = 3\
+OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 64 \OMS/cmsy/b/n/10.95 ^^B \OT1/cmr/bx/
+n/10.95 10[]\OML/cmm/b/it/10.95 :
+ []
+
+[14] [15]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `eqn:multistepeq10' on page xvi undefined on input lin
+e 924.
+
+[16] [17]
+
+LaTeX Warning: Reference `eqn:multistepeq10' on page xviii undefined on input l
+ine 1005.
+
+
+Overfull \hbox (48.52127pt too wide) detected at line 1018
+[][]
+ []
+
+[18] [19] [20]
+Overfull \hbox (52.7042pt too wide) detected at line 1134
+[][] \OT1/cmr/bx/n/10.95 = [][] + [] [] \OML/cmm/b/it/10.95 ;
+ []
+
+
+Overfull \hbox (52.39738pt too wide) detected at line 1140
+[][] \OT1/cmr/bx/n/10.95 = [] [] \OML/cmm/b/it/10.95 :
+ []
+
+
+Overfull \hbox (28.21898pt too wide) detected at line 1146
+[][] \OT1/cmr/bx/n/10.95 = [][] + [] []
+ []
+
+
+Overfull \hbox (39.80498pt too wide) detected at line 1152
+[][] \OT1/cmr/bx/n/10.95 = [] [] \OML/cmm/b/it/10.95 :
+ []
+
+[21] [22]
+Overfull \hbox (6.45541pt too wide) detected at line 1331
+[][]
+ []
+
+
+Overfull \hbox (41.51505pt too wide) detected at line 1344
+[][]
+ []
+
+
+Overfull \hbox (63.65053pt too wide) detected at line 1357
+[][]
+ []
+
+
+Overfull \hbox (80.90694pt too wide) detected at line 1370
+[][]
+ []
+
+
+Overfull \hbox (32.42053pt too wide) detected at line 1380
+[][]
+ []
+
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 1457--1458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1459--1460
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1466--1467
+
+ []
+
+
+Overfull \hbox (36.86581pt too wide) in paragraph at lines 1470--1485
+ [] 
+ []
+
+
+Overfull \hbox (36.86581pt too wide) in paragraph at lines 1488--1503
+ [] 
+ []
+
+[25]
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+ [26]
+Underfull \hbox (badness 10000) in paragraph at lines 1578--1579
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1584--1585
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1586--1587
+
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 1617--1635
+\OT1/cmr/bx/n/10.95 4\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 777033$\TU/Nunito
+-Regular.ttf(1)/m/it/10.95 , and $[]\OT1/cmr/bx/n/10.95 (1\OML/cmm/b/it/10.95 :
+\OT1/cmr/bx/n/10.95 97) \OMS/cmsy/b/n/10.95 ^^Y \OT1/cmr/bx/n/10.95 17\OML/cmm/
+b/it/10.95 :\OT1/cmr/bx/n/10.95 17480$\TU/Nunito-Regular.ttf(1)/m/it/10.95 . Ac
+tual values are
+ []
+
+
+Overfull \hbox (24.4514pt too wide) in paragraph at lines 1642--1653
+ [] 
+ []
+
+
+Overfull \hbox (24.4514pt too wide) in paragraph at lines 1656--1667
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1699--1700
+
+ []
+
+
+Overfull \hbox (57.0328pt too wide) in paragraph at lines 1704--1719
+ [] 
+ []
+
+
+Overfull \hbox (57.0328pt too wide) in paragraph at lines 1724--1739
+ [] 
+ []
+
+[27]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1796--1810
+
+ []
+
+) [28] (NumModule-8.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1]
+Overfull \hbox (31.51488pt too wide) in paragraph at lines 105--115
+[][] 
+ []
+
+[2])
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 98.
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 1661) in paragraph at lines 108--109
+[]$[][] \OT1/cmr/bx/n/10.95 = [][][] \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.9
+5 2[]$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , $\OT1/cmr/bx/n/10.95 0 \OMS/cmsy/b
+/n/10.95 ^^T [] ^^T \OT1/cmr/bx/n/10.95 1$\TU/Nunito-Regular.ttf(1)/m/it/10.95 
+, $[]\OT1/cmr/bx/n/10.95 (0) = 0$ \TU/Nunito-Regular.ttf(1)/m/it/10.95 actual s
+olution $[]\OT1/cmr/bx/n/10.95 ([]) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Overfull \hbox (82.30078pt too wide) in paragraph at lines 103--152
+[][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://math.libretexts.org/Bookshelve
+s/Calculus/CLP-2_Integral_Calculus_(Feldman_Rechnitzer_and_Yeager)[][] 
+ []
+
+[3
+
+]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [4] [5] [6]
+Overfull \hbox (10.81569pt too wide) in paragraph at lines 267--272
+ [][] 
+ []
+
+
+Underfull \hbox (badness 6961) in paragraph at lines 399--402
+[][] \OT1/cmr/bx/n/10.95 = [] [] = [](0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95
+ 828 + 0\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 65 +
+ []
+
+[7] [8]
+Overfull \hbox (150.41481pt too wide) in paragraph at lines 474--487
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
+
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 557--558
+[]$[][] \OT1/cmr/bx/n/10.95 = [][][] \OMS/cmsy/b/n/10.95 ^^@ \OT1/cmr/bx/n/10.9
+5 2[]$\TU/Nunito-Regular.ttf(1)/m/it/10.95 , $\OT1/cmr/bx/n/10.95 0 \OMS/cmsy/b
+/n/10.95 ^^T [] ^^T \OT1/cmr/bx/n/10.95 1$\TU/Nunito-Regular.ttf(1)/m/it/10.95 
+, $[]\OT1/cmr/bx/n/10.95 (0) = 0$\TU/Nunito-Regular.ttf(1)/m/it/10.95 ; actual 
+solution $[]\OT1/cmr/bx/n/10.95 ([]) =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 557--558
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--563
+
+ []
+
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+[9] [10] [11]
+Missing character: There is no , in font nullfont!
+[12]
+File: 2025_05_15_5266fa2c85d567bd073dg-72.jpg Graphic file (type bmp)
+<2025_05_15_5266fa2c85d567bd073dg-72.jpg>
+
+Overfull \hbox (47.76848pt too wide) in paragraph at lines 717--718
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 Suppose that the values $[][]\OML/cmm/b/
+it/10.95 ; [][]; [] ; [][]$ \TU/Nunito-Regular.ttf(1)/m/it/10.95 have been comp
+uted. We obtain $[][]$, $[][]\OML/cmm/b/it/10.95 ; [] ; [][]$
+ []
+
+[13]
+Overfull \hbox (4.57045pt too wide) detected at line 848
+[][]
+ []
+
+
+Overfull \hbox (11.56856pt too wide) detected at line 868
+[][]
+ []
+
+[14]
+File: 2025_05_15_5266fa2c85d567bd073dg-74.jpg Graphic file (type bmp)
+<2025_05_15_5266fa2c85d567bd073dg-74.jpg>
+ [15]
+Overfull \hbox (12.13814pt too wide) detected at line 1025
+[][]
+ []
+
+
+Overfull \hbox (67.15462pt too wide) detected at line 1031
+[][] \OT1/cmr/bx/n/10.95 = [] [] = \OMS/cmsy/b/n/10.95 ^^@\OT1/cmr/bx/n/10.95 0
+\OML/cmm/b/it/10.95 :\OT1/cmr/bx/n/10.95 02178637298
+ []
+
+[16]
+Overfull \hbox (60.60388pt too wide) in paragraph at lines 1053--1080
+ [][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 1114--1116
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1122--1123
+
+ []
+
+[18]
+Overfull \hbox (82.89209pt too wide) in paragraph at lines 1202--1203
+[][][]\TU/Nunito-Regular.ttf(1)/m/it/10.95 https://www.youtube.com/watch?v=yABm
+V2qnzcg&list=PLkiPLxr5Ckwsk1A_qK_AK_8LGFoxqdox2&index=5[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1226--1227
+
+ []
+
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 1255--1256
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1264--1265
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1288--1289
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1325
+
+ []
+
+
+Overfull \hbox (79.27856pt too wide) in paragraph at lines 1362--1377
+ [] 
+ []
+
+
+Overfull \hbox (35.88184pt too wide) in paragraph at lines 1382--1393
+ [] 
+ []
+
+[20]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+ [21]
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1412--1426
+
+ []
+
+) [22] (NumModule-9.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1]
+Overfull \hbox (45.97984pt too wide) in paragraph at lines 105--115
+[][] 
+ []
+
+[2])
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [3
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 204--208
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 211--238
+
+ []
+
+[4]
+File: chapter20.02-Finite-Difference-Approximating-Derivatives_5_0.png Graphic 
+file (type bmp)
+<chapter20.02-Finite-Difference-Approximating-Derivatives_5_0.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--291
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--291
+
+ []
+
+File: chapter20.02-Finite-Difference-Approximating-Derivatives_7_0.png Graphic 
+file (type bmp)
+<chapter20.02-Finite-Difference-Approximating-Derivatives_7_0.png>
+[5] [6]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [7]
+Underfull \hbox (badness 10000) in paragraph at lines 332--352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--352
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--352
+
+ []
+
+File: chapter20.04-Numerical-Differentiation-with-Noise_5_0.png Graphic file (t
+ype bmp)
+<chapter20.04-Numerical-Differentiation-with-Noise_5_0.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--385
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--385
+
+ []
+
+[8]
+File: chapter20.04-Numerical-Differentiation-with-Noise_7_0.png Graphic file (t
+ype bmp)
+<chapter20.04-Numerical-Differentiation-with-Noise_7_0.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+[9]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 411.
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Overfull \hbox (106.6344pt too wide) in paragraph at lines 413--417
+\TU/Nunito-Regular.ttf(1)/m/it/10.95 Trapezoid-Rule.html[][] [][]https://python
+numericalmethods.studentorg.berkeley.edu/notebooks/chapter21.04-
+ []
+
+[10]
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+
+Missing character: There is no 𝑾 in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no 𝑥 in font cmmib10!
+Missing character: There is no 𝑥 in font cmmib10!
+Missing character: There is no 𝑥 in font cmmib10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 483--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--502
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--521
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 506--521
+
+ []
+
+File: EndofMod9Q1sol.jpeg Graphic file (type bmp)
+<EndofMod9Q1sol.jpeg>
+
+Overfull \hbox (94.01466pt too wide) in paragraph at lines 526--527
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--548
+
+ []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 532--548
+\TU/Nunito-Regular.ttf(0)/b/n/10.95 W, e = integrate.quad(work_eq, V1, V2, args
+=(n, R,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 532--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 530--548
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 554--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--568
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 552--568
+
+ []
+
+[11] [12] [13]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 590--604
+
+ []
+
+) [14] (NumModule-10.tex
+
+! LaTeX Error: Command \cor already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \newtheorem{cor}
+                    [subsection]{Corollary}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \pro already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \newtheorem{pro}
+                    [subsection]{Proposition}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \theo already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \newtheorem{theo}
+                     [subsection]{Theorem}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \lem already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7 \newtheorem{lem}
+                    [subsection]{Lemma}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxA already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxB already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.33 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxC already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.37 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Command \boxD already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.45 }
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Package hyperref Warning: Option `colorlinks' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+
+Package hyperref Warning: Option `pdfpagemode' has already been used,
+(hyperref)                setting the option has no effect on input line 54.
+
+(modulecoverpage.tex [1]
+Overfull \hbox (79.41016pt too wide) in paragraph at lines 105--115
+[][] 
+ []
+
+[2])
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+ [3
+
+]
+Overfull \hbox (28.21404pt too wide) detected at line 137
+[]
+ []
+
+[4]
+File: img/lesson.png Graphic file (type bmp)
+<img/lesson.png>
+
+Underfull \hbox (badness 1152) in paragraph at lines 200--201
+[]\TU/Nunito-Regular.ttf(1)/m/it/10.95 This video presents a discussion on the 
+Euler Method using
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 228--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--257
+
+ []
+
+File: mod10sect2pic1.png Graphic file (type bmp)
+<mod10sect2pic1.png>
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 269--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--298
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--298
+
+ []
+
+File: CompQuizMod10Sec2Q1.png Graphic file (type bmp)
+<CompQuizMod10Sec2Q1.png>
+[7] [8]
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 305.
+
+[9]
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 312.
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+File: img/activities.png Graphic file (type bmp)
+<img/activities.png>
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 327.
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+File: img/posttest.png Graphic file (type bmp)
+<img/posttest.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--406
+
+ []
+
+File: EndofMod10QuizQ1solfig.jpeg Graphic file (type bmp)
+<EndofMod10QuizQ1solfig.jpeg>
+
+Overfull \hbox (94.01466pt too wide) in paragraph at lines 408--409
+ [] 
+ []
+
+[10
+
+] [11]
+
+Package tcolorbox Warning: The upper box part has become overfull on input line
+ 411.
+
+[12]
+File: img/value.png Graphic file (type bmp)
+<img/value.png>
+File: img/mteacher.png Graphic file (type bmp)
+<img/mteacher.png>
+File: img/book.png Graphic file (type bmp)
+<img/book.png>
+
+Missing character: There is no ‏ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+Missing character: There is no ‎ in font [Nunito-Regular.ttf]/OT:script=latn;la
+nguage=dflt;mapping=tex-text;!
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--441
+
+ []
+
+) [13] 
+enddocument/afterlastpage: lastpage setting LastPage.
+(BDS-Modules1.aux)
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+ ***********
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package rerunfilecheck Info: File `BDS-Modules1.out' has not changed.
+(rerunfilecheck)             Checksum: B29AE87FD7FAAAB62A26FB1B5B3DCC46;9496.
+ ) 
+Here is how much of TeX's memory you used:
+ 55922 strings out of 409530
+ 1317558 string characters out of 5771516
+ 2005735 words of memory out of 5000000
+ 77169 multiletter control sequences out of 15000+600000
+ 572320 words of font info for 127 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 101i,24n,427p,1111b,1625s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on BDS-Modules1.pdf (224 pages).

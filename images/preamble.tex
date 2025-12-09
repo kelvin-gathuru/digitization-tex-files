@@ -1,0 +1,707 @@
+%%%Useful fields
+\newcommand\displaycourse{}
+\newcommand\dpcoursecode{}
+\newcommand\dpcoursename{}
+\newcommand\displaydevelopers{}
+\newcommand\displayreviewers{}
+\newcommand\dpmdnumber{}
+\newcommand\dpmdname{}
+\newcommand\fullcoursename{}
+
+\newcommand\coursetitle[2]{
+\renewcommand\dpcoursename{\Course{#2}}
+\renewcommand\dpcoursecode{#1}
+\renewcommand\fullcoursename{\dpcoursecode~-~\dpcoursename}
+}
+\newcommand\developers[1]{\renewcommand\displaydevelopers{\begin{tabular}[t]{@{}l}#1\end{tabular}}}
+\newcommand\reviewers[1]{\renewcommand\displayreviewers{#1}}
+\newcommand\modulenumber[1]{\renewcommand\dpmdnumber{#1}}
+\newcommand\modulename[1]{\renewcommand\dpmdname{#1}}
+
+
+
+
+
+%%%COURSES AND THEIR CODES
+\newcommand{\DefineCourse}[2]{%
+\expandafter\newcommand\csname rmk-#1\endcsname{#2}%
+}
+\newcommand{\Course}[1]{\csname rmk-#1\endcsname}
+
+\definecolor{coursecolor}{RGB}{255,127,80}
+\newcommand{\fancycourse}[1]{{\color{coursecolor}\textbf{#1}}}
+
+%%%%Computer Science -- Level 1
+\newcommand{\csonei}{\fancycourse{CSC 101}}
+\DefineCourse{CS101}{\text{Introduction to Computing}} 
+\newcommand{\csoneii}{\fancycourse{CSC 102}}
+\DefineCourse{CS102}{\text{Introduction to Database Systems}} 
+\newcommand{\csoneiii}{\fancycourse{CSC 103}}
+\DefineCourse{CS103}{\text{Introduction to Programming I}} 
+\newcommand{\csoneiv}{\fancycourse{CSC 104}}
+\DefineCourse{CS104}{\text{Introduction to Programming II}}
+
+%%%%Computer Science -- Level 2
+\newcommand{\cstwoi}{\fancycourse{CSC 201}}
+\DefineCourse{CS201}{\text{Object Oriented Programming}}
+\newcommand{\cstwoii}{\fancycourse{DSC 202}}
+\DefineCourse{CS202}{\text{Essential Techniques in Machine Learning}} 
+\newcommand{\cstwoiii}{\fancycourse{CSC 203}}
+\DefineCourse{CS203}{\text{Advanced Database Systems}} 
+\newcommand{\cstwoiv}{\fancycourse{CSC 106}}
+\DefineCourse{CS204}{\text{Data Structures and Algorithms }} 
+\newcommand{\cstwovi}{\fancycourse{CSC 206}}
+\DefineCourse{CS206}{\text{Web Development I}} 
+
+%%%%Computer Science -- Level 3
+\newcommand{\csthreei}{\fancycourse{CSC 301}}
+\DefineCourse{CS301}{\text{Computer Communication Network}} 
+\newcommand{\csthreeii}{\fancycourse{CSC 302}}
+\DefineCourse{CS302}{\text{Web Application Development  II}} 
+\newcommand{\csthreeiv}{\fancycourse{CSC 304}}
+\DefineCourse{CS304}{\text{Software Engineering}} 
+
+
+\newcommand{\dsonei}{\fancycourse{CSC 108}}
+\DefineCourse{DS101}{\text{IT Entrepreneurship}} 
+\newcommand{\dsoneii}{\fancycourse{DSC 102}}
+\DefineCourse{DS102}{\text{Fundamentals of Data science}} 
+
+\newcommand{\dstwoo}{\fancycourse{DSC 200}}
+\DefineCourse{DS200}{\text{Applied Research Project I}} 
+\newcommand{\dstwoi}{\fancycourse{DSC 201}}
+\DefineCourse{DS201}{\text{Python for Data Science}} 
+
+\newcommand{\dsthreei}{\fancycourse{DSC 301}}
+\DefineCourse{DS301}{\text{Data Warehousing }} 
+\newcommand{\dsthreeii}{\fancycourse{DSC 302}}
+\DefineCourse{DS302}{\text{Data Mining}} 
+\newcommand{\dsthreeiii}{\fancycourse{DSC 303}}
+\DefineCourse{DS303}{\text{Research Methods  in Data Science}} 
+\newcommand{\dsthreeiv}{\fancycourse{DSC 304}}
+\DefineCourse{DS304}{\text{Data Analytics for Cyber Security}} 
+% (elective)
+
+\newcommand{\dsfouro}{\fancycourse{DSC 400}}
+\DefineCourse{DS400}{\text{Applied Research Project II}} 
+\newcommand{\dsfouri}{\fancycourse{DSC 401}}
+\DefineCourse{DS401}{\text{Database Administration}} 
+\newcommand{\dsfourii}{\fancycourse{DSC 402}}
+\DefineCourse{DS402}{\text{Deep Learning and Computer vision}} 
+%(Deep Learning \& Computer vision)
+\newcommand{\dsfouriii}{\fancycourse{DSC 403}}
+\DefineCourse{DS403}{\text{Artificial Intelligence and Machine Learning}} 
+%(Supervised \& Unsupervised Learning)
+\newcommand{\dsfouriv}{\fancycourse{DSC 404}}
+\DefineCourse{DS404}{\text{Data Science on Cloud}} 
+\newcommand{\dsfourv}{\fancycourse{DSC 405}}
+\DefineCourse{DS405}{\text{Data Science Project Management}} 
+\newcommand{\dsfourvi}{\fancycourse{DSC 406}}
+\DefineCourse{DS406}{\text{Data Engineering}} 
+\newcommand{\dsfourvii}{\fancycourse{DSC 407}}
+\DefineCourse{DS407}{\text{Big Data Analytics with Apache Hadoop}} 
+\newcommand{\dsfourviii}{\fancycourse{DSC 408}}
+\DefineCourse{DS408}{\text{Natural Language Processing}} 
+\newcommand{\dsfourix}{\fancycourse{DSC 409}}
+\DefineCourse{DS409}{\text{Big Data and Artificial Intelligence}} 
+\newcommand{\dsfourx}{\fancycourse{DSC 410}}
+\DefineCourse{DS410}{\text{Machine Learning Deployment and Monitoring}} 
+%(Alternative)
+\newcommand{\dsfourxii}{\fancycourse{DSC 412}}
+\DefineCourse{DS412}{\text{Recommendations Systems}} 
+
+
+%%%%Mathematics Courses -- Level 1
+\newcommand{\mtonei}{\fancycourse{MAT 111}}
+\DefineCourse{MT111}{\text{Foundations of Mathematics}} 
+\newcommand{\mtoneii}{\fancycourse{MAT 102}}
+\DefineCourse{MT102}{\text{Calculus II}} 
+\newcommand{\mtoneiii}{\fancycourse{MAT 122}}
+\DefineCourse{MT122}{\text{Calculus}} 
+\newcommand{\mtonevi}{\fancycourse{MAT 123}}
+\DefineCourse{MT123}{\text{Discrete Mathematics}} 
+
+%%%%Mathematics Courses -- Level 2
+\newcommand{\mttwoi}{\fancycourse{MAT 212}}
+\DefineCourse{MT212}{\text{Multivariate Calculus }} 
+\newcommand{\mttwoiii}{\fancycourse{MAT 201}}
+\DefineCourse{MT203}{\text{Linear Algebra}} 
+\newcommand{\mttwoii}{\fancycourse{MAT 202}}
+\DefineCourse{MT202}{\text{Mathematical Optimisation}} 
+
+
+%%%%Mathematics Courses -- Level 3
+\newcommand{\mtthreei}{\fancycourse{MAT 301}}
+\DefineCourse{MT301}{\text{Graph and Network}} 
+\newcommand{\mtthreeii}{\fancycourse{MAT 302}}
+\DefineCourse{MT302}{\text{Differential Equations with Numerical Methods}} 
+\newcommand{\mtthreeiii}{\fancycourse{MAT 303}}
+\DefineCourse{MT303}{\text{Numerical Methods}} 
+
+
+%%%%Statistics Courses -- Level 1
+\newcommand{\stonei}{\fancycourse{SST 101}}
+\DefineCourse{ST101}{\text{Basic Statistics with R}} 
+\newcommand{\stoneii}{\fancycourse{SST 102}}
+\DefineCourse{ST102}{\text{Probability and Statistics I}} 
+
+%%%%Statistics Courses -- Level 2
+\newcommand{\sttwoi}{\fancycourse{SST 204}}
+\DefineCourse{ST201}{\text{Time Series Analysis}} 
+\newcommand{\sttwoii}{\fancycourse{SST 202}}
+\DefineCourse{ST202}{\text{Linear Modelling}} 
+\newcommand{\sttwoiv}{\fancycourse{SST 201}}
+\DefineCourse{ST204}{\text{Probability and Statistics}}
+
+%%%%Statistics Courses -- Level 3
+\newcommand{\stthreei}{\fancycourse{SST 301}}
+\DefineCourse{ST301}{\text{Business Statistics I}}
+\newcommand{\stthreeii}{\fancycourse{SST 302}}
+\DefineCourse{ST302}{\text{Business Statistics II}}
+\newcommand{\stthreeiii}{\fancycourse{SST 304}}
+\DefineCourse{ST303}{\text{Statistical Simulation and Modeling}} 
+
+%%%%Statistics Courses -- Level 4
+\newcommand{\stfouri}{\fancycourse{SST 401}}
+\DefineCourse{ST401}{\text{Bayesian Inference and Decision Theory}}
+
+%%%%Common Courses -- Level 3
+\newcommand{\ucthreei}{\fancycourse{CSC 409}}
+\DefineCourse{UC301}{\text{Data Governance, Ethics and Law}}
+\newcommand{\ucconei}{\fancycourse{UCU 101}}
+\DefineCourse{UCC101}{\text{Contemporary Issues in Psychology}}
+\newcommand{\ucconeii}{\fancycourse{UCU 301}}
+\DefineCourse{UCC102}{\text{Introduction to Philosophy and Critical Thinking}}
+
+\newcommand{\csfthreexxv}{\fancycourse{DSC 304}}
+\DefineCourse{CSF325}{\text{Web Security and Privacy}}
+
+%%%%----------------------------------------------------------
+%%%%       Useful Headings
+%%%%----------------------------------------------------------
+
+\newcommand{\mdobj}{\subtitle{Module Learning Objectives}
+This module seeks to facilitate you to learn about:
+}
+
+\newcommand{\mdlos}{\subtitle{Module Learning Outcomes}
+By the end of this module, the learner should be able to:
+}
+
+\newcommand{\takehome}{\myicon{value}{TAKE HOME}}%VALUING AND TAKE HOME
+\newcommand{\wrapup}{\myicon{summary}{WRAP UP}}
+\newcommand{\activities}{\myicon{activities}{ACTIVITIES}}
+\newcommand{\preactivities}{\myicon{preactivities}{PRE ACTIVITIES}}
+\newcommand{\recap}{\myicon{rewind}{RECAP}}
+\newcommand{\lesson}{\myicon{lesson}{LESSON}}
+\newcommand{\discussion}{\myicon{discussion}{DISCUSSION AND REFLECTION}}
+\newcommand{\videolesson}{\myicon{lesson}{SHORT PRE-RECORDED VIDEO LECTURE(S)}}
+\newcommand{\references}{\myicon{book}{CORE READING AND REFERENCES}}
+\newcommand{\subref}{\myicon{subref}{RECOMMENDED SUPPLEMENTARY READING}}
+\newcommand{\key}{
+\myfonticons{\fontsize{40}{40}\selectfont\faKey}{ANSWER KEY}\par}
+\newcommand{\mddescription}{
+\myfonticons{\fontsize{40}{40}\selectfont\faCogs}{Module Description}\par}
+\newcommand{\facilitation}{
+\myfonticons{\synchronous}{WEEKLY ONLINE LIVE FACILITATED TUTORIAL}\par}
+
+
+%%%%----------------------------------------------------------
+%%%%       Useful Environments
+%%%%----------------------------------------------------------
+
+\newenvironment{selfvideo}[1][]
+{\begin{oldactivity}{Pre-recorded Video}{\faPlayCircle[regular]}{#1}}
+{\end{oldactivity}}
+
+\newenvironment{youtube}[1][]
+{\begin{oldactivity}{Content Curated Video}{\color{Green}\faGlobe}{#1}}
+{\end{oldactivity}}
+
+
+\newtcolorbox[auto counter,number format=\arabic]{actsoln}[1][]
+{breakable,
+rotate=180,
+enhanced,
+title={SOLUTION TO ACTIVITIES #1 \faSearch },
+ colframe=ulabblue,
+ colback=ulabblue!5,
+ colbacktitle=ulabgold!25,
+ fonttitle=\Large\bfseries,
+ coltitle=black,
+ attach boxed title to top center=
+ {yshift=-0.25mm-\tcboxedtitleheight/2,yshifttext=2mm-\tcboxedtitleheight/2},
+ boxed title style={boxrule=0.5mm,
+ frame code={ \path[tcb fill frame] ([xshift=-4mm]frame.west)
+ -- (frame.north west) -- (frame.north east) -- ([xshift=4mm]frame.east)
+ -- (frame.south east) -- (frame.south west) -- cycle; },
+ interior code={ \path[tcb fill interior] ([xshift=-2mm]interior.west)
+ -- (interior.north west) -- (interior.north east)
+ -- ([xshift=2mm]interior.east) -- (interior.south east) -- (interior.south west)
+ -- cycle;}}}
+
+%----------------------------------------------------------------------------------------
+%.          Example
+%----------------------------------------------------------------------------------------
+
+\newtcolorbox[auto counter]{example}[1][]{enhanced jigsaw,
+breakable,
+left skip=5mm,
+before skip=0.8cm,
+after skip=0.3cm,
+overlay unbroken={\fill[top color=ulabgold,bottom color=ulabgold!15,line width=10pt] ([xshift=-0.2cm]frame.north west)rectangle(frame.south west);
+ \node[draw=ulabgold,line width=2pt,circle,fill=white,inner sep=2pt,minimum size=7mm] at ([xshift=-0.1cm]frame.north west){\color{cyan}\huge \faPenSquare};},
+ overlay first={\fill[top color=ulabgold,bottom color=ulabgold!15,line width=10pt] ([xshift=-0.2cm]frame.north west)rectangle(frame.south west);
+ \node[draw=ulabgold,line width=2pt,circle,fill=white,inner sep=2pt,minimum size=7mm] at ([xshift=-0.1cm]frame.north west){\color{cyan}\huge\faPenSquare};},
+ overlay middle={\fill[top color=ulabgold,bottom color=ulabgold!15,line width=10pt] ([xshift=-0.2cm]frame.north west)rectangle(frame.south west);},
+ overlay last={\fill[top color=ulabgold,bottom color=ulabgold!15,line width=10pt] ([xshift=-0.2cm]frame.north west)rectangle(frame.south west);},
+ frame hidden,
+ colframe=red,colback=white,colbacktitle=white,coltitle=ulabblue,top=0.5cm,
+ fonttitle=\bfseries,attach boxed title to top left={xshift=5mm,yshift=-0.4cm},
+ boxed title style={frame hidden},
+ title={\Large 	Example~\thetcbcounter:~ {\color{ulabgold}#1}}}
+
+\newtcolorbox[auto counter]{definition}[1][]{
+ enhanced,breakable,
+ before skip=0.8cm,after skip=0.8cm,
+ bottom=0.5cm,colframe=ulabgold,coltitle=white,
+ colback=ulabgold!4,boxrule=0.2mm,arc=0mm,leftrule=2mm,
+ attach boxed title to top left={xshift=0cm,yshift*=0mm-\tcboxedtitleheight},
+ varwidth boxed title*=-3cm,
+ boxed title style={frame code={
+ \coordinate (A) at (frame.north east);
+ \coordinate (B) at (frame.south east);
+ \path[fill=ulabgold](frame.north east)--([xshift=-2mm]frame.north west)--([xshift=-2mm]frame.south west)--(frame.south east) --([xshift=3mm]$(A)!0.5!(B)$)--cycle;
+ \draw[white,line width=2pt]([xshift=-2mm]frame.north east)--([xshift=1mm]$(A)!0.5!(B)$)--([xshift=-2mm]frame.south east);
+ \path[fill=ulabgold!50]([xshift=-2mm]frame.south west)--+(2mm,-2mm)|-cycle;
+ },interior engine=empty,
+ },
+ title={\bf\color{white} \large Definition~\thetcbcounter:#1}}
+
+%\pgfdeclarelayer{background} 
+%\pgfsetlayers{background}
+
+\newtcolorbox[auto counter]{theorem}[1][]{
+breakable,enhanced,detach title,blanker,title={Theorem~\thetcbcounter:#1},coltitle=white,
+ boxsep=3mm,top=2mm,left=2mm,right=2mm
+ ,before skip=1cm,after skip=0.6cm,
+ overlay={\scoped[on background layer]{
+ \draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)|-(interior.south east);},\node[anchor=west,font=\bfseries,
+ scale=1.2,above right,fill=ulabblue,xshift=-2mm,yshift=-2mm] (1) at (interior.north west){\tcbtitle};
+ },overlay first={\scoped[on background layer]{
+ \draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)--(interior.south west);},\node[anchor=west,font=\large\bfseries,
+ scale=1.2,above right,fill=ulabblue,xshift=-2mm,yshift=-2mm] (1) at (interior.north west){\tcbtitle};
+ },overlay middle={\draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)--(interior.south west);},overlay last={\draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)|-(interior.south east);}}
+ 
+ 
+\newtcolorbox[auto counter]{lemma}[1][]{
+breakable,enhanced,detach title,blanker,title={Lemma~\thetcbcounter:#1},coltitle=white,
+ boxsep=3mm,top=2mm,left=2mm,right=2mm
+ ,before skip=1cm,after skip=0.6cm,
+ overlay={\scoped[on background layer]{
+ \draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)|-(interior.south east);},\node[anchor=west,font=\bfseries,
+ scale=1.2,above right,fill=ulabblue,xshift=-2mm,yshift=-2mm] (1) at (interior.north west){\tcbtitle};
+ },overlay first={\scoped[on background layer]{
+ \draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)--(interior.south west);},\node[anchor=west,font=\large\bfseries,
+ scale=1.2,above right,fill=ulabblue,xshift=-2mm,yshift=-2mm] (1) at (interior.north west){\tcbtitle};
+ },overlay middle={\draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)--(interior.south west);},overlay last={\draw[fill=ulabblue!3,draw=none](interior.north west)rectangle(interior.south east);
+ \draw[ulabblue](interior.north west)|-(interior.south east);}}
+
+
+\newcommand\soln{{\color{ulabblue} \medskip\textbf{{ {\LARGE\ding{45}}\; \textsf{\Large Solution}\quad}}\\[-2mm]
+\rule{\textwidth}{1pt}\par
+}}
+
+
+\newtcolorbox{mybox}{
+breakable,
+colframe=white,
+colback=white,
+coltitle=white,
+left=1cm,
+right=1cm,
+}
+
+\newenvironment{mysolution}
+{
+\begin{mybox}
+\soln}
+{
+\end{mybox}
+%\end{mymlos}]
+}
+
+\newenvironment{posttest}[1][]
+{\myicon{posttest}{{END OF MODULE QUIZ}}\par                         %POST ASSESSMENT
+#1
+\begin{enumerate}[label={\Large\cb\arabic*.}]}
+{\end{enumerate}}
+
+\newenvironment{pretest}[1][]
+{\myicon{pretest}{{WARM UP}}\par
+#1
+\begin{enumerate}[label={\Large\cb\arabic*.}]}
+{\end{enumerate}}
+
+\newenvironment{mcqchoices}[1][2]
+{\begin{multicols}{#1}
+\begin{enumerate}[label=(\alph*).]}
+{\end{enumerate}
+\end{multicols}}
+
+\newcommand\mcqtest{\bigskip\item\subtitle{Multiple Choice}\par}
+\newcommand\tftest{\bigskip\item\subtitle{True or False}\par}
+\newcommand\opentest{\bigskip\item\subtitle{Open Ended Questions}\par}
+
+\newcounter{problems}
+\setcounter{problems}{0}
+\newcommand{\mycenterbox}[1]% #1 = text
+{\bigskip\bgroup% use local definitions
+  \parskip=0pt
+  \parindent=0pt
+  \sbox0{\tcbox[tcbox raise base]{#1}}%
+  \dimen0=\dimexpr 0.5\linewidth - 0.5\wd0\relax
+  \par\rule{\dimen0}{0.8pt}\box0\rule{\dimen0}{0.8pt}\par
+\egroup
+\bigskip}
+
+\newcommand{\problem}[1]
+{\stepcounter{problems}
+\mycenterbox{\theproblems. #1}
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+
+
+
+
+\definecolor{graylight}{cmyk}{.30,0,0,.67} % define color using xcolor syntax
+
+\newcounter{Example}
+\setcounter{Example}{0}
+
+\newmdenv[ % Define mdframe settings and store as leftrule
+  linecolor=ulabgold,
+  linewidth=1.5mm,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{leftrule}
+
+%\NewDocumentEnvironment{example}{O{}} % Define example environment
+%{\stepcounter{Example}
+%\begin{leftrule}\noindent\textcolor{ulabgold}{\large\textbf{Example \theExample:}}\par}
+%{\end{leftrule}}
+
+\newcounter{Activity}
+\setcounter{Activity}{0}
+\newmdenv[ % Define mdframe settings and store as leftrule
+  linecolor=ulabblue,
+  linewidth=1.5mm,
+  topline=false,
+  bottomline=false,
+  rightline=false,
+  skipabove=\topsep,
+  skipbelow=\topsep
+]{myleftrule}
+
+\NewDocumentEnvironment{activity}{O{}} % Define example environment
+{\stepcounter{Activity}
+\begin{myleftrule}\noindent\textcolor{ulabblue}{\large\textbf{Activity \theActivity:}\; #1}\par}
+{\end{myleftrule}}
+
+\newcounter{Topic}
+\setcounter{Topic}{0}
+\renewcommand{\theTopic}{\Roman{Topic}}
+\newcommand\topic[1]{\bigskip\par\stepcounter{Topic}{\LARGE \bf \color{ulabgold}\theTopic~-~#1}\par}
+
+\newcounter{Subtopic}[Topic]
+%\setcounter{Subtopic}{0}
+\newcommand\subtopic[1]{\bigskip\par\stepcounter{Subtopic}{\LARGE  \bf \color{ulabgold}\theTopic.\theSubtopic~-~#1}\par}
+
+
+
+
+\newtcolorbox[auto counter]{oldactivity}[3]{
+    enhanced, breakable,
+    colbacktitle=ulabgold, fonttitle=\Large\bfseries, title= #1~#3,
+    subtitle style={empty, coltext=black},
+    colback=white,
+    boxrule=0.2mm, leftrule=3.7cm,
+    drop lifted shadow=ulabgold!80!black,
+    frame style={top color=ulabgold!80, bottom color=ulabgold!80, middle color=ulabgold!40},
+    overlay={
+      \node[scale=1.5,inner sep=0pt, xshift=1.25cm, anchor=center] at ($ (frame.north west)!.5!(frame.south west) $) {\huge\color{ulabblue}#2};
+    },
+    attach boxed title to top left={xshift=3.5cm, yshift*=1mm-\tcboxedtitleheight},
+    varwidth boxed title*=-3cm,
+    boxed title style={
+        frame code={
+            \path[fill=tcbcolback!60!black]
+            ([yshift=-1mm, xshift=-1mm+3cm] frame.north west) arc[start angle=0, end angle=180, radius=1mm]
+            ([yshift=-1mm, xshift=1mm] frame.north east) arc[start angle=180, end angle=0, radius=1mm];
+            \path[left color=tcbcolback!90!black!80, right color=tcbcolback!90!black!80]
+            ([xshift=-2mm] frame.north west) -- ([xshift=2mm] frame.north east)
+            [rounded corners=1mm] -- ([xshift=1mm, yshift=-1mm] frame.north east) -- (frame.south east) -- (frame.south west) -- 
+            ([xshift=-1mm, yshift=-1mm] frame.north west) [sharp corners] -- cycle;
+        },
+        interior engine=empty
+    }
+}
+
+
+%-----------------------------------------
+%REMARK
+%-----------------------------------------
+\newtcolorbox{remark}{breakable,enhanced,detach title,blanker,title={{Remark}},coltitle= ulabblue,
+boxsep=2mm,top=2mm,left=2mm,right=2mm
+,before skip=0.7cm,
+after skip=0.5cm,
+overlay={
+\scoped[on background layer]{
+	\draw[fill=white,draw=none](interior.north west)rectangle
+	(interior.south east);}
+\node[anchor=north west,above right,font=\large\bfseries] (1) at (interior.north west){\tcbtitle};
+\draw[very thick, ulabblue](1.south west)--([xshift=4mm]1.south east)node[above=-3mm ,circle,draw=ulabblue,fill=ulabblue!50, font=\large\bfseries , anchor=south, minimum size=0.9cm](2){\ };
+\node[font=\bf,  ulabblue] at (2.center){};%\bclampe
+\scoped[on background layer]{
+	\draw[very thick, ulabblue](interior.south west)|-(1.south west)--([xshift=4mm]1.south east);}
+},
+overlay middle={
+\draw[fill=white,draw=none](interior.north west)rectangle
+(interior.south east);
+\draw[very thick, ulabblue](interior.north west)--
+(interior.south west);
+},overlay last={
+\draw[fill=white,draw=none](interior.north west)rectangle
+(interior.south east);
+\draw[very thick, ulabblue](interior.north west)--
+(interior.south west);
+}}
+
+%-----------------------------------------
+%COROLLARY
+%-----------------------------------------
+\newtcolorbox{corollary}{breakable,enhanced,detach title,blanker,title={{Corollary}},coltitle= ulabblue,
+boxsep=2mm,top=2mm,left=2mm,right=2mm
+,before skip=0.7cm,
+after skip=0.5cm,
+overlay={
+\scoped[on background layer]{
+	\draw[fill=white,draw=none](interior.north west)rectangle
+	(interior.south east);}
+\node[anchor=north west,above right,font=\large\bfseries] (1) at (interior.north west){\tcbtitle};
+%\draw[very thick, ulabblue](1.south west)--([xshift=4mm]1.south east)node[above=-3mm ,circle,draw=ulabblue,fill=ulabblue!50, font=\large\bfseries , anchor=south, minimum size=0.9cm](2){\ };
+\node[font=\bf,  ulabblue] at (2.center){};%\bclampe
+\scoped[on background layer]{
+	\draw[very thick, ulabblue](interior.south west)|-(1.south west)--([xshift=4mm]1.south east);}
+},
+overlay middle={
+\draw[fill=white,draw=none](interior.north west)rectangle
+(interior.south east);
+\draw[very thick, ulabblue](interior.north west)--
+(interior.south west);
+},overlay last={
+\draw[fill=white,draw=none](interior.north west)rectangle
+(interior.south east);
+\draw[very thick, ulabblue](interior.north west)--
+(interior.south west);
+}}
+
+%%%%%%%--------------------------------------------------------------------------
+%%%%%%%.       Enumerations
+%%%%%%%--------------------------------------------------------------------------
+
+\newlist{refenumerate}{enumerate}{2}
+\setlist[refenumerate]{label={\arabic*.}, leftmargin=*, before={\small}, font=\small,}
+
+\newlist{eloenumerate}{enumerate}{2}
+\setlist[eloenumerate]{label={\cb \arabic*.},itemindent=0em}%, leftmargin=*, 
+
+\newlist{objenumerate}{enumerate}{2}
+\setlist[objenumerate]{label={$\cdot$},itemindent=0em}%, leftmargin=*, 
+
+\newcommand{\mylink}[1]{\href{#1}{#1}}
+
+\newcommand\cb{\bf\color{ulabblue}}
+\newcommand\cg{\bf\color{ulabgold}}
+
+%%%-------------------------------------------------------------------------------------
+%
+%%%-------------------------------------------------------------------------------------
+%%%%------------------------------------------------------------------
+%%%%----------PROGRAMMING-------------------------
+%%%%------------------------------------------------------------------
+\usepackage{listings}
+%New colors defined below
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{RGB}{184, 201, 73}
+%{0.58,0,0.82}
+\definecolor{backcolour}{RGB}{38,58,60}
+\definecolor{basiccolor}{RGB}{219, 219, 219}
+\definecolor{keywordcol}{RGB}{191, 148, 211}
+\definecolor{symbcol}{RGB}{89, 153, 141}
+%Code listing style named "mystyle"
+\lstdefinestyle{mystyle}{
+  backgroundcolor=\color{orange!5}, commentstyle=\color{codegreen},
+  keywordstyle=\color{orange},
+  numberstyle=\tiny\color{codegray},
+  stringstyle=\color{codepurple},
+  basicstyle=\ttfamily\footnotesize\color{black!60},
+  linewidth=.9\textwidth,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  keepspaces=true,
+  numbers=left,
+  numbersep=5pt,
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false,
+  tabsize=2,
+  literate=*
+    {+}{{\textcolor{symbcol}{+}}}{1}
+    {-}{{\textcolor{symbcol}{-}}}{1}
+    {}{{\textcolor{symbcol}{}}}{1}
+    {&}{{\textcolor{symbcol}{&}}}{1}
+    {/}{{\textcolor{symbcol}{/}}}{1}
+    {=}{{\textcolor{symbcol}{=}}}{1}
+    {<}{{\textcolor{symbcol}{<}}}{1}
+    {>}{{\textcolor{symbcol}{>}}}{1}
+    {8}{{\textcolor{symbcol}{8}}}{1}
+    {9}{{\textcolor{symbcol}{9}}}{1}
+}
+
+%"mystyle" code listing set
+\lstset{style=mystyle}
+
+%%%%%%%--------------------------------------------------------------------------
+%%%%%%%Fancy Icons
+%%%%%%%--------------------------------------------------------------------------
+
+\newcommand{\naming}[3][cyan]{
+\tikz[node distance=8mm,baseline=(2.base)]{
+\node[circle,draw=#1,fill=#1,minimum size=11mm](2){\ };
+\node[font=\bf,  ulabcyan] at (2){\LARGE\color{white}#2};
+
+%\node (a) {\Huge#1};
+\node[below of=2] (b) {\color{#1}\small\bf #3};}
+}
+
+\newcommand{\synchronous}[1][T]{
+{
+\ifthenelse{\equal{#1}{T}}
+  {\scalebox{1.5}{\naming[orange]{\faCalendarCheck[regular]}{Synchronous}}}% True case %Synchronous
+  {\naming[brown]{\faIcon[regular]{calendar}}{Asynchronous}}% false case %Asynchronous
+}}
+
+\newcommand{\location}[1]{
+{
+\ifthenelse{\equal{#1}{O}}{\naming[cyan]{\faGlobe}{Online}}{}% false case %Teacher not present
+\ifthenelse{\equal{#1}{B}}{\naming[LimeGreen]{}{Blended}}{}% false case %Teacher not present
+\ifthenelse{\equal{#1}{P}}{\naming[OliveGreen]{\faUniversity}{On site}}{}% false case %Teacher not present
+}}
+
+
+\newcommand{\teacher}[1][P]{
+{
+\ifthenelse{\equal{#1}{P}}
+  {\naming[red]{\faChalkboardTeacher}{Teacher is Present}}% True case %Teacher is Present
+  {\naming[NavyBlue]{\faChalkboard}{Teacher not Present}}% false case %Teacher not present
+}}
+
+
+
+
+%%%People Icons
+\usetikzlibrary{shapes.callouts} 
+
+\pgfkeys{%
+    /calloutquote/.cd,
+    width/.code                   =  {\def\calloutquotewidth{#1}},
+    position/.code                =  {\def\calloutquotepos{#1}}, 
+    author/.code                  =  {\def\calloutquoteauthor{#1}},
+    /calloutquote/.unknown/.code   =  {\let\searchname=\pgfkeyscurrentname
+                                 \pgfkeysalso{\searchname/.try=#1,                                
+    /tikz/\searchname/.retry=#1},\pgfkeysalso{\searchname/.try=#1,
+                                  /pgf/\searchname/.retry=#1}}
+                            }  
+
+%{(-1,-1.5mm)}
+\newcommand\calloutquote[2][]{%
+       \pgfkeys{/calloutquote/.cd,
+         width               = .6\textwidth,
+         position            = {(-1,-1.5mm)},
+         author              = {}}
+  \pgfqkeys{/calloutquote}{#1}                   
+  \node [fill=ulabgold!30,rounded corners,rectangle callout,callout relative pointer={\calloutquotepos},text width=\calloutquotewidth,/calloutquote/.cd,
+     #1] (tmpcall) at (0,0) {#2};
+  \node[overlay] at ([xshift=-5mm,yshift=-5mm]tmpcall.pointer){\includegraphics{img/mteacher.png}};    
+}
+
+\newcommand\calloutquotew[2][]{%
+       \pgfkeys{/calloutquote/.cd,
+         width               = .6\textwidth,
+         position            = {(1,-1.5mm)},
+         author              = {}}
+  \pgfqkeys{/calloutquote}{#1}                   
+  \node [fill=ulabblue!20,rounded corners,rectangle callout,callout relative pointer={\calloutquotepos},text width=\calloutquotewidth,/calloutquote/.cd,
+     #1] (tmpcall) at (0,0) {#2};
+  \node[overlay] at ([xshift=5mm,yshift=-5mm]tmpcall.pointer){\includegraphics{img/wteacher.png}};    
+}
+
+
+\newcommand\comy[1]{\par
+\bigskip
+\hspace*{-3mm}\begin{tikzpicture}
+\calloutquote{#1}
+\end{tikzpicture}\par}
+
+\newcommand\comx[1]{\par
+\bigskip
+\hfill\begin{tikzpicture}
+\calloutquotew{#1}
+\end{tikzpicture}
+\hspace*{-10mm}\par}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------------
+%. Exercise
+%----------------------------------------------------------------------------------------------------------------------------------------------------
+\tcbset{myboxstyle/.style={enhanced,skin=enhanced jigsaw,
+ attach boxed title to top left={xshift=-3mm,yshift=-\tcboxedtitleheight/2},
+ coltitle=black,varwidth boxed title=0.9\linewidth,
+ colbacktitle=#1!75, colback=ulabblue!5,sharp corners,
+ top=2ex,
+ boxed title style={sharp corners, boxrule=0pt},
+ underlay boxed title={
+ \fill[#1] (title.south west) -- (title.south-|frame.west)--++(0,-.2*\tcboxedtitleheight)--cycle;
+ \fill[#1] (title.north east) --++(-.5*\tcboxedtitleheight,0)--++(0,.2*\tcboxedtitleheight)--cycle;}},
+ myboxstyle/.default=ulabblue}
+
+\newtcolorbox[]{myexercise}{myboxstyle,breakable,title={\faEdit {\bf Comprehension Quiz} \thetcbcounter: Module \dpmdnumber},before skip=0.1cm,after skip=3mm, colframe=ulabblue}%auto counter,number format=\arabic
+
+%--------------------------------------------------------------------------------------------------------------------------
+%Algorithm
+%--------------------------------------------------------------------------------------------------------------------------
+\newtcolorbox[]{myalgorithm}{myboxstyle,breakable,title={\faEdit {\bf Algorithm} \thetcbcounter: Module \dpmdnumber},before skip=0.1cm,after skip=3mm, colframe=ulabcyan}%auto counter,number format=\arabic
+%colframe=ulabblue
+%-----------------------------------------------------------------------------------------------------------------------------------------------------
+\newcommand{\ZZ}{\mathbb C }
+\newcommand{\RR}{\mathbb R }
+\newcommand{\floor}{\text{floor}}
+\newcommand{\ceil}{\text{ceil}}
+\DeclareMathOperator{\modl}{{\it mod}}
+\DeclareMathOperator{\rem}{{\it rem}}
+\newcommand{\lcm}{\text{lcm}}

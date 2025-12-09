@@ -1,0 +1,531 @@
+% !TEX TS-program = XeLaTeX
+\documentclass[a4paper,11pt]{article}
+\boldmath
+\usepackage{geometry}
+\setlength{\headheight}{13.6pt}
+\addtolength{\topmargin}{-1.6pt}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fontspec}
+\usepackage{ifthen}
+\usepackage{mdframed} % Add easy frames to paragraphs
+\usepackage{lipsum} % For dummy text
+%\usepackage{multicol}
+
+\usepackage{caption}
+%\usepackage{subcaption}
+\usepackage[svgnames,table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{pifont}
+\usetikzlibrary{backgrounds,calc}
+\usetikzlibrary{intersections,decorations.text}
+ \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+\usepackage{framed}
+
+\tikzset{%
+    body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,thick,pattern=north east lines wide},
+    dimen/.style={<->,>=latex,thin,every rectangle node/.style={fill=white,midway,font=\sffamily}},
+    symmetry/.style={dashed,thin},
+}
+
+
+\definecolor{ulabgold}{RGB}{255,127,80} %253,186,0
+\definecolor{ulabblue}{RGB}{3, 123, 144}%{20, 130, 126}
+\definecolor{ulabcyan}{RGB}{46,143,214}
+
+
+\definecolor{c1}{RGB}{62, 97, 127}
+\definecolor{c2}{RGB}{104, 182, 182}
+\definecolor{c3}{RGB}{107, 190, 190}
+\definecolor{c4}{RGB}{100, 172, 174}
+\definecolor{c5}{RGB}{95, 162, 162}
+
+\colorlet{c1}{ulabblue}
+\colorlet{c2}{ulabgold}
+\colorlet{c3}{ulabgold}
+\colorlet{c4}{ulabblue}
+
+\usepackage{array, makecell,float}
+\usepackage{multirow,multicol}
+
+\usepackage{fontawesome5}
+
+\everymath{\displaystyle}
+
+\makeatletter
+\let\old@error\@latexerr
+\def\zzfl@error{Float(s) lost}
+
+\def\@latexerr#1{%
+\def\tmp{#1}%
+\ifx\tmp\zzfl@error
+  \def\@elt##1{{%
+   \let \protect\noexpand
+    \shipout\vbox{\hbox{LOST FLOAT}\hbox{\fbox{\box##1}}}}}%
+  \@currlist\@dbltoplist 
+  \let\@elt\relax
+\fi
+\old@error{#1}}
+\makeatother
+
+
+\newcommand*{\arraycolor}[1]{\protect\leavevmode\color{#1}}
+\newcolumntype{A}{>{\columncolor{white}}l}
+\newcolumntype{B}{>{\columncolor{LightGoldenrod!50}}l}
+\newcolumntype{C}{>{\columncolor{FireBrick!20}}c}
+\newcolumntype{D}{>{\columncolor{white}}c}
+\newcolumntype{E}{>{\columncolor{cyan!42}}l}
+\newcolumntype{F}{>{\columncolor{white}}p{10.2cm}}
+
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage{soul} % \hl{} for highlight pencil
+\usepackage{xcolor}
+\RequirePackage{longtable}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+\usepackage{caption}
+\captionsetup{labelformat=empty}
+\usepackage{adjustbox,booktabs}
+\renewcommand\theadfont{\bfseries\sffamily}
+%\usepackage{array,longtable}
+
+\usepackage{lastpage,fancyhdr}
+\pagestyle{fancy}
+%\headheight=14pt
+\renewcommand\headrule{}
+\fancyhf{}
+\chead%\includegraphics[width=1cm]{logo.png}
+{
+\begin{tikzpicture}[remember picture, overlay]
+\coordinate (start) at ($(current page.north west)+(10mm,-15mm)$);
+\coordinate (end) at ($(current page.north east)+(-10mm,-5mm)$);
+\draw[thick] (start) rectangle (end);
+\fill[ulabblue] ($(start)+(1mm,1mm)$) rectangle ($(end)+(-1mm,-1mm)$);
+\fill[ulabgold] ($(start)+(1mm,1mm)$) rectangle++ (50mm,8mm);
+\node[right] at ($(start)+(3mm,5mm)$) {\color{white}\bf LEARNING MODULE ~\dpmdnumber};
+\node[right] at ($(start)+(55mm,5mm)$) {\color{white}\fullcoursename};
+\end{tikzpicture}
+}
+
+%\rhead{\color{ulabblue!50}\small \href{https://www.ouk.ac.ke/}{https://www.ouk.ac.ke/} \hspace*{-3.5cm}}
+\newcommand{\programmtitle}{Bachelor of Data Science}
+
+\lfoot{\color{ulabblue!50}
+\scriptsize \MakeUppercase{\programmtitle}
+}
+
+\rfoot{\color{ulabblue!50}\small \bf Page\ \thepage\ of \pageref{LastPage}
+\hspace*{-3.5cm}}
+\thispagestyle{fancy}
+
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+\rfoot{\color{ulabblue!50}\bf info@ouk.ac.ke\hspace*{-3.5cm}}
+} 
+
+
+\RequirePackage{booktabs, colortbl} 
+\RequirePackage{pgfplotstable} 
+
+\makeatletter
+\renewcommand\section{
+\@startsection{section}{1}{1.\z@}
+              {-3.5ex \@plus -1ex \@minus -.2ex}
+              {2.3ex \@plus .2ex}
+              {\color{ulabgold}\bfseries\Large}}
+\renewcommand\subsection{
+\@startsection{subsection}{2}{\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.5ex \@plus .2ex}
+              {\color{ulabgold!95}\bfseries\large}}
+\renewcommand\subsubsection{
+\@startsection{subsubsection}{3}{\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.2ex \@plus .2ex}
+              {\color{ulabgold!95}\bfseries\large}}
+
+\@ifundefined{texorpdfstring}{\let\texorpdfstring\@firstoftwo}{}
+\newcommand\labelfork[2]{
+  \ifx\thepage\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi{#1}{#2}
+}
+\newcommand\doappendixstuff{
+  \renewcommand\thesection{
+    \texorpdfstring{\noexpand\labelfork{}{\appendixname\protect~}}{\appendixname\space}
+    \@Alph\c@section
+    \texorpdfstring{\noexpand\labelfork{}{:}}{:}
+  }
+}
+
+%\def\cloilo{label={\bf CLO\arabic*.},itemindent=3em}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%\usepackage{longtablex}
+%\usepackage{lscape} %landscape page
+\usepackage{hhline}%
+
+\usepackage[shortlabels]{enumitem}
+%\usepackage{enumerate}
+\setlist{nosep} % or 
+%\setlength{\itemindent}{.5in}
+%\setlist{noitemsep} %to leave space around whole list
+%\usepackage{enumerate}
+%\setlength\itemsep{0em}
+\setlist[itemize]{leftmargin=*}
+%\setlist[enumerate]{nosep}
+
+%\hyphenpenalty=10000
+%\tolerance=10
+
+%font change to sans serif 
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{wasysym}
+\usepackage{marvosym}
+
+\newcommand{\cmark}{\LARGE \Checkedbox}%
+%\newcommand{\cmark}{\large\ding{51}}%
+\newcommand{\xmark}{\large\ding{55}}%
+
+
+
+
+%How can I make a clickable Table of Contents
+\usepackage[bookmarks=true, bookmarksopen=true,%
+bookmarksdepth=3,bookmarksopenlevel=2,%
+colorlinks=true, linkcolor=ulabblue,%
+citecolor=ulabblue,%
+filecolor=ulabblue,%
+menucolor=ulabblue,%
+urlcolor=ulabblue]{hyperref}
+
+\hfuzz1pc % Don't bother to report overfull boxes if overage is < 1pc
+
+
+\usepackage{tabularx,graphicx}
+
+\newcommand{\specialcell}[2][l]{% ending line in table
+  \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+  
+\usepackage{anysize}
+\marginsize{1in}{1in}{0.3in}{1in}
+
+%\linespread{1.2}
+\renewcommand{\baselinestretch}{1.10}
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0pt}
+
+\usepackage{titlesec} 
+\setcounter{secnumdepth}{10}
+\titlelabel{\thetitle.\  }
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{-2em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{-5.5ex plus .2ex}
+%\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+%% Spacing between number and text in TOC
+\usepackage{tocloft}
+\advance\cftsecnumwidth 0.5em\relax
+\advance\cftsubsecindent 0.5em\relax
+\advance\cftsubsecnumwidth 0.5em\relax
+
+\title{SCHOOL OF MATHEMATICS}
+\author{Jared Ongaro}
+\date{August 7, 2021}
+%\date{\today}
+
+
+%\pdfinfo{%
+%  /Title    ()
+%  /Author   ()
+%  /Creator  ()
+%  /Producer ()
+%  /Subject  ()
+%  /Keywords ()
+%}
+\input{preamble}
+
+\newcommand{\subtitle}[1]{
+\par
+{\color{ulabblue}
+\hspace*{-2.7mm}
+\begin{tikzpicture}
+\draw[thick] (0,0) --++ (\textwidth,0);
+\node[above right] at (-2mm,0mm)  {\textbf{#1}};
+\end{tikzpicture}\par
+}}
+
+
+
+\renewcommand{\subtitle}[1]{
+\par
+{\color{ulabblue}\Large\textbf{#1}}
+\par
+}
+
+\newcommand{\subtitleb}[1]{
+\bigskip\textbf{#1}\\[-3mm]
+}
+
+\PassOptionsToPackage{no-math}{fontspec}
+\usepackage{mathspec}
+
+\PassOptionsToPackage{no-math}{fontspec}
+\usepackage{mathspec}
+\setmainfont[
+BoldItalicFont=Nunito-BoldItalic.ttf,
+BoldFont=Nunito-Bold.ttf,
+ItalicFont=Nunito-SemiBoldItalic.ttf,
+]{Nunito-Regular.ttf}
+
+\setmathsfont(Digits,Latin)%,Greek,Symbols)
+[Numbers={Lining,Proportional}]{Nunito-Regular.ttf}
+%\setmathsfont(Digits,Latin)%,Greek,Symbols)
+%[Numbers={Lining,Proportional}]{Nunito-Regular.ttf}
+
+
+
+
+
+\begin{document}
+
+%\newcommand\coursecode[1]{\renewcommand{\dispcoursecode}{#1}}
+
+\newcommand{\programname}{\subtitle{Programmer Title:}{\color{black}Bachelor of Technology Education}}
+%\newcommand{\coursetitle}[1]{\subtitle{Course Title:}& {\color{black}#1}\\ }
+
+\newcommand{\mdno}{1}
+
+
+%\newcommand{\mdtitle}[1]{\subtitle{Learning Module Title:} & {\color{black}#1}\\ }
+\newcommand{\mddeveloper}{Wycliffe Ogik}
+
+
+\newcommand{\audience}{\myicon{audience}{Audience Description}}
+\newcommand{\expectations}{\myicon{target.png}{Expectations}\par
+{\cg This module seeks to facilitate you in learning about:}
+}
+\newcommand{\instructions}{\subtitle{Instructions to Learners}}
+
+\newcommand{\myicon}[3][width=2.5cm]{\par
+\tikz{
+\node (a) at (0,0) {\includegraphics[#1]{img/#2}};
+\node[right=15mm] at (a){\subtitle{#3}}
+}\par}
+
+\newcommand{\myfonticons}[3][\huge\color{ulabblue}]{\par
+\tikz{
+\node (a) at (0,0) {{#1#2}};
+\node[right=15mm] at (a){\subtitle{#3}}
+}\par}
+
+%Learning module description 
+%Module objectives
+%Module learning outcomes
+
+
+
+
+\newtcolorbox{moduledescription}{colback=ulabgold!5!white,
+colframe=ulabgold,
+fonttitle=\bfseries,
+colbacktitle=ulabgold,
+enhanced,
+arc=4mm,
+top=4mm,
+attach boxed title to top center={yshift=-4mm},
+title=\subtitle{Module Description},
+%code={\addtocontents{toc}{#2}}
+}
+
+\newtcolorbox{mymlos}{colback=ulabgold!5!white,
+colframe=ulabgold,
+fonttitle=\bfseries,
+colbacktitle=ulabgold,
+enhanced,
+arc=4mm,
+top=4mm,
+attach boxed title to top center={yshift=-4mm},
+title=\subtitle{\color{white}Module Learning Outcomes},
+%code={\addtocontents{toc}{#2}}
+}
+
+\newenvironment{mlos}
+{\begin{mymlos}
+By the end of this module, you should be able to:
+\begin{eloenumerate}}
+{\end{eloenumerate}
+\end{mymlos}
+}
+
+
+
+%\renewcommand{\coursetitle}[1]{\subsection{#1}}
+
+\newcommand\ime{
+\subtitle{Instructional Materials and/or Equipment}
+%Digital media content on VLE, Open Educational Resources (OERs),  Virtual Classes, Smart Laboratory,   Relevant softwares and Textbooks.
+}
+%\mainmatter
+%
+%\input{NumModule-0.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-STACK.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-1.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-2.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-3.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-4.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-5.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-6.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-7.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-8.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%\input{NumModule-92.tex}
+%
+%\newpage
+%
+%\newpage
+%
+%%\input{NumModule-91.tex}
+%\input{NumModule-10.tex}
+\end{document}
+
+MAT 303 - NUMERICAL METHODS
+Credit: 3
+Instructional hours: 45
+Prerequisite: MAT 202
+
+Course Purpose
+The purpose of this course is to equip the  learner with knowledge and skills of application of  numerical methods for solving mathematical problems using computational tools.
+
+Expected Learning Outcomes
+By the end of the course, the learner should be able to;
+Analyze the convergence properties of numerical algorithms.
+Utilize computational tools to implement and execute numerical algorithms.
+Perform error analysis to assess the accuracy and reliability of computational results.
+Synthesize multiple numerical methods to solve complex mathematical problems.
+
+Course Content 
+Introduction to Numerical Methods: Motivation for numerical methods, Sources of errors: round-off error, truncation error, Floating-point arithmetic and numerical stability; Finding Methods: Bisection method, Newton-Raphson method, Secant method, Convergence analysis and error estimation;  Interpolation and Approximation: Polynomial interpolation, Lagrange interpolation, Newton interpolation, Piecewise interpolation, Cubic splines, Least squares approximation;
+Numerical Differentiation and Integration: Finite difference approximations, Numerical integration, Trapezoidal rule, Simpson's rule, Romberg integration, Richardson extrapolation; Numerical Methods for ODEs: Euler's method and improved Euler methods, Runge-Kutta and Euler's method, Runge-Kutta methods (e.g., RK4), Multistep methods: Adams-Bashforth, Adams-Moulton, Stability and stiffness, Error analysis and stability considerations;  Implementing numerical methods for ODEs in programming assignments, Modeling and simulating dynamical systems using ODE models; Solution of Partial Differential Equations (PDEs): Finite Difference methods for elliptic, parabolic, and hyperbolic PDEs, Finite Element methods, Introduction to numerical techniques for solving Laplace's equation, heat equation, and wave equation; Computational Tools and Libraries: Introduction to programming languages Mathematical Programming (e.g., Python or Octave) and numerical libraries (e.g., NumPy, SciPy), Utilizing computational tools for implementing and analyzing numerical algorithms; Applications and Case Studies: Applications of numerical methods in Mathematics, Engineering, Physics, and computational sciences, Case studies demonstrating the use of numerical techniques in real-world problems.
+
+One
+\begin{itemize}
+  \item Define round-off errors and identify their sources in numerical computations.
+  \item Explain the convergence criteria of iterative algorithms such as fixed point iteration.
+  \item Use the bisection and Newton’s methods to find roots of nonlinear equations.
+  \item Compare the efficiency and convergence rates of bisection, fixed point iteration, and Newton’s methods.
+\end{itemize}
+Two
+\begin{itemize}
+  \item Recall key concepts of error types and their impacts on numerical solutions.
+  \item Summarize methods to accelerate convergence in iterative algorithms.
+  \item Compute zeros of polynomials using numerical techniques.
+  \item Assess the accuracy of polynomial interpolation using Lagrange polynomials.
+\end{itemize}
+Three
+\begin{itemize}
+  \item Identify the steps involved in Neville’s algorithm and divided differences.
+  \item Describe the principles of Hermite interpolation and cubic splines.
+  \item Construct interpolating polynomials and cubic splines for given data sets.
+  \item Develop smooth curve approximations using cubic spline interpolation for real-world data.
+\end{itemize}
+Four
+\begin{itemize}
+  \item Define parametric curves and numerical differentiation concepts.
+  \item Explain Richardson’s extrapolation and its role in improving derivative estimates.
+  \item Perform numerical differentiation on parametric curves using finite difference methods.
+  \item Evaluate the accuracy of numerical integration techniques applied to parametric functions.
+\end{itemize}
+Five
+\begin{itemize}
+  \item Recall the principles of Romberg integration and Gaussian quadrature.
+  \item Explain adaptive quadrature and its advantages over fixed-step methods.
+  \item Implement Romberg and Gaussian quadrature methods to approximate definite integrals.
+  \item Compare the efficiency and accuracy of different numerical integration techniques, including multiple integrals.
+\end{itemize}
+Six
+\begin{itemize}
+  \item Identify the characteristics of improper integrals and initial value problems (IVPs).
+  \item Summarize Euler’s method and higher-order Taylor methods for solving ODEs.
+  \item Solve first-order ODEs using Euler’s and Taylor’s numerical methods.
+  \item Critique the accuracy and stability of Euler’s method versus higher-order Taylor methods.
+\end{itemize}
+Seven
+\begin{itemize}
+  \item Define the Runge-Kutta family of methods and multistep approaches.
+  \item Explain error control strategies in Runge-Kutta methods.
+  \item Implement Runge-Kutta and multistep methods to solve ODE initial value problems.
+  \item Assess the impact of variable step-size on the accuracy and efficiency of numerical solvers.
+\end{itemize}
+Eight
+\begin{itemize}
+  \item Recall the concepts of stability and stiffness in differential equations.
+  \item Describe extrapolation methods and their use in solving higher-order ODEs.
+  \item Solve stiff differential equations using appropriate numerical methods.
+  \item Judge the stability of numerical methods and select suitable solvers for stiff problems.
+\end{itemize}
+Nine
+\begin{itemize}
+\item Identify composite trapezoidal and midpoint methods for numerical integration.
+\item Explain the concept of vectorization and its role in computational speed.
+\item Perform double and triple integrals using numerical methods and vectorized code.
+\item Measure and compare computational speed for different numerical integration implementations.
+\end{itemize}
+
+\begin{itemize}
+  \item Recall the algorithms for forward Euler and Runge-Kutta methods.
+  \item Explain the finite difference method for differential equations.
+  \item Program and execute forward Euler, 2nd-order, and 4th-order Runge-Kutta methods.
+  \item Develop finite difference schemes to numerically solve partial differential equations.
+\end{itemize}
+

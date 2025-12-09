@@ -1,0 +1,738 @@
+\coursetitle{\mtthreeiii}{MT303}
+\developers{  Wyclife Rao }
+\reviewers{Dr. Irene Sitawa }
+\modulenumber{}
+
+\modulename{Course Home Page}
+
+
+
+
+
+
+\input{modulecoverpage}
+
+\section{INTRODUCTION}
+Dear Learner,\\
+Welcome to {\bf Numerical Methods}, techniques for solving mathematical problems, especially when analytical solutions are impossible or computationally expensive to obtain.
+
+Numerical methods are crucial in various fields of science, engineering, and mathematics. They involve developing algorithms and techniques to solve complex mathematical problems using computational tools and approximations. Here are some reasons highlighting the importance of numerical methods:
+\begin{itemize}
+\item {\bf Solving Complex Equations:} Many mathematical problems cannot be solved analytically or have no closed-form solutions. Numerical methods provide techniques to approximate solutions for such problems. They allow us to solve complex equations, differential equations, optimization problems, and systems of equations, which are common in physics, engineering, economics, and other disciplines.
+\item {\bf Handling Large-Scale Computations:} Numerical methods enable the efficient handling of large-scale computations and extensive data sets. They provide algorithms that can process and analyze vast amounts of data, making it possible to solve problems that would be impractical or impossible to tackle manually.
+\item {\bf Simulating Real-World Phenomena:} Numerical methods play a crucial role in simulating and modeling real-world phenomena. They allow scientists and engineers to study physical systems, predict behavior, and understand complex interactions. Applications range from weather forecasting and fluid dynamics to structural analysis and electrical circuit simulations.
+\item {\bf Uncertainty and Sensitivity Analysis:} In many practical scenarios, data or input parameters may contain uncertainties. Numerical methods provide techniques to perform uncertainty analysis and propagate uncertainties through mathematical models. Sensitivity analysis helps identify the impact of parameter variations on the overall solution, aiding decision-making processes.
+\item {\bf Optimization and Parameter Estimation:} Numerical optimization methods are used to find the best possible solution or configuration that optimizes a given objective function. These techniques are employed in diverse fields such as engineering design, finance, machine learning, and operations research. Similarly, parameter estimation methods help determine unknown parameters in mathematical models based on observed data.
+\item {\bf Efficient Computation:} Numerical methods focus on developing efficient algorithms and techniques that minimize computational complexity and improve the speed and accuracy of calculations. This efficiency is crucial in time-sensitive applications, real-time systems, and large-scale simulations.
+\item {\bf Numerical Analysis:} Numerical methods involve rigorous mathematical analysis to understand the stability, accuracy, and convergence properties of algorithms. This analysis helps assess the reliability and limitations of numerical solutions and guides the selection and development of appropriate methods for specific problems.
+\end{itemize}
+
+
+\section*{Course Purpose}
+To equip the learners with knowledge and skills of application of  numerical methods for solving mathematical problems using computational tools.
+
+\section*{Course Objectives}
+This course seeks to enable learning about:
+\begin{enumerate}[label=(\roman*)]
+\item analysis convergence properties of numerical algorithms.
+\item utilization of computational tools in implementing and executing numerical algorithms.
+\item performing error analysis in assessing the accuracy and reliability of computational results.
+\item synthesis of multiple numerical methods in solving complex mathematical problems.
+\end{enumerate}
+
+\section*{Course Expected Learning Outcomes}
+By the end of this course, the learner should be able to;
+\begin{enumerate}
+\item[ELO1.] analyze the convergence properties of numerical algorithms.
+\item[ELO2.] utilize computational tools to implement and execute numerical algorithms.
+\item[ELO3.] perform error analysis to assess the accuracy and reliability of computational results.
+\item[ELO4.] synthesize multiple numerical methods to solve complex mathematical problems.
+problems.
+\end{enumerate}
+
+
+\section*{Course Content}
+\begin{enumerate}
+\item[] {\bf Mathematical preliminaries and error analysis:} Motivation for numerical methods, Sources of errors: round-off error, truncation error, Floating-point arithmetic and numerical stability; 
+\item[] {\bf Solutions of equations of one variable:} Bisection method, Newton-Raphson method, Secant method, Convergence analysis and error estimation;  
+\item[] {\bf Interpolation and Approximation:} Polynomial interpolation, Lagrange interpolation, Newton interpolation, Piecewise interpolation, Cubic splines, Least squares approximation;
+\item[] {\bf Numerical Differentiation and Integration:} Finite difference approximations, Numerical integration, Trapezoidal rule, Simpson's rule, Romberg integration, Richardson extrapolation; 
+\item[] {\bf Numerical Methods for ODEs:} Euler's method and improved Euler methods, Runge-Kutta and Euler's method, Runge-Kutta methods (e.g., RK4), Adams-Bashforth, Adams-Moulton, Stability and stiffness, Error analysis and stability considerations;  Implementing numerical methods for ODEs in programming assignments, Modeling and simulating dynamical systems using ODE models;
+\item[] {\bf Direct methods for solving linear systems:} Gaussian elimination, pivoting strategies, linear algebra and matrix inversion, matrix factorization, Techniques for special matrices, survey of methods and software;
+%\item[] {\bf 
+%%\item[] {\bf Solution of Partial Differential Equations (PDEs):} Finite Difference methods for elliptic, parabolic, and hyperbolic PDEs, Finite Element methods, Introduction to numerical techniques for solving Laplace's equation, heat equation, and wave equation; 
+\item[] {\bf Computational Tools and Libraries:} Introduction to programming languages Mathematical Programming (e.g., Python or Octave) and numerical libraries (e.g., NumPy, SciPy), Utilizing computational tools for implementing and analyzing numerical algorithms; 
+\item[] {\bf Applications and Case Studies:} Applications of numerical methods in Mathematics, Engineering, Physics, and computational sciences, Case studies demonstrating the use of numerical techniques in real-world problems.
+\end{enumerate}
+
+\section*{Course Outline}
+\begin{enumerate}[label=\arabic*.]
+\item {\bf Module One: Mathematical Preliminaries and Solutions of One Variable Equations}
+\begin{enumerate}[label=(\roman*)]
+\item Computer Arithmetic and Round-off Errors
+\item Algorithms and Convergence
+\item Solution of Equations of One Variable
+\item Fixed Point Iteration and Newton’s Method
+\end{enumerate}
+\item {\bf Module Two: Solutions of Equations of Single Variable}
+\begin{enumerate}[label=(\roman*)]
+\item Error Analysis for Iterative Methods
+\item Accelerating Convergence
+\item Zeroes of Polynomials and Müller’s Metrhod
+\item Interpolation and the Lagrange Polynomial
+\end{enumerate}
+\item {\bf Module Three: Interpolation and Polynomial Approximation}
+\begin{enumerate}[label=(\roman*)]
+\item Data Approximation and Neville’s Method
+\item Divided Differences
+\item Hermite Interpolation
+\item Cubic Spline Interpolation
+\end{enumerate}
+\item {\bf Module Four: Numerical Diferentiation and Integration}
+\begin{enumerate}[label=(\roman*)]
+\item Parametric Curves
+\item Numerical Diffrentiation
+\item Richardson’s Extrapolation
+\item Elements of Numerical Integration
+\end{enumerate}
+\item {\bf Module Five: Numerical Integration}
+\begin{enumerate}[label=(\roman*)]
+\item Composite Numerical Integration
+\item Romberg Integration
+\item Adaptive Quadrature Methods
+\item Gaussian Quadrature
+\end{enumerate}
+\item {\bf Module Six: Numerical Integration and IVP for ODEs}
+\begin{enumerate}[label=(\roman*)]
+\item Multiple Integrals
+\item Improper Integrals
+\item The Elementary Theory of Initial-Value Problems
+\item Euler's Method
+\end{enumerate}
+\item {\bf Module Seven: Initial-Value Problems for Ordinary Differential Equations I}
+\begin{enumerate}[label=(\roman*)]
+\item Higer-Order Taylor Methods
+\item Runge-Kutta Methods
+\item Error Control and the Runge-Kutta-Fehlberg Method
+\item Multistep Method
+\end{enumerate}
+\item {\bf Module Eight: Initial-Value Problems for Ordinary Differential Equations II}
+\begin{enumerate}[label=(\roman*)]
+\item Variable Step-Size Multistep Method
+\item Extrapolation Methods
+\item Higher-Order Equations and Systems of Differential Equations
+\item Stability and Stiff Differential Equations
+\end{enumerate}
+\item {\bf Module Nine: Numerical Differentiation and Numerical Integration in Python}
+\begin{enumerate}[label=(\roman*)]
+\item Finite Difference and Higher Order Derivatives in Python
+\item Numerical Differentiation with Noise
+\item Riemann’s Integral, Trapezoidal Rule and Simpson’s Rule in Python
+\item Computing Integrals in Python
+\end{enumerate}
+\item {\bf Module Ten: Numerical Methods for Ordinary Differential Equations Using Python}
+\begin{enumerate}[label=(\roman*)]
+\item Reduction of Order and the Euler Method
+\item Numerical Error and Instability
+\item Predictor-Corrector Methods
+\item Python ODE Solver (IVP) and Advanced Topics
+\end{enumerate}
+\end{enumerate}
+
+%\section*{Introduction}
+%Numerical methods are crucial in various fields of science, engineering, and mathematics. They involve developing algorithms and techniques to solve complex mathematical problems using computational tools and approximations. Here are some reasons highlighting the importance of numerical methods:
+%\begin{itemize}
+%\item {\bf Solving Complex Equations:} Many mathematical problems cannot be solved analytically or have no closed-form solutions. Numerical methods provide techniques to approximate solutions for such problems. They allow us to solve complex equations, differential equations, optimization problems, and systems of equations, which are common in physics, engineering, economics, and other disciplines.
+%\item {\bf Handling Large-Scale Computations:} Numerical methods enable the efficient handling of large-scale computations and extensive data sets. They provide algorithms that can process and analyze vast amounts of data, making it possible to solve problems that would be impractical or impossible to tackle manually.
+%\item {\bf Simulating Real-World Phenomena:} Numerical methods play a crucial role in simulating and modeling real-world phenomena. They allow scientists and engineers to study physical systems, predict behavior, and understand complex interactions. Applications range from weather forecasting and fluid dynamics to structural analysis and electrical circuit simulations.
+%\item {\bf Uncertainty and Sensitivity Analysis:} In many practical scenarios, data or input parameters may contain uncertainties. Numerical methods provide techniques to perform uncertainty analysis and propagate uncertainties through mathematical models. Sensitivity analysis helps identify the impact of parameter variations on the overall solution, aiding decision-making processes.
+%\item {\bf Optimization and Parameter Estimation:} Numerical optimization methods are used to find the best possible solution or configuration that optimizes a given objective function. These techniques are employed in diverse fields such as engineering design, finance, machine learning, and operations research. Similarly, parameter estimation methods help determine unknown parameters in mathematical models based on observed data.
+%\item {\bf Efficient Computation:} Numerical methods focus on developing efficient algorithms and techniques that minimize computational complexity and improve the speed and accuracy of calculations. This efficiency is crucial in time-sensitive applications, real-time systems, and large-scale simulations.
+%\item {\bf Numerical Analysis:} Numerical methods involve rigorous mathematical analysis to understand the stability, accuracy, and convergence properties of algorithms. This analysis helps assess the reliability and limitations of numerical solutions and guides the selection and development of appropriate methods for specific problems.
+%\end{itemize}
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\input{modulemessage}
+%
+%
+%\mddescription
+%In this module you are carried review some concepts learnt in Calculus I (MAT 103). You are then be guided into a comprehensive discussion of functions of several variables. In particular, we look at:
+%\begin{itemize}
+%\item functions of one variable and their graphs
+%\item functions of several variables
+%\item graphs of functions of several variables
+%\item level curves
+%\end{itemize}
+%
+%\expectations
+%%\begin{enumerate}
+%%\item define functions of several variables, graphs of functions of several variables, level curves.
+%%\item relate the above terminologies to real life situations.
+%%\item solve problems involving functions of two variables with regard to determining their domain, graphs, level curves.
+%%\item relate concepts of functions of several variables to real life situations; topographic map of a mountain range, plot of sea level over time, graph of temperature versus altitude, plot of a stock's performance over a year, map of population density by country.
+%%\end{enumerate}
+%
+%
+%\begin{mlos}
+%\item define functions of several variables, graphs of functions of several variables, level curves.
+%\item identify domain, range, graphs and level curves of functions of several vaiables
+%\item solve problems involving functions of two variables with regard to determining their domain, graphs, level curves.
+%\item formulate functions of several variables, their graphs and level curves in real life situations.
+%\end{mlos}
+%
+%
+%
+%%tttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
+%%\begin{large}{Module 1}\end{large}
+%
+%\section*{Review Functions of One Variable}
+%Recall that a function $f$ of one variable consists of a set of inputs, a set of outputs, and a rule for assigning each input to exactly one output. The set of inputs is called the {\bf domain} of the function. The set of outputs is called the {\bf range} of the function. On the other hand, the graph of the function $f$ is the set of ordered pairs $(x,y)$, where $y=f(x)$. Where $x$ and $y$ are real numbers, the ordered pairs are Cartesian coordinates of points in the plain that form the corresponding curve.
+%
+%
+%
+%%\videolesson
+%\begin{youtube}[]
+%First watch this video on functions and their graphs then attempt the test below to review concepts learned on functions and their graphs.
+%\mylink{https://www.youtube.com/watch?v=GY6Q2f2kvY0}
+%
+%\end{youtube}
+%
+%\comx{Attempt this quiz to recall functions and their graphs.}
+%
+%\begin{pretest}
+%
+%\item For the function $f(x)=3x^2+2x-1$, show that
+%    \begin{enumerate}
+%    \begin{multicols}{3}
+%  \item  $f(-2)=7$        
+%  \item $f(\sqrt{2})=5+2\sqrt{2}$
+%  \item$f(a+h)=3a^2+6ah+3h^2+2a+2h-1$
+%  \end{multicols}
+%  \end{enumerate}
+%\item For each of the following functions, determine the i. domain and ii. range.
+%        \begin{enumerate}
+%        \begin{multicols}{3}
+%          \item $f(x)=(x-4)^2+5$        
+%          \item$f(x)=\sqrt{3x+2}-1$
+%          \item  $f(x)=\frac{3}{x-2}$
+%        \end{multicols}
+%        \end{enumerate}
+%\item Consider the function $f(x)=-4x+2$
+%    \begin{enumerate}
+%      \item Find all the zeros of $f$
+%  \item Find the $y-$intercept (if any)
+%  \item Sketch a graph of $f$ for a desired domain.
+%  \end{enumerate}
+%\end{pretest}
+%
+%
+%{\bf The content of each of the following three sections is to be pre-recorded in videos which learners are to watch before attempting the comprehension quiz}
+%
+%
+%\section{Functions of Several Variables}
+%\videolesson
+%\begin{selfvideo}[1]
+%%LESSON 3: 
+%This video covers definitions and description of functions of several variables.
+%\end{selfvideo}
+%%\begin{boxB}Question: Which are the determining factors for the temperature of a given location on the surface of the earth at a given time?\end{boxB}
+%
+%One of the relations that involve a function of more than one variable is the of the volume of a right cylinder. The formula is $V=\pi r^2h$, where $r$ is the radius of the cylinder and $h$ is the height of the cylinder. Thus we can write $V=f(r,h)$. In this section we study the concepts of functions of several variables.
+%%%\begin{boxC}
+%%%Can we predict how things are going to change? 
+%%%\end{boxC}
+%%
+%%\begin{itemize}
+%%    \item volume of a right cylinder depends on both the radius and the height.
+%%\end{itemize}
+%%%\section{Introduction to functions}
+%
+%\begin{definition}
+%  A function $f$ of $n$ real variables is a rule that assigns to each point $(x_1, x_2, \ldots, x_n)$ of real numbers in a subset $D(f)$ in $\mathbb{R}^n$ a unique real number denoted by $f(x_1, x_2, \ldots, x_n)$. The set $D$ is the domain of $f$ and its range is the set of values that takes on, that is, $\{f(x_1, x_2, \ldots, x_n)|$ $(x_1, x_2, \ldots, x_n)\in D\}$.
+%\end{definition}
+%
+%In most cases we will consider functions of two variables $x$ and $y$. In such cases we write $z=f(x,y)$ to make explicit the value taken on by $f$ at the general point $(x,y)$. The variables $x$ and $y$ are independent variables and $z$ is the dependent variable. Here $f$ is a function whose domain is a subset of $\mathbb{R}^2$ and whose range is a subset of $\mathbb{R}$.
+%
+%If a function $f$ is given by a formula and no domain is specified, then the domain of $f$ is understood to be the set of all pairs for which the given expression is a well-defined real number.
+%
+%In what follows we look at some examples of functions of two variables
+%
+%%\includegraphics[width=5cm]{machine diagram.PNG}
+%%\ hfill
+%% \includegraphics[ width=5cm]{arrow diagram.PNG}
+%% \\[0.1in]\\
+%
+%\begin{example}
+%For each of the following functions, evaluate $f(2,4)$ and find the domain.
+%\begin{multicols}{2}
+%\begin{enumerate}[label=(\alph*)]
+%\item $\displaystyle f(x,y)=\frac{\sqrt{x+y+1}}{x-1}$
+%\item $f(x,y)=x\ln(y^2-x)$
+%\end{enumerate}
+%\end{multicols}
+%\end{example}
+%
+%\begin{mysolution}
+%\begin{enumerate}[label=(\alph*)]
+%\item $ f(1,4)=\frac{\sqrt{2+4+1}}{x-1}=7$.
+%
+%The expression for $f$ makes sense if the denominator is not $0$ and the quantity under the square root sign is nonnegative. So the domain of is
+%\[D=\{(x,y)|x+y+1\geq0, x\neq1\]
+%The inequallity $x+y+1\geq0$ describes the region above the line $y=-x-1$. The condtion $x\neq1$ means that every point on the line $x=1$ is excluded. See Figure\ref{firstexamplea}
+%
+%
+%
+%\item $f(1,4)=\ln(4^2-1)=\ln15=2.7080502011$
+%
+%Since $\ln(y^2-x)$ is defined only when $y^2-x>0$, the domain of $f$ is $D=\{(x,y)|x<y^2\}$. This is the set of points to the left of the parabola $x=y^2$. See Figure \ref{firstexampleb}.
+%\end{enumerate}
+%\end{mysolution}
+%
+%\begin{figure}[h]
+%\centering
+%\begin{tikzpicture}[line cap=round,line join=round,scale=0.7]
+%%\filldraw[color=gray] plot[domain=-1:2] (\x,{(\x)^2-2*(\x)});
+%%\filldraw[color=gray] plot[domain=-1:2] (\x,{4-(\x)^2});
+%%\filldraw[color=blue!20] plot[domain=1.57:4.7] (\x,{cos(\x r)});
+%%\draw[color=cyan,smooth,ultra thick] plot[domain=0.6:4.2] (\x,{2*cos(\x r)});
+%%\filldraw[color=gray] plot[domain=1.57:4.2] (\x,{-2*cos(\x r)}) -- (4.2,0);
+%\filldraw [color=gray!30!] (-4,3) -- (3,-4) -- ((4,-4) -- (4,3) -- (-4,3);
+%\draw[>=latex,->,color=black] (-4,0) -- (4,0)node[below] { $x$};
+%\draw[>=latex,->,color=black] (0,-4) -- (0,3)node[left] { $y$};
+%\draw[ultra thick,dashed,color=black] (1,-2) -- (1,3);
+%\draw[color=cyan,smooth,ultra thick] plot[domain=-4:3] (\x,{-(\x)-1});
+%%\draw[color=red,smooth,ultra thick] plot[domain=-2.5:2.5] (\x,{4-(\x)^2}) node [black, right] {\scriptsize $y=4-x^2$};
+%
+%%\filldraw [red] (2,0) circle (3pt);
+%
+%%\draw[ultra thick] (4.2,-1.05) -- (4.2,1.05);
+%%%\draw[dashed] (6.283,0) -- (6.283,1);
+%%%\foreach \y in {1,-1}
+%%%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+%%%\draw[color=black] (0pt,-5pt) node[left] {\footnotesize $0$};
+%%
+%\draw[>=latex,->,color=black] (-1.5,3.2) -- (-2,1);
+%\draw(-1,0) node[below] {\scriptsize $-1$};
+%\draw(0,-1) node[left] {\scriptsize $-1$};
+%\draw(0,0) node[below left] {\scriptsize $0$};
+%\draw(1,2) node[right] {\scriptsize $x=1$};
+%\draw(-1.5,3.2) node [above] {\scriptsize $y=-x-1$};
+%%\draw(2.9,-0.5) node[] { $A_2$};
+%%\draw(1,0.8) node[above] { \scriptsize $y=\cos x$};
+%%\draw(2.9,2.2) node[above] { $y=|f(f)|$};
+%\end{tikzpicture}
+%\caption{\scriptsize Graph of $f(x,y)=\frac{\sqrt{x+y+1}}{x-1}$}
+%\label{firstexamplea}
+%\end{figure}
+%
+%
+%\begin{figure}%[h]
+%\centering
+%\begin{tikzpicture}[scale=1.5]
+%%\filldraw [color=gray!30!] (-2,-2) -- (-2,2) -- (2,2) -- (2,-2) -- (-2,-2);
+%    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+%    \draw[->] (0,-2) -- (0,2) node[above] {$y$};
+%    \draw[domain=0:1.5, smooth, variable=\x,blue] plot ({\x},{sqrt(\x)});
+%    \draw[domain=0:1.5, smooth, variable=\x,blue] plot ({\x},{-sqrt(\x)});
+%    \draw[dashed] (0,1.5) -- (1.5,1.5) node[right] {$y^2 = x$};
+%    \draw[dashed] (1.5,0) -- (1.5,1.5);
+%\end{tikzpicture}
+%\caption{\scriptsize Graph of $f(x,y)=x\ln(y^2-x)$}
+%\label{firstexampleb}
+%\end{figure}
+%
+%
+%\begin{example}
+%Find the domain and range of $g(x,y)=\sqrt{9-x^2-y^2}$.
+%\end{example}
+%
+%\begin{mysolution}
+%The domain of $g$ is the set 
+%\[D=\{(x,y)|9-x^2-y^2\geq0\}=\{(x,y)|x^2+y^2\leq9\}\]
+%which is the disk with center $(0,0)$ and radius $3$. The range of $g$ is
+%\[\{z:z=\sqrt{9-x^2-y^2}, (x,y)\in D\}\]
+%Since $z$ is a positive square root, $z\geq0$. Also from the fact that this is a disk centered at the origin of radius $3$, it folows that
+%\[\sqrt{9-x^2-y^2}\leq3\]
+%So the range is 
+%\[\{z|0\leq z\leq3\}=[0,3]\]
+%\end{mysolution}
+%
+%\section{Graphs}
+%\videolesson
+%\begin{selfvideo}[2]
+%%LESSON 3: 
+%In this video we present definition and description of graphs of functions of several variables.
+%\end{selfvideo}
+%
+% The most common method for visualizing function is its graph. 
+%
+%\begin{definition}
+%If $f$ is a function of two variables with domain $D$, then the graph of $f$ is the set of all points $(x,y,z)$ in  $\mathbb{R}^3$ such that $z=f(x,y)$ and $(x,y)$ is in $D$.
+%\end{definition}
+%
+%Just as the graph of a function $f$ of one variable is a curve $C$ with equation $y=f(x)$ so the graph of a function $f$ of two variables is a surface with equation $z=f(x,y)$. We can visualize the graph of $f$ as lying directly above or below its domain $D$ in the $xy-$plane. See Figure \ref{generaltwovariablegraph}.
+%
+%\begin{figure}[h]
+%\centering
+%\includegraphics[ width=7cm]{Graphoftwovariablefunction.jpeg}
+%\caption{\scriptsize Graph of $z=f(x,y)$}
+%\label{generaltwovariablegraph}
+%\end{figure}
+%Stewart page 858
+%
+%
+%\begin{example}\label{Surfaceexample1}
+%Sketch the graph of the function $f(x,y)=8-2x-4y$.
+%\end{example}
+%
+%\begin{mysolution}
+%It is simpler to sketch the graph by first identifying the intercepts. Setting $x=y=0$ yields $z=8$. For $x=z=0$ we have $y=2$ and for $y=z=0$ we obtain $x=4$. With these values we can sketch the portion of the surface, which is a plane, in the first octant as show the Figure \ref{}.
+%\end{mysolution}
+%
+%The function in Example \ref{Surfaceexample1} is {\bf linear} since the highest power of the in each term is at most one. The general form of the equation is
+%\[f(x,y)=ax+by+c\quad\mbox{or}\quad z=ax+by+c\quad\mbox{or}\quad ax+by-z+c=0.\]
+%
+%\begin{example}%\label{Surfaceexample1}
+%Sketch the graph of the function $h(x,y)=\sqrt{4-\frac14x^2-\frac49y^2}$.
+%\end{example}
+%
+%\begin{mysolution}
+%The graph has the equation $z=\sqrt{4-\frac14x^2-\frac49y^2}$. Squaring both sides and with some algebraic manipulation we obtain
+%\[\frac{x^2}{16}+\frac{y^2}{9}+\frac{z^2}{4}=1\]
+%which is an ellipsoid centered at the origin and with the axes of lengths $2\times4=8$, $2\times 3=6$, and $2\times2=4$ in the directions of the $x-$axis, $y-$axis and $z-$axis respectively. Since $z\geq0$, the graph is only the upper part of  an ellipsoid as shown in Figure \ref{Ellipsoidexample}.
+%\end{mysolution}
+%
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=6cm]{semiellipsoid1.PNG}
+%\includegraphics[width=6cm]{semiellipsoid2.PNG}
+%\caption{\scriptsize The semi ellipsoid $z=\sqrt{4-\frac14x^2-\frac49y^2}$}
+%\label{Ellipsoidexample}
+%\end{figure}
+%
+%
+%%\begin{example}%\label{Surfaceexample1}
+%%Find the domain and range and sketch the graph of $g(x,y)=x^2+4y^2$.
+%%\end{example}
+%%
+%%\begin{mysolution}
+%%$g(x,y)$ is defined for all possible values of $x$ and $y$ hence its domain is the entire $xy-$plane. For the indicated independent variables, the range is of $g$ is $[0,\infty)$. The graph has the equation $z=x^2+4y^2$ which is the elliptic paraboloid as shown in Figure \ref{ellipticparaboloidexample}. Horizontal traces are ellipses and vertical ones are parabolas.
+%%\end{mysolution}
+%%
+%%\begin{figure}[h!]
+%%\centering
+%%\includegraphics[width=8cm]{ellipticparaboloid.PNG}
+%%\caption{\scriptsize Elliptic paraboloid $z=x^2+4y^2$}
+%%\label{ellipticparaboloidexample}
+%%\end{figure}
+%
+%\section*{Level Curves}
+%Before discussing about level curves please visit the \mylink{https://www.geogebra.org/m/M2P4KsRe} and feed in $f(x,y)=11-2x^2-4y$ for various values of $k$ to see the kind of curves you obtain.
+%
+%%\comy{.}
+%
+%
+%\videolesson
+%\begin{selfvideo}[3]
+%%LESSON 3: 
+%In this video we give detailed description of level curves.
+%\end{selfvideo}
+%Apart from arrow diagrams and graphs, functions of two variables can also be visualised using contour or level curves. This is a technique borrowed from mapmakers where points of the same elevation are joined to form a curve.
+%
+%\begin{definition}
+%The {\bf level curves} of a function $f$ of two variables are the curves with equations $f(x,y)=k$, where $k$ is a constant (in the range of $f$).
+%\end{definition}
+%
+%The level curve of $f(x,y)=k$ is the set of points where for every pair of inputs $x$ and $y$, $f$ has the value $k$. This is the curve at height $k$ in the graph of $f(x,y)=k$. See Figure \ref{} the relation between level curves and horizontal traces. Thus the level curves are the horizontal traces of the graph $z=k$ projected onto the $xy-$plane. When level curves close to each other the graph is slope of the graph in the region is high while when the level curves are far from each other, then slope of the graph in the corresponding region is low.
+%
+%\begin{example}%\label{Surfaceexample1}
+%Consider a contour map for a function $f$ is shown in Figure \ref{ContourmapExample}. Use it to estimate values of $f(2,4)$ and $f(3,5)$.
+%\end{example}
+%
+%
+%\begin{figure}[h]
+%\centering
+%\includegraphics[ width=7cm]{ContourmapExample.jpeg}
+%\caption{}
+%\label{ContourmapExample}
+%\end{figure}
+%Stewart page 862
+%
+%
+%%\begin{figure}[h]
+%%\begin{tikzpicture}
+%%%  \begin{axis}[
+%%%    xlabel=$x$,
+%%%    ylabel=$y$,
+%%%    title={Level Curve of $f(x, y) = 7x^2 + 3y^2 + 4$},
+%%%    colormap/viridis,
+%%%    ]
+%%%    \addplot[
+%%%    contour gnuplot={levels={10, 20, 30, 40, 50, 60, 70}},
+%%%    domain=-2:2,
+%%%    domain y=-2:2,
+%%%    ]
+%%%    {7*x^2 + 3*y^2 + 4};
+%%%  \end{axis}
+%%\end{tikzpicture}
+%%\caption{\scriptsize Level curves}
+%%\label{levelcurveexample}
+%%\end{figure}
+%
+%
+%\begin{mysolution}
+%From the diagram, the estimates are
+%\[f(2,4)\approx73\quad\mbox{and}\quad f(3,5)\approx53.\]
+%\end{mysolution}
+%
+%\begin{example}%\label{Surfaceexample1}
+%Sketch the level curves of the function $f(x,y)=11-2x^2-4y$ for the values of $k=-7, -2,  0,3,9$.
+%\end{example}
+%\begin{mysolution}
+%The level curves are parabolas as seen in Figure \ref{curvesketchingexample2}
+%\end{mysolution}
+%
+%  \begin{figure}[h!]
+%\centering
+%\begin{tikzpicture}[scale=0.5]
+%  \draw [>=latex, ->, color=black] (-5,0) -- (5,0)node [below] {\scriptsize $x$};
+%  \draw [>=latex, ->, color=black] (0,-6) -- (0,5) node [left] {\scriptsize $y$};
+%%%\foreach \x in  {-3,-2,-1,0,1,2,3}
+%%%\draw[shift={(\x,0)},color=black,yscale=150] (0pt,3pt) -- (0pt,-3pt);
+%%%\foreach \x in {-3,-2,-1,0,1,2,3}
+%%%\draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+%%%{{\small $\x$}};
+%%\filldraw[cyan] (2,3) circle (2.5pt);%yscale=5,
+%%\filldraw[cyan] (-2,-1) circle (2.5pt);%yscale=5,
+%%\draw (2,6) node[anchor=north] { $y=\frac{x^2+2x+4}{2x}$};
+%%\draw (2,1) node[anchor=south] {$y=\frac{x}{2}+1$};
+%%\draw (2,3) node[anchor=north] {{\small $\left(2,3\right)$}};
+%%\draw (-2,-1) node[anchor=south] {{\small $\left(-2,-1\right)$}};
+%%\draw (6,0) node[anchor=north] {$x$};
+%%\draw (0,8) node[anchor=east] {$y$};
+%%\draw [color=cyan, smooth, very thick] plot [domain=-5:-0.3] (\x,{((\x)^2+2*(\x)+4)/(2*(\x))});
+%%\draw [color=cyan, smooth, very thick] plot [domain=0.3:5] (\x,{((\x)^2+2*(\x)+4)/(2*(\x))});%color=cyan, smooth, 
+%%\draw [thick,dashed] plot [domain=-5:5] (\x,{(\x)/2+1});
+%\draw [color=cyan, smooth, very thick] plot [domain=-5:5] (\x,{18/4-((\x)^2)/2}) node [right] {\scriptsize $k=-7$};
+%\draw [color=blue, smooth, very thick] plot [domain=-5:5] (\x,{13/4-((\x)^2)/2}) node [right] {\scriptsize $k=-2$};
+%\draw [color=red, smooth, very thick] plot [domain=-5:5] (\x,{11/4-((\x)^2)/2}) node [right] {\scriptsize $k=0$};
+%\draw [color=green, smooth, very thick] plot [domain=-5:5] (\x,{2-((\x)^2)/2}) node [right] {\scriptsize $k=3$};
+%\draw [color=violet, smooth, very thick] plot [domain=-5:5] (\x,{1/2-((\x)^2)/2}) node [right] {\scriptsize $k=9$};
+%\end{tikzpicture}
+%\caption{\scriptsize Level curves of $f(x,y)=11-2x^2-4y$}
+%\label{curvesketchingexample2}
+%\end{figure}
+%
+%\begin{example}
+%Sketch the level curves of the function $g(x,y)=\sqrt{9-x^2-y^2}$ for $k=1,2,3$.
+%\end{example}
+%
+%\begin{mysolution}
+%The level curves are 
+%\[\sqrt{9-x^2-y^2}=k\quad\mbox{or}\quad x^2+y^2=9-k^2\]
+%This is a family of concentric circles with center radius $\sqrt{9-k^2}$. See Figure \ref{concentriccircles}
+%\end{mysolution}
+%
+%
+%  \begin{figure}[h!]
+%\centering
+%\begin{tikzpicture}[scale=0.5]
+%  \draw [>=latex, ->, color=black] (-5,0) -- (5,0)node [below] {\scriptsize $x$};
+%  \draw [>=latex, ->, color=black] (0,-6) -- (0,5) node [left] {\scriptsize $y$};
+%%%\foreach \x in  {-3,-2,-1,0,1,2,3}
+%%%\draw[shift={(\x,0)},color=black,yscale=150] (0pt,3pt) -- (0pt,-3pt);
+%%%\foreach \x in {-3,-2,-1,0,1,2,3}
+%%%\draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+%%%{{\small $\x$}};
+%%\filldraw[cyan] (2,3) circle (2.5pt);%yscale=5,
+%%\filldraw[cyan] (-2,-1) circle (2.5pt);%yscale=5,
+%%\draw (2,6) node[anchor=north] { $y=\frac{x^2+2x+4}{2x}$};
+%%\draw (2,1) node[anchor=south] {$y=\frac{x}{2}+1$};
+%%\draw (2,3) node[anchor=north] {{\small $\left(2,3\right)$}};
+%%\draw (-2,-1) node[anchor=south] {{\small $\left(-2,-1\right)$}};
+%%\draw (6,0) node[anchor=north] {$x$};
+%%\draw (0,8) node[anchor=east] {$y$};
+%%\draw [color=cyan, smooth, very thick] plot [domain=-5:-0.3] (\x,{((\x)^2+2*(\x)+4)/(2*(\x))});
+%%\draw [color=cyan, smooth, very thick] plot [domain=0.3:5] (\x,{((\x)^2+2*(\x)+4)/(2*(\x))});%color=cyan, smooth, 
+%%\draw [thick,dashed] plot [domain=-5:5] (\x,{(\x)/2+1});
+%\draw [color=cyan, smooth, very thick] (0,0) circle (2.8cm);
+%\draw [color=red, smooth, very thick] (0,0) circle (2.2cm);
+%\draw [color=violet, smooth, very thick] (0,0) circle (0cm);
+%\draw [cyan] (2.8,1) node [right] {\scriptsize $k=1$};
+%\draw [>=latex, ->, color=black] (3.3,-1.5) -- (1.9,-0.5);
+%\draw [red] (3.3,-1.5) node [right] {\scriptsize $k=2$};
+%\draw [>=latex, ->, color=black] (3,-2.5) -- (0,0);
+%\draw [violet] (3,-2.5) node [right] {\scriptsize $k=0$};
+%\end{tikzpicture}
+%\caption{\scriptsize Level curves of $g(x,y)=\sqrt{9-x^2-y^2}$ for $k=1,2,3$}
+%\label{concentriccircles}
+%\end{figure}
+%
+%\begin{myexercise}
+%%\textcolor{red}{Question and solution to be embedded in the video}\\
+%\begin{enumerate}
+%\item Find the domain and range of the given function. State the domain in set-builder notation and the range in
+%interval notation.
+%\begin{enumerate}[label=(\alph*)]
+%\item $V(x,y)=4x^2+y^2$
+%\item $f(x,y)=\sqrt{x^2+y^2-4}$.
+%\item $f(x,y)=4\ln(y^2-x)$.
+%\item $z=\arccos(y-x)$.
+%%\item Answer this question.
+%\end{enumerate}
+%
+%%%\begin{mysolution}
+%%%\begin{enumerate}
+%%%\item Domain: $\left\{(x,y)|x, y\in\mathbb{R}\right\}$, Range: $[0,\infty)$.
+%%%\item Domain: $\left\{(x,y)|xx^2+y^2\geq4\right\}$, Range: $[0,\infty)$.
+%%%\item Domain: $\left\{(x,y)|x<y\right\}$, Range: $(-\infty,\infty)$.
+%%%\item Domain: $\left\{(x,y)|x- 1\leq y\leq x+1\right\}$, Range: $[0,\pi]$.
+%%%%\item Not a proposition.
+%%%\end{enumerate}
+%%%\end{mysolution}
+%%\end{myexercise}
+%%
+%%\begin{myexercise}
+%%%\textcolor{red}{Question and solution to be embedded in the video}\\
+%\item Find the level curves of each function at the indicated values of $c$ to visualize the given function. Sketch a contour plot for those exercises where you are asked for more than $3$ values of $c$.
+%\begin{enumerate}[label=(\alph*)]
+%\item $z(x,y)=y^2-x^2$, $c=4$
+%\item $f(x,y)=x^2+y^2$, $c=0,1,2,3,4,9$.
+%%\item $f(x,y)=4\ln(y^2-x)$.
+%%\item $z=\arccos(y-x)$.
+%%%\item Answer this question.
+%\end{enumerate}
+%
+%%\begin{mysolution}
+%%\begin{enumerate}
+%%\item $y^2-x^2=4$; a hyperbola
+%%\item Level curves are circles $x^2+y^2=\sqrt{c}$ centred at the origin of the $xy-$plane with radius $\sqrt{c}$.
+%%%\item Domain: $\left\{(,y)|x<y\right\}$, Range: $(-\infty,\infty)$.
+%%%\item Domain: $\left\{(,y)|x- 1\leq y\leq x+1\right\}$, Range: $[0,\pi]$.
+%%%%\item Not a proposition.
+%%\end{enumerate}
+%%\end{mysolution}
+%\end{enumerate}
+%\end{myexercise}
+%
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%
+%%\bibliographystyle{unsrt} \bibliography{bibliography}
+%
+%\activities
+%The following reading is necessary for your constructive engagement in the group discussion.
+%\begin{activity}[\cg Reading]
+%\begin{enumerate}
+%\item James Stewart, (2020), {\it Multivariate Calculus}, McGraw Hill; 8th edition,  ISBN-13 ‏ : ‎ 978-1259676512 \\
+%\textcolor{red}{\bf page $934-945$}
+%%\item Ryan T. White and Archana Tikayat Ray, (2021), {\it Practical Discrete Mathematics: Discover math principles that fuel algorithms for computer science and machine learning with Python}, Packt Publishing,  ISBN-13 ‏ : ‎ 978-1838983147 \\
+%%\textcolor{red}{\bf pages $23-30$}
+%%\item S. Lipschutz and M. Lipson, (2021), {\it Schaum’s Outline of Discrete Mathematics}, Fourth Edition (Schaum’s Outlines) 4th Edition, McGraw Hill, ISBN-13: 978-1264258802\\
+%%\textcolor{red}{\bf pages $70-76$}
+%\end{enumerate}
+%\end{activity}
+%
+%\discussion
+%Discuss how you would solve questions 71-75 in Exercise 14.1 of indicated reference.
+%
+%%\begin{enumerate}
+%%\item Render the implication in English language.
+%%\item\label{Discusion1} Determine the converse, contrapositive and inverse of the implication $u\rightarrow v$  in symbolic notation in terms of the component propositions
+%%\item Express each of the implications obtained in \ref{Discusion1} English language
+%%\end{enumerate}
+%
+%
+%%Let $p$, $q$, $r$, and $s$ be the following propositions
+%%\[\begin{split}
+%%p:&~ \mbox{Grizzly bears have been seen in the area.}\\
+%%q:&~  \mbox{Hiking is safe on the trail.}\\
+%%r:&~  \mbox{Berries are ripe along the trail.}\\
+%%s:&~  \mbox{You drive over 65 miles per hour.}
+%%\end{split}\]
+%%
+%%Consider the following implication $u\rightarrow v$ where
+%%\[u:\neg(p\lor q)\quad\mbox{ and }\quad v:r\lor\neg s.\]
+%
+%%\begin{enumerate}
+%%\item Render the implication in English language.
+%%\item\label{Discusion1} Determine the converse, contrapositive and inverse of the implication $u\rightarrow v$  in symbolic notation in terms of the component propositions
+%%\item Express each of the implications obtained in \ref{Discusion1} English language
+%%\end{enumerate}
+%%Thank you and keep safe!
+%
+%\begin{posttest}[\textcolor{red}{The following problems should be STACKED through SOMAS!!!}]
+%\item For the following exercises, evaluate each function at the indicated values.
+%\begin{enumerate}
+%\item $W(x,y)=4x^2+y^2$. Find $W(2,-1)$, $W(-3,6)$.
+%\item The volume of a right circular cylinder is calculated by a function of two variables, $V(x,y)=\pi x^2y$, where $x$ is the radius of the right circular cylinder and $y$ represents the height of the cylinder. Evaluate $V(2,5)$ and explain what this means.
+%\item An oxygen tank is constructed of a right cylinder of height $y$ and radius $x$ with two hemispheres of radius $x$ mounted on the top and bottom of the cylinder. Express the volume of the cylinder as a function of two variables, $x$ and $y$, find $V(10,2)$, and explain what this means.
+%\end{enumerate}
+%\item Find the domain and range of the function $f(x,y)=\sqrt{36-9x^2-9y^2}$.
+%\item Find the domain of the function $h(x,y,t)=(3t-6)\sqrt{y-4x^2+4}$
+%\item Find and graph the level curve of the function $g(x,y)=x^2+y^2-6x+2y$ corresponding to $k=15$.
+%\item Determine the equation of the vertical trace of the function $g(x,y)=-x^2-y^2+2x+4y-1$ corresponding to $y=3$, and describe the graph.
+%% Assume the population of a city is tripling every 5 years. If its current population is 10000, what will be the approximate population 2 years from now?\\
+%%Solution: Current population $P(0)=10000$ after 5 years $P(5)=30000$\\
+%%The gradient function $m$  gives the rate of change of population $P^'$;\\[0.1in]\\
+%%$P^'=\frac{P(5)-P(0)}{5-0}= \frac{30000-10000}{5-0}= 4000$\\[0.1in]\\
+%%By definition $P(2)=P(5)-m(5-2)$\\[0.1in]\\
+%%$P(2)=30000-4000(3)= 18000$, hence population after 2 years is 18000
+%\end{posttest}
+%
+%
+%\takehome
+%
+%%\comy{Good evening, you are now at the last part of this module. Your  task is to do a self-reflection on your learning experience.}
+%\begin{itemize}
+%\item In your own words what are some of your engagements/tasks in daily life where you can apply concepts of functions of several variables
+%\end{itemize}
+%%\input{tutorialsheet-1.tex}
+\references
+\begin{refenumerate}
+\item Sundnes, J., (2024). Solving Ordinary Differential Equations Using Python. First Edition, Springer,  ISBN 978-3-031-46767-7    ISBN 978-3-031-46768-4 (eBook)\\
+\mylink{https://link.springer.com/book/10.1007/978-3-031-46768-4}
+%chapter 14 pg 934-950 functions of several variables\\
+%chapter 1 pg 51-83 limits and continuity\\
+%chapter 1 pg 45-50 rates of change\\
+%chapter 2 pg 108-120 the derivative\\
+\item Linge, S., Langtangen, H. P., (2016). Programmimng for Computations - Python, Springer Heidelberg\\
+\mylink{https://link.springer.com/book/10.1007/978-3-030-16877-3}
+%chapter 6 51-55 functions
+%chapter 7 59-65 limits
+%chapter 8 69-74 continuity
+%chapter 9 77-81 derivative
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/Index.html}
+\item Burden, R. L., Faires, J. D., Burden, A. M. (2015). Numerical Analysis. Tenth Edition, Cengage Learning.\\
+%\item R. Adams and C. Essex, 2021, Calculus: A complete Course, Addison Wesley, ISBN 13: 978-0135732588
+%\item P. Abbott and H. Neill, 2018, Calculus: A Complete Introduction: The Easy Way to Learn Calculus (Teach Yourself), ISBN 13: 978-1473678446
+\end{refenumerate}

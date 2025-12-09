@@ -1,0 +1,264 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\begin{document}
+%\mddescription
+%This module introduces Markov Chain Monte Carlo (MCMC) techniques, their applications, adaptive methods, efficiency analysis, and speed-accuracy trade-offs. By the end of this module, students will:
+%
+%%\expectations
+%
+%\begin{mlos}
+%	\item Define MCMC principles and applications.
+%    \item Apply adaptive methods in simulation.
+%    \item Analyze the efficiency of various MCMC techniques.
+%    \item Evaluate the speed and accuracy of MCMC
+%\end{mlos}
+
+\section{Introduction to MCMC Techniques}
+MCMC is a class of algorithms used to sample from complex probability distributions. It constructs a Markov chain whose equilibrium distribution matches the target distribution, allowing efficient sampling in high-dimensional spaces.
+
+\subsection{ Types of common statistical Distributions}
+There are various MCMC techniques widely used These include:
+\begin{itemize}
+    \item Bayesian statistics for posterior distribution estimation.
+    \item Machine learning for probabilistic modeling.
+    \item Finance for risk assessment.
+    \item Genetics for evolutionary analysis.
+\end{itemize}
+
+\section{ Adaptive MCMC Methods }
+Adaptive MCMC modifies proposal distributions dynamically to improve sampling efficiency.
+\textbf{Examples of Adaptive MCMC}
+\begin{itemize}
+    \item Adaptive Metropolis Algorithm – Adjusts proposal covariance matrix.
+    \item Delayed Rejection Adaptive Metropolis (DRAM) – Enhances acceptance rates.
+    \item Adaptive Gibbs Sampling – Adjusts transition probabilities
+\end{itemize}
+\begin{table}
+	\centering
+	\begin{tabular}{lll}
+		\hline
+		\textbf{Technique} & \textbf{Efficiency} & \textbf{Application} \\
+		\hline
+		Metropolis-Hastings & Moderate & General-purpose sampling \\
+		Gibbs Sampling & High & Bayesian inference \\
+		Hamiltonian Monte Carlo & Very High & High-dimensional models \\
+		\hline
+	\end{tabular}
+	\caption{Comparison of MCMC Techniques}
+	\label{tab:MCMC}
+\end{table}
+%\includegraphics[width=1cm]{images/activity.png}
+\textbf{Python Example: Adaptive Metropolis Algorithm}
+\begin{verbatim}
+import numpy as np
+
+def metropolis_hastings(target_dist, proposal_std, steps):
+    samples = []
+    x = np.random.rand()
+    for _ in range(steps):
+        x_new = x + np.random.normal(0, proposal_std)
+        accept_prob = min(1, target_dist(x_new) / target_dist(x))
+        if np.random.rand() < accept_prob:
+            x = x_new
+        samples.append(x)
+    return samples
+
+target = lambda x: np.exp(-x**2)  # Example target distribution
+samples = metropolis_hastings(target, 0.5, 1000)
+\end{verbatim}
+
+\section{Efficiency of Various MCMC Techniques}
+\subsection{Factors Affecting Efficiency}
+\begin{itemize}
+    \item Convergence Rate – How quickly the chain reaches equilibrium.
+    \item Autocorrelation – Lower autocorrelation improves sampling independence.
+    \item Computational Cost – Some methods require more resources.
+\end{itemize}
+\subsection{Comparison of MCMC Techniques}
+
+%\includegraphics[width=1cm]{images/activity.png}
+\textbf{Python Example: Gibbs Sampling}
+\begin{verbatim}
+import numpy as np
+
+def gibbs_sampling(steps):
+    x, y = 0, 0
+    samples = []
+    for _ in range(steps):
+        x = np.random.normal(y, 1)
+        y = np.random.normal(x, 1)
+        samples.append((x, y))
+    return samples
+
+samples = gibbs_sampling(1000)
+\end{verbatim}
+
+\section{Speed and Accuracy of MCMC}
+\textbf{Trade-offs}
+\begin{itemize}
+    \item Higher accuracy often requires more iterations.
+    \item Speed improvements can be achieved using parallelization.
+\end{itemize}
+
+%\includegraphics[width=1cm]{images/activity.png}
+\textbf{Python Example: Gibbs Sampling}
+\begin{verbatim}
+import numpy as np
+
+def hamiltonian_monte_carlo(target, grad_target, steps, step_size):
+    x = np.random.rand()
+    samples = []
+    for _ in range(steps):
+        p = np.random.normal(0, 1)
+        x_new = x + step_size * p
+        accept_prob = min(1, target(x_new) / target(x))
+        if np.random.rand() < accept_prob:
+            x = x_new
+        samples.append(x)
+    return samples
+
+target = lambda x: np.exp(-x**2)
+grad_target = lambda x: -2*x
+samples = hamiltonian_monte_carlo(target, grad_target, 1000, 0.1)
+\end{verbatim}
+
+%\subsection{READING MATERIAL}
+%\references
+%%\begin{refenumerate}
+%\item Brooks, S., Gelman, A., Jones, G., \& Meng, X. (2011). \textit{Handbook of Markov Chain Monte Carlo}. Chapman and Hall/CRC. Available on Perlego.\\
+%\item Hanada, M., \& Matsuura, S. (2022). \textit{MCMC from Scratch: A Practical Introduction to Markov Chain Monte Carlo}. Springer. Available on Springer.
+%%\end{refenumerate}
+%
+%\begin{youtube}[]
+%\begin{itemize}
+%\item A Gentle Introduction to MCMC\\
+%    \youtube{eGI1VaMnkes}
+%\item An Introduction to Markov Chain Monte Carlo\\
+%    \youtube{EnjexaMjIuY}
+%\item Monte Carlo Markov Chain (MCMC) - Explanation\\
+%    \url{https://www.pickl.ai/blog/markov-chain-monte-carlo/}
+%\item MCMC Sampling Techniques\\
+%    \url{https://insight7.io/mcmc-sampling-techniques-for-advanced-data-analysis/}
+%\end{itemize}
+%\end{youtube}
+
+%\begin{boxD}
+%\comx{MCMC techniques are essential for Bayesian inference, probabilistic modeling, and high-dimensional sampling. Adaptive methods improve efficiency, while speed-accuracy trade-offs must be carefully managed.}
+%\end{boxD}
+
+% \section{END OF MODULE ASSESSMENT}
+% \begin{enumerate}
+% \item Which of the following best describes the primary purpose of Markov Chain Monte Carlo (MCMC) techniques?
+% \begin{enumerate}[label=\Alph*).]
+% \item  Sampling from complex probability distributions when direct computation is difficult \textbf{Correct answer}
+% \item Solving deterministic mathematical equations
+% \item Generating random numbers for simple simulations
+% \item Avoiding probabilistic models in statistical inference
+% \end{enumerate}
+% \item Adaptive MCMC methods improve performance by:
+% \begin{enumerate}[label=\Alph*).]
+% \item Using fixed proposal distributions throughout the simulation
+% \item Adjusting the sampling strategy dynamically based on past samples \textbf{Correct answer}
+% \item Ensuring all chains converge in the same number of steps
+% \item Discarding rejected samples instead of using them for learning
+% \end{enumerate}
+% \item Which factor most affects the efficiency of different MCMC techniques?
+% \begin{enumerate}[label=\Alph*).]
+% \item The number of random numbers generated per second
+% \item The choice of prior distributions in Bayesian models
+% \item The total number of samples taken, without considering quality
+% \item The speed of convergence to the target distribution \textbf{Correct answer}
+% \end{enumerate}
+% \item How can the speed and accuracy of MCMC be improved?
+% \begin{enumerate}[label=\Alph*).]
+% \item Implementing techniques such as Hamiltonian Monte Carlo and parallel tempering \textbf{Correct answer}
+% \item Using larger step sizes without assessing acceptance rates
+% \item Running shorter chains and ignoring burn-in periods
+% \item Avoiding complex distributions in probabilistic models
+% \end{enumerate}
+% \item Which of the following is a common real-world application of MCMC methods?
+% \begin{enumerate}[label=\Alph*).]
+% \item Computing exact solutions to ordinary differential equations
+% \item Optimizing sorting algorithms for large datasets
+% \item Estimating posterior distributions in Bayesian inference \textbf{Correct answer}
+% \item Avoiding randomness in statistical experiments
+% \end{enumerate}
+
+%     \item A standardized test has scores that follow a normal distribution with a mean of 500 and standard deviation of 100. Find the probability that a randomly selected student scores above 650.
+%     \item A hospital receives an average of 4 emergency cases per hour. Using the Poisson distribution, find the probability that exactly 2 cases occur in an hour.
+%     \item A manufacturing process has a 90\% success rate for producing defect-free items. If 10 items are inspected, what is the probability that exactly 8 items are defect-free?
+% \end{enumerate}
+
+% \subsection*{Answers to question 6,7,8}
+% \begin{verbatim}
+% 6. Probability of scoring above 650 (Normal Distribution)
+% We use the standard normal distribution (Z-score) formula:
+% [ Z = \frac{X - \mu}{\sigma} ]
+% where:
+% •	( X = 650 ) (score)
+% •	( \mu = 500 ) (mean)
+% •	( \sigma = 100 ) (standard deviation)
+% Substituting values:
+% [ Z = \frac{650 - 500}{100} = \frac{150}{100} = 1.5 ]
+% Using a standard normal table:
+% [ P(Z \leq 1.5) \approx 0.9332 ]
+% Thus, the probability of scoring above 650:
+% [ P(X > 650) = 1 - P(Z \leq 1.5) = 1 - 0.9332 = 0.0668 ]
+% Final Answer: ( P(X > 650) \approx 0.0668 ) or 6.68%
+
+% 7. Probability of exactly 2 emergency cases (Poisson Distribution)
+% Poisson probability formula:
+% [ P(X = k) = \frac{e^{-\lambda} \lambda^k}{k!} ]
+% where:
+% •	( \lambda = 4 ) (average cases per hour)
+% •	( k = 2 ) (desired number of cases)
+% •	( e \approx 2.718 )
+% Substituting values:
+% [ P(X = 2) = \frac{e^{-4} (4^2)}{2!} ]
+% [ = \frac{(2.718^{-4}) (16)}{2} ]
+% Approximating:
+% [ = \frac{(0.0183) (16)}{2} ]
+% [ = \frac{0.2928}{2} = 0.1464 ]
+% Final Answer: ( P(X = 2) \approx 0.1464 ) or 14.64%
+
+% 8. Probability of exactly 8 defect-free items (Binomial Distribution)
+% Binomial probability formula:
+% [ P(X = k) = \binom{n}{k} pk (1 - p){n-k} ]
+% where:
+% •	( p = 0.9 ) (success rate)
+% •	( n = 10 ) (total items)
+% •	( k = 8 ) (desired successes)
+% First, calculate combinations:
+% [ \binom{10}{8} = \frac{10!}{8!(10-8)!} = \frac{10!}{8!2!} = \frac{10 \times 9}{2} = 45 ]
+% Now, applying the formula:
+% [ P(X = 8) = 45 (0.98) (0.12) ]
+% [ = 45 (0.4305) (0.01) ]
+% [ = 45 \times 0.004305 ]
+% [ \approx 0.1937 ]
+% Final Answer: ( P(X = 8) \approx 0.1937 ) or 19.37%
+% \end{verbatim}
+% %\discussion
+% Discussion Questions
+% \begin{enumerate}
+%  \item How does MCMC differ from traditional Monte Carlo methods?
+%  \item What are the advantages of adaptive MCMC techniques?
+%  \item How can we improve the efficiency of MCMC algorithms?
+%  \item What factors affect the speed and accuracy of MCMC?
+% \end{enumerate}
+
+%\journal
+%\begin{itemize}
+%    \item \url{http://www.sadil.ws/bitstream/handle/123456789/433/ALG\%20Educational\%20Learning\%20Theories.pdf?sequence=1\&isAllowed=y}
+%    \item \href{https://www.journals.elsevier.com/journal-of-computational-and-applied-mathematics}{Journal of Computational and Applied Mathematics}
+%\end{itemize}
+
+%\takehome
+%%\comy{MCMC techniques are essential for Bayesian inference, probabilistic modeling, and high-dimensional sampling. Adaptive methods improve efficiency, while speed-accuracy trade-offs must be carefully managed.\\
+%Think of any application of your choice and implement Metropolis-Hastings, Gibbs Sampling, and Hamiltonian Monte Carlo in Python.}
+%
+%%\begin{boxD}
+% WHAT’S NEXT?
+%\comx{Congratulations again for completing Module 5 successfully. In this module, you were provided with a comprehensive and structured approach to learning MCMC techniques, ensuring that you gain practical experience and theoretical understanding.  In the next module, you will be exposed to Modeling and Simulation in Engineering and Economics. Welcomed to this vibrant and practical oriented module which takes you to a real world problem solving scenario.}
+%\end{boxD}
+
+\end{document}

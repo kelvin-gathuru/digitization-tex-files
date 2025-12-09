@@ -1,0 +1,125 @@
+
+\begin{center}
+    {\Large \textbf{FUNCTIONS OF SEVERAL VARIABLES}}\\[2mm]
+(DEFINITION, DOMAIN, RANGE, GRAPHS AND LEVEL CURVES) \\[4mm]
+
+\mycenterbox{5 minute review}%\\[4mm]
+Recap the definition of a function of several variables, and the meaning of domain, range, graph and level curves of functions of several variables.
+\end{center}
+\mycenterbox{Warm-up.}%\\[4mm]
+\problemAnswer{
+Match the function with its graph (labeled I–VI).Give reasons for your choices
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+\item $f(x,y)=|x|+|y|$\\[4mm]
+\item $f(x,y)=|xy|$
+\item $f(x,y)=\frac{1}{1+x^2+y^2}$\\2mm]
+\item $f(x,y)=(x^2-y^2)^2$
+\item $f(x,y)=(x-y)^2$\\[4mm]
+\item $f(x,y)=\sin(|x|+|y|)$
+\end{enumerate}
+\end{multicols}
+
+\begin{center}
+%\centering
+\includegraphics[width=10cm]{MCTutorial1Q1.JPEG}
+\end{center}
+%\tcbox[tcbox raise base]{Warm-up}
+ 
+%\begin{flushright}
+%\begin{tikzpicture}
+%    % A body
+%
+%
+%    % Non-rectangle shapes must be drawn as polygone
+%    \begin{scope}[shift={(3,0)}]
+%        \draw  (0,0.5) -- (0,4) -- (.5,4) -- (.5,4.5) -- (1.,4.5) -- (4.,4.5) --(4.,4)-- (4.5,4) --(4.5,0.5) --(4.0,0.5)--(4.0,0.0)-- (.5,0) --(0.5,0.5) -- cycle;
+%        % Draw symmetry lines
+%        \draw [symmetry] (.5, 0.5) -- (.5,4.0);
+%        \draw [symmetry] (4, 0.5) -- (4,4.0);
+%        \draw [symmetry] (.5,4.0) -- (4,4.0);
+%         \draw [symmetry] (.5, 0.5) -- (4, 0.5);
+%        % Dimensions
+%        \draw (4.5,0) -- ++(0.5,0) coordinate (D1) -- +(5pt,0);
+%        \draw (4.5,4.5) -- ++(0.5,0) coordinate (D2) -- +(5pt,0);
+%        \draw [dimen] (D1) -- (D2) node {6cm};
+%       
+%        
+%        \draw (0.0,5) -- ++(0,0.5) coordinate (D1) -- +(0,+5pt);
+%        \draw (0.5,5) -- ++(0,0.5) coordinate (D2) -- +(0,+5pt);
+%        \draw [dimen,-] (D1) -- (D2) node [above=5pt] {$x$ cm};
+%        \draw [dimen,<-] (D1) -- ++(-5pt,0);
+%        \draw [dimen,<-] (D2) -- ++(+5pt,0);
+%    \end{scope}
+%\end{tikzpicture}
+%\end{flushright}
+
+}
+
+
+\mycenterbox{Problems.}%
+
+%\begin{center}
+%\tcbox[tcbox raise base]{ Problems. Choose from the below}
+%\end{center}
+\problem{Exploring functions}%
+\begin{enumerate}[(a)]
+\item Are the following functions even, odd, or neither? What can you say
+about their range?
+\begin{multicols}{4}
+ \begin{enumerate}[(i)]
+\item $\displaystyle \frac{3x}{x^2+2}$
+\item $\displaystyle \cos x+3$
+\item $\displaystyle \frac{2x^3}{\cos x+3}$
+\item $\displaystyle \frac{3x^4+2x^2}{\sin x+4}$
+\end{enumerate}
+\end{multicols}
+\item Consider the functions $\sin^n x$ and $\cos^n x$, where $n$ is a positive integer.
+Which are odd, which are even, and what are their periodicities?
+\item What is the periodicity of $f(x) = 2 \cos x+\sin 2x$? Is it even/odd/neither?
+
+\end{enumerate}
+
+\problem{Cubic functions} 
+Show that $x-1$ is a factor of the cubic function%
+$$P(x)=x^3-2x^2-5x+6,$$
+and  find the quadratic factor $Q(x)$ such that $P(x) = (x -1)Q(x)$. Factorise
+$Q(x)$ and hence sketch $P(x).$
+
+%\newpage
+\problem{Sigmoid functions*.}%
+For positive integers $n$, consider the family of functions
+$$\displaystyle f_n= \frac{x^n}{2^n+x^n}.$$
+\begin{enumerate}[(a)]
+\item What are appropriate domains and ranges for $f_n(x)$? Do they depend on $n$?
+
+\item Is $f_n(x)$ even, odd, or neither? Does this depend on $n$?
+
+\item Show that for $x\geq 0$, $f_n(x)$ are strictly increasing functions and that
+$0\leq f_n(x) < 1.$
+\item What is the value of $f_n(2)$? Does it depend on $n$?
+
+\item By considering the values of $f_n(1.9)$ and $f_n(2.1)$ for $n = 2, 4, 8, 16, 32$ and
+$64$, show that the graph of $f_n(x)$ for $x\ge 0$ is an increasing sigmoid (that
+is, $S$-shaped) function that approaches a step function as $n\rightarrow \infty$.
+\end{enumerate}
+
+\mycenterbox{Selected answers and hints}%
+
+For the warm-up, $V(x)=4x(3-x)^2$. Writing $x=1+\epsilon$, we get
+$$V = 4(1 +\epsilon)(3- (1+\epsilon))^2=4(4-\epsilon^2(3-\epsilon)).$$
+If $-1<\epsilon<2$ then $\epsilon^2 (3-\epsilon)\ge 0$, with equality when $\epsilon=0$. Thus the maximum
+value of $V$ occurs when $\epsilon= 0$, i.e. $x = 1\rm{cm}$.
+
+\begin{enumerate}
+\item 
+\begin{enumerate}[(i)]
+\item Odd. The range is the interval  $[-\frac{3}{4}\sqrt{2},\; \frac{3}{4}\sqrt{2}]$
+\item Even. The range is the interval $[2, 4]$.
+\item Odd. The range is all of $\mathbb R$.
+\item Neither. (For example, writing $\displaystyle \frac{5}{\sin x+4}$ we have $\displaystyle f(1)= \frac{5}{\sin (1)+4} \equiv 1.032 (3\rm{dp})$ which is neither $f(1)$ nor $-f(1)$.)\\[4mm]
+The range is the nonnegative reals $[0,\infty)$
+
+\end{enumerate}
+\end{enumerate}
+

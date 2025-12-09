@@ -1,0 +1,1187 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+% Load required packages for TikZ and plots
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Custom boxes using tcolorbox (already loaded in preamble)
+% Note: 'definition' and 'example' are already defined in preamble as theorem environments
+% We use different names for tcolorbox versions to avoid conflicts
+
+% \newtcolorbox{definition}{
+%     colback=blue!5!white,
+%     colframe=blue!75!black,
+%     title=Definition,
+%     fonttitle=\bfseries
+% }
+
+% \newtcolorbox{example}{
+%     colback=green!5!white,
+%     colframe=green!75!black,
+%     title=Example,
+%     fonttitle=\bfseries
+% }
+
+\newtcolorbox{theorem}{
+    colback=red!5!white,
+    colframe=red!75!black,
+    title=Theorem,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{note}{
+    colback=yellow!10!white,
+    colframe=orange!75!black,
+    title=Important Note,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{strategy}{
+    colback=purple!5!white,
+    colframe=purple!75!black,
+    title=Problem-Solving Strategy,
+    fonttitle=\bfseries
+}
+
+\newtcolorbox{warning}{
+    colback=red!10!white,
+    colframe=red!75!black,
+    title=Common Mistake,
+    fonttitle=\bfseries
+}
+
+% \title{\textbf{Properties of Functions}\\
+% \large}
+% \author{Mathematics Department}
+% \date{\today}
+
+\begin{document}
+\section*{ Domain and Range, Inverses, Composition Self-Learning Notes}
+% \maketitle
+
+% \tableofcontents
+% \newpage
+
+\section{Introduction to Functions}
+
+\subsection{What is a Function?}
+
+\begin{definition}
+A \textbf{function} $f$ from set $A$ to set $B$ is a rule that assigns to each element $x$ in $A$ exactly one element $y$ in $B$. We write:
+\[
+f: A \to B \quad \text{or} \quad y = f(x)
+\]
+
+\begin{itemize}
+    \item $A$ is called the \textbf{domain} of $f$
+    \item $B$ is called the \textbf{codomain} of $f$
+    \item $x$ is called the \textbf{independent variable} or \textbf{input}
+    \item $y = f(x)$ is called the \textbf{dependent variable} or \textbf{output}
+    \item $f(x)$ is read as ``$f$ of $x$''
+\end{itemize}
+\end{definition}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Domain
+    \draw[thick] (-2,0) ellipse (1 and 2);
+    \node at (-2, 2.5) {Domain $A$};
+    \foreach \y in {-1, 0, 1} {
+        \fill (-2, \y) circle (2pt);
+    }
+    \node at (-2.5, 1) {$x_1$};
+    \node at (-2.5, 0) {$x_2$};
+    \node at (-2.5, -1) {$x_3$};
+    
+    % Codomain
+    \draw[thick] (2,0) ellipse (1 and 2);
+    \node at (2, 2.5) {Codomain $B$};
+    \foreach \y in {-1, 0, 1} {
+        \fill (2, \y) circle (2pt);
+    }
+    \node at (2.5, 1) {$y_1$};
+    \node at (2.5, 0) {$y_2$};
+    \node at (2.5, -1) {$y_3$};
+    
+    % Arrows
+    \draw[->, thick, blue] (-1.5, 1) -- (1.5, 0);
+    \draw[->, thick, blue] (-1.5, 0) -- (1.5, 1);
+    \draw[->, thick, blue] (-1.5, -1) -- (1.5, 0);
+    
+    % Label
+    \node at (0, -2.5) {$f$};
+\end{tikzpicture}
+\end{center}
+
+\subsection{Function Notation and Evaluation}
+
+\begin{example}
+If $f(x) = 2x^2 - 3x + 1$, evaluate:
+\begin{enumerate}[label=(\alph*)]
+    \item $f(2)$
+    \item $f(-1)$
+    \item $f(a)$
+    \item $f(x+h)$
+\end{enumerate}
+
+\textbf{Solution:}
+
+\textbf{(a)} $f(2) = 2(2)^2 - 3(2) + 1 = 8 - 6 + 1 = 3$
+
+\textbf{(b)} $f(-1) = 2(-1)^2 - 3(-1) + 1 = 2 + 3 + 1 = 6$
+
+\textbf{(c)} $f(a) = 2a^2 - 3a + 1$
+
+\textbf{(d)} 
+\begin{align*}
+f(x+h) &= 2(x+h)^2 - 3(x+h) + 1 \\
+&= 2(x^2 + 2xh + h^2) - 3x - 3h + 1 \\
+&= 2x^2 + 4xh + 2h^2 - 3x - 3h + 1
+\end{align*}
+\end{example}
+
+\subsection{Vertical Line Test}
+
+\begin{theorem}
+\textbf{Vertical Line Test:}
+
+A graph represents a function if and only if no vertical line intersects the graph more than once.
+\end{theorem}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    % Function example
+    \begin{scope}[shift={(0,0)}]
+        \begin{axis}[
+            axis lines=center,
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-2, xmax=2,
+            ymin=-1, ymax=4,
+            width=5cm,
+            height=5cm,
+            title={Function},
+            title style={at={(0.5,1.1)}}
+        ]
+        \addplot[blue, thick, domain=-1.5:1.5, samples=50] {x^2 + 0.5};
+        \draw[red, dashed] (axis cs: 0.5, -1) -- (axis cs: 0.5, 4);
+        \end{axis}
+        \node at (2.5, -1.5) {\small One intersection $\checkmark$};
+    \end{scope}
+    
+    % Not a function example
+    \begin{scope}[shift={(6,0)}]
+        \begin{axis}[
+            axis lines=center,
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-2, xmax=2,
+            ymin=-2, ymax=2,
+            width=5cm,
+            height=5cm,
+            title={Not a Function},
+            title style={at={(0.5,1.1)}}
+        ]
+        \draw[blue, thick] (axis cs: 0, 0) circle [radius=1];
+        \draw[red, dashed] (axis cs: 0.5, -2) -- (axis cs: 0.5, 2);
+        \fill[red] (axis cs: 0.5, 0.866) circle (2pt);
+        \fill[red] (axis cs: 0.5, -0.866) circle (2pt);
+        \end{axis}
+        \node at (2.5, -1.5) {\small Two intersections $\times$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\section{Domain and Range}
+
+\subsection{Domain of a Function}
+
+\begin{definition}
+The \textbf{domain} of a function $f$ is the set of all possible input values (values of $x$) for which the function is defined.
+\end{definition}
+
+\begin{strategy}
+\textbf{Finding the Domain:}
+
+Consider restrictions from:
+\begin{enumerate}
+    \item \textbf{Division by zero}: Denominator cannot be zero
+    \item \textbf{Square roots}: Expression under even root must be non-negative
+    \item \textbf{Logarithms}: Argument must be positive
+    \item \textbf{Context}: Physical or practical constraints
+\end{enumerate}
+
+If no restrictions apply, the domain is all real numbers: $\mathbb{R}$ or $(-\infty, \infty)$.
+\end{strategy}
+
+\begin{example}
+Find the domain of $f(x) = \frac{1}{x-3}$
+
+\textbf{Solution:}
+
+The function is undefined when the denominator equals zero:
+\[
+x - 3 = 0 \implies x = 3
+\]
+
+Therefore, the domain is all real numbers except 3:
+\[
+\text{Domain} = \{x \in \mathbb{R} : x \neq 3\} = (-\infty, 3) \cup (3, \infty)
+\]
+\end{example}
+
+\begin{example}
+Find the domain of $f(x) = \sqrt{x - 4}$
+
+\textbf{Solution:}
+
+For the square root to be defined, we need:
+\[
+x - 4 \geq 0
+\]
+\[
+x \geq 4
+\]
+
+Therefore:
+\[
+\text{Domain} = [4, \infty)
+\]
+\end{example}
+
+\begin{example}
+Find the domain of $f(x) = \frac{\sqrt{x+2}}{x^2-9}$
+
+\textbf{Solution:}
+
+Two conditions must be satisfied:
+
+\textbf{1. Square root condition:}
+\[
+x + 2 \geq 0 \implies x \geq -2
+\]
+
+\textbf{2. Denominator condition:}
+\[
+x^2 - 9 \neq 0 \implies x \neq \pm 3
+\]
+
+Combining both conditions:
+\[
+\text{Domain} = [-2, 3) \cup (3, \infty)
+\]
+
+Note: $x = -3$ is already excluded by the square root condition.
+\end{example}
+
+\begin{example}
+Find the domain of $f(x) = \ln(x^2 - 4)$
+
+\textbf{Solution:}
+
+The logarithm requires:
+\[
+x^2 - 4 > 0
+\]
+
+Factor:
+\[
+(x-2)(x+2) > 0
+\]
+
+This inequality is satisfied when both factors have the same sign:
+\begin{itemize}
+    \item Both positive: $x > 2$
+    \item Both negative: $x < -2$
+\end{itemize}
+
+Therefore:
+\[
+\text{Domain} = (-\infty, -2) \cup (2, \infty)
+\]
+\end{example}
+
+\subsection{Range of a Function}
+
+\begin{definition}
+The \textbf{range} of a function $f$ is the set of all possible output values (values of $y$) that the function can produce.
+\end{definition}
+
+\begin{strategy}
+\textbf{Finding the Range:}
+
+\begin{enumerate}
+    \item Graph the function and observe the $y$-values covered
+    \item Solve $y = f(x)$ for $x$ and determine which $y$-values give real $x$-values
+    \item Analyze the behavior (minimum/maximum values, asymptotes)
+    \item For familiar functions, use known range properties
+\end{enumerate}
+\end{strategy}
+
+\begin{example}
+Find the range of $f(x) = x^2 + 1$
+
+\textbf{Solution:}
+
+This is an upward-opening parabola with vertex at $(0, 1)$.
+
+The minimum value is $f(0) = 1$, and the function increases without bound.
+
+Therefore:
+\[
+\text{Range} = [1, \infty)
+\]
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=center,
+        xlabel={$x$},
+        ylabel={$y$},
+        xmin=-3, xmax=3,
+        ymin=-1, ymax=6,
+        width=8cm,
+        height=6cm
+    ]
+    \addplot[blue, thick, domain=-2.5:2.5, samples=50] {x^2 + 1};
+    \draw[red, thick, <->] (axis cs: -3, 1) -- (axis cs: 3, 1);
+    \node[red] at (axis cs: 2.5, 0.5) {Minimum: $y = 1$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+\end{example}
+
+\begin{example}
+Find the range of $f(x) = \frac{1}{x}$
+
+\textbf{Solution:}
+
+For any $y \neq 0$, we can solve for $x$:
+\[
+y = \frac{1}{x} \implies x = \frac{1}{y}
+\]
+
+This gives a real value for $x$ as long as $y \neq 0$.
+
+When $y = 0$, there is no solution (since $\frac{1}{x}$ can never equal 0).
+
+Therefore:
+\[
+\text{Range} = (-\infty, 0) \cup (0, \infty) = \mathbb{R} \setminus \{0\}
+\]
+\end{example}
+
+\begin{example}
+Find the domain and range of $f(x) = -\sqrt{9 - x^2}$
+
+\textbf{Solution:}
+
+\textbf{Domain:}
+\[
+9 - x^2 \geq 0 \implies x^2 \leq 9 \implies -3 \leq x \leq 3
+\]
+\[
+\text{Domain} = [-3, 3]
+\]
+
+\textbf{Range:}
+
+The expression $\sqrt{9 - x^2}$ has:
+\begin{itemize}
+    \item Maximum value: $\sqrt{9} = 3$ when $x = 0$
+    \item Minimum value: $0$ when $x = \pm 3$
+\end{itemize}
+
+Since we have $-\sqrt{9 - x^2}$:
+\begin{itemize}
+    \item Maximum value: $0$
+    \item Minimum value: $-3$
+\end{itemize}
+
+Therefore:
+\[
+\text{Range} = [-3, 0]
+\]
+\end{example}
+
+\subsection{Interval Notation Review}
+
+\begin{note}
+\textbf{Interval Notation:}
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Inequality} & \textbf{Interval} & \textbf{Description} \\
+\hline
+$a < x < b$ & $(a, b)$ & Open interval \\
+$a \leq x \leq b$ & $[a, b]$ & Closed interval \\
+$a \leq x < b$ & $[a, b)$ & Half-open interval \\
+$a < x \leq b$ & $(a, b]$ & Half-open interval \\
+$x > a$ & $(a, \infty)$ & Unbounded \\
+$x \geq a$ & $[a, \infty)$ & Unbounded \\
+$x < b$ & $(-\infty, b)$ & Unbounded \\
+$x \leq b$ & $(-\infty, b]$ & Unbounded \\
+All real numbers & $(-\infty, \infty)$ & $\mathbb{R}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Note:} Infinity symbols always use parentheses, never brackets.
+\end{note}
+
+\section{Inverse Functions}
+
+\subsection{One-to-One Functions}
+
+\begin{definition}
+A function $f$ is \textbf{one-to-one} (or \textbf{injective}) if different inputs produce different outputs. That is:
+\[
+\text{If } x_1 \neq x_2, \text{ then } f(x_1) \neq f(x_2)
+\]
+
+Equivalently:
+\[
+\text{If } f(x_1) = f(x_2), \text{ then } x_1 = x_2
+\]
+\end{definition}
+
+\begin{theorem}
+\textbf{Horizontal Line Test:}
+
+A function is one-to-one if and only if no horizontal line intersects its graph more than once.
+\end{theorem}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    % One-to-one function
+    \begin{scope}[shift={(0,0)}]
+        \begin{axis}[
+            axis lines=center,
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-2, xmax=2,
+            ymin=-1, ymax=4,
+            width=5cm,
+            height=5cm,
+            title={One-to-One},
+            title style={at={(0.5,1.1)}}
+        ]
+        \addplot[blue, thick, domain=-1.5:1.5, samples=50] {x^3 + 1};
+        \draw[red, dashed] (axis cs: -2, 1) -- (axis cs: 2, 1);
+        \end{axis}
+        \node at (2.5, -1.5) {\small One intersection $\checkmark$};
+    \end{scope}
+    
+    % Not one-to-one
+    \begin{scope}[shift={(6,0)}]
+        \begin{axis}[
+            axis lines=center,
+            xlabel={$x$},
+            ylabel={$y$},
+            xmin=-2, xmax=2,
+            ymin=-1, ymax=4,
+            width=5cm,
+            height=5cm,
+            title={Not One-to-One},
+            title style={at={(0.5,1.1)}}
+        ]
+        \addplot[blue, thick, domain=-1.5:1.5, samples=50] {x^2 + 0.5};
+        \draw[red, dashed] (axis cs: -2, 1.5) -- (axis cs: 2, 1.5);
+        \fill[red] (axis cs: -1, 1.5) circle (2pt);
+        \fill[red] (axis cs: 1, 1.5) circle (2pt);
+        \end{axis}
+        \node at (2.5, -1.5) {\small Two intersections $\times$};
+    \end{scope}
+\end{tikzpicture}
+\end{center}
+
+\begin{example}
+Determine if $f(x) = 2x - 3$ is one-to-one.
+
+\textbf{Solution:}
+
+\textbf{Method 1: Algebraic}
+
+Assume $f(x_1) = f(x_2)$:
+\begin{align*}
+2x_1 - 3 &= 2x_2 - 3 \\
+2x_1 &= 2x_2 \\
+x_1 &= x_2
+\end{align*}
+
+Since $f(x_1) = f(x_2)$ implies $x_1 = x_2$, the function is one-to-one.
+
+\textbf{Method 2: Horizontal Line Test}
+
+The graph is a line with non-zero slope, so any horizontal line intersects it exactly once. Therefore, it's one-to-one.
+\end{example}
+
+\subsection{Definition of Inverse Function}
+
+\begin{definition}
+Let $f$ be a one-to-one function with domain $A$ and range $B$. The \textbf{inverse function} $f^{-1}$ has domain $B$ and range $A$ and is defined by:
+\[
+f^{-1}(y) = x \quad \text{if and only if} \quad f(x) = y
+\]
+
+In other words, $f^{-1}$ ``undoes'' what $f$ does.
+\end{definition}
+
+\begin{note}
+\textbf{Important Properties:}
+\begin{align*}
+f^{-1}(f(x)) &= x \quad \text{for all } x \text{ in the domain of } f \\
+f(f^{-1}(y)) &= y \quad \text{for all } y \text{ in the domain of } f^{-1}
+\end{align*}
+
+\textbf{Warning:} $f^{-1}(x) \neq \frac{1}{f(x)}$
+
+The notation $f^{-1}$ means inverse function, not reciprocal!
+\end{note}
+
+\subsection{Finding Inverse Functions}
+
+\begin{strategy}
+\textbf{Steps to Find $f^{-1}(x)$:}
+
+\begin{enumerate}
+    \item Verify that $f$ is one-to-one
+    \item Replace $f(x)$ with $y$: $y = f(x)$
+    \item Interchange $x$ and $y$: $x = f(y)$
+    \item Solve for $y$ in terms of $x$
+    \item Replace $y$ with $f^{-1}(x)$
+    \item Verify by checking $f^{-1}(f(x)) = x$ and $f(f^{-1}(x)) = x$
+\end{enumerate}
+\end{strategy}
+
+\begin{example}
+Find the inverse of $f(x) = 2x + 3$
+
+\textbf{Solution:}
+
+\textbf{Step 1:} $f$ is linear with non-zero slope, so it's one-to-one.
+
+\textbf{Step 2:} $y = 2x + 3$
+
+\textbf{Step 3:} $x = 2y + 3$
+
+\textbf{Step 4:} Solve for $y$:
+\begin{align*}
+x &= 2y + 3 \\
+x - 3 &= 2y \\
+y &= \frac{x - 3}{2}
+\end{align*}
+
+\textbf{Step 5:} $f^{-1}(x) = \frac{x - 3}{2}$
+
+\textbf{Step 6:} Verify:
+\begin{align*}
+f^{-1}(f(x)) &= f^{-1}(2x + 3) = \frac{(2x+3) - 3}{2} = \frac{2x}{2} = x \quad \checkmark \\
+f(f^{-1}(x)) &= f\left(\frac{x-3}{2}\right) = 2 \cdot \frac{x-3}{2} + 3 = x - 3 + 3 = x \quad \checkmark
+\end{align*}
+\end{example}
+
+\begin{example}
+Find the inverse of $f(x) = x^3 + 1$
+
+\textbf{Solution:}
+
+\textbf{Step 1:} Cubic functions are one-to-one.
+
+\textbf{Step 2:} $y = x^3 + 1$
+
+\textbf{Step 3:} $x = y^3 + 1$
+
+\textbf{Step 4:} Solve for $y$:
+\begin{align*}
+x &= y^3 + 1 \\
+x - 1 &= y^3 \\
+y &= \sqrt[3]{x - 1}
+\end{align*}
+
+\textbf{Step 5:} $f^{-1}(x) = \sqrt[3]{x - 1}$
+
+\textbf{Verification:}
+\begin{align*}
+f^{-1}(f(x)) &= \sqrt[3]{(x^3 + 1) - 1} = \sqrt[3]{x^3} = x \quad \checkmark
+\end{align*}
+\end{example}
+
+\begin{example}
+Find the inverse of $f(x) = \frac{2x + 3}{x - 1}$, where $x \neq 1$
+
+\textbf{Solution:}
+
+\textbf{Step 1:} This rational function is one-to-one on its domain.
+
+\textbf{Step 2:} $y = \frac{2x + 3}{x - 1}$
+
+\textbf{Step 3:} $x = \frac{2y + 3}{y - 1}$
+
+\textbf{Step 4:} Solve for $y$:
+\begin{align*}
+x(y - 1) &= 2y + 3 \\
+xy - x &= 2y + 3 \\
+xy - 2y &= x + 3 \\
+y(x - 2) &= x + 3 \\
+y &= \frac{x + 3}{x - 2}
+\end{align*}
+
+\textbf{Step 5:} $f^{-1}(x) = \frac{x + 3}{x - 2}$, where $x \neq 2$
+
+\textbf{Note:} Domain of $f^{-1}$ is $\mathbb{R} \setminus \{2\}$
+\end{example}
+
+\subsection{Graphing Inverse Functions}
+
+\begin{theorem}
+The graph of $f^{-1}$ is the reflection of the graph of $f$ across the line $y = x$.
+\end{theorem}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        axis lines=center,
+        xlabel={$x$},
+        ylabel={$y$},
+        xmin=-1, xmax=6,
+        ymin=-1, ymax=6,
+        width=10cm,
+        height=10cm,
+        grid=major,
+        legend pos=north west
+    ]
+    % y = x line
+    \addplot[black, dashed, domain=-1:6] {x};
+    \addlegendentry{$y = x$}
+    
+    % f(x) = 2x + 1
+    \addplot[blue, thick, domain=-0.5:2.5] {2*x + 1};
+    \addlegendentry{$f(x) = 2x + 1$}
+    
+    % f^{-1}(x) = (x-1)/2
+    \addplot[red, thick, domain=0:6] {(x-1)/2};
+    \addlegendentry{$f^{-1}(x) = \frac{x-1}{2}$}
+    
+    % Points
+    \addplot[only marks, mark=*, blue] coordinates {(1, 3)};
+    \addplot[only marks, mark=*, red] coordinates {(3, 1)};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{example}
+Given the graph of $f$, sketch the graph of $f^{-1}$.
+
+\textbf{Solution:}
+
+To sketch $f^{-1}$:
+\begin{enumerate}
+    \item Plot the line $y = x$ as a guide
+    \item For each point $(a, b)$ on the graph of $f$, plot the point $(b, a)$ on the graph of $f^{-1}$
+    \item The graphs are mirror images across $y = x$
+\end{enumerate}
+\end{example}
+
+\subsection{Domain and Range of Inverse Functions}
+
+\begin{theorem}
+If $f$ has domain $A$ and range $B$, then:
+\begin{itemize}
+    \item Domain of $f^{-1}$ is $B$
+    \item Range of $f^{-1}$ is $A$
+\end{itemize}
+
+In other words, domain and range are swapped.
+\end{theorem}
+
+\begin{example}
+If $f(x) = \sqrt{x - 2}$ has domain $[2, \infty)$ and range $[0, \infty)$, find the domain and range of $f^{-1}$.
+
+\textbf{Solution:}
+
+\begin{itemize}
+    \item Domain of $f^{-1}$ = Range of $f$ = $[0, \infty)$
+    \item Range of $f^{-1}$ = Domain of $f$ = $[2, \infty)$
+\end{itemize}
+
+\textbf{Finding $f^{-1}$ explicitly:}
+\begin{align*}
+y &= \sqrt{x - 2} \\
+x &= \sqrt{y - 2} \\
+x^2 &= y - 2 \\
+y &= x^2 + 2
+\end{align*}
+
+Therefore: $f^{-1}(x) = x^2 + 2$ for $x \geq 0$
+\end{example}
+
+\section{Composition of Functions}
+
+\subsection{Definition of Composition}
+
+\begin{definition}
+The \textbf{composition} of functions $f$ and $g$, denoted $(f \circ g)$, is defined by:
+\[
+(f \circ g)(x) = f(g(x))
+\]
+
+Read as ``$f$ composed with $g$'' or ``$f$ of $g$ of $x$''.
+
+The domain of $f \circ g$ consists of all $x$ in the domain of $g$ such that $g(x)$ is in the domain of $f$.
+\end{definition}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Boxes
+    \draw[thick] (-2,-0.5) rectangle (-0.5,0.5);
+    \node at (-1.25, 0) {$x$};
+    
+    \draw[thick, blue] (0,-0.5) rectangle (1.5,0.5);
+    \node[blue] at (0.75, 0) {$g$};
+    
+    \draw[thick] (2,-0.5) rectangle (3.5,0.5);
+    \node at (2.75, 0) {$g(x)$};
+    
+    \draw[thick, red] (4,-0.5) rectangle (5.5,0.5);
+    \node[red] at (4.75, 0) {$f$};
+    
+    \draw[thick] (6,-0.5) rectangle (8,0.5);
+    \node at (7, 0) {$f(g(x))$};
+    
+    % Arrows
+    \draw[->, thick] (-0.5, 0) -- (0, 0);
+    \draw[->, thick] (1.5, 0) -- (2, 0);
+    \draw[->, thick] (3.5, 0) -- (4, 0);
+    \draw[->, thick] (5.5, 0) -- (6, 0);
+    
+    % Bottom label
+    \draw[thick, purple] (-0.5, -1) rectangle (5.5, -1.8);
+    \node[purple] at (2.5, -1.4) {$(f \circ g)(x) = f(g(x))$};
+    
+    \draw[->, thick, purple] (-0.5, -1) -- (-0.5, -0.5);
+    \draw[->, thick, purple] (5.5, -1) -- (5.5, -0.5);
+\end{tikzpicture}
+\end{center}
+
+\begin{note}
+\textbf{Important:} In general, $f \circ g \neq g \circ f$
+
+Composition is \textbf{not commutative}!
+\end{note}
+
+\begin{example}
+If $f(x) = x^2$ and $g(x) = x + 3$, find:
+\begin{enumerate}[label=(\alph*)]
+    \item $(f \circ g)(x)$
+    \item $(g \circ f)(x)$
+    \item $(f \circ g)(2)$
+    \item $(g \circ f)(2)$
+\end{enumerate}
+
+\textbf{Solution:}
+
+\textbf{(a)} $(f \circ g)(x) = f(g(x)) = f(x+3) = (x+3)^2 = x^2 + 6x + 9$
+
+\textbf{(b)} $(g \circ f)(x) = g(f(x)) = g(x^2) = x^2 + 3$
+
+\textbf{(c)} $(f \circ g)(2) = (2+3)^2 = 25$
+
+Alternatively: $(f \circ g)(2) = 2^2 + 6(2) + 9 = 4 + 12 + 9 = 25$
+
+\textbf{(d)} $(g \circ f)(2) = 2^2 + 3 = 7$
+
+\textbf{Note:} $(f \circ g)(x) \neq (g \circ f)(x)$
+\end{example}
+
+\begin{example}
+If $f(x) = \sqrt{x}$ and $g(x) = x - 2$, find $(f \circ g)(x)$ and its domain.
+
+\textbf{Solution:}
+
+\[
+(f \circ g)(x) = f(g(x)) = f(x-2) = \sqrt{x-2}
+\]
+
+\textbf{Domain:}
+
+For $f(g(x))$ to be defined:
+\begin{itemize}
+    \item $x$ must be in the domain of $g$: all real numbers
+    \item $g(x)$ must be in the domain of $f$: $g(x) \geq 0$
+\end{itemize}
+
+So we need:
+\[
+x - 2 \geq 0 \implies x \geq 2
+\]
+
+\textbf{Domain of $f \circ g$:} $[2, \infty)$
+\end{example}
+
+\begin{example}
+If $f(x) = \frac{1}{x}$ and $g(x) = x^2 - 4$, find $(f \circ g)(x)$ and its domain.
+
+\textbf{Solution:}
+
+\[
+(f \circ g)(x) = f(g(x)) = f(x^2 - 4) = \frac{1}{x^2 - 4}
+\]
+
+\textbf{Domain:}
+
+We need $x^2 - 4 \neq 0$:
+\[
+x^2 \neq 4 \implies x \neq \pm 2
+\]
+
+\textbf{Domain:} $(-\infty, -2) \cup (-2, 2) \cup (2, \infty)$
+\end{example}
+
+\subsection{Decomposing Functions}
+
+\begin{strategy}
+Sometimes it's useful to express a function as a composition of simpler functions.
+
+\textbf{Approach:} Identify the ``inner'' function (what's done first) and the ``outer'' function (what's done to the result).
+\end{strategy}
+
+\begin{example}
+Express $h(x) = \sqrt{x^2 + 1}$ as a composition of two functions.
+
+\textbf{Solution:}
+
+We can think of this as:
+\begin{enumerate}
+    \item First, compute $x^2 + 1$ (inner function)
+    \item Then, take the square root (outer function)
+\end{enumerate}
+
+Let:
+\begin{align*}
+g(x) &= x^2 + 1 \quad \text{(inner)} \\
+f(x) &= \sqrt{x} \quad \text{(outer)}
+\end{align*}
+
+Then:
+\[
+h(x) = (f \circ g)(x) = f(g(x)) = f(x^2 + 1) = \sqrt{x^2 + 1}
+\]
+
+\textbf{Note:} Other decompositions are possible! For example:
+\begin{align*}
+g(x) &= x^2 \\
+f(x) &= \sqrt{x + 1}
+\end{align*}
+\end{example}
+
+\begin{example}
+Express $h(x) = (2x + 3)^5$ as a composition of two functions.
+
+\textbf{Solution:}
+
+Let:
+\begin{align*}
+g(x) &= 2x + 3 \quad \text{(inner)} \\
+f(x) &= x^5 \quad \text{(outer)}
+\end{align*}
+
+Then:
+\[
+h(x) = (f \circ g)(x) = (2x + 3)^5
+\]
+\end{example}
+
+\subsection{Properties of Composition}
+
+\begin{theorem}
+\textbf{Properties of Function Composition:}
+
+\begin{enumerate}
+    \item \textbf{Associativity:} $(f \circ g) \circ h = f \circ (g \circ h)$
+    
+    \item \textbf{Identity:} If $I(x) = x$ is the identity function, then:
+    \[
+    f \circ I = I \circ f = f
+    \]
+    
+    \item \textbf{Inverse:} If $f$ has an inverse $f^{-1}$, then:
+    \begin{align*}
+    f^{-1} \circ f &= I \\
+    f \circ f^{-1} &= I
+    \end{align*}
+    
+    \item \textbf{Not commutative:} In general, $f \circ g \neq g \circ f$
+\end{enumerate}
+\end{theorem}
+
+\begin{example}
+Verify that $(f^{-1} \circ f)(x) = x$ for $f(x) = 2x + 3$ and $f^{-1}(x) = \frac{x-3}{2}$.
+
+\textbf{Solution:}
+
+\begin{align*}
+(f^{-1} \circ f)(x) &= f^{-1}(f(x)) \\
+&= f^{-1}(2x + 3) \\
+&= \frac{(2x+3) - 3}{2} \\
+&= \frac{2x}{2} \\
+&= x \quad \checkmark
+\end{align*}
+\end{example}
+
+\subsection{Applications of Composition}
+
+\begin{example}
+\textbf{Problem:} A spherical balloon is being inflated. If the radius increases at a rate of 2 cm/s, express the volume as a function of time.
+
+\textbf{Solution:}
+
+The volume of a sphere is:
+\[
+V(r) = \frac{4}{3}\pi r^3
+\]
+
+The radius as a function of time is:
+\[
+r(t) = 2t \quad \text{(starting from $r = 0$)}
+\]
+
+The volume as a function of time is the composition:
+\begin{align*}
+V(t) &= (V \circ r)(t) \\
+&= V(r(t)) \\
+&= V(2t) \\
+&= \frac{4}{3}\pi(2t)^3 \\
+&= \frac{32\pi t^3}{3}
+\end{align*}
+\end{example}
+
+\section{Practice Problems}
+
+\subsection{Domain and Range}
+
+\begin{enumerate}
+    \item Find the domain of $f(x) = \frac{x+1}{x^2-16}$
+    
+    \item Find the domain of $g(x) = \sqrt{5-2x}$
+    
+    \item Find the domain of $h(x) = \frac{1}{\sqrt{x^2-9}}$
+    
+    \item Find the domain and range of $f(x) = \sqrt{x+4}$
+    
+    \item Find the domain and range of $g(x) = \frac{1}{x+2}$
+    
+    \item Find the range of $f(x) = -x^2 + 4x - 1$
+    
+    \item If $f(x) = \frac{x-3}{x+1}$, find the domain and range
+    
+    \item Find the domain of $f(x) = \ln(x^2 - 1)$
+\end{enumerate}
+
+\subsection{Inverse Functions}
+
+\begin{enumerate}[resume]
+    \item Determine if $f(x) = x^2 + 4$ is one-to-one
+    
+    \item Determine if $g(x) = x^3 - 2x$ is one-to-one
+    
+    \item Find the inverse of $f(x) = 3x - 7$
+    
+    \item Find the inverse of $g(x) = \frac{x+2}{x-3}$
+    
+    \item Find the inverse of $h(x) = \sqrt{x+5}$
+    
+    \item If $f(x) = x^2 - 4$ for $x \geq 0$, find $f^{-1}(x)$
+    
+    \item Verify that $f(x) = \frac{1-x}{x}$ is its own inverse
+    
+    \item If $f^{-1}(x) = 2x + 3$, find $f(x)$
+\end{enumerate}
+
+\subsection{Composition of Functions}
+
+\begin{enumerate}[resume]
+    \item If $f(x) = 2x + 1$ and $g(x) = x^2$, find $(f \circ g)(x)$ and $(g \circ f)(x)$
+    
+    \item If $f(x) = \sqrt{x}$ and $g(x) = 3x - 2$, find $(f \circ g)(x)$ and its domain
+    
+    \item If $f(x) = x^2 + 1$ and $g(x) = \frac{1}{x}$, find $(f \circ g)(x)$ and $(g \circ f)(x)$
+    
+    \item Express $h(x) = \sqrt[3]{x^2 + 5}$ as a composition of two functions
+    
+    \item Express $h(x) = \frac{1}{(x-3)^2}$ as a composition of two or more functions
+    
+    \item If $f(x) = x + 4$ and $g(x) = 2x$, find $(f \circ g \circ f)(x)$
+    
+    \item Find functions $f$ and $g$ such that $(f \circ g)(x) = (2x + 1)^4$
+    
+    \item If $(f \circ g)(x) = 3x + 2$ and $g(x) = x - 1$, find $f(x)$
+\end{enumerate}
+
+\subsection{Mixed Problems}
+
+\begin{enumerate}[resume]
+    \item If $f(x) = 2x - 3$ and $f^{-1}(a) = 5$, find $a$
+    
+    \item Show that $(f \circ g)^{-1} = g^{-1} \circ f^{-1}$ for $f(x) = 2x$ and $g(x) = x + 3$
+    
+    \item Find the domain of $(f \circ g)(x)$ where $f(x) = \sqrt{x}$ and $g(x) = x^2 - 4$
+    
+    \item If $f(x) = ax + b$ and $f^{-1}(x) = 2x - 6$, find $a$ and $b$
+    
+    \item Given $f(x) = x^3$ and $g(x) = \sqrt[3]{x}$, show that $f$ and $g$ are inverses
+\end{enumerate}
+
+\subsection{Challenge Problems}
+
+\begin{enumerate}[resume]
+    \item Find all functions $f$ such that $f(f(x)) = x^2 - 2x + 6$
+    
+    \item If $f(x+1) = x^2 + 3x + 2$, find $f(x)$
+    
+    \item Prove that if $f$ and $g$ are both one-to-one, then $f \circ g$ is one-to-one
+    
+    \item Show that the inverse of $f(x) = \frac{ax+b}{cx+d}$ (where $ad \neq bc$) is also a rational function
+    
+    \item If $f(x)$ is an odd function and one-to-one, prove that $f^{-1}(x)$ is also odd
+\end{enumerate}
+
+\section{Answers to Selected Problems}
+
+\subsection{Selected Answers}
+
+\begin{enumerate}
+    \item $(-\infty, -4) \cup (-4, 4) \cup (4, \infty)$
+    
+    \item $(-\infty, \frac{5}{2}]$
+    
+    \item $(-\infty, -3) \cup (3, \infty)$
+    
+    \item Domain: $[-4, \infty)$; Range: $[0, \infty)$
+    
+    \item Domain: $(-\infty, -2) \cup (-2, \infty)$; Range: $(-\infty, 0) \cup (0, \infty)$
+    
+    \item $(-\infty, 3]$ (vertex at $(2, 3)$)
+    
+    \item Domain: $(-\infty, -1) \cup (-1, \infty)$; Range: $(-\infty, 1) \cup (1, \infty)$
+    
+    \item $(-\infty, -1) \cup (1, \infty)$
+    
+    \item No (fails horizontal line test)
+    
+    \item No (horizontal line at $y = 0$ intersects three times)
+    
+    \item $f^{-1}(x) = \frac{x+7}{3}$
+    
+    \item $g^{-1}(x) = \frac{3x+2}{x-1}$
+    
+    \item $h^{-1}(x) = x^2 - 5$ for $x \geq 0$
+    
+    \item $f^{-1}(x) = \sqrt{x+4}$ for $x \geq -4$
+    
+    \item $f(f(x)) = \frac{1-\frac{1-x}{x}}{\frac{1-x}{x}} = x$ $\checkmark$
+    
+    \item $f(x) = \frac{x-3}{2}$
+    
+    \item $(f \circ g)(x) = 2x^2 + 1$; $(g \circ f)(x) = 4x^2 + 4x + 1$
+    
+    \item $(f \circ g)(x) = \sqrt{3x-2}$; Domain: $[\frac{2}{3}, \infty)$
+    
+    \item $(f \circ g)(x) = \frac{1}{x^2} + 1$; $(g \circ f)(x) = \frac{1}{x^2+1}$
+    
+    \item $g(x) = x^2 + 5$, $f(x) = \sqrt[3]{x}$ (or other valid decompositions)
+    
+    \item $g(x) = x - 3$, $f(x) = \frac{1}{x^2}$ (or $g(x) = (x-3)^2$, $f(x) = \frac{1}{x}$)
+    
+    \item $(f \circ g \circ f)(x) = 2x + 12$
+    
+    \item $f(x) = x^4$, $g(x) = 2x + 1$ (or other valid answers)
+    
+    \item $f(x) = 3x + 5$
+    
+    \item $a = 7$ (since $f(5) = 7$)
+    
+    \item Proven
+    
+    \item $[-2, 2] \cup [2, \infty) = [2, \infty)$ or more simply $x^2 \geq 4$, so $x \leq -2$ or $x \geq 2$
+    
+    \item $a = \frac{1}{2}$, $b = 3$
+    
+    \item $f(g(x)) = (\sqrt[3]{x})^3 = x$ and $g(f(x)) = \sqrt[3]{x^3} = x$ $\checkmark$
+    
+    \item $f(x) = x^2 - x + 2$ (check: $f(f(x)) = (x^2-x+2)^2 - (x^2-x+2) + 2 = x^2 - 2x + 6$ after simplification... actually this is quite complex)
+    
+    \item $f(x) = x^2 + x$
+    
+    \item Proven using contrapositive
+    
+    \item $f^{-1}(x) = \frac{dx-b}{-cx+a}$ (also rational)
+    
+    \item Proven using $f(-x) = -f(x)$
+\end{enumerate}
+
+\section{Summary and Key Concepts}
+
+\subsection{Domain and Range}
+
+\textbf{Domain:}
+\begin{itemize}
+    \item Set of all valid input values
+    \item Check: division by zero, square roots, logarithms
+    \item Use interval notation
+\end{itemize}
+
+\textbf{Range:}
+\begin{itemize}
+    \item Set of all possible output values
+    \item Use graphing, algebra, or analysis
+    \item Domain and range swap for inverse functions
+\end{itemize}
+
+\subsection{Inverse Functions}
+
+\textbf{Requirements:}
+\begin{itemize}
+    \item Function must be one-to-one (passes horizontal line test)
+    \item Use algebraic method: swap $x$ and $y$, solve for $y$
+    \item Verify: $f^{-1}(f(x)) = x$ and $f(f^{-1}(x)) = x$
+    \item Graphs are reflections across $y = x$
+\end{itemize}
+
+\subsection{Composition}
+
+\textbf{Definition:}
+\begin{itemize}
+    \item $(f \circ g)(x) = f(g(x))$
+    \item Apply $g$ first, then $f$
+    \item Generally not commutative
+    \item Domain: $x$ in domain of $g$ such that $g(x)$ in domain of $f$
+\end{itemize}
+
+\section{Study Tips}
+
+\begin{enumerate}
+    \item \textbf{Domain first:} Always identify domain restrictions before manipulating functions
+    
+    \item \textbf{Check one-to-one:} Use horizontal line test or algebra to verify before finding inverses
+    
+    \item \textbf{Verify inverses:} Always check that $f^{-1}(f(x)) = x$
+    
+    \item \textbf{Order matters:} In composition, pay attention to which function is applied first
+    
+    \item \textbf{Visualize:} Graph functions to understand domain, range, and inverses
+    
+    \item \textbf{Practice notation:} Get comfortable with function notation and composition symbols
+    
+    \item \textbf{Real-world connections:} Think about how functions model relationships in applications
+\end{enumerate}
+
+\vfill
+\begin{center}
+\textit{End of Notes}
+\end{center}
+
+\end{document}

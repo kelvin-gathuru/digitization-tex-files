@@ -1,0 +1,663 @@
+
+%\newtheorem{definition}[subsection]{Definition}
+%\newtheorem{example}[subsection]{Example}
+\newtheorem{cor}[subsection]{Corollary}
+\newtheorem{pro}[subsection]{Proposition}
+\newtheorem{theo}[subsection]{Theorem}
+\newtheorem{lem}[subsection]{Lemma}
+%\newtheorem{rem}[subsection]{Remark}
+
+\definecolor{main}{HTML}{5989cf}    % setting main color to be used
+\definecolor{sub}{HTML}{cde4ff}     % setting sub color to be used
+
+\tcbset{
+    sharp corners,
+    colback = white,
+    before skip = 0.2cm,    % add extra space before the box
+    after skip = 0.5cm      % add extra space after the box
+}                           % setting global options for tcolorbox
+
+% You can copy any following box you like to your code.
+\newtcolorbox{boxA}{
+    fontupper = \bf,
+    boxrule = 1.5pt,
+    colframe = black % frame color
+}
+
+\newtcolorbox{boxB}{
+    fontupper = \bf\color{main}, % font color
+    boxrule = 1.5pt,
+    colframe = main,
+    rounded corners,
+    arc = 5pt   % corners roundness
+}
+\newtcolorbox{boxC}{
+    colback = sub, % background color
+    boxrule = 0pt  % no borders
+}
+
+\newtcolorbox{boxD}{
+    colback = sub, 
+    colframe = main, 
+    boxrule = 0pt, 
+    toprule = 3pt, % top rule weight
+    bottomrule = 3pt % bottom rule weight
+}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Overleaf Example},
+    pdfpagemode=FullScreen,
+    }
+
+\urlstyle{same}
+
+
+\coursetitle{\mtthreeiii}{MT303}
+\developers{Wyclife Rao}
+\reviewers{Dr Irene Sitawa}
+\modulenumber{10}
+\modulename{Numerical Methods for Ordinary Differential Equations Using Python}
+
+\input{modulecoverpage}
+
+%\input{modulemessage}
+
+
+\mddescription
+This module guides you into a detailed discussion of the concepts of numerical methods for ordinary differential equations using python. Specifically you will learn about
+\begin{itemize}
+\item reduction of order
+\item the Euler method
+\item numerical error and instability
+\item python ODE solvers
+\end{itemize}
+%\expectations
+%\begin{objenumerate}
+%
+%\end{objenumerate}
+
+\begin{mlos}
+ \item Recall and state the principle of reduction of order for solving higher-order differential equations.
+  \item Explain the Euler method for numerically solving first-order ordinary differential equations, including its derivation and stepwise procedure.
+  \item Analyze the sources and impacts of numerical error and instability in ODE solvers, particularly focusing on how step size affects accuracy and stability in Euler’s method.
+  \item Implement Python programs to solve ODEs using built-in and custom numerical solvers, demonstrating the ability to simulate and visualize solutions effectively.
+\end{mlos}
+
+\section{Reduction of Order and The Euler Method}
+%\begin{youtube}
+%This video presents a discussion on programming simple ODE solver. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{youtube}
+\videolesson
+\begin{selfvideo}[1]
+%LESSON 3: 
+This video presents a discussion on reduction of order and the Euler method. Follow the discussion and then solve the problems in the subsequent quiz.
+\end{selfvideo}
+%\begin{boxB}Question: \end{boxB}
+\subsection*{Reduction of Order}
+Many numerical methods for solving initial value problems are designed specifically to solve first-order differential equations. To make these solvers useful for solving higher order differential equations, we must often reduce the order of the differential equation to first order. To reduce the order of a differential equation, consider a vector, $S(t)$, which is the state of the system as a function of time. In general, the state of a system is a collection of all the dependent variables that are relevant to the behaviour of the system. Suppose an ODE is  expressed as
+\[f^{(n)}(t) = F\left(t, f(t), f^{(1)}(t), f^{(2)}(t), f^{(3)}(t),\ldots, f^{(n-1)}(t)\right),\]
+for initial value problems, it is useful to take the state to be
+\[\begin{split}
+S(t) =\left[\begin{array}{c}
+f(t) \\
+f^{(1)}(t) \\
+f^{(2)}(t) \\
+f^{(3)}(t) \\
+\cdots \\
+f^{(n-1)}(t)
+\end{array}\right].
+\end{split}\]
+Then the derivative of the state is
+\[\begin{split}
+\frac{dS(t)}{dt} =\!\left[\begin{array}{c}
+f^{(1)}(t) \\
+f^{(2)}(t) \\
+f^{(3)}(t) \\
+f^{(4)}(t) \\
+\cdots \\
+f^{(n)}(t)
+\end{array}\right]\!=\!\left[\begin{array}{c}
+f^{(1)}(t) \\
+f^{(2)}(t) \\
+f^{(3)}(t) \\
+f^{(4)}(t) \\
+\cdots \\
+F\left(t, f(t), f^{(1)}(t),\ldots, f^{(n-1)}(t)\right)
+\end{array}\right]\!=\!\left[\begin{array}{c}
+S_2(t) \\
+S_3(t) \\
+S_4(t) \\
+S_5(t) \\
+\cdots \\
+F\left(t, S_1(t), S_2(t),\ldots, S_{n-1}(t)\right)
+\end{array}\right]\!,
+\end{split}\]
+where $S_i(t)$ is the $i$th element of $S(t)$. 
+%With the state written in this way, $\frac{dS(t)}{dt}$ can be written using only $S(t)$ (i.e., no f(t)) or its derivatives. In particular, dS(t)dt=F(t,S(t)), where F is a function that appropriately assembles the vector describing the derivative of the state. This equation is in the form of a first-order differential equation in S. Essentially, what we have done is turn an nth order ODE into n first order ODEs that are coupled together, meaning they share the same terms.
+
+\begin{example}
+Reduce the second order pendulum equation to first order, where
+\[\begin{split}
+S(t) =\left[\begin{array}{c}
+\Theta(t) \\
+\dot{\Theta}(t)
+\end{array}\right].
+\end{split}\]
+\end{example}
+
+\begin{mysolution}
+Taking the derivative of S(t) and substituting gives the correct expression.
+\[\begin{split}
+\frac{dS(t)}{dt} =\left[\begin{array}{c}
+S_2(t) \\
+-\frac{g}{l}S_1(t)
+\end{array}\right]
+\end{split}\]
+It happens that this ODE can be written in matrix form:
+\[\begin{split}
+\frac{dS(t)}{dt} =\left[\begin{array}{cc}
+0 & 1 \\
+-\frac{g}{l} & 0
+\end{array}\right]S(t)
+\end{split}\]
+\end{mysolution}
+
+ODEs that can be written in this way are said to be {\bf linear ODEs}.
+
+\begin{myexercise}\label{Comprehensionquiz2}
+A very simple model to describe the change in population of rabbits, $r(t)$, and wolves, $w(t)$, might be
+\[\frac{dr(t)}{dt} = 4r(t) - 2w(t)\]
+and
+\[\frac{dw(t)}{dt} = r(t) + w(t).\]
+The first ODE says that at each time step, the rabbit population multiplies by $4$, but each wolf eats two of the rabbits. The second ODE says that at each time step, the population of wolves increases by the number of rabbits and wolves in the system. Write this system of differential equations as an equivalent differential equation in $S(t)$ where
+\[\begin{split}
+S(t) =\left[\begin{array}{c}
+r(t) \\
+w(t)
+\end{array}\right].
+\end{split}\]
+
+\begin{mysolution}
+\[\begin{split}
+\frac{dS(t)}{dt} = \left[\begin{array}{cc}
+4 & -2 \\
+1 & 1
+\end{array}\right]S(t).
+\end{split}\]
+\end{mysolution}
+\end{myexercise}
+
+\subsection*{The Euler Method}
+%%\begin{youtube}
+%%This video presents a discussion on numerical error and instability. Follow the discussion and then solve the problems in the subsequent quiz.
+%%\end{youtube}
+%\videolesson
+%\begin{selfvideo}[2]
+%%LESSON 3: 
+%This video presents a discussion on the Euler Method using python. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{selfvideo}
+Let $\frac{dS(t)}{dt}=F(t,S(t))$ be an explicitly defined first order ODE. That is, $F$ is a function that returns the derivative, or change, of a state given a time and state value. Also, let $t$ be a numerical grid of the interval $[t_0,t_f]$ with spacing $h$. Without loss of generality, we assume that $t_0=0$, and that $t_f=Nh$ for some positive integer, $N$.
+
+The linear approximation of $S(t)$ around $t_j$ at $t_{j+1}$ is
+\[S(t_{j+1}) = S(t_j) + (t_{j+1} - t_j)\frac{dS(t_j)}{dt},\]
+which can also be written
+\[S(t_{j+1}) = S(t_j) + hF(t_j, S(t_j)).\]
+
+Thus assume we are given a function $F(t,S(t))$ that computes $\frac{dS(t)}{dt}$, a numerical grid, $t$, of the interval, $[t_0,t_f]$, and an initial state value $S_0=S(t_0)$. We can compute $S(t_j)$ for every $t_j$ in $t$ using the following steps.
+\begin{enumerate}[label=\arabic*.]
+\item Store $S_0=S(t_0)$ in an array, $S$.
+\item Compute $S(t_1)=S_0+hF(t_0,S_0)$.
+\item Store $S_1=S(t_1)$ in $S$.
+\item Compute $S(t_2)=S_1+hF(t_1,S_1)$.
+\item Store $S_2=S(t_1)$ in $S$.
+\item $\cdots$
+\item Compute $S(t_f)=S_{f-1}+hF(t_{f-1},S_{f-1})$.
+\item Store $S_f=S(t_f)$ in $S$.
+\item $S$ is an approximation of the solution to the initial value problem.
+\end{enumerate}
+When using a method with this structure, we say the method integrates the solution of the ODE.
+\begin{example}
+The differential equation $\frac{df(t)}{dt}=e^{-t}$ with initial condition $f_0=-1$ has the exact solution $f(t)=-e^{-t}$. Approximate the solution to this initial value problem between $0$ and $1$ in increments of $0.1$ using the Explicity Euler Formula. Plot the difference between the approximated solution and the exact solution.
+\end{example}
+
+\begin{mysolution}
+\begin{boxB}
+import numpy as np\\
+import matplotlib.pyplot as plt\\
+\\
+plt.style.use('seaborn-poster')\\
+%matplotlib inline\\
+\\
+\# Define parameters\\
+f = lambda t, s: np.exp(-t) \# ODE\\
+h = 0.1 \# Step size\\
+t = np.arange(0, 1 + h, h) \# Numerical grid\\
+s0 = -1 \# Initial Condition\\
+\\
+\# Explicit Euler Method\\
+s = np.zeros(len(t))\\
+s[0] = s0\\
+\\
+
+\end{boxB}
+
+\begin{boxB}
+for i in range(0, len(t) - 1):\\
+    \hspace*{1cm}s[i + 1] = s[i] + h*f(t[i], s[i])\\
+\\
+plt.figure(figsize = (12, 8))\\
+plt.plot(t, s, 'bo--', label='Approximate')\\
+plt.plot(t, -np.exp(-t), 'g', label='Exact')\\
+plt.title('Approximate and Exact Solution \textbackslash \\
+for Simple ODE')\\
+plt.xlabel('t')\\
+plt.ylabel('f(t)')\\
+plt.grid()\\
+plt.legend(loc='lower right')\\
+plt.show()
+\end{boxB}
+
+\begin{center}
+\includegraphics[width=10cm]{mod10sect2pic1}
+\end{center}
+\end{mysolution}
+
+%In the above figure, we can see each dot is one approximation based on the previous dot in a linear fashion. From the initial value, we can eventually get an approximation of the solution on the numerical grid. If we repeat the process for $h=0.01$, we get a better approximation for the solution:
+\begin{myexercise}\label{Comprehensionquiz2}
+The differential equation $\frac{df(t)}{dt}=e^{-t}$ with initial condition $f_0=-1$ has the exact solution $f(t)=-e^{-t}$. Approximate the solution to this initial value problem between $0$ and $1$ in increments of $0.01$ using the Explicity Euler Formula. Plot the difference between the approximated solution and the exact solution.
+\end{myexercise}
+\begin{mysolution}
+\end{mysolution}
+\begin{boxB}
+import numpy as np\\
+import matplotlib.pyplot as plt
+\end{boxB}
+
+\begin{boxB}
+~\\
+plt.style.use('seaborn-poster')\\
+%matplotlib inline\\
+\\
+\# Define parameters\\
+f = lambda t, s: np.exp(-t) \# ODE\\
+h = 0.01 \# Step size\\
+t = np.arange(0, 1 + h, h) \# Numerical grid\\
+s0 = -1 \# Initial Condition\\
+\\
+\# Explicit Euler Method\\
+s = np.zeros(len(t))\\
+s[0] = s0\\
+\\
+for i in range(0, len(t) - 1):\\
+    \hspace*{1cm}s[i + 1] = s[i] + h*f(t[i], s[i])\\
+\\
+plt.figure(figsize = (12, 8))\\
+plt.plot(t, s, 'bo--', label='Approximate')\\
+plt.plot(t, -np.exp(-t), 'g', label='Exact')\\
+plt.title('Approximate and Exact Solution \textbackslash \\
+for Simple ODE')\\
+plt.xlabel('t')\\
+plt.ylabel('f(t)')\\
+plt.grid()\\
+plt.legend(loc='lower right')\\
+plt.show()
+\end{boxB}
+
+\begin{center}
+\includegraphics[width=10cm]{CompQuizMod10Sec2Q1}
+\end{center}
+
+
+
+
+
+
+\section{Numerical Error and Instability}
+\activities
+Read the reference below on numerical error and instability in indicated web pages and then attempt the subsequent quiz.
+\begin{activity}[\cg Reading]
+\begin{enumerate}
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter22.05-Predictor-Corrector-Methods.html}
+\end{enumerate}
+\end{activity}
+
+\begin{myexercise}
+Use the Euler Explicit, Euler Implicit, and Trapezoidal Formulas to solve the pendulum equation over the time interval $[0,5]$ in increments of $0.1$ and for an initial solution of $S_0 = \left[\begin{array}{c} 1\\0 \end{array}\right]$. For the model parameters using $\sqrt{\frac{g}{l}} = 4$. Plot the approximate solution on a single graph
+\end{myexercise}
+
+
+\begin{mysolution}     
+\begin{boxB}
+import numpy as np\\
+from numpy.linalg import inv\\
+import matplotlib.pyplot as plt\\
+\\
+plt.style.use('seaborn-poster')\\
+\\
+\%matplotlib inline 
+\end{boxB}
+%\end{mysolution}     
+%
+%\begin{mysolution}     
+\begin{boxB}
+\# define step size\\
+h = 0.1\\
+\# define numerical grid\\
+t = np.arange(0, 5.1, h)\\
+\# oscillation freq. of pendulum\\
+w = 4
+s0 = np.array([[1], [0]])
+\end{boxB}
+
+\begin{boxB}
+~\\
+m\_e = np.array([[1, h], \\
+\hspace*{2cm}[-w**2*h, 1]])\\
+m\_i = inv(np.array([[1, -h], \\
+\hspace*{2cm}[w**2*h, 1]]))\\
+m\_t = np.dot(inv(np.array([[1, -h/2], \\
+\hspace*{1cm}[w**2*h/2,1]])), np.array(\\
+\hspace*{1.5cm}[[1,h/2], [-w**2*h/2, 1]]))\\
+\\
+s\_e = np.zeros((len(t), 2))\\
+s\_i = np.zeros((len(t), 2))\\
+s\_t = np.zeros((len(t), 2))\\
+\\
+\# do integrations\\
+s\_e[0, :] = s0.T\\
+s\_i[0, :] = s0.T\\
+s\_t[0, :] = s0.T\\
+\\
+for j in range(0, len(t)-1):\\
+\hspace*{1cm}s\_e[j+1, :] = np.dot(m\_e,s\_e[j, :])\\
+\hspace*{1cm}s\_i[j+1, :] = np.dot(m\_i,s\_i[j, :])\\
+\hspace*{1cm}s\_t[j+1, :] = np.dot(m\_t,s\_t[j, :])\\
+\\    
+plt.figure(figsize = (12, 8))\\
+plt.plot(t,s\_e[:,0],'b-')\\
+plt.plot(t,s\_i[:,0],'g:')\\
+plt.plot(t,s\_t[:,0],'r--')\\
+plt.plot(t, np.cos(w*t), 'k')\\
+plt.ylim([-3, 3])\\
+plt.xlabel('t')\\
+plt.ylabel('$\Theta (t)$')\\
+plt.legend(['Explicit', 'Implicit', \textbackslash \\
+\hspace*{2cm}'Trapezoidal', 'Exact'])\\
+plt.show()\\
+\end{boxB}
+\end{mysolution}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm]{Mod10sect2solution}
+%\caption{}
+%\label{}
+\end{figure}
+
+
+\section{Python ODE Solvers}
+%\videolesson
+%\begin{selfvideo}[2]
+%%LESSON 3: 
+%This video presents a discussion on python ODE solver (IVP) and advanced topics. Follow the discussion and then solve the problems in the subsequent quiz.
+%\end{selfvideo}
+\activities
+Read the reference below on python ODE solvers in indicated web pages and then attempt the subsequent quiz.
+\begin{activity}[\cg Reading]
+\begin{enumerate}
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/chapter22.06-Python-ODE-Solvers.html}
+\end{enumerate}
+\end{activity}
+
+%\begin{boxB}Question: \end{boxB}
+\begin{myexercise}\label{Comprehensionquiz2}
+Consider the ODE
+\[\frac{dS(t)}{dt} = -S(t)\]
+with an initial value of $S_0=1$. The exact solution to this problem is $S(t)=e^{-t}$. Use $solve\_ivp$ to approximate the solution to this initial value problem over the interval $[0,1]$. Plot the approximate solution versus the exact solution, and the relative error over time.
+\end{myexercise}
+
+\begin{mysolution}
+\begin{boxB}
+F = lambda t, s: -s\\
+\\
+t\_eval = np.arange(0, 1.01, 0.01)\\
+sol = solve\_ivp(F, [0, 1], [1], t\_eval=t\_eval)\\
+\\
+plt.figure(figsize = (12, 4))\\
+plt.subplot(121)\\
+plt.plot(sol.t, sol.y[0])\\
+plt.xlabel('t')\\
+plt.ylabel('S(t)')\\
+plt.subplot(122)\\
+plt.plot(sol.t, sol.y[0] - np.exp(-sol.t))\\
+plt.xlabel('t')\\
+plt.ylabel('S(t) - exp(-t)')\\
+plt.tight\_layout()\\
+plt.show()\\
+\end{boxB}
+\end{mysolution}
+
+\begin{center}
+\includegraphics[width=15cm]{Mod10sectionthreesolution}
+\end{center}
+%
+%
+%\discussion
+
+
+\begin{posttest}[\textcolor{red}{End of Module 10 Quiz}]
+\item Apply the Euler formula to the first order equation with an oscillating input 
+\[\begin{split}
+y&=sin(x),\\
+ 0&\leq x\leq 10.
+\end{split}\]
+
+\begin{mysolution}
+\item The equation can be approximated using the forward Euler as 
+\[\frac{w_{i+1}- w_i}{h} =\sin(x_i).\]
+Rearranging the equation gives the discrete difference equation with the unknowns on the left and the known values on the right
+ \[w{i+1}=w_i+h\sin(x_i).\]
+The Python code bellow implements this difference equation. The output of the code is shown in figure below
+\begin{boxB}
+\# Numerical solution of a Cosine differential equation\\
+import numpy as np\\
+import math\\
+import matplotlib.pyplot as plt\\
+\\
+h=0.01\\
+a=0\\
+b=10\\
+\\
+N=int(b-a/h)\\
+w=np.zeros(N)\\
+x=np.zeros(N)\\
+Analytic Solution=np.zeros(N)\\
+\\
+\# Initial Conditions\\
+w[0]=1.0\\
+x[0]=0\\
+Analytic Solution[0]=1.0\\
+for i in range (1,N) :\\
+\hspace*{1cm}w[i]=w[i 1]+hmath.sin(x[i 1])\\
+\hspace*{1cm}x[i]=x[i 1]+h\\
+\hspace*{1cm}Analytic Solution[i]=2.0 math.cos(x[i ])\\
+\\
+fig = plt . figure(figsize=(8,4))\\
+\\
+\# left hand plot\\
+ax = fig.add subplot(1,3,1)\\
+plt .plot(x,w,color=’red’)\\
+\#ax.legend(loc=’best ’)\\
+plt . title( ’Numerical Solution’)\\
+\\
+\end{boxB}
+
+\begin{boxB}
+
+\#--------right hand plot\\
+ax = fig .add subplot(1 ,3 ,2)\\
+plt . plot (x, Analytic Solution , color=’blue ’)\\
+plt . title ( ’Analytic Solution ’)\\
+\\
+\#ax. legend( loc=’best ’)\\
+ax = fig .add subplot(1 ,3 ,3)\\
+plt . plot (x, Analytic Solution w, color=’blue ’)\\
+plt . title ( ’Error ’ )\\
+\\
+\#---------t i t l e , explanatory text and save\\
+fig . suptitle ( ’Sine Solution ’ , fontsize=20)\\
+plt . tight layout ()\\
+plt . subplots adjust (top=0.85)
+\end{boxB}
+\begin{center}
+\includegraphics[width=15cm]{EndofMod10QuizQ1solfig}
+\end{center}
+\end{mysolution}
+\item The logistics equation is a simple differential equation model that can be used to relate the change in population $\frac{dP}{dt}$ to the current population, $P$, given a growth rate, $r$, and a carrying capacity, $K$. The logistics equation can be expressed by:
+\[\frac{dP}{dt}=rP\left(1-\frac{P}{K}\right)\]
+Write a function $my_logistics_eq(t,P,r,K)$ that represents the logistics equation with a return of $dP$. Note that this format allows $my_logistics_eq$ to be used as an input argument to $solve_ivp$. You may assume that the arguments $dP$, $t$, $P$, $r$, and $K$ are all scalars, and $dP$ is the value $\frac{dP}{dt}$ given $r$, $P$, and $K$. Note that the input argument, $t$, is obligatory if $my_logistics_eq$ is to be used as an input argument to $solve_ivp$, even though it is part of the differential equation.
+
+\begin{mysolution}
+The logistics equation has an analytic solution defined by:
+\[P(t)=\frac{KP_0e^{rt}}{K + P_0(e^{rt}-1)}\]
+where $P_0$ is the initial population.
+
+Test case
+\begin{boxB}
+import numpy as np\\
+from scipy.integrate import solve\_ivp\\
+import matplotlib.pyplot as plt\\
+from functools import partial\\
+plt.style.use('seaborn-poster')\\
+\\
+\%matplotlib inline
+\end{boxB}
+\begin{boxB}
+def my\_logisitcs\_eq(t, P, r, K):\\
+\hspace*{1cm}\# put your code here\\
+    \\
+\hspace*{1cm}return dP\\
+\\
+dP = my\_logisitcs\_eq(0, 10, 1.1, 15)\\
+dP
+\end{boxB}
+
+$3.666666666666667$
+
+\begin{boxB}
+from functools import partial\\
+\\
+t0 = 0\\
+tf = 20\\
+P0 = 10\\
+r = 1.1\\
+K = 20\\
+t = np.linspace(0, 20, 2001)\\
+\\
+f = partial(my\_logisitcs\_eq, r=r, K=K)\\
+sol=solve\_ivp(f,[t0,tf],[P0],t\_eval=t)\\
+\\
+plt.figure(figsize = (10, 8))\\
+plt.plot(sol.t, sol.y[0])\\
+plt.plot(t, \textbackslash\\
+\end{boxB}
+
+\begin{boxB}
+\hspace*{0.5cm}K*P0*np.exp(r*t)/(K+P0*(np.exp(r*t)-1)),'r:')\\
+plt.xlabel('time')\\
+plt.ylabel('population')\\
+\\
+plt.legend(['Numerical Solution', \textbackslash\\
+\hspace*{2cm}'Exact Solution'])\\
+plt.grid(True)\\
+plt.show()\\
+\end{boxB}
+
+\begin{center}
+\includegraphics[width=11cm]{EndofModquizqn3sol}
+\end{center}
+\end{mysolution}
+
+
+
+\end{posttest}
+
+%share your understanding of properties of functions and their applications to solving rates of change problems in physical phenomenon 
+
+
+%\end{actsoln}
+
+\takehome
+
+\comy{You are now at the last part of this module. Your  task is to do a self-reflection on your learning experience.}
+
+
+
+\references
+\begin{refenumerate}
+\item Kong, Q., Siauw, T., Bayen, A., (2020). Python Programming and Numerical Methods. First Edition, Academic Press,  ISBN-13 ‏ : ‎ 978-0128195499 \\
+\mylink{https://pythonnumericalmethods.studentorg.berkeley.edu/notebooks/Index.html}
+%chapter 1 pg 7-36 functions\\
+%chapter 1 pg 51-83 limits and continuity\\
+%chapter 1 pg 45-50 rates of change\\
+%chapter 2 pg 108-120 the derivative\\
+%\item Mendelson, E. (2022). Schaum's Outline of Calculus. McGraw-Hill Education.
+%chapter 6 51-55 functions
+%chapter 7 59-65 limits
+%chapter 8 69-74 continuity
+%chapter 9 77-81 derivative
+%\item Calculus \mylink{https://math.libretexts.org/Bookshelves/Calculus}
+%\item Chris McMullen, 2021, Essential Calculus Skills Practice Workbook with Full Solutions, Zishka Publishing, ISBN 978-1-941691-24-3
+%\item R. Adams and C. Essex, 2021, Calculus: A complete Course, Addison Wesley, ISBN 13: 978-0135732588
+%\item P. Abbott and H. Neill, 2018, Calculus: A Complete Introduction: The Easy Way to Learn Calculus (Teach Yourself), ISBN 13: 978-1473678446
+\end{refenumerate}
+
+
+
+
+
+%\wrapup
+%To wrap-up, answer the following questions:
+%
+%\begin{enumerate}
+%\item 
+%%when do we say that a limit of a function exists?
+%%\item how do we remove discontinuity in functions?
+%%\item what is the relationship between the gradient of the tangent line and the derivative?
+%\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%\newpage
+
+%\facilitation
+
+
+%\input{tutorialsheet-1}
+
+
+
+
+
+
+
+

@@ -1,0 +1,369 @@
+% !TEX TS-program = XeLaTeX
+\documentclass[a4paper,11pt]{article}
+\boldmath
+\usepackage{geometry}
+\setlength{\headheight}{13.6pt}
+\addtolength{\topmargin}{-1.6pt}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{fontspec}
+\usepackage{ifthen}
+\usepackage{mdframed} % Add easy frames to paragraphs
+\usepackage{lipsum} % For dummy text
+
+\usepackage[svgnames,table]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usepackage{pifont}
+\usetikzlibrary{calc}
+\usetikzlibrary{intersections,decorations.text}
+ \usetikzlibrary{calc,shapes.callouts,shapes.arrows}
+\usetikzlibrary{patterns}
+\usetikzlibrary{arrows}
+
+\tikzset{%
+    body/.style={inner sep=0pt,outer sep=0pt,shape=rectangle,draw,thick,pattern=north east lines wide},
+    dimen/.style={<->,>=latex,thin,every rectangle node/.style={fill=white,midway,font=\sffamily}},
+    symmetry/.style={dashed,thin},
+}
+
+
+\definecolor{ulabgold}{RGB}{255,127,80} %253,186,0
+\definecolor{ulabblue}{RGB}{3, 123, 144}%{20, 130, 126}
+\definecolor{ulabcyan}{RGB}{46,143,214}
+
+
+\definecolor{c1}{RGB}{62, 97, 127}
+\definecolor{c2}{RGB}{104, 182, 182}
+\definecolor{c3}{RGB}{107, 190, 190}
+\definecolor{c4}{RGB}{100, 172, 174}
+\definecolor{c5}{RGB}{95, 162, 162}
+
+\colorlet{c1}{ulabblue}
+\colorlet{c2}{ulabgold}
+\colorlet{c3}{ulabgold}
+\colorlet{c4}{ulabblue}
+
+\usepackage{array, makecell,float}
+\usepackage{multirow,multicol}
+
+\usepackage{fontawesome5}
+
+\everymath{\displaystyle}
+
+
+
+
+\newcommand*{\arraycolor}[1]{\protect\leavevmode\color{#1}}
+\newcolumntype{A}{>{\columncolor{white}}l}
+\newcolumntype{B}{>{\columncolor{LightGoldenrod!50}}l}
+\newcolumntype{C}{>{\columncolor{FireBrick!20}}c}
+\newcolumntype{D}{>{\columncolor{white}}c}
+\newcolumntype{E}{>{\columncolor{cyan!42}}l}
+\newcolumntype{F}{>{\columncolor{white}}p{10.2cm}}
+
+\makeatother
+\usepackage[utf8]{inputenc}
+\usepackage{soul} % \hl{} for highlight pencil
+\usepackage{xcolor}
+\RequirePackage{longtable}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs}
+\usepackage{caption}
+\captionsetup{labelformat=empty}
+\usepackage{adjustbox,booktabs}
+\renewcommand\theadfont{\bfseries\sffamily}
+%\usepackage{array,longtable}
+
+\usepackage{lastpage,fancyhdr}
+\pagestyle{fancy}
+%\headheight=14pt
+\renewcommand\headrule{}
+\fancyhf{}
+\chead%\includegraphics[width=1cm]{logo.png}
+{
+\begin{tikzpicture}[remember picture, overlay]
+\coordinate (start) at ($(current page.north west)+(10mm,-15mm)$);
+\coordinate (end) at ($(current page.north east)+(-10mm,-5mm)$);
+\draw[thick] (start) rectangle (end);
+\fill[ulabblue] ($(start)+(1mm,1mm)$) rectangle ($(end)+(-1mm,-1mm)$);
+\fill[ulabgold] ($(start)+(1mm,1mm)$) rectangle++ (50mm,8mm);
+\node[right] at ($(start)+(3mm,5mm)$) {\color{white}\bf LEARNING MODULE ~\dpmdnumber};
+\node[right] at ($(start)+(55mm,5mm)$) {\color{white}\fullcoursename};
+\end{tikzpicture}
+}
+
+%\rhead{\color{ulabblue!50}\small \href{https://www.ouk.ac.ke/}{https://www.ouk.ac.ke/} \hspace*{-3.5cm}}
+\newcommand{\programmtitle}{Bachelor of Data Science}
+
+\lfoot{\color{ulabblue!50}
+\scriptsize \MakeUppercase{\programmtitle}
+}
+
+\rfoot{\color{ulabblue!50}\small \bf Page\ \thepage\ of \pageref{LastPage}
+\hspace*{-3.5cm}}
+\thispagestyle{fancy}
+
+\fancypagestyle{firstpage}{%
+  \fancyhf{}%
+\rfoot{\color{ulabblue!50}\bf info@ouk.ac.ke\hspace*{-3.5cm}}
+}
+
+
+\RequirePackage{booktabs, colortbl}
+\RequirePackage{pgfplotstable}
+
+\makeatletter
+\renewcommand\section{
+\@startsection{section}{1}{1.\z@}
+              {-3.5ex \@plus -1ex \@minus -.2ex}
+              {2.3ex \@plus .2ex}
+              {\color{ulabgold}\bfseries\Large}}
+\renewcommand\subsection{
+\@startsection{subsection}{2}{\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.5ex \@plus .2ex}
+              {\color{ulabgold!95}\bfseries\large}}
+\renewcommand\subsubsection{
+\@startsection{subsubsection}{3}{\z@}
+              {-3.25ex\@plus -1ex \@minus -.2ex}
+              {1.2ex \@plus .2ex}
+              {\color{ulabgold!95}\bfseries\large}}
+
+\@ifundefined{texorpdfstring}{\let\texorpdfstring\@firstoftwo}{}
+\newcommand\labelfork[2]{
+  \ifx\thepage\relax\expandafter\@firstoftwo\else\expandafter\@secondoftwo\fi{#1}{#2}
+}
+\newcommand\doappendixstuff{
+  \renewcommand\thesection{
+    \texorpdfstring{\noexpand\labelfork{}{\appendixname\protect~}}{\appendixname\space}
+    \@Alph\c@section
+    \texorpdfstring{\noexpand\labelfork{}{:}}{:}
+  }
+}
+
+%\def\cloilo{label={\bf CLO\arabic*.},itemindent=3em}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+%\usepackage{longtablex}
+%\usepackage{lscape} %landscape page
+\usepackage{hhline}%
+
+\usepackage[shortlabels]{enumitem}
+%\usepackage{enumerate}
+\setlist{nosep} % or
+%\setlength{\itemindent}{.5in}
+%\setlist{noitemsep} %to leave space around whole list
+%\usepackage{enumerate}
+%\setlength\itemsep{0em}
+\setlist[itemize]{leftmargin=*}
+%\setlist[enumerate]{nosep}
+
+%\hyphenpenalty=10000
+%\tolerance=10
+
+%font change to sans serif
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{wasysym}
+\usepackage{marvosym}
+
+\newcommand{\cmark}{\LARGE \Checkedbox}%
+%\newcommand{\cmark}{\large\ding{51}}%
+\newcommand{\xmark}{\large\ding{55}}%
+
+
+
+
+%How can I make a clickable Table of Contents
+\usepackage[bookmarks=true, bookmarksopen=true,%
+bookmarksdepth=3,bookmarksopenlevel=2,%
+colorlinks=true, linkcolor=ulabblue,%
+citecolor=ulabblue,%
+filecolor=ulabblue,%
+menucolor=ulabblue,%
+urlcolor=ulabblue]{hyperref}
+
+\hfuzz1pc % Don't bother to report overfull boxes if overage is < 1pc
+
+
+\usepackage{tabularx,graphicx}
+
+\newcommand{\specialcell}[2][l]{% ending line in table
+  \begin{tabular}[#1]{@{}l@{}}#2\end{tabular}}
+
+\usepackage{anysize}
+\marginsize{1in}{1in}{0.3in}{1in}
+
+%\linespread{1.2}
+\renewcommand{\baselinestretch}{1.10}
+\setlength{\parskip}{1ex}
+\setlength{\parindent}{0pt}
+
+\usepackage{titlesec}
+\setcounter{secnumdepth}{10}
+\titlelabel{\thetitle.\  }
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{-2em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{-5.5ex plus .2ex}
+%\titlespacing\section{0pt}{6pt plus 4pt minus 2pt}{-6pt plus 2pt minus 2pt}
+%% Spacing between number and text in TOC
+\usepackage{tocloft}
+\advance\cftsecnumwidth 0.5em\relax
+\advance\cftsubsecindent 0.5em\relax
+\advance\cftsubsecnumwidth 0.5em\relax
+
+\title{SCHOOL OF MATHEMATICS}
+\author{Jared Ongaro}
+\date{August 7, 2021}
+%\date{\today}
+
+
+%\pdfinfo{%
+%  /Title    ()
+%  /Author   ()
+%  /Creator  ()
+%  /Producer ()
+%  /Subject  ()
+%  /Keywords ()
+%}
+\input{preamble}
+
+\newcommand{\subtitle}[1]{
+\par
+{\color{ulabblue}
+\hspace*{-2.7mm}
+\begin{tikzpicture}
+\draw[thick] (0,0) --++ (\textwidth,0);
+\node[above right] at (-2mm,0mm)  {\textbf{#1}};
+\end{tikzpicture}\par
+}}
+
+
+
+\renewcommand{\subtitle}[1]{
+\par
+{\color{ulabblue}\Large\textbf{#1}}
+\par
+}
+
+\newcommand{\subtitleb}[1]{
+\bigskip\textbf{#1}\\[-3mm]
+}
+
+\PassOptionsToPackage{no-math}{fontspec}
+\usepackage{mathspec}
+
+\PassOptionsToPackage{no-math}{fontspec}
+\usepackage{mathspec}
+\setmainfont[
+BoldItalicFont=Nunito-BoldItalic.ttf,
+BoldFont=Nunito-Bold.ttf,
+ItalicFont=Nunito-SemiBoldItalic.ttf,
+]{Nunito-Regular.ttf}
+
+\setmathsfont(Digits,Latin)%,Greek,Symbols)
+[Numbers={Lining,Proportional}]{Nunito-Regular.ttf}
+%\setmathsfont(Digits,Latin)%,Greek,Symbols)
+%[Numbers={Lining,Proportional}]{Nunito-Regular.ttf}
+
+
+
+
+
+\begin{document}
+
+%\newcommand\coursecode[1]{\renewcommand{\dispcoursecode}{#1}}
+
+\newcommand{\programname}{\subtitle{Programmer Title:}{\color{black}Bachelor of Data Science}}
+%\newcommand{\coursetitle}[1]{\subtitle{Course Title:}& {\color{black}#1}\\ }
+
+\newcommand{\mdno}{1}
+
+
+%\newcommand{\mdtitle}[1]{\subtitle{Learning Module Title:} & {\color{black}#1}\\ }
+\newcommand{\mddeveloper}{Bernard Nzimbi\\ Beth Kiratu\\ Irene Sitawa}
+
+\newcommand{\audience}{\myicon{audience}{Audience Description}}
+\newcommand{\expectations}{\myicon{target.png}{Expectations}\par
+{\cg This module seeks to enable learning about:}
+}
+\newcommand{\instructions}{\subtitle{Instructions to Learners}}
+
+\newcommand{\myicon}[3][width=2.5cm]{\par
+\tikz{
+\node (a) at (0,0) {\includegraphics[#1]{img/#2}};
+\node[right=15mm] at (a){\subtitle{#3}}
+}\par}
+
+\newcommand{\myfonticons}[3][\huge\color{ulabblue}]{\par
+\tikz{
+\node (a) at (0,0) {{#1#2}};
+\node[right=15mm] at (a){\subtitle{#3}}
+}\par}
+
+%Learning module description
+%Module objectives
+%Module learning outcomes
+
+
+
+
+\newtcolorbox{moduledescription}{colback=ulabgold!5!white,
+colframe=ulabgold,
+fonttitle=\bfseries,
+colbacktitle=ulabgold,
+enhanced,
+arc=4mm,
+top=4mm,
+attach boxed title to top center={yshift=-4mm},
+title=\subtitle{Module Description},
+%code={\addtocontents{toc}{#2}}
+}
+
+\newtcolorbox{mymlos}{colback=ulabgold!5!white,
+colframe=ulabgold,
+fonttitle=\bfseries,
+colbacktitle=ulabgold,
+enhanced,
+arc=4mm,
+top=4mm,
+attach boxed title to top center={yshift=-4mm},
+title=\subtitle{\color{white}Module Learning Outcomes},
+%code={\addtocontents{toc}{#2}}
+}
+
+\newenvironment{mlos}
+{\begin{mymlos}
+By the end of this module, you should be able to:
+\begin{eloenumerate}}
+{\end{eloenumerate}
+\end{mymlos}
+}
+
+
+
+
+
+
+%\renewcommand{\coursetitle}[1]{\subsection{#1}}
+
+\newcommand\ime{
+\subtitle{Instructional Materials and/or Equipment}
+%Digital media content on VLE, Open Educational Resources (OERs),  Virtual Classes, Smart Laboratory,   Relevant softwares and Textbooks.
+}
+
+
+%\input{Module-1.tex} %Level 1
+%\input{tutorialsheet-1.tex}
+\input{1-MAT201.tex}
+%\input{2-MAT201.tex}
+%\input{3-MAT201.tex}
+%\input{4-MAT201.tex}
+%\input{5-MAT201.tex}
+%\input{6-MAT201.tex}
+%\input{7-MAT201.tex}
+%\input{8-MAT201.tex}
+%\input{9-MAT201.tex}
+%\input{10-MAT201.tex}
+\end{document}
+
