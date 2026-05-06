@@ -1,0 +1,1122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Open University of Kenya" />
+    <meta name="date" content="2026-03-15" />
+
+
+    <title>Module 5: Attacking Problems | Mathematical Problem Solving</title>
+
+
+    <link rel="icon" type="image/png" href="static/favicon.png?build_time=1773579735.782975" />
+
+
+
+
+
+    <link rel="stylesheet" href="static/styles.css?build_time=1773579735.782975">
+
+
+
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1773579735.782975">
+
+    <link rel="stylesheet" href="static/print.css?build_time=1773579735.782975">
+
+
+
+
+    <script>
+        var chirun_static_url = new URL('static?build_time=1773579735.782975', location.href);
+    </script>
+
+
+    <script defer src="static/mathjax_config.js?build_time=1773579735.782975"></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+    <script type="module" src="static/localisation.js?build_time=1773579735.782975"></script>
+
+    <script defer src="static/customisation.js?build_time=1773579735.782975"></script>
+
+
+
+
+
+    <script defer src="static/code.js?build_time=1773579735.782975" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1773579735.782975" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1773579735.782975" type="module"></script>
+
+
+    <template id="runnable-code-template">
+        <link rel="stylesheet" href="static/code.css?build_time=1773579735.782975">
+        <div class="runnable-code-wrapper">
+            <section class="fullscreenable code">
+                <div id="code"></div>
+                <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon"
+                        aria-label="Fullscreen code" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <section class="fullscreenable output">
+                <div id="output" aria-live="polite">
+                    <pre class="stdout"></pre>
+                    <pre class="result"></pre>
+                    <div class="images"></div>
+                </div>
+                <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon"
+                        aria-label="Fullscreen output" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <div class="buttons">
+                <button type="button" class="run-code">Run code</button>
+            </div>
+            <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs>
+                    <g id="cog">
+                        <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                            d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+                    </g>
+                    <g id="pdf">
+                        <path
+                            style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+                    </g>
+                    <g id="slides">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,21.25 30,137.5" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 90,21.25 60,158.75" />
+                        <rect
+                            style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675"
+                            rx="4.7737675" />
+                        <rect
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,66.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,76.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,86.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,56.25 h 50" />
+                        <path
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+                    </g>
+
+                    <g id="notebook">
+                        <path
+                            style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                            d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="58.699139" cy="59.503937" r="3.8077738" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="113.59385" cy="52.885151" r="4.9348516" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                        <ellipse
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,46.266514 V 62.316215" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,77.849849 V 93.89955" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 34,109.43318 v 16.0497" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+                    </g>
+
+                    <g id="fullscreen">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                            d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                        />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+                    </g>
+                </defs>
+            </svg>
+        </div>
+    </template>
+
+    <template id="embed-numbas-template">
+        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1773579735.782975">
+        <details id="wrapper" data-completion-status="incomplete">
+            <summary>
+                <h1 id="title">Test Yourself</h1>
+                <div id="completion-status" data-completion-status="unknown">
+                    <span class="complete">Complete</span>
+                    <span class="incomplete">Incomplete</span>
+                </div>
+                <label id="score-feedback">
+                    Score:
+                    <progress min="0"></progress>
+                </label>
+            </summary>
+            <iframe class="embed" title="Numbas"></iframe>
+        </details>
+    </template>
+
+</head>
+
+<body class="">
+
+
+    <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+
+    <form id="display-options">
+        <div class="buttons">
+            <button type="button" id="reset-display-options">Reset to defaults</button>
+
+            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+            <button type="button" aria-controls="display-options" aria-expanded="false">
+                Close
+            </button>
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label for="display-options-font-scale">
+                    Text size
+                </label>
+                <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+                <output for="display-options-font-scale">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-spacing-factor">
+                    Spacing
+                </label>
+                <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+                <output for="display-options-spacing-factor">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-font-family">
+                    Text font
+                </label>
+                <select id="display-options-font-family">
+                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                    <option value="var(--serif-font)">Serif</option>
+                    <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-colour-scheme">
+                    Colour scheme
+                </label>
+                <select id="display-options-colour-scheme">
+                    <option value="auto" selected>Automatic (default)</option>
+                    <option value="light">Black text on white</option>
+                    <option value="dark">White text on black</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+
+            <section id="custom-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-text-colour">
+                        Text colour
+                    </label>
+                    <input type="color" value="#000000" id="display-options-text-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-link-colour">
+                        Link colour
+                    </label>
+                    <input type="color" value="#0000ee" id="display-options-link-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour">
+                        Background colour
+                    </label>
+                    <input type="color" value="#ffffff" id="display-options-bg-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-off">
+                        Muted background colour
+                    </label>
+                    <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-1">
+                        Accent colour 1
+                    </label>
+                    <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-2">
+                        Accent colour 2
+                    </label>
+                    <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-3">
+                        Accent colour 3
+                    </label>
+                    <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-4">
+                        Accent colour 4
+                    </label>
+                    <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+                </div>
+            </section>
+
+            <section id="filter-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-filter-sepia">
+                        Sepia filter
+                    </label>
+                    <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                    <output for="display-options-filter-sepia">0%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-filter-hue-rotate">
+                        Rotate hues
+                    </label>
+                    <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                    <output for="display-options-filter-hue-rotate">0 turns</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-invert-images">
+                        Invert images in dark mode
+                    </label>
+                    <input type="checkbox" id="display-options-invert-images">
+                </div>
+
+            </section>
+        </div>
+    </form>
+
+
+    <header>
+
+        <button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false"
+            title="Display options">
+            <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+                <use href="#cog" />
+            </svg>
+        </button>
+
+
+
+
+
+    </header>
+
+    <main id="main-content">
+
+        <nav id="sidebar">
+
+            <ul class="alternative-formats">
+
+                <li><a rel="alternate" type="application/pdf" href="module_5_attacking_p.pdf" download><svg class="icon"
+                            aria-label="PDF" viewBox="0 0 180 180">
+                            <use href="#pdf" />
+                        </svg> Download as PDF</a></li>
+
+            </ul>
+
+
+
+            <h1>Table of Contents</h1>
+            <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+            <ol class="table-of-contents" role="tree">
+
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000007" href="#a0000000007">
+
+                        1 Module Overview
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000008" href="#a0000000008">
+
+                        2 Strategy 1: Working Backwards
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000013" href="#a0000000013">
+
+                        3 Strategy 2: Finding a Related (Simpler) Problem
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000014" href="#a0000000014">
+
+                        4 Strategy 3: Problem Simplification
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000020" href="#a0000000020">
+
+                        5 Strategy 4: Introduce Auxiliary Elements
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000021" href="#a0000000021">
+
+                        6 Strategy 5: Extreme Principle
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000022" href="#a0000000022">
+
+                        7 Strategy 6: WLOG (Without Loss of Generality)
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000023" href="#a0000000023">
+
+                        8 Meta-Strategy: Monitoring and Switching
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000029" href="#a0000000029">
+
+                        9 Strategy Selection Guide
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000030" href="#a0000000030">
+
+                        10 Revision Questions
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000045" href="#a0000000045">
+
+                        11 Further Reading
+                    </a>
+
+
+                </li>
+
+
+            </ol>
+
+
+        </nav>
+
+        <article class="item-content" id="item-content">
+            <div class="tcolorbox" style="background-color:#037B90; border-color:#037B90; border-width:0pt">
+                <small class="small"><b class="bfseries"><span style="color:#D0EEF3"> MMI 803 · MATHEMATICAL PROBLEM
+                            SOLVING</span></b></small><br /> <small class="small"><b class="bfseries"><span
+                            style="color:#FF7F50"> MSc in Mathematical Innovation · Open University of
+                            Kenya</span></b></small><br /> <big class="xxlarge"><b class="bfseries"><span
+                            style="color:#FFFFFF"> Module 5: Attacking Problems</span></b></big><br /> <span
+                    class="normalsize"><span style="color:#D0EEF3"> Developer: Dr. Georg Osang  | Instructional Hours:
+                        6</span></span>
+            </div>
+            <p>
+                <span class="vspace" style="height: 10.0pt"></span>
+            </p>
+            <div class="tcolorbox" style="None">
+                <ol class="enumerate" id="a0000000002">
+                    <li id="a0000000003" value="1">
+                        <p>
+                            Deploy specific “attack strategies” for unseen and unfamiliar problems.
+                        </p>
+                    </li>
+                    <li id="a0000000004" value="2">
+                        <p>
+                            Evaluate which strategy is most efficient and appropriate for a given problem type.
+                        </p>
+                    </li>
+                    <li id="a0000000005" value="3">
+                        <p>
+                            Apply working backwards, finding related problems, and problem simplification effectively.
+                        </p>
+                    </li>
+                    <li id="a0000000006" value="4">
+                        <p>
+                            Develop meta-cognitive awareness of <em>when to switch strategies</em>.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                <span class="vspace" style="height: 10.0pt"></span>
+            </p>
+            <section class="section">
+                <h2 id="a0000000007">1 Module Overview</h2>
+                <p>
+                    Having understood a problem (Module 4), the solver must <em>devise a plan</em> — Polya’s second
+                    phase. This module catalogues the primary attack strategies that experienced problem solvers deploy,
+                    with detailed worked examples for each. The key skill developed here is not merely knowing the
+                    strategies, but developing the <em>judgment</em> to select the right one and the
+                    <em>flexibility</em> to switch when the chosen strategy stalls.
+                </p>
+                <div class="tcolorbox" style="None">
+                    Research on expert mathematicians (Schoenfeld, 1985) shows that the primary difference between
+                    experts and novices is not that experts know more facts — it is that experts have a richer
+                    repertoire of <em>metacognitive strategies</em> and actively monitor their own progress, switching
+                    approaches when necessary.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000008">2 Strategy 1: Working Backwards</h2>
+                <p>
+                    <b class="bfseries">When to use:</b> When the desired <em>conclusion</em> or <em>end state</em> is
+                    clearer than the starting point.
+                </p>
+                <div class="tcolorbox" style="None">
+                    Start from the goal \(G\). Ask: “What would need to be true one step before \(G\)?” Repeat until you
+                    reach the given data \(D\). Then reverse the chain to produce the forward proof.<br /> <i
+                        class="itshape">Warning:</i> Working backwards produces a <em>discovery path</em>, not
+                    necessarily a valid proof. Each backward step must be <em>reversible</em> (i.e., a logical
+                    equivalence, not merely an implication) for the forward argument to be valid.
+                </div>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> Prove that \(\sqrt{2} + \sqrt{3} {\gt} \sqrt{10}\).<br /> <b
+                        class="bfseries">Working backwards:</b> <span>
+                        <script
+                            type="math/tex; mode=display">\begin{align*}  \sqrt{2} + \sqrt{3} & > \sqrt{10} \\ \iff (\sqrt{2} + \sqrt{3})^2 & > 10 \quad \text{(both sides positive, squaring is reversible)} \\ \iff 2 + 2\sqrt{6} + 3 & > 10 \\ \iff 2\sqrt{6} & > 5 \\ \iff 4 \cdot 6 & > 25 \quad \text{(squaring again, both sides positive)} \\ \iff 24 & > 25 \quad \textbf{???} \end{align*}</script>
+                    </span> This is <em>false</em>. Conclusion: \(\sqrt{2} + \sqrt{3} {\lt} \sqrt{10}\). The backwards
+                    process revealed the answer was opposite to our initial guess.
+                </div>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> A jug holds 8L. You have a 5L and a 3L container (no markings).
+                    Measure exactly 4L.<br /> <b class="bfseries">Goal:</b> 4L in some container. Work backwards from
+                    this state.<br /> <b class="bfseries">Solution trace:</b>
+                    <ol class="enumerate" id="a0000000009">
+                        <li id="a0000000010" value="1">
+                            <p>
+                                Fill 5L jug. Pour into 3L (fills it). 2L left in 5L jug.
+                            </p>
+                        </li>
+                        <li id="a0000000011" value="2">
+                            <p>
+                                Empty 3L jug. Pour 2L from 5L into 3L.
+                            </p>
+                        </li>
+                        <li id="a0000000012" value="3">
+                            <p>
+                                Fill 5L jug again. Pour from 5L into 3L until full (1L transferred). 4L remains in 5L
+                                jug. \(\checkmark \)
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000013">3 Strategy 2: Finding a Related (Simpler) Problem</h2>
+                <p>
+                    <b class="bfseries">When to use:</b> When the problem is complex and a simpler version might yield
+                    insight into the solution structure.
+                </p>
+                <div class="tcolorbox" style="None">
+                    Identify a simpler or more restricted version of the problem. Solve this version. Extract the
+                    <em>technique</em> or <em>pattern</em> from the simpler solution. Generalise to the original
+                    problem.
+                </div>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Original Problem:</b> \(n\) people are at a party. Every person shakes hands
+                    with every other exactly once. How many handshakes total?<br /> <b class="bfseries">Simpler
+                        versions:</b> <span>
+                        <script
+                            type="math/tex; mode=display">\begin{align*}  n=2: & \quad 1 \text{ handshake} \\ n=3: & \quad 3 \text{ handshakes} \\ n=4: & \quad 6 \text{ handshakes} \\ n=5: & \quad 10 \text{ handshakes} \end{align*}</script>
+                    </span> <b class="bfseries">Pattern:</b> These are triangular numbers: \(1, 3, 6, 10, \ldots =
+                    \binom {n}{2}\).<br /> <b class="bfseries">General formula:</b> \(\dbinom {n}{2} = \dfrac
+                    {n(n-1)}{2}\) handshakes.<br /> <b class="bfseries">Proof:</b> Each of the \(n\) people shakes hands
+                    with \(n-1\) others, giving \(n(n-1)\) <em>directed</em> handshakes. Since each handshake involves
+                    two people, divide by 2.
+                </div>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> Find the number of lattice paths from \((0,0)\) to \((m,n)\) using
+                    unit steps right \((R)\) or up \((U)\).<br /> <b class="bfseries">Simpler 1D analogue:</b> A path
+                    from 0 to \(m\) using only right steps — trivially 1 path. Not immediately helpful.<br /> <b
+                        class="bfseries">Reformulation:</b> Every path consists of exactly \(m\) right steps and \(n\)
+                    up steps, in some order. Total steps: \(m+n\). Choose which \(m\) of them are rightward: <span
+                        class="dmath">\[ \text{Number of paths} = \binom {m+n}{m} = \frac{(m+n)!}{m!\, n!} \]</span>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000014">4 Strategy 3: Problem Simplification</h2>
+                <p>
+                    <b class="bfseries">When to use:</b> When the full problem is intractable but a simpler version is
+                    accessible.
+                </p>
+                <p>
+                    Methods of simplification:
+                </p>
+                <ol class="enumerate" id="a0000000015">
+                    <li id="a0000000016" value="1">
+                        <p>
+                            <b class="bfseries">Reduce variables:</b> Fix some variables to their simplest values.
+                        </p>
+                    </li>
+                    <li id="a0000000017" value="2">
+                        <p>
+                            <b class="bfseries">Reduce dimensions:</b> Solve the 2D version of a 3D problem.
+                        </p>
+                    </li>
+                    <li id="a0000000018" value="3">
+                        <p>
+                            <b class="bfseries">Reduce size:</b> Solve for \(n=3\) or \(n=4\) before \(n\) general.
+                        </p>
+                    </li>
+                    <li id="a0000000019" value="4">
+                        <p>
+                            <b class="bfseries">Remove constraints:</b> What if the problem had fewer conditions?
+                        </p>
+                    </li>
+                </ol>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> Minimise \(f(x,y,z) = x^2 + y^2 + z^2\) subject to \(x + y + z =
+                    1\).<br /> <b class="bfseries">Simpler version:</b> Minimise \(f(x,y) = x^2 + y^2\) subject to \(x +
+                    y = 1\).<br /> By AM-QM inequality (or calculus): minimum is at \(x = y = \frac{1}{2}\), giving \(f
+                    = \frac{1}{2}\).<br /> <b class="bfseries">Generalise:</b> For \(n\) variables summing to 1, minimum
+                    of \(\sum x_i^2\) is \(\frac{1}{n}\), achieved when all \(x_i = \frac{1}{n}\) (by Cauchy-Schwarz or
+                    Lagrange multipliers).
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000020">5 Strategy 4: Introduce Auxiliary Elements</h2>
+                <p>
+                    Introduce an additional object — a line, a point, a variable, a set — that does not appear in the
+                    original problem but whose introduction reveals structure.
+                </p>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> Prove that an angle inscribed in a semicircle is a right angle
+                    (Thales’ Theorem).<br /> <b class="bfseries">Auxiliary element:</b> Draw radius \(OB\) where \(O\)
+                    is the centre. Now triangles \(OAB\) and \(OBC\) are isosceles (since \(OA = OB = OC = r\)).<br />
+                    Let \(\angle OAB = \alpha \) and \(\angle OCB = \beta \). Then \(\angle ABC = \alpha + \beta \). The
+                    angles of triangle \(ABC\) sum to \(180°\): \(\alpha + (\alpha + \beta ) + \beta = 180° \Rightarrow
+                    2(\alpha + \beta ) = 180° \Rightarrow \angle ABC = 90°\). \(\square \)
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000021">6 Strategy 5: Extreme Principle</h2>
+                <p>
+                    <b class="bfseries">When to use:</b> When dealing with finite collections — consider the object with
+                    the <em>maximum</em> or <em>minimum</em> property. Its extremality often imposes useful constraints.
+                </p>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> Prove that in any convex polygon, there exists a diagonal that lies
+                    entirely inside the polygon.<br /> <b class="bfseries">Extreme principle approach:</b> Consider the
+                    <em>shortest diagonal</em>. Suppose it exits the polygon — then a shorter diagonal could be drawn
+                    inside the region it crossed, contradicting minimality. Hence the shortest diagonal lies inside.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000022">7 Strategy 6: WLOG (Without Loss of Generality)</h2>
+                <p>
+                    WLOG is used when a problem has a symmetry that allows us to assume a particular configuration, with
+                    the argument for all other configurations being identical by symmetry.
+                </p>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Problem:</b> For real numbers \(a \leq b\), prove \((a-b)^2 \geq 0\).<br /> <b
+                        class="bfseries">WLOG \(a \leq b\)</b> (the case \(a {\gt} b\) is symmetric — just swap \(a\)
+                    and \(b\); \((b-a)^2 = (a-b)^2\)).<br /> Since \(a \leq b\), we have \(a - b \leq 0\). Squaring any
+                    real number gives a non-negative result. \(\square \)
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000023">8 Meta-Strategy: Monitoring and Switching</h2>
+                <div class="tcolorbox" style="None">
+                    As you work on a problem, ask at regular intervals (e.g., every 15 minutes): <ol class="enumerate"
+                        id="a0000000024">
+                        <li id="a0000000025" value="1">
+                            <p>
+                                <i class="itshape">Am I making progress?</i> If not for 15 minutes, switch strategy.
+                            </p>
+                        </li>
+                        <li id="a0000000026" value="2">
+                            <p>
+                                <i class="itshape">Is my current approach consistent with understanding the problem?</i>
+                            </p>
+                        </li>
+                        <li id="a0000000027" value="3">
+                            <p>
+                                <i class="itshape">What have I learned from this path, even if it has not succeeded?</i>
+                            </p>
+                        </li>
+                        <li id="a0000000028" value="4">
+                            <p>
+                                <i class="itshape">Have I considered all the strategies available?</i>
+                            </p>
+                        </li>
+                    </ol>
+                    This monitoring prevents the most common failure mode: persistent application of a wrong strategy.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000029">9 Strategy Selection Guide</h2>
+                <p>
+                    <span class="vspace" style="height: 6.0pt"></span>
+                </p>
+                <div class="centered">
+                    <table class="tabular">
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Problem Feature</b> </span>
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Suggested Strategy</b> </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Goal is clearer than start
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Working backwards
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Problem involves counting
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Find a simpler related counting problem
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Problem has many variables
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Simplify (fix variables; reduce dimension)
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Geometric problem
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Introduce auxiliary point, line, or circle
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Involves a finite set
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Extreme principle (max/min element)
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Problem is symmetric
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Use WLOG
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Pattern visible in small cases
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Induction (Module 7)
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Seems impossible
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Seek invariant or Pigeonhole (Module 6)
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000030">10 Revision Questions</h2>
+                <ol class="enumerate" id="a0000000031">
+                    <li id="a0000000032" value="1">
+                        <p>
+                            <b class="bfseries">[Working backwards]</b> Prove that \(\sqrt{6} + \sqrt{7} {\gt}
+                            \sqrt{25-\epsilon }\) for some specific \(\epsilon {\gt} 0\) by working backwards and then
+                            writing the forward proof.
+                        </p>
+                    </li>
+                    <li id="a0000000033" value="2">
+                        <p>
+                            <b class="bfseries">[Related problem]</b> The problem of counting triangles in a
+                            triangulated polygon can be related to a simpler problem. Set up the recurrence and solve.
+                        </p>
+                    </li>
+                    <li id="a0000000034" value="3">
+                        <p>
+                            <b class="bfseries">[Simplification]</b> Solve the coin weighing puzzle for \(n = 3\) coins
+                            (one fake, balance scale, 1 weighing). What insight does this give for the \(n = 9\) case
+                            with 2 weighings?
+                        </p>
+                    </li>
+                    <li id="a0000000035" value="4">
+                        <p>
+                            <b class="bfseries">[Auxiliary elements]</b> In triangle \(ABC\) with \(AB = AC\), \(D\) is
+                            the midpoint of \(BC\). Prove \(AD \perp BC\) using an auxiliary construction.
+                        </p>
+                    </li>
+                    <li id="a0000000036" value="5">
+                        <p>
+                            <b class="bfseries">[Extreme principle]</b> \(n\) points are placed in a unit square. Prove
+                            that at least two points are at distance \(\leq \sqrt{2}/\lfloor \sqrt{n}\rfloor \) apart.
+                            (Hint: use a grid division.)
+                        </p>
+                    </li>
+                    <li id="a0000000037" value="6">
+                        <p>
+                            <b class="bfseries">[Meta-strategy]</b> Describe a problem-solving session where you got
+                            stuck. Identify which strategy you were using, why it stalled, and which strategy would have
+                            been more effective.
+                        </p>
+                    </li>
+                    <li id="a0000000038" value="7">
+                        <p>
+                            <b class="bfseries">[Strategy selection]</b> For each: identify the most appropriate
+                            strategy and begin the solution: (a) Find all \(n \in \mathbb {N}\) such that \(2^n + 1\) is
+                            prime; (b) Prove that any \(n\) points in the plane, not all collinear, determine at least
+                            \(n\) distinct lines.
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+                <div class="tcolorbox" style="None">
+                    <ul class="itemize" id="a0000000039">
+                        <li id="a0000000040">
+                            <p>
+                                Attack strategies — working backwards, related problems, simplification, auxiliary
+                                elements, extreme principle, WLOG — are the core toolkit of the problem solver.
+                            </p>
+                        </li>
+                        <li id="a0000000041">
+                            <p>
+                                Strategy selection is itself a skill: different problem types call for different
+                                approaches.
+                            </p>
+                        </li>
+                        <li id="a0000000042">
+                            <p>
+                                Meta-cognitive monitoring — actively checking progress and switching strategies when
+                                stuck — distinguishes expert from novice problem solvers.
+                            </p>
+                        </li>
+                        <li id="a0000000043">
+                            <p>
+                                Each failed strategy attempt is informative: it constrains the solution space.
+                            </p>
+                        </li>
+                        <li id="a0000000044">
+                            <p>
+                                <i class="itshape">There is no single path through every problem — the art is in
+                                    choosing and navigating wisely.</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000045">11 Further Reading</h2>
+                <ul class="itemize" id="a0000000046">
+                    <li id="a0000000047">
+                        <p>
+                            <b class="bfseries">Polya, G.</b> (1945). <i class="itshape">How to Solve It</i>. Part II:
+                            “Devising a Plan” and the heuristics dictionary.
+                        </p>
+                    </li>
+                    <li id="a0000000048">
+                        <p>
+                            <b class="bfseries">Zeitz, P.</b> (2010). Chapter 3: “Strategies for Investigating
+                            Problems”.
+                        </p>
+                    </li>
+                    <li id="a0000000049">
+                        <p>
+                            <b class="bfseries">Schoenfeld, A.H.</b> (1985). <i class="itshape">Mathematical Problem
+                                Solving</i>. Academic Press.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <script id="plastex-labels" type="application/json">{}</script>
+        </article>
+
+    </main>
+
+    <footer>
+        <hr />
+
+        <nav id="footer-nav">
+            <a href="#">Back to top</a>
+        </nav>
+
+        <div id="footer-text">
+            <p>
+                Generated using
+                <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.3.0,
+                written by the Digital Learning Unit, ICT Directorate, <a target="_blank" href="https://ouk.ac.ke/">Open
+                    University of Kenya</a>
+            </p>
+            <p>This page last generated: 2025-08-31</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="cog">
+                <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                    d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+            </g>
+            <g id="pdf">
+                <path
+                    style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+            </g>
+            <g id="slides">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,21.25 30,137.5" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 90,21.25 60,158.75" />
+                <rect
+                    style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675" rx="4.7737675" />
+                <rect
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,66.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,76.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,86.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,56.25 h 50" />
+                <path
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+            </g>
+
+            <g id="notebook">
+                <path
+                    style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                    d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="58.699139" cy="59.503937" r="3.8077738" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="113.59385" cy="52.885151" r="4.9348516" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                <ellipse
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,46.266514 V 62.316215" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,77.849849 V 93.89955" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 34,109.43318 v 16.0497" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+            </g>
+
+            <g id="fullscreen">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                    d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+            </g>
+        </defs>
+    </svg>
+</body>
+
+</html>

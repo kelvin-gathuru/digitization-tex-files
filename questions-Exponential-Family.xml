@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 169583 -->
+  <question type="stack">
+    <name>
+      <text>Exponential Family - Bernoulli</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The probability mass function for the Bernoulli distribution is given by:</p>
+<p>\[ f(y; {@p_var@}) = {@p_var@}^y (1 - {@p_var@})^{1-y} \]</p>
+<p>Show that this belongs to the exponential family of distributions by rewriting it in the form:</p>
+<p>\[ f(y; \theta) = a(\theta)b(y) \exp(yQ(\theta)) \]</p>
+<p>Identify the following components in terms of \({@p_var@}\):</p>
+<p>\(Q({@p_var@}) = \) [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p>\(a({@p_var@}) = \) [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
+<p>\(b(y) = \) [[input:ans3]] [[validation:ans3]] [[feedback:prt3]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>Rewrite the density function:</p>
+<p>\[ f(y; {@p_var@}) = {@p_var@}^y (1 - {@p_var@})^{1-y} \]</p>
+<p>\[ = (1 - {@p_var@}) \left( \frac{{@p_var@}}{1 - {@p_var@}} \right)^y \]</p>
+<p>\[ = (1 - {@p_var@}) \exp \left( y \log \left( \frac{{@p_var@}}{1 - {@p_var@}} \right) \right) \]</p>
+<p>Comparing this to \( f(y; \theta) = a(\theta)b(y) \exp(yQ(\theta)) \):</p>
+<p>\[ Q({@p_var@}) = \log \left( \frac{{@p_var@}}{1 - {@p_var@}} \right) \]</p>
+<p>\[ a({@p_var@}) = 1 - {@p_var@} \]</p>
+<p>\[ b(y) = 1 \]</p>
+<p>The natural parameter is \(Q({@p_var@})\).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>3</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>p_var: rand([pi, p, theta]);
+ta1: log(p_var/(1-p_var));
+ta2: 1-p_var;
+ta3: 1;
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>Bernoulli Exp Family. Q={@ta1@}, a={@ta2@}, b={@ta3@}.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>ta1</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>algebraic</type>
+      <tans>ta2</tans>
+      <boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <input>
+      <name>ans3</name>
+      <type>algebraic</type>
+      <tans>ta3</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans2</sans>
+        <tans>ta2</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt2-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt2-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>ta3</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt3-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt3-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 169584 -->
+  <question type="stack">
+    <name>
+      <text>Exponential Family - Gamma Link</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The density function for the Gamma distribution is given by:</p>
+<p>\[ f(y; \mu, \phi) = \frac{1}{\Gamma(1/\phi)} \left( \frac{1}{\phi\mu} \right)^{1/\phi} y^{1/\phi - 1} \exp \left( - \frac{y}{\phi\mu} \right) \]</p>
+<p>By rewriting this in the exponential family form, identify the <strong>canonical link function</strong> \(g(\mu)\).</p>
+<p>\(g(\mu) = \) [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>We rewrite the density in the exponential form:</p>
+<p>\[ f(y; \mu, \phi) = \exp \left\{ -\frac{y}{\phi\mu} + \left( \frac{1}{\phi} - 1 \right) \log y - \log \Gamma(1/\phi) - \frac{1}{\phi} \log(\phi\mu) \right\} \]</p>
+<p>The term involving both \(y\) and the parameter \(\mu\) is \(-\frac{y}{\phi\mu}\).</p>
+<p>In the exponential family form \( \exp \left( \frac{y\theta - b(\theta)}{a(\phi)} + c(y, \phi) \right) \), we identify \(\theta\) (the natural parameter) such that \(y\theta\) corresponds to the \(y\) term.</p>
+<p>Here, the coefficient of \(y\) is \(-\frac{1}{\phi\mu}\). If we set \(a(\phi) = \phi\), then \(\theta = -\frac{1}{\mu}\).</p>
+<p>The canonical link function \(g(\mu)\) relates the mean \(\mu\) to the canonical parameter \(\theta\). Thus, \(g(\mu) = \frac{1}{\mu}\) (or \(-\frac{1}{\mu}\)).</p>
+<p>Commonly, the reciprocal link \(g(\mu) = 1/\mu\) is used.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>ta1: 1/mu;
+ta2: -1/mu; /* Accept negative reciprocal too */
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>Gamma Link. g(mu) = 1/mu.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>ta1</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+      <node>
+        <name>1</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta2</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-2-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-2-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

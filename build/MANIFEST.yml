@@ -15,18 +15,18 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: sst302.pdf
+    url: his102.pdf
   is_hidden: false
-  pdf_url: sst302.pdf
-  slug: sst302
-  source: sst302.tex
+  pdf_url: his102.pdf
+  slug: his102
+  source: HIS102.tex
   splitlevel: -2
-  title: sst302
+  title: HIS102
   type: standalone
   url: index.html
 themes:
 - path: .
   source: default
   title: Default
-year: 2025
+year: 2026
 zipfile: chirun.zip

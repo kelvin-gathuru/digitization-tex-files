@@ -1,0 +1,223 @@
+\documentclass[10pt]{article}
+\usepackage{chirun}
+\input{preamble}
+\DeclareUnicodeCharacter{03C3}{\ifmmode\sigma\else{$\sigma$}\fi}
+\DeclareUnicodeCharacter{03B2}{\ifmmode\beta\else{$\beta$}\fi}
+
+\begin{document}
+\subsection*{5.0 Introduction}
+Measuring investment returns and risk is central to investment analysis and portfolio management. Returns quantify performance, while risk measures the uncertainty of outcomes. Proper understanding of both allows investors to compare investments, construct optimal portfolios, and make informed decisions.
+
+This module covers:
+
+\begin{itemize}
+  \item Calculating investment returns (absolute, relative, annualized)
+  \item Measuring risk (variance, standard deviation, beta)
+  \item Understanding types of risk (systematic and unsystematic)
+  \item Evaluating risk-adjusted portfolio performance (Sharpe, Treynor, Jensen's Alpha)
+\end{itemize}
+
+\subsection*{5.1 Calculating Investment Returns}
+\subsection*{5.1.1 Absolute Return}
+Definition: Absolute return is the simple gain or loss on an investment over a period.
+
+Formula:
+
+\begin{quote}
+Absolute Return=Ending Value-Beginning Value
+\end{quote}
+
+Worked Example:
+
+\begin{itemize}
+  \item Initial investment: KES 100
+  \item Ending value: KES 120\\
+Absolute Return=120-100=20 KES
+\end{itemize}
+
+\subsection*{5.1.2 Relative (Percentage) Return}
+Definition: Relative return expresses gain or loss as a percentage of the initial investment.
+
+Formula:\\
+Relative Return (\%) $=\{($ Ending Value - Beginning Value $) /$ Beginning Value $\} \times 100$
+
+Worked Example:
+
+\begin{itemize}
+  \item Initial investment: KES 100
+  \item Ending value: KES 120
+\end{itemize}
+
+$$
+\text { Relative Return }(\%)=(120-100) / 100 \times 100=20 \%
+$$
+
+5.1.3 Annualized Return
+
+Definition: Annualized return calculates the equivalent yearly return for multi-period investments.
+
+Formula:\\
+Annualized Return $=($ Ending Value $/$ Beginning Value $) 1 / n-1$\\
+Where $\mathrm{n}=$ number of years\\
+Worked Example:
+
+\begin{itemize}
+  \item Investment grows from KES $100 \rightarrow$ KES 150 over 3 years:
+\end{itemize}
+
+Annualized Return $=(150 / 100) 1 / 3-1=1.1447-1=0.1447 \approx 14.47 \%$
+
+\subsection*{5.2 Measuring Risk}
+Risk quantifies uncertainty in investment returns.\\
+5.2.1 Variance
+
+Definition: Variance measures how returns deviate from their mean.\\
+Formula:
+
+$$
+\sigma 2=\Sigma \mathrm{i}=1 \mathrm{n}\left(\mathrm{Ri}-\mathrm{R}^{-}\right) 2 / \mathrm{n}
+$$
+
+Where:
+
+\begin{itemize}
+  \item Ri= return in period i
+  \item $\mathrm{R}^{-}=$average return
+  \item $\mathrm{n}=$ number of observations
+\end{itemize}
+
+Worked Example:\\
+Returns over 3 years: 10\%, 12\%, 14\%\\
+$\mathrm{R}^{-}=(10+12+14) / 3=12 \%$
+
+Variance:
+
+$$
+\sigma 2=(10-12) 2+(12-12) 2+(14-12) 2 / 3=\{(-2) 2+02+22\} / 3=() / 3=8 / 3 \approx 2.67 \%
+$$
+
+\subsection*{5.2.2 Standard Deviation}
+Definition: Standard deviation is the square root of variance, representing risk in the same units as returns.
+
+$$
+\sigma=\sigma 2=2.67 \approx 1.63 \%
+$$
+
+\subsection*{5.2.3 Beta ( $\beta$ )}
+Definition: Beta measures systematic risk, or how an asset moves relative to the market.
+
+$$
+\beta=\operatorname{Cov}(\text { Rasset,Rmarket }) / \operatorname{Var}(\text { Rmarket }
+$$
+
+Worked Example:
+
+\begin{itemize}
+  \item Covariance (Asset, Market) $=0.012$
+  \item Market Variance $=0.01$
+\end{itemize}
+
+$$
+\beta=0.012 / 0.01=1.2
+$$
+
+\begin{itemize}
+  \item Interpretation: The asset is $20 \%$ more volatile than the market.
+\end{itemize}
+
+\subsection*{5.3 Types of Risk}
+\subsection*{5.3.1 Systematic Risk}
+\begin{itemize}
+  \item Affects all assets
+  \item Cannot be diversified
+  \item Examples: inflation, interest rate changes, political events\\
+5.3.2 Unsystematic Risk
+  \item Specific to individual companies or sectors
+  \item Can be reduced through diversification
+  \item Examples: management changes, strikes, product failures\\
+5.3.3 Total Risk\\
+Total Risk=Systematic Risk+Unsystematic Risk
+\end{itemize}
+
+\subsection*{5.4 Risk-Adjusted Portfolio Performance}
+\subsection*{5.4.1 Sharpe Ratio}
+Sharpe Ratio=(Rp-Rf) /σp
+
+\begin{itemize}
+  \item $\mathrm{Rp}=$ portfolio return
+  \item $\mathrm{Rf}=$ risk-free rate
+  \item $\sigma p=$ portfolio standard deviation
+\end{itemize}
+
+Worked Example:
+
+\begin{itemize}
+  \item Portfolio return $\mathrm{Rp}=12 \%$
+  \item Risk-free $\mathrm{Rf}=5 \%$
+  \item Standard deviation $\sigma p=8 \%$
+\end{itemize}
+
+$$
+\text { Sharpe Ratio= }(0.12-0.05) / 0.08=0.07 / 0.08=0.875
+$$
+
+5.4.2 Treynor Ratio\\
+Treynor Ratio=(Rp-Rf)/βp
+
+Worked Example:
+
+\begin{itemize}
+  \item $\beta p=1.1$
+\end{itemize}
+
+$$
+\text { Treynor Ratio }=(0.12-0.05) / 1.1=0.07 / 1.1 \approx 0.0636
+$$
+
+5.4.3 Jensen’s Alpha
+
+$$
+\alpha=R p-[R f+\beta p(R m-R f)]
+$$
+
+Worked Example:
+
+\begin{itemize}
+  \item Market return $\mathrm{Rm}=10 \%$\\
+$\alpha=0.12-[0.05+1.1(0.10-0.05)]=0.12-[0.05+0.055]=0.12-0.105=0.015(1.5 \%)$
+  \item Positive alpha = portfolio outperforms CAPM expectation.
+\end{itemize}
+
+\subsection*{5.5 Portfolio Example: Combined Returns and Risk}
+Two-stock portfolio:
+
+\begin{itemize}
+  \item Stock A: Return $=12 \%$, Std Dev $=8 \%$, Beta $=1.2$
+  \item Stock B: Return $=10 \%$, Std Dev $=6 \%$, Beta $=0.8$
+  \item Allocation: $50 \%$ each
+\end{itemize}
+
+Portfolio Return:
+
+$$
+\operatorname{Rp}=0.5(12)+0.5(10)=11 \%
+$$
+
+Portfolio Beta:
+
+$$
+\beta p=0.5(1.2)+0.5(0.8)=1.0
+$$
+
+Sharpe Ratio:
+
+\begin{itemize}
+  \item $\mathrm{Rf}=5 \%, \sigma \mathrm{p}=7 \%$
+\end{itemize}
+
+$$
+\text { Sharpe Ratio }=\underline{0.11-0.05}=0.857
+$$
+
+
+\end{document}

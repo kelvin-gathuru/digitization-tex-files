@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 169575 -->
+  <question type="stack">
+    <name>
+      <text>MAT322 - Romberg Integration</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In Romberg integration, suppose we have the following Trapezoidal Rule approximations:</p>
+<ul>
+<li>\(R_{1,1} = {@R11@}\) (using step size \(h\))</li>
+<li>\(R_{2,1} = {@R21@}\) (using step size \(h/2\))</li>
+</ul>
+<p>Calculate the extrapolated value \(R_{2,2}\) using Richardson Extrapolation.</p>
+<p>Answer: [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>The formula for Richardson Extrapolation in Romberg integration is:</p>
+<p>\[ R_{k,j} = R_{k,j-1} + \frac{R_{k,j-1} - R_{k-1,j-1}}{4^{j-1} - 1} \]</p>
+<p>For \(R_{2,2}\) (where \(k=2, j=2\)):</p>
+<p>\[ R_{2,2} = R_{2,1} + \frac{R_{2,1} - R_{1,1}}{4^1 - 1} = R_{2,1} + \frac{R_{2,1} - R_{1,1}}{3} \]</p>
+<p>\[ R_{2,2} = {@R21@} + \frac{{@R21@} - {@R11@}}{3} = {@ta1@} \]</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>R11: float(rand(100)/10 + 1);
+diff: float(rand(10)/100 + 0.01);
+R21: R11 + diff; /* R21 usually closer to true value */
+ta1: R21 + (R21 - R11)/3;
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>R11={@R11@}, R21={@R21@}. R22={@ta1@}.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>numerical</type>
+      <tans>ta1</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions>0.0001</testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 169576 -->
+  <question type="stack">
+    <name>
+      <text>MAT322 - Adaptive Quadrature Error</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>In Adaptive Quadrature using Simpson's Rule, suppose we have:</p>
+<ul>
+<li>\(S(a,b) = {@S1@}\) (approximation on the whole interval)</li>
+<li>\(S(a, \frac{a+b}{2}) + S(\frac{a+b}{2}, b) = {@S2@}\) (sum of approximations on two halves)</li>
+</ul>
+<p>Estimate the magnitude of the error in the more accurate approximation \({@S2@}\).</p>
+<p>Error \(\approx\) [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>The error estimate for Adaptive Simpson's Quadrature is given by:</p>
+<p>\[ |E| \approx \frac{1}{15} |S_2 - S_1| \]</p>
+<p>where \(S_1 = S(a,b)\) and \(S_2 = S(a, \frac{a+b}{2}) + S(\frac{a+b}{2}, b)\).</p>
+<p>\[ |E| \approx \frac{1}{15} |{@S2@} - {@S1@}| = \frac{1}{15} ({@abs(S2-S1)@}) = {@ta1@} \]</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>S1: float(rand(100)/10 + 1);
+diff: float(rand(10)/1000 + 0.001);
+S2: S1 + diff;
+ta1: abs(S2 - S1) / 15;
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>S1={@S1@}, S2={@S2@}. Error={@ta1@}.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>numerical</type>
+      <tans>ta1</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions>0.00001</testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 169577 -->
+  <question type="stack">
+    <name>
+      <text>MAT322 - Degree of Precision</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What is the degree of precision of {@rule_name@}?</p>
+<p>Degree = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>The degree of precision of a quadrature formula is the largest integer \(n\) such that the formula is exact for all polynomials of degree at most \(n\).</p>
+<ul>
+<li>Trapezoidal Rule: Exact for linear functions (degree 1), but not quadratics. Degree = 1.</li>
+<li>Simpson's Rule: Exact for cubic functions (degree 3), but not quartics. Degree = 3.</li>
+<li>Midpoint Rule: Exact for linear functions (degree 1). Degree = 1.</li>
+</ul>
+<p>For {@rule_name@}, the degree of precision is {@ta1@}.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>opt: rand(2); /* 0 or 1 */
+rule_name: if opt=0 then "Simpson's Rule" else "the Trapezoidal Rule";
+ta1: if opt=0 then 3 else 1;
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>{@rule_name@}. Degree: {@ta1@}.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>numerical</type>
+      <tans>ta1</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 169578 -->
+  <question type="stack">
+    <name>
+      <text>MAT322 - Error Scaling</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The error term for the Composite {@rule_name@} is \(O(h^{@power@})\).</p>
+<p>If the step size \(h\) is halved (divided by 2), by what factor is the error approximately reduced?</p>
+<p>Factor = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>Since the error is proportional to \(h^{@power@}\), if we replace \(h\) with \(h/2\), the new error is proportional to \((h/2)^{@power@} = \frac{h^{@power@}}{2^{@power@}}\).</p>
+<p>The error is reduced by a factor of \(2^{@power@} = {@ta1@}\).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>opt: rand(2); /* 0 or 1 */
+rule_name: if opt=0 then "Simpson's Rule" else "Trapezoidal Rule";
+power: if opt=0 then 4 else 2;
+ta1: 2^power;
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>{@rule_name@} (h^{@power@}). Factor: {@ta1@}.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>numerical</type>
+      <tans>ta1</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 169579 -->
+  <question type="stack">
+    <name>
+      <text>MAT322 - Log Integral Simpson</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Approximate the integral \(\int_{1}^{@b@} x^2 \ln(x) \, dx\) using the Composite Simpson's Rule with \(n = 4\) subintervals.</p>
+<p>Give your answer to at least 5 decimal places.</p>
+<p>Answer: [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>We have \(a=1, b={@b@}, n=4\). The step size is \(h = \frac{{@b@}-1}{4} = {@h@}\).</p>
+<p>Nodes: \(x_0=1, x_1={@1+h@}, x_2={@1+2*h@}, x_3={@1+3*h@}, x_4={@b@}\).</p>
+<p>Simpson's Rule:</p>
+<p>\[ S_4 = \frac{h}{3} [ f(x_0) + 4f(x_1) + 2f(x_2) + 4f(x_3) + f(x_4) ] \]</p>
+<p>\[ S_4 \approx {@ta1@} \]</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>b: 1.5 + rand(3)*0.5; /* 1.5, 2.0, 2.5 */
+n: 4;
+h: (b-1)/n;
+xs: makelist(1+i*h, i, 0, n);
+ys: map(lambda([x], x^2*log(x)), xs);
+S: ys[1] + ys[n+1] + 4*(ys[2] + ys[4]) + 2*ys[3];
+ta1: float((h/3) * S);
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>Int(x^2 ln x, 1, {@b@}), n=4. Ans: {@ta1@}.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>numerical</type>
+      <tans>ta1</tans>
+      <boxsize>10</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions>0.001</testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

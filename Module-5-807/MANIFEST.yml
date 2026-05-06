@@ -1,0 +1,37 @@
+academic_year: 2025-2026
+author: Open University of Kenya
+build_pdf: true
+build_zip: true
+code: MMI 807
+format_version: 2
+institution: Open University of Kenya
+license: null
+locale: en
+mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
+num_pdf_runs: 1
+root_url: /{base}/{code}/
+structure:
+- build_pdf: true
+  content: []
+  formats:
+  - filetype: html
+    format: default
+    url: index.html
+  - filetype: pdf
+    format: default
+    url: module_5_constructiv.pdf
+  is_hidden: false
+  pdf_url: module_5_constructiv.pdf
+  slug: module_5_constructiv
+  source: MMI807_Module5.tex
+  splitlevel: -2
+  title: 'Module 5: Constructive Criticism and Peer Review'
+  type: standalone
+  url: index.html
+themes:
+- path: .
+  source: default
+  title: Default
+title: Development of Open Education Resources and Tools
+year: 2026
+zipfile: development_of_open_.zip

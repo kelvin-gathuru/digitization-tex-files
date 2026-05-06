@@ -1,0 +1,250 @@
+\documentclass[10pt]{article}
+\usepackage{chirun}
+\input{preamble}
+\begin{document}
+\section*{What is Prompt Engineering? (post notes on e-platform)}
+So what exactly is this discipline that transformed my approach to AI? Prompt engineering is the systematic practice of designing, testing, and optimizing the input text given to AI models to achieve desired outputs. Think of it as the art of translating human intent into a language that AI can understand and act upon effectively. According to Anthropic, prompt engineering involves "crafting clear, specific instructions that guide the model's behavior and output format". It's not just about asking questions — it's about architecting the entire interaction to maximize the model's potential.
+
+The field emerged from a simple realization: the same AI model can produce dramatically different results depending on how you ask it to perform a task. A poorly crafted prompt might give you a generic response, while a well-engineered one can unlock the model's full capabilities.
+
+But how did we get here? Let's explore the evolution of this field.
+
+\section*{How Prompt Engineering Became a Thing?}
+The origins of prompt engineering trace back to the early days of large language models. As models like GPT-3 and Claude became more sophisticated, researchers discovered that the quality of outputs wasn'† just about model size - it was about how you communicated with them. The breakthrough came with the discovery of few-shot learning and chain-of-thought (CoT) prompting. Researchers found that providing examples (i.e. few-shot learning) and encouraging step-by-step reasoning (i.e. CoT prompting) dramatically improved model performance. This led to the realization that prompt design was a skill that could be systematically developed and optimized.
+
+But here's where it gets interesting: as the field matured, practitioners began to ask a crucial question.
+
+\section*{Why Prompt Engineering Over Fine-tuning?}
+While fine-tuning can improve model performance for specific tasks, prompt engineering offers several advantages that make it the preferred approach for many production scenarios. According to OpenAl's guide, prompt engineering provides immediate results without the computational cost, time investment, deep research expertise, and data requirements of fine-tuning. It allows developers and non-technical folks to iterate quickly, test different approaches in real-time, and adapt to changing requirements without retraining models.
+
+Additionally, prompt engineering works with any pre-trained model, making it more accessible and cost-effective for teams that need to optimize Al performance without extensive ML infrastructure.
+
+OpenAI emphasizes that "the quality of your prompt directly impacts the quality of your results". This simple truth has made prompt engineering a critical skill in the AI era. Now that we understand the foundation, let's dive into the practical techniques that make prompt engineering so powerful.
+
+\section*{Why is Prompt Engineering Important to AI? (Make presentation)}
+Prompt engineering requires understanding the AI model's capabilities and the desired outcomes. It's a crucial step in harnessing the power of AI technology effectively and responsibly.
+
+\begin{itemize}
+  \item Controlled Output: Al models like GPT-3 generate responses based on the provided prompts. Effective prompt engineering allows developers to control and shape the Al's output, ensuring it aligns with the intended purpose and tone.
+  \item Precision: Crafting well-defined prompts helps obtain accurate and relevant results from AI systems. Without proper prompts, AI might produce vague or incorrect responses.
+  \item Mitigating Bias: Prompt engineering can help mitigate biases in Al outputs. By providing clear and unbiased prompts, developers can reduce the likelihood of generating biased or sensitive content.
+  \item Adaptation: Different AI models have different strengths and weaknesses. Prompt engineering allows developers to tailor prompts to specific models, maximizing their performance and adaptability.
+  \item Contextual Understanding: Crafting prompts that provide context enables Al to generate more coherent and contextually appropriate responses, improving the overall quality of interactions.
+  \item Intended Use Cases: Proper prompts ensure that AI systems are used for their intended purposes. For instance, precise prompts are crucial in medical or legal applications to ensure accurate and safe outputs.
+  \item Efficiency: Well-designed prompts streamline the interaction with AI systems, minimizing the need for multiple iterations or corrections, which saves time and resources.
+  \item Ethical and Responsible Use: By thoughtfully engineering prompts, developers can contribute to Al's ethical and responsible use, avoiding harmful or misleading content.
+\end{itemize}
+
+\section*{Industry Best Techniques with Code Examples (Make H5P Interactive Book)}
+\subsection*{1. Zero shot prompting}
+Large LLMs like GPT-3 can perform tasks without explicit training, thanks to their ability to follow instructions and extensive training on massive datasets. This is known as "zero-shot" learning. Since they are already familiar with the words in the prompt, there is minimal additional learning involved. Let's recall our sentiment prompt example:
+
+\subsubsection*{Prompt:}
+\begin{verbatim}
+Classify the text into neutral, negative or positive.
+Text: I think the vacation is okay.
+Sentiment:
+\end{verbatim}
+
+\subsubsection*{Output:}
+\begin{verbatim}
+Neutral
+\end{verbatim}
+
+Despite not explicitly mentioning the word "sentiment," the model's zero-shot capabilities enable it to understand and generate responses related to sentiment due to its training on a large dataset. It can infer the concept based on its pre-existing knowledge and context.
+
+\subsection*{2. Few shot prompting}
+When zero shot doesn't work we use few shot prompting, where we give an example to our model. One example means one shot, giving two examples means two shot and so on.\\
+An example of one shot:
+
+\subsubsection*{Prompt:}
+\begin{verbatim}
+A "whatpu" is a small, furry animal native to Tanzania. An example of a sentence that
+uses
+the word whatpu is:
+We were traveling in Africa and we saw these very cute whatpus.
+To do a "farduddle" means to jump up and down really fast. An example of a sentence that
+uses
+the word farduddle is:
+\end{verbatim}
+
+\subsubsection*{Output:}
+\begin{verbatim}
+When we won the game, we all started to farduddle in celebration.
+\end{verbatim}
+
+First, we provided the definition of the word "whatpu" to our model. Then, we gave an example sentence that includes the word "whatpu" before asking the model to use it in a sentence. If we recall correctly, in our previous reasoning prompt, we asked the model to add odd numbers and determine if the result was even. Now, let's attempt to solve the same problem using a few-shot approach.
+
+\subsubsection*{Prompt:}
+\begin{verbatim}
+The odd numbers in this group add up to an even number: 4, 8, 9, 15, 12, 2, 1.
+A: The answer is False.
+The odd numbers in this group add up to an even number: 17, 10, 19, 4, 8, 12, 24.
+A: The answer is True.
+The odd numbers in this group add up to an even number: 16, 11, 14, 4, 8, 13, 24.
+A: The answer is True.
+The odd numbers in this group add up to an even number: 17, 9, 10, 12, 13, 4, 2.
+A: The answer is False.
+The odd numbers in this group add up to an even number: 15, 32, 5, 13, 82, 7, 1.
+A:
+\end{verbatim}
+
+\subsubsection*{Output:}
+\begin{verbatim}
+The answer is True.
+\end{verbatim}
+
+Unfortunately, the few-shot prompting approach did not yield reliable responses for this reasoning problem. It appears that additional techniques or approaches might be required to achieve more accurate and consistent results in such cases.
+
+\subsection*{3. Chain-of-Thought (CoT) Prompting}
+Chain-of-thought prompting encourages models to think through problems step-by-step, leading to better reasoning and more accurate results. Chain-of-thought (CoT) prompting, when used alongside few-shot prompting, enhances the model's reasoning capabilities for complex tasks. It breaks down the problem into smaller steps, enabling the model to reason through intermediate stages before providing a response. This combination is effective for achieving better results on challenging tasks that require reasoning.
+
+\subsubsection*{Standard Prompting}
+\subsubsection*{Model Input}
+Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?
+
+A: The answer is 11.\\
+Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?
+
+\subsubsection*{Chain-of-Thought Prompting}
+\subsubsection*{Model Input}
+Q: Roger has 5 tennis balls. He buys 2 more cans of tennis balls. Each can has 3 tennis balls. How many tennis balls does he have now?
+
+A: Roger started with 5 balls. 2 cans of 3 tennis balls each is 6 tennis balls. $5+6=11$. The answer is 11 .
+
+Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?
+
+\subsubsection*{Model Output}
+A: The answer is 27 .
+
+Breaking down complex problems into subproblems significantly helps LLMs in providing accurate and proper responses to complex questions. It allows the model to reason through each subproblem individually, leading to a more comprehensive understanding of the overall question and generating more reliable answers.
+
+\begin{example}
+	\begin{verbatim}
+System: You are a math tutor. Always show your work step by step.
+User: Solve: If a train travels 120 miles in 2 hours, how far will it
+travel in 5 hours?
+Assistant: Let me solve this step by step:
+1) First, I need to find the train's speed:
+Speed = Distance \div Time
+Speed = 120 miles \div 2 hours = 60 miles per hour		
+	\end{verbatim}
+	
+	\begin{verbatim}
+2) Now I can find the distance for 5 hours:
+Distance = Speed × Time
+Distance = 60 miles/hour * 5 hours = 300 miles
+Answer: The train will travel 300 miles in 5 hours.		
+	\end{verbatim}
+\end{example}
+
+\subsection*{4. Few-Shot Learning with Examples}
+Building on the step-by-step approach, few-shot learning takes it a step further by providing concrete examples. Providing $2-3$ examples helps the model understand the expected format and style.
+
+Why Few-Shot Prompting Matters?
+
+\begin{itemize}
+  \item Efficiency: Unlike fine-tuning, which requires significant computational resources and time, few-shot prompting can be done on the fly, enabling users to leverage pre-trained models quickly.
+  \item Flexibility: Few-shot prompting works across a wide range of tasks without the need to retrain the model for each new task.
+  \item Human-Like Flexibility: In the real world, humans often learn from just a few examples. Few-shot prompting mimics this human learning process, allowing the model to generalize better.
+\end{itemize}
+
+\begin{example}
+	\begin{verbatim}
+System: You are a code reviewer.
+Review the following Python code and provide feedback in this format:
+	\end{verbatim}
+	
+	\begin{verbatim}
+- Bug: [description]
+- Style: [description]
+- Security: [description]
+User: Here are examples of good reviews:
+Code: def add(a, b): return a + b
+Review:
+- Bug: None
+- Style: Function name is clear, but could benefit from type hints
+- Security: None
+	\end{verbatim}
+	
+	\begin{verbatim}
+Code: def process_data(user_input): eval(user_input)
+Review:
+- Bug: None
+- Style: Function name is descriptive
+- Security: CRITICAL - eval() with user input creates code injection
+vulnerability
+Now review this code: [user's code]
+	\end{verbatim}
+\end{example}
+\subsection*{5. Role-Based Prompting}
+Another powerful technique is giving the Al a specific persona. Defining the Al's role and expertise level helps set appropriate context and tone. The underlying\\
+principle is that providing the AI with some contextual information through a role can enhance its comprehension of the query, thereby often leading to more effective responses.
+
+Role prompting is beneficial when interacting with AI models for :\\
+Contextual Understanding: Assigning a role to the AI provides it with a context that aids its understanding of the task or question at hand. For example, if the AI is assigned the role of a doctor and then asked a medical question, it will generate a response that aligns with that medical context.
+
+\begin{example}
+	\begin{verbatim}
+System: You are Dr. Sarah Chen, a senior software architect with 15 years
+of experience in distributed systems and microservices. You specialize in
+AWS, Kubernetes, and event-driven architectures. You always provide
+practical, production-ready advice and consider scalability, security, and
+maintainability in your recommendations.
+User: How should I design a notification system for 10 million users?
+	\end{verbatim}
+\end{example}
+
+\subsection*{6. Output Formatting with XML Tags}
+Once you've established the right role and examples, you need to control the output structure. Using structured tags helps ensure consistent, parseable outputs.
+
+\begin{example}
+	\begin{verbatim}
+System: Always respond using these XML tags:
+<answer>Your main response</answer>
+<explanation>Detailed explanation</explanation>
+<code_example>Relevant code if applicable</code_example>
+<next_steps>What to do next</next_steps>
+	\end{verbatim}
+\end{example}
+
+User: Explain how to implement rate limiting in a web API.
+
+\subsection*{7. Prompt Chaining}
+For complex tasks, you can break them down into manageable pieces.\\
+Breaking complex tasks into sequential, simpler prompts for better results.
+
+\begin{example}
+	\begin{verbatim}
+# First prompt: Generate requirements
+"Given this user story: 'As a user, I want to reset my password', generate
+5 acceptance criteria."
+# Second prompt: Generate test cases
+"Based on these acceptance criteria: [output from first prompt], generate
+10 test cases covering happy path and edge cases."
+# Third prompt: Generate implementation
+"Based on these test cases: [output from second prompt], write the
+password reset implementation in Python with FastAPI."
+	\end{verbatim}
+\end{example}
+
+\section*{Group Discussion Question}
+Consider a scenario where you are designing a prompt for a large language model (LLM) with the goal of generating a nuanced, multi-step chain of reasoning for a complex ethical dilemma-for example, triage in a resource-constrained medical setting with conflicting ethical frameworks (utilitarian vs. deontological).
+
+However, the model has a known tendency to exhibit "reasoning collapse," where it defaults to generating superficially plausible but logically inconsistent justifications that merely mimic expert language, rather than performing valid inference. This collapse is correlated with certain syntactic structures in the prompt (e.g., over-use of imperative commands, dense clause embedding) and is exacerbated by the model's pre-training bias towards producing text that sounds rational, rather than being rational.
+
+Your prompt must also be robust to a "meta-prompting" constraint: the system will be used via an API where a secondary, adversarial LLM first "pre-processes" or paraphrases your original prompt before it is sent to the primary LLM, potentially introducing subtle lexical shifts that alter the reasoning trajectory.
+
+Formulate and defend a prompt-engineering strategy that:
+
+\begin{itemize}
+  \item Architecturally structures the prompt to explicitly separate ethical framing, constraint specification, inference steps, and self-consistency checking. Justify each section's role in mitigating reasoning collapse.
+  \item Linguistically chooses a syntactic and semantic register (e.g., declarative vs. Socratic, level of formality, use of metacognitive directives like "Let's verify step-by-step") designed to anchor the model in a consistent reasoning mode, resisting both internal collapse and adversarial paraphrasing.
+  \item Theoretically explains how your approach interacts with what is hypothesized about the model's internal representations (e.g., attention patterns across transformer layers for logical vs. rhetorical content). How might your prompt steer computation away from "rhetorical mimicry" pathways and towards actual inference pathways?
+  \item Empirically proposes a minimal evaluation framework to test the robustness of your prompt. How would you measure not just the output's superficial plausibility, but the logical validity and consistency of the underlying reasoning chain, especially after adversarial paraphrasing?
+\end{itemize}
+
+The defense should engage with concepts from computational linguistics, mechanistic interpretability, and AI ethics, moving beyond simple "best practices" to a principled argument about controlling reasoning dynamics in black-box generative models.
+
+
+\end{document}

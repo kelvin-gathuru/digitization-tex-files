@@ -1,0 +1,1364 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Open University of Kenya" />
+    <meta name="date" content="2026-03-15" />
+
+
+    <title>Module 5: Playful Learning | Educational Innovation for the Mathematical Sciences</title>
+
+
+    <link rel="icon" type="image/png" href="static/favicon.png?build_time=1773592207.879084" />
+
+
+
+
+
+    <link rel="stylesheet" href="static/styles.css?build_time=1773592207.879084">
+
+
+
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1773592207.879084">
+
+    <link rel="stylesheet" href="static/print.css?build_time=1773592207.879084">
+
+
+
+
+    <script>
+        var chirun_static_url = new URL('static?build_time=1773592207.879084', location.href);
+    </script>
+
+
+    <script defer src="static/mathjax_config.js?build_time=1773592207.879084"></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+    <script type="module" src="static/localisation.js?build_time=1773592207.879084"></script>
+
+    <script defer src="static/customisation.js?build_time=1773592207.879084"></script>
+
+
+
+
+
+    <script defer src="static/code.js?build_time=1773592207.879084" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1773592207.879084" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1773592207.879084" type="module"></script>
+
+
+    <template id="runnable-code-template">
+        <link rel="stylesheet" href="static/code.css?build_time=1773592207.879084">
+        <div class="runnable-code-wrapper">
+            <section class="fullscreenable code">
+                <div id="code"></div>
+                <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon"
+                        aria-label="Fullscreen code" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <section class="fullscreenable output">
+                <div id="output" aria-live="polite">
+                    <pre class="stdout"></pre>
+                    <pre class="result"></pre>
+                    <div class="images"></div>
+                </div>
+                <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon"
+                        aria-label="Fullscreen output" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <div class="buttons">
+                <button type="button" class="run-code">Run code</button>
+            </div>
+            <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs>
+                    <g id="cog">
+                        <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                            d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+                    </g>
+                    <g id="pdf">
+                        <path
+                            style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+                    </g>
+                    <g id="slides">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,21.25 30,137.5" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 90,21.25 60,158.75" />
+                        <rect
+                            style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675"
+                            rx="4.7737675" />
+                        <rect
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,66.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,76.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,86.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,56.25 h 50" />
+                        <path
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+                    </g>
+
+                    <g id="notebook">
+                        <path
+                            style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                            d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="58.699139" cy="59.503937" r="3.8077738" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="113.59385" cy="52.885151" r="4.9348516" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                        <ellipse
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,46.266514 V 62.316215" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,77.849849 V 93.89955" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 34,109.43318 v 16.0497" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+                    </g>
+
+                    <g id="fullscreen">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                            d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                        />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+                    </g>
+                </defs>
+            </svg>
+        </div>
+    </template>
+
+    <template id="embed-numbas-template">
+        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1773592207.879084">
+        <details id="wrapper" data-completion-status="incomplete">
+            <summary>
+                <h1 id="title">Test Yourself</h1>
+                <div id="completion-status" data-completion-status="unknown">
+                    <span class="complete">Complete</span>
+                    <span class="incomplete">Incomplete</span>
+                </div>
+                <label id="score-feedback">
+                    Score:
+                    <progress min="0"></progress>
+                </label>
+            </summary>
+            <iframe class="embed" title="Numbas"></iframe>
+        </details>
+    </template>
+
+</head>
+
+<body class="">
+
+
+    <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+
+    <form id="display-options">
+        <div class="buttons">
+            <button type="button" id="reset-display-options">Reset to defaults</button>
+
+            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+            <button type="button" aria-controls="display-options" aria-expanded="false">
+                Close
+            </button>
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label for="display-options-font-scale">
+                    Text size
+                </label>
+                <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+                <output for="display-options-font-scale">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-spacing-factor">
+                    Spacing
+                </label>
+                <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+                <output for="display-options-spacing-factor">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-font-family">
+                    Text font
+                </label>
+                <select id="display-options-font-family">
+                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                    <option value="var(--serif-font)">Serif</option>
+                    <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-colour-scheme">
+                    Colour scheme
+                </label>
+                <select id="display-options-colour-scheme">
+                    <option value="auto" selected>Automatic (default)</option>
+                    <option value="light">Black text on white</option>
+                    <option value="dark">White text on black</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+
+            <section id="custom-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-text-colour">
+                        Text colour
+                    </label>
+                    <input type="color" value="#000000" id="display-options-text-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-link-colour">
+                        Link colour
+                    </label>
+                    <input type="color" value="#0000ee" id="display-options-link-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour">
+                        Background colour
+                    </label>
+                    <input type="color" value="#ffffff" id="display-options-bg-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-off">
+                        Muted background colour
+                    </label>
+                    <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-1">
+                        Accent colour 1
+                    </label>
+                    <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-2">
+                        Accent colour 2
+                    </label>
+                    <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-3">
+                        Accent colour 3
+                    </label>
+                    <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-4">
+                        Accent colour 4
+                    </label>
+                    <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+                </div>
+            </section>
+
+            <section id="filter-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-filter-sepia">
+                        Sepia filter
+                    </label>
+                    <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                    <output for="display-options-filter-sepia">0%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-filter-hue-rotate">
+                        Rotate hues
+                    </label>
+                    <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                    <output for="display-options-filter-hue-rotate">0 turns</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-invert-images">
+                        Invert images in dark mode
+                    </label>
+                    <input type="checkbox" id="display-options-invert-images">
+                </div>
+
+            </section>
+        </div>
+    </form>
+
+
+    <header>
+
+        <button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false"
+            title="Display options">
+            <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+                <use href="#cog" />
+            </svg>
+        </button>
+
+
+
+
+
+    </header>
+
+    <main id="main-content">
+
+        <nav id="sidebar">
+
+            <ul class="alternative-formats">
+
+                <li><a rel="alternate" type="application/pdf" href="module_5_playful_lea.pdf" download><svg class="icon"
+                            aria-label="PDF" viewBox="0 0 180 180">
+                            <use href="#pdf" />
+                        </svg> Download as PDF</a></li>
+
+            </ul>
+
+
+
+            <h1>Table of Contents</h1>
+            <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+            <ol class="table-of-contents" role="tree">
+
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000007" href="#a0000000007">
+
+                        1 Module Overview
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000008" href="#a0000000008">
+
+                        2 Defining Playful Learning
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000009" href="#a0000000009">
+                        <span class="toc-marker"></span>
+                        3 Why Playful Learning Matters in Mathematics
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000009">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000010" href="#a0000000010">
+
+                                3.1 The Mathematics Anxiety Problem
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000016" href="#a0000000016">
+
+                                3.2 Motivation Theory: Why Play Works
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000021" href="#a0000000021">
+                        <span class="toc-marker"></span>
+                        4 Designing Playful Mathematical Experiences
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000021">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000022" href="#a0000000022">
+
+                                4.1 Principles for Playful Learning Design
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000028" href="#a0000000028">
+
+                        5 Digital Mathematical Games
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000029" href="#a0000000029">
+
+                        6 Key Concepts and Terminology
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000030" href="#a0000000030">
+
+                        7 Module Assignment
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000039" href="#a0000000039">
+
+                        8 Revision Questions
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000055" href="#a0000000055">
+
+                        9 Further Reading
+                    </a>
+
+
+                </li>
+
+
+            </ol>
+
+
+        </nav>
+
+        <article class="item-content" id="item-content">
+            <div class="tcolorbox" style="background-color:#037B90; border-color:#037B90; border-width:0pt">
+                <small class="small"><b class="bfseries"><span style="color:#D0EEF3"> MMI 801 · EDUCATIONAL INNOVATION
+                            FOR THE MATHEMATICAL SCIENCES</span></b></small><br /> <small class="small"><b
+                        class="bfseries"><span style="color:#FF7F50"> MSc in Mathematical Innovation · Open University
+                            of Kenya</span></b></small><br /> <big class="xxlarge"><b class="bfseries"><span
+                            style="color:#FFFFFF"> Module 5: Playful Learning</span></b></big><br /> <span
+                    class="normalsize"><span style="color:#D0EEF3"> Developer: Dr. Michael Obiero  | Instructional
+                        Hours: 6</span></span>
+            </div>
+            <p>
+                <span class="vspace" style="height: 10.0pt"></span>
+            </p>
+            <div class="tcolorbox" style="None">
+                <ol class="enumerate" id="a0000000002">
+                    <li id="a0000000003" value="1">
+                        <p>
+                            Define playful learning and distinguish it from gamification, game-based learning, and
+                            entertainment — and explain its particular importance in mathematics education.
+                        </p>
+                    </li>
+                    <li id="a0000000004" value="2">
+                        <p>
+                            Design activities that authentically incorporate play and gamification principles to address
+                            specific mathematical learning objectives.
+                        </p>
+                    </li>
+                    <li id="a0000000005" value="3">
+                        <p>
+                            Evaluate the effectiveness and limitations of play-based learning approaches using research
+                            evidence.
+                        </p>
+                    </li>
+                    <li id="a0000000006" value="4">
+                        <p>
+                            Design an original gamified mathematics learning experience, justifying its effectiveness
+                            with reference to motivation theory and learning science.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                <span class="vspace" style="height: 10.0pt"></span>
+            </p>
+            <section class="section">
+                <h2 id="a0000000007">1 Module Overview</h2>
+                <p>
+                    Mathematics has an image problem. For millions of students, it is the subject most associated with
+                    anxiety, failure, and exclusion. Yet the practices at the heart of mathematical thinking — exploring
+                    patterns, making conjectures, testing ideas, surprising yourself with unexpected results — are
+                    deeply playful in their nature. The mathematician G.H. Hardy described doing mathematics as “playing
+                    with ideas”; the problem is that traditional mathematics instruction systematically removes the
+                    play.
+                </p>
+                <p>
+                    This module reclaims the playful dimension of mathematics learning — not as a compromise of rigour,
+                    but as its precondition.
+                </p>
+                <div class="tcolorbox" style="None">
+                    “Play is the highest form of research.” — Albert Einstein<br /> This is not a romantic sentiment —
+                    it reflects something profound about how mathematical knowledge is created and how it is most deeply
+                    learned. When students play with mathematical ideas — without the immediate pressure of evaluation,
+                    with freedom to explore wrong paths, with the genuine possibility of surprise — they are doing what
+                    mathematicians actually do. The challenge for instructional design is to create that freedom without
+                    abandoning structure.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000008">2 Defining Playful Learning</h2>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Play:</b> Activity chosen freely, intrinsically motivated, process-oriented
+                    rather than goal-oriented, imaginative, and active (Whitebread et al., 2017).<br /> <b
+                        class="bfseries">Playful learning:</b> Instructional design that incorporates the essential
+                    qualities of play — choice, intrinsic motivation, exploration, imagination — within a structured
+                    educational context that maintains clear learning goals.<br /> <b class="bfseries">Game-based
+                        learning (GBL):</b> Using complete games (digital or physical) as the primary vehicle for
+                    learning. The game itself is the learning environment.<br /> <b class="bfseries">Gamification:</b>
+                    Applying game design <em>elements</em> (points, badges, levels, challenges, narrative) to non-game
+                    educational activities. The activity remains educational; the game elements provide motivational
+                    scaffolding.<br /> <b class="bfseries">Entertainment:</b> Activity whose primary purpose is
+                    enjoyment, with learning as a possible byproduct but not the design goal.<br /> <i
+                        class="itshape">The distinctions matter because each has different implications for
+                        instructional design, assessment, and the relationship between enjoyment and learning.</i>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000009">3 Why Playful Learning Matters in Mathematics</h2>
+                <section class="subsection">
+                    <h3 id="a0000000010">3.1 The Mathematics Anxiety Problem</h3>
+                    <p>
+                        Mathematics anxiety — the experience of tension, apprehension, or fear in response to
+                        mathematical tasks — affects approximately 20–25% of students globally (Hembree, 1990) and is
+                        significantly more prevalent in African educational contexts where examination pressure is
+                        intense. Mathematics anxiety:
+                    </p>
+                    <ul class="itemize" id="a0000000011">
+                        <li id="a0000000012">
+                            <p>
+                                Reduces working memory capacity available for mathematical processing.
+                            </p>
+                        </li>
+                        <li id="a0000000013">
+                            <p>
+                                Creates avoidance behaviour that compounds over time.
+                            </p>
+                        </li>
+                        <li id="a0000000014">
+                            <p>
+                                Is transmitted from anxious teachers to students.
+                            </p>
+                        </li>
+                        <li id="a0000000015">
+                            <p>
+                                Is disproportionately experienced by students from marginalised groups.
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        Playful learning environments reduce anxiety by removing the immediate threat of evaluation,
+                        allowing experimentation, and associating mathematical activity with positive emotional
+                        experience.
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000016">3.2 Motivation Theory: Why Play Works</h3>
+                    <div class="tcolorbox" style="None">
+                        Self-Determination Theory (SDT) identifies three basic psychological needs whose satisfaction
+                        drives intrinsic motivation: <ol class="enumerate" id="a0000000017">
+                            <li id="a0000000018" value="1">
+                                <p>
+                                    <b class="bfseries">Autonomy:</b> The experience of choice and self-direction.
+                                    Playful learning provides choice in how problems are approached.
+                                </p>
+                            </li>
+                            <li id="a0000000019" value="2">
+                                <p>
+                                    <b class="bfseries">Competence:</b> The experience of effectiveness and mastery.
+                                    Well-designed mathematical games provide appropriate challenge and visible progress.
+                                </p>
+                            </li>
+                            <li id="a0000000020" value="3">
+                                <p>
+                                    <b class="bfseries">Relatedness:</b> The experience of connection to others.
+                                    Collaborative mathematical games build community.
+                                </p>
+                            </li>
+                        </ol>
+                        When all three needs are satisfied, students engage with intrinsic motivation — working on
+                        mathematics because it is inherently interesting, not because of external rewards. Excessive use
+                        of extrinsic rewards (points, leaderboards, prizes) can <em>undermine</em> intrinsic motivation
+                        through the overjustification effect — a critical caution for gamification design.
+                    </div>
+                    <p>
+                        <span class="vspace" style="height: 10.0pt"></span>
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000021">4 Designing Playful Mathematical Experiences</h2>
+                <section class="subsection">
+                    <h3 id="a0000000022">4.1 Principles for Playful Learning Design</h3>
+                    <div class="centered">
+                        <table class="tabular">
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <span style="color:#FFFFFF"><b class="bfseries">Principle</b> </span>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        <span style="color:#FFFFFF"><b class="bfseries">Description</b> </span>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        <span style="color:#FFFFFF"><b class="bfseries">Mathematical Application</b>
+                                        </span>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <b class="bfseries">Low stakes entry</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        All students can begin; initial failure is safe
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Open problems with multiple entry points
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <b class="bfseries">Exploration before explanation</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Students investigate before being told
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        GeoGebra discovery before algebraic proof
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <b class="bfseries">Surprise and wonder</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Design for “aha” moments
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Problems with non-obvious or counterintuitive solutions
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <b class="bfseries">Appropriate challenge</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Vygotsky’s ZPD; not too easy, not too hard
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Adaptive difficulty; student choice of challenge level
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <b class="bfseries">Visible progress</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Students see their growth
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Skill trees; portfolio; mastery milestones
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan="" style="text-align:left">
+                                    <p>
+                                        <b class="bfseries">Collaborative possibility</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Peer interaction enhances engagement
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="None">
+                                    <p>
+                                        Partner or group game structures
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tcolorbox" style="None">
+                        <b class="bfseries">Context:</b> Form 4 probability unit (Kenya CBC).<br /> <b
+                            class="bfseries">Design:</b> Students operate as “mathematicians” for a fictional casino.
+                        Their job is to <em>design fair games</em> (expected value = 0) and <em>expose unfair ones</em>.
+                        Over 4 lessons: <ul class="itemize" id="a0000000023">
+                            <li id="a0000000024">
+                                <p>
+                                    <b class="bfseries">Lesson 1 (Play):</b> Students play 10 simple games using dice,
+                                    cards, and coins. After each game, they record outcomes and begin to suspect which
+                                    games favour the “house.”
+                                </p>
+                            </li>
+                            <li id="a0000000025">
+                                <p>
+                                    <b class="bfseries">Lesson 2 (Analyse):</b> Students calculate expected values for
+                                    each game. The “aha”: mathematical confirmation of their intuitions.
+                                </p>
+                            </li>
+                            <li id="a0000000026">
+                                <p>
+                                    <b class="bfseries">Lesson 3 (Design):</b> Groups design their own game, targeting
+                                    \(E[X] = 0\). Peer review: other groups check the mathematics.
+                                </p>
+                            </li>
+                            <li id="a0000000027">
+                                <p>
+                                    <b class="bfseries">Lesson 4 (Tournament):</b> Class casino day; each group presents
+                                    their game; the class votes on fairness based on mathematical evidence.
+                                </p>
+                            </li>
+                        </ul>
+                        <b class="bfseries">Gamification elements:</b> Group points for accurate expected value
+                        calculations; badge for the best-designed fair game; narrative embedding (each group is a
+                        “casino design firm”).<br /> <b class="bfseries">Learning achieved:</b> Expected value,
+                        probability distributions, fairness, bias — all through genuine mathematical investigation
+                        embedded in a playful, competitive frame.
+                    </div>
+                    <p>
+                        <span class="vspace" style="height: 10.0pt"></span>
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000028">5 Digital Mathematical Games</h2>
+                <div class="centered">
+                    <table class="tabular">
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Platform</b> </span>
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Mathematical Content</b> </span>
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Evidence / Notes</b> </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Prodigy
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Primary/junior secondary algebra
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Adaptive; highly engaging; free for students; caution: rewards may dominate over
+                                    content
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    DragonBox
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Algebra fundamentals; equation solving
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Strong evidence for pre-algebra concept development (Sande et al., 2021)
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Desmos activities
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Secondary through university
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Teacher-designed; game-like structure; rich mathematical tasks
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Number Munchers
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Number theory; primes; factors
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Classic; low-tech; effective for procedural engagement
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    GeoGebra 3D Games
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    3D geometry; spatial reasoning
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Emerging; high engagement; requires devices
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000029">6 Key Concepts and Terminology</h2>
+                <div class="centered">
+                    <table class="tabular">
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Term</b> </span>
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Definition</b> </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Playful Learning
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Instruction incorporating play qualities — choice, exploration, intrinsic motivation
+                                    — within structured educational goals.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Mathematics Anxiety
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Negative emotional response to mathematical tasks; reduces working memory and
+                                    performance.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Self-Determination Theory
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Ryan &amp; Deci’s theory: intrinsic motivation driven by autonomy, competence, and
+                                    relatedness.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Overjustification Effect
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    External rewards can undermine pre-existing intrinsic motivation.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Expected Value
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    \(E[X] = \sum x_i P(x_i)\); the probability-weighted average outcome of a random
+                                    variable.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Game-based Learning
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Using complete games as the primary learning vehicle.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Flow State
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Csikszentmihalyi’s concept: optimal experience of deep, effortless engagement at the
+                                    intersection of skill and challenge.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000030">7 Module Assignment</h2>
+                <div class="tcolorbox" style="None">
+                    Design a new <b class="bfseries">gamified mathematics learning experience</b> for a specific
+                    mathematical concept, level, and learner context of your choice.<br /> Your design document (max 800
+                    words + any diagrams) must include: <ol class="enumerate" id="a0000000031">
+                        <li id="a0000000032" value="1">
+                            <p>
+                                <b class="bfseries">Context:</b> Level, topic, number of students, available resources.
+                            </p>
+                        </li>
+                        <li id="a0000000033" value="2">
+                            <p>
+                                <b class="bfseries">Learning objective:</b> One specific, Bloom’s-level outcome.
+                            </p>
+                        </li>
+                        <li id="a0000000034" value="3">
+                            <p>
+                                <b class="bfseries">Game design:</b> Complete description of the game/activity,
+                                including rules, materials, roles, and progression.
+                            </p>
+                        </li>
+                        <li id="a0000000035" value="4">
+                            <p>
+                                <b class="bfseries">Gamification elements:</b> Which mechanics are used (points, badges,
+                                narrative, challenge, etc.) and why each was chosen.
+                            </p>
+                        </li>
+                        <li id="a0000000036" value="5">
+                            <p>
+                                <b class="bfseries">Theoretical justification:</b> Connect your design to
+                                Self-Determination Theory and at least one other learning theory from Module 4.
+                            </p>
+                        </li>
+                        <li id="a0000000037" value="6">
+                            <p>
+                                <b class="bfseries">Overjustification risk:</b> Identify any extrinsic reward elements
+                                in your design and explain how you will mitigate the overjustification effect.
+                            </p>
+                        </li>
+                        <li id="a0000000038" value="7">
+                            <p>
+                                <b class="bfseries">Assessment:</b> How will you assess mathematical learning, not just
+                                engagement?
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000039">8 Revision Questions</h2>
+                <ol class="enumerate" id="a0000000040">
+                    <li id="a0000000041" value="1">
+                        <p>
+                            Distinguish between playful learning, game-based learning, and gamification. For a lesson on
+                            trigonometric ratios at Form 3, describe a different design for each.
+                        </p>
+                    </li>
+                    <li id="a0000000042" value="2">
+                        <p>
+                            Explain the overjustification effect. Design a gamified mathematics activity that avoids it,
+                            and explain your specific design choices.
+                        </p>
+                    </li>
+                    <li id="a0000000043" value="3">
+                        <p>
+                            How does Self-Determination Theory explain why leaderboards sometimes demotivate students?
+                            Under what design conditions might a leaderboard <em>not</em> undermine motivation?
+                        </p>
+                    </li>
+                    <li id="a0000000044" value="4">
+                        <p>
+                            Calculate the expected value of a game where: roll a die; if you roll 6, win KSh 50; if you
+                            roll 1, lose KSh 20; otherwise, nothing happens. Is this game fair? Design a modification
+                            that makes it exactly fair.
+                        </p>
+                    </li>
+                    <li id="a0000000045" value="5">
+                        <p>
+                            A school principal argues: “Mathematical games waste time that should be spent on exam
+                            preparation.” Construct a research-based response to this argument.
+                        </p>
+                    </li>
+                    <li id="a0000000046" value="6">
+                        <p>
+                            Design a physical (no-technology) playful learning activity for university-level group
+                            theory. Justify its theoretical foundations and describe the mathematical understanding it
+                            develops.
+                        </p>
+                    </li>
+                    <li id="a0000000047" value="7">
+                        <p>
+                            How would you adapt the Casino of Mathematics example (Section 4) for a context where
+                            students have no access to dice, cards, or digital devices?
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+                <div class="tcolorbox" style="None">
+                    <ul class="itemize" id="a0000000048">
+                        <li id="a0000000049">
+                            <p>
+                                Playful learning restores the exploratory, intrinsically motivated quality of genuine
+                                mathematical thinking that traditional instruction suppresses.
+                            </p>
+                        </li>
+                        <li id="a0000000050">
+                            <p>
+                                Mathematics anxiety affects a significant minority of students and is reduced by
+                                low-stakes playful learning environments.
+                            </p>
+                        </li>
+                        <li id="a0000000051">
+                            <p>
+                                Self-Determination Theory explains why well-designed play produces intrinsic motivation:
+                                it satisfies autonomy, competence, and relatedness needs.
+                            </p>
+                        </li>
+                        <li id="a0000000052">
+                            <p>
+                                The overjustification effect warns against overuse of extrinsic rewards in gamification
+                                design.
+                            </p>
+                        </li>
+                        <li id="a0000000053">
+                            <p>
+                                Effective gamification design embeds mathematical content authentically in the game
+                                mechanic — not as decoration but as the core activity.
+                            </p>
+                        </li>
+                        <li id="a0000000054">
+                            <p>
+                                <i class="itshape">Play is the highest form of research; gamification transforms the
+                                    struggle of learning into the joy of discovery.</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section">
+                <h2 id="a0000000055">9 Further Reading</h2>
+                <ul class="itemize" id="a0000000056">
+                    <li id="a0000000057">
+                        <p>
+                            <b class="bfseries">Ryan, R.M. &amp; Deci, E.L.</b> (2000). Self-determination theory and
+                            the facilitation of intrinsic motivation. <i class="itshape">American Psychologist</i>,
+                            55(1), 68–78.
+                        </p>
+                    </li>
+                    <li id="a0000000058">
+                        <p>
+                            <b class="bfseries">Hembree, R.</b> (1990). The nature, effects, and relief of mathematics
+                            anxiety. <i class="itshape">Journal for Research in Mathematics Education</i>, 21(1), 33–46.
+                        </p>
+                    </li>
+                    <li id="a0000000059">
+                        <p>
+                            <b class="bfseries">Csikszentmihalyi, M.</b> (1990). <i class="itshape">Flow: The Psychology
+                                of Optimal Experience</i>. Harper &amp; Row.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <script id="plastex-labels" type="application/json">{}</script>
+        </article>
+
+    </main>
+
+
+    <footer>
+        <hr />
+
+        <nav id="footer-nav">
+            <a href="#">Back to top</a>
+        </nav>
+
+        <div id="footer-text">
+            <p>
+                Generated using
+                <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.3.0,
+                written by the Digital Learning Unit, ICT Directorate, <a target="_blank" href="https://ouk.ac.ke/">Open
+                    University of Kenya</a>
+            </p>
+            <p>This page last generated: 2025-08-31</p>
+        </div>
+    </footer>
+
+
+
+    <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="cog">
+                <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                    d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+            </g>
+            <g id="pdf">
+                <path
+                    style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+            </g>
+            <g id="slides">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,21.25 30,137.5" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 90,21.25 60,158.75" />
+                <rect
+                    style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675" rx="4.7737675" />
+                <rect
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,66.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,76.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,86.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,56.25 h 50" />
+                <path
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+            </g>
+
+            <g id="notebook">
+                <path
+                    style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                    d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="58.699139" cy="59.503937" r="3.8077738" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="113.59385" cy="52.885151" r="4.9348516" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                <ellipse
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,46.266514 V 62.316215" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,77.849849 V 93.89955" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 34,109.43318 v 16.0497" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+            </g>
+
+            <g id="fullscreen">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                    d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+            </g>
+        </defs>
+    </svg>
+</body>
+
+</html>

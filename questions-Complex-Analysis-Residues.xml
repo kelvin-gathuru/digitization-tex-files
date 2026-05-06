@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: 169562 -->
+  <question type="stack">
+    <name>
+      <text>Complex Analysis - Residue Theorem</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Evaluate the following integral:</p>
+<p>\[ \oint_{|z|={@R@}} \frac{z^2+{@k@}}{z^2-{@a2@}} dz \]</p>
+<p>Answer: [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>First, factor the denominator: \(z^2 - {@a2@} = (z-{@a@})(z+{@a@})\).</p>
+<p>Both singularities \(z = {@a@}\) and \(z = -{@a@}\) are inside the contour \(|z| = {@R@}\) (since \({@a@} < {@R@}\)).</p>
+<p>We can use partial fractions. Since the degree of the numerator equals the degree of the denominator, we first perform polynomial division:</p>
+<p>\[ \frac{z^2+{@k@}}{z^2-{@a2@}} = \frac{(z^2-{@a2@}) + {@k+a2@}}{z^2-{@a2@}} = 1 + \frac{ {@k+a2@} }{(z-{@a@})(z+{@a@})} \]</p>
+<p>Now decompose the fractional part:</p>
+<p>\[ \frac{ {@k+a2@} }{(z-{@a@})(z+{@a@})} = \frac{A}{z-{@a@}} + \frac{B}{z+{@a@}} \]</p>
+<p>Solving for A and B:</p>
+<p>\[ {@k+a2@} = A(z+{@a@}) + B(z-{@a@}) \]</p>
+<p>At \(z={@a@}\): \({@k+a2@} = A({@2*a@}) \implies A = \frac{ {@k+a2@} }{ {@2*a@} }\)</p>
+<p>At \(z=-{@a@}\): \({@k+a2@} = B({@-2*a@}) \implies B = -\frac{ {@k+a2@} }{ {@2*a@} }\)</p>
+<p>Thus, the integral becomes:</p>
+<p>\[ \oint_{|z|={@R@}} \left( 1 + \frac{A}{z-{@a@}} + \frac{B}{z+{@a@}} \right) dz \]</p>
+<p>\[ = \oint 1 dz + A \oint \frac{1}{z-{@a@}} dz + B \oint \frac{1}{z+{@a@}} dz \]</p>
+<p>\[ = 0 + A(2\pi i) + B(2\pi i) = 2\pi i (A+B) \]</p>
+<p>Since \(B = -A\), the sum is \(2\pi i (A - A) = 0\).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>a:rand(3)+2;    /* Pole location, 2 to 4 */
+a2:a^2;         /* a squared */
+k:rand(9)+1;    /* Numerator constant */
+R:a+1;          /* Contour radius */
+ta1:0;
+</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>Integral of (z^2+{@k@})/(z^2-{@a2@}) over |z|={@R@}. Answer: 0.</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>0</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>ta1</tans>
+      <boxsize>5</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

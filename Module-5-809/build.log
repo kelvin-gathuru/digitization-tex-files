@@ -1,0 +1,1376 @@
+/Users/apple/chirun/venv/lib/python3.13/site-packages/notedown/main.py:7: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[chirun:load_config:198] Reading config file config.yml
+[chirun:find_theme:272] Finding theme default
+[chirun:find_theme:275] Trying themes/default
+[chirun:find_theme:275] Trying /Users/apple/chirun/venv/lib/python3.13/site-packages/chirun/themes/default
+[chirun:load_structure:313] Loading course structure
+[chirun:build_with_theme:457] 
+The static directory is: static
+The build directory is: /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809 Notes/build/Module-5
+The web root directory is: /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809 Notes/build/Module-5/
+
+[chirun:make_directories:404] Creating build directory...
+[chirun.theme] DEBUG: Copying theme's static directory to the build's
+   static directory...
+[chirun.theme] DEBUG:     /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/themes/default/static =>
+   /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809
+   Notes/build/Module-5/static
+[chirun:copy_static_files:296] Copying course's static directory to the build's static directory...
+[chirun:process:326] Starting processing
+[chirun:process:330] Process: Checking for duplicated filenames or paths
+[chirun.process] DEBUG: Checking slug: module_5_ethics_owne
+[chirun:process:330] Process: Establish when each item was last built
+[chirun:process:330] Process: Make PDFs
+[chirun.latex] INFO: Running pdflatex: MMI809_Module5.tex
+[chirun.latex] DEBUG: This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX
+   Live 2025/Homebrew) (preloaded format=pdflatex)
+[chirun.latex] DEBUG:  restricted \write18 enabled.
+[chirun.latex] DEBUG: entering extended mode
+[chirun.latex] DEBUG: (./MMI809_Module5.tex
+[chirun.latex] DEBUG: LaTeX2e <2024-11-01> patch level 2
+[chirun.latex] DEBUG: L3 programming layer <2025-01-18>
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/article.c
+[chirun.latex] DEBUG: ls
+[chirun.latex] DEBUG: Document Class: article 2024/06/29 v1.4n Standard
+   LaTeX document class
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/size12.cl
+[chirun.latex] DEBUG: o))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/geometry/geome
+[chirun.latex] DEBUG: try.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/keyva
+[chirun.latex] DEBUG: l.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/iftex/ifvtex
+[chirun.latex] DEBUG: .sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/iftex/iftex.
+[chirun.latex] DEBUG: sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/fontenc.s
+[chirun.latex] DEBUG: ty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/inputenc.
+[chirun.latex] DEBUG: sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/micr
+[chirun.latex] DEBUG: otype.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/etoolbox/etool
+[chirun.latex] DEBUG: box.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/micr
+[chirun.latex] DEBUG: otype-pdftex.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/micr
+[chirun.latex] DEBUG: otype.cfg))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/xcolor/xcolor.
+[chirun.latex] DEBUG: sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics-cfg/c
+[chirun.latex] DEBUG: olor.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics-def/p
+[chirun.latex] DEBUG: dftex.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/mathc
+[chirun.latex] DEBUG: olor.ltx))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tools/array.st
+[chirun.latex] DEBUG: y)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tools/tabularx
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/enumitem/enumi
+[chirun.latex] DEBUG: tem.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/fancyhdr/fancy
+[chirun.latex] DEBUG: hdr.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcol
+[chirun.latex] DEBUG: orbox.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/frontendla
+[chirun.latex] DEBUG: yer/tikz.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/basiclayer
+[chirun.latex] DEBUG: /pgf.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/utilities/
+[chirun.latex] DEBUG: pgfrcs.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfutil-common.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfutil-latex.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfrcs.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/pgf.revi
+[chirun.latex] DEBUG: sion.tex)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/basiclayer
+[chirun.latex] DEBUG: /pgfcore.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/graph
+[chirun.latex] DEBUG: icx.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/graph
+[chirun.latex] DEBUG: ics.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/trig.
+[chirun.latex] DEBUG: sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics-cfg/g
+[chirun.latex] DEBUG: raphics.cfg)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/systemlaye
+[chirun.latex] DEBUG: r/pgfsys.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsys.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfkeys.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfkeyslibraryfiltered.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgf.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsys-pdftex.def
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsys-common-pdf.def)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsyssoftpath.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsysprotocol.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcore.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: math.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathutil.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathparser.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.basic.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.trigonometric.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.random.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.comparison.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.base.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.round.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.misc.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.integerarithmetics.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathcalc.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfloat.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: int.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepoints.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepathconstruct.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepathusage.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorescopes.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoregraphicstate.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoretransformations.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorequick.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreobjects.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepathprocessing.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorearrows.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreshade.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreimage.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreexternal.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorelayers.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoretransparency.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepatterns.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorerdf.code.tex)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/modules/
+[chirun.latex] DEBUG: pgfmoduleshapes.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/modules/
+[chirun.latex] DEBUG: pgfmoduleplot.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/compatibil
+[chirun.latex] DEBUG: ity/pgfcomp-version-0-65.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/compatibil
+[chirun.latex] DEBUG: ity/pgfcomp-version-1-18.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/utilities/
+[chirun.latex] DEBUG: pgffor.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/utilities/
+[chirun.latex] DEBUG: pgfkeys.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfkeys.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/math/pgfma
+[chirun.latex] DEBUG: th.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: math.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgffor.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/frontend
+[chirun.latex] DEBUG: layer/tikz/tikz.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/librarie
+[chirun.latex] DEBUG: s/pgflibraryplothandlers.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/modules/
+[chirun.latex] DEBUG: pgfmodulematrix.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/frontend
+[chirun.latex] DEBUG: layer/tikz/libraries/tikzlibrarytopaths.code.tex)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tools/verbatim
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/environ/enviro
+[chirun.latex] DEBUG: n.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/trimspaces/tri
+[chirun.latex] DEBUG: mspaces.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/hyper
+[chirun.latex] DEBUG: ref.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/kvsetkeys/kvse
+[chirun.latex] DEBUG: tkeys.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/kvdefinekeys
+[chirun.latex] DEBUG: /kvdefinekeys.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pdfescape/pd
+[chirun.latex] DEBUG: fescape.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/ltxcmds/ltxc
+[chirun.latex] DEBUG: mds.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pdftexcmds/p
+[chirun.latex] DEBUG: dftexcmds.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/infwarerr/in
+[chirun.latex] DEBUG: fwarerr.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hycolor/hycolo
+[chirun.latex] DEBUG: r.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/namer
+[chirun.latex] DEBUG: ef.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/refcount/refco
+[chirun.latex] DEBUG: unt.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/gettitlestri
+[chirun.latex] DEBUG: ng/gettitlestring.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/kvoptions/kvop
+[chirun.latex] DEBUG: tions.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/stringenc/st
+[chirun.latex] DEBUG: ringenc.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/pd1en
+[chirun.latex] DEBUG: c.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/intcalc/intc
+[chirun.latex] DEBUG: alc.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/puenc
+[chirun.latex] DEBUG: .def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/url/url.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/bitset/bitse
+[chirun.latex] DEBUG: t.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/bigintcalc/b
+[chirun.latex] DEBUG: igintcalc.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/atbegshi-
+[chirun.latex] DEBUG: ltx.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/hpdft
+[chirun.latex] DEBUG: ex.def
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/atveryend
+[chirun.latex] DEBUG: -ltx.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/rerunfilecheck
+[chirun.latex] DEBUG: /rerunfilecheck.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/uniquecounte
+[chirun.latex] DEBUG: r/uniquecounter.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parski
+[chirun.latex] DEBUG: p.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/multirow/multi
+[chirun.latex] DEBUG: row.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsmat
+[chirun.latex] DEBUG: h.sty
+[chirun.latex] DEBUG: For additional information on amsmath, use the `?'
+   option.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amstex
+[chirun.latex] DEBUG: t.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsgen
+[chirun.latex] DEBUG: .sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsbsy
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsopn
+[chirun.latex] DEBUG: .sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/amssy
+[chirun.latex] DEBUG: mb.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/amsfo
+[chirun.latex] DEBUG: nts.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/booktabs/bookt
+[chirun.latex] DEBUG: abs.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/listi
+[chirun.latex] DEBUG: ngs.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/lstpa
+[chirun.latex] DEBUG: tch.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/lstmi
+[chirun.latex] DEBUG: sc.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/listi
+[chirun.latex] DEBUG: ngs.cfg))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/psnfss/courier
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcbs
+[chirun.latex] DEBUG: kins.code.tex
+[chirun.latex] DEBUG: Library (tcolorbox): 'tcbskins.code.tex' version
+   '6.4.1'
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tikzfill/tikzf
+[chirun.latex] DEBUG: ill.image.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tikzfill/tikzf
+[chirun.latex] DEBUG: ill-common.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tikzfill/tikzl
+[chirun.latex] DEBUG: ibraryfill.image.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcbs
+[chirun.latex] DEBUG: kinsjigsaw.code.tex
+[chirun.latex] DEBUG: Library (tcolorbox): 'tcbskinsjigsaw.code.tex'
+   version '6.4.1'
+[chirun.latex] DEBUG: ))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcbb
+[chirun.latex] DEBUG: reakable.code.tex
+[chirun.latex] DEBUG: Library (tcolorbox): 'tcbbreakable.code.tex' version
+   '6.4.1'
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pdfcol/pdfcol.
+[chirun.latex] DEBUG: sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/l3backend/l3ba
+[chirun.latex] DEBUG: ckend-pdftex.def)
+[chirun.latex] DEBUG: No file MMI809_Module5.aux.
+[chirun.latex] DEBUG: *geometry* driver: auto-detecting
+[chirun.latex] DEBUG: *geometry* detected driver: pdftex
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/mt-c
+[chirun.latex] DEBUG: mr.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/context/base/mkii/su
+[chirun.latex] DEBUG: pp-pdf.mkii
+[chirun.latex] DEBUG: [Loading MPS to PDF converter (version 2006.09.02).]
+[chirun.latex] DEBUG: )
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/epstopdf-pkg/e
+[chirun.latex] DEBUG: pstopdf-base.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/latexconfig/ep
+[chirun.latex] DEBUG: stopdf-sys.cfg))
+[chirun.latex] DEBUG: Overfull \hbox (31.73264pt too wide) in paragraph at
+   lines 75--75
+[chirun.latex] DEBUG: []\T1/cmr/bx/n/17.28 FALSE POS-I-TIVES, FALSE NEG-A-
+   TIVES, AND ASYM-
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/umsa.
+[chirun.latex] DEBUG: fd)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/mt-m
+[chirun.latex] DEBUG: sa.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/umsb.
+[chirun.latex] DEBUG: fd)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/mt-m
+[chirun.latex] DEBUG: sb.cfg)
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package fancyhdr Warning: \headheight is too small
+   (12.0pt):
+[chirun.latex] DEBUG: (fancyhdr)                Make it at least
+   13.99998pt, for example:
+[chirun.latex] DEBUG: (fancyhdr)
+   \setlength{\headheight}{13.99998pt}.
+[chirun.latex] DEBUG: (fancyhdr)                You might also make
+   \topmargin smaller:
+[chirun.latex] DEBUG: (fancyhdr)
+   \addtolength{\topmargin}{-1.99998pt}.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: [1{/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/map/pdftex/updma
+[chirun.latex] DEBUG:
+   p/pdftex.map}{/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/enc/d
+[chirun.latex] DEBUG: vips/cm-super/cm-
+   super-t1.enc}{/usr/local/Cellar/texlive/20250308_1/share/texmf
+[chirun.latex] DEBUG: -dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[chirun.latex] DEBUG: Overfull \hbox (18.16953pt too wide) in paragraph at
+   lines 116--116
+[chirun.latex] DEBUG: []\T1/cmr/bx/n/17.28 DATA OWN-ER-SHIP, ETHICS, AND
+   GOV-ER-NANCE
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package fancyhdr Warning: \headheight is too small
+   (12.0pt):
+[chirun.latex] DEBUG: (fancyhdr)                Make it at least
+   13.99998pt, for example:
+[chirun.latex] DEBUG: (fancyhdr)
+   \setlength{\headheight}{13.99998pt}.
+[chirun.latex] DEBUG: (fancyhdr)                You might also make
+   \topmargin smaller:
+[chirun.latex] DEBUG: (fancyhdr)
+   \addtolength{\topmargin}{-1.99998pt}.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: [2]
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package fancyhdr Warning: \headheight is too small
+   (12.0pt):
+[chirun.latex] DEBUG: (fancyhdr)                Make it at least
+   13.99998pt, for example:
+[chirun.latex] DEBUG: (fancyhdr)
+   \setlength{\headheight}{13.99998pt}.
+[chirun.latex] DEBUG: (fancyhdr)                You might also make
+   \topmargin smaller:
+[chirun.latex] DEBUG: (fancyhdr)
+   \addtolength{\topmargin}{-1.99998pt}.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: [3] (./MMI809_Module5.aux)
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package rerunfilecheck Warning: File
+   `MMI809_Module5.out' has changed.
+[chirun.latex] DEBUG: (rerunfilecheck)                Rerun to get outlines
+   right
+[chirun.latex] DEBUG: (rerunfilecheck)                or use package
+   `bookmark'.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG:  )
+[chirun.latex] DEBUG: (see the transcript file for additional
+   information)</usr/local/Cellar/texlive/
+[chirun.latex] DEBUG: 20250308_1/share/texmf-
+   dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loc
+[chirun.latex] DEBUG: al/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/amsfonts/cm/cm
+[chirun.latex] DEBUG:
+   r12.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/publ
+[chirun.latex] DEBUG: ic/amsfonts/cm/cmsy10.pfb></usr/local/Cellar/texlive/
+   20250308_1/share/texmf-dis
+[chirun.latex] DEBUG: t/fonts/type1/public/cm-
+   super/sfbx1095.pfb></usr/local/Cellar/texlive/20250308_
+[chirun.latex] DEBUG: 1/share/texmf-dist/fonts/type1/public/cm-
+   super/sfbx1200.pfb></usr/local/Cellar/
+[chirun.latex] DEBUG: texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/cm-super/sfbx1440.pfb></
+[chirun.latex] DEBUG: usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/cm-supe
+[chirun.latex] DEBUG:
+   r/sfbx1728.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/typ
+[chirun.latex] DEBUG: e1/public/cm-
+   super/sfbx2074.pfb></usr/local/Cellar/texlive/20250308_1/share/tex
+[chirun.latex] DEBUG: mf-dist/fonts/type1/public/cm-
+   super/sfrm1095.pfb></usr/local/Cellar/texlive/202
+[chirun.latex] DEBUG: 50308_1/share/texmf-dist/fonts/type1/public/cm-
+   super/sfrm1200.pfb></usr/local/C
+[chirun.latex] DEBUG: ellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/cm-super/sfti1200.
+[chirun.latex] DEBUG: pfb>
+[chirun.latex] DEBUG: Output written on MMI809_Module5.pdf (3 pages, 196929
+   bytes).
+[chirun.latex] DEBUG: Transcript written on MMI809_Module5.log.
+[chirun.latex] INFO: Running pdflatex: MMI809_Module5.tex
+[chirun.latex] DEBUG: This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX
+   Live 2025/Homebrew) (preloaded format=pdflatex)
+[chirun.latex] DEBUG:  restricted \write18 enabled.
+[chirun.latex] DEBUG: entering extended mode
+[chirun.latex] DEBUG: (./MMI809_Module5.tex
+[chirun.latex] DEBUG: LaTeX2e <2024-11-01> patch level 2
+[chirun.latex] DEBUG: L3 programming layer <2025-01-18>
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/article.c
+[chirun.latex] DEBUG: ls
+[chirun.latex] DEBUG: Document Class: article 2024/06/29 v1.4n Standard
+   LaTeX document class
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/size12.cl
+[chirun.latex] DEBUG: o))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/geometry/geome
+[chirun.latex] DEBUG: try.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/keyva
+[chirun.latex] DEBUG: l.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/iftex/ifvtex
+[chirun.latex] DEBUG: .sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/iftex/iftex.
+[chirun.latex] DEBUG: sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/fontenc.s
+[chirun.latex] DEBUG: ty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/inputenc.
+[chirun.latex] DEBUG: sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/micr
+[chirun.latex] DEBUG: otype.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/etoolbox/etool
+[chirun.latex] DEBUG: box.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/micr
+[chirun.latex] DEBUG: otype-pdftex.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/micr
+[chirun.latex] DEBUG: otype.cfg))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/xcolor/xcolor.
+[chirun.latex] DEBUG: sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics-cfg/c
+[chirun.latex] DEBUG: olor.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics-def/p
+[chirun.latex] DEBUG: dftex.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/mathc
+[chirun.latex] DEBUG: olor.ltx))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tools/array.st
+[chirun.latex] DEBUG: y)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tools/tabularx
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/enumitem/enumi
+[chirun.latex] DEBUG: tem.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/fancyhdr/fancy
+[chirun.latex] DEBUG: hdr.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcol
+[chirun.latex] DEBUG: orbox.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/frontendla
+[chirun.latex] DEBUG: yer/tikz.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/basiclayer
+[chirun.latex] DEBUG: /pgf.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/utilities/
+[chirun.latex] DEBUG: pgfrcs.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfutil-common.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfutil-latex.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfrcs.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/pgf.revi
+[chirun.latex] DEBUG: sion.tex)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/basiclayer
+[chirun.latex] DEBUG: /pgfcore.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/graph
+[chirun.latex] DEBUG: icx.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/graph
+[chirun.latex] DEBUG: ics.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics/trig.
+[chirun.latex] DEBUG: sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/graphics-cfg/g
+[chirun.latex] DEBUG: raphics.cfg)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/systemlaye
+[chirun.latex] DEBUG: r/pgfsys.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsys.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfkeys.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfkeyslibraryfiltered.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgf.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsys-pdftex.def
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsys-common-pdf.def)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsyssoftpath.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/systemla
+[chirun.latex] DEBUG: yer/pgfsysprotocol.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcore.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: math.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathutil.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathparser.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.basic.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.trigonometric.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.random.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.comparison.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.base.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.round.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.misc.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfunctions.integerarithmetics.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathcalc.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: mathfloat.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: int.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepoints.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepathconstruct.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepathusage.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorescopes.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoregraphicstate.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoretransformations.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorequick.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreobjects.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepathprocessing.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorearrows.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreshade.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreimage.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoreexternal.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorelayers.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcoretransparency.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorepatterns.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/basiclay
+[chirun.latex] DEBUG: er/pgfcorerdf.code.tex)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/modules/
+[chirun.latex] DEBUG: pgfmoduleshapes.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/modules/
+[chirun.latex] DEBUG: pgfmoduleplot.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/compatibil
+[chirun.latex] DEBUG: ity/pgfcomp-version-0-65.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/compatibil
+[chirun.latex] DEBUG: ity/pgfcomp-version-1-18.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/utilities/
+[chirun.latex] DEBUG: pgffor.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/utilities/
+[chirun.latex] DEBUG: pgfkeys.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgfkeys.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pgf/math/pgfma
+[chirun.latex] DEBUG: th.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/math/pgf
+[chirun.latex] DEBUG: math.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/utilitie
+[chirun.latex] DEBUG: s/pgffor.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/frontend
+[chirun.latex] DEBUG: layer/tikz/tikz.code.tex
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/librarie
+[chirun.latex] DEBUG: s/pgflibraryplothandlers.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/modules/
+[chirun.latex] DEBUG: pgfmodulematrix.code.tex)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pgf/frontend
+[chirun.latex] DEBUG: layer/tikz/libraries/tikzlibrarytopaths.code.tex)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tools/verbatim
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/environ/enviro
+[chirun.latex] DEBUG: n.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/trimspaces/tri
+[chirun.latex] DEBUG: mspaces.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/hyper
+[chirun.latex] DEBUG: ref.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/kvsetkeys/kvse
+[chirun.latex] DEBUG: tkeys.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/kvdefinekeys
+[chirun.latex] DEBUG: /kvdefinekeys.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pdfescape/pd
+[chirun.latex] DEBUG: fescape.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/ltxcmds/ltxc
+[chirun.latex] DEBUG: mds.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/pdftexcmds/p
+[chirun.latex] DEBUG: dftexcmds.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/infwarerr/in
+[chirun.latex] DEBUG: fwarerr.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hycolor/hycolo
+[chirun.latex] DEBUG: r.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/namer
+[chirun.latex] DEBUG: ef.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/refcount/refco
+[chirun.latex] DEBUG: unt.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/gettitlestri
+[chirun.latex] DEBUG: ng/gettitlestring.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/kvoptions/kvop
+[chirun.latex] DEBUG: tions.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/stringenc/st
+[chirun.latex] DEBUG: ringenc.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/pd1en
+[chirun.latex] DEBUG: c.def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/intcalc/intc
+[chirun.latex] DEBUG: alc.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/puenc
+[chirun.latex] DEBUG: .def)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/url/url.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/bitset/bitse
+[chirun.latex] DEBUG: t.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/bigintcalc/b
+[chirun.latex] DEBUG: igintcalc.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/atbegshi-
+[chirun.latex] DEBUG: ltx.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/hyperref/hpdft
+[chirun.latex] DEBUG: ex.def
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/base/atveryend
+[chirun.latex] DEBUG: -ltx.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/rerunfilecheck
+[chirun.latex] DEBUG: /rerunfilecheck.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/generic/uniquecounte
+[chirun.latex] DEBUG: r/uniquecounter.sty)))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parski
+[chirun.latex] DEBUG: p.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/multirow/multi
+[chirun.latex] DEBUG: row.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsmat
+[chirun.latex] DEBUG: h.sty
+[chirun.latex] DEBUG: For additional information on amsmath, use the `?'
+   option.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amstex
+[chirun.latex] DEBUG: t.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsgen
+[chirun.latex] DEBUG: .sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsbsy
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsmath/amsopn
+[chirun.latex] DEBUG: .sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/amssy
+[chirun.latex] DEBUG: mb.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/amsfo
+[chirun.latex] DEBUG: nts.sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/booktabs/bookt
+[chirun.latex] DEBUG: abs.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/listi
+[chirun.latex] DEBUG: ngs.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/lstpa
+[chirun.latex] DEBUG: tch.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/lstmi
+[chirun.latex] DEBUG: sc.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/listings/listi
+[chirun.latex] DEBUG: ngs.cfg))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/psnfss/courier
+[chirun.latex] DEBUG: .sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcbs
+[chirun.latex] DEBUG: kins.code.tex
+[chirun.latex] DEBUG: Library (tcolorbox): 'tcbskins.code.tex' version
+   '6.4.1'
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tikzfill/tikzf
+[chirun.latex] DEBUG: ill.image.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tikzfill/tikzf
+[chirun.latex] DEBUG: ill-common.sty)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tikzfill/tikzl
+[chirun.latex] DEBUG: ibraryfill.image.code.tex))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcbs
+[chirun.latex] DEBUG: kinsjigsaw.code.tex
+[chirun.latex] DEBUG: Library (tcolorbox): 'tcbskinsjigsaw.code.tex'
+   version '6.4.1'
+[chirun.latex] DEBUG: ))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/tcolorbox/tcbb
+[chirun.latex] DEBUG: reakable.code.tex
+[chirun.latex] DEBUG: Library (tcolorbox): 'tcbbreakable.code.tex' version
+   '6.4.1'
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/pdfcol/pdfcol.
+[chirun.latex] DEBUG: sty))
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/l3backend/l3ba
+[chirun.latex] DEBUG: ckend-pdftex.def) (./MMI809_Module5.aux)
+[chirun.latex] DEBUG: *geometry* driver: auto-detecting
+[chirun.latex] DEBUG: *geometry* detected driver: pdftex
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/mt-c
+[chirun.latex] DEBUG: mr.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/context/base/mkii/su
+[chirun.latex] DEBUG: pp-pdf.mkii
+[chirun.latex] DEBUG: [Loading MPS to PDF converter (version 2006.09.02).]
+[chirun.latex] DEBUG: )
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/epstopdf-pkg/e
+[chirun.latex] DEBUG: pstopdf-base.sty
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/latexconfig/ep
+[chirun.latex] DEBUG: stopdf-sys.cfg)) (./MMI809_Module5.out)
+   (./MMI809_Module5.out)
+[chirun.latex] DEBUG: Overfull \hbox (31.73264pt too wide) in paragraph at
+   lines 75--75
+[chirun.latex] DEBUG: []\T1/cmr/bx/n/17.28 FALSE POS-I-TIVES, FALSE NEG-A-
+   TIVES, AND ASYM-
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/umsa.
+[chirun.latex] DEBUG: fd)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/mt-m
+[chirun.latex] DEBUG: sa.cfg)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/amsfonts/umsb.
+[chirun.latex] DEBUG: fd)
+[chirun.latex] DEBUG: (/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/microtype/mt-m
+[chirun.latex] DEBUG: sb.cfg)
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package fancyhdr Warning: \headheight is too small
+   (12.0pt):
+[chirun.latex] DEBUG: (fancyhdr)                Make it at least
+   13.99998pt, for example:
+[chirun.latex] DEBUG: (fancyhdr)
+   \setlength{\headheight}{13.99998pt}.
+[chirun.latex] DEBUG: (fancyhdr)                You might also make
+   \topmargin smaller:
+[chirun.latex] DEBUG: (fancyhdr)
+   \addtolength{\topmargin}{-1.99998pt}.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: [1{/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/map/pdftex/updma
+[chirun.latex] DEBUG:
+   p/pdftex.map}{/usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/enc/d
+[chirun.latex] DEBUG: vips/cm-super/cm-
+   super-t1.enc}{/usr/local/Cellar/texlive/20250308_1/share/texmf
+[chirun.latex] DEBUG: -dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+[chirun.latex] DEBUG: Overfull \hbox (18.16953pt too wide) in paragraph at
+   lines 116--116
+[chirun.latex] DEBUG: []\T1/cmr/bx/n/17.28 DATA OWN-ER-SHIP, ETHICS, AND
+   GOV-ER-NANCE
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package fancyhdr Warning: \headheight is too small
+   (12.0pt):
+[chirun.latex] DEBUG: (fancyhdr)                Make it at least
+   13.99998pt, for example:
+[chirun.latex] DEBUG: (fancyhdr)
+   \setlength{\headheight}{13.99998pt}.
+[chirun.latex] DEBUG: (fancyhdr)                You might also make
+   \topmargin smaller:
+[chirun.latex] DEBUG: (fancyhdr)
+   \addtolength{\topmargin}{-1.99998pt}.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: [2]
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: Package fancyhdr Warning: \headheight is too small
+   (12.0pt):
+[chirun.latex] DEBUG: (fancyhdr)                Make it at least
+   13.99998pt, for example:
+[chirun.latex] DEBUG: (fancyhdr)
+   \setlength{\headheight}{13.99998pt}.
+[chirun.latex] DEBUG: (fancyhdr)                You might also make
+   \topmargin smaller:
+[chirun.latex] DEBUG: (fancyhdr)
+   \addtolength{\topmargin}{-1.99998pt}.
+[chirun.latex] DEBUG:
+[chirun.latex] DEBUG: [3] (./MMI809_Module5.aux) )
+[chirun.latex] DEBUG: (see the transcript file for additional
+   information)</usr/local/Cellar/texlive/
+[chirun.latex] DEBUG: 20250308_1/share/texmf-
+   dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loc
+[chirun.latex] DEBUG: al/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/amsfonts/cm/cm
+[chirun.latex] DEBUG:
+   r12.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/publ
+[chirun.latex] DEBUG: ic/amsfonts/cm/cmsy10.pfb></usr/local/Cellar/texlive/
+   20250308_1/share/texmf-dis
+[chirun.latex] DEBUG: t/fonts/type1/public/cm-
+   super/sfbx1095.pfb></usr/local/Cellar/texlive/20250308_
+[chirun.latex] DEBUG: 1/share/texmf-dist/fonts/type1/public/cm-
+   super/sfbx1200.pfb></usr/local/Cellar/
+[chirun.latex] DEBUG: texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/cm-super/sfbx1440.pfb></
+[chirun.latex] DEBUG: usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/cm-supe
+[chirun.latex] DEBUG:
+   r/sfbx1728.pfb></usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/fonts/typ
+[chirun.latex] DEBUG: e1/public/cm-
+   super/sfbx2074.pfb></usr/local/Cellar/texlive/20250308_1/share/tex
+[chirun.latex] DEBUG: mf-dist/fonts/type1/public/cm-
+   super/sfrm1095.pfb></usr/local/Cellar/texlive/202
+[chirun.latex] DEBUG: 50308_1/share/texmf-dist/fonts/type1/public/cm-
+   super/sfrm1200.pfb></usr/local/C
+[chirun.latex] DEBUG: ellar/texlive/20250308_1/share/texmf-
+   dist/fonts/type1/public/cm-super/sfti1200.
+[chirun.latex] DEBUG: pfb>
+[chirun.latex] DEBUG: Output written on MMI809_Module5.pdf (3 pages, 197751
+   bytes).
+[chirun.latex] DEBUG: Transcript written on MMI809_Module5.log.
+[chirun.latex] DEBUG: Creating directory for pdf output:
+   /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809 Notes/build/Module-5
+[chirun.latex] DEBUG: Moving pdf output: MMI809_Module5.pdf =>
+   /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809
+   Notes/build/Module-5/module_5_ethics_owne.pdf
+[chirun.latex] DEBUG: Cleaning up pdflatex output documents.
+[chirun.latex] DEBUG:     Deleting: MMI809_Module5.pdf
+[chirun.latex] DEBUG:     Deleting: MMI809_Module5.dvi
+[chirun.latex] DEBUG: Cleaning up pdflatex auxiliary files.
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.log
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.aux
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.out
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.bbl
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.blg
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.snm
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.nav
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.toc
+[chirun.latex] DEBUG:   Deleting: MMI809_Module5.fls
+[chirun:process:330] Process: Render items to Jupyter Notebook
+[chirun:process:330] Process: 
+[chirun:process:330] Process: 
+[chirun:process:330] Process: Render items to HTML
+[chirun:process:333] Run 1/2
+[chirun.render] INFO: Rendering: MMI809_Module5.tex
+[chirun.render] DEBUG: Rendering standalone "Module 5: Ethics, Ownership,
+   and Licensing in Development Data and AI" using chapter.html using relative
+   paths
+DEBUG: PlasTeX: MMI809_Module5.tex
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/article.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/geometry.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/fontenc.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/inputenc.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/microtype.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Packages/xcolor.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Packages/array.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/tabularx.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Packages/enumitem.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/fancyhdr.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Packages/tcolorbox/__init__.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/hyperref.py
+ )
+WARNING: No Python version of parskip.sty was found
+WARNING: Will now try to load a LaTeX implementation of parskip.sty
+ ( /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty
+.
+WARNING: unrecognized command/environment: DeclareRelease
+WARNING: unrecognized command/environment: DeclareCurrentRelease
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Packages/kvoptions.py
+ )
+WARNING: unrecognized command/environment: SetupKeyvalOptions
+WARNING: unrecognized command/environment: DeclareStringOption
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 46, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 47, treating as `pt`
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 49, treating as `0`.
+WARNING: unrecognized command/environment: ProcessKeyvalOptions
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 50, treating as `pt`
+WARNING: No Python version of etoolbox.sty was found
+WARNING: Will now try to load a LaTeX implementation of etoolbox.sty
+ ( /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/etoolbox/etoolbox.sty
+.. )
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `pt`
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `pt`
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `pt`
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 72, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 73, treating as `pt`
+WARNING: Missing number in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 77, treating as `0`. (<skip@
+   element at 0x4450922128>)
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 78, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 79, treating as `pt`
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 79, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 80, treating as `pt`
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 80, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 80, treating as `pt`
+INFO: <plasTeX.TeXFragment object at 0x109510c50>
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 83, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 83, treating as `pt`
+WARNING: Missing number in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 84, treating as `0`.
+   (<@tempskipa element at 0x4450924048>)
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 84, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 84, treating as `pt`
+INFO: <plasTeX.TeXFragment object at 0x109510d10>
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 87, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 87, treating as `pt`
+WARNING: Missing number in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 88, treating as `0`.
+   (<@tempskipa element at 0x4451224624>)
+WARNING: Missing decimal in
+   /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 88, treating as `0`.
+WARNING: Missing unit (expecting pt, pc, in, bp, cm, mm, dd, cc, sp, ex,
+   em) in /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/parskip/parskip.sty on line 88, treating as `pt`
+INFO: <plasTeX.TeXFragment object at 0x109510d10>
+. )
+WARNING: No Python version of multirow.sty was found
+WARNING: Will now try to load a LaTeX implementation of multirow.sty
+ ( /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/multirow/multirow.sty
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/amsmath.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/amssymb.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/booktabs.py
+ )
+ (loading package /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Packages/listings.py
+ )
+WARNING: No Python version of courier.sty was found
+WARNING: Will now try to load a LaTeX implementation of courier.sty
+ ( /usr/local/Cellar/texlive/20250308_1/share/texmf-
+   dist/tex/latex/psnfss/courier.sty
+ ).................................................
+INFO: Importing templates from
+   /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Renderers/PageTemplate
+INFO: Importing templates from
+   /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/plasTeX/Renderers/HTML5
+INFO: Importing templates from
+   /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Renderers/ChirunRenderer
+INFO: Using theme /Users/apple/chirun/venv/lib/python3.13/site-
+   packages/chirun/plasTeXRenderer/Renderers/ChirunRenderer/Themes/default
+ [ index.html
+WARNING: Using default renderer for textbullet
+ ][chirun:process:333] Run 2/2
+
+[chirun.render] INFO: Rendering: MMI809_Module5.tex
+[chirun.render] DEBUG: Rendering standalone "Module 5: Ethics, Ownership,
+   and Licensing in Development Data and AI" using chapter.html using relative
+   paths
+[chirun:process:330] Process: 
+[chirun:process:336] Finished processing course items
+[chirun:cleanup:393] Cleaning up temporary files
+Running chirun for directory /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809 Notes
+Output written to /Users/apple/Repos/Digitization/MMIs/MMI 809/MMI 809 Notes/build/Module-5

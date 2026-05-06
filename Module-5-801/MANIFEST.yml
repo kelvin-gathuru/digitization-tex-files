@@ -1,0 +1,40 @@
+academic_year: 2025-2026
+author: Open University of Kenya
+build_pdf: true
+build_zip: true
+code: MMI 801
+format_version: 2
+html_args:
+  css:
+  - ouk_cuter.css
+institution: Open University of Kenya
+license: null
+locale: en
+mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
+num_pdf_runs: 1
+root_url: /{base}/{code}/
+structure:
+- build_pdf: true
+  content: []
+  formats:
+  - filetype: html
+    format: default
+    url: index.html
+  - filetype: pdf
+    format: default
+    url: module_5_playful_lea.pdf
+  is_hidden: false
+  pdf_url: module_5_playful_lea.pdf
+  slug: module_5_playful_lea
+  source: Module5_Playful_Learning.tex
+  splitlevel: -2
+  title: 'Module 5: Playful Learning'
+  type: standalone
+  url: index.html
+themes:
+- path: .
+  source: default
+  title: Default
+title: Educational Innovation for the Mathematical Sciences
+year: 2026
+zipfile: educational_innovati.zip

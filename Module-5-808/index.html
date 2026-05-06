@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Open University of Kenya" />
+    <meta name="date" content="2026-03-15" />
+
+
+    <title>Module 5: What Are Databases | MMI 808</title>
+
+
+    <link rel="icon" type="image/png" href="static/favicon.png?build_time=1773585007.196533" />
+
+
+
+
+
+    <link rel="stylesheet" href="static/styles.css?build_time=1773585007.196533">
+
+
+
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1773585007.196533">
+
+    <link rel="stylesheet" href="static/print.css?build_time=1773585007.196533">
+
+
+
+
+    <script>
+        var chirun_static_url = new URL('static?build_time=1773585007.196533', location.href);
+    </script>
+
+
+    <script defer src="static/mathjax_config.js?build_time=1773585007.196533"></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+
+
+    <script type="module" src="static/localisation.js?build_time=1773585007.196533"></script>
+
+    <script defer src="static/customisation.js?build_time=1773585007.196533"></script>
+
+
+
+
+
+    <script defer src="static/code.js?build_time=1773585007.196533" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1773585007.196533" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1773585007.196533" type="module"></script>
+
+
+    <template id="runnable-code-template">
+        <link rel="stylesheet" href="static/code.css?build_time=1773585007.196533">
+        <div class="runnable-code-wrapper">
+            <section class="fullscreenable code">
+                <div id="code"></div>
+                <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon"
+                        aria-label="Fullscreen code" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <section class="fullscreenable output">
+                <div id="output" aria-live="polite">
+                    <pre class="stdout"></pre>
+                    <pre class="result"></pre>
+                    <div class="images"></div>
+                </div>
+                <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon"
+                        aria-label="Fullscreen output" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <div class="buttons">
+                <button type="button" class="run-code">Run code</button>
+            </div>
+            <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs>
+                    <g id="cog">
+                        <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                            d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+                    </g>
+                    <g id="pdf">
+                        <path
+                            style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+                    </g>
+                    <g id="slides">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,21.25 30,137.5" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 90,21.25 60,158.75" />
+                        <rect
+                            style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675"
+                            rx="4.7737675" />
+                        <rect
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,66.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,76.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,86.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,56.25 h 50" />
+                        <path
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+                    </g>
+
+                    <g id="notebook">
+                        <path
+                            style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                            d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="58.699139" cy="59.503937" r="3.8077738" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="113.59385" cy="52.885151" r="4.9348516" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                        <ellipse
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,46.266514 V 62.316215" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,77.849849 V 93.89955" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 34,109.43318 v 16.0497" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+                    </g>
+
+                    <g id="fullscreen">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                            d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                        />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+                    </g>
+                </defs>
+            </svg>
+        </div>
+    </template>
+
+    <template id="embed-numbas-template">
+        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1773585007.196533">
+        <details id="wrapper" data-completion-status="incomplete">
+            <summary>
+                <h1 id="title">Test Yourself</h1>
+                <div id="completion-status" data-completion-status="unknown">
+                    <span class="complete">Complete</span>
+                    <span class="incomplete">Incomplete</span>
+                </div>
+                <label id="score-feedback">
+                    Score:
+                    <progress min="0"></progress>
+                </label>
+            </summary>
+            <iframe class="embed" title="Numbas"></iframe>
+        </details>
+    </template>
+
+</head>
+
+<body class="">
+
+
+    <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+
+    <form id="display-options">
+        <div class="buttons">
+            <button type="button" id="reset-display-options">Reset to defaults</button>
+
+            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+            <button type="button" aria-controls="display-options" aria-expanded="false">
+                Close
+            </button>
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label for="display-options-font-scale">
+                    Text size
+                </label>
+                <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+                <output for="display-options-font-scale">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-spacing-factor">
+                    Spacing
+                </label>
+                <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+                <output for="display-options-spacing-factor">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-font-family">
+                    Text font
+                </label>
+                <select id="display-options-font-family">
+                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                    <option value="var(--serif-font)">Serif</option>
+                    <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-colour-scheme">
+                    Colour scheme
+                </label>
+                <select id="display-options-colour-scheme">
+                    <option value="auto" selected>Automatic (default)</option>
+                    <option value="light">Black text on white</option>
+                    <option value="dark">White text on black</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+
+            <section id="custom-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-text-colour">
+                        Text colour
+                    </label>
+                    <input type="color" value="#000000" id="display-options-text-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-link-colour">
+                        Link colour
+                    </label>
+                    <input type="color" value="#0000ee" id="display-options-link-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour">
+                        Background colour
+                    </label>
+                    <input type="color" value="#ffffff" id="display-options-bg-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-off">
+                        Muted background colour
+                    </label>
+                    <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-1">
+                        Accent colour 1
+                    </label>
+                    <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-2">
+                        Accent colour 2
+                    </label>
+                    <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-3">
+                        Accent colour 3
+                    </label>
+                    <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-4">
+                        Accent colour 4
+                    </label>
+                    <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+                </div>
+            </section>
+
+            <section id="filter-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-filter-sepia">
+                        Sepia filter
+                    </label>
+                    <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                    <output for="display-options-filter-sepia">0%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-filter-hue-rotate">
+                        Rotate hues
+                    </label>
+                    <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                    <output for="display-options-filter-hue-rotate">0 turns</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-invert-images">
+                        Invert images in dark mode
+                    </label>
+                    <input type="checkbox" id="display-options-invert-images">
+                </div>
+
+            </section>
+        </div>
+    </form>
+
+
+    <header>
+
+        <button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false"
+            title="Display options">
+            <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+                <use href="#cog" />
+            </svg>
+        </button>
+
+
+
+
+
+    </header>
+
+    <main id="main-content">
+
+        <nav id="sidebar">
+
+            <ul class="alternative-formats">
+
+                <li><a rel="alternate" type="application/pdf" href="module_5_what_are_da.pdf" download><svg class="icon"
+                            aria-label="PDF" viewBox="0 0 180 180">
+                            <use href="#pdf" />
+                        </svg> Download as PDF</a></li>
+
+            </ul>
+
+
+
+            <h1>Table of Contents</h1>
+            <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+            <ol class="table-of-contents" role="tree">
+
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000007" href="#a0000000007">
+
+                        1 Module Overview
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000008" href="#a0000000008">
+                        <span class="toc-marker"></span>
+                        2 Traditional Database Concepts
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000008">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000009" href="#a0000000009">
+
+                                2.1 The Relational Model
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000015" href="#a0000000015">
+
+                                2.2 The Schema vs. the Instance
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000019" href="#a0000000019">
+
+                        3 The Categorical View of a Database Schema
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000024" href="#a0000000024">
+
+                        4 Key Relationships: One-to-One, One-to-Many, Many-to-Many
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
+
+                        5 Data Migration: Introducing Functors
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000026" href="#a0000000026">
+
+                        6 Wiring Diagrams
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000031" href="#a0000000031">
+
+                        7 Key Concepts and Terminology
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000032" href="#a0000000032">
+
+                        8 Module Assignment
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000039" href="#a0000000039">
+
+                        9 Revision Questions
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000055" href="#a0000000055">
+
+                        10 Further Reading
+                    </a>
+
+
+                </li>
+
+
+            </ol>
+
+
+        </nav>
+
+        <article class="item-content" id="item-content">
+            <div class="tcolorbox" style="background-color:#037B90; border-color:#037B90; border-width:0pt">
+                <small class="small"><b class="bfseries"><span style="color:#D0EEF3"> MMI 808 · CATEGORICAL STRUCTURES
+                            AND DIAGRAMS</span></b></small><br /> <small class="small"><b class="bfseries"><span
+                            style="color:#FF7F50"> MSc in Mathematical Innovation · Open University of
+                            Kenya</span></b></small><br /> <big class="xxlarge"><b class="bfseries"><span
+                            style="color:#FFFFFF"> Module 5: What Are Databases?</span></b></big><br /> <span
+                    class="normalsize"><span style="color:#D0EEF3"> Developer: Dr. George Simmons  | Instructional
+                        Hours: 6</span></span>
+            </div>
+            <p>
+                <span class="vspace" style="height: 10.0pt"></span>
+            </p>
+            <div class="tcolorbox" style="None">
+                <ol class="enumerate" id="a0000000002">
+                    <li id="a0000000003" value="1">
+                        <p>
+                            Describe the abstract notion of a database schema as a categorical object — a directed graph
+                            with constraints.
+                        </p>
+                    </li>
+                    <li id="a0000000004" value="2">
+                        <p>
+                            Explain and construct example schemas using internal keys, foreign keys, and referential
+                            integrity constraints.
+                        </p>
+                    </li>
+                    <li id="a0000000005" value="3">
+                        <p>
+                            Understand the concept of data migration as a structure-preserving map between schemas (a
+                            functor).
+                        </p>
+                    </li>
+                    <li id="a0000000006" value="4">
+                        <p>
+                            Design a database schema for a real-world contact management system, representing it as both
+                            a relational schema and a categorical diagram.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                <span class="vspace" style="height: 10.0pt"></span>
+            </p>
+            <section class="section">
+                <h2 id="a0000000007">1 Module Overview</h2>
+                <p>
+                    Modules 1–4 built our graph-theoretic vocabulary. We now make our first decisive step into category
+                    theory by reinterpreting databases categorically. This reinterpretation — due to David Spivak — is
+                    not merely a theoretical exercise: it reveals the deep structure of databases that conventional
+                    SQL-based training leaves implicit. A database schema is a category; a database instance is a
+                    functor; data migration is a natural transformation. By the end of Module 8, this sentence will be
+                    completely clear.
+                </p>
+                <div class="tcolorbox" style="None">
+                    A single flat table (a spreadsheet) is the simplest possible database. But real data has
+                    <em>relationships</em>: a customer has many orders; an order has many items; an item belongs to a
+                    category. These relationships are what make databases interesting — and what a purely tabular view
+                    obscures. Category theory provides the language to make these relationships explicit, composable,
+                    and analysable.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000008">2 Traditional Database Concepts</h2>
+                <section class="subsection">
+                    <h3 id="a0000000009">2.1 The Relational Model</h3>
+                    <p>
+                        A <b class="bfseries">relational database</b> organises data into <b class="bfseries">tables</b>
+                        (relations). Each table has:
+                    </p>
+                    <ul class="itemize" id="a0000000010">
+                        <li id="a0000000011">
+                            <p>
+                                A set of <b class="bfseries">columns</b> (attributes), each with a specified data type.
+                            </p>
+                        </li>
+                        <li id="a0000000012">
+                            <p>
+                                A set of <b class="bfseries">rows</b> (tuples), each representing one record.
+                            </p>
+                        </li>
+                        <li id="a0000000013">
+                            <p>
+                                A <b class="bfseries">primary key</b> — a column (or combination of columns) uniquely
+                                identifying each row.
+                            </p>
+                        </li>
+                        <li id="a0000000014">
+                            <p>
+                                <b class="bfseries">Foreign keys</b> — columns containing primary key values from
+                                another table, establishing referential links.
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="tcolorbox" style="None">
+                        A contact management database might have: <div class="centered">
+                            <table class="tabular">
+                                <tr>
+                                    <td colspan="3" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
+                                        <p>
+                                            <b class="bfseries">Person</b>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                        <p>
+                                            <u class="underline">person_id</u>
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                        <p>
+                                            name
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                        <p>
+                                            phone_id (FK \(\to \) Phone)
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                        <p>
+                                            1
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                        <p>
+                                            Alice
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                        <p>
+                                            101
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" rowspan=""
+                                        style="text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                        <p>
+                                            2
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                        <p>
+                                            Bob
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                        <p>
+                                            102
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>  <table class="tabular">
+                                <tr>
+                                    <td colspan="2" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
+                                        <p>
+                                            <b class="bfseries">Phone</b>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                        <p>
+                                            <u class="underline">phone_id</u>
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                        <p>
+                                            number
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                        <p>
+                                            101
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                        <p>
+                                            0712345678
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="" rowspan=""
+                                        style="text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                        <p>
+                                            102
+                                        </p>
+                                    </td>
+                                    <td colspan="" rowspan=""
+                                        style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                        <p>
+                                            0798765432
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> The foreign key <span class="ttfamily">phone_id</span> in Person references the primary
+                        key <span class="ttfamily">phone_id</span> in Phone, establishing a one-to-one relationship.
+                    </div>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000015">2.2 The Schema vs. the Instance</h3>
+                    <p>
+                        A crucial distinction:
+                    </p>
+                    <ul class="itemize" id="a0000000016">
+                        <li id="a0000000017">
+                            <p>
+                                The <b class="bfseries">schema</b> defines the structure: what tables exist, what
+                                columns they have, what their types are, and what relationships connect them. The schema
+                                is fixed (or slowly evolving).
+                            </p>
+                        </li>
+                        <li id="a0000000018">
+                            <p>
+                                The <b class="bfseries">instance</b> is the current data: the actual rows in each table
+                                at a specific time. The instance changes with every insert, update, or delete.
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        <b class="bfseries">Categorical reading:</b> The schema is a category; the instance is a functor
+                        from the schema category to <b class="bfseries">Set</b>. <span class="vspace"
+                            style="height: 10.0pt"></span>
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000019">3 The Categorical View of a Database Schema</h2>
+                <div class="tcolorbox" style="None">
+                    A <b class="bfseries">database schema</b> in the categorical sense is a directed graph \(\mathcal{S}
+                    = (Ob, Arr)\) where: <ul class="itemize" id="a0000000020">
+                        <li id="a0000000021">
+                            <p>
+                                \(Ob\) is the set of <b class="bfseries">table names</b> (entities).
+                            </p>
+                        </li>
+                        <li id="a0000000022">
+                            <p>
+                                \(Arr\) is the set of <b class="bfseries">column names</b> and <b
+                                    class="bfseries">foreign key references</b> (arrows between tables).
+                            </p>
+                        </li>
+                        <li id="a0000000023">
+                            <p>
+                                Additionally, certain <b class="bfseries">path equations</b> hold: commutativity
+                                conditions ensuring data consistency.
+                            </p>
+                        </li>
+                    </ul>
+                    <b class="bfseries">Tables are objects</b> in the schema category. <b class="bfseries">Columns
+                        pointing to a value type</b> (e.g., string, integer) are arrows from the table to the type
+                    object. <b class="bfseries">Foreign keys</b> are arrows from one table to another.
+                </div>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Schema diagram for a phone contact list:</b> <span class="dmath">\[
+                        \text{Person} \xrightarrow {\text{hasPhone}} \text{Phone} \xrightarrow {\text{number}}
+                        \text{String} \]</span> <span class="dmath">\[ \text{Person} \xrightarrow {\text{name}}
+                        \text{String} \]</span> <span class="dmath">\[ \text{Person} \xrightarrow {\text{worksAt}}
+                        \text{Company} \xrightarrow {\text{companyName}} \text{String} \]</span> <b
+                        class="bfseries">Objects:</b> Person, Phone, Company, String (a “value type”).<br /> <b
+                        class="bfseries">Arrows:</b> hasPhone (Person \(\to \) Phone), name (Person \(\to \) String),
+                    number (Phone \(\to \) String), worksAt (Person \(\to \) Company), companyName (Company \(\to \)
+                    String).<br /> <b class="bfseries">Path equation:</b> Should the path Person \(\xrightarrow
+                    {\text{hasPhone}}\) Phone \(\xrightarrow {\text{number}}\) String be the same as some direct
+                    “personalNumber” arrow Person \(\to \) String? Only if every person’s personal number is their
+                    phone’s number — a business rule enforced as a commutativity condition.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000024">4 Key Relationships: One-to-One, One-to-Many, Many-to-Many</h2>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">One-to-one (1:1):</b> Each row in table \(A\) corresponds to exactly one row in
+                    table \(B\), and vice versa. Represented by a bijective foreign key.<br /> <b
+                        class="bfseries">One-to-many (1:N):</b> Each row in table \(A\) corresponds to zero or more rows
+                    in table \(B\). A foreign key in \(B\) points to \(A\)’s primary key. Categorically: a function \(B
+                    \to A\) (many \(B\) rows map to one \(A\) row).<br /> <b class="bfseries">Many-to-many (M:N):</b>
+                    Each row in \(A\) can relate to many rows in \(B\) and vice versa. Requires a <b
+                        class="bfseries">junction table</b> with foreign keys to both \(A\) and \(B\).
+                </div>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Person hasPhone Phone</b> (many-to-one: many persons may share a landline): The
+                    arrow hasPhone: Person \(\to \) Phone is a function — each person maps to exactly one phone entry;
+                    multiple persons can map to the same phone.<br /> <b class="bfseries">Person studiedAt
+                        University</b> (many-to-many): A person can study at multiple universities; a university has
+                    many students. Create a junction table <b class="bfseries">Enrollment</b> with foreign keys to both
+                    Person and University.<br /> <b class="bfseries">Categorical representation:</b> <span
+                        class="dmath">\[ \text{Person} \leftarrow \text{Enrollment} \rightarrow \text{University}
+                        \]</span> Enrollment has arrows (foreign keys) to <em>both</em> Person and University — it is
+                    the categorical product of a many-to-many relationship.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000025">5 Data Migration: Introducing Functors</h2>
+                <div class="tcolorbox" style="None">
+                    A <b class="bfseries">data migration</b> is a process of transforming data from one schema to
+                    another. Categorically, a migration is induced by a <b class="bfseries">functor</b> \(F: \mathcal{S}
+                    \to \mathcal{T}\) between schema categories. Given an instance \(I: \mathcal{T} \to \textbf{Set}\)
+                    of the target schema, we can “pull back” to get an instance \(I \circ F: \mathcal{S} \to
+                    \textbf{Set}\) of the source schema — or “push forward” in the opposite direction.<br /> We will
+                    develop the full theory of functors and data migration in Modules 7–8.
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000026">6 Wiring Diagrams</h2>
+                <p>
+                    A <b class="bfseries">wiring diagram</b> is a graphical representation of a schema where:
+                </p>
+                <ul class="itemize" id="a0000000027">
+                    <li id="a0000000028">
+                        <p>
+                            Each table is drawn as a box.
+                        </p>
+                    </li>
+                    <li id="a0000000029">
+                        <p>
+                            Each column/foreign key is drawn as a wire (arrow) connecting boxes.
+                        </p>
+                    </li>
+                    <li id="a0000000030">
+                        <p>
+                            Value types (String, Int, Bool) are drawn as external wires (outputs of the schema).
+                        </p>
+                    </li>
+                </ul>
+                <p>
+                    Wiring diagrams are a categorical notation that will become central when we study monoidal
+                    categories and database joins in advanced category theory. <span class="vspace"
+                        style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000031">7 Key Concepts and Terminology</h2>
+                <div class="centered">
+                    <table class="tabular">
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Term</b> </span>
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    <span style="color:#FFFFFF"><b class="bfseries">Definition</b> </span>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Schema
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    The structure of a database: tables, columns, types, keys, and relationships.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Instance
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    The current data in a database: the actual rows populating each table.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Primary Key
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    A column (or combination) uniquely identifying each row in a table.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Foreign Key
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    A column in one table referencing the primary key of another — a schema arrow.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Referential Integrity
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Constraint ensuring every foreign key value references an existing primary key.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Cardinality
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    The nature of a relationship: 1:1, 1:N, or M:N.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Categorical Schema
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    A directed graph (schema diagram) with path equations; objects = tables, arrows =
+                                    columns/FKs.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Functor (preview)
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    A structure-preserving map between categories; induces data migration between
+                                    schemas.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="" rowspan="" style="text-align:left">
+                                <p>
+                                    Wiring Diagram
+                                </p>
+                            </td>
+                            <td colspan="" rowspan="" style="None">
+                                <p>
+                                    Graphical notation for categorical schemas; boxes = tables, wires = columns/FKs.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000032">8 Module Assignment</h2>
+                <div class="tcolorbox" style="None">
+                    <b class="bfseries">Contact List Database Schema:</b> Refine and formalise a database schema for the
+                    contact list on your phone (or a hypothetical one). <ol class="enumerate" id="a0000000033">
+                        <li id="a0000000034" value="1">
+                            <p>
+                                <b class="bfseries">Relational representation:</b> Define at least 4 tables with
+                                columns, primary keys, and foreign keys. Identify all cardinality relationships (1:1,
+                                1:N, M:N). Handle M:N relationships with junction tables.
+                            </p>
+                        </li>
+                        <li id="a0000000035" value="2">
+                            <p>
+                                <b class="bfseries">Categorical diagram:</b> Draw the schema as a directed graph
+                                (objects = tables + value types, arrows = columns + foreign keys). Label all arrows.
+                            </p>
+                        </li>
+                        <li id="a0000000036" value="3">
+                            <p>
+                                <b class="bfseries">Path equations:</b> Identify at least one business rule that
+                                corresponds to a commutativity condition in your schema diagram. State the path equation
+                                explicitly.
+                            </p>
+                        </li>
+                        <li id="a0000000037" value="4">
+                            <p>
+                                <b class="bfseries">Wiring diagram:</b> Redraw your schema as a wiring diagram (boxes
+                                and wires).
+                            </p>
+                        </li>
+                        <li id="a0000000038" value="5">
+                            <p>
+                                <b class="bfseries">Reflection:</b> What information does the categorical diagram reveal
+                                about your schema that the standard table representation does not?
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+            </section>
+            <section class="section">
+                <h2 id="a0000000039">9 Revision Questions</h2>
+                <ol class="enumerate" id="a0000000040">
+                    <li id="a0000000041" value="1">
+                        <p>
+                            Explain the difference between a database schema and a database instance. In categorical
+                            terms, what corresponds to each?
+                        </p>
+                    </li>
+                    <li id="a0000000042" value="2">
+                        <p>
+                            In Spivak’s categorical view, a “column” of a table is an arrow. Where does this arrow
+                            point? Give two examples: one where the arrow points to a value type, and one where it
+                            points to another table.
+                        </p>
+                    </li>
+                    <li id="a0000000043" value="3">
+                        <p>
+                            Design a schema (both relational and categorical) for a university course registration
+                            system. Include: Student, Course, Lecturer, Enrollment, Department. Identify all cardinality
+                            relationships.
+                        </p>
+                    </li>
+                    <li id="a0000000044" value="4">
+                        <p>
+                            What is referential integrity? Show with an example how a missing foreign key value violates
+                            referential integrity, and describe the SQL constraint that prevents it.
+                        </p>
+                    </li>
+                    <li id="a0000000045" value="5">
+                        <p>
+                            In the contact list schema (Example 2), the path equation Person \(\xrightarrow
+                            {\text{hasPhone}}\) Phone \(\xrightarrow {\text{number}}\) String might or might not equal
+                            Person \(\xrightarrow {\text{personalNumber}}\) String. Give a real-world scenario where it
+                            would commute and one where it would not.
+                        </p>
+                    </li>
+                    <li id="a0000000046" value="6">
+                        <p>
+                            A medical records system needs to store: patients, their doctors, their diagnoses, and the
+                            medications prescribed for each diagnosis. Design a schema handling the fact that: a patient
+                            has many doctors; a diagnosis can be given by any of the patient’s doctors; a diagnosis can
+                            result in multiple medications. Draw the categorical schema diagram.
+                        </p>
+                    </li>
+                    <li id="a0000000047" value="7">
+                        <p>
+                            Preview: If a schema \(\mathcal{S}\) has objects \(\{ A, B, C\} \) and arrows \(\{ f: A \to
+                            B, g: B \to C\} \), what is the free category on this schema? How many morphisms does it
+                            have?
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    <span class="vspace" style="height: 10.0pt"></span>
+                </p>
+                <div class="tcolorbox" style="None">
+                    <ul class="itemize" id="a0000000048">
+                        <li id="a0000000049">
+                            <p>
+                                A database schema is the structure of a database — its tables, columns, types, and
+                                relationships. An instance is the current data populating that structure.
+                            </p>
+                        </li>
+                        <li id="a0000000050">
+                            <p>
+                                Spivak’s categorical interpretation identifies schemas with directed graphs augmented by
+                                path equations; tables are objects, columns are arrows.
+                            </p>
+                        </li>
+                        <li id="a0000000051">
+                            <p>
+                                Cardinality relationships (1:1, 1:N, M:N) correspond to different categorical
+                                structures: bijections, functions, and spans respectively.
+                            </p>
+                        </li>
+                        <li id="a0000000052">
+                            <p>
+                                Foreign keys are categorical arrows; referential integrity is a type constraint
+                                enforcing that every arrow points to a valid target.
+                            </p>
+                        </li>
+                        <li id="a0000000053">
+                            <p>
+                                Data migration between schemas is induced by a functor — a concept developed fully in
+                                Modules 7–8.
+                            </p>
+                        </li>
+                        <li id="a0000000054">
+                            <p>
+                                <i class="itshape">When you see a database, you should now see a category: objects and
+                                    arrows, composition and identity, structure-preserving maps.</i>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section">
+                <h2 id="a0000000055">10 Further Reading</h2>
+                <ul class="itemize" id="a0000000056">
+                    <li id="a0000000057">
+                        <p>
+                            <b class="bfseries">Fong, B. &amp; Spivak, D.I.</b> (2019). <i class="itshape">Seven
+                                Sketches in Compositionality</i>. Section 3.1. Cambridge University Press.
+                        </p>
+                    </li>
+                    <li id="a0000000058">
+                        <p>
+                            <b class="bfseries">Spivak, D.I.</b> Category Theory for Scientists. Lecture 6: Databases.
+                            <a href="https://arxiv.org/abs/1302.6946">https://arxiv.org/abs/1302.6946</a>
+                        </p>
+                    </li>
+                    <li id="a0000000059">
+                        <p>
+                            <b class="bfseries">Codd, E.F.</b> (1970). A relational model of data for large shared data
+                            banks. <i class="itshape">Communications of the ACM</i>, 13(6), 377–387. — Original
+                            relational model paper.
+                        </p>
+                    </li>
+                </ul>
+            </section>
+            <script id="plastex-labels" type="application/json">{}</script>
+        </article>
+
+    </main>
+
+
+    <footer>
+        <hr />
+
+        <nav id="footer-nav">
+            <a href="#">Back to top</a>
+        </nav>
+
+        <div id="footer-text">
+            <p>
+                Generated using
+                <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.3.0,
+                written by the Digital Learning Unit, ICT Directorate, <a target="_blank" href="https://ouk.ac.ke/">Open
+                    University of Kenya</a>
+            </p>
+            <p>This page last generated: 2025-08-31</p>
+        </div>
+    </footer>
+
+
+
+
+
+    <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="cog">
+                <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                    d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+            </g>
+            <g id="pdf">
+                <path
+                    style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+            </g>
+            <g id="slides">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,21.25 30,137.5" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 90,21.25 60,158.75" />
+                <rect
+                    style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675" rx="4.7737675" />
+                <rect
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,66.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,76.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,86.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,56.25 h 50" />
+                <path
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+            </g>
+
+            <g id="notebook">
+                <path
+                    style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                    d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="58.699139" cy="59.503937" r="3.8077738" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="113.59385" cy="52.885151" r="4.9348516" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                <ellipse
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,46.266514 V 62.316215" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,77.849849 V 93.89955" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 34,109.43318 v 16.0497" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+            </g>
+
+            <g id="fullscreen">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                    d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+            </g>
+        </defs>
+    </svg>
+</body>
+
+</html>

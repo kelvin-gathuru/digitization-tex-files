@@ -1,0 +1,232 @@
+
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\begin{document}
+\section*{Systematic Component of a Generalized Linear Model (GLM)}
+
+In the framework of Generalized Linear Models (GLMs), the systematic component refers to the part of the model that incorporates the explanatory variables into a linear predictor.
+
+\begin{definition}
+
+Let \( \boldsymbol{\eta} = (\eta_1, \eta_2, \ldots, \eta_n) \) be the vector of linear predictors, where for each observation \( i = 1, 2, \ldots, n \), the predictor is defined as:
+
+\[
+\eta_i = \sum_{j} \beta_j x_{ij} = \mathbf{x}_i^\top \boldsymbol{\beta}
+\]
+
+Here:
+\begin{itemize}
+  \item \( \eta_i \) is the linear predictor for the \( i \)-th observation,
+  \item \( \mathbf{x}_i = (x_{i1}, x_{i2}, \ldots, x_{ip})^\top \) is the vector of predictor variables for the \( i \)-th observation,
+  \item \( \boldsymbol{\beta} = (\beta_1, \beta_2, \ldots, \beta_p)^\top \) is the vector of regression coefficients.
+\end{itemize}
+
+\end{definition}
+
+\subsection*{Relation to Linear Regression}
+
+In classical linear regression, the expected value of the response variable is directly modeled as a linear combination of the predictors:
+
+\[
+\eta_i = \mathbb{E}(Y_i) = \mathbf{x}_i^\top \boldsymbol{\beta}
+\]
+
+However, this formulation restricts us to the assumption that the response variable \( Y_i \) must be continuous and normally distributed, which is often not realistic for many types of data (e.g., binary, count, proportion).
+
+\subsection*{Generalization in GLMs}
+
+To overcome this limitation, GLMs introduce a link function \( g(\cdot) \) where, \( g(\cdot) \) be a monotonic and differentiable function and it relates the expected value of the response variable \( \mu_i = \mathbb{E}(Y_i) \) to the linear predictor \( \eta_i \):
+
+\[
+\eta_i = g(\mu_i)
+\quad \text{or equivalently} \quad
+\mu_i = g^{-1}(\eta_i)
+\]
+
+Here:
+\begin{itemize}
+  \item \( \mu_i = \mathbb{E}(Y_i) \) is the mean of the response variable,
+  \item \( g(\cdot) \) is a monotonic and differentiable link function,
+  \item \( g^{-1}(\cdot) \) is called the inverse link function.
+\end{itemize}
+
+In words, we are now modeling a function of the mean (or Expectation) as a combination of
+linear predictors.
+
+
+
+\subsection*{Conclusion}
+
+The systematic component of a GLM allows for flexibility in modeling various types of response variables by connecting the linear predictor \( \eta \) to the expected response \( \mu \) through a link function. This generalization extends the linear modeling framework to a broader class of distributions and response types.
+
+
+
+ \subsection{Link Function}
+ \textbf{Link Function:} A smooth, monotonic function \( g(\cdot) \) that relates the mean of the response variable \( \mu_i = \mathbb{E}(Y_i) \) to the linear predictor \( \eta_i \):
+
+  \[
+  g(\mu_i) = \eta_i = \mathbf{x}_i^T \boldsymbol{\beta}
+  \]
+
+  \begin{itemize}
+    \item The link function transforms the mean of the response variable so that it can be expressed as a linear function of the covariates.
+    \item The choice of \( g(\cdot) \) depends on the nature of the response variable and the distribution assumed.
+    \item The function must be invertible: \( \mu_i = g^{-1}(\eta_i) \).
+  \end{itemize}
+
+  \textbf{Common Link Functions:}
+  \begin{itemize}
+    \item \textbf{Identity link:} \( g(\mu) = \mu \) \quad (used in linear regression)
+    \item \textbf{Logit link:} \( g(\mu) = \log\left( \frac{\mu}{1 - \mu} \right) \) \quad (used in logistic regression)
+    \item \textbf{Log link:} \( g(\mu) = \log(\mu) \) \quad (used in Poisson regression)
+    \item \textbf{Probit link:} \( g(\mu) = \Phi^{-1}(\mu) \) \quad (used in binomial models with probit regression)
+  \end{itemize}
+
+
+\subsubsection{Canonical Link Function in Generalized Linear Models}
+
+\subsection*{Exponential Family Review}
+
+Recall that a distribution belongs to the exponential family if it can be written in the form:
+
+\[
+f(y_i; \theta_i) = a(\theta_i) \, b(y_i) \, \exp\left[ y_i \cdot Q(\theta_i) \right]
+\]
+
+Here:
+\begin{itemize}
+  \item \( \theta_i \) is the parameter of interest,
+  \item \( Q(\theta_i) \) is called the \textbf{natural parameter} (also referred to as the canonical parameter),
+  \item \( a(\theta_i) \) and \( b(y_i) \) are functions depending only on the parameter and the observation, respectively.
+\end{itemize}
+
+\subsection*{Canonical Link Definition}
+
+In the context of a Generalized Linear Model (GLM), we model:
+
+\[
+g(\mu_i) = \eta_i = \mathbf{x}_i^\top \boldsymbol{\beta}
+\]
+
+where:
+\begin{itemize}
+  \item \( \mu_i = \mathbb{E}(Y_i) \) is the mean of the response variable,
+  \item \( \eta_i \) is the linear predictor,
+  \item \( g(\cdot) \) is the link function.
+\end{itemize}
+
+\textbf{The Canonical Link} is the specific choice of the link function such that the transformed mean equals the natural parameter of the exponential family distribution. That is:
+
+\[
+g(\mu_i) = Q(\theta_i)
+\]
+
+This implies:
+
+\[
+\eta_i = Q(\theta_i)
+\]
+
+or equivalently,
+
+\[
+\theta_i = g(\mu_i)
+\]
+
+\subsection*{Interpretation and Importance}
+
+\begin{itemize}
+  \item The canonical link simplifies the estimation process and mathematical derivations.
+  \item It often leads to desirable statistical properties such as sufficient statistics and simplified score equations.
+  \item For each distribution in the exponential family, there exists a canonical link that aligns the linear predictor with the natural parameter.
+\end{itemize}
+
+
+\begin{example}
+\textbf{Canonical Link for Bernoulli Distribution}
+
+Suppose \( Y_i \sim \text{Bern}(\pi) \), where:
+
+\begin{align*}
+P(Y_i = 1) &= \pi \\
+P(Y_i = 0) &= 1 - \pi
+\end{align*}
+
+From earlier derivation, the Bernoulli probability mass function can be expressed in exponential family form as:
+
+\[
+f(y_i; \pi) = (1 - \pi)(1) \cdot \exp\left( y_i \cdot \log\left( \frac{\pi}{1 - \pi} \right) \right)
+\]
+
+This matches the exponential family structure:
+
+\[
+f(y_i; \theta_i) = a(\theta_i) \cdot b(y_i) \cdot \exp\left( y_i \cdot Q(\theta_i) \right)
+\]
+
+with components:
+
+\begin{itemize}
+  \item \( Q(\pi) = \log\left( \frac{\pi}{1 - \pi} \right) \) — the natural (canonical) parameter,
+  \item \( a(\pi) = 1 - \pi \),
+  \item \( b(y_i) = 1 \).
+\end{itemize}
+
+Therefore, the \textbf{canonical link function} is the \textbf{logit function}:
+
+\[
+g(\pi) = \log\left( \frac{\pi}{1 - \pi} \right)
+\]
+
+Setting this equal to the linear predictor gives:
+
+\[
+g(\pi) = \mathbf{x}_i^\top \boldsymbol{\beta}
+\]
+
+Thus, the canonical link for the Bernoulli (or Binomial) distribution is:
+
+\[
+\log\left( \frac{\pi}{1 - \pi} \right) = \mathbf{x}_i^\top \boldsymbol{\beta}
+\]
+
+which defines the logistic regression model.
+
+\end{example}
+
+\subsection*{Examples of Canonical Links}
+
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Distribution} & \textbf{Mean} (\( \mu \)) & \textbf{Canonical Link} \\
+\hline
+Normal & \( \mu \) & Identity: \( g(\mu) = \mu \) \\
+Binomial & \( \mu = \pi \) & Logit: \( g(\mu) = \log\left( \frac{\mu}{1 - \mu} \right) \) \\
+Poisson & \( \mu = \lambda \) & Log: \( g(\mu) = \log(\mu) \) \\
+Gamma & \( \mu \) & Inverse: \( g(\mu) = \frac{1}{\mu} \) \\
+\hline
+\end{tabular}
+
+\subsection*{Conclusion}
+
+The canonical link function connects the mean response \( \mu \) to the natural parameter \( Q(\theta) \) of the exponential family. Using the canonical link results in simplification of the likelihood equations and often improves the interpretability and computational efficiency of GLM estimation.
+
+
+
+
+\subsection*{Why Use the Exponential Family in GLMs?}
+
+\begin{itemize}
+  \item It provides a **unifying framework** for many common distributions.
+  \item It supports **closed-form solutions** for maximum likelihood estimation (MLE).
+  \item It enables the use of a **systematic modeling framework** with link functions and linear predictors.
+  \item It accommodates both **discrete and continuous** response variables.
+\end{itemize}
+
+\subsection*{Conclusion}
+
+In GLMs, the random component assumes that the response variable \( Y \) is generated from a distribution in the exponential family. This structure allows for flexibility in modeling various types of outcomes (binary, count, continuous, etc.) using a unified theoretical and computational approach.
+
+
+
+\end{document}

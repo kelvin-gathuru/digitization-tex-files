@@ -1,0 +1,497 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\begin{document}
+\section*{Module 5 - Generalized Linear Models (GLMs): Theory and Framework}
+Instructional Hours: 3
+
+%\mddescription
+%This module introduces the foundational theory behind Generalized Linear Models (GLMs), a flexible extension of classical linear regression that accommodates various types of response variables. Students will explore how the exponential family of distributions underpins GLMs, the role of link functions, and the structure of GLMs in statistical modeling. Emphasis is placed on understanding the theoretical underpinnings that differentiate GLMs from ordinary linear models, setting the stage for practical implementation in real-world data analysis.
+%
+%
+%\begin{mlos}
+%\item Define the exponential family of distributions and identify common distributions that belong to it.
+%  \item Explain the concept and purpose of link functions in GLMs.
+%  \item Formulate a GLM using the structure \( g(\mu) = X\beta \), and interpret its components.
+%  \item Distinguish between canonical and non-canonical link functions.
+%\end{mlos}
+
+%\section*{Learning Activities}
+%\begin{enumerate}
+%\item Read the lecture notes (PDF)
+%\item Read the assigned reference materials
+%\item Watch lecture videos
+%\item Complete the module assessment/Quiz
+%\end{enumerate}
+%
+%
+%\begin{preactivities}
+\subsection*{\textit{Review of Ordinary Linear Models (OLM) and Introduction to Generalized Linear Models}}
+
+\textbf{Instruction:} Read the following summary and then complete the short task at the end.
+
+
+The ordinary linear regression model is expressed as:
+\[
+Y_i = \beta_0 + \beta_1 x_{i1} + \beta_2 x_{i2} + \dots + \beta_p x_{ip} + \varepsilon_i
+\]
+Where:
+\begin{itemize}
+  \item \( Y_i \) is the continuous response variable.
+  \item \( x_{ij} \) are predictor variables.
+  \item \( \beta_j \) are regression coefficients.
+  \item \( \varepsilon_i \sim N(0, \sigma^2) \) are independent errors.
+\end{itemize}
+
+\subsubsection*{Key Assumptions of OLM:}
+\begin{enumerate}
+  \item Linearity: The relationship between predictors and response is linear.
+  \item Normality: The errors \( \varepsilon_i \) are normally distributed.
+  \item Homoscedasticity: The variance of errors is constant.
+  \item Independence: Observations are independent of one another.
+\end{enumerate}
+
+
+\subsubsection*{Limitations of Ordinary Linear Models and How GLMs Address Them}
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{6.5cm}|p{7.5cm}|}
+\hline
+\textbf{Limitation of Ordinary Linear Models (OLMs)} & \textbf{How Generalized Linear Models (GLMs) Address It} \\
+\hline
+Assume errors are normally distributed & Allow for a range of distributions from the exponential family (e.g., Bernoulli, Poisson, Gamma) to model diverse types of response variables \\
+\hline
+Only suitable for continuous response variables & Support binary, count, proportion, and skewed continuous data \\
+\hline
+Assume constant variance (homoscedasticity) & Allow variance to be a function of the mean, accommodating heteroscedasticity \\
+\hline
+Use only the identity link function \( \mu = X\beta \) & Introduce flexible link functions (e.g., log, logit, inverse) to relate the mean response to the linear predictor \\
+\hline
+Cannot handle bounded outcomes like probabilities & Use appropriate link functions (e.g., logit) to ensure outputs remain within valid ranges such as [0, 1] \\
+\hline
+Inappropriate for modeling discrete outcomes & Incorporate discrete distributions such as Poisson and binomial \\
+\hline
+Assume additive error structure & Allow for different error structures, including multiplicative variance structures \\
+\hline
+\end{tabular}
+\caption{Comparison of OLM Limitations and GLM Solutions}
+\end{table}
+
+%\end{preactivities}
+
+%\begin{readingtask}
+\subsection*{\textit{Read the following Lecture notes and attempt the tasks that follows} }
+%\end{readingtask}
+
+\section{Theory and Framework}
+
+Generalized Linear Models (GLMs) provide a unifying framework for modeling response variables that follow different distributions beyond the normal distribution, allowing for flexible modeling of binary, count, and skewed continuous data.
+
+
+
+
+
+Generalized Linear Models extend OLMs to allow:
+\begin{itemize}
+  \item Response variables from the \textbf{exponential family} (e.g., Bernoulli, Poisson, Gamma).
+  \item A \textbf{link function} that relates the mean response to the linear predictor.
+  \item Non-constant variance, modeled as a function of the mean.
+\end{itemize}
+
+
+
+\subsection{Transition from Ordinary Linear Models to Generalized Linear Models}
+
+\subsubsection*{Ordinary Linear Model (OLM)}
+
+In a standard linear regression, we model the relationship between a continuous response variable \( Y_i \) and predictors \( x_i \) as:
+
+\[
+Y_i = x_i^T \beta + \varepsilon_i, \quad \varepsilon_i \sim N(0, \sigma^2)
+\]
+
+\textbf{Interpretation:}
+\begin{itemize}
+  \item \( x_i^T \beta \) is the linear predictor or systematic component.
+  \item The response \( Y_i \) is continuous and normally distributed.
+  \item The expected value of \( Y_i \) is:
+  \[
+  \mu_i = \mathbb{E}(Y_i) = x_i^T \beta
+  \]
+  \item The identity link is implicitly used: \( g(\mu_i) = \mu_i \).
+\end{itemize}
+
+\subsubsection*{Limitations of the OLM Framework}
+
+OLM makes strict assumptions:
+\begin{itemize}
+  \item The response variable is continuous and unbounded.
+  \item The errors are normally distributed.
+  \item Constant variance: \( \text{Var}(Y_i) = \sigma^2 \).
+\end{itemize}
+
+\textbf{These assumptions do not hold for:}
+\begin{itemize}
+  \item Binary outcomes (e.g., success/failure).
+  \item Count data (e.g., number of events).
+  \item Skewed or bounded continuous data.
+\end{itemize}
+
+\subsubsection*{Generalizing the Model: GLM Framework}
+
+The \textbf{Generalized Linear Model (GLM)} allows us to model a broader class of response variables by introducing three modifications:
+
+\begin{enumerate}
+  \item \textbf{Random Component:} Response \( Y_i \) follows a distribution from the exponential family (e.g., Bernoulli, Poisson, Gamma).
+  
+  \item \textbf{Systematic Component:} As in OLM, the predictors form a linear predictor:
+  \[
+  \eta_i = x_i^T \beta
+  \]
+
+  \item \textbf{Link Function:} A function \( g(\cdot) \) links the mean response \( \mu_i = \mathbb{E}(Y_i) \) to the linear predictor:
+  \[
+  g(\mu_i) = \eta_i = x_i^T \beta
+  \]
+\end{enumerate}
+
+\subsubsection*{Interpreting the GLM Structure}
+
+\[
+g(\mu_i) = \eta_i = x_i^T \beta
+\]
+
+\textbf{Components:}
+\begin{itemize}
+  \item \( \mu_i = \mathbb{E}(Y_i) \): Mean of the response variable.
+  \item \( g(\mu_i) \): Link function that transforms the mean to the linear predictor scale.
+  \item \( \eta_i = x_i^T \beta \): Linear combination of predictors (same as in OLM).
+\end{itemize}
+
+\textbf{Examples of Link Functions:}
+\begin{itemize}
+  \item \textbf{Identity link:} \( g(\mu) = \mu \) — used in OLM and Gaussian GLMs.
+  \item \textbf{Logit link:} \( g(\mu) = \log\left(\frac{\mu}{1 - \mu}\right) \) — for binary data.
+  \item \textbf{Log link:} \( g(\mu) = \log(\mu) \) — for count data (e.g., Poisson).
+  \item \textbf{Inverse link:} \( g(\mu) = 1/\mu \) — for Gamma-distributed responses.
+\end{itemize}
+
+
+
+\subsubsection*{Summary of Transition}
+
+\begin{itemize}
+  \item In OLM, \( \mu_i = x_i^T \beta \) (identity link, normal errors).
+  \item In GLM, the model becomes more flexible:
+  \[
+  g(\mu_i) = x_i^T \beta
+  \]
+  \item The choice of \( g \) and the distribution of \( Y_i \) are tailored to the data.
+\end{itemize}
+
+A GLM consists of three components:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Random Component:} The response variable \( Y_i \) follows a distribution from the exponential family, with mean \( \mu_i \).
+  
+  \item \textbf{Systematic Component:} A linear predictor \( \eta_i = x_i^T \beta \), where \( x_i \) is a vector of predictors and \( \beta \) is the vector of unknown coefficients.
+
+  \item \textbf{Link Function:} A smooth monotonic function \( g(\cdot) \) that relates the mean to the linear predictor: \[ g(\mu_i) = \eta_i = x_i^T \beta \]
+\end{enumerate}
+
+
+
+\subsection{The Random Component of a Generalized Linear Model (GLM)}
+
+\begin{definition}
+The \textbf{random component} specifies that the response variable \( Y \) is a random variable whose distribution belongs to the \textbf{exponential family of distributions}.
+
+We observe \( n \) independent realizations:
+\[
+Y_1, Y_2, \dots, Y_n
+\]
+
+Each observation \( Y_i \) is modeled using a probability distribution from the exponential family.
+
+\end{definition}
+
+\subsection*{The Exponential Family of Distributions}
+
+A probability distribution belongs to the \textbf{natural exponential family} if its probability density function (pdf) or probability mass function (pmf) can be expressed in the form:
+
+\[
+f(y_i; \theta_i) = a(\theta_i)\, b(y_i)\, \exp\left[y_i Q(\theta_i)\right]
+\]
+
+\textbf{Interpretation of components:}
+
+\begin{itemize}
+  \item \( a(\theta_i) \): A function depending only on the unknown parameter \( \theta_i \); serves as a normalizing constant.
+  \item \( b(y_i) \): A function of the observed data point \( y_i \); independent of the parameter.
+  \item \( Q(\theta_i) \): A function of the parameter \( \theta_i \) that appears in the exponent; often linear in canonical form.
+\end{itemize}
+
+\textbf{Note:} When there is existance of dispersion paramenter, exponential family in a slightly different canonical form:
+
+\[
+f(y_i; \theta_i, \phi) = \exp\left\{ \frac{y_i \theta_i - b(\theta_i)}{\phi} + c(y_i, \phi) \right\}
+\]
+
+Where:
+\begin{itemize}
+  \item \( \theta_i \): Canonical (natural) parameter.
+  \item \( b(\theta_i) \): Cumulant function (ensures integration to 1).
+  \item \( \phi \): Dispersion parameter.
+  \item \( c(y_i, \phi) \): A function ensuring the proper form of the distribution.
+\end{itemize}
+
+\begin{example}
+\textbf{Poisson Distribution as an Exponential Class Variable}
+
+\textbf{Suppose:} \\
+\[
+Y \sim \text{Poisson}(\lambda)
+\]
+
+Then the probability mass function (pmf) is given by:
+\[
+f(y; \lambda) = \frac{e^{-\lambda} \lambda^y}{y!}
+\]
+
+We can rewrite this expression as:
+\[
+f(y; \lambda) = e^{-\lambda} \cdot \frac{1}{y!} \cdot e^{\log \lambda^y}
+\]
+
+\[
+f(y; \lambda) = e^{-\lambda} \cdot \frac{1}{y!} \cdot e^{y \log \lambda}
+\]
+
+This matches the general form of the exponential family:
+\[
+f(y_i; \theta_i) = a(\theta_i) \cdot b(y_i) \cdot \exp\left[ y_i Q(\theta_i) \right]
+\]
+
+\textbf{Identifying components:}
+\begin{itemize}
+  \item \( \theta = \lambda \)
+  \item \( a(\lambda) = e^{-\lambda} \)
+  \item \( b(y) = \dfrac{1}{y!} \)
+  \item \( Q(\lambda) = \log \lambda \)
+\end{itemize}
+
+\textbf{Conclusion:} \\
+The Poisson distribution fits the form of the exponential family, and hence a Poisson random variable is an \textbf{exponential class variable}.
+\end{example}
+
+\begin{example}
+\textbf{Identifying Exponential Family Components for the Normal Distribution}
+
+Consider the probability density function of a normal distribution with known variance \( \sigma^2 \):
+
+\[
+f(y; \mu) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left\{ -\frac{(y - \mu)^2}{2\sigma^2} \right\}
+\]
+
+\textbf{Step 1: Expand the Exponent}
+
+\[
+-\frac{(y - \mu)^2}{2\sigma^2} = -\frac{y^2 - 2y\mu + \mu^2}{2\sigma^2} = -\frac{y^2}{2\sigma^2} + \frac{y\mu}{\sigma^2} - \frac{\mu^2}{2\sigma^2}
+\]
+
+Thus, the density becomes:
+\[
+f(y; \mu) = \frac{1}{\sqrt{2\pi \sigma^2}} \exp\left( -\frac{y^2}{2\sigma^2} \right) \exp\left( \frac{y\mu}{\sigma^2} - \frac{\mu^2}{2\sigma^2} \right)
+\]
+
+\textbf{Step 2: Match to Exponential Family Form}
+
+The exponential family form is:
+
+\[
+f(y; \theta) = a(\theta)\, b(y)\, \exp\left[ y \cdot Q(\theta) \right]
+\]
+ 
+
+\begin{itemize}
+  \item Natural (canonical) parameter: \( \theta = \mu \)
+  \item \( Q(\theta) = \dfrac{\mu}{\sigma^2} \)
+  \item \( a(\theta) = \dfrac{1}{\sqrt{2\pi \sigma^2}} \cdot \exp\left(-\dfrac{\mu^2}{2\sigma^2} \right) \)
+  \item \( b(y) = \exp\left( -\dfrac{y^2}{2\sigma^2} \right) \)
+\end{itemize}
+
+
+
+\textbf{Conclusion:} The normal distribution with known variance belongs to the exponential family.
+\end{example}
+
+ 
+
+% %\begin{quiz}
+%     Identifying Exponential Family Components for the Bernoulli Distribution 
+
+%  \textbf{ Hint: }  Bernoulli distribution
+%   \[
+%   f(y; \pi) = \pi^y (1 - \pi)^{1 - y} = \exp\left\{y \log\left(\frac{\pi}{1 - \pi}\right) + \log(1 - \pi)\right\}
+%   \]
+% %\end{quiz}
+   
+
+% Each of these can be written in the form:
+
+% \[
+% f(y_i; \theta_i) = a(\theta_i) b(y_i) \exp[y_i Q(\theta_i)]
+% \]
+
+% \section*{Solution or the quiz}
+% \subsubsection*{Bernoulli Distribution as a Member of the Exponential Family}
+
+% \textbf{Suppose:}
+% \[
+% Y_i \sim \text{Bernoulli}(\pi)
+% \]
+% where
+% \[
+% P(Y_i = 1) = \pi \quad \text{and} \quad P(Y_i = 0) = 1 - \pi
+% \]
+
+% Then, the probability mass function is:
+% \[
+% f(y_i; \pi) = \pi^{y_i}(1 - \pi)^{1 - y_i}
+% \]
+
+% We manipulate the expression as follows:
+% \[
+% f(y_i; \pi) = \pi^{y_i} (1 - \pi)^{1 - y_i}
+% = (1 - \pi) \left( \frac{\pi}{1 - \pi} \right)^{y_i}
+% = (1 - \pi) \cdot \exp\left( y_i \log\left( \frac{\pi}{1 - \pi} \right) \right)
+% \]
+
+% \subsection*{Matching with the Exponential Family Form}
+
+% The general exponential family form is:
+% \[
+% f(y_i; \theta_i) = a(\theta_i)\, b(y_i)\, \exp\left[ y_i Q(\theta_i) \right]
+% \]
+
+% \subsection*{Identified Components}
+
+% \begin{itemize}
+%   \item \( \theta = \pi \)
+%   \item \( a(\pi) = 1 - \pi \)
+%   \item \( b(y_i) = 1 \)
+%   \item \( Q(\pi) = \log\left( \frac{\pi}{1 - \pi} \right) \)
+% \end{itemize}
+
+% \textbf{Conclusion:} \\
+% A Bernoulli random variable is a member of the exponential class.
+
+
+
+% %\begin{quiz}
+%     Derive of the canonical link function for the Poisson distribution
+% %\end{quiz}
+% \subsection*{Solution}
+%     \subsection*{Derivation of the Canonical Link: Poisson Distribution}
+
+% Let \( Y_i \sim \text{Poisson}(\lambda) \). The probability mass function (pmf) is given by:
+
+% \[
+% f(y_i; \lambda) = \frac{e^{-\lambda} \lambda^{y_i}}{y_i!}, \quad y_i = 0, 1, 2, \dots
+% \]
+
+% We aim to write this in the exponential family form:
+
+% \[
+% f(y_i; \theta_i) = a(\theta_i) \cdot b(y_i) \cdot \exp\left( y_i \cdot Q(\theta_i) \right)
+% \]
+
+% \textbf{Step 1: Rewriting the Poisson pmf}
+
+% Start by expressing the pmf in terms of exponentials:
+
+% \[
+% f(y_i; \lambda) = \frac{1}{y_i!} \cdot \exp(-\lambda) \cdot \exp(y_i \log \lambda)
+% = \left[ \exp(-\lambda) \right] \cdot \left[ \frac{1}{y_i!} \right] \cdot \exp\left( y_i \log \lambda \right)
+% \]
+
+% \textbf{Step 2: Identify exponential family components}
+
+% From the expression above, we can match the form:
+
+% \[
+% f(y_i; \lambda) = a(\lambda) \cdot b(y_i) \cdot \exp\left( y_i \cdot Q(\lambda) \right)
+% \]
+
+% with:
+
+% \begin{itemize}
+%   \item \( Q(\lambda) = \log \lambda \) \hfill (natural/canonical parameter)
+%   \item \( a(\lambda) = \exp(-\lambda) \)
+%   \item \( b(y_i) = \frac{1}{y_i!} \)
+% \end{itemize}
+
+% \textbf{Step 3: Define the canonical link}
+
+% The canonical parameter is \( Q(\lambda) = \log \lambda \). Since \( \mu = \mathbb{E}(Y_i) = \lambda \), we define the canonical link function as:
+
+% \[
+% g(\mu_i) = \log(\mu_i)
+% \]
+
+% \textbf{Step 4: Link function and linear predictor}
+
+% The GLM assumes:
+
+% \[
+% g(\mu_i) = \eta_i = \mathbf{x}_i^\top \boldsymbol{\beta}
+% \]
+
+% Substituting the canonical link:
+
+% \[
+% \log(\mu_i) = \mathbf{x}_i^\top \boldsymbol{\beta}
+% \]
+
+% or equivalently:
+
+% \[
+% \mu_i = \exp\left( \mathbf{x}_i^\top \boldsymbol{\beta} \right)
+% \]
+
+% \textbf{Conclusion:}  
+% The \textbf{canonical link} for the Poisson distribution is the \textbf{log link}:
+
+% \[
+% g(\mu) = \log(\mu)
+% \]
+
+% This gives rise to the \textbf{log-linear model}**, which is the standard form used in Poisson regression
+
+%\begin{references}
+%\begin{itemize}
+%    \item Agresti, A. (2015). \textit{Foundations of Linear and Generalized Linear Models}. Hoboken, NJ: John Wiley \& Sons. \\
+%\textbf{Link:} \url{https://www.wiley.com/en-us/Foundations+of+Linear+and+Generalized+Linear+Models-p-9780470082898}
+%
+%\item McCullagh, P., \& Nelder, J. A. (1989). \textit{Generalized Linear Models} (2nd ed.). London: Chapman and Hall/CRC. \\
+%\textbf{Link:} \url{https://www.routledge.com/Generalized-Linear-Models-Second-Edition/McCullagh-Nelder/p/book/9780412317606}
+%
+%\item Dobson, A. J., \& Barnett, A. G. (2018). \textit{An Introduction to Generalized Linear Models} (4th ed.). Boca Raton: CRC Press. \\
+%\textbf{Link:} \url{https://www.routledge.com/An-Introduction-to-Generalized-Linear-Models/Dobson-Barnett/p/book/9781138741515}
+%
+%\item Fox, J. (2016). \textit{Applied Regression Analysis and Generalized Linear Models} (3rd ed.). Los Angeles: SAGE Publications. \\
+%\textbf{Link:} \url{https://us.sagepub.com/en-us/nam/applied-regression-analysis-and-generalized-linear-models/book242047}
+%
+%\item Hardin, J. W., \& Hilbe, J. M. (2018). \textit{Generalized Linear Models and Extensions} (4th ed.). College Station, TX: Stata Press. \\
+%\textbf{Link:} \url{https://www.stata.com/bookstore/generalized-linear-models-extensions/}
+%\end{itemize}
+%\end{references}
+
+% \newpage
+
+%\begin{assessment}
+%\end{assessment}
+
+\end{document}
+

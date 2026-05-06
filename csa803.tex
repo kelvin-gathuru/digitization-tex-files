@@ -1,0 +1,154 @@
+\documentclass[10pt]{article}
+\usepackage{chirun}
+\input{preamble}
+\begin{document}
+\section*{Introduction to Syntax and Semantics}
+Syntactic and semantic parsing are twin pillars in the realm of Natural Language Processing (NLP), working harmoniously to unravel the intricate structure and meaning embedded in human language, It aims to create a parse tree or syntactic structure that represents the hierarchical relationships among words in a sentence, revealing how they combine to form meaning.
+
+\subsection*{Syntactic Structure}
+The output of syntactic parsing provides insights into the grammatical roles of words, identifying constituents such as nouns, verbs, adjectives, and their relationships within the sentence.\\
+This structural representation serves as a foundation for more advanced tasks like semantic interpretation, information extraction, and text generation.
+
+\subsection*{Parsing Techniques}
+Constituency Parsing\\
+Focuses on identifying syntactic constituents-phrases or subphrases such as noun phrases (NP) or verb phrases (VP)-and representing them hierarchically in a tree structure.
+
+Example:\\
+Sentence: The boy ate an apple.\\[0pt]
+Constituents: [NP The boy] [VP ate [NP an apple]]
+
+\subsection*{Dependency Parsing}
+Emphasizes the grammatical relationships between words, representing them as\\
+directed links connecting a head to its dependent.
+
+\begin{example}
+	In The boy ate an apple, "ate" is the head, with "boy" as its subject and "apple" as its object.
+\end{example}
+
+\subsection*{Significance of Syntactic Parsing}
+Improved Understanding: Enhances comprehension of sentence structure, forming a base for linguistic and semantic analysis.
+
+Machine Translation: Helps preserve grammatical structure in translations, resulting in more coherent outputs.
+
+Question Answering: Enables systems to interpret relationships in queries accurately, aiding in precise information retrieval.
+
+\section*{The Complexity of Semantic Parsing}
+While syntactic parsing focuses on structure, semantic parsing delves into meaning. It aims to map natural language expressions into formal representations that capture their semantics, often transforming queries into executable logical forms or structured outputs.
+
+\subsection*{Mapping to Logical Forms}
+Semantic parsing often involves converting natural language input into logical forms-machine-readable representations of meaning.
+
+Example:\\
+Natural Language: What is the population of Kenya?\\
+Logical Form: SELECT population FROM countries WHERE name = "Kenya";
+
+\subsection*{Applications}
+Semantic parsing powers various applications such as:
+
+Question Answering Systems\\
+Natural Language Interfaces to Databases (NLIDBs)\\
+Dialogue Systems and Virtual Assistants
+
+Information Extraction and Text-to-SQL Systems
+
+\section*{Methodologies in Syntactic and Semantic Parsing}
+\subsection*{Rule-Based Approaches}
+Rule-based parsing relies on explicitly defined linguistic rules and grammatical patterns to analyze sentence structure.
+
+Systems built using formal grammars—such as Context-Free Grammars (CFGs)—apply parsing algorithms (like CYK or Earley parsers) to derive valid structures.
+
+\subsubsection*{Advantages:}
+Transparent and interpretable.\\
+Suitable for well-defined language domains.
+
+\subsubsection*{Limitations:}
+Difficult to scale or adapt to linguistic variability.\\
+Sensitive to ambiguity and language evolution.
+
+\subsection*{Statistical Approaches}
+Statistical parsing employs probabilistic models trained on annotated corpora to predict the most likely syntactic or semantic structure.
+
+\subsection*{Common Models:}
+Hidden Markov Models (HMMs): Capture sequential dependencies; used in part-of-speech tagging.
+
+Conditional Random Fields (CRFs): Model context-dependent relationships for structured prediction tasks.
+
+Probabilistic Context-Free Grammars (PCFGs): Assign probabilities to grammar rules to manage syntactic ambiguity.
+
+\subsubsection*{Advantages:}
+Data-driven and adaptable to language variation.\\
+More flexible than purely rule-based systems.\\
+\subsubsection*{Limitations:}
+
+Require large annotated datasets.\\
+Limited ability to handle long-range dependencies.
+
+\subsection*{Machine Learning Approaches}
+Modern machine learning and deep learning models represent the state-of-the-art in parsing.\\
+These models learn directly from data, automatically discovering linguistic patterns.
+
+\subsection*{Key Models:}
+Recurrent Neural Networks (RNNs): Capture sequential dependencies.\\
+Transformer-based Models: Such as BERT, RoBERTa, and T5, which use attention mechanisms for contextual understanding.
+
+Graph-Based Models: Represent words as nodes and dependencies as edges, useful in dependency and semantic role parsing.
+
+\subsubsection*{Advantages:}
+High accuracy and generalization.\\
+Effective in capturing context and long-distance relationships.\\
+\subsubsection*{Limitations:}
+High computational cost.\\
+Reduced interpretability compared to rule-based systems.
+
+\section*{Challenges in Syntactic and Semantic Parsing}
+Ambiguity\\
+Natural language often contains syntactic and semantic ambiguities.\\
+Example: "I saw the man with the telescope." - it's unclear whether "with the telescope" modifies "saw" or "the man."
+
+Resolving such ambiguities requires sophisticated contextual understanding.
+
+\subsection*{Context Dependency}
+Parsing accuracy depends heavily on context.\\
+Words like "bank" can have multiple meanings depending on the surrounding words—financial institution vs. riverbank.
+
+\subsection*{Low-Resource Languages}
+Parsing for low-resource languages is challenging due to limited annotated data.
+
+Recent research explores cross-lingual transfer, data augmentation, and unsupervised approaches to bridge this gap.
+
+\section*{Evaluation Metrics}
+\subsubsection*{Syntactic Parsing}
+Metrics used to evaluate syntactic parsing include:\\
+Accuracy: Overall correctness of the predicted parse.\\
+Precision, Recall, and F1 Score: Measure the correctness and completeness of identified syntactic constituents.
+
+Unlabeled Attachment Score (UAS): Percentage of words with the correct head, ignoring dependency labels.
+
+Labeled Attachment Score (LAS): Percentage of words with both the correct head and label.
+
+\subsubsection*{Semantic Parsing}
+Semantic parsing is evaluated by comparing predicted meaning representations to reference outputs.\\
+Common metrics include:\\
+Logical Form Accuracy: Exact match between predicted and reference structures.
+
+Denotation Accuracy: Whether executing the predicted logical form yields the correct result.
+
+F1 Score for Semantic Roles: Used in semantic role labeling tasks.\\
+BLEU Score: For comparing textual meaning representations.
+
+\section*{Future Directions in Parsing}
+\subsection*{Multimodal Parsing}
+Future research explores multimodal integration, combining text with images, audio, and video to enhance comprehension.
+
+For example, integrating visual cues with syntactic and semantic parsing can improve performance in visual question answering and scene understanding.
+
+\subsection*{Cross-Lingual Parsing}
+Developing parsers that work across multiple languages helps in extending NLP to low-resource and multilingual environments.\\
+Cross-lingual models leverage shared linguistic patterns and multilingual embeddings to transfer knowledge between languages.
+
+\subsection*{Fine-Grained Semantic Parsing}
+Fine-grained semantic parsing seeks to capture subtle nuances of meaning, such as metaphor, emotion, temporal relations, and coreference.\\
+This allows systems to interpret human language with deeper understanding and contextual awareness.
+
+
+\end{document}

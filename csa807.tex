@@ -1,0 +1,140 @@
+\documentclass[10pt]{article}
+\input{preamble}
+\usepackage{chirun}
+\begin{document}
+\section*{Convolutional Neural Networks (CNNs) With Keras and Pytorch}
+Convolutional Neural Networks (CNNs) are a class of deep learning models specifically designed to work with image and spatial data. They are highly effective in identifying patterns and features such as edges, textures, and shapes in images, making them the foundation for most computer vision tasks, including image classification, object detection, and facial recognition. CNNs consist of layers that automatically and adaptively learn spatial hierarchies of features from input images. The core components of CNNs include convolutional layers (for feature extraction), pooling layers (for spatial reduction), activation functions (typically ReLU), and fully connected layers (for classification or regression outputs).
+
+In Keras, building a CNN is simple and intuitive, using its high-level APIs. You can define a CNN using the Sequential model or the Functional API. A typical CNN in Keras includes layers like Conv2D for convolution, MaxPooling2D for downsampling, and Dense layers for output. The model is compiled with a loss function (e.g., categorical crossentropy) and an optimizer like Adam or SGD. Keras makes it easy to train the model using .fit() and evaluate performance with .evaluate() and .predict(). Keras also integrates seamlessly with TensorFlow, allowing the use of GPU acceleration when configured properly.
+
+In PyTorch, defining CNNs requires creating a custom class that inherits from nn.Module. You use layers like nn.Conv2d, nn.ReLU, nn.MaxPool2d, and nn.Linear to build the network. The forward propagation is defined in the forward() method, making PyTorch extremely flexible for research and experimentation. Training a model involves defining a loss function (like nn.CrossEntropyLoss), an optimizer (e.g., torch.optim.Adam), and writing a training loop to iterate through epochs, compute gradients using loss.backward(), and update weights with optimizer.step().
+
+Both Keras and PyTorch support loading datasets through built-in libraries like tf.keras.datasets and torchvision.datasets, respectively, and allow data augmentation and normalization. For GPU training, both frameworks support CUDA for accelerated computation. While Keras is more beginner-friendly and concise, PyTorch offers more control and is often preferred in research settings.
+
+Recommended practice includes building a CNN from scratch on datasets such as MNIST (handwritten digits) or CIFAR-10 (colored object images), and experimenting with different architectures and hyperparameters. By using both Keras and PyTorch, learners can better understand CNN fundamentals and become comfortable with two of the most widely-used deep learning frameworks.
+
+\section*{Image processing with CNN}
+Convolutional Neural Networks (CNNs) process images through a layered architecture designed to extract meaningful features and make predictions (such as classifying the image). Here's how the process works:
+
+\subsection*{1. Input Layer (Image Representation)}
+The process begins with an input image, usually represented as a matrix of pixel values. For example, a grayscale image has a 2D matrix (height × width), while a color image has a 3D matrix (height × width $\times 3$ RGB channels). This image is fed into the CNN as numerical data.
+
+\subsection*{2. Convolutional Layer (Feature Extraction)}
+In this layer, filters (kernels) slide over the image to detect patterns such as edges, textures, or corners. The filter multiplies its values with corresponding pixel values and sums the result to form a feature map. This process is called convolution. Each filter captures a different feature, and multiple filters are used to detect multiple patterns.
+
+\subsection*{3. Activation Function (Non-Linearity)}
+After convolution, an activation function-typically ReLU (Rectified Linear Unit) - is applied to the feature maps. ReLU replaces all negative values with zero, introducing non-linearity and enabling the network to learn complex patterns beyond simple linear relationships.
+
+\subsection*{4. Pooling Layer (Downsampling)}
+To reduce the computational load and make the network more robust, pooling layers (like max pooling) are used. Pooling reduces the size of the feature maps by selecting the maximum (or average) value in a region. This preserves important features while reducing dimensionality.
+
+\subsection*{5. Additional Convolution + Pooling Layers (Deep Feature Learning)}
+A CNN typically has multiple convolution and pooling layers stacked together. As the layers go deeper, they extract more abstract and complex features - from simple edges to object parts to full shapes.
+
+\subsection*{6. Flattening Layer}
+After all the convolutional and pooling layers, the resulting multi-dimensional feature maps are flattened into a single long vector. This step transforms the 2D features into a format suitable for classification by fully connected layers.
+
+\subsection*{7. Fully Connected Layers (Classification)}
+The flattened vector is passed through one or more dense (fully connected) layers. These layers perform high-level reasoning and combine the features into final predictions. The last fully connected layer outputs class probabilities using an activation function like softmax (for multi-class classification).
+
+\subsection*{8. Output Layer}
+The output layer gives the final result, such as the predicted class of the image (e.g., "cat", "car", "tree"). The model compares this prediction to the true label using a loss function like categorical cross entropy.
+
+\subsection*{9. Backpropagation and Optimization (Learning Phase)}
+The CNN uses backpropagation to calculate the error (loss) and update the weights of the filters and neurons using an optimization algorithm like Stochastic Gradient Descent (SGD) or Adam. This process is repeated across many epochs (iterations) to improve accuracy.
+
+\begin{example}
+	
+	\begin{verbatim}
+		# Visualizing filters and feature maps
+		from tensorflow.keras.models import Model
+		from tensorflow.keras.applications import VGG16
+		import matplotlib.pyplot as plt
+		model = VGG16(weights='imagenet', include\_top=False)
+		img = np.random.rand( $1,224,224,3$ )
+		feature\_maps $=$ model.predict(img)
+		plt.imshow(feature\_maps[0, :, :, 0], cmap='viridis')
+		plt.title("Feature Map from Layer 1")
+		plt.show()
+	\end{verbatim}
+\end{example}
+
+
+\section*{Building a CNN from Scratch}
+\subsection*{1. Keras Implementation}
+\begin{verbatim}
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+model = Sequential([
+    Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1)),
+    MaxPooling2D((2,2)),
+    Conv2D(64, (3,3), activation='relu'),
+    MaxPooling2D((2,2)),
+    Flatten(),
+    Dense(64, activation='relu'),
+    Dense(10, activation='softmax')
+])
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy',
+metrics=['accuracy'])
+\end{verbatim}
+
+\subsection*{2. PyTorch Implementation}
+\begin{verbatim}
+import torch.nn as nn
+import torch.nn.functional as F
+class CNNModel(nn.Module):
+    def __init__(self):
+        super(CNNModel, self).__init__()
+        self.conv1 = nn.Conv2d(1, 32, 3)
+        self.pool = nn.MaxPool2d(2, 2)
+        self.conv2 = nn.Conv2d(32, 64, 3)
+        self.fc1 = nn.Linear(64 * 5 * 5, 64)
+        self.fc2 = nn.Linear(64, 10)
+    def forward(self, x):
+        x = self.pool(F.relu(self.conv1(x))) # conv1 + ReLU + pool
+        x = self.pool(F.relu(self.conv2(x))) # conv2 + ReLU + pool
+        x = x.view(-1, 64 * 5 * 5) # Flatten
+        x = F.relu(self.fc1(x))
+        x = self.fc2(x)
+        return x
+\end{verbatim}
+
+\section*{CNN Variations and Improvements}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+Variation & Purpose \\
+\hline
+Batch Normalization & Stabilizes learning. \\
+\hline
+Dropout Layers & Reduces overfitting. \\
+\hline
+Data Augmentation & Improves generalization. \\
+\hline
+Residual Connections (ResNets) & Enables deeper networks. \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+Adding Dropout \& BatchNorm (Keras
+\begin{verbatim}
+from tensorflow.keras.layers import Dropout, BatchNormalization
+model = Sequential([
+    Conv2D(32, (3,3), activation='relu', input_shape=(28,28,1)),
+    BatchNormalization(),
+    MaxPooling2D((2,2)),
+    Dropout(0.25),
+    Conv2D(64, (3,3), activation='relu'),
+    BatchNormalization(),
+    MaxPooling2D((2,2)),
+    Dropout(0.25),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dropout(0.5),
+    Dense(10, activation='softmax')
+])
+\end{verbatim}
+\end{example}
+
+\end{document}
