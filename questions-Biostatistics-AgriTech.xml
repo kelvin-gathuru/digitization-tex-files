@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- question: 1 -->
+  <question type="stack">
+    <name><text>Biostatistics - Q1: RCBD ANOVA</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A study on soybean yield using {@k@} fertilizer types in an RCBD with {@b@} blocks produced the following sums of squares:</p>
+<ul>
+  <li>\( SSTotal = {@SSTotal@} \)</li>
+  <li>\( SSB = {@SSB@} \)</li>
+  <li>\( SSTreat = {@SSTreat@} \)</li>
+</ul>
+<p>Test the hypothesis that fertilizers differ at \( \alpha = 0.05 \). (Assume \( F_{crit}({@k-1@}, {@(k-1)*(b-1)@}) = {@Fcrit@} \)).</p>
+<p>1. Calculate \( SSE \): [[input:ans1]] [[validation:ans1]]</p>
+<p>2. Degrees of freedom for Error (\( df_{Err} \)): [[input:ans2]] [[validation:ans2]]</p>
+<p>3. Calculated F-value (\( F_{calc} \)): [[input:ans3]] [[validation:ans3]]</p>
+<p>4. Decision: [[input:ans4]] [[validation:ans4]]</p>
+<p>[[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>1. <strong>SSE</strong> = \( SSTotal - SSB - SSTreat = {@SSTotal@} - {@SSB@} - {@SSTreat@} = {@ta1@} \)</p>
+<p>2. <strong>df_Err</strong> = \( (b-1)(k-1) = ({@b@}-1)({@k@}-1) = {@ta2@} \)</p>
+<p>3. <strong>F_calc</strong>:</p>
+<ul>
+  <li>\( df_{Treat} = k-1 = {@k-1@} \)</li>
+  <li>\( MST = SSTreat / df_{Treat} = {@SSTreat@} / {@k-1@} = {@MST@} \)</li>
+  <li>\( MSE = SSE / df_{Err} = {@ta1@} / {@ta2@} \approx {@MSE@} \)</li>
+  <li>\( F_{calc} = MST / MSE = {@MST@} / {@MSE@} \approx {@ta3@} \)</li>
+</ul>
+<p>4. <strong>Decision</strong>: Since \( F_{calc} = {@ta3@} \) is {@if ta3 > Fcrit then "greater" else "less"@} than \( F_{crit} = {@Fcrit@} \), we <strong>{@if ta3 > Fcrit then "Reject" else "Fail to Reject"@} H0</strong>.</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>k: 4;
+b: 3;
+SSTreat: 250 + rand(10)*10;
+SSB: 80 + rand(5)*10;
+SSE_rand: 80 + rand(5)*10;
+SSTotal: SSTreat + SSB + SSE_rand;
+Fcrit: 4.76;
+
+ta1: SSTotal - SSB - SSTreat;
+ta2: (k-1)*(b-1);
+MST: SSTreat / (k-1);
+MSE: float(ta1 / ta2);
+ta3: float(MST / MSE);
+
+ta4: if ta3 > Fcrit then 
+       [[1, true, "Reject H0 (Fertilizers differ)"], [2, false, "Fail to Reject H0 (No significant difference)"]]
+     else 
+       [[1, false, "Reject H0 (Fertilizers differ)"], [2, true, "Fail to Reject H0 (No significant difference)"]];</text>
+    </questionvariables>
+    <specificfeedback format="html"><text></text></specificfeedback>
+    <questionnote format="html"><text><![CDATA[<p>SSE={@ta1@}, Fcalc={@ta3@}. Reject: {@ta3 > Fcrit@}</p>]]></text></questionnote>
+    <questiondescription format="html"><text></text></questiondescription>
+    <questionsimplify>1</questionsimplify><assumepositive>0</assumepositive><assumereal>0</assumereal>
+    <prtcorrect format="html"><text><![CDATA[<span style="color:green;">Correct!</span>]]></text></prtcorrect>
+    <prtpartiallycorrect format="html"><text><![CDATA[<span style="color:orange;">Partially correct.</span>]]></text></prtpartiallycorrect>
+    <prtincorrect format="html"><text><![CDATA[<span style="color:red;">Incorrect.</span>]]></text></prtincorrect>
+    <decimals>.</decimals><scientificnotation>*10</scientificnotation><multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign><complexno>i</complexno><inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol><matrixparens>[</matrixparens><isbroken>0</isbroken><variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name><type>numerical</type><tans>ta1</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans2</name><type>numerical</type><tans>ta2</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans3</name><type>numerical</type><tans>ta3</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans4</name><type>radio</type><tans>ta4</tans><boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>0</mustverify><showvalidation>0</showvalidation><options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions>0.01</testoptions>
+        <truenextnode>1</truenextnode>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans2</sans>
+        <tans>ta2</tans>
+        <testoptions>0.01</testoptions>
+        <truenextnode>2</truenextnode>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans3</sans>
+        <tans>ta3</tans>
+        <testoptions>0.1</testoptions>
+        <truenextnode>3</truenextnode>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans4</sans>
+        <tans>mcq_correct(ta4)</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 2 -->
+  <question type="stack">
+    <name><text>Biostatistics - Q2: Experimental Design Concepts</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Answer the following questions regarding experimental design:</p>
+
+<p><strong>1. Power in Split-Plot Design:</strong> In a Split-Plot design investigating "Irrigation (A)" and "Nitrogen (B)", why is the F-test for Factor A usually less powerful than Factor B?</p>
+<p>[[input:ans1]] [[validation:ans1]]</p>
+
+<p><strong>2. Latin Square Design (LSD):</strong> For an LSD with {@t@} treatments, calculate the degrees of freedom for Rows, Trt, and Error:</p>
+<p>Rows df = [[input:ans2]] [[validation:ans2]]</p>
+<p>Trt df = [[input:ans3]] [[validation:ans3]]</p>
+<p>Error df = [[input:ans4]] [[validation:ans4]]</p>
+
+<p><strong>3. Coefficient of Variation (CV):</strong> Calculate the CV (as a percentage) if \( MSE = {@MSE_val@} \), the mean \( \bar{Y} = {@mean_val@} \), and the number of replicates is accounted for in the MSE.</p>
+<p>CV (%) = [[input:ans5]] [[validation:ans5]] %</p>
+<p>[[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p><strong>1. Split-Plot Power:</strong> Factor A (Main Plot) is tested against <strong>Error (a)</strong>, which is based on fewer replications and larger experimental units. Error (a) is typically larger than Error (b), making the test for Factor A less sensitive (less power).</p>
+<p><strong>2. LSD df (t={@t@}):</strong></p>
+<ul>
+  <li>Rows df = \( t - 1 = {@t-1@} \)</li>
+  <li>Trt df = \( t - 1 = {@t-1@} \)</li>
+  <li>Error df = \( (t-1)(t-2) = ({@t-1@})({@t-2@}) = {@ta4@} \)</li>
+</ul>
+<p><strong>3. CV Calculation:</strong></p>
+<p>\[ CV = \frac{\sqrt{MSE}}{\bar{Y}} \times 100 = \frac{\sqrt{{@MSE_val@}}}{{@mean_val@}} \times 100 \approx {@ta5@} \% \]</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>ta1: [[1, true, "Factor A is tested against Error (a), which is typically larger than Error (b)"], [2, false, "Factor A has more replications than Factor B"], [3, false, "Factor B is tested against the total variance"]];
+
+t: 5;
+ta2: t - 1;
+ta3: t - 1;
+ta4: (t-1)*(t-2);
+
+MSE_val: 4.5;
+mean_val: 20;
+ta5: float((sqrt(MSE_val)/mean_val)*100);</text>
+    </questionvariables>
+    <specificfeedback format="html"><text></text></specificfeedback>
+    <questionnote format="html"><text><![CDATA[<p>LSD df={@ta4@}, CV={@ta5@}%</p>]]></text></questionnote>
+    <questiondescription format="html"><text></text></questiondescription>
+    <questionsimplify>1</questionsimplify><assumepositive>0</assumepositive><assumereal>0</assumereal>
+    <prtcorrect format="html"><text><![CDATA[<span style="color:green;">Correct!</span>]]></text></prtcorrect>
+    <prtpartiallycorrect format="html"><text><![CDATA[<span style="color:orange;">Partially correct.</span>]]></text></prtpartiallycorrect>
+    <prtincorrect format="html"><text><![CDATA[<span style="color:red;">Incorrect.</span>]]></text></prtincorrect>
+    <decimals>.</decimals><scientificnotation>*10</scientificnotation><multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign><complexno>i</complexno><inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol><matrixparens>[</matrixparens><isbroken>0</isbroken><variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name><type>radio</type><tans>ta1</tans><boxsize>15</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>0</mustverify><showvalidation>0</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans2</name><type>numerical</type><tans>ta2</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans3</name><type>numerical</type><tans>ta3</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans4</name><type>numerical</type><tans>ta4</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <input>
+      <name>ans5</name><type>numerical</type><tans>ta5</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars><syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute><forbidwords></forbidwords><allowwords></allowwords>
+      <forbidfloat>0</forbidfloat><requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation><options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>mcq_correct(ta1)</tans>
+        <truenextnode>1</truenextnode>
+      </node>
+      <node>
+        <name>1</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans2</sans>
+        <tans>ta2</tans>
+        <testoptions>0.01</testoptions>
+        <truenextnode>2</truenextnode>
+      </node>
+      <node>
+        <name>2</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans3</sans>
+        <tans>ta3</tans>
+        <testoptions>0.01</testoptions>
+        <truenextnode>3</truenextnode>
+      </node>
+      <node>
+        <name>3</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans4</sans>
+        <tans>ta4</tans>
+        <testoptions>0.01</testoptions>
+        <truenextnode>4</truenextnode>
+      </node>
+      <node>
+        <name>4</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans5</sans>
+        <tans>ta5</tans>
+        <testoptions>0.5</testoptions>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- question: 1 -->
+  <question type="stack">
+    <name><text>Convex Optimization - Q1: Convex Set Identification</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Determine whether the following set \( S \subseteq \mathbb{R}^2 \) is convex:</p>
+<p>\[ S = \{ (x, y) \mid x^2 + y^2 \le {@R2@} \} \]</p>
+<p>The set is: [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>A set \( S \) is convex if for any two points \( \mathbf{x}_1, \mathbf{x}_2 \in S \), the line segment connecting them is also in \( S \). That is, \( \lambda \mathbf{x}_1 + (1-\lambda) \mathbf{x}_2 \in S \) for all \( \lambda \in [0, 1] \).</p>
+<p>For the set \( x^2 + y^2 \le {@R2@} \), this represents a disk with radius \( {@R@} \). Since a disk is a standard example of a convex set, the answer is <strong>Convex</strong>.</p>
+<p>Formally, the function \( f(x, y) = x^2 + y^2 \) is a convex function, and the set \( \{ (x, y) \mid f(x, y) \le c \} \) is a sub-level set of a convex function, which is always convex.</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>R: rand(5)+1;
+R2: R^2;
+ta1: [[1, true, "Convex"], [2, false, "Not Convex"]];</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>radio</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>mcq_correct(ta1)</tans>
+        <truescore>1</truescore>
+        <truenextnode>-1</truenextnode>
+        <falsescore>0</falsescore>
+        <falsenextnode>-1</falsenextnode>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 2 -->
+  <question type="stack">
+    <name><text>Convex Optimization - Q2: Convex Function</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Determine whether the following function \( f: \mathbb{R} \to \mathbb{R} \) is convex:</p>
+<p>\[ f(x) = {@a@}x^2 + {@b@}x + {@c@} \]</p>
+<p>The function is: [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>To determine if a twice-differentiable function of one variable is convex, we check its second derivative \( f''(x) \).</p>
+<p>1. First derivative: \( f'(x) = 2({@a@})x + {@b@} \)</p>
+<p>2. Second derivative: \( f''(x) = 2({@a@}) = {@2*a@} \)</p>
+<p>If \( f''(x) \ge 0 \) for all \( x \), the function is convex. Since \( {@2*a@} {@if a > 0 then ">" else "<"@} 0 \), the function is <strong>{@if a > 0 then "Convex" else "Concave (Not Convex)"@}</strong>.</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>a: rand([2, 3, 4, 5, -2, -3]);
+b: rand(10)-5;
+c: rand(10);
+is_convex: a > 0;
+ta1: [[1, is_convex, "Convex"], [2, not is_convex, "Not Convex"]];</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>radio</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>mcq_correct(ta1)</tans>
+        <truescore>1</truescore>
+        <truenextnode>-1</truenextnode>
+        <falsescore>0</falsescore>
+        <falsenextnode>-1</falsenextnode>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 3 -->
+  <question type="stack">
+    <name><text>Convex Optimization - Q3: Extreme Points</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Consider the feasible region defined by the following inequalities:</p>
+<p>\[ x + y \le {@K@} \]</p>
+<p>\[ x \ge 0, \quad y \ge 0 \]</p>
+<p>Identify all the extreme points (vertices) of this region. Enter your answer as a set of points, e.g., <code>{[0,0], [1,0], [0,1]}</code>.</p>
+<p>Extreme Points = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>The region is a triangle in the first quadrant bounded by the axes and the line \( x + y = {@K@} \).</p>
+<p>The extreme points occur at the intersections of the boundary lines:</p>
+<ol>
+  <li>Intersection of \( x=0 \) and \( y=0 \): <strong>(0, 0)</strong></li>
+  <li>Intersection of \( x+y={@K@} \) and \( y=0 \): <strong>({@K@}, 0)</strong></li>
+  <li>Intersection of \( x+y={@K@} \) and \( x=0 \): <strong>(0, {@K@})</strong></li>
+</ol>
+<p>The set of extreme points is \( \{ [0, 0], [{@K@}, 0], [0, {@K@}] \} \).</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>K: rand(5)+3;
+ta1: {[0, 0], [K, 0], [0, K]};</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>algebraic</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+        <truenextnode>-1</truenextnode>
+        <falsescore>0</falsescore>
+        <falsenextnode>-1</falsenextnode>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 4 -->
+  <question type="stack">
+    <name><text>Convex Optimization - Q4: Convex Combination Property</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Let \( C \subseteq \mathbb{R}^n \) be a nonempty set. A fundamental property states that \( C \) is convex if and only if for every finite collection of points \( \mathbf{x}_1, \dots, \mathbf{x}_k \in C \) and scalars \( \lambda_1, \dots, \lambda_k \ge 0 \) satisfying \( \sum_{i=1}^k \lambda_i = 1 \), the point \( \sum_{i=1}^k \lambda_i \mathbf{x}_i \in C \).</p>
+<p>This point \( \sum_{i=1}^k \lambda_i \mathbf{x}_i \) is known as a:</p>
+<p>[[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>The definition of a <strong>convex combination</strong> of points is \( \sum \lambda_i \mathbf{x}_i \) where \( \lambda_i \ge 0 \) and \( \sum \lambda_i = 1 \).</p>
+<p>The property stated is a generalization of the convexity definition from two points to \( k \) points, often proved using induction. It is significant in optimization because it ensures that any point within the "span" of a set of feasible solutions is also feasible.</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>ta1: [[1, true, "Convex combination"], [2, false, "Linear combination"], [3, false, "Affine combination"], [4, false, "Conical combination"]];</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>radio</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>mcq_correct(ta1)</tans>
+        <truescore>1</truescore>
+        <truenextnode>-1</truenextnode>
+        <falsescore>0</falsescore>
+        <falsenextnode>-1</falsenextnode>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 5 -->
+  <question type="stack">
+    <name><text>Convex Optimization - Q5: Feasible Region Convexity</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The feasible region of a linear programming problem defined by \( \mathbf{Ax} \le \mathbf{b} \) is always a convex set. What is the geometric name for such a set (an intersection of finitely many half-spaces)?</p>
+<p>[[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>A set formed by the intersection of finitely many closed half-spaces is called a <strong>polyhedron</strong> (or a <strong>polytope</strong> if it is bounded).</p>
+<p>Convexity is fundamental to optimization because in a convex problem, any local optimum is also a global optimum. The simplex method specifically exploits the fact that the optimal solution of a linear program lies at an extreme point (vertex) of this convex polyhedron.</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>ta1: [[1, true, "Polyhedron"], [2, false, "Hyperplane"], [3, false, "Ball"], [4, false, "Cone"]];</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>radio</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>mcq_correct(ta1)</tans>
+        <truescore>1</truescore>
+        <truenextnode>-1</truenextnode>
+        <falsescore>0</falsescore>
+        <falsenextnode>-1</falsenextnode>
+      </node>
+    </prt>
+  </question>
+
+</quiz>
