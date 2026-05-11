@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: his102.pdf
+    url: dsc401.pdf
   is_hidden: false
-  pdf_url: his102.pdf
-  slug: his102
-  source: HIS102.tex
+  pdf_url: dsc401.pdf
+  slug: dsc401
+  source: DSC401.tex
   splitlevel: -2
-  title: HIS102
+  title: DSC401
   type: standalone
   url: index.html
 themes:
