@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{chirun}
+\input{preamble}
+
+\begin{document}
+
+%\newcommand\coursecode[1]{\renewcommand{\dispcoursecode}{#1}}
+
+\newcommand{\programname}{\subtitle{Programmer Title:}{\color{black}Bachelor of Data Science}}
+%\newcommand{\coursetitle}[1]{\subtitle{Course Title:}& {\color{black}#1}\\ }
+
+\newcommand{\mdno}{1}
+
+
+%\newcommand{\mdtitle}[1]{\subtitle{Learning Module Title:} & {\color{black}#1}\\ }
+\newcommand{\mddeveloper}{Michael Obiero\\ Beth Kiratu\\ Wycliffe Ogik}
+
+
+%\newcommand{\audience}{\myicon{audience}{Audience Description}}
+%\newcommand{\expectations}{\myicon{target.png}{Expectations}\par
+%{\cg This module seeks to enable learning about:}
+%}
+\newcommand{\instructions}{\subtitle{Instructions to Learners}}
+
+\newcommand{\myicon}[3][width=2.5cm]{\par
+\tikz{
+\node (a) at (0,0) {\includegraphics[#1]{img/#2}};
+\node[right=15mm] at (a){\subtitle{#3}}
+}\par}
+
+\newcommand{\myfonticons}[3][\huge\color{ulabblue}]{\par
+\tikz{
+\node (a) at (0,0) {{#1#2}};
+\node[right=15mm] at (a){\subtitle{#3}}
+}\par}
+
+%Learning module description 
+%Module objectives
+%Module learning outcomes
+
+
+
+
+\newtcolorbox{moduledescription}{colback=ulabgold!5!white,
+colframe=ulabgold,
+fonttitle=\bfseries,
+colbacktitle=ulabgold,
+enhanced,
+arc=4mm,
+top=4mm,
+attach boxed title to top center={yshift=-4mm},
+title=\subtitle{Module Description},
+%code={\addtocontents{toc}{#2}}
+}
+
+\newtcolorbox{mymlos}{colback=ulabgold!5!white,
+colframe=ulabgold,
+fonttitle=\bfseries,
+colbacktitle=ulabgold,
+enhanced,
+arc=4mm,
+top=4mm,
+attach boxed title to top center={yshift=-4mm},
+title=\subtitle{\color{white}Module Learning Outcomes},
+%code={\addtocontents{toc}{#2}}
+}
+
+\newenvironment{mlos}
+{\begin{mymlos}
+By the end of this module, you should be able to:
+\begin{eloenumerate}}
+{\end{eloenumerate}
+\end{mymlos}
+}
+
+
+
+
+
+
+%\renewcommand{\coursetitle}[1]{\subsection{#1}}
+
+\newcommand\ime{
+\subtitle{Instructional Materials and/or Equipment}
+%Digital media content on VLE, Open Educational Resources (OERs),  Virtual Classes, Smart Laboratory,   Relevant softwares and Textbooks.
+}
+
+%\input{modulecoverpage}
+
+%\input{modulemessage}
+
+\input{Module-4.tex}
+
+
+\end{document}
+

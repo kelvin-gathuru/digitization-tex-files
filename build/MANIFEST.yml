@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: dsc401.pdf
+    url: dsc401_timeseries.pdf
   is_hidden: false
-  pdf_url: dsc401.pdf
-  slug: dsc401
-  source: DSC401.tex
+  pdf_url: dsc401_timeseries.pdf
+  slug: dsc401_timeseries
+  source: DSC401_timeseries.tex
   splitlevel: -2
-  title: DSC401
+  title: DSC401_timeseries
   type: standalone
   url: index.html
 themes:
