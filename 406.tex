@@ -1,0 +1,201 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+\begin{document}
+
+\section*{MODULE 4: Model Serving Architectures and API Design}
+
+\subsection*{4.4 Introduction: Serving Is Where the Model Meets the World}
+Training determines what a model has learned. Serving determines whether that learning can be used dependably in the real world. A model that performs well in evaluation but is exposed through a brittle, slow, or ambiguous serving layer may fail to create value. This is why serving architecture deserves deliberate design.
+
+The serving layer receives requests, validates input structure, invokes model logic, applies auxiliary rules, formats outputs, records telemetry, and returns a response or fallback. In many systems, this layer is the actual product boundary that downstream users experience. Customers, analysts, operators, and partner systems do not interact directly with model weights; they interact with a service contract.
+
+The point becomes obvious when the service touches real operations. A customer applying for a KCB M-PESA loan experiences the serving API as the product’s decision surface. A dispatcher tracking deliveries across Nairobi experiences the serving architecture as operational reliability. A Kitui farmer uploading a diseased maize leaf experiences the serving layer as responsiveness and trust. If the request hangs, if fields are rejected inconsistently, or if error messages are unclear, the model’s offline accuracy becomes irrelevant.
+
+For this reason, production ML should treat the serving layer as a serious engineering component rather than a thin afterthought wrapped around a notebook artifact.
+
+\subsection*{4.5 The Basic Shape of a Prediction Service}
+A typical prediction service sits between clients and the model runtime. It accepts a request, validates the request shape, loads or accesses the relevant model, prepares the feature representation, computes a prediction, attaches metadata or confidence information where appropriate, and returns a response. At the same time, it emits logs, metrics, and traces for operational visibility.
+
+In practice, the request path may involve more than direct inference. A serving layer may need to fetch reference data, apply thresholds, look up customer status, enforce guardrails, or route requests to a specialized downstream model. This is why API design and architecture matter: a production inference service is usually part model, part software system, and part operational policy.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fig1.png}
+    \caption{The basic structure of a production prediction service.}
+\end{figure}
+
+Figure 15 shows the main serving boundary. The lesson is not that every system must have exactly these components, but that dependable inference requires explicit request handling, explicit logic, and explicit observability.
+
+\subsection*{4.6 Stateless and Stateful Serving}
+Many production inference services are stateless. This means each request is handled independently, without depending on the service remembering prior requests. Stateless serving is attractive because it simplifies horizontal scaling. Any replica can handle any request, making autoscaling and failover easier.
+
+Stateless serving is well suited to tasks like tabular credit scoring, image classification, document tagging, or many one-shot API predictions. Examples include a Mwalimu National SACCO risk-score endpoint, a crop-image classification endpoint used by University of Nairobi agronomy teams, or a student-support score calculated from a submitted record at the Open University of Kenya.
+
+Stateful serving, by contrast, is appropriate when the model must retain or access session-specific context across multiple interactions. This can happen in conversational systems, sequential recommendation flows, time-series state tracking, or certain caching-heavy workflows. Stateful serving is often more difficult to scale because requests may need affinity to a particular session or context store.
+
+The key lesson is that state should not be introduced casually. If a problem can be served statelessly, that is often operationally safer. If state is necessary, the design must explicitly manage where the state lives, how it is updated, how it is recovered, and how it affects scaling.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{3cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Pattern} & \textbf{Strengths} & \textbf{Typical local examples} \\ \hline
+Stateless serving & Easier scaling, simpler routing, easier failure recovery & Loan scoring endpoint, crop image classifier, facility prioritization score API \\ \hline
+Stateful serving & Supports sequential context and session-sensitive logic & Conversational assistant, repeated customer-session recommendation flow, streaming advisory session \\ \hline
+\end{tabular}
+\caption{Comparing stateless and stateful serving patterns.}
+\end{table}
+
+\subsection*{4.7 Pipeline, Ensemble, and Routing Architectures}
+A single prediction request may involve more than one model or more than one processing stage. This leads to serving architectures such as pipelines, ensembles, and routing-based systems.
+
+A pipeline architecture chains multiple steps together, such as preprocessing, model inference, postprocessing, and business-rule filtering. This is useful when the prediction process is naturally staged and when each stage should remain explicit and testable.
+
+An ensemble architecture combines outputs from multiple models to improve robustness, reduce error variance, or specialize across input types. For instance, one model may handle short text inputs while another handles longer documents, with a combining rule producing the final response.
+
+A routing architecture uses a decision layer to send requests to different downstream models or services depending on input characteristics. A service used by Safaricom or Airtel customer-care channels, for example, might route English, Kiswahili, and mixed-language requests differently. A logistics system might route Nairobi CBD and upcountry delivery contexts through different ETA models.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fig2.png}
+    \caption{A routing and ensemble-style serving architecture.}
+\end{figure}
+
+This architecture is useful for tasks where one monolithic model is not the most maintainable or context-aware choice. However, each added stage increases operational complexity, so such designs should be justified by real need.
+
+\subsection*{4.8 The Business Logic Pattern}
+Production systems rarely expose model output directly without interpretation. They usually wrap the prediction in surrounding business logic. This logic may include thresholding, data lookups, eligibility rules, fallback policies, risk flags, explanation formatting, and external API calls.
+
+For example, a lending model may output a probability of default, but the final system response may also depend on whether the applicant is an existing member, whether required KYC fields are present, whether account status is active, and whether the predicted risk falls within policy boundaries. In such a case, the final decision is not just the model score; it is the model score interpreted inside business rules.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fig3.png}
+    \caption{Business logic translates model outputs into operational decisions.}
+\end{figure}
+
+This pattern matters because many operational failures come not from the model weights but from mismatches between model output and surrounding rules. A well-designed serving layer makes these rules explicit rather than burying them across multiple hidden scripts.
+
+\subsection*{4.9 API Contracts, Schema Validation, and Backward Compatibility}
+An inference API must communicate clearly what inputs it accepts and what outputs it returns. This is the role of the API contract. A strong contract specifies field names, data types, required versus optional fields, accepted ranges, default handling, error responses, and sometimes versioning expectations.
+
+Schema validation is essential because it prevents bad requests from silently producing nonsense predictions. If a field is missing, malformed, or outside an acceptable range, the API should fail in a controlled and interpretable way. This protects both the model and downstream users.
+
+Backward compatibility also matters. Over time, API contracts evolve. If the team changes the request format carelessly, mobile apps, partner systems, or dashboards may break. A disciplined serving design therefore introduces versioning, deprecation policies, or adapter layers rather than assuming that all clients will upgrade simultaneously.
+
+Backward compatibility is especially relevant when clients include a mix of mobile apps, browser dashboards, partner integrations, USSD-linked middleware, and field devices that may not all update on the same schedule. That is common when one service must keep working for KCB or Equity mobile users, branch dashboards, and older field devices at the same time.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|p{3.5cm}|p{4.5cm}|p{6cm}|}
+\hline
+\textbf{API Design Element} & \textbf{Why it matters} & \textbf{Risk if ignored} \\ \hline
+Request schema & Defines accepted input structure & Invalid records reach inference layer \\ \hline
+Response schema & Standardizes downstream interpretation & Clients misread scores or labels \\ \hline
+Validation rules & Prevent malformed or unsafe inputs & Silent errors or misleading predictions \\ \hline
+Error contract & Communicates failure clearly & Support and debugging become harder \\ \hline
+Versioning policy & Supports gradual API evolution & Existing clients break unexpectedly \\ \hline
+Authentication boundary & Protects access to the service & Unauthorized use or data leakage \\ \hline
+\end{tabular}
+\caption{Key design elements of a robust prediction API.}
+\end{table}
+
+\subsection*{4.10 Concurrency, Latency Budgets, and Timeouts}
+Serving architecture is not only about logical correctness. It is also about performance under load. A service that works for one request at a time may fail when thousands of users or upstream systems hit it simultaneously.
+
+A useful way to think about performance is through a latency budget. If a product requires a total response time of $L_{budget}$, then the serving system must allocate that time across network transfer, request queueing, preprocessing, model execution, and response formatting:
+\[ L_{budget} = L_{network} + L_{queue} + L_{prep} + L_{model} + L_{response} \]
+
+This equation reminds learners that model execution is only one part of end-to-end latency. Concurrency also matters. A simple service capacity approximation is:
+\[ C \approx \lambda \times W \]
+where $\lambda$ is the request arrival rate and $W$ is average service time. While this is only a simplified planning relationship, it helps illustrate why rising traffic or slow requests quickly increase pressure on the serving layer.
+
+Timeout policies are equally important. A prediction request should not wait forever. If a dependency stalls or a model becomes slow, the system should return a controlled error, fallback result, or deferred workflow rather than hanging indefinitely.
+
+These design choices are practical rather than theoretical. An M-PESA fraud endpoint during salary week, the Open University of Kenya portal during registration, or a Nairobi delivery platform during peak traffic all experience demand spikes. Serving systems should be built with those spikes in mind.
+
+\subsection*{4.11 Batching, Caching, and Safe Model Loading}
+Three common serving optimizations are batching, caching, and safe model loading.
+
+Batching groups multiple requests together so the model can process them more efficiently, especially on accelerators. This improves throughput but may introduce slight waiting time as requests accumulate. Batching is most useful when the workload is high-volume and the service can tolerate a small amount of queueing.
+
+Caching stores reusable results or intermediate values so that repeated requests can be served faster. Caching is particularly useful when inputs repeat, when expensive feature lookups recur, or when reference data changes slowly. However, caching must be carefully invalidated; otherwise stale results may be served.
+
+Safe model loading means ensuring that the serving system loads only approved, compatible, and expected artifacts. A service should not accidentally load an outdated model, an incompatible dependency bundle, or an unapproved experimental artifact. Registry integration, checksum verification, and startup checks help reduce this risk.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fig4.png}
+    \caption{Batching, caching, and safe loading as serving-layer optimizations.}
+\end{figure}
+
+\subsection*{Two-Phase Edge-Cloud Serving}
+Some production systems must operate across unreliable connectivity or strict responsiveness constraints. In such cases, a two-phase serving pattern can be helpful. A lightweight local model provides immediate, low-latency output, while a stronger cloud model later performs richer verification, refinement, or audit.
+
+The pattern is easy to see in real deployments. A Kitui farmer may need immediate crop advice on-device, while agronomists at the University of Nairobi review difficult cases in the cloud. A clinician in a Kisumu County facility may use a tablet assistant offline, while a central system later rechecks selected cases. A delivery app may cache local decisions and synchronize with central optimization once coverage stabilizes.
+
+The strength of the two-phase design is that it balances usability with accuracy and governance. Its main challenge is consistency: teams must define what happens when the local and cloud outputs disagree, and how those disagreements feed into monitoring and retraining.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fig5.png}
+    \caption{A two-phase serving pattern for low-connectivity or latency-sensitive settings.}
+\end{figure}
+
+\subsection*{4.13 Security, Authentication, and Safe Failure Design}
+Serving layers expose organizational intelligence to the outside world or to dependent internal systems. This means they must be protected. Authentication and authorization determine who can call the service. Input validation protects the model from malformed or malicious requests. Rate limiting and timeout boundaries help preserve service availability under abnormal load. Logging supports audit and incident response.
+
+Safe failure design is equally important. When a serving layer cannot produce a dependable response, it should fail visibly and safely. Depending on the use case, this might mean returning a clear error, triggering human review, using a fallback rule, or deferring the decision until required information is available. What matters is that failure is deliberate rather than silent.
+
+Safe failure design is closely tied to public trust. If an eligibility API for KCB M-PESA returns confusing outputs, or a Kisumu County triage-support tool silently degrades, the institutional harm extends far beyond the immediate technical fault.
+
+\subsection*{Evaluation 4.15 Worked Example: Designing an Inference API Contract}
+Suppose Mwalimu National SACCO wants a loan pre-screening API. A strong contract would define required fields such as member identifier, declared income band, loan amount, tenure, repayment history indicators, and account standing. It would specify acceptable value ranges, reject malformed records explicitly, and return structured outputs such as score, decision band, reasons, model version, and timestamp. It would also define error responses for missing fields, invalid authorization, or unavailable upstream dependencies.
+
+A careful API contract reduces both technical ambiguity and institutional risk. It ensures that branch systems, mobile channels, and internal dashboards interpret responses consistently.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/fig6.png}
+    \caption{A simple design pattern for a structured prediction API.}
+\end{figure}
+
+\section*{Module 4 Practical Notebook Track: FastAPI and KServe}
+This practical track introduces the core serving tools for this module: FastAPI for application layer serving and KServe for Kubernetes-native model serving. A useful nice-to-have tool is BentoML. Common enterprise alternatives are Seldon Core and NVIDIA Triton in larger platform environments.
+
+\textbf{Notebook 1: Build the inference API with FastAPI}
+\begin{verbatim}
+from fastapi import FastAPI 
+from pydantic import BaseModel 
+
+app = FastAPI(title="SACCO Loan API") 
+
+class LoanRequest(BaseModel): 
+    income_band: int 
+    repayment_ratio: float 
+
+@app.post("/predict") 
+def predict(req: LoanRequest): 
+    score = round(0.4 * req.income_band + 0.6 * (1 - req.repayment_ratio), 2) 
+    return {"score": score, "model_version": "v1"}
+\end{verbatim}
+
+\textbf{Notebook 2: Define the serving object in KServe}
+\begin{verbatim}
+apiVersion: serving.kserve.io/v1beta1 
+kind: InferenceService 
+metadata: 
+  name: sacco-loan-api 
+spec: 
+  predictor: 
+    containers: 
+    - name: predictor 
+      image: sacco-loan-api:0.1 
+      ports: 
+      - containerPort: 8000 
+
+!kubectl apply -f kserve-inferenceservice.yaml
+\end{verbatim}
+
+\end{document}

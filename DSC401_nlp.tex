@@ -1,0 +1,123 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+
+\begin{document}
+
+\section*{READING MATERIALS}
+
+\subsection*{Introduction}
+
+In Natural Language Processing (NLP), representing text in a format that machines can understand is a fundamental step. Raw text cannot be directly used in computational models, so we transform it into numerical representations that capture important information about words, phrases, and their relationships. There are many techniques of representing text, they include: One-hot encoding, Bag of Words (BoW), TF-IDF, word embeddings, among others.
+
+Feature engineering, on the other hand, involves transforming raw text data into meaningful features that improve model performance.
+
+\subsection*{One-hot encoding}
+
+One of the most basic jobs in NLP is to represent text data numerically so that machine learning algorithms can comprehend it. One common method for accomplishing this is one-hot encoding. One-hot encoding is the process of turning categorical factors into a numerical structure that machine learning algorithms can readily process. It functions by representing each category in a feature as a binary vector of 1s and 0s, with the vector's size equivalent to the number of potential categories.
+
+\subsection*{Bag of words}
+
+The bag-of-words (BoW) model is a method used in natural language processing (NLP) that represents text as an unordered collection of words, disregarding grammar and word order. It captures the presence or frequency of each word, allowing for the transformation of textual data into a machine-readable format. This technique is widely used for tasks such as text classification and information retrieval, as it simplifies the representation of text data for processing in machine learning algorithms.
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{images/pic.png}
+%     \caption{One-hot Encoding vs Bag of words}
+% \end{figure}
+
+\subsection*{TF-IDF}
+
+TF-IDF, or Term Frequency-Inverse Document Frequency, is a statistical measure used to evaluate the importance of a word in a collection of documents, known as a corpus. It combines two metrics:
+\begin{itemize}
+    \item \textbf{Term Frequency (TF)}: Measures how often a term appears in a document.
+    \item \textbf{Inverse Document Frequency (IDF)}: Assesses how common or rare a term is across all documents.
+\end{itemize}
+This method is widely used in information retrieval and text mining to identify the most relevant terms in a document.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/pic1.png}
+    \caption{TF/IDF illustration}
+\end{figure}
+
+\subsection*{Word Embeddings}
+
+Word Embeddings are numeric representations of words in a lower-dimensional space that capture semantic and syntactic information. It allows words with similar meanings to have a similar representation. Thus, similarity can be assessed based on similar vector representations. Word embedding plays an important role in Natural Language Processing (NLP) tasks.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/pic2.png}
+    \caption{Word embeddings}
+\end{figure}
+
+\textbf{Techniques}: Word2Vec, GloVe, FastText.
+
+\textbf{Strengths}:
+\begin{itemize}
+    \item Captures semantic relationships (e.g., ``king -- man + woman $\approx$ queen'').
+    \item Context-aware and suitable for deep learning models.
+\end{itemize}
+
+\textbf{Limitations}:
+\begin{itemize}
+    \item Requires large corpora or pre-trained models.
+    \item Computationally intensive to train from scratch.
+\end{itemize}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/pic3.png}
+    \caption{CBOW VS Skip-gram}
+\end{figure}
+
+\subsubsection*{Word embeddings Models}
+
+\paragraph{a) Word2Vec (Mikolov et al., 2013, Google)}
+Learns embeddings by predicting words based on context (or vice versa).
+
+Two architectures:
+\begin{itemize}
+    \item \textbf{CBOW (Continuous Bag-of-Words)}: Predicts a target word from surrounding context words. \\
+    \textit{Example}: Context (``Nairobi is the city under the \_\_\_'') $\rightarrow$ predicts ``Sun''.
+    \item \textbf{Skip-gram}: Predicts context words given a target word. \\
+    \textit{Example}: Context (``I \_\_\_ NLP'') $\rightarrow$ predicts ``love''.
+\end{itemize}
+
+
+\textbf{Strength}: Captures both syntactic and semantic meaning. \\
+\textbf{Limitation}: Each word has a single vector (no context awareness).
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/pic4.png}
+    \caption{Contextualized Word Embeddings (ELMo)}
+\end{figure}
+\paragraph{b) GloVe (Global Vectors for Word Representation, 2014, Stanford)}
+Combines the advantages of count-based and predictive models. Learns embeddings by factorizing a global word co-occurrence matrix.
+\begin{itemize}
+    \item \textbf{Core idea}: Ratios of co-occurrence probabilities encode meaning.
+    \item \textbf{Strength}: Captures both global statistics and local context.
+    \item \textbf{Limitation}: Still context-independent.
+\end{itemize}
+
+\paragraph{c) FastText (Facebook AI, 2016)}
+Extension of Word2Vec that represents words as a bag of character n-grams.
+\begin{itemize}
+    \item \textbf{Example}: ``playing'' $\rightarrow$ [``play'', ``lay'', ``ing''].
+    \item \textbf{Strength}: Can generate embeddings for unseen or rare words.
+    \item \textbf{Limitation}: Limited context understanding.
+\end{itemize}
+
+\paragraph{d) ELMo (Embeddings from Language Models, 2018)}
+Generates contextualized embeddings using bi-directional LSTM networks. The same word has different vectors in different contexts.
+\begin{itemize}
+    \item \textbf{Example}:
+    \begin{itemize}
+        \item ``He went to the bank to deposit money.''
+        \item ``He sat by the bank of the river.''
+    \end{itemize}
+    $\rightarrow$ Different vectors for ``bank''.
+\end{itemize}
+
+
+
+\end{document}

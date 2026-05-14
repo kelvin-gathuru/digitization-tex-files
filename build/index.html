@@ -7,50 +7,50 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="None" />
-    <meta name="date" content="2026-05-13" />
+    <meta name="date" content="2026-05-14" />
 
 
-    <title>DSC401_timeseries | </title>
-
-
-
-
-    <link rel="stylesheet" href="static/styles.css?build_time=1778668855.053899">
+    <title>DSC401_signal | </title>
 
 
 
-    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1778668855.053899">
 
-    <link rel="stylesheet" href="static/print.css?build_time=1778668855.053899">
+    <link rel="stylesheet" href="static/styles.css?build_time=1778748951.335569">
+
+
+
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1778748951.335569">
+
+    <link rel="stylesheet" href="static/print.css?build_time=1778748951.335569">
 
 
 
 
     <script>
-        var chirun_static_url = new URL('static?build_time=1778668855.053899', location.href);
+        var chirun_static_url = new URL('static?build_time=1778748951.335569', location.href);
     </script>
 
 
-    <script defer src="static/mathjax_config.js?build_time=1778668855.053899"></script>
+    <script defer src="static/mathjax_config.js?build_time=1778748951.335569"></script>
     <script type="text/javascript" id="MathJax-script" defer
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-    <script type="module" src="static/localisation.js?build_time=1778668855.053899"></script>
+    <script type="module" src="static/localisation.js?build_time=1778748951.335569"></script>
 
-    <script defer src="static/customisation.js?build_time=1778668855.053899"></script>
-
-
+    <script defer src="static/customisation.js?build_time=1778748951.335569"></script>
 
 
 
-    <script defer src="static/code.js?build_time=1778668855.053899" type="module"></script>
-    <script defer src="static/embed_numbas.js?build_time=1778668855.053899" type="module"></script>
-    <script defer src="static/embed_qrcode.js?build_time=1778668855.053899" type="module"></script>
+
+
+    <script defer src="static/code.js?build_time=1778748951.335569" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1778748951.335569" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1778748951.335569" type="module"></script>
 
 
     <template id="runnable-code-template">
-        <link rel="stylesheet" href="static/code.css?build_time=1778668855.053899">
+        <link rel="stylesheet" href="static/code.css?build_time=1778748951.335569">
         <div class="runnable-code-wrapper">
             <section class="fullscreenable code">
                 <div id="code"></div>
@@ -179,7 +179,7 @@
     </template>
 
     <template id="embed-numbas-template">
-        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1778668855.053899">
+        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1778748951.335569">
         <details id="wrapper" data-completion-status="incomplete">
             <summary>
                 <h1 id="title">Test Yourself</h1>
@@ -363,7 +363,7 @@
 
             <ul class="alternative-formats">
 
-                <li><a rel="alternate" type="application/pdf" href="dsc401_timeseries.pdf" download><svg class="icon"
+                <li><a rel="alternate" type="application/pdf" href="dsc401_signal.pdf" download><svg class="icon"
                             aria-label="PDF" viewBox="0 0 180 180">
                             <use href="#pdf" />
                         </svg> Download as PDF</a></li>
@@ -380,7 +380,7 @@
                 <li role="none" data-toc-level="1" class="toc-header  has-children">
                     <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
                         <span class="toc-marker"></span>
-                        1 Handling missing values in time series data
+                        Fundamentals of Digital Signal Detection in Noise
                     </a>
 
 
@@ -390,278 +390,7 @@
                         <li role="none" data-toc-level="2" class="toc-header ">
                             <a role="treeitem" aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
 
-                                1.1 Air Quality dataset
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
-
-                                1.2 Identifying missing values
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000009"
-                                href="#a0000000009">
-                                <span class="toc-marker"></span>
-                                1.3 Handling missing values
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000009">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000010" href="#a0000000010">
-
-                                        Interpolation
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000011" href="#a0000000011">
-
-                                        Forward Filling
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000012" href="#a0000000012">
-
-                                        Backward Filling
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000013" href="#a0000000013">
-
-                                        Choosing an appropriate method
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000018"
-                                href="#a0000000018">
-                                <span class="toc-marker"></span>
-                                1.4 Time indexing in time series data
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000018">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000019" href="#a0000000019">
-
-                                        The ts Object in R
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000024" href="#a0000000024">
-
-                                        The zoo Package
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000029" href="#a0000000029">
-
-                                        The xts Package
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000034" href="#a0000000034">
-
-                                1.5 Importance of proper time indexing
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000040" href="#a0000000040">
-                        <span class="toc-marker"></span>
-                        2 Introduction to outliers
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000040">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000041" href="#a0000000041">
-
-                                2.1 Main methods to detect outliers
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000042" href="#a0000000042">
-
-                                2.2 Boxplot method
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000043" href="#a0000000043">
-
-                                2.3 Z-Score method
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000044" href="#a0000000044">
-
-                                2.4 Interquartile range (IQR) method
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000045" href="#a0000000045">
-                        <span class="toc-marker"></span>
-                        3 Other Outlier detection methods
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000045">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000059"
-                                href="#a0000000059">
-                                <span class="toc-marker"></span>
-                                3.1 Methods to remove outliers
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000059">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000060" href="#a0000000060">
-
-                                        IQR-based removal
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000061" href="#a0000000061">
-
-                                        Z-Score-based removal
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000066" href="#a0000000066">
-                        <span class="toc-marker"></span>
-                        4 Data smoothing and preparing datasets
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000066">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000067"
-                                href="#a0000000067">
-                                <span class="toc-marker"></span>
-                                4.1 Data smoothing techniques
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000067">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000068" href="#a0000000068">
-
-                                        Moving averages
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000069" href="#a0000000069">
-
-                                        Simple exponential smoothing (SES)
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000070" href="#a0000000070">
-
-                                4.2 Preparing datasets for modeling and visualization
+                                Reading Material: Digital Signal Detection Techniques
                             </a>
 
 
@@ -673,9 +402,9 @@
                 </li>
 
                 <li role="none" data-toc-level="1" class="toc-header ">
-                    <a role="treeitem" aria-owns="#toc-subtree-a0000000071" href="#a0000000071">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
 
-                        5 Practical Application
+                        Advanced Digital Signal Techniques
                     </a>
 
 
@@ -689,606 +418,42 @@
 
         <article class="item-content" id="item-content">
             <section class="section">
-                <h2 id="a0000000002">1 Handling missing values in time series data</h2>
+                <h2 id="a0000000002">Fundamentals of Digital Signal Detection in Noise</h2>
                 <p>
-                    Missing values are common in real-world datasets due to sensor failures, data entry errors,
-                    transmission interruptions, or incomplete observations. In time series analysis, missing values can
-                    distort patterns, bias statistical estimates, and reduce the reliability of forecasts. Therefore,
-                    identifying and treating missing observations is an essential step in data preprocessing before
-                    modeling or visualization. In R, missing values are typically represented by NA.
+                    Digital signal detection in the presence of noise is realized by comparing received signals against
+                    thresholds, using methods such as correlation, matched filtering, and likelihood ratio testing. The
+                    aim is to maximize the signal-to-noise ratio (SNR) using statistical techniques to distinguish
+                    desired information from random noise.
                 </p>
                 <section class="subsection">
-                    <h3 id="a0000000003">1.1 Air Quality dataset</h3>
+                    <h3 id="a0000000003">Reading Material: Digital Signal Detection Techniques</h3>
                     <p>
-                        The airquality dataset in R contains 153 daily air pollution observations recorded in New York
-                        City from May to September 1973 (We will date it from 1st May 1973 to 30th September 1973).
-                        Variables include ozone concentration, solar radiation, wind speed, temperature, month, and day.
-                        Some ozone and solar radiation measurements are missing, making the dataset useful for
-                        practicing data cleaning and time-series preparation.
+                        <b class="bfseries">Reading Material 1: (Signal Detection Techniques)</b>
                     </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000004">1.2 Identifying missing values</h3>
                     <p>
-                        Before applying any correction technique, it is important to detect and quantify missing values.
-                        Common R functions include:
+                        Tuzlukov, V. (2018). <i class="itshape">Signal Processing Noise</i>. Ukraine: CRC Press.
                     </p>
-                    <ul class="itemize" id="a0000000005">
-                        <li id="a0000000006">
-                            <p>
-                                <span class="ttfamily">is.na()</span> — identifies missing values
-                            </p>
-                        </li>
-                        <li id="a0000000007">
-                            <p>
-                                <span class="ttfamily">sum(is.na(x))</span> — counts missing values
-                            </p>
-                        </li>
-                        <li id="a0000000008">
-                            <p>
-                                <span class="ttfamily">which(is.na(x))</span> — identifies the positions of missing
-                                observations
-                            </p>
-                        </li>
-                    </ul>
                     <p>
-                        <b class="bfseries">Example:</b>
-                    </p>
-                    <pre class="verbatim">
-#confirm the number of missing values
-sum(is.na(airquality$Ozone))
-</pre>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000009">1.3 Handling missing values</h3>
-                    <p>
-                        Understanding the distribution of missing values helps determine whether simple imputation
-                        methods are sufficient or more sophisticated approaches are required.
-                    </p>
-                    <section class="subsubsection">
-                        <h4 id="a0000000010">Interpolation</h4>
-                        <p>
-                            Interpolation estimates missing values using nearby data points. It works well when missing
-                            observations occur within the series and the data changes smoothly over time. In R, linear
-                            interpolation can be done using <span class="ttfamily">na.approx()</span> from the <span
-                                class="ttfamily">zoo</span> package:
-                        </p>
-                        <pre class="verbatim">
-#install and call the zoo library
-library(zoo)
-#interpolate to fill in the missing values
-ozone_interp &lt;- na.approx(airquality$Ozone)
-</pre>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000011">Forward Filling</h4>
-                        <p>
-                            Forward filling replaces missing values with the most recent available observation. It is
-                            useful when values tend to persist for short periods. In R, forward filling is implemented
-                            with <span class="ttfamily">na.locf()</span>:
-                        </p>
-                        <pre class="verbatim">
-library(zoo)
-#Forward filling method to replace missing values
-ozone_ffill &lt;- na.locf(airquality$Ozone)
-</pre>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000012">Backward Filling</h4>
-                        <p>
-                            Backward filling replaces missing values with the next available observation:
-                        </p>
-                        <pre class="verbatim">
-ozone_bfill &lt;- na.locf(airquality$Ozone, fromLast = TRUE)
-</pre>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000013">Choosing an appropriate method</h4>
-                        <ul class="itemize" id="a0000000014">
-                            <li id="a0000000015">
-                                <p>
-                                    Interpolation is suitable for continuous variables with gradual changes.
-                                </p>
-                            </li>
-                            <li id="a0000000016">
-                                <p>
-                                    Forward filling is appropriate when the last observation remains valid.
-                                </p>
-                            </li>
-                            <li id="a0000000017">
-                                <p>
-                                    Backward filling is useful for missing values at the beginning of a series.
-                                </p>
-                            </li>
-                        </ul>
-                        <p>
-                            If a large fraction of data is missing, more advanced techniques or dataset reconstruction
-                            may be necessary.
-                        </p>
-                    </section>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000018">1.4 Time indexing in time series data</h3>
-                    <p>
-                        Time indexing organizes observations according to their timestamps. Proper indexing ensures that
-                        temporal relationships between observations are preserved, which is essential for analysis,
-                        visualization, and forecasting. R provides several structures for time series data: <span
-                            class="ttfamily">ts</span>, <span class="ttfamily">zoo</span>, and <span
-                            class="ttfamily">xts</span>.
-                    </p>
-                    <section class="subsubsection">
-                        <h4 id="a0000000019">The ts Object in R</h4>
-                        <p>
-                            The <span class="ttfamily">ts</span> object is suitable for regularly spaced time series
-                            data. Using the built-in <span class="ttfamily">airquality</span> dataset, which contains
-                            daily observations from May 1, 1973 to September 30, 1973, we can create a <span
-                                class="ttfamily">ts</span> object for the Ozone variable.
-                        </p>
-                        <p>
-                            Since the data are daily, we approximate the frequency as 30 observations per month. The
-                            <span class="ttfamily">ts</span> object in R does not store actual calendar dates; it only
-                            stores a numeric time index based on the start and frequency.
-                        </p>
-                        <pre class="verbatim">
-# Create ts object for Ozone
-ozone_ts &lt;- ts(airquality$Ozone,
-start = c(1973, 5),
-frequency = 30)
-</pre>
-                        <p>
-                            <b class="bfseries">Advantages:</b>
-                        </p>
-                        <ul class="itemize" id="a0000000020">
-                            <li id="a0000000021">
-                                <p>
-                                    Simple structure for regular series
-                                </p>
-                            </li>
-                            <li id="a0000000022">
-                                <p>
-                                    Compatible with forecasting and decomposition functions
-                                </p>
-                            </li>
-                            <li id="a0000000023">
-                                <p>
-                                    Built-in plotting for time series visualization
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000024">The zoo Package</h4>
-                        <p>
-                            The <span class="ttfamily">zoo</span> package can handle irregular and regular time series.
-                            Here we create a <span class="ttfamily">zoo</span> object for the Ozone variable indexed by
-                            actual dates from May 1 to September 30, 1973.
-                        </p>
-                        <pre class="verbatim">
-library(zoo)
-# Create date sequence
-dates &lt;- seq(as.Date("1973-05-01"), as.Date("1973-09-30"), by = "day")
-# Create zoo object (ensure lengths match)
-ozone_zoo &lt;- zoo(airquality$Ozone, dates)
-</pre>
-                        <p>
-                            <b class="bfseries">Advantages:</b>
-                        </p>
-                        <ul class="itemize" id="a0000000025">
-                            <li id="a0000000026">
-                                <p>
-                                    Flexible indexing using real dates
-                                </p>
-                            </li>
-                            <li id="a0000000027">
-                                <p>
-                                    Handles missing values with interpolation functions
-                                </p>
-                            </li>
-                            <li id="a0000000028">
-                                <p>
-                                    Suitable for irregularly spaced time series
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000029">The xts Package</h4>
-                        <p>
-                            The <span class="ttfamily">xts</span> package builds upon <span class="ttfamily">zoo</span>
-                            and is optimized for high-performance operations. It allows subsetting, aggregation, and
-                            plotting efficiently. We can create an <span class="ttfamily">xts</span> object using the
-                            same <span class="ttfamily">airquality</span> data:
-                        </p>
-                        <pre class="verbatim">
-library(xts)
-# Create xts object
-ozone_xts &lt;- xts(airquality$Ozone, order.by = dates)
-</pre>
-                        <p>
-                            <b class="bfseries">Features:</b>
-                        </p>
-                        <ul class="itemize" id="a0000000030">
-                            <li id="a0000000031">
-                                <p>
-                                    Fast indexing and subsetting by date ranges
-                                </p>
-                            </li>
-                            <li id="a0000000032">
-                                <p>
-                                    Easy aggregation (daily \(\rightarrow \) monthly averages)
-                                </p>
-                            </li>
-                            <li id="a0000000033">
-                                <p>
-                                    Compatible with time-based plotting and financial/time series tools
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000034">1.5 Importance of proper time indexing</h3>
-                    <ul class="itemize" id="a0000000035">
-                        <li id="a0000000036">
-                            <p>
-                                Preserves chronological order
-                            </p>
-                        </li>
-                        <li id="a0000000037">
-                            <p>
-                                Supports temporal operations like resampling and smoothing
-                            </p>
-                        </li>
-                        <li id="a0000000038">
-                            <p>
-                                Improves visualization of time trends
-                            </p>
-                        </li>
-                        <li id="a0000000039">
-                            <p>
-                                Facilitates accurate forecasting
-                            </p>
-                        </li>
-                    </ul>
-                    <p>
-                        Handling missing values and properly indexing time series are fundamental steps in
-                        preprocessing. Missing values can be treated via interpolation, forward filling, or backward
-                        filling. Time indexing structures, such as <span class="ttfamily">ts</span>, <span
-                            class="ttfamily">zoo</span>, and <span class="ttfamily">xts</span>, allow analysts to
-                        organize data chronologically for accurate analysis, visualization, and forecasting.
+                        <a
+                            href="https://www.google.co.ke/books/edition/Signal_Processing_Noise/xffLBQAAQBAJ?hl=en&amp;gbpv=0">https://www.google.co.ke/books/edition/Signal_Processing_Noise/xffLBQAAQBAJ?hl=en&amp;gbpv=0</a>
                     </p>
                 </section>
             </section>
             <section class="section">
-                <h2 id="a0000000040">2 Introduction to outliers</h2>
+                <h2 id="a0000000004">Advanced Digital Signal Techniques</h2>
                 <p>
-                    Outliers are observations that differ markedly from the rest of the data. They may occur due to
-                    measurement errors, recording mistakes, or natural variability. Detecting outliers is critical in
-                    time series analysis because they can bias estimates, distort trends, and affect forecasting.
+                    Advanced digital signal detection techniques aim at handling real-world challenges matched such as
+                    interference, fading channels, limited bandwidth, and multi-user environments. These techniques are
+                    widely used in modern wireless, radar, and communication systems. Watch the video on the advanced
+                    signal detection in 4.2.1 make a summary and key highlights then hold an online discussion on
+                    different advanced detection techniques and their appllications
                 </p>
-                <p>
-                    The airquality dataset contains daily air quality measurements in New York from May to September
-                    1973, including variables Ozone, Solar.R, Wind, Temp, Month, and Day. It is ideal for practicing
-                    outlier detection.
-                </p>
-                <section class="subsection">
-                    <h3 id="a0000000041">2.1 Main methods to detect outliers</h3>
-                    <p>
-                        We focus on three primary methods for detecting outliers in R: Boxplots, Z-score, and
-                        Interquartile Range (IQR). Other methods such as <span class="ttfamily">tsoutliers()</span> for
-                        time series or Mahalanobis distance for multivariate data are mentioned briefly.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000042">2.2 Boxplot method</h3>
-                    <p>
-                        Boxplots identify observations outside 1.5 times the interquartile range (IQR) as potential
-                        outliers.
-                    </p>
-                    <pre class="verbatim">
-# Boxplot for Ozone
-boxplot(airquality$Ozone,
-main = "Boxplot of Ozone",
-ylab = "Ozone (ppb)",
-col = "lightblue",
-na.action = na.omit)
-</pre>
-                    <p>
-                        Points beyond the whiskers are considered potential outliers. Boxplots provide a quick visual
-                        indication.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000043">2.3 Z-Score method</h3>
-                    <p>
-                        The Z-score standardizes each observation. Values with absolute Z-scores greater than 3 are
-                        often flagged as outliers.
-                    </p>
-                    <pre class="verbatim">
-# Z-score method for Ozone
-ozone_z &lt;- scale(airquality$Ozone)
-outliers_z &lt;- which(abs(ozone_z) &gt; 3)
-outliers_z
-# Inspect the outlier values
-airquality$Ozone[outliers_z]
-</pre>
-                    <p>
-                        This method works best for approximately normally distributed variables.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000044">2.4 Interquartile range (IQR) method</h3>
-                    <p>
-                        The IQR method uses the spread of the middle 50% of the data to identify extreme observations.
-                    </p>
-                    <pre class="verbatim">
-# IQR method for Ozone
-Q1 &lt;- quantile(airquality$Ozone, 0.25, na.rm = TRUE)
-Q3 &lt;- quantile(airquality$Ozone, 0.75, na.rm = TRUE)
-IQR_val &lt;- Q3 - Q1
-lower_bound &lt;- Q1 - 1.5 * IQR_val
-upper_bound &lt;- Q3 + 1.5 * IQR_val
-outliers_iqr &lt;- which(airquality$Ozone &lt; lower_bound | airquality$Ozone &gt; upper_bound)
-outliers_iqr
-# Display the outlier values
-airquality$Ozone[outliers_iqr]
-</pre>
-                    <p>
-                        This method is robust to skewed distributions.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000045">3 Other Outlier detection methods</h2>
-                <p>
-                    Additional approaches include:
-                </p>
-                <ul class="itemize" id="a0000000046">
-                    <li id="a0000000047">
-                        <p>
-                            Time series-specific: <span class="ttfamily">tsoutliers()</span> in the <span
-                                class="ttfamily">forecast</span> package.
-                        </p>
-                    </li>
-                    <li id="a0000000048">
-                        <p>
-                            Robust multivariate methods: Mahalanobis distance.
-                        </p>
-                    </li>
-                    <li id="a0000000049">
-                        <p>
-                            Transformations: log or Box-Cox to reduce the effect of extreme values.
-                        </p>
-                    </li>
-                </ul>
-                <p>
-                    <b class="bfseries">In summary:</b>
-                </p>
-                <ul class="itemize" id="a0000000050">
-                    <li id="a0000000051">
-                        <p>
-                            Outliers are extreme or unusual observations that can bias analysis.
-                        </p>
-                    </li>
-                    <li id="a0000000052">
-                        <p>
-                            The three primary methods in R are:
-                        </p>
-                        <ol class="enumerate" id="a0000000053">
-                            <li id="a0000000054" value="1">
-                                <p>
-                                    Boxplot Method – visual and intuitive.
-                                </p>
-                            </li>
-                            <li id="a0000000055" value="2">
-                                <p>
-                                    Z-score Method – standardized approach for normal variables.
-                                </p>
-                            </li>
-                            <li id="a0000000056" value="3">
-                                <p>
-                                    IQR Method – robust for skewed data.
-                                </p>
-                            </li>
-                        </ol>
-                    </li>
-                    <li id="a0000000057">
-                        <p>
-                            Other methods include time series-specific approaches and multivariate distances.
-                        </p>
-                    </li>
-                    <li id="a0000000058">
-                        <p>
-                            Detecting outliers is the first step; correction or treatment (removal, interpolation, or
-                            Winsorization) should follow depending on the analysis.
-                        </p>
-                    </li>
-                </ul>
-                <section class="subsection">
-                    <h3 id="a0000000059">3.1 Methods to remove outliers</h3>
-                    <p>
-                        While detecting outliers is important, there are situations where it is necessary to remove
-                        them, especially if they represent measurement errors or anomalies that could bias statistical
-                        analysis.
-                    </p>
-                    <section class="subsubsection">
-                        <h4 id="a0000000060">IQR-based removal</h4>
-                        <p>
-                            The Interquartile Range (IQR) method identifies outliers based on the spread of the middle
-                            50% of the data. Values below \(Q1 - 1.5 \times IQR\) or above \(Q3 + 1.5 \times IQR\) are
-                            considered extreme. This method is robust to skewed distributions.
-                        </p>
-                        <pre class="verbatim">
-# IQR method for Ozone variable
-data("airquality")
-# Compute Q1, Q3, and IQR
-Q1 &lt;- quantile(airquality$Ozone, 0.25, na.rm = TRUE)
-Q3 &lt;- quantile(airquality$Ozone, 0.75, na.rm = TRUE)
-IQR_val &lt;- Q3 - Q1
-# Define acceptable range
-lower_bound &lt;- Q1 - 1.5 * IQR_val
-upper_bound &lt;- Q3 + 1.5 * IQR_val
-# Identify outliers
-outliers_iqr &lt;- which(airquality$Ozone &lt; lower_bound | airquality$Ozone &gt; upper_bound)
-# Remove outliers
-airquality_iqr_clean &lt;- airquality[-outliers_iqr, ]
-# Inspect cleaned data
-summary(airquality_iqr_clean$Ozone)
-</pre>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000061">Z-Score-based removal</h4>
-                        <p>
-                            The Z-score method standardizes observations relative to the mean and standard deviation.
-                            Observations with absolute Z-scores greater than a threshold (commonly 3) are considered
-                            outliers. This method works best for approximately normal variables.
-                        </p>
-                        <pre class="verbatim">
-# Z-score method for Ozone
-ozone_z &lt;- scale(airquality$Ozone)
-# Standardize Ozone values
-# Identify outliers
-outliers_z &lt;- which(abs(ozone_z) &gt; 3)
-# Remove outliers
-airquality_z_clean &lt;- airquality[-outliers_z, ]
-# Inspect cleaned data
-summary(airquality_z_clean$Ozone)
-</pre>
-                        <p>
-                            <b class="bfseries">In summary:</b>
-                        </p>
-                        <ul class="itemize" id="a0000000062">
-                            <li id="a0000000063">
-                                <p>
-                                    IQR-based removal identifies outliers relative to the interquartile range and is
-                                    robust to skewed data.
-                                </p>
-                            </li>
-                            <li id="a0000000064">
-                                <p>
-                                    Z-score-based removal removes values far from the mean in terms of standard
-                                    deviations, ideal for approximately normal data.
-                                </p>
-                            </li>
-                            <li id="a0000000065">
-                                <p>
-                                    Both methods reduce the influence of extreme observations, improving statistical
-                                    modeling, visualization, and forecasting.
-                                </p>
-                            </li>
-                        </ul>
-                    </section>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000066">4 Data smoothing and preparing datasets</h2>
-                <p>
-                    Smoothing and preprocessing time series data is essential to highlight trends, reduce noise, and
-                    prepare the data for modeling and visualization. The airquality dataset contains daily measurements
-                    of Ozone, Solar.R, Wind, Temp, and dates from May to September 1973, making it ideal for applying
-                    these techniques.
-                </p>
-                <section class="subsection">
-                    <h3 id="a0000000067">4.1 Data smoothing techniques</h3>
-                    <p>
-                        Data smoothing reduces random fluctuations while preserving underlying trends. The two main
-                        methods are:
-                    </p>
-                    <section class="subsubsection">
-                        <h4 id="a0000000068">Moving averages</h4>
-                        <p>
-                            Moving averages smooth time series data by calculating the average of a fixed number of
-                            consecutive observations. This technique is effective for reducing short-term fluctuations
-                            while highlighting longer-term trends. The degree of smoothing is determined by the window
-                            size, with larger windows producing smoother series but potentially masking short-term
-                            changes.
-                        </p>
-                        <pre class="verbatim">
-library(zoo)
-# Create a time series for Ozone
-ozone_ts &lt;- ts(airquality$Ozone, start = c(1973,5), frequency = 30)
-# 7-day moving average
-ozone_ma7 &lt;- rollmean(ozone_ts, k = 7, fill = NA)
-# Plot
-plot(ozone_ts, type = "l", col = "gray", ylab = "Ozone", main = "7-day Moving Average of Ozone")
-lines(ozone_ma7, col = "blue", lwd = 2)
-</pre>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000069">Simple exponential smoothing (SES)</h4>
-                        <p>
-                            Simple exponential smoothing assigns exponentially decreasing weights to past observations,
-                            giving more importance to recent values. This allows the method to respond more quickly to
-                            recent changes while still incorporating historical data. The smoothing parameter, \(\alpha
-                            \), controls the responsiveness: values of \(\alpha \) close to 1 make the series more
-                            reactive to recent changes, whereas values near 0 produce a smoother trend by giving greater
-                            weight to older observations.
-                        </p>
-                        <pre class="verbatim">
-library(forecast)
-# Simple exponential smoothing
-ozone_ses &lt;- ses(ozone_ts, alpha = 0.3, initial = "simple", h = 0)
-# Plot
-plot(ozone_ses, main = "Simple Exponential Smoothing of Ozone", ylab = "Ozone")
-</pre>
-                    </section>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000070">4.2 Preparing datasets for modeling and visualization</h3>
-                    <p>
-                        Proper structuring and cleaning of time series data is essential before modeling or
-                        visualization. Two main techniques are time indexing and handling missing values. These methods
-                        have been covered in the earlier sections of this module. Namely, time indexing and handling
-                        missing values.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000071">5 Practical Application</h2>
-                <p>
-                    The R code shows all the steps we have considered in this module.
-                </p>
-                <pre class="verbatim">
-# Load required packages
-library(zoo)
-library(xts)
-library(forecast)
-# Load airquality dataset
-data("airquality")
-# Create zoo object with proper dates
-dates &lt;- seq(as.Date("1973-05-01"), as.Date("1973-09-30"), by = "day")
-ozone_zoo &lt;- zoo(airquality$Ozone, order.by = dates)
-# Linear interpolation
-ozone_interp &lt;- na.approx(ozone_zoo)
-# Forward fill (alternative)
-ozone_ffill &lt;- na.locf(ozone_zoo)
-# IQR method
-Q1 &lt;- quantile(ozone_interp, 0.25, na.rm = TRUE)
-Q3 &lt;- quantile(ozone_interp, 0.75, na.rm = TRUE)
-IQR_val &lt;- Q3 - Q1
-lower &lt;- Q1 - 1.5 * IQR_val
-upper &lt;- Q3 + 1.5 * IQR_val
-# Remove outliers
-ozone_clean &lt;- ozone_interp[ozone_interp &gt;= lower &amp; ozone_interp &lt;= upper]
-# Create xts object for easier plotting and aggregation
-ozone_xts &lt;- xts(ozone_clean, order.by = index(ozone_clean))
-# Moving average (7-day)
-ozone_ma7 &lt;- rollmean(ozone_xts, k = 7, fill = NA)
-# Simple exponential smoothing
-ozone_ses &lt;- ses(as.numeric(ozone_xts), alpha = 0.3, initial = "simple", h = 1)
-# Plot original, moving average, and SES
-plot(index(ozone_xts), coredata(ozone_xts), type = "l", col = "gray",
-ylab = "Ozone (ppb)", main = "Ozone Concentration with Smoothing")
-lines(index(ozone_ma7), coredata(ozone_ma7), col = "blue", lwd = 2)
-lines(index(ozone_xts), fitted(ozone_ses), col = "red", lwd = 2)
-legend("topright", legend = c("Original", "7-day MA", "SES"),
-col = c("gray", "blue", "red"), lwd = 2)
-</pre>
             </section>
             <script id="plastex-labels" type="application/json">{}</script>
         </article>
 
     </main>
+
 
     <footer>
         <hr />
@@ -1307,7 +472,6 @@ col = c("gray", "blue", "red"), lwd = 2)
             <p>This page last generated: 2025-08-31</p>
         </div>
     </footer>
-
 
     <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
         xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
