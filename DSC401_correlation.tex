@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+\begin{document}
+
+\modulename{Mathematical and Physical Basis of Correlation}
+
+\section*{What is Correlation?}
+In engineering, correlation is a mathematical measure of the similarity between two waveforms. While convolution is used to find the output of a system, correlation is used to find patterns.
+
+There are two primary types you need to master:
+\begin{itemize}
+    \item \textbf{Cross-Correlation ($R_{xy}$):} Comparing two different signals (e.g., a radar pulse vs. its noisy echo).
+    \begin{description}
+        \item[Example:] Comparing a transmitted radar pulse with a received echo containing noise.
+        \item[Equation:] 
+        \[ R_{xy}(\tau) = \int_{-\infty}^{\infty} x(t) y(t-\tau) dt \]
+        Where $x(t)$ = first signal, $y(t)$ = second signal, and $\tau$ = time shift (lag).
+    \end{description}
+
+    \item \textbf{Auto-Correlation ($R_{xx}$):} Comparing a signal with a time-shifted version of itself. Auto-correlation is commonly used to detect periodicity or hidden patterns in signals.
+    \begin{description}
+        \item[Equation:] 
+        \[ R_{xx}(\tau) = \int_{-\infty}^{\infty} x(t) x(t-\tau) dt \]
+    \end{description}
+\end{itemize}
+
+\section*{The "No-Flip" Rule (Correlation vs. Convolution)}
+Students often confuse correlation with convolution. The key difference is whether one signal is flipped in time.
+
+In \textbf{convolution}, one signal is flipped before sliding across the other signal.
+\[ y(t) = x(t) * h(t) = \int_{-\infty}^{\infty} x(\tau) h(t-\tau) d\tau \]
+\textbf{Procedure:}
+\begin{enumerate}
+    \item Flip one signal in time.
+    \item Shift it across the other signal.
+    \item Multiply and integrate.
+\end{enumerate}
+Convolution is mainly used to determine the output of Linear Time-Invariant (LTI) systems.
+
+In \textbf{correlation}, no signal is flipped. One signal simply slides across the other, and their overlap is measured.
+\[ R_{xy}(\tau) = \int_{-\infty}^{\infty} x(t) y(t-\tau) dt \]
+
+\textbf{Interpretation:}
+Correlation acts like a sliding dot product, asking: \textit{“At this particular time shift \(\tau\), how similar are these two signals?”}
+
+\textbf{Why the difference?} Convolution flips the signal to account for the "First-In, First-Out" nature of time in a physical system (causality). Correlation does not flip because it is simply a sliding dot-product; it's asking, "At this specific time shift (\(\tau\)), how much do these two shapes overlap?"
+
+\section*{Physical Significance: The "Search" Tool}
+Imagine you are looking for a specific 10-second song clip inside a 2-hour recording. If you perform Cross-Correlation between the clip and the recording, the resulting graph will be mostly flat (low similarity). However, at the exact moment the clip appears in the recording, you will see a massive peak.
+
+This peak tells the engineer two things:
+\begin{enumerate}
+    \item \textbf{Detection:} Yes, the signal exists in the data.
+    \item \textbf{Location:} The value of \(\tau\) at the peak tells you exactly when it occurred.
+\end{enumerate}
+
+\section*{Auto-Correlation: The Hidden Pattern Finder}
+Auto-correlation (\(R_{xx}(0)\)) is unique because it compares a signal to itself. It has three very important properties:
+\begin{itemize}
+    \item \textbf{Peak at Zero:} \(R_{xx}(0)\) is always the maximum value. A signal is never more similar to anything than it is to itself with zero shift.
+    \item \textbf{Energy Link:} The value at \(R_{xx}(0)\) is equal to the Total Energy of the signal.
+    \item \textbf{Symmetry:} Auto-correlation is an even function \(R_{xx}(\tau) = R_{xx}(-\tau)\). The "match" is the same whether you shift the signal left or right.
+\end{itemize}
+
+\section*{Computation of Linear and Circular Convolution}
+In digital signal processing (DSP), we often have to choose between these two methods depending on whether our signal is a one-time event or a repeating cycle.
+
+\subsection*{Linear Convolution (The "Standard" Way)}
+Linear convolution describes the behavior of LTI systems with aperiodic (finite) signals. If you have an input \(x[n]\) of length \(L\) and an impulse response \(h[n]\) of length \(M\), the resulting output \(y[n]\) will have a length of:
+\[ N = L + M - 1 \]
+\textbf{The Process:} Flip one signal, slide it across the other, multiply the overlapping points, and sum them up. \\
+\textbf{The Physical Meaning:} This represents a signal passing through a filter or a system that eventually "dies out."
+
+\subsection*{Circular Convolution (The "Periodic" Way)}
+Circular convolution is used when signals are periodic or when we use tools like the Fast Fourier Transform (FFT). Instead of sliding the signal along an infinite line, we imagine the signals are wrapped around a circle.
+\begin{description}
+    \item[The Constraint:] Both signals must be the same length (\(N\)). If they aren't, we add zeros to the end (Zero-Padding) to make them equal.
+    \item[The Process:] 
+    \begin{enumerate}
+        \item Arrange \(x[n]\) clockwise around a circle.
+        \item Arrange \(h[n]\) counter-clockwise (this is the "flip").
+        \item Rotate the \(h[n]\) circle, multiply overlapping points, and sum.
+    \end{enumerate}
+    \item[Result Length:] The output will always be the same length \(N\) as the inputs.
+\end{description}
+
+\subsection*{Key Comparison: Linear vs. Circular}
+\begin{table}[h!]
+\centering
+\begin{tabularx}{\textwidth}{|l|X|X|}
+\hline
+\textbf{Feature} & \textbf{Linear Convolution} & \textbf{Circular Convolution} \\ \hline
+Signal Type & Aperiodic / Finite & Periodic / Finite (Wrapped) \\ \hline
+Output Length & \(L + M - 1\) & \(N\) (Length of the circle) \\ \hline
+Formula & \(y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k] h[n-k]\) & \(y[n] = x[n] \circledast h[n] = \sum_{k=0}^{N-1} x[k] h[(n-k) \pmod N]\) \\ \hline
+Application & Real-time audio/analog filtering & Frequency domain processing (DFT/FFT) \\ \hline
+\end{tabularx}
+\caption{Comparison between Linear and Circular Convolution.}
+\end{table}
+
+\subsection*{Numerical Example: The "Zero-Padding" Bridge}
+One of the most important concepts is that you can make Circular Convolution give you the exact same result as Linear Convolution if you use enough zeros.
+\begin{description}
+    \item[The Rule:] To get the linear result using a circle, the length of your circle (\(N\)) must be at least \(L + M - 1\).
+    \item[Example:] If \(x[n] = \{1, 2\}\) (Length 2) and \(h[n] = \{1, 1\}\) (Length 2):
+    \begin{itemize}
+        \item \textbf{Linear Result:} \(\{1, 3, 2\}\) (Length 3).
+        \item \textbf{2-point Circular Result:} \(\{3, 3\}\) (The 2 "wraps" around and adds to the 1).
+        \item \textbf{3-point Circular (Zero-Padded):} \(\{1, 3, 2\}\) (Matches the linear result exactly!).
+    \end{itemize}
+\end{description}
+
+\subsection*{The "Table" Method}
+A quick way to compute these for your assignments is the Tabular Method. Create a grid with \(x[n]\) on the top and \(h[n]\) on the side.
+\begin{enumerate}
+    \item Multiply the rows and columns to fill the grid.
+    \item Sum the diagonals for Linear Convolution.
+    \item Sum the columns (after shifting "overflow" results) for Circular Convolution.
+\end{enumerate}
+
+\section*{Analysis of Signal Properties through Auto-correlation}
+While Cross-correlation compares two different signals, Auto-correlation is a self-comparison. It is a powerful analytical tool because it reveals the "internal structure" of a signal that might not be visible just by looking at the time-domain waveform.
+
+\subsection*{Extracting Signal Energy}
+The most immediate property we get from auto-correlation is the signal's energy. The maximum value occurs at zero lag (\(\tau=0\)).
+\textbf{Mathematically:}
+\[ R_{xx}(0) = \int_{-\infty}^{\infty} |x(t)|^2 dt = \text{Total Energy } E \]
+\textbf{Practical Use:} If you have a complex signal and need to find its total energy, you don't necessarily need to perform a new integral if you already have the auto-correlation function. Just look at the value at the center (origin).
+
+\subsection*{Detecting Periodicity in Noise}
+This is perhaps the most famous application of auto-correlation. If a signal is periodic, its auto-correlation function will also be periodic with the exact same period.
+\begin{description}
+    \item[The Problem:] Imagine a very faint sine wave buried in random white noise. In the time domain, it just looks like static.
+    \item[The Solution:] Auto-correlate the noisy signal.
+    \begin{itemize}
+        \item \textbf{The Noise} is random, so it only correlates with itself at \(\tau=0\). Its auto-correlation drops to zero very quickly.
+        \item \textbf{The Sine Wave} is predictable. Even when shifted by its period (\(T\)), it matches itself perfectly.
+    \end{itemize}
+    \item[The Result:] The noise "dies out" in the auto-correlation graph, while the periodic peaks of the sine wave remain, allowing you to measure the frequency of a signal you couldn't even see!
+\end{description}
+
+\subsection*{Linking Time and Frequency: The Wiener-Khinchin Theorem}
+This is a high-level analytical concept. It states that the Fourier Transform of the auto-correlation function is equal to the Power Spectral Density (PSD) of the signal.
+\[ \mathcal{F}\{R_{xx}(\tau)\} = S_{xx}(f) \]
+\textbf{Why this matters:} It provides a bridge between the time domain and the frequency domain. If you want to know how a signal's power is distributed across different frequencies, you can start by finding its auto-correlation.
+
+\textbf{Further reading on Autocorrelation:} \url{https://ereader.perlego.com/1/book/3865757/176}
+
+\end{document}
