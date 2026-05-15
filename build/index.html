@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="None" />
+    <meta name="date" content="2026-05-15" />
+
+
+    <title>mental_models | </title>
+
+
+
+
+    <link rel="stylesheet" href="static/styles.css?build_time=1778858647.680007">
+
+
+
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1778858647.680007">
+
+    <link rel="stylesheet" href="static/print.css?build_time=1778858647.680007">
+
+
+
+
+    <script>
+        var chirun_static_url = new URL('static?build_time=1778858647.680007', location.href);
+    </script>
+
+
+    <script defer src="static/mathjax_config.js?build_time=1778858647.680007"></script>
+    <script type="text/javascript" id="MathJax-script" defer
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <script type="module" src="static/localisation.js?build_time=1778858647.680007"></script>
+
+    <script defer src="static/customisation.js?build_time=1778858647.680007"></script>
+
+
+
+
+
+    <script defer src="static/code.js?build_time=1778858647.680007" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1778858647.680007" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1778858647.680007" type="module"></script>
+
+
+    <template id="runnable-code-template">
+        <link rel="stylesheet" href="static/code.css?build_time=1778858647.680007">
+        <div class="runnable-code-wrapper">
+            <section class="fullscreenable code">
+                <div id="code"></div>
+                <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon"
+                        aria-label="Fullscreen code" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <section class="fullscreenable output">
+                <div id="output" aria-live="polite">
+                    <pre class="stdout"></pre>
+                    <pre class="result"></pre>
+                    <div class="images"></div>
+                </div>
+                <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon"
+                        aria-label="Fullscreen output" viewBox="0 0 180 180">
+                        <use href="#fullscreen" />
+                    </svg></button>
+            </section>
+            <div class="buttons">
+                <button type="button" class="run-code">Run code</button>
+            </div>
+            <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs>
+                    <g id="cog">
+                        <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                            d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+                    </g>
+                    <g id="pdf">
+                        <path
+                            style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+                    </g>
+                    <g id="slides">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,21.25 30,137.5" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 90,21.25 60,158.75" />
+                        <rect
+                            style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675"
+                            rx="4.7737675" />
+                        <rect
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,66.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,76.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,86.25 h 50" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 90,56.25 h 50" />
+                        <path
+                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                            d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+                    </g>
+
+                    <g id="notebook">
+                        <path
+                            style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                            d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="58.699139" cy="59.503937" r="3.8077738" />
+                        <circle
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="113.59385" cy="52.885151" r="4.9348516" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                        <path
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                        <ellipse
+                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                            cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,46.266514 V 62.316215" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="M 34,77.849849 V 93.89955" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 34,109.43318 v 16.0497" />
+                        <path
+                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                            d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+                    </g>
+
+                    <g id="fullscreen">
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                            d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                        />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                        <path
+                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                            d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+                    </g>
+                </defs>
+            </svg>
+        </div>
+    </template>
+
+    <template id="embed-numbas-template">
+        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1778858647.680007">
+        <details id="wrapper" data-completion-status="incomplete">
+            <summary>
+                <h1 id="title">Test Yourself</h1>
+                <div id="completion-status" data-completion-status="unknown">
+                    <span class="complete">Complete</span>
+                    <span class="incomplete">Incomplete</span>
+                </div>
+                <label id="score-feedback">
+                    Score:
+                    <progress min="0"></progress>
+                </label>
+            </summary>
+            <iframe class="embed" title="Numbas"></iframe>
+        </details>
+    </template>
+
+</head>
+
+<body class="">
+
+
+    <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+
+    <form id="display-options">
+        <div class="buttons">
+            <button type="button" id="reset-display-options">Reset to defaults</button>
+
+            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+            <button type="button" aria-controls="display-options" aria-expanded="false">
+                Close
+            </button>
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label for="display-options-font-scale">
+                    Text size
+                </label>
+                <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+                <output for="display-options-font-scale">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-spacing-factor">
+                    Spacing
+                </label>
+                <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+                <output for="display-options-spacing-factor">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-font-family">
+                    Text font
+                </label>
+                <select id="display-options-font-family">
+                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                    <option value="var(--serif-font)">Serif</option>
+                    <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-colour-scheme">
+                    Colour scheme
+                </label>
+                <select id="display-options-colour-scheme">
+                    <option value="auto" selected>Automatic (default)</option>
+                    <option value="light">Black text on white</option>
+                    <option value="dark">White text on black</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+
+            <section id="custom-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-text-colour">
+                        Text colour
+                    </label>
+                    <input type="color" value="#000000" id="display-options-text-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-link-colour">
+                        Link colour
+                    </label>
+                    <input type="color" value="#0000ee" id="display-options-link-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour">
+                        Background colour
+                    </label>
+                    <input type="color" value="#ffffff" id="display-options-bg-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-off">
+                        Muted background colour
+                    </label>
+                    <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-1">
+                        Accent colour 1
+                    </label>
+                    <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-2">
+                        Accent colour 2
+                    </label>
+                    <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-3">
+                        Accent colour 3
+                    </label>
+                    <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-4">
+                        Accent colour 4
+                    </label>
+                    <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+                </div>
+            </section>
+
+            <section id="filter-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-filter-sepia">
+                        Sepia filter
+                    </label>
+                    <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                    <output for="display-options-filter-sepia">0%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-filter-hue-rotate">
+                        Rotate hues
+                    </label>
+                    <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                    <output for="display-options-filter-hue-rotate">0 turns</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-invert-images">
+                        Invert images in dark mode
+                    </label>
+                    <input type="checkbox" id="display-options-invert-images">
+                </div>
+
+            </section>
+        </div>
+    </form>
+
+
+    <header>
+
+        <button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false"
+            title="Display options">
+            <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+                <use href="#cog" />
+            </svg>
+        </button>
+
+
+
+
+
+    </header>
+
+    <main id="main-content">
+
+        <nav id="sidebar">
+
+            <ul class="alternative-formats">
+
+                <li><a rel="alternate" type="application/pdf" href="mental_models.pdf" download><svg class="icon"
+                            aria-label="PDF" viewBox="0 0 180 180">
+                            <use href="#pdf" />
+                        </svg> Download as PDF</a></li>
+
+            </ul>
+
+
+            <h1>Table of Contents</h1>
+            <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+
+            <ol class="table-of-contents" role="tree">
+
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
+                        <span class="toc-marker"></span>
+                        Understanding Mental Models
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000002">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+
+                                How Mental Models Form
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
+
+                                Mental Models Across Project Types
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000010" href="#a0000000010">
+
+                                The SSM Framework for Game Design
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000012" href="#a0000000012">
+                        <span class="toc-marker"></span>
+                        User Flow Diagrams: Mapping the User’s Path
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000012">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000013" href="#a0000000013">
+
+                                Components of User Flow Diagrams
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000020" href="#a0000000020">
+
+                                Creating User Flows for Different Project Types
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000026" href="#a0000000026">
+                        <span class="toc-marker"></span>
+                        Customer Journey Mapping
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000026">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000027" href="#a0000000027">
+
+                                Stages of a Journey Map
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000034" href="#a0000000034">
+
+                                Emotional Mapping
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000035" href="#a0000000035">
+
+                                Journey Maps for Different Project Types
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000041" href="#a0000000041">
+                        <span class="toc-marker"></span>
+                        Information Architecture: Structuring Your Product
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000041">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000042" href="#a0000000042">
+
+                                IA Principles
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000048" href="#a0000000048">
+
+                                Creating Sitemaps
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000050" href="#a0000000050">
+
+                                Navigation Design
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header  has-children">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000052" href="#a0000000052">
+                        <span class="toc-marker"></span>
+                        System Thinking for Design
+                    </a>
+
+
+                    <ol role="group" id="toc-subtree-a0000000052">
+
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000053" href="#a0000000053">
+
+                                Feedback Loops and Dependencies
+                            </a>
+
+
+                        </li>
+
+                        <li role="none" data-toc-level="2" class="toc-header ">
+                            <a role="treeitem" aria-owns="#toc-subtree-a0000000054" href="#a0000000054">
+
+                                AI and Predictive Mental Modelling
+                            </a>
+
+
+                        </li>
+
+
+                    </ol>
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000055" href="#a0000000055">
+
+                        Definitions
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000056" href="#a0000000056">
+
+                        Recommended Books
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000062" href="#a0000000062">
+
+                        Online Articles and Blogs
+                    </a>
+
+
+                </li>
+
+                <li role="none" data-toc-level="1" class="toc-header ">
+                    <a role="treeitem" aria-owns="#toc-subtree-a0000000068" href="#a0000000068">
+
+                        Additional Watching Material
+                    </a>
+
+
+                </li>
+
+
+            </ol>
+
+
+        </nav>
+
+        <article class="item-content" id="item-content">
+            <section class="section">
+                <h2 id="a0000000002">Understanding Mental Models</h2>
+                <p>
+                    A mental model is the internal cognitive representation a user constructs to understand how a system
+                    works. It is not a perfect replica of the actual system—it is a simplified, personal interpretation
+                    based on the user’s prior experiences, expectations, and understanding. When you pick up a new
+                    smartphone, you do not read a manual; instead, you apply your mental model of how smartphones
+                    work—swipe to navigate, tap to select, long-press for options. This mental model was formed through
+                    years of interaction with similar devices.
+                </p>
+                <section class="subsection">
+                    <h3 id="a0000000003">How Mental Models Form</h3>
+                    <p>
+                        Mental models form through direct experience (using similar products), indirect experience
+                        (watching others, reading reviews), cultural context (conventions within a particular domain),
+                        and explicit instruction (tutorials, onboarding). They are dynamic—they evolve as users gain
+                        experience with a system. A first-time user of your app will have a different mental model than
+                        a power user, and your design needs to accommodate both.
+                    </p>
+                    <p>
+                        The gap between the designer’s model (how the system actually works) and the user’s mental model
+                        (how the user thinks it works) is where usability problems arise. If you design a game where the
+                        save function works differently from every other game the player has experienced, they will be
+                        confused and frustrated—not because your system is bad, but because it violates their mental
+                        model.
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000004">Mental Models Across Project Types</h3>
+                    <ul class="itemize" id="a0000000005">
+                        <li id="a0000000006">
+                            <p>
+                                <b class="bfseries">App Projects:</b> Mental models are shaped by platform conventions
+                                (iOS vs. Android interaction patterns), competing apps, and general digital literacy.
+                            </p>
+                        </li>
+                        <li id="a0000000007">
+                            <p>
+                                <b class="bfseries">Game Projects:</b> Mental models are influenced by genre
+                                conventions—a first-person shooter player expects WASD movement; a strategy game player
+                                expects click-to-select.
+                            </p>
+                        </li>
+                        <li id="a0000000008">
+                            <p>
+                                <b class="bfseries">Film Projects:</b> Mental models relate to narrative
+                                expectations—audiences expect certain structural conventions (three-act structure,
+                                rising tension) and become disoriented when these are violated without purpose.
+                            </p>
+                        </li>
+                        <li id="a0000000009">
+                            <p>
+                                <b class="bfseries">Multimedia Projects:</b> Mental models may be less established,
+                                creating both opportunity and challenge.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000010">The SSM Framework for Game Design</h3>
+                    <p>
+                        The Story, System, and Mental Model (SSM) framework, developed for game design, provides a
+                        useful lens for understanding how mental models operate in interactive experiences. The Story
+                        represents the narrative context the designer creates. The System represents the rules and
+                        mechanics that govern the experience. The Mental Model is how the player understands and
+                        predicts the System based on the Story and their prior experience. Effective game design ensures
+                        alignment between all three elements.
+                    </p>
+                    <figure id="a0000000011">
+                        <div class="centered">
+                            <figcaption>
+                                <span class="caption_title">Figure</span>
+                                <span class="caption_ref">1</span>
+                                <span class="caption_text">User Flow Diagram Example. A comprehensive user flow diagram
+                                    showing entry points, actions, decision nodes, and exit points within a product
+                                    experience. [Source: Figma (www.figma.com)]</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                    <p>
+                        The next task below will introduce you to the theory and practice of mental models through an
+                        instructional video. Pay attention to the distinction between the designer’s model and the
+                        user’s mental model, and consider how this applies to your independent project.
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000012">User Flow Diagrams: Mapping the User’s Path</h2>
+                <p>
+                    A user flow diagram is a visual representation of the path a user takes through a product to
+                    accomplish a specific goal. It maps the sequence of actions, decisions, and screens the user
+                    encounters from an entry point to a successful outcome (or an error state). User flow diagrams are
+                    essential design artifacts that communicate the structure of the user experience to designers,
+                    developers, and stakeholders.
+                </p>
+                <section class="subsection">
+                    <h3 id="a0000000013">Components of User Flow Diagrams</h3>
+                    <p>
+                        Standard user flow notation includes several key elements:
+                    </p>
+                    <ul class="itemize" id="a0000000014">
+                        <li id="a0000000015">
+                            <p>
+                                <b class="bfseries">Entry points</b> (ovals or rounded rectangles) represent where users
+                                begin their journey—this might be a home screen, a search result, or a notification.
+                            </p>
+                        </li>
+                        <li id="a0000000016">
+                            <p>
+                                <b class="bfseries">Actions</b> (rectangles) represent steps the user takes—clicking a
+                                button, filling a form, uploading a file.
+                            </p>
+                        </li>
+                        <li id="a0000000017">
+                            <p>
+                                <b class="bfseries">Decision points</b> (diamonds) represent moments where the user or
+                                system makes a choice that determines the next step—is the login correct? Has the user
+                                completed all required fields?
+                            </p>
+                        </li>
+                        <li id="a0000000018">
+                            <p>
+                                <b class="bfseries">Screens or pages</b> (rectangles with a fold) represent the
+                                interfaces the user sees.
+                            </p>
+                        </li>
+                        <li id="a0000000019">
+                            <p>
+                                <b class="bfseries">Exit points</b> (circles) represent where the user’s flow
+                                ends—successfully completing a task, abandoning the process, or reaching an error.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000020">Creating User Flows for Different Project Types</h3>
+                    <ul class="itemize" id="a0000000021">
+                        <li id="a0000000022">
+                            <p>
+                                <b class="bfseries">App Projects:</b> User flows typically map task-specific
+                                paths—onboarding, core task completion, settings configuration, error recovery. Create
+                                separate flows for each key task and ensure they share consistent patterns for common
+                                actions (navigation, back buttons, confirmation).
+                            </p>
+                        </li>
+                        <li id="a0000000023">
+                            <p>
+                                <b class="bfseries">Game Projects:</b> User flows map game loops—the core gameplay
+                                cycle, progression systems, menu navigation, and multiplayer interaction patterns.
+                            </p>
+                        </li>
+                        <li id="a0000000024">
+                            <p>
+                                <b class="bfseries">Film and Multimedia Projects:</b> User flows map navigation through
+                                interactive content—chapter selection, branching narratives, interactive hotspots, and
+                                viewing paths.
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        Tools such as Figma, FigJam, Miro, Whimsical, and Lucidchart provide dedicated user flow
+                        diagramming features with standard shapes, connectors, and collaborative editing. Choose a tool
+                        that integrates well with your broader design workflow.
+                    </p>
+                    <figure id="a0000000025">
+                        <div class="centered">
+                            <figcaption>
+                                <span class="caption_title">Figure</span>
+                                <span class="caption_ref">2</span>
+                                <span class="caption_text">E-Commerce User Flow Template. Detailed user flow diagram
+                                    showing a checkout process with decision trees and alternative paths. [Source:
+                                    Slickplan (slickplan.com)]</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                    <p>
+                        The next task below will introduce you to user flow diagramming through an instructional video.
+                        Pay attention to the notation conventions and how complex user paths are simplified into clear
+                        visual diagrams.
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000026">Customer Journey Mapping</h2>
+                <p>
+                    While user flow diagrams focus on specific task paths within a product, customer journey maps
+                    capture the complete user experience across all touchpoints—before, during, and after interacting
+                    with your product. A journey map tells the story of the user’s experience from their perspective,
+                    documenting their actions, thoughts, emotions, and pain points at each stage.
+                </p>
+                <section class="subsection">
+                    <h3 id="a0000000027">Stages of a Journey Map</h3>
+                    <p>
+                        A typical journey map includes five stages:
+                    </p>
+                    <ol class="enumerate" id="a0000000028">
+                        <li id="a0000000029" value="1">
+                            <p>
+                                <b class="bfseries">Awareness:</b> How the user first learns about or encounters the
+                                problem.
+                            </p>
+                        </li>
+                        <li id="a0000000030" value="2">
+                            <p>
+                                <b class="bfseries">Consideration:</b> How the user evaluates potential solutions.
+                            </p>
+                        </li>
+                        <li id="a0000000031" value="3">
+                            <p>
+                                <b class="bfseries">Acquisition:</b> How the user begins using your product.
+                            </p>
+                        </li>
+                        <li id="a0000000032" value="4">
+                            <p>
+                                <b class="bfseries">Use:</b> The ongoing interaction with your product.
+                            </p>
+                        </li>
+                        <li id="a0000000033" value="5">
+                            <p>
+                                <b class="bfseries">Retention/Advocacy:</b> How the user continues engaging and
+                                potentially recommends the product to others.
+                            </p>
+                        </li>
+                    </ol>
+                    <p>
+                        For each stage, the map documents the user’s actions, thoughts, emotions, touchpoints, and pain
+                        points.
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000034">Emotional Mapping</h3>
+                    <p>
+                        One of the most valuable aspects of journey mapping is emotional mapping—tracking the user’s
+                        emotional state throughout their experience. Use a simple emotional curve (high to low
+                        satisfaction) plotted against the journey stages to visualise moments of delight, frustration,
+                        confusion, and satisfaction. These emotional peaks and valleys reveal the most critical design
+                        opportunities—address the pain points that cause emotional lows and amplify the moments that
+                        create emotional highs.
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000035">Journey Maps for Different Project Types</h3>
+                    <ul class="itemize" id="a0000000036">
+                        <li id="a0000000037">
+                            <p>
+                                <b class="bfseries">App Projects:</b> The journey map might span from discovering the
+                                app in an app store to becoming a daily user.
+                            </p>
+                        </li>
+                        <li id="a0000000038">
+                            <p>
+                                <b class="bfseries">Game Projects:</b> The journey could map from seeing a trailer to
+                                completing the game and engaging with community content.
+                            </p>
+                        </li>
+                        <li id="a0000000039">
+                            <p>
+                                <b class="bfseries">Film Projects:</b> The journey captures from hearing about the film
+                                to post-viewing discussion and recommendation.
+                            </p>
+                        </li>
+                        <li id="a0000000040">
+                            <p>
+                                <b class="bfseries">Multimedia Projects:</b> The journey maps the complete interactive
+                                experience from first encounter to reflection and sharing.
+                            </p>
+                        </li>
+                    </ul>
+                    <p>
+                        The next task below will introduce you to journey mapping through an instructional video. Pay
+                        attention to how journey maps differ from user flows and how emotional mapping adds depth to
+                        your understanding of the user experience.
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000041">Information Architecture: Structuring Your Product</h2>
+                <p>
+                    Information architecture (IA) is the practice of organising, structuring, and labelling content in
+                    an effective and sustainable way. Good IA helps users find what they need and understand where they
+                    are within a system. It is the invisible structure that makes navigation intuitive—or the missing
+                    structure that makes it confusing.
+                </p>
+                <section class="subsection">
+                    <h3 id="a0000000042">IA Principles</h3>
+                    <p>
+                        Effective information architecture follows several key principles:
+                    </p>
+                    <ul class="itemize" id="a0000000043">
+                        <li id="a0000000044">
+                            <p>
+                                <b class="bfseries">The principle of objects:</b> Treats content as living entities with
+                                lifecycles, behaviours, and attributes.
+                            </p>
+                        </li>
+                        <li id="a0000000045">
+                            <p>
+                                <b class="bfseries">The principle of choices:</b> Limits the number of options presented
+                                at any decision point (following Miller’s Law).
+                            </p>
+                        </li>
+                        <li id="a0000000046">
+                            <p>
+                                <b class="bfseries">The principle of disclosure:</b> Reveals only enough information to
+                                help users understand what they will find at the next level.
+                            </p>
+                        </li>
+                        <li id="a0000000047">
+                            <p>
+                                <b class="bfseries">The principle of growth:</b> Ensures the architecture can scale as
+                                content and features expand.
+                            </p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000048">Creating Sitemaps</h3>
+                    <p>
+                        A sitemap is a visual representation of your product’s IA—a hierarchical diagram showing all
+                        pages, screens, or sections and their relationships. Start by listing all the content and
+                        functionality your product needs to include. Group related items using card sorting techniques.
+                        Arrange groups into a hierarchy that reflects how users think about the content. Label each
+                        section with clear, user-centred language.
+                    </p>
+                    <figure id="a0000000049">
+                        <div class="centered">
+                            <figcaption>
+                                <span class="caption_title">Figure</span>
+                                <span class="caption_ref">3</span>
+                                <span class="caption_text">Information Architecture Sitemap Diagram. An IA sitemap
+                                    showing hierarchical page relationships and navigation structures. [Source: Nielsen
+                                    Norman Group (www.nngroup.com)]</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000050">Navigation Design</h3>
+                    <p>
+                        Navigation is the user-facing expression of your information architecture. Effective navigation
+                        systems include global navigation, local navigation, breadcrumbs, and search. For your project,
+                        design navigation that matches the depth and complexity of your IA while remaining simple enough
+                        for first-time users.
+                    </p>
+                    <figure id="a0000000051">
+                        <div class="centered">
+                            <figcaption>
+                                <span class="caption_title">Figure</span>
+                                <span class="caption_ref">4</span>
+                                <span class="caption_text">Information Architecture and Sitemap Template. A practical
+                                    sitemap template showing IA hierarchy for a website. [Source: freeCodeCamp
+                                    (www.freecodecamp.org)]</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                    <p>
+                        The next task below will guide you through creating an information architecture sitemap for your
+                        independent project. Use your user flows and journey maps as inputs to ensure your IA supports
+                        the user paths you have designed.
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000052">System Thinking for Design</h2>
+                <p>
+                    System thinking is the practice of understanding how components interact within a complex whole. In
+                    the context of your independent project, system thinking helps you see beyond individual features or
+                    screens to understand how the entire product experience works as a unified system. A change to one
+                    component ripples through the entire system, affecting the user experience in ways that are not
+                    always immediately obvious.
+                </p>
+                <section class="subsection">
+                    <h3 id="a0000000053">Feedback Loops and Dependencies</h3>
+                    <p>
+                        Every interactive system contains feedback loops—mechanisms through which the system’s output
+                        influences its future input. In an app, a positive feedback loop might occur when successful
+                        task completion unlocks new features, encouraging further engagement. A negative feedback loop
+                        might occur when errors create frustration that leads to abandonment. In games, feedback loops
+                        are the core mechanic—challenge and reward cycles, progression systems, and difficulty scaling
+                        all depend on carefully designed feedback.
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000054">AI and Predictive Mental Modelling</h3>
+                    <p>
+                        AI tools are increasingly capable of modelling and predicting user behaviour patterns, offering
+                        designers data-driven insights into how users will interact with systems. Analytics platforms
+                        use machine learning to identify common paths, drop-off points, and unexpected behaviours.
+                        Predictive models can suggest design changes likely to improve user flow efficiency.
+                    </p>
+                    <p>
+                        The next task below will help you refine your user flows through peer review. Receiving feedback
+                        from peers who approach your diagrams with their own mental models provides valuable insight
+                        into how intuitive your designs are.
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000055">Definitions</h2>
+                <dl class="description">
+                    <dt>Mental Model:</dt>
+                    <dd>
+                        <p>
+                            An internal cognitive representation of how a system works, formed through a user’s prior
+                            experiences, expectations, and understanding.
+                        </p>
+                    </dd>
+                    <dt>User Flow:</dt>
+                    <dd>
+                        <p>
+                            A visual representation of the path a user takes through a product to accomplish a specific
+                            goal.
+                        </p>
+                    </dd>
+                    <dt>Customer Journey Map:</dt>
+                    <dd>
+                        <p>
+                            A visualisation of the complete user experience across all touchpoints, documenting actions,
+                            thoughts, emotions, and pain points.
+                        </p>
+                    </dd>
+                    <dt>Information Architecture:</dt>
+                    <dd>
+                        <p>
+                            The practice of organising, structuring, and labelling content in an effective and
+                            sustainable way.
+                        </p>
+                    </dd>
+                    <dt>Sitemap:</dt>
+                    <dd>
+                        <p>
+                            A hierarchical visual diagram showing all pages, screens, or sections of a product and their
+                            relationships.
+                        </p>
+                    </dd>
+                    <dt>System Thinking:</dt>
+                    <dd>
+                        <p>
+                            The practice of understanding how components interact within a complex whole, recognising
+                            feedback loops and dependencies.
+                        </p>
+                    </dd>
+                    <dt>Touchpoint:</dt>
+                    <dd>
+                        <p>
+                            Any point of interaction between a user and a product or brand.
+                        </p>
+                    </dd>
+                    <dt>Card Sorting:</dt>
+                    <dd>
+                        <p>
+                            A user research technique where participants organise content items into categories that
+                            make sense to them.
+                        </p>
+                    </dd>
+                    <dt>Wayfinding:</dt>
+                    <dd>
+                        <p>
+                            The process by which users orient themselves within a system and navigate to their desired
+                            destination.
+                        </p>
+                    </dd>
+                    <dt>Decision Point:</dt>
+                    <dd>
+                        <p>
+                            A moment in a user flow where the user or system makes a choice that determines the next
+                            step.
+                        </p>
+                    </dd>
+                    <dt>Feedback Loop:</dt>
+                    <dd>
+                        <p>
+                            A mechanism in a system where the output influences future input.
+                        </p>
+                    </dd>
+                    <dt>Cognitive Load:</dt>
+                    <dd>
+                        <p>
+                            The amount of mental effort required to use a system.
+                        </p>
+                    </dd>
+                    <dt>SSM Framework:</dt>
+                    <dd>
+                        <p>
+                            The Story, System, and Mental Model framework for game design.
+                        </p>
+                    </dd>
+                    <dt>Breadcrumbs:</dt>
+                    <dd>
+                        <p>
+                            A navigation element showing the user’s path through a content hierarchy.
+                        </p>
+                    </dd>
+                    <dt>Miller’s Law:</dt>
+                    <dd>
+                        <p>
+                            The cognitive principle that the average person can hold approximately seven (plus or minus
+                            two) items in working memory.
+                        </p>
+                    </dd>
+                </dl>
+            </section>
+            <section class="section">
+                <h2 id="a0000000056">Recommended Books</h2>
+                <ol class="enumerate" id="a0000000057">
+                    <li id="a0000000058" value="1">
+                        <p>
+                            Rosenfeld, L., Morville, P., &amp; Arango, J. (2015). <i class="itshape">Information
+                                Architecture: For the Web and Beyond</i> (4th ed.). O’Reilly Media.
+                        </p>
+                    </li>
+                    <li id="a0000000059" value="2">
+                        <p>
+                            Kalbach, J. (2016). <i class="itshape">Mapping Experiences: A Complete Guide to Creating
+                                Value through Journeys, Blueprints, and Diagrams</i>. O’Reilly Media.
+                        </p>
+                    </li>
+                    <li id="a0000000060" value="3">
+                        <p>
+                            Young, I. (2008). <i class="itshape">Mental Models: Aligning Design Strategy with Human
+                                Behavior</i>. Rosenfeld Media.
+                        </p>
+                    </li>
+                    <li id="a0000000061" value="4">
+                        <p>
+                            Meadows, D. H. (2008). <i class="itshape">Thinking in Systems: A Primer</i>. Chelsea Green
+                            Publishing.
+                        </p>
+                    </li>
+                </ol>
+            </section>
+            <section class="section">
+                <h2 id="a0000000062">Online Articles and Blogs</h2>
+                <ol class="enumerate" id="a0000000063">
+                    <li id="a0000000064" value="1">
+                        <p>
+                            Nielsen Norman Group. (2024). <i class="itshape">Mental models</i>. Retrieved from: <a
+                                href="https://www.nngroup.com/articles/mental-models/">https://www.nngroup.com/articles/mental-models/</a>
+                        </p>
+                    </li>
+                    <li id="a0000000065" value="2">
+                        <p>
+                            CareerFoundry. (2021). <i class="itshape">Mental models in UX design</i>. Retrieved from: <a
+                                href="https://careerfoundry.com/en/blog/ux-design/mental-models-ux-design/">https://careerfoundry.com/en/blog/ux-design/mental-models-ux-design/</a>
+                        </p>
+                    </li>
+                    <li id="a0000000066" value="3">
+                        <p>
+                            Figma. (n.d.). <i class="itshape">What is information architecture?</i> Retrieved from: <a
+                                href="https://www.figma.com/resource-library/what-is-information-architecture/">https://www.figma.com/resource-library/what-is-information-architecture/</a>
+                        </p>
+                    </li>
+                    <li id="a0000000067" value="4">
+                        <p>
+                            Gamedeveloper.com. (2017). <i class="itshape">The SSM framework of game design</i>.
+                            Retrieved from: <a
+                                href="https://www.gamedeveloper.com/design/the-ssm-framework-of-game-design">https://www.gamedeveloper.com/design/the-ssm-framework-of-game-design</a>
+                        </p>
+                    </li>
+                </ol>
+            </section>
+            <section class="section">
+                <h2 id="a0000000068">Additional Watching Material</h2>
+                <ol class="enumerate" id="a0000000069">
+                    <li id="a0000000070" value="1">
+                        <p>
+                            Value at Void™. (2023). <i class="itshape">What is mental model? | UX design tips</i>
+                            [Video]. YouTube. Retrieved from: <a
+                                href="https://www.youtube.com/watch?v=W1IU3hkJbOw">https://www.youtube.com/watch?v=W1IU3hkJbOw</a>
+                        </p>
+                    </li>
+                    <li id="a0000000071" value="2">
+                        <p>
+                            Headway. (2023). <i class="itshape">Create user flow diagrams from customer journey maps</i>
+                            [Video]. YouTube. Retrieved from: <a
+                                href="https://www.youtube.com/watch?v=pcCUP23X9g8">https://www.youtube.com/watch?v=pcCUP23X9g8</a>
+                        </p>
+                    </li>
+                    <li id="a0000000072" value="3">
+                        <p>
+                            Jesse Showalter. (2021). <i class="itshape">User flow diagram basics</i> [Video]. YouTube.
+                            Retrieved from: <a
+                                href="https://www.youtube.com/watch?v=cvYhuowazh0">https://www.youtube.com/watch?v=cvYhuowazh0</a>
+                        </p>
+                    </li>
+                    <li id="a0000000073" value="4">
+                        <p>
+                            Jamal N. (2022). <i class="itshape">UX design basics: Mental models</i> [Video]. YouTube.
+                            Retrieved from: <a
+                                href="https://www.youtube.com/watch?v=9gM8K4ooavY">https://www.youtube.com/watch?v=9gM8K4ooavY</a>
+                        </p>
+                    </li>
+                </ol>
+                <p>
+                    The next task below will guide you through supplemental learning resources to deepen your
+                    understanding of mental models, user flows, information architecture, and system thinking.
+                </p>
+            </section>
+            <script id="plastex-labels" type="application/json">{}</script>
+        </article>
+
+    </main>
+
+
+    <footer>
+        <hr />
+
+        <nav id="footer-nav">
+            <a href="#">Back to top</a>
+        </nav>
+
+        <div id="footer-text">
+            <p>
+                Generated using
+                <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.3.0,
+                written by the Digital Learning Unit, ICT Directorate, <a target="_blank" href="https://ouk.ac.ke/">Open
+                    University of Kenya</a>
+            </p>
+            <p>This page last generated: 2025-08-31</p>
+        </div>
+    </footer>
+
+
+    <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
+        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <defs>
+            <g id="cog">
+                <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                    d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
+            </g>
+            <g id="pdf">
+                <path
+                    style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
+            </g>
+            <g id="slides">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,21.25 30,137.5" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 90,21.25 60,158.75" />
+                <rect
+                    style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675" rx="4.7737675" />
+                <rect
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,66.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,76.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,86.25 h 50" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 90,56.25 h 50" />
+                <path
+                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                    d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
+            </g>
+
+            <g id="notebook">
+                <path
+                    style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                    d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="58.699139" cy="59.503937" r="3.8077738" />
+                <circle
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="113.59385" cy="52.885151" r="4.9348516" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
+                <path
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
+                <ellipse
+                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+                    cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,46.266514 V 62.316215" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="M 34,77.849849 V 93.89955" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 34,109.43318 v 16.0497" />
+                <path
+                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                    d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
+            </g>
+
+            <g id="fullscreen">
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+                    d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+                />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
+                <path
+                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                    d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
+            </g>
+        </defs>
+    </svg>
+</body>
+
+</html>

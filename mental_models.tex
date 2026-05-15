@@ -1,0 +1,178 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+\begin{document}
+
+\section*{Understanding Mental Models}
+A mental model is the internal cognitive representation a user constructs to understand how a system works. It is not a perfect replica of the actual system—it is a simplified, personal interpretation based on the user’s prior experiences, expectations, and understanding. When you pick up a new smartphone, you do not read a manual; instead, you apply your mental model of how smartphones work—swipe to navigate, tap to select, long-press for options. This mental model was formed through years of interaction with similar devices.
+
+\subsection*{How Mental Models Form}
+Mental models form through direct experience (using similar products), indirect experience (watching others, reading reviews), cultural context (conventions within a particular domain), and explicit instruction (tutorials, onboarding). They are dynamic—they evolve as users gain experience with a system. A first-time user of your app will have a different mental model than a power user, and your design needs to accommodate both.
+
+The gap between the designer’s model (how the system actually works) and the user’s mental model (how the user thinks it works) is where usability problems arise. If you design a game where the save function works differently from every other game the player has experienced, they will be confused and frustrated—not because your system is bad, but because it violates their mental model.
+
+\subsection*{Mental Models Across Project Types}
+\begin{itemize}
+    \item \textbf{App Projects:} Mental models are shaped by platform conventions (iOS vs. Android interaction patterns), competing apps, and general digital literacy.
+    \item \textbf{Game Projects:} Mental models are influenced by genre conventions—a first-person shooter player expects WASD movement; a strategy game player expects click-to-select.
+    \item \textbf{Film Projects:} Mental models relate to narrative expectations—audiences expect certain structural conventions (three-act structure, rising tension) and become disoriented when these are violated without purpose.
+    \item \textbf{Multimedia Projects:} Mental models may be less established, creating both opportunity and challenge.
+\end{itemize}
+
+\subsection*{The SSM Framework for Game Design}
+The Story, System, and Mental Model (SSM) framework, developed for game design, provides a useful lens for understanding how mental models operate in interactive experiences. The Story represents the narrative context the designer creates. The System represents the rules and mechanics that govern the experience. The Mental Model is how the player understands and predicts the System based on the Story and their prior experience. Effective game design ensures alignment between all three elements.
+
+\begin{figure}[h!]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/user_flow_example.png}
+    \caption{User Flow Diagram Example. A comprehensive user flow diagram showing entry points, actions, decision nodes, and exit points within a product experience. [Source: Figma (www.figma.com)]}
+\end{figure}
+
+The next task below will introduce you to the theory and practice of mental models through an instructional video. Pay attention to the distinction between the designer’s model and the user’s mental model, and consider how this applies to your independent project.
+
+\section*{User Flow Diagrams: Mapping the User’s Path}
+A user flow diagram is a visual representation of the path a user takes through a product to accomplish a specific goal. It maps the sequence of actions, decisions, and screens the user encounters from an entry point to a successful outcome (or an error state). User flow diagrams are essential design artifacts that communicate the structure of the user experience to designers, developers, and stakeholders.
+
+\subsection*{Components of User Flow Diagrams}
+Standard user flow notation includes several key elements:
+\begin{itemize}
+    \item \textbf{Entry points} (ovals or rounded rectangles) represent where users begin their journey—this might be a home screen, a search result, or a notification.
+    \item \textbf{Actions} (rectangles) represent steps the user takes—clicking a button, filling a form, uploading a file.
+    \item \textbf{Decision points} (diamonds) represent moments where the user or system makes a choice that determines the next step—is the login correct? Has the user completed all required fields?
+    \item \textbf{Screens or pages} (rectangles with a fold) represent the interfaces the user sees.
+    \item \textbf{Exit points} (circles) represent where the user’s flow ends—successfully completing a task, abandoning the process, or reaching an error.
+\end{itemize}
+
+\subsection*{Creating User Flows for Different Project Types}
+\begin{itemize}
+    \item \textbf{App Projects:} User flows typically map task-specific paths—onboarding, core task completion, settings configuration, error recovery. Create separate flows for each key task and ensure they share consistent patterns for common actions (navigation, back buttons, confirmation).
+    \item \textbf{Game Projects:} User flows map game loops—the core gameplay cycle, progression systems, menu navigation, and multiplayer interaction patterns.
+    \item \textbf{Film and Multimedia Projects:} User flows map navigation through interactive content—chapter selection, branching narratives, interactive hotspots, and viewing paths.
+\end{itemize}
+
+Tools such as Figma, FigJam, Miro, Whimsical, and Lucidchart provide dedicated user flow diagramming features with standard shapes, connectors, and collaborative editing. Choose a tool that integrates well with your broader design workflow.
+
+\begin{figure}[h!]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/ecommerce_flow_template.png}
+    \caption{E-Commerce User Flow Template. Detailed user flow diagram showing a checkout process with decision trees and alternative paths. [Source: Slickplan (slickplan.com)]}
+\end{figure}
+
+The next task below will introduce you to user flow diagramming through an instructional video. Pay attention to the notation conventions and how complex user paths are simplified into clear visual diagrams.
+
+\section*{Customer Journey Mapping}
+While user flow diagrams focus on specific task paths within a product, customer journey maps capture the complete user experience across all touchpoints—before, during, and after interacting with your product. A journey map tells the story of the user’s experience from their perspective, documenting their actions, thoughts, emotions, and pain points at each stage.
+
+\subsection*{Stages of a Journey Map}
+A typical journey map includes five stages:
+\begin{enumerate}
+    \item \textbf{Awareness:} How the user first learns about or encounters the problem.
+    \item \textbf{Consideration:} How the user evaluates potential solutions.
+    \item \textbf{Acquisition:} How the user begins using your product.
+    \item \textbf{Use:} The ongoing interaction with your product.
+    \item \textbf{Retention/Advocacy:} How the user continues engaging and potentially recommends the product to others.
+\end{enumerate}
+For each stage, the map documents the user’s actions, thoughts, emotions, touchpoints, and pain points.
+
+\subsection*{Emotional Mapping}
+One of the most valuable aspects of journey mapping is emotional mapping—tracking the user’s emotional state throughout their experience. Use a simple emotional curve (high to low satisfaction) plotted against the journey stages to visualise moments of delight, frustration, confusion, and satisfaction. These emotional peaks and valleys reveal the most critical design opportunities—address the pain points that cause emotional lows and amplify the moments that create emotional highs.
+
+\subsection*{Journey Maps for Different Project Types}
+\begin{itemize}
+    \item \textbf{App Projects:} The journey map might span from discovering the app in an app store to becoming a daily user.
+    \item \textbf{Game Projects:} The journey could map from seeing a trailer to completing the game and engaging with community content.
+    \item \textbf{Film Projects:} The journey captures from hearing about the film to post-viewing discussion and recommendation.
+    \item \textbf{Multimedia Projects:} The journey maps the complete interactive experience from first encounter to reflection and sharing.
+\end{itemize}
+
+The next task below will introduce you to journey mapping through an instructional video. Pay attention to how journey maps differ from user flows and how emotional mapping adds depth to your understanding of the user experience.
+
+\section*{Information Architecture: Structuring Your Product}
+Information architecture (IA) is the practice of organising, structuring, and labelling content in an effective and sustainable way. Good IA helps users find what they need and understand where they are within a system. It is the invisible structure that makes navigation intuitive—or the missing structure that makes it confusing.
+
+\subsection*{IA Principles}
+Effective information architecture follows several key principles:
+\begin{itemize}
+    \item \textbf{The principle of objects:} Treats content as living entities with lifecycles, behaviours, and attributes.
+    \item \textbf{The principle of choices:} Limits the number of options presented at any decision point (following Miller’s Law).
+    \item \textbf{The principle of disclosure:} Reveals only enough information to help users understand what they will find at the next level.
+    \item \textbf{The principle of growth:} Ensures the architecture can scale as content and features expand.
+\end{itemize}
+
+\subsection*{Creating Sitemaps}
+A sitemap is a visual representation of your product’s IA—a hierarchical diagram showing all pages, screens, or sections and their relationships. Start by listing all the content and functionality your product needs to include. Group related items using card sorting techniques. Arrange groups into a hierarchy that reflects how users think about the content. Label each section with clear, user-centred language.
+
+\begin{figure}[h!]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/ia_sitemap_diagram.png}
+    \caption{Information Architecture Sitemap Diagram. An IA sitemap showing hierarchical page relationships and navigation structures. [Source: Nielsen Norman Group (www.nngroup.com)]}
+\end{figure}
+
+\subsection*{Navigation Design}
+Navigation is the user-facing expression of your information architecture. Effective navigation systems include global navigation, local navigation, breadcrumbs, and search. For your project, design navigation that matches the depth and complexity of your IA while remaining simple enough for first-time users.
+
+\begin{figure}[h!]
+    \centering
+    % \includegraphics[width=0.8\textwidth]{images/ia_sitemap_template.png}
+    \caption{Information Architecture and Sitemap Template. A practical sitemap template showing IA hierarchy for a website. [Source: freeCodeCamp (www.freecodecamp.org)]}
+\end{figure}
+
+The next task below will guide you through creating an information architecture sitemap for your independent project. Use your user flows and journey maps as inputs to ensure your IA supports the user paths you have designed.
+
+\section*{System Thinking for Design}
+System thinking is the practice of understanding how components interact within a complex whole. In the context of your independent project, system thinking helps you see beyond individual features or screens to understand how the entire product experience works as a unified system. A change to one component ripples through the entire system, affecting the user experience in ways that are not always immediately obvious.
+
+\subsection*{Feedback Loops and Dependencies}
+Every interactive system contains feedback loops—mechanisms through which the system’s output influences its future input. In an app, a positive feedback loop might occur when successful task completion unlocks new features, encouraging further engagement. A negative feedback loop might occur when errors create frustration that leads to abandonment. In games, feedback loops are the core mechanic—challenge and reward cycles, progression systems, and difficulty scaling all depend on carefully designed feedback.
+
+\subsection*{AI and Predictive Mental Modelling}
+AI tools are increasingly capable of modelling and predicting user behaviour patterns, offering designers data-driven insights into how users will interact with systems. Analytics platforms use machine learning to identify common paths, drop-off points, and unexpected behaviours. Predictive models can suggest design changes likely to improve user flow efficiency.
+
+The next task below will help you refine your user flows through peer review. Receiving feedback from peers who approach your diagrams with their own mental models provides valuable insight into how intuitive your designs are.
+
+\section*{Definitions}
+\begin{description}
+    \item[Mental Model:] An internal cognitive representation of how a system works, formed through a user’s prior experiences, expectations, and understanding.
+    \item[User Flow:] A visual representation of the path a user takes through a product to accomplish a specific goal.
+    \item[Customer Journey Map:] A visualisation of the complete user experience across all touchpoints, documenting actions, thoughts, emotions, and pain points.
+    \item[Information Architecture:] The practice of organising, structuring, and labelling content in an effective and sustainable way.
+    \item[Sitemap:] A hierarchical visual diagram showing all pages, screens, or sections of a product and their relationships.
+    \item[System Thinking:] The practice of understanding how components interact within a complex whole, recognising feedback loops and dependencies.
+    \item[Touchpoint:] Any point of interaction between a user and a product or brand.
+    \item[Card Sorting:] A user research technique where participants organise content items into categories that make sense to them.
+    \item[Wayfinding:] The process by which users orient themselves within a system and navigate to their desired destination.
+    \item[Decision Point:] A moment in a user flow where the user or system makes a choice that determines the next step.
+    \item[Feedback Loop:] A mechanism in a system where the output influences future input.
+    \item[Cognitive Load:] The amount of mental effort required to use a system.
+    \item[SSM Framework:] The Story, System, and Mental Model framework for game design.
+    \item[Breadcrumbs:] A navigation element showing the user’s path through a content hierarchy.
+    \item[Miller’s Law:] The cognitive principle that the average person can hold approximately seven (plus or minus two) items in working memory.
+\end{description}
+
+\section*{Recommended Books}
+\begin{enumerate}
+    \item Rosenfeld, L., Morville, P., \& Arango, J. (2015). \textit{Information Architecture: For the Web and Beyond} (4th ed.). O’Reilly Media.
+    \item Kalbach, J. (2016). \textit{Mapping Experiences: A Complete Guide to Creating Value through Journeys, Blueprints, and Diagrams}. O’Reilly Media.
+    \item Young, I. (2008). \textit{Mental Models: Aligning Design Strategy with Human Behavior}. Rosenfeld Media.
+    \item Meadows, D. H. (2008). \textit{Thinking in Systems: A Primer}. Chelsea Green Publishing.
+\end{enumerate}
+
+\section*{Online Articles and Blogs}
+\begin{enumerate}
+    \item Nielsen Norman Group. (2024). \textit{Mental models}. Retrieved from: \url{https://www.nngroup.com/articles/mental-models/}
+    \item CareerFoundry. (2021). \textit{Mental models in UX design}. Retrieved from: \url{https://careerfoundry.com/en/blog/ux-design/mental-models-ux-design/}
+    \item Figma. (n.d.). \textit{What is information architecture?} Retrieved from: \url{https://www.figma.com/resource-library/what-is-information-architecture/}
+    \item Gamedeveloper.com. (2017). \textit{The SSM framework of game design}. Retrieved from: \url{https://www.gamedeveloper.com/design/the-ssm-framework-of-game-design}
+\end{enumerate}
+
+\section*{Additional Watching Material}
+\begin{enumerate}
+    \item Value at Void™. (2023). \textit{What is mental model? | UX design tips} [Video]. YouTube. Retrieved from: \url{https://www.youtube.com/watch?v=W1IU3hkJbOw}
+    \item Headway. (2023). \textit{Create user flow diagrams from customer journey maps} [Video]. YouTube. Retrieved from: \url{https://www.youtube.com/watch?v=pcCUP23X9g8}
+    \item Jesse Showalter. (2021). \textit{User flow diagram basics} [Video]. YouTube. Retrieved from: \url{https://www.youtube.com/watch?v=cvYhuowazh0}
+    \item Jamal N. (2022). \textit{UX design basics: Mental models} [Video]. YouTube. Retrieved from: \url{https://www.youtube.com/watch?v=9gM8K4ooavY}
+\end{enumerate}
+
+The next task below will guide you through supplemental learning resources to deepen your understanding of mental models, user flows, information architecture, and system thinking.
+
+\end{document}
