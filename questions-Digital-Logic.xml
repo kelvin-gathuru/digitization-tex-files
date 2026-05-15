@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- question: 1 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q1: Binary to BCD</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Convert the following binary number <strong>{@bin_str@}</strong> to its 8421 BCD equivalent.</p>
+<p>BCD = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p><em>Note: Enter the BCD digits separated by spaces, and use a period for the decimal point if applicable (e.g., <code>0001 0010.0101</code>).</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p><strong>Step 1: Convert binary to decimal</strong></p>
+<p>\[ {@bin_str@}_2 = {@dec_val@}_{10} \]</p>
+<p><strong>Step 2: Convert each decimal digit to 4-bit BCD</strong></p>
+<p>The decimal digits are {@dec_digits@}.</p>
+<ul>
+  <li>{@dec_digits[1]@} &rarr; {@bcd_parts[1]@}</li>
+  <li>{@dec_digits[2]@} &rarr; {@bcd_parts[2]@}</li>
+  <li>{@dec_digits[3]@} &rarr; {@bcd_parts[3]@}</li>
+  <li>. &rarr; .</li>
+  <li>{@dec_frac_digits[1]@} &rarr; {@bcd_frac_parts[1]@}</li>
+  <li>{@dec_frac_digits[2]@} &rarr; {@bcd_frac_parts[2]@}</li>
+</ul>
+<p><strong>BCD equivalent:</strong> {@ta1@}</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>/* Random decimal value 100-255 */
+iv: 100 + rand(156);
+fv: rand([25, 50, 75]);
+dec_val: float(iv + fv/100);
+
+/* Manual binary conversion for iv (8 bits) */
+v7: floor(iv/128);
+v6: floor(mod(iv, 128)/64);
+v5: floor(mod(iv, 64)/32);
+v4: floor(mod(iv, 32)/16);
+v3: floor(mod(iv, 16)/8);
+v2: floor(mod(iv, 8)/4);
+v1: floor(mod(iv, 4)/2);
+v0: mod(iv, 2);
+
+f_bin: if fv=25 then "01" else (if fv=50 then "10" else "11");
+bin_str: sconcat(v7, v6, v5, v4, v3, v2, v1, v0, ".", f_bin);
+
+/* BCD conversion */
+d1: floor(iv/100);
+d2: floor(mod(iv, 100)/10);
+d3: mod(iv, 10);
+f1: floor(fv/10);
+f2: mod(fv, 10);
+
+dec_digits: [d1, d2, d3];
+dec_frac_digits: [f1, f2];
+
+bcd_map: ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"];
+bcd_parts: map(lambda([x], bcd_map[x+1]), dec_digits);
+bcd_frac_parts: map(lambda([x], bcd_map[x+1]), dec_frac_digits);
+
+ta1: sconcat(bcd_parts[1], " ", bcd_parts[2], " ", bcd_parts[3], ".", bcd_frac_parts[1], " ", bcd_frac_parts[2]);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>string</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 2 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q2: 16-bit Register to Decimal</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A 16-bit register contains the following BCD contents: <strong>{@reg_str@}</strong></p>
+<p>Interpret the contents of this register as a decimal number.</p>
+<p>Decimal = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>Divide the 16-bit content into 4-bit nibbles and convert each to its decimal equivalent:</p>
+<ul>
+  <li>{@bcd_parts[1]@} &rarr; {@d1@}</li>
+  <li>{@bcd_parts[2]@} &rarr; {@d2@}</li>
+  <li>{@bcd_parts[3]@} &rarr; {@d3@}</li>
+  <li>{@bcd_parts[4]@} &rarr; {@d4@}</li>
+</ul>
+<p>The decimal equivalent is <strong>{@ta1@}</strong>.</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>d1: rand(9)+1;
+d2: rand(10);
+d3: rand(10);
+d4: rand(10);
+bcd_map: ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"];
+bcd_parts: [bcd_map[d1+1], bcd_map[d2+1], bcd_map[d3+1], bcd_map[d4+1]];
+reg_str: sconcat(bcd_parts[1], " ", bcd_parts[2], " ", bcd_parts[3], " ", bcd_parts[4]);
+ta1: d1*1000 + d2*100 + d3*10 + d4;</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>numerical</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 3 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q3: Decimal to Excess-3</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Express the decimal number <strong>{@dec_val@}</strong> in excess-3 code.</p>
+<p>Excess-3 = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p><em>Note: Enter the 4-bit codes separated by spaces (e.g., <code>1000 0101</code>).</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>To convert to excess-3, add 3 to each decimal digit and find the BCD equivalent of the result:</p>
+<ul>
+  <li>Digit 1: {@d1@} + 3 = {@d1+3@} &rarr; {@bcd_map[d1+3+1]@}</li>
+  <li>Digit 2: {@d2@} + 3 = {@d2+3@} &rarr; {@bcd_map[d2+3+1]@}</li>
+  <li>Digit 3: {@d3@} + 3 = {@d3+3@} &rarr; {@bcd_map[d3+3+1]@}</li>
+  <li>Digit 4: {@d4@} + 3 = {@d4+3@} &rarr; {@bcd_map[d4+3+1]@}</li>
+</ul>
+<p>Excess-3 code: <strong>{@ta1@}</strong></p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>d1: rand(7)+1;
+d2: rand(7);
+d3: rand(7);
+d4: rand(7);
+dec_val: d1*1000 + d2*100 + d3*10 + d4;
+bcd_map: ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010", "1011", "1100"];
+ta1: sconcat(bcd_map[d1+3+1], " ", bcd_map[d2+3+1], " ", bcd_map[d3+3+1], " ", bcd_map[d4+3+1]);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>string</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 4 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q4: Decimal to Gray Code</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Determine the 4-bit Gray code for decimal <strong>{@dec_val@}</strong>.</p>
+<p>Gray Code = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p><strong>Step 1: Convert decimal to binary</strong></p>
+<p>\( {@dec_val@}_{10} = {@bin_str@}_2 \)</p>
+<p><strong>Step 2: Convert binary to Gray code</strong></p>
+<p>Rules: \( g_3 = b_3 \), \( g_2 = b_3 \oplus b_2 \), \( g_1 = b_2 \oplus b_1 \), \( g_0 = b_1 \oplus b_0 \)</p>
+<p>Binary: {@b3@} {@b2@} {@b1@} {@b0@}</p>
+<ul>
+  <li>\( g_3 = {@b3@} = {@g3@} \)</li>
+  <li>\( g_2 = {@b3@} \oplus {@b2@} = {@g2@} \)</li>
+  <li>\( g_1 = {@b2@} \oplus {@b1@} = {@g1@} \)</li>
+  <li>\( g_0 = {@b1@} \oplus {@b0@} = {@g0@} \)</li>
+</ul>
+<p>Gray code: <strong>{@ta1@}</strong></p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>dec_val: rand(16);
+b3: floor(dec_val/8);
+b2: floor(mod(dec_val,8)/4);
+b1: floor(mod(dec_val,4)/2);
+b0: mod(dec_val,2);
+
+bin_str: sconcat(b3, b2, b1, b0);
+
+g3: b3;
+g2: if b3=b2 then 0 else 1;
+g1: if b2=b1 then 0 else 1;
+g0: if b1=b0 then 0 else 1;
+
+ta1: sconcat(g3, g2, g1, g0);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>string</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+</quiz>
