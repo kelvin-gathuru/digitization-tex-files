@@ -1,0 +1,148 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+\begin{document}
+
+\section*{4.2 Code Systems}
+Coding is a process of using a specific group of characters, alphabets, symbols, or numbers to represent specific information. Computers and other digital systems are required to handle data which may be numeric, alphabetic or special characters thus codes are needed to convert the given data into binary numbers. A code represents the combinations of 1s and 0s used to represent numbers, symbols, alphabetic characters, and other types of information.
+
+There are various types of codes used in digital systems. They are categorized as:
+\begin{itemize}
+    \item Weighted binary codes
+    \item Non-weighted codes
+    \item Alphanumeric codes
+    \item Error detection codes
+\end{itemize}
+
+\subsection*{Weighted Binary Codes}
+In weighted codes for each position (or bit), there is specific weight attached. Weighted binary codes are those which obey the positional weighting principles; each position of the number represents a specific weight. Several weighted codes are possible e.g., 8421 which is also known as Binary Coded Decimal or BCD code. In any BCD, each decimal digit is expressed by its 4-bit binary equivalent according to the BCD code being used.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|c|}
+        \hline
+        \textbf{Decimal Number} & \textbf{8421 Code} \\ \hline
+        5 & 0101 \\ \hline
+        6 & 0110 \\ \hline
+        7 & 0111 \\ \hline
+    \end{tabular}
+\end{table}
+
+The digital data are represented, stored, and transmitted as a group of binary bits. This group of binary bits is also called as the binary code.
+
+\subsection*{Non-weighted Codes}
+In non-weighted codes there is no specific weight attached for each position (or bit). There are two types of non-weighted code:
+\begin{itemize}
+    \item Excess-3 code
+    \item Gray code
+\end{itemize}
+
+\section*{Activity 2: Binary Codes}
+Welcome to Activity 2: You will learn about binary codes.
+
+\subsection*{4.3 Binary Codes}
+Many specialized codes are used in a digital system. The digital data are represented, stored, and transmitted as a group of binary bits called as the binary code. The binary codes represent numbers as well as alphanumeric letters widely used for analyzing and designing digital circuits since only 0 and 1 are being used. The codes introduced in this section are BCD code, Gray code, and Excess-3 code.
+
+\subsection*{4.3.1 Binary-Coded-Decimal (BCD)}
+Binary Coded Decimal (BCD) is a way to express each decimal digit with a binary code. In the BCD, each decimal digit is represented by a four-bit binary number. Totally they can represent 16 numbers (0000--1111), but in BCD code, only 10 of these are used (0--9). The remaining six code combinations are invalid in BCD.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        \textbf{Decimal} & \textbf{BCD} & \textbf{Decimal} & \textbf{BCD} \\ \hline
+        0 & 0000 & 5 & 0101 \\ \hline
+        1 & 0001 & 6 & 0110 \\ \hline
+        2 & 0010 & 7 & 0111 \\ \hline
+        3 & 0011 & 8 & 1000 \\ \hline
+        4 & 0100 & 9 & 1001 \\ \hline
+    \end{tabular}
+\end{table}
+
+\section*{Activity 3: Conversion of Decimal Numbers}
+Welcome to Activity 3: You will learn about conversion of decimal numbers to BCD.
+
+\subsection*{4.4 Conversion of Decimal Number to BCD}
+To convert any decimal number in BCD, simply replace each decimal digit with the corresponding four-bit binary code.
+\begin{example}
+    To convert the decimal number 137 to BCD:
+    \begin{itemize}
+        \item 1 $\rightarrow$ 0001
+        \item 3 $\rightarrow$ 0011
+        \item 7 $\rightarrow$ 0111
+    \end{itemize}
+    So, the BCD code for 137 is 000100110111.
+\end{example}
+
+The main advantage of BCD code is the relative ease of converting to and from decimal. It is used in digital machines whenever decimal information is applied as inputs or displayed as outputs, such as digital voltmeters and clocks. However, BCD code is not used in modern high-speed digital computers because it requires more storage space.
+
+\subsection*{4.4.1 The 8421 BCD Code}
+The 8421 BCD code is the most commonly used BCD code. The designation 8421 refers to the binary weight of the four bits. Each decimal digit 0 through 9 is coded by a 4-bit binary number known as natural binary codes with weights 8, 4, 2, and 1.
+
+\subsection*{4.4.2 Excess-3 Code}
+The Excess-3 code (Xs-3) for a decimal number is obtained by adding 3 to each digit before encoding it in binary.
+\begin{example}
+    Convert 59 to Xs-3 code:
+    \begin{itemize}
+        \item 5 + 3 = 8 $\rightarrow$ 1000
+        \item 9 + 3 = 12 $\rightarrow$ 1100
+    \end{itemize}
+    The Excess-3 code for 59 is 10001100.
+\end{example}
+
+\begin{table}[h!]
+    \centering
+    \caption{8421 BCD and Excess-3 Codes}
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \textbf{Decimal} & \textbf{8421 BCD Code} & \textbf{Excess-3 Code} \\ \hline
+        0 & 0000 & 0011 \\ \hline
+        1 & 0001 & 0100 \\ \hline
+        2 & 0010 & 0101 \\ \hline
+        3 & 0011 & 0110 \\ \hline
+        4 & 0100 & 0111 \\ \hline
+        5 & 0101 & 1000 \\ \hline
+        6 & 0110 & 1001 \\ \hline
+        7 & 0111 & 1010 \\ \hline
+        8 & 1000 & 1011 \\ \hline
+        9 & 1001 & 1100 \\ \hline
+    \end{tabular}
+\end{table}
+
+\section*{Activity 4: Gray Codes Evaluation}
+Welcome to Activity 4: You will learn about Gray codes.
+
+\subsection*{4.5 Gray Code}
+The Gray code belongs to a class of codes called minimum change codes, in which only one bit in the code changes when moving from one code to the next. It is a non-weighted, cyclic code.
+
+\subsubsection*{Conversion of Binary to Gray Code}
+\begin{enumerate}
+    \item Begin with the most significant bit (MSB).
+    \item The second MSB of Gray code is obtained by adding the MSB and the second MSB of binary number (ignoring carry).
+    \item Continue the process until the LSB.
+\end{enumerate}
+\begin{example}
+    Binary: 1 1 0 0 1 1 $\rightarrow$ Gray: 1 0 1 0 1 0
+\end{example}
+
+\subsubsection*{Conversion of Gray Code to Binary}
+\begin{enumerate}
+    \item The MSB of the binary number is the same as the MSB of the Gray code.
+    \item The second binary bit is obtained by adding the first binary bit to the second Gray bit.
+    \item Continue the process until the LSB.
+\end{enumerate}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/digital.png}
+\end{figure}
+
+Gray code is often used in situations where other codes might produce erroneous or ambiguous results during those transitions in which more than 1 bit of the code is changing e.g. in the transition from 7 to 8 in binary, all bit positions change, and in a practical circuit, these bit positions may not change at exactly the same time and this could cause problems in some circuits.
+
+\subsection*{4.6 Summary}
+\begin{itemize}
+    \item \textbf{BCD}: A digital code where each decimal digit 0--9 is represented by a 4-bit binary group. The 8421 code is the most common weighted version.
+    \item \textbf{Gray Code}: A non-weighted code where only one bit changes between successive patterns, efficiently avoiding transient errors.
+\end{itemize}
+
+\end{document}
