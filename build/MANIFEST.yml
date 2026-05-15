@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: dsc401_kenya.pdf
+    url: child_protection.pdf
   is_hidden: false
-  pdf_url: dsc401_kenya.pdf
-  slug: dsc401_kenya
-  source: DSC401_kenya.tex
+  pdf_url: child_protection.pdf
+  slug: child_protection
+  source: child_protection.tex
   splitlevel: -2
-  title: DSC401_kenya
+  title: child_protection
   type: standalone
   url: index.html
 themes:
