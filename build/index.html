@@ -1,1485 +1,1396 @@
+
 <!doctype html>
 <html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="None" />
+            <meta name="date" content="2026-05-15" />
+        
 
-<head>
+        <title>web | </title>
 
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="None" />
-    <meta name="date" content="2026-05-15" />
+        
+    
+    
+            <link rel="stylesheet" href="static/styles.css?build_time=1778850856.999794">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1778850856.999794">
 
-
-    <title>DSC401_codesystems | </title>
-
-
-
-
-    <link rel="stylesheet" href="static/styles.css?build_time=1778839523.068833">
-
-
-
-    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1778839523.068833">
-
-    <link rel="stylesheet" href="static/print.css?build_time=1778839523.068833">
-
+    <link rel="stylesheet" href="static/print.css?build_time=1778850856.999794">
 
 
+        
+    
+			<script>
+				var chirun_static_url = new URL('static?build_time=1778850856.999794', location.href);
+			</script>
 
-    <script>
-        var chirun_static_url = new URL('static?build_time=1778839523.068833', location.href);
-    </script>
+            
+                <script defer src="static/mathjax_config.js?build_time=1778850856.999794"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+            
+
+            <script type="module" src="static/localisation.js?build_time=1778850856.999794"></script>
+
+            <script defer src="static/customisation.js?build_time=1778850856.999794"></script>
+
+            
+
+            
+        
+    <script defer src="static/code.js?build_time=1778850856.999794" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1778850856.999794" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1778850856.999794" type="module"></script>
 
 
-    <script defer src="static/mathjax_config.js?build_time=1778839523.068833"></script>
-    <script type="text/javascript" id="MathJax-script" defer
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-    <script type="module" src="static/localisation.js?build_time=1778839523.068833"></script>
-
-    <script defer src="static/customisation.js?build_time=1778839523.068833"></script>
-
-
-
-
-
-    <script defer src="static/code.js?build_time=1778839523.068833" type="module"></script>
-    <script defer src="static/embed_numbas.js?build_time=1778839523.068833" type="module"></script>
-    <script defer src="static/embed_qrcode.js?build_time=1778839523.068833" type="module"></script>
-
-
-    <template id="runnable-code-template">
-        <link rel="stylesheet" href="static/code.css?build_time=1778839523.068833">
-        <div class="runnable-code-wrapper">
-            <section class="fullscreenable code">
-                <div id="code"></div>
-                <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon"
-                        aria-label="Fullscreen code" viewBox="0 0 180 180">
-                        <use href="#fullscreen" />
-                    </svg></button>
-            </section>
-            <section class="fullscreenable output">
-                <div id="output" aria-live="polite">
-                    <pre class="stdout"></pre>
-                    <pre class="result"></pre>
-                    <div class="images"></div>
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="static/code.css?build_time=1778850856.999794">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
+                    </div>
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
+                </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
                 </div>
-                <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon"
-                        aria-label="Fullscreen output" viewBox="0 0 180 180">
-                        <use href="#fullscreen" />
-                    </svg></button>
-            </section>
-            <div class="buttons">
-                <button type="button" class="run-code">Run code</button>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
             </div>
-            <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
-                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                <defs>
-                    <g id="cog">
-                        <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
-                            d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
-                    </g>
-                    <g id="pdf">
-                        <path
-                            style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
-                    </g>
-                    <g id="slides">
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,21.25 30,137.5" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="M 90,21.25 60,158.75" />
-                        <rect
-                            style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                            width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675"
-                            rx="4.7737675" />
-                        <rect
-                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                            width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,66.25 h 50" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,76.25 h 50" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,86.25 h 50" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,56.25 h 50" />
-                        <path
-                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                            d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
-                    </g>
+        </template>
 
-                    <g id="notebook">
-                        <path
-                            style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
-                            d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
-                        <circle
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            cx="58.699139" cy="59.503937" r="3.8077738" />
-                        <circle
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            cx="113.59385" cy="52.885151" r="4.9348516" />
-                        <path
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
-                        <path
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
-                        <ellipse
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="M 34,46.266514 V 62.316215" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="M 34,77.849849 V 93.89955" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 34,109.43318 v 16.0497" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
-                    </g>
-
-                    <g id="fullscreen">
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
-                            d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
-                        />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                            d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
-                    </g>
-                </defs>
-            </svg>
-        </div>
-    </template>
-
-    <template id="embed-numbas-template">
-        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1778839523.068833">
-        <details id="wrapper" data-completion-status="incomplete">
-            <summary>
-                <h1 id="title">Test Yourself</h1>
-                <div id="completion-status" data-completion-status="unknown">
-                    <span class="complete">Complete</span>
-                    <span class="incomplete">Incomplete</span>
-                </div>
-                <label id="score-feedback">
-                    Score:
-                    <progress min="0"></progress>
-                </label>
-            </summary>
-            <iframe class="embed" title="Numbas"></iframe>
-        </details>
-    </template>
-
-</head>
-
-<body class="">
-
-
-    <a class="skip-to-content-link" href="#main-content">Skip to content</a>
-
-    <form id="display-options">
-        <div class="buttons">
-            <button type="button" id="reset-display-options">Reset to defaults</button>
-
-            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
-
-            <button type="button" aria-controls="display-options" aria-expanded="false">
-                Close
-            </button>
-        </div>
-
-        <div class="inputs">
-            <div class="input-group">
-                <label for="display-options-font-scale">
-                    Text size
-                </label>
-                <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
-                <output for="display-options-font-scale">100%</output>
-            </div>
-
-            <div class="input-group">
-                <label for="display-options-spacing-factor">
-                    Spacing
-                </label>
-                <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
-                <output for="display-options-spacing-factor">100%</output>
-            </div>
-
-            <div class="input-group">
-                <label for="display-options-font-family">
-                    Text font
-                </label>
-                <select id="display-options-font-family">
-                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
-                    <option value="var(--serif-font)">Serif</option>
-                    <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
-                    <option value="Comic Sans MS">Comic Sans</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="display-options-colour-scheme">
-                    Colour scheme
-                </label>
-                <select id="display-options-colour-scheme">
-                    <option value="auto" selected>Automatic (default)</option>
-                    <option value="light">Black text on white</option>
-                    <option value="dark">White text on black</option>
-                    <option value="custom">Custom</option>
-                </select>
-            </div>
-
-            <section id="custom-colour-scheme-options" class="inputs">
-                <div class="input-group">
-                    <label for="display-options-text-colour">
-                        Text colour
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="static/embed_numbas.css?build_time=1778850856.999794">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
+                    </div>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
                     </label>
-                    <input type="color" value="#000000" id="display-options-text-colour">
-                </div>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
+            </details>
+        </template>
 
-                <div class="input-group">
-                    <label for="display-options-link-colour">
-                        Link colour
-                    </label>
-                    <input type="color" value="#0000ee" id="display-options-link-colour">
-                </div>
+    </head>
+    <body class="" >
+        
 
-                <div class="input-group">
-                    <label for="display-options-bg-colour">
-                        Background colour
-                    </label>
-                    <input type="color" value="#ffffff" id="display-options-bg-colour">
-                </div>
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <form id="display-options">
+    <div class="buttons">
+        <button type="button" id="reset-display-options">Reset to defaults</button>
 
-                <div class="input-group">
-                    <label for="display-options-bg-colour-off">
-                        Muted background colour
-                    </label>
-                    <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
-                </div>
+        <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
 
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-1">
-                        Accent colour 1
-                    </label>
-                    <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-2">
-                        Accent colour 2
-                    </label>
-                    <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-3">
-                        Accent colour 3
-                    </label>
-                    <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-4">
-                        Accent colour 4
-                    </label>
-                    <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
-                </div>
-            </section>
-
-            <section id="filter-colour-scheme-options" class="inputs">
-                <div class="input-group">
-                    <label for="display-options-filter-sepia">
-                        Sepia filter
-                    </label>
-                    <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
-                    <output for="display-options-filter-sepia">0%</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-filter-hue-rotate">
-                        Rotate hues
-                    </label>
-                    <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
-                    <output for="display-options-filter-hue-rotate">0 turns</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-invert-images">
-                        Invert images in dark mode
-                    </label>
-                    <input type="checkbox" id="display-options-invert-images">
-                </div>
-
-            </section>
-        </div>
-    </form>
-
-
-    <header>
-
-        <button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false"
-            title="Display options">
-            <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
-                <use href="#cog" />
-            </svg>
+        <button type="button" aria-controls="display-options" aria-expanded="false">
+            Close
         </button>
-
-
-
-
-
-    </header>
-
-    <main id="main-content">
-
-        <nav id="sidebar">
-
-            <ul class="alternative-formats">
-
-                <li><a rel="alternate" type="application/pdf" href="dsc401_codesystems.pdf" download><svg class="icon"
-                            aria-label="PDF" viewBox="0 0 180 180">
-                            <use href="#pdf" />
-                        </svg> Download as PDF</a></li>
-
-            </ul>
-
-
-            <h1>Table of Contents</h1>
-            <a class="jump-to-item-content" href="#item-content">Jump to content</a>
-
-            <ol class="table-of-contents" role="tree">
-
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
-                        <span class="toc-marker"></span>
-                        4.2 Code Systems
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000002">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000008" href="#a0000000008">
-
-                                Weighted Binary Codes
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000010" href="#a0000000010">
-
-                                Non-weighted Codes
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000014" href="#a0000000014">
-                        <span class="toc-marker"></span>
-                        Activity 2: Binary Codes
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000014">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000015" href="#a0000000015">
-
-                                4.3 Binary Codes
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000016" href="#a0000000016">
-
-                                4.3.1 Binary-Coded-Decimal (BCD)
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000018" href="#a0000000018">
-                        <span class="toc-marker"></span>
-                        Activity 3: Conversion of Decimal Numbers
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000018">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000019"
-                                href="#a0000000019">
-                                <span class="toc-marker"></span>
-                                4.4 Conversion of Decimal Number to BCD
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000019">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-_example_1_" href="#_example_1_">
-
-
-                                        <span class="thmcaption example_thmcaption">
-                                            Example
-                                        </span>
-                                        <span class="thmlabel example_thmlabel">1</span>
-
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
-
-                                4.4.1 The 8421 BCD Code
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000026"
-                                href="#a0000000026">
-                                <span class="toc-marker"></span>
-                                4.4.2 Excess-3 Code
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000026">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-_example_2_" href="#_example_2_">
-
-
-                                        <span class="thmcaption example_thmcaption">
-                                            Example
-                                        </span>
-                                        <span class="thmlabel example_thmlabel">2</span>
-
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000032" href="#a0000000032">
-                        <span class="toc-marker"></span>
-                        Activity 4: Gray Codes Evaluation
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000032">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000033"
-                                href="#a0000000033">
-                                <span class="toc-marker"></span>
-                                4.5 Gray Code
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000033">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000034"
-                                        href="#a0000000034">
-                                        <span class="toc-marker"></span>
-                                        Conversion of Binary to Gray Code
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000034">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_3_" href="#_example_3_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">3</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000040" href="#a0000000040">
-
-                                        Conversion of Gray Code to Binary
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000045" href="#a0000000045">
-
-                                4.6 Summary
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-
-            </ol>
-
-
-        </nav>
-
-        <article class="item-content" id="item-content">
-            <section class="section">
-                <h2 id="a0000000002">4.2 Code Systems</h2>
-                <p>
-                    Coding is a process of using a specific group of characters, alphabets, symbols, or numbers to
-                    represent specific information. Computers and other digital systems are required to handle data
-                    which may be numeric, alphabetic or special characters thus codes are needed to convert the given
-                    data into binary numbers. A code represents the combinations of 1s and 0s used to represent numbers,
-                    symbols, alphabetic characters, and other types of information.
-                </p>
-                <p>
-                    There are various types of codes used in digital systems. They are categorized as:
-                </p>
-                <ul class="itemize" id="a0000000003">
-                    <li id="a0000000004">
-                        <p>
-                            Weighted binary codes
-                        </p>
-                    </li>
-                    <li id="a0000000005">
-                        <p>
-                            Non-weighted codes
-                        </p>
-                    </li>
-                    <li id="a0000000006">
-                        <p>
-                            Alphanumeric codes
-                        </p>
-                    </li>
-                    <li id="a0000000007">
-                        <p>
-                            Error detection codes
-                        </p>
-                    </li>
-                </ul>
-                <section class="subsection">
-                    <h3 id="a0000000008">Weighted Binary Codes</h3>
-                    <p>
-                        In weighted codes for each position (or bit), there is specific weight attached. Weighted binary
-                        codes are those which obey the positional weighting principles; each position of the number
-                        represents a specific weight. Several weighted codes are possible e.g., 8421 which is also known
-                        as Binary Coded Decimal or BCD code. In any BCD, each decimal digit is expressed by its 4-bit
-                        binary equivalent according to the BCD code being used.
-                    </p>
-                    <div class="table" id="a0000000009">
-                        <div class="centered">
-                            <table class="tabular">
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            <b class="bfseries">Decimal Number</b>
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            <b class="bfseries">8421 Code</b>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            5
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0101
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            6
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0110
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            7
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            0111
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                    <p>
-                        The digital data are represented, stored, and transmitted as a group of binary bits. This group
-                        of binary bits is also called as the binary code.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000010">Non-weighted Codes</h3>
-                    <p>
-                        In non-weighted codes there is no specific weight attached for each position (or bit). There are
-                        two types of non-weighted code:
-                    </p>
-                    <ul class="itemize" id="a0000000011">
-                        <li id="a0000000012">
-                            <p>
-                                Excess-3 code
-                            </p>
-                        </li>
-                        <li id="a0000000013">
-                            <p>
-                                Gray code
-                            </p>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000014">Activity 2: Binary Codes</h2>
-                <p>
-                    Welcome to Activity 2: You will learn about binary codes.
-                </p>
-                <section class="subsection">
-                    <h3 id="a0000000015">4.3 Binary Codes</h3>
-                    <p>
-                        Many specialized codes are used in a digital system. The digital data are represented, stored,
-                        and transmitted as a group of binary bits called as the binary code. The binary codes represent
-                        numbers as well as alphanumeric letters widely used for analyzing and designing digital circuits
-                        since only 0 and 1 are being used. The codes introduced in this section are BCD code, Gray code,
-                        and Excess-3 code.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000016">4.3.1 Binary-Coded-Decimal (BCD)</h3>
-                    <p>
-                        Binary Coded Decimal (BCD) is a way to express each decimal digit with a binary code. In the
-                        BCD, each decimal digit is represented by a four-bit binary number. Totally they can represent
-                        16 numbers (0000–1111), but in BCD code, only 10 of these are used (0–9). The remaining six code
-                        combinations are invalid in BCD.
-                    </p>
-                    <div class="table" id="a0000000017">
-                        <div class="centered">
-                            <table class="tabular">
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            <b class="bfseries">Decimal</b>
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            <b class="bfseries">BCD</b>
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            <b class="bfseries">Decimal</b>
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            <b class="bfseries">BCD</b>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            0
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0000
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            5
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0101
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            1
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0001
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            6
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0110
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            2
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0010
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            7
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0111
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            3
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0011
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            8
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            1000
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            4
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            0100
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            9
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            1001
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000018">Activity 3: Conversion of Decimal Numbers</h2>
-                <p>
-                    Welcome to Activity 3: You will learn about conversion of decimal numbers to BCD.
-                </p>
-                <section class="subsection">
-                    <h3 id="a0000000019">4.4 Conversion of Decimal Number to BCD</h3>
-                    <p>
-                        To convert any decimal number in BCD, simply replace each decimal digit with the corresponding
-                        four-bit binary code.
-                    <div class="thmwrapper example_thmwrapper" id="a0000000020">
-                        <h5 class="thmheading example_thmheading" id="_example_1_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">1</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                To convert the decimal number 137 to BCD:
-                            </p>
-                            <ul class="itemize" id="a0000000021">
-                                <li id="a0000000022">
-                                    <p>
-                                        1 \(\rightarrow \) 0001
-                                    </p>
-                                </li>
-                                <li id="a0000000023">
-                                    <p>
-                                        3 \(\rightarrow \) 0011
-                                    </p>
-                                </li>
-                                <li id="a0000000024">
-                                    <p>
-                                        7 \(\rightarrow \) 0111
-                                    </p>
-                                </li>
-                            </ul>
-                            <p>
-                                So, the BCD code for 137 is 000100110111.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                    <p>
-                        The main advantage of BCD code is the relative ease of converting to and from decimal. It is
-                        used in digital machines whenever decimal information is applied as inputs or displayed as
-                        outputs, such as digital voltmeters and clocks. However, BCD code is not used in modern
-                        high-speed digital computers because it requires more storage space.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000025">4.4.1 The 8421 BCD Code</h3>
-                    <p>
-                        The 8421 BCD code is the most commonly used BCD code. The designation 8421 refers to the binary
-                        weight of the four bits. Each decimal digit 0 through 9 is coded by a 4-bit binary number known
-                        as natural binary codes with weights 8, 4, 2, and 1.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000026">4.4.2 Excess-3 Code</h3>
-                    <p>
-                        The Excess-3 code (Xs-3) for a decimal number is obtained by adding 3 to each digit before
-                        encoding it in binary.
-                    <div class="thmwrapper example_thmwrapper" id="a0000000027">
-                        <h5 class="thmheading example_thmheading" id="_example_2_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">2</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                Convert 59 to Xs-3 code:
-                            </p>
-                            <ul class="itemize" id="a0000000028">
-                                <li id="a0000000029">
-                                    <p>
-                                        5 + 3 = 8 \(\rightarrow \) 1000
-                                    </p>
-                                </li>
-                                <li id="a0000000030">
-                                    <p>
-                                        9 + 3 = 12 \(\rightarrow \) 1100
-                                    </p>
-                                </li>
-                            </ul>
-                            <p>
-                                The Excess-3 code for 59 is 10001100.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                    <div class="table" id="a0000000031">
-                        <div class="centered">
-                            <figcaption>
-                                <span class="caption_title">Table</span>
-                                <span class="caption_ref">1</span>
-                                <span class="caption_text">8421 BCD and Excess-3 Codes</span>
-                            </figcaption>
-                            <table class="tabular">
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            <b class="bfseries">Decimal</b>
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            <b class="bfseries">8421 BCD Code</b>
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            <b class="bfseries">Excess-3 Code</b>
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            0
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0000
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0011
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            1
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0001
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0100
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            2
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0010
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0101
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            3
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0011
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0110
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            4
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0100
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0111
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            5
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0101
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            1000
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            6
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0110
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            1001
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            7
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            0111
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            1010
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black">
-                                        <p>
-                                            8
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            1000
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black">
-                                        <p>
-                                            1011
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            9
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            1001
-                                        </p>
-                                    </td>
-                                    <td colspan="" rowspan=""
-                                        style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:center; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                        <p>
-                                            1100
-                                        </p>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000032">Activity 4: Gray Codes Evaluation</h2>
-                <p>
-                    Welcome to Activity 4: You will learn about Gray codes.
-                </p>
-                <section class="subsection">
-                    <h3 id="a0000000033">4.5 Gray Code</h3>
-                    <p>
-                        The Gray code belongs to a class of codes called minimum change codes, in which only one bit in
-                        the code changes when moving from one code to the next. It is a non-weighted, cyclic code.
-                    </p>
-                    <section class="subsubsection">
-                        <h4 id="a0000000034">Conversion of Binary to Gray Code</h4>
-                        <ol class="enumerate" id="a0000000035">
-                            <li id="a0000000036" value="1">
-                                <p>
-                                    Begin with the most significant bit (MSB).
-                                </p>
-                            </li>
-                            <li id="a0000000037" value="2">
-                                <p>
-                                    The second MSB of Gray code is obtained by adding the MSB and the second MSB of
-                                    binary number (ignoring carry).
-                                </p>
-                            </li>
-                            <li id="a0000000038" value="3">
-                                <p>
-                                    Continue the process until the LSB.
-                                </p>
-                            </li>
-                        </ol>
-                        <p>
-                        <div class="thmwrapper example_thmwrapper" id="a0000000039">
-                            <h5 class="thmheading example_thmheading" id="_example_3_">
-                                <span class="thmcaption example_thmcaption">
-                                    Example
-                                </span>
-                                <span class="thmlabel example_thmlabel">3</span>
-                            </h5>
-                            <div class="thmcontent example_thmcontent">
-                                <p>
-                                    Binary: 1 1 0 0 1 1 \(\rightarrow \) Gray: 1 0 1 0 1 0
-                                </p>
-                            </div>
-                        </div>
-                        </p>
-                    </section>
-                    <section class="subsubsection">
-                        <h4 id="a0000000040">Conversion of Gray Code to Binary</h4>
-                        <ol class="enumerate" id="a0000000041">
-                            <li id="a0000000042" value="1">
-                                <p>
-                                    The MSB of the binary number is the same as the MSB of the Gray code.
-                                </p>
-                            </li>
-                            <li id="a0000000043" value="2">
-                                <p>
-                                    The second binary bit is obtained by adding the first binary bit to the second Gray
-                                    bit.
-                                </p>
-                            </li>
-                            <li id="a0000000044" value="3">
-                                <p>
-                                    Continue the process until the LSB.
-                                </p>
-                            </li>
-                        </ol>
-                        <figure>
-                            <div class="centered"><img alt="\includegraphics[width=0.8\textwidth ]{images/digital.png}"
-                                    src="images/img-0001.png" style="width:375.80400000000003pt" /> </div>
-                        </figure>
-                        <p>
-                            Gray code is often used in situations where other codes might produce erroneous or ambiguous
-                            results during those transitions in which more than 1 bit of the code is changing e.g. in
-                            the transition from 7 to 8 in binary, all bit positions change, and in a practical circuit,
-                            these bit positions may not change at exactly the same time and this could cause problems in
-                            some circuits.
-                        </p>
-                    </section>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000045">4.6 Summary</h3>
-                    <ul class="itemize" id="a0000000046">
-                        <li id="a0000000047">
-                            <p>
-                                <b class="bfseries">BCD</b>: A digital code where each decimal digit 0–9 is represented
-                                by a 4-bit binary group. The 8421 code is the most common weighted version.
-                            </p>
-                        </li>
-                        <li id="a0000000048">
-                            <p>
-                                <b class="bfseries">Gray Code</b>: A non-weighted code where only one bit changes
-                                between successive patterns, efficiently avoiding transient errors.
-                            </p>
-                        </li>
-                    </ul>
-                </section>
-            </section>
-            <script id="plastex-labels" type="application/json">{}</script>
-        </article>
-
-    </main>
-
-    <footer>
-        <hr />
-
-        <nav id="footer-nav">
-            <a href="#">Back to top</a>
-        </nav>
-
-        <div id="footer-text">
-            <p>
-                Generated using
-                <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.3.0,
-                written by the Digital Learning Unit, ICT Directorate, <a target="_blank" href="https://ouk.ac.ke/">Open
-                    University of Kenya</a>
-            </p>
-            <p>This page last generated: 2025-08-31</p>
+    </div>
+
+    <div class="inputs">
+        <div class="input-group">
+            <label for="display-options-font-scale">
+                Text size
+            </label>
+            <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+            <output for="display-options-font-scale">100%</output>
         </div>
-    </footer>
 
+        <div class="input-group">
+            <label for="display-options-spacing-factor">
+                Spacing
+            </label>
+            <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+            <output for="display-options-spacing-factor">100%</output>
+        </div>
 
+        <div class="input-group">
+            <label for="display-options-font-family">
+                Text font
+            </label>
+            <select id="display-options-font-family">
+                <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                <option value="var(--serif-font)">Serif</option>
+                <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
+                <option value="Comic Sans MS">Comic Sans</option>
+            </select>
+        </div>
 
-    <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
-        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-        <defs>
-            <g id="cog">
-                <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
-                    d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
-            </g>
-            <g id="pdf">
-                <path
-                    style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
-            </g>
-            <g id="slides">
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,21.25 30,137.5" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="M 90,21.25 60,158.75" />
-                <rect
-                    style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                    width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675" rx="4.7737675" />
-                <rect
-                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                    width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,66.25 h 50" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,76.25 h 50" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,86.25 h 50" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,56.25 h 50" />
-                <path
-                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                    d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
-            </g>
+        <div class="input-group">
+            <label for="display-options-colour-scheme">
+                Colour scheme
+            </label>
+            <select id="display-options-colour-scheme">
+                <option value="auto" selected>Automatic (default)</option>
+                <option value="light">Black text on white</option>
+                <option value="dark">White text on black</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
 
-            <g id="notebook">
-                <path
-                    style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
-                    d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
-                <circle
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    cx="58.699139" cy="59.503937" r="3.8077738" />
-                <circle
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    cx="113.59385" cy="52.885151" r="4.9348516" />
-                <path
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
-                <path
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
-                <ellipse
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="M 34,46.266514 V 62.316215" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="M 34,77.849849 V 93.89955" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 34,109.43318 v 16.0497" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
-            </g>
+        <section id="custom-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-text-colour">
+                    Text colour
+                </label>
+                <input type="color" value="#000000" id="display-options-text-colour">
+            </div>
 
-            <g id="fullscreen">
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
-                    d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
-                />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                    d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
-            </g>
-        </defs>
-    </svg>
-</body>
+            <div class="input-group">
+                <label for="display-options-link-colour">
+                    Link colour
+                </label>
+                <input type="color" value="#0000ee" id="display-options-link-colour">
+            </div>
 
+            <div class="input-group">
+                <label for="display-options-bg-colour">
+                    Background colour
+                </label>
+                <input type="color" value="#ffffff" id="display-options-bg-colour">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-off">
+                    Muted background colour
+                </label>
+                <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-1">
+                    Accent colour 1
+                </label>
+                <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-2">
+                    Accent colour 2
+                </label>
+                <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-3">
+                    Accent colour 3
+                </label>
+                <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-bg-colour-accent-4">
+                    Accent colour 4
+                </label>
+                <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+            </div>
+        </section>
+
+        <section id="filter-colour-scheme-options" class="inputs">
+            <div class="input-group">
+                <label for="display-options-filter-sepia">
+                    Sepia filter
+                </label>
+                <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                <output for="display-options-filter-sepia">0%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-filter-hue-rotate">
+                    Rotate hues
+                </label>
+                <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                <output for="display-options-filter-hue-rotate">0 turns</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-invert-images">
+                    Invert images in dark mode
+                </label>
+                <input type="checkbox" id="display-options-invert-images">
+            </div>
+
+        </section>
+    </div>
+</form>
+        
+
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
+
+            
+            
+        </header>
+
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="web.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
+
+        <h1>Table of Contents</h1>
+        <a class="jump-to-item-content" href="#item-content">Jump to content</a>
+        
+            <ol class="table-of-contents" role="tree">
+                
+                    
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
+        <span class="toc-marker"></span>
+        Lists - Ordered List, Unordered List and Definition List
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000002">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+        
+        i. Unordered List <span class="ttfamily">&lt;ul&gt;...&lt;/ul&gt;</span> and List Item <span class="ttfamily">&lt;li&gt;...&lt;/li&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000009" href="#a0000000009">
+        
+        ii. Ordered List <span class="ttfamily">&lt;ol&gt;...&lt;/ol&gt;</span> and List Item <span class="ttfamily">&lt;li&gt;...&lt;/li&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000010" href="#a0000000010">
+        
+        iii. Definition List <span class="ttfamily">&lt;dl&gt;...&lt;/dl&gt;</span>, Definition Term <span class="ttfamily">&lt;dt&gt;...&lt;/dt&gt;</span> and Definition Detail <span class="ttfamily">&lt;dd&gt;...&lt;/dd&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000011" href="#a0000000011">
+        
+        iv. Nested Lists
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000012" href="#a0000000012">
+        <span class="toc-marker"></span>
+        Tables
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000012">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000020" href="#a0000000020">
+        
+        Table <span class="ttfamily">&lt;table&gt;...&lt;/table&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000021" href="#a0000000021">
+        
+        Table Row <span class="ttfamily">&lt;tr&gt;...&lt;/tr&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000022" href="#a0000000022">
+        
+        Table Header Cell <span class="ttfamily">&lt;th&gt;...&lt;/th&gt;</span>, Table Data Cell <span class="ttfamily">&lt;td&gt;...&lt;/td&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000023" href="#a0000000023">
+        
+        Attributes "rowspan" and "colspan"
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000024" href="#a0000000024">
+        
+        Table Header <span class="ttfamily">&lt;thead&gt;...&lt;/thead&gt;</span>, Table Body <span class="ttfamily">&lt;tbody&gt;...&lt;/tbody&gt;</span> and Table Footer <span class="ttfamily">&lt;tfoot&gt;...&lt;/tfoot&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
+        
+        Column Group <span class="ttfamily">&lt;colgroup&gt;...&lt;/colgroup&gt;</span> and Column <span class="ttfamily">&lt;col /&gt;</span>
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000026" href="#a0000000026">
+        
+        Anchor and Link <span class="ttfamily">&lt;a&gt;...&lt;/a&gt;</span>
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000031" href="#a0000000031">
+        
+        Videos and Audio Files
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000038" href="#a0000000038">
+        <span class="toc-marker"></span>
+        HTML Forms
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000038">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000039" href="#a0000000039">
+        
+        Form Element
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000043" href="#a0000000043">
+        
+        Input Element
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000049" href="#a0000000049">
+        
+        Textarea Element
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000050" href="#a0000000050">
+        
+        Button Element
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000051" href="#a0000000051">
+        
+        Label Element
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000052" href="#a0000000052">
+        
+        Select Menus
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000053" href="#a0000000053">
+        
+        Radio Buttons
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000054" href="#a0000000054">
+        
+        Checkboxes
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000055" href="#a0000000055">
+        
+        Difference Between Checkbox and Radio Button
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+                
+            </ol>
+        
+
+    </nav>
+
+    <article class="item-content" id="item-content">
+        <section class="section">
+<h2 id="a0000000002">Lists - Ordered List, Unordered List and Definition List</h2>
+<p>
+ List-related tags are meant for marking up a list of items. HTML supports three types of lists: ordered list, unordered list and definition list. 
+</p>
+<section class="subsection">
+<h3 id="a0000000003">i. Unordered List <span class="ttfamily">&lt;ul&gt;...&lt;/ul&gt;</span> and List Item <span class="ttfamily">&lt;li&gt;...&lt;/li&gt;</span></h3>
+<p>
+ Function: An unordered list is shown with a bullet in front of each item. The <span class="ttfamily">&lt;ul&gt;...&lt;/ul&gt;</span> contains an unordered list. Each of items in the list is enclosed in <span class="ttfamily">&lt;li&gt;...&lt;/li&gt;</span>, as follows: 
+</p>
+<pre class="verbatim">
+&lt;ul&gt;
+  &lt;li&gt;list-item-1&lt;/li&gt;
+  &lt;li&gt;list-item-2&lt;/li&gt;
+  ......
+&lt;/ul&gt;
+</pre>
+<p>
+<b class="bfseries">Example:</b>
+</p>
+<pre class="verbatim">
+&lt;p&gt;An OMO web designer must master:&lt;/p&gt;
+&lt;ul&gt;
+   &lt;li&gt;Hypertext Markup Language (HTML)&lt;/li&gt;
+   &lt;li&gt;Cascading Style Sheet (CSS)&lt;/li&gt;
+   &lt;li&gt;HyperText Transfer Protocol (HTTP)&lt;/li&gt;
+   &lt;li&gt;Apache HTTP Server&lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>
+<b class="bfseries">Output of the example:</b> An OMO web designer must master: 
+</p>
+<ul class="itemize" id="a0000000004">
+<li id="a0000000005">
+<p>
+Hypertext Markup Language (HTML) 
+</p>
+</li>
+<li id="a0000000006">
+<p>
+Cascading Style Sheet (CSS) 
+</p>
+</li>
+<li id="a0000000007">
+<p>
+HyperText Transfer Protocol (HTTP) 
+</p>
+</li>
+<li id="a0000000008">
+<p>
+Apache HTTP Server 
+</p>
+</li>
+</ul>
+</section><section class="subsection">
+<h3 id="a0000000009">ii. Ordered List <span class="ttfamily">&lt;ol&gt;...&lt;/ol&gt;</span> and List Item <span class="ttfamily">&lt;li&gt;...&lt;/li&gt;</span></h3>
+<p>
+ Items in an ordered list are numbered automatically by the browser. The container tag <span class="ttfamily">&lt;ol&gt;...&lt;/ol&gt;</span> contains an ordered list. Each item of the list is contained inside a <span class="ttfamily">&lt;li&gt;...&lt;/li&gt;</span> container tag. The syntax is similar to the unordered list. 
+</p>
+<p>
+<b class="bfseries">Example:</b>
+</p>
+<pre class="verbatim">
+&lt;p&gt;An OMO web designer must master:&lt;/p&gt;
+&lt;ol&gt;
+   &lt;li&gt;Hypertext Markup Language (HTML)&lt;/li&gt;
+   &lt;li&gt;Cascading Style Sheet (CSS)&lt;/li&gt;
+   &lt;li&gt;HyperText Transfer Protocol (HTTP)&lt;/li&gt;
+   &lt;li&gt;Apache HTTP Server&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000010">iii. Definition List <span class="ttfamily">&lt;dl&gt;...&lt;/dl&gt;</span>, Definition Term <span class="ttfamily">&lt;dt&gt;...&lt;/dt&gt;</span> and Definition Detail <span class="ttfamily">&lt;dd&gt;...&lt;/dd&gt;</span></h3>
+<p>
+ Function: <span class="ttfamily">&lt;dl&gt;...&lt;/dl&gt;</span> tag contains a Definition List. Each of <span class="ttfamily">&lt;dt&gt;...&lt;/dt&gt;</span> and <span class="ttfamily">&lt;dd&gt;...&lt;/dd&gt;</span> pair contains a Definition Term and the Definition Detail, as follows: 
+</p>
+<pre class="verbatim">
+&lt;dl&gt;
+  &lt;dt&gt;term-1&lt;/dt&gt;
+  &lt;dd&gt;definition-for-term-1&lt;/dd&gt;
+  &lt;dt&gt;term-2&lt;/dt&gt;
+  &lt;dd&gt;definition-for-term-2&lt;/dd&gt;
+  ......
+&lt;/dl&gt;
+</pre>
+<p>
+<b class="bfseries">Example:</b>
+</p>
+<pre class="verbatim">
+&lt;p&gt;These are some of the commonly-encountered web protocols:&lt;/p&gt;
+&lt;dl&gt;
+   &lt;dt&gt;HTTP&lt;/dt&gt;&lt;dd&gt;HyperText Transfer Protocol&lt;/dd&gt;
+   &lt;dt&gt;FTP&lt;/dt&gt;&lt;dd&gt;File Transfer Protocol&lt;/dd&gt;
+   &lt;dt&gt;SMTP&lt;/dt&gt;&lt;dd&gt;Simple Mail Transfer Protocol&lt;/dd&gt;
+   &lt;dt&gt;POP&lt;/dt&gt;&lt;dd&gt;Post Office Protocol&lt;/dd&gt;
+   &lt;dt&gt;PPP&lt;/dt&gt;&lt;dd&gt;Point-to-point Protocol&lt;/dd&gt;
+   &lt;dt&gt;SLIP&lt;/dt&gt;&lt;dd&gt;Serial Line Internet Protocol&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+<p>
+<b class="bfseries">Output of the example:</b>
+</p>
+<dl class="description">
+<dt>HTTP:</dt>
+<dd><p>
+HyperText Transfer Protocol 
+</p>
+</dd>
+<dt>FTP:</dt>
+<dd><p>
+File Transfer Protocol 
+</p>
+</dd>
+<dt>SMTP:</dt>
+<dd><p>
+Simple Mail Transfer Protocol 
+</p>
+</dd>
+<dt>POP:</dt>
+<dd><p>
+Post Office Protocol 
+</p>
+</dd>
+<dt>PPP:</dt>
+<dd><p>
+Point-to-point Protocol 
+</p>
+</dd>
+<dt>SLIP:</dt>
+<dd><p>
+Serial Line Internet Protocol 
+</p>
+</dd>
+</dl>
+<p>
+The "unordered list" and "ordered list" are used in most HTML documents. But I don’t find many web pages using the "definition list". 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000011">iv. Nested Lists</h3>
+<p>
+<b class="bfseries">Example 1:</b>
+</p>
+<pre class="verbatim">
+&lt;p&gt;The topics covered are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;HyperText Markup Language (HTML)
+    &lt;ul&gt;
+      &lt;li&gt;Based on SGML&lt;/li&gt;
+      &lt;li&gt;Used to create web pages&lt;/li&gt;
+      &lt;li&gt;Maintained by W3C&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Cascading Style Sheet (CSS)
+    &lt;ul&gt;
+      &lt;li&gt;Used to define presentation style for web pages&lt;/li&gt;
+      &lt;li&gt;Also maintained by W3C&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+<p>
+<b class="bfseries">Example 2:</b>
+</p>
+<pre class="verbatim">
+&lt;ol&gt;
+  &lt;li&gt;XML: Extensible Markup Language
+    &lt;ol&gt;
+      &lt;li&gt;Based on SGML&lt;/li&gt;
+      &lt;li&gt;Maintained by W3C&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;DOM: Document Object Model&lt;/li&gt;
+  &lt;li&gt;SAX: Simple API for XML&lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+</section>
+</section><section class="section">
+<h2 id="a0000000012">Tables</h2>
+<p>
+ Table-related tags are meant for tabulating data. (Older HTML documents tend to use <span class="ttfamily">&lt;table&gt;</span> for formatting the document to divide the document into columns/sections, which should be avoided. Use style sheets for formatting instead.) 
+</p>
+<p>
+The basic unit of a table is a cell. Cells are grouped into rows. Rows are grouped to form the table. This corresponds well to the "row-centric" approach in the display. 
+</p>
+<p>
+The tags used by table are: 
+</p>
+<ul class="itemize" id="a0000000013">
+<li id="a0000000014">
+<p>
+<span class="ttfamily">&lt;table&gt;...&lt;/table&gt;</span>: contains the entire table. 
+</p>
+</li>
+<li id="a0000000015">
+<p>
+<span class="ttfamily">&lt;tr&gt;...&lt;/tr&gt;</span>: contains a row. 
+</p>
+</li>
+<li id="a0000000016">
+<p>
+<span class="ttfamily">&lt;th&gt;...&lt;/th&gt;</span> and <span class="ttfamily">&lt;td&gt;...&lt;/td&gt;</span>: contain a header cell and a data (detail) cell respectively. 
+</p>
+</li>
+<li id="a0000000017">
+<p>
+<span class="ttfamily">&lt;caption&gt;...&lt;/caption&gt;</span>: specifies a caption. 
+</p>
+</li>
+<li id="a0000000018">
+<p>
+<span class="ttfamily">&lt;thead&gt;...&lt;/thead&gt;</span>, <span class="ttfamily">&lt;tbody&gt;...&lt;/tbody&gt;</span>, and <span class="ttfamily">&lt;tfoot&gt;...&lt;/tfoot&gt;</span>: for table header, body, and footer. 
+</p>
+</li>
+<li id="a0000000019">
+<p>
+<span class="ttfamily">&lt;colgroup&gt;...&lt;/colgroup&gt;</span> and <span class="ttfamily">&lt;col&gt;...&lt;/col&gt;</span>: for applying styles to column group and column respectively. 
+</p>
+</li>
+</ul>
+<p>
+<b class="bfseries">For Example:</b>
+</p>
+<pre class="verbatim">
+&lt;table&gt;
+  &lt;caption&gt;Price List&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Fruit&lt;/th&gt;
+    &lt;th&gt;Price&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Apple&lt;/td&gt;
+    &lt;td&gt;$0.50&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Orange&lt;/td&gt;
+    &lt;td&gt;$0.65&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<p>
+<b class="bfseries">Output:</b>
+</p>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">Fruit</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<b class="bfseries">Price</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+Apple 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ $0.50 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+Orange 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ $0.65 
+</p>
+</td>
+</tr>
+</table> </div>
+<section class="subsection">
+<h3 id="a0000000020">Table <span class="ttfamily">&lt;table&gt;...&lt;/table&gt;</span></h3>
+<p>
+ Function: Set up a table, consisting of rows of cells. Three optional presentation attributes, <span class="ttfamily">border="n"</span>, <span class="ttfamily">cellspacing="n"</span>, and <span class="ttfamily">cellpadding="n"</span>, are often used in older HTML pages but now deprecated. The now-preferred approach is to use CSS. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000021">Table Row <span class="ttfamily">&lt;tr&gt;...&lt;/tr&gt;</span></h3>
+<p>
+ Function: Set up a row inside a table, consisting of cells. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000022">Table Header Cell <span class="ttfamily">&lt;th&gt;...&lt;/th&gt;</span>, Table Data Cell <span class="ttfamily">&lt;td&gt;...&lt;/td&gt;</span></h3>
+<p>
+ Function: Set up each individual cell of a row. <span class="ttfamily">&lt;th&gt;...&lt;/th&gt;</span> defines a header cell (usually displayed in bold with center alignment) and <span class="ttfamily">&lt;td&gt;...&lt;/td&gt;</span> defines a body cell. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000023">Attributes "rowspan" and "colspan"</h3>
+<p>
+ On a <span class="ttfamily">&lt;td&gt;</span> cell, we can use the attribute <span class="ttfamily">rowspan="numOfRows"</span> or <span class="ttfamily">colspan="numOfColumns"</span> to span the cell to occupy multiple rows or columns. 
+</p>
+<p>
+<b class="bfseries">Example 1:</b>
+</p>
+<pre class="verbatim">
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;11111&lt;/td&gt;
+    &lt;td&gt;22222&lt;/td&gt;
+    &lt;td&gt;33333&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;44444&lt;/td&gt;
+    &lt;td rowspan="2"&gt;55555&lt;/td&gt;
+    &lt;td&gt;66666&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;77777&lt;/td&gt;
+    &lt;td&gt;88888&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+<p>
+<b class="bfseries">Example 2:</b>
+</p>
+<pre class="verbatim">
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td colspan="2" rowspan="2"&gt;11111&lt;/td&gt;
+    &lt;td&gt;22222&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;33333&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;44444&lt;/td&gt;
+    &lt;td&gt;55555&lt;/td&gt;
+    &lt;td&gt;66666&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000024">Table Header <span class="ttfamily">&lt;thead&gt;...&lt;/thead&gt;</span>, Table Body <span class="ttfamily">&lt;tbody&gt;...&lt;/tbody&gt;</span> and Table Footer <span class="ttfamily">&lt;tfoot&gt;...&lt;/tfoot&gt;</span></h3>
+<p>
+ Function: Used to define a header, body and footer sections for a table. Browsers may duplicate the header or footer when breaking the table across multiple pages. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000025">Column Group <span class="ttfamily">&lt;colgroup&gt;...&lt;/colgroup&gt;</span> and Column <span class="ttfamily">&lt;col /&gt;</span></h3>
+<p>
+ Function: <span class="ttfamily">&lt;colgroup&gt;...&lt;/colgroup&gt;</span> can be used to group a set of columns so that style can be applied to all. The attribute <span class="ttfamily">span="numOfColumns"</span> specifies the number of columns. 
+</p>
+</section>
+</section><section class="section">
+<h2 id="a0000000026">Anchor and Link <span class="ttfamily">&lt;a&gt;...&lt;/a&gt;</span></h2>
+<p>
+ A hypertext-link allows users to: 
+</p>
+<ol class="enumerate" id="a0000000027">
+<li id="a0000000028" value="1">
+<p>
+Navigate to a different document. 
+</p>
+</li>
+<li id="a0000000029" value="2">
+<p>
+Navigate to an "Anchor Point" (bookmark). 
+</p>
+</li>
+<li id="a0000000030" value="3">
+<p>
+Request other Internet resources (such as e-mail). 
+</p>
+</li>
+</ol>
+</section><section class="section">
+<h2 id="a0000000031">Videos and Audio Files</h2>
+<p>
+ The easiest way to add video or sound is to include the <span class="ttfamily">&lt;embed&gt;</span> tag. You can also include a <span class="ttfamily">&lt;noembed&gt;</span> tag for older browsers. 
+</p>
+<p>
+<b class="bfseries">Attributes:</b>
+</p>
+<ul class="itemize" id="a0000000032">
+<li id="a0000000033">
+<p>
+<b class="bfseries">Align:</b> Determines object alignment (center, left, right). 
+</p>
+</li>
+<li id="a0000000034">
+<p>
+<b class="bfseries">Autostart:</b> Boolean to start automatically. 
+</p>
+</li>
+<li id="a0000000035">
+<p>
+<b class="bfseries">Loop:</b> Specifies continuous play. 
+</p>
+</li>
+<li id="a0000000036">
+<p>
+<b class="bfseries">Hidden:</b> Hide or show the object. 
+</p>
+</li>
+<li id="a0000000037">
+<p>
+<b class="bfseries">Src:</b> URL of the object. 
+</p>
+</li>
+</ul>
+<p>
+<b class="bfseries">Embed Video Example:</b>
+</p>
+<pre class="verbatim">
+&lt;video controls width="250"&gt;
+    &lt;source src="/media/cc0-videos/flower.mp4"
+            type="video/mp4"&gt;
+&lt;/video&gt;
+</pre>
+<p>
+<b class="bfseries">Embed Audio Example:</b>
+</p>
+<pre class="verbatim">
+&lt;audio controls src="/media/cc0-audio/t-rex-roar.mp3"&gt;
+&lt;/audio&gt;
+</pre>
+</section><section class="section">
+<h2 id="a0000000038">HTML Forms</h2>
+<p>
+ HTML forms are required to collect data from visitors (e.g., login, registration). 
+</p>
+<section class="subsection">
+<h3 id="a0000000039">Form Element</h3>
+<p>
+ Wraps all other elements. 
+</p>
+<pre class="verbatim">
+&lt;form action="index.html" method="post"&gt;
+&lt;/form&gt;
+</pre>
+<p>
+<b class="bfseries">Attributes:</b>
+</p>
+<ol class="enumerate" id="a0000000040">
+<li id="a0000000041" value="1">
+<p>
+<b class="bfseries">action:</b> The URL of the program that processes the information. 
+</p>
+</li>
+<li id="a0000000042" value="2">
+<p>
+<b class="bfseries">method:</b> The HTTP method (<span class="ttfamily">POST</span> or <span class="ttfamily">GET</span>). 
+</p>
+</li>
+</ol>
+</section><section class="subsection">
+<h3 id="a0000000043">Input Element</h3>
+<p>
+ Used to make text fields. 
+</p>
+<pre class="verbatim">
+&lt;input type="text" id="name" name="student_name"&gt;
+</pre>
+<p>
+<b class="bfseries">Attributes:</b>
+</p>
+<ul class="itemize" id="a0000000044">
+<li id="a0000000045">
+<p>
+<b class="bfseries">type:</b> Kind of input (text, email, password, etc.). 
+</p>
+</li>
+<li id="a0000000046">
+<p>
+<b class="bfseries">id:</b> Used to associate labels or for CSS/JS. 
+</p>
+</li>
+<li id="a0000000047">
+<p>
+<b class="bfseries">name:</b> Necessary for server-side processing. 
+</p>
+</li>
+<li id="a0000000048">
+<p>
+<b class="bfseries">placeholder:</b> Short hint displayed in the field. 
+</p>
+</li>
+</ul>
+</section><section class="subsection">
+<h3 id="a0000000049">Textarea Element</h3>
+<p>
+ Used for multiple lines of text. 
+</p>
+<pre class="verbatim">
+&lt;textarea id="bio" name="student_bio"&gt;&lt;/textarea&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000050">Button Element</h3>
+<p>
+ Used to submit forms. Types include <span class="ttfamily">submit</span>, <span class="ttfamily">reset</span>, and <span class="ttfamily">button</span>. 
+</p>
+<pre class="verbatim">
+&lt;button type="submit"&gt;Submit&lt;/button&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000051">Label Element</h3>
+<p>
+ Identifies form controls. The <span class="ttfamily">for</span> attribute matches the <span class="ttfamily">id</span> of the input. 
+</p>
+<pre class="verbatim">
+&lt;label for="name"&gt;Name&lt;/label&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000052">Select Menus</h3>
+<p>
+ Dropdown list of options. 
+</p>
+<pre class="verbatim">
+&lt;select id="courses" name="student_courses"&gt;
+  &lt;optgroup label="Engineering"&gt;
+    &lt;option value="cs"&gt;Computer Science&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000053">Radio Buttons</h3>
+<p>
+ Used for picking one option from a small group. 
+</p>
+<pre class="verbatim">
+&lt;input type="radio" id="under_16" value="under_16" name="user_age"&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000054">Checkboxes</h3>
+<p>
+ Used for selecting multiple options. 
+</p>
+<pre class="verbatim">
+&lt;input type="checkbox" id="engineering" value="eng" name="user_interest"&gt;
+</pre>
+</section><section class="subsection">
+<h3 id="a0000000055">Difference Between Checkbox and Radio Button</h3>
+<ol class="enumerate" id="a0000000056">
+<li id="a0000000057" value="1">
+<p>
+Checkboxes can exist alone; radio buttons must be in groups. 
+</p>
+</li>
+<li id="a0000000058" value="2">
+<p>
+Checkboxes are optional; radio buttons usually require one choice. 
+</p>
+</li>
+</ol>
+</section>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
+
+        </main>
+
+		
+		<footer>
+	<hr>
+
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
+
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.2.1, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2026-05-15</p>
+        
+        
+        
+    </div>
+</footer>
+		
+
+        
+
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
+
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
+
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
 </html>

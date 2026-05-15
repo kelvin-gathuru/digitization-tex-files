@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: dsc401_codesystems.pdf
+    url: web.pdf
   is_hidden: false
-  pdf_url: dsc401_codesystems.pdf
-  slug: dsc401_codesystems
-  source: DSC401_codesystems.tex
+  pdf_url: web.pdf
+  slug: web
+  source: web.tex
   splitlevel: -2
-  title: DSC401_codesystems
+  title: web
   type: standalone
   url: index.html
 themes:

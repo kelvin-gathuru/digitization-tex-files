@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- question: 1 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q1: Weighted BCD (4221 and 5421)</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Determine the weighted BCD equivalents for the decimal number <strong>{@dec_val@}</strong>.</p>
+<p>(a) 4221 BCD: [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p>(b) 5421 BCD: [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>
+<p><em>Note: Enter the 4-bit codes for each digit separated by a space (e.g., <code>1111 1110</code>).</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p><strong>Decimal digits: {@d1@} and {@d2@}</strong></p>
+
+<p><strong>(a) 4221 BCD (Weights: 4, 2, 2, 1):</strong></p>
+<ul>
+  <li>{@d1@} &rarr; {@map_4221[d1+1]@}</li>
+  <li>{@d2@} &rarr; {@map_4221[d2+1]@}</li>
+</ul>
+<p>Result: <strong>{@ta1@}</strong></p>
+
+<p><strong>(b) 5421 BCD (Weights: 5, 4, 2, 1):</strong></p>
+<ul>
+  <li>{@d1@} &rarr; {@map_5421[d1+1]@}</li>
+  <li>{@d2@} &rarr; {@map_5421[d2+1]@}</li>
+</ul>
+<p>Result: <strong>{@ta2@}</strong></p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>d1: rand(9)+1;
+d2: rand(10);
+dec_val: d1*10 + d2;
+
+/* Maps for 4221 and 5421 */
+map_4221: ["0000", "0001", "0010", "0011", "1000", "1011", "1100", "1101", "1110", "1111"];
+map_5421: ["0000", "0001", "0010", "0011", "0100", "1000", "1001", "1010", "1011", "1100"];
+
+ta1: sconcat(map_4221[d1+1], " ", map_4221[d2+1]);
+ta2: sconcat(map_5421[d1+1], " ", map_5421[d2+1]);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>string</type>
+      <tans>ta1</tans>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>string</type>
+      <tans>ta2</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans2</sans>
+        <tans>ta2</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 2 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q2: Gray and Binary Conversions</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Perform the following code conversions:</p>
+<p>(a) Convert binary <strong>{@bin_val@}</strong> to Gray code:</p>
+<p>Gray = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p>(b) Convert Gray code <strong>{@gray_val@}</strong> to binary:</p>
+<p>Binary = [[input:ans2]] [[validation:ans2]] [[feedback:prt2]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p><strong>(a) Binary {@bin_val@} to Gray:</strong></p>
+<p>Rule: \( g_n = b_n \), \( g_i = b_{i+1} \oplus b_i \)</p>
+<ul>
+  <li>Bits: {@b[1]@} {@b[2]@} {@b[3]@} {@b[4]@} {@b[5]@} {@b[6]@} {@b[7]@} {@b[8]@}</li>
+  <li>Gray bits: {@g_res[1]@} {@g_res[2]@} {@g_res[3]@} {@g_res[4]@} {@g_res[5]@} {@g_res[6]@} {@g_res[7]@} {@g_res[8]@}</li>
+</ul>
+<p><strong>(b) Gray {@gray_val@} to Binary:</strong></p>
+<p>Rule: \( b_n = g_n \), \( b_i = b_{i+1} \oplus g_i \)</p>
+<ul>
+  <li>Gray bits: {@gray_bits[1]@} {@gray_bits[2]@} {@gray_bits[3]@} {@gray_bits[4]@} {@gray_bits[5]@} {@gray_bits[6]@} {@gray_bits[7]@} {@gray_bits[8]@}</li>
+  <li>Binary bits: {@b_res[1]@} {@b_res[2]@} {@b_res[3]@} {@b_res[4]@} {@b_res[5]@} {@b_res[6]@} {@b_res[7]@} {@b_res[8]@}</li>
+</ul>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>/* (a) Binary to Gray */
+b: [1, rand(2), rand(2), rand(2), rand(2), rand(2), rand(2), rand(2)];
+bin_val: sconcat(b[1], b[2], b[3], b[4], b[5], b[6], b[7], b[8]);
+g_res: [b[1], if b[1]=b[2] then 0 else 1, if b[2]=b[3] then 0 else 1, if b[3]=b[4] then 0 else 1, if b[4]=b[5] then 0 else 1, if b[5]=b[6] then 0 else 1, if b[6]=b[7] then 0 else 1, if b[7]=b[8] then 0 else 1];
+ta1: sconcat(g_res[1], g_res[2], g_res[3], g_res[4], g_res[5], g_res[6], g_res[7], g_res[8]);
+
+/* (b) Gray to Binary */
+gray_bits: [1, rand(2), rand(2), rand(2), rand(2), rand(2), rand(2), rand(2)];
+gray_val: sconcat(gray_bits[1], gray_bits[2], gray_bits[3], gray_bits[4], gray_bits[5], gray_bits[6], gray_bits[7], gray_bits[8]);
+b_res: [0, 0, 0, 0, 0, 0, 0, 0];
+b_res[1]: gray_bits[1];
+for i: 2 thru 8 do (
+  if b_res[i-1]=gray_bits[i] then b_res[i]: 0 else b_res[i]: 1
+);
+ta2: sconcat(b_res[1], b_res[2], b_res[3], b_res[4], b_res[5], b_res[6], b_res[7], b_res[8]);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>string</type>
+      <tans>ta1</tans>
+    </input>
+    <input>
+      <name>ans2</name>
+      <type>string</type>
+      <tans>ta2</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans2</sans>
+        <tans>ta2</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+<!-- question: 3 -->
+  <question type="stack">
+    <name><text>Digital Logic - Q3: Decimal to 8421 BCD (Fractional)</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Convert the decimal number <strong>{@dec_val@}</strong> to its 8421 BCD equivalent.</p>
+<p>BCD = [[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>
+<p><em>Note: Separate the 4-bit nibbles with spaces and use a period for the decimal point (e.g., <code>0010 0001.1000</code>).</em></p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>Convert each decimal digit to its 4-bit BCD (8421) equivalent:</p>
+<ul>
+  <li>{@d1@} &rarr; {@bcd_map[d1+1]@}</li>
+  <li>{@d2@} &rarr; {@bcd_map[d2+1]@}</li>
+  <li>{@d3@} &rarr; {@bcd_map[d3+1]@}</li>
+  <li>. &rarr; .</li>
+  <li>{@f1@} &rarr; {@bcd_map[f1+1]@}</li>
+  <li>{@f2@} &rarr; {@bcd_map[f2+1]@}</li>
+</ul>
+<p>Result: <strong>{@ta1@}</strong></p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>d1: rand(8)+1;
+d2: rand(10);
+d3: rand(10);
+f1: rand(9)+1;
+f2: rand(10);
+dec_val: float(d1*100 + d2*10 + d3 + f1/10 + f2/100);
+
+bcd_map: ["0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001"];
+ta1: sconcat(bcd_map[d1+1], " ", bcd_map[d2+1], " ", bcd_map[d3+1], ".", bcd_map[f1+1], " ", bcd_map[f2+1]);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name>
+      <type>string</type>
+      <tans>ta1</tans>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>String</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+</quiz>
