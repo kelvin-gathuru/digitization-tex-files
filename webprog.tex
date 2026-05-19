@@ -1,0 +1,521 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+
+\begin{document}
+
+\section*{Lists - Ordered List, Unordered List and Definition List}
+List-related tags are meant for marking up a list of items. HTML supports three types of lists: ordered list, unordered list and definition list.
+
+\subsection*{i. Unordered List \texttt{<ul>...</ul>} and List Item \texttt{<li>...</li>}}
+Function: An unordered list is shown with a bullet in front of each item. The \texttt{<ul>...</ul>} contains an unordered list. Each of items in the list is enclosed in \texttt{<li>...</li>}, as follows:
+
+\begin{verbatim}
+<ul>
+  <li>list-item-1</li>
+  <li>list-item-2</li>
+  ......
+</ul>
+\end{verbatim}
+
+\textbf{Example:}
+\begin{verbatim}
+<p>An OMO web designer must master:</p>
+<ul>
+   <li>Hypertext Markup Language (HTML)</li>
+   <li>Cascading Style Sheet (CSS)</li>
+   <li>HyperText Transfer Protocol (HTTP)</li>
+   <li>Apache HTTP Server</li>
+</ul>
+\end{verbatim}
+
+\textbf{Output of the example:}
+An OMO web designer must master:
+\begin{enumerate}
+    \item Hypertext Markup Language (HTML)
+    \item Cascading Style Sheet (CSS)
+    \item HyperText Transfer Protocol (HTTP)
+    \item Apache HTTP Server
+\end{enumerate}
+
+\subsection*{ii. Ordered List \texttt{<ol>...</ol>} and List Item \texttt{<li>...</li>}}
+Items in an ordered list are numbered automatically by the browser. The container tag \texttt{<ol>...</ol>} contains an ordered list. Each item of the list is contained inside a \texttt{<li>...</li>} container tag. The syntax is similar to the unordered list.
+
+\textbf{Example:}
+\begin{verbatim}
+<p>An OMO web designer must master:</p>
+<ol>
+   <li>Hypertext Markup Language (HTML)</li>
+   <li>Cascading Style Sheet (CSS)</li>
+   <li>HyperText Transfer Protocol (HTTP)</li>
+   <li>Apache HTTP Server</li>
+</ol>
+\end{verbatim}
+
+\subsection*{iii. Definition List \texttt{<dl>...</dl>}, Definition Term \texttt{<dt>...</dt>} and Definition Detail \texttt{<dd>...</dd>}}
+Function: \texttt{<dl>...</dl>} tag contains a Definition List. Each of \texttt{<dt>...</dt>} and \texttt{<dd>...</dd>} pair contains a Definition Term and the Definition Detail, as follows:
+
+\begin{verbatim}
+<dl>
+  <dt>term-1</dt>
+  <dd>definition-for-term-1</dd>
+  <dt>term-2</dt>
+  <dd>definition-for-term-2</dd>
+  ......
+</dl>
+\end{verbatim}
+
+\textbf{Example:}
+\begin{verbatim}
+<p>These are some of the commonly-encountered web protocols:</p>
+<dl>
+   <dt>HTTP</dt><dd>HyperText Transfer Protocol</dd>
+   <dt>FTP</dt><dd>File Transfer Protocol</dd>
+   <dt>SMTP</dt><dd>Simple Mail Transfer Protocol</dd>
+   <dt>POP</dt><dd>Post Office Protocol</dd>
+   <dt>PPP</dt><dd>Point-to-point Protocol</dd>
+   <dt>SLIP</dt><dd>Serial Line Internet Protocol</dd>
+</dl>
+\end{verbatim}
+
+\textbf{Output of the example:}
+These are some of the commonly-encountered web protocols:
+\begin{description}
+    \item[HTTP:] HyperText Transfer Protocol
+    \item[FTP:] File Transfer Protocol
+    \item[SMTP:] Simple Mail Transfer Protocol
+    \item[POP:] Post Office Protocol
+    \item[PPP:] Point-to-point Protocol
+    \item[SLIP:] Serial Line Internet Protocol
+\end{description}
+
+The "unordered list" and "ordered list" are used in most of the HTML documents. But I don't find many web pages using the "definition list".
+
+\subsection*{iv. Nested Lists}
+\textbf{Example 1:}
+\begin{verbatim}
+<p>The topics covered are:</p>
+<ul>
+  <li>HyperText Markup Language (HTML)
+    <ul>
+      <li>Based on SGML</li>
+      <li>Used to create web pages</li>
+      <li>Maintained by W3C</li>
+    </ul>
+  </li>
+  <li>Cascading Style Sheet (CSS)
+    <ul>
+      <li>Used to define presentation style for web pages</li>
+      <li>Also maintained by W3C</li>
+    </ul>
+  </li>
+</ul>
+\end{verbatim}
+
+\textbf{Example 2:}
+\begin{verbatim}
+<ol>
+  <li>XML: Extensible Markup Language
+    <ol>
+      <li>Based on SGML</li>
+      <li>Maintained by W3C</li>
+    </ol>
+  </li>
+  <li>DOM: Document Object Model</li>
+  <li>SAX: Simple API for XML</li>
+</ol>
+\end{verbatim}
+
+\section*{Tables}
+Table-related tags are meant for tabulating data. (Older HTML documents tend to use \texttt{<table>} for formatting the document to divide the document into columns/sections, which should be avoided. Use style sheets for formatting instead.)
+
+The basic unit of a table is a cell. Cells are grouped into rows. Rows are grouped to form the table. This corresponds well to the "row-centric" approach in the display.
+
+The tags used by table are:
+\begin{itemize}
+    \item \texttt{<table>...</table>}: contains the entire table.
+    \item \texttt{<tr>...</tr>}: contains a row.
+    \item \texttt{<th>...</th>} and \texttt{<td>...</td>}: contain a header cell and a data (detail) cell respectively.
+    \item \texttt{<caption>...</caption>}: specifies a caption.
+    \item \texttt{<thead>...</thead>}, \texttt{<tbody>...</tbody>}, and \texttt{<tfoot>...</tfoot>}: for table header, body, and footer.
+    \item \texttt{<colgroup>...</colgroup>} and \texttt{<col>...</col>}: for applying styles to column group and column respectively.
+\end{itemize}
+
+\textbf{For Example:}
+\begin{verbatim}
+<table>
+  <caption>Price List</caption>
+  <tr>
+    <th>Fruit</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>Apple</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <td>Orange</td>
+    <td>$0.65</td>
+  </tr>
+</table>
+\end{verbatim}
+
+\subsection*{Table \texttt{<table>...</table>}}
+Function: Set up a table, consisting of rows of cells. Three optional presentation attributes, \texttt{border="n"}, \texttt{cellspacing="n"}, and \texttt{cellpadding="n"}, are often used in older HTML pages but now deprecated. The now-preferred approach is to use CSS.
+
+\subsection*{Table Row \texttt{<tr>...</tr>}}
+Function: Set up a row inside a table, consisting of cells.
+
+\subsection*{Table Header Cell \texttt{<th>...</th>}, Table Data Cell \texttt{<td>...</td>}}
+Function: Set up each individual cell of a row. \texttt{<th>...</th>} defines a header cell (usually displayed in bold with center alignment) and \texttt{<td>...</td>} defines a body cell.
+
+\subsection*{Attributes "rowspan" and "colspan"}
+On a \texttt{<td>} cell, we can use the attribute \texttt{rowspan="numOfRows"} or \texttt{colspan="numOfColumns"} to span the cell to occupy multiple rows or columns.
+
+\textbf{Example 1:}
+\begin{verbatim}
+<table>
+  <tr>
+    <td>11111</td>
+    <td>22222</td>
+    <td>33333</td>
+  </tr>
+  <tr>
+    <td>44444</td>
+    <td rowspan="2">55555</td>
+    <td>66666</td>
+  </tr>
+  <tr>
+    <td>77777</td>
+    <td>88888</td>
+  </tr>
+</table>
+\end{verbatim}
+
+\textbf{Example 2:}
+\begin{verbatim}
+<table>
+  <tr>
+    <td colspan="2" rowspan="2">11111</td>
+    <td>22222</td>
+  </tr>
+  <tr>
+    <td>33333</td>
+  </tr>
+  <tr>
+    <td>44444</td>
+    <td>55555</td>
+    <td>66666</td>
+  </tr>
+</table>
+\end{verbatim}
+
+\subsection*{Table Header \texttt{<thead>...</thead>}, Table Body \texttt{<tbody>...</tbody>} and Table Footer \texttt{<tfoot>...</tfoot>}}
+Function: Used to define a header, body and footer sections for a table. Browsers may duplicate the header or footer when breaking the table across multiple pages.
+
+\subsection*{Column Group \texttt{<colgroup>...</colgroup>} and Column \texttt{<col />}}
+Function: \texttt{<colgroup>...</colgroup>} can be used to group a set of columns so that style can be applied to all. The attribute \texttt{span="numOfColumns"} specifies the number of columns.
+
+\textbf{Example 1:}
+\begin{verbatim}
+<table>
+  <!-- col group 1 spans 3 columns -->
+  <colgroup span="3" style="background-color:lightgrey"></colgroup>
+  <tr>
+    <td>Col 1 is in the group</td>
+    <td>Col 2 is in the group</td>
+    <td>Col 3 is in the group</td>
+    <td>Col 4 is NOT in the group</td>
+  </tr>
+  <tr>
+    <td>Col 1 is in the group</td>
+    <td>Col 2 is in the group</td>
+    <td>Col 3 is in the group</td>
+    <td>Col 4 is NOT in the group</td>
+  </tr>
+</table>
+\end{verbatim}
+
+\textbf{Example 2:}
+\begin{verbatim}
+<table>
+  <!--  colgroup 1 consists of col 1 and col 2 -->
+  <colgroup>
+    <col style="background-color:lightyellow" />
+    <col style="background-color:white"  />
+  </colgroup>
+  <!--  colgroup 2 consists of col 3 and col 4 -->
+  <colgroup style="background-color:lightgrey" >
+    <col span="2" />
+  </colgroup>
+  <tr>
+    <td>Col 1 in the group 1</td>
+    <td>Col 2 in the group 1</td>
+    <td>Col 3 in the group 2</td>
+    <td>Col 4 in the group 2</td>
+  </tr>
+  <tr>
+    <td>Col 1 in the group 1</td>
+    <td>Col 2 in the group 1</td>
+    <td>Col 3 in the group 2</td>
+    <td>Col 4 in the group 2</td>
+  </tr>
+</table>
+\end{verbatim}
+
+\section*{Anchor and Link \texttt{<a>...</a>}}
+A hypertext-link allows users to:
+\begin{enumerate}
+    \item Navigate to a different document.
+    \item Navigate to an "Anchor Point" (bookmark).
+    \item Request other Internet resources (such as e-mail).
+\end{enumerate}
+
+The anchor tag \texttt{<a>...</a>} can perform one of these two functions:
+\begin{enumerate}
+    \item It can be used to set up a hyperlink.
+    \item It can be used to set up a "named anchor point" (bookmark).
+\end{enumerate}
+
+\section*{Videos and Audio Files}
+The easiest way to add video or sound is to include the \texttt{<embed>} tag. You can also include a \texttt{<noembed>} tag for older browsers.
+
+\textbf{Attributes:}
+\begin{itemize}
+    \item \textbf{Align:} Determines object alignment (center, left, right).
+    \item \textbf{Autostart:} Boolean to start automatically.
+    \item \textbf{Loop:} Specifies continuous play.
+    \item \textbf{Playcount:} Number of times to play (IE alternative for loop).
+    \item \textbf{Hidden:} Hide or show the object.
+    \item \textbf{Src:} URL of the object.
+    \item \textbf{Volume:} Controls volume (0-100).
+\end{itemize}
+
+\textbf{Embed Video Example:}
+\begin{verbatim}
+<video controls width="250">
+    <source src="/media/cc0-videos/flower.mp4"
+            type="video/mp4">
+</video>
+\end{verbatim}
+
+\textbf{Embed Audio Example:}
+\begin{verbatim}
+<audio controls src="/media/cc0-audio/t-rex-roar.mp3">
+</audio>
+\end{verbatim}
+
+\section*{HTML Forms}
+HTML forms are required to collect data from visitors (e.g., login, registration).
+
+\subsection*{Form Element}
+Wraps all other elements.
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <form action="index.html" method="post">
+      
+      </form>
+    </body>
+</html>
+\end{verbatim}
+
+\textbf{Attributes:}
+\begin{enumerate}
+    \item \textbf{action:} The URL of the program that processes the information.
+    \item \textbf{method:} The HTTP method (\texttt{POST} or \texttt{GET}).
+\end{enumerate}
+
+\subsection*{Input Element}
+Used to make text fields.
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <form action="index.html" method="post">
+          <input type="text" id="name" name="student_name">
+      </form>
+    </body>
+</html>
+\end{verbatim}
+
+\textbf{Attributes:}
+\begin{itemize}
+    \item \textbf{type:} Kind of input (text, email, password, etc.).
+    \item \textbf{id:} Used to associate labels or for CSS/JS.
+    \item \textbf{name:} Necessary for server-side processing.
+    \item \textbf{placeholder:} Short hint displayed in the field.
+\end{itemize}
+
+\subsection*{Textarea Element}
+Used for multiple lines of text.
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <form action="index.html" method="post">
+          <textarea id="bio" name="student_bio"></textarea>
+      </form>
+    </body>
+</html>
+\end{verbatim}
+
+\subsection*{Button Element}
+Used to submit forms. Types include \texttt{submit}, \texttt{reset}, and \texttt{button}.
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <form action="index.html" method="post">
+        
+          <input type="text" id="name" name="student_name">
+          <input type="email" id="mail" name="student_email">
+          <input type="password" id="password" name="student_password">
+          
+          <textarea id="bio" name="student_bio"></textarea>
+          
+          <button type="submit">Submit</button>
+        
+      </form>
+    </body>
+</html>
+\end{verbatim}
+
+\subsection*{Label Element}
+Identifies form controls. The \texttt{for} attribute matches the \texttt{id} of the input.
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <form action="index.html" method="post">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="student_name">
+
+          <label for="mail">Email</label>
+          <input type="email" id="mail" name="student_email">
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="student_password">
+
+          <label for="bio">Biography</label>
+          <textarea id="bio" name="student_bio"></textarea>
+
+          <button type="submit">Submit</button>
+      </form>
+    </body>
+</html>
+\end{verbatim}
+
+\subsection*{Select Menus}
+Dropdown list of options.
+\begin{verbatim}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign Up Form</title>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+      <form action="index.html" method="post">
+          <h2>Your basic info</h2>
+
+          <label for="name">Name</label>
+          <input type="text" id="name" name="student_name">
+
+          <label for="mail">Email</label>
+          <input type="email" id="mail" name="student_email">
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="student_password">
+
+          <h2>Your profile</h2>
+
+          <label for="bio">Biography</label>
+          <textarea id="bio" name="student_bio"></textarea>
+
+          <label for="courses">Select Courses</label>
+          <select id="courses" name="student_courses">
+            <optgroup label="Engineering">
+              <option value="computer_engineering">Computer Science</option>
+              <option value="electrical_engineering">Electrical</option>
+              <option value="mechanical_engineering">Mechanical</option> 
+              <option value="chemical_engineering">Chemical</option>
+              <option value="civil_engineering">Civil</option>
+            </optgroup>
+            <optgroup label="Management">
+              <option value="finance_management">Finance Management</option>
+              <option value="technology_management">Technology</option>
+              <option value="marketing_management">Marketing</option>
+              <option value="business_administration">Business</option>     
+            </optgroup>
+          </select>
+
+        <button type="submit">Submit</button>
+      </form>
+    </body>
+</html>
+\end{verbatim}
+
+\subsection*{Radio Buttons}
+Used for picking one option from a small group.
+\begin{verbatim}
+<input type="radio" id="under_16" value="under_16" name="user_age">
+\end{verbatim}
+
+\subsection*{Checkboxes}
+Used for selecting multiple options.
+\begin{verbatim}
+<input type="checkbox" id="engineering" value="interest_engineering" name="user_interest">
+\end{verbatim}
+
+\subsection*{Difference between Checkbox and Radio button}
+\begin{enumerate}
+    \item Checkbox can exist on its own, while radio buttons can only appear as a group (minimum of 2 radio buttons should be there).
+    \item Selecting checkbox is optional but choosing one of the radio button is mandatory.
+\end{enumerate}
+
+\end{document}

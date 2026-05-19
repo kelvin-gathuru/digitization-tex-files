@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: mental_models.pdf
+    url: webprog.pdf
   is_hidden: false
-  pdf_url: mental_models.pdf
-  slug: mental_models
-  source: mental_models.tex
+  pdf_url: webprog.pdf
+  slug: webprog
+  source: webprog.tex
   splitlevel: -2
-  title: mental_models
+  title: webprog
   type: standalone
   url: index.html
 themes:
