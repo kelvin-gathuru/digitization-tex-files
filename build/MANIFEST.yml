@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: ken1.pdf
+    url: bnu.pdf
   is_hidden: false
-  pdf_url: ken1.pdf
-  slug: ken1
-  source: ken1.tex
+  pdf_url: bnu.pdf
+  slug: bnu
+  source: bnu.tex
   splitlevel: -2
-  title: ken1
+  title: bnu
   type: standalone
   url: index.html
 themes:
