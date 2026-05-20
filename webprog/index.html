@@ -1501,6 +1501,20 @@
             </g>
         </defs>
     </svg>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('pre.verbatim').forEach(pre => {
+                const code = pre.textContent;
+                const iframe = document.createElement('iframe');
+                iframe.setAttribute('srcdoc', code);
+                iframe.style.width = '100%';
+                iframe.style.height = '400px';
+                iframe.style.border = '1px solid #ddd';
+                iframe.style.marginTop = '1rem';
+                pre.parentNode.insertBefore(iframe, pre.nextSibling);
+            });
+        });
+    </script>
 </body>
 
 </html>
