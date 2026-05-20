@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: cpm.pdf
+    url: ken1.pdf
   is_hidden: false
-  pdf_url: cpm.pdf
-  slug: cpm
-  source: cpm.tex
+  pdf_url: ken1.pdf
+  slug: ken1
+  source: ken1.tex
   splitlevel: -2
-  title: cpm
+  title: ken1
   type: standalone
   url: index.html
 themes:
