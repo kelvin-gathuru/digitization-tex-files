@@ -1505,13 +1505,23 @@
         document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('pre.verbatim').forEach(pre => {
                 const code = pre.textContent;
+                const textarea = document.createElement('textarea');
+                textarea.value = code;
+                textarea.style.width = '100%';
+                textarea.style.minHeight = '200px';
+                textarea.style.fontFamily = 'monospace';
+                textarea.style.marginTop = '1rem';
                 const iframe = document.createElement('iframe');
                 iframe.setAttribute('srcdoc', code);
                 iframe.style.width = '100%';
                 iframe.style.height = '400px';
                 iframe.style.border = '1px solid #ddd';
                 iframe.style.marginTop = '1rem';
-                pre.parentNode.insertBefore(iframe, pre.nextSibling);
+                textarea.addEventListener('input', () => {
+                    iframe.setAttribute('srcdoc', textarea.value);
+                });
+                pre.parentNode.replaceChild(textarea, pre);
+                textarea.parentNode.insertBefore(iframe, textarea.nextSibling);
             });
         });
     </script>
