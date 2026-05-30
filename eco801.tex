@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+\begin{document}
+
+\section*{Activity 1: Introduction Script}
+In this module, we examine how individuals make decisions under uncertainty. We begin with expected utility theory, which explains how rational agents evaluate risky choices by maximizing expected satisfaction rather than expected income. This framework helps us understand different attitudes toward risk, including risk aversion, risk neutrality, and risk-loving behavior.
+
+We then introduce tools such as certainty equivalents, risk premiums, and stochastic dominance to compare uncertain outcomes more precisely.
+
+Recognizing that real-world decisions often deviate from strict rationality, the module also draws on insights from Behavioral Economics, particularly Prospect Theory, which highlights concepts like loss aversion and probability weighting.
+
+Overall, this module provides both theoretical and practical insights into decision-making under risk, with applications in finance, insurance, and everyday economic behavior.
+
+\section*{Activity 2: Notes, UNCERTAINTY \& BEHAVIOURAL FOUNDATIONS}
+
+\subsection*{1. Decision-Making Under Uncertainty}
+Decision-making under uncertainty occurs when individuals must choose among alternatives whose outcomes are not known with certainty but instead depend on probabilistic events. In such contexts, economic agents cannot rely on deterministic reasoning and must evaluate choices based on both the possible outcomes and their associated likelihoods. These uncertain choices are formally represented as lotteries, which describe a set of outcomes each attached to a probability. The critical insight is that individuals are not only concerned with the average outcome but also with the distribution and variability of outcomes, which introduces the concept of risk. This distinction is essential in economics because two alternatives with the same expected value may be evaluated differently depending on the risk involved. For instance, a guaranteed income may be preferred to a risky one with the same average value. This framework forms the foundation for analyzing behavior in financial markets, insurance decisions, and policy design. Ultimately, decision-making under uncertainty requires integrating probability theory with preference-based evaluation.
+
+\textbf{Mathematical Representation}
+\[ L = (x_1, p_1; x_2, p_2; \dots ; x_n, p_n), \quad \sum p_i = 1 \]
+\[ EV = \sum p_i x_i \]
+
+\textbf{Numerical Example}
+Consider a lottery:
+\[ x_1 = 100, \quad p_1 = 0.5 \]
+\[ x_2 = 0, \quad p_2 = 0.5 \]
+\[ EV = 0.5(100) + 0.5(0) = 50 \]
+Even though the expected value is 50, a person may still reject this gamble.
+
+\subsection*{2. Expected Utility Theory (EUT)}
+Expected Utility Theory provides a rigorous framework for analyzing rational choice under uncertainty by assuming that individuals maximize the expected value of a utility function rather than raw monetary outcomes. This distinction is crucial because utility captures subjective satisfaction and incorporates attitudes toward risk, unlike income or wealth alone. Under this theory, each possible outcome is transformed into a utility value, and these utilities are weighted by their respective probabilities to compute expected utility. The decision-maker then selects the option that yields the highest expected utility. One of the most important implications of EUT is that individuals may reject fair gambles because the disutility of potential losses outweighs the utility of gains. This behavior is consistent with diminishing marginal utility of wealth. Furthermore, the theory is grounded in axioms such as completeness, transitivity, independence, and continuity, which ensure consistent and rational preferences. EUT serves as the benchmark model in economics for normative decision-making and underpins many applications in finance, insurance, and game theory.
+
+\textbf{Expected Utility Equation}
+\[ EU = \sum_{i=1}^{n} p_i U(x_i) \]
+\[ U(E[x]) > E[U(x)] \quad \text{(for risk-averse individuals)} \]
+
+\textbf{Numerical Example}
+Let utility function be:
+\[ U(x) = \sqrt{x} \]
+Lottery:
+$100$ with probability $0.5$ \\
+$0$ with probability $0.5$
+\[ EU = 0.5\sqrt{100} + 0.5\sqrt{0} = 0.5(10) + 0 = 5 \]
+\[ U(EV) = \sqrt{50} \approx 7.07 \]
+Since:
+\[ U(EV) > EU \]
+Individual is risk-averse.
+
+\subsection*{3. Risk Preferences}
+Risk preferences describe how individuals evaluate uncertain outcomes and are central to understanding behavior under uncertainty. A risk-averse individual prefers a certain outcome to a risky one with the same expected value, reflecting a concave utility function and diminishing marginal utility of wealth. This implies that the marginal benefit of additional income decreases as wealth increases, making potential losses more impactful than equivalent gains. Risk-neutral individuals, in contrast, evaluate choices solely based on expected value and are indifferent between risky and certain outcomes. Risk-loving individuals exhibit the opposite behavior, preferring risky alternatives and accepting uncertainty in pursuit of higher potential gains.
+
+\textbf{Mathematical Characterization}
+\[ U''(x) < 0 \quad \text{(Risk-averse)} \]
+\[ U''(x) = 0 \quad \text{(Risk-neutral)} \]
+\[ U''(x) > 0 \quad \text{(Risk-loving)} \]
+
+\textbf{Numerical Example}
+Using:
+\[ U(x) = \sqrt{x} \]
+Compare:
+Certain income = $50 \rightarrow U = \sqrt{50} \approx 7.07$ \\
+Lottery $EU = 5$ \\
+Since:
+\[ 7.07 > 5 \]
+Individual prefers certainty $\rightarrow$ risk-averse.
+
+\subsection*{4. Certainty Equivalent (CE)}
+The certainty equivalent represents the guaranteed level of income that provides the same utility as a given risky lottery. It translates uncertainty into a certain amount.
+
+\textbf{Equation}
+\[ U(CE) = E[U(x)] \]
+
+\textbf{Numerical Example}
+From earlier:
+\[ EU = 5 \]
+Solve:
+\[ \sqrt{CE} = 5 \Rightarrow CE = 25 \]
+Certainty equivalent = 25.
+
+\subsection*{5. Risk Premium (RP)}
+The risk premium is the amount an individual is willing to give up to avoid risk.
+
+\textbf{Formula}
+\[ RP = E[x] - CE \]
+
+\textbf{Numerical Example}
+\[ RP = 50 - 25 = 25 \]
+Individual would give up 25 units to avoid risk.
+
+\subsection*{6. Stochastic Dominance}
+Stochastic dominance compares risky options without knowing exact utility.
+
+\textbf{Conditions}
+\[ F_A(x) \le F_B(x) \]
+\[ \int_{-\infty}^{x} [F_A(t) - F_B(t)] dt \le 0 \]
+
+\textbf{Numerical Example}
+Option A: 100 with probability 1 \\
+Option B: 50 with probability 1 \\
+A dominates B (First-Order Stochastic Dominance - FSD).
+
+\subsection*{7. Behavioural Economics: Prospect Theory}
+Prospect Theory explains real-world deviations from rational behavior.
+
+\textbf{Value Function}
+\[ v(x) = \begin{cases} x^\alpha & x \ge 0 \\ -\lambda(-x)^\alpha & x < 0 \end{cases} \]
+\[ V = \sum w(p_i)v(x_i) \]
+
+\textbf{Numerical Example}
+Assume:
+Gain: $+100$, Loss: $-100$ \\
+$\lambda = 2$ \\
+\[ v(100) = 100^{0.5} = 10 \]
+\[ v(-100) = -2(100^{0.5}) = -20 \]
+Loss hurts twice as much as gain.
+
+\subsection*{8. Applications in Economic Decision-Making}
+These theories apply widely in economics. In insurance markets, individuals prefer certainty and are willing to pay premiums to avoid uncertain losses. In finance, investors choose portfolios that maximize expected utility while considering risk. Behavioral biases such as loss aversion and probability distortion explain real-world phenomena like gambling and under-diversification.
+
+\textbf{Numerical Example (Insurance)}
+Wealth = 100 \\
+Loss = 50 with probability 0.5 \\
+Expected loss:
+\[ EV = 0.5(50) = 25 \]
+Individual may pay more than 25 to insure due to risk aversion.
+
+\subsection*{9. Behavioural vs Rational Models (with Numerical Comparison)}
+\textbf{Expected Utility}
+\[ EU = \sum p_i U(x_i) \]
+Example:
+\[ EU = 0.5 \sqrt{100} = 5 \]
+
+\textbf{Prospect Theory}
+\[ V = \sum w(p_i) v(x_i) \]
+Example:
+\[ V = 0.4 \times 10 = 4 \]
+Different evaluation $\rightarrow$ different decisions.
+
+\textbf{Insurance}
+Loss = 100 with probability 0.2 \\
+\[ EV = 20 \]
+Risk-averse individual may pay 30 to insure.
+
+\textbf{Investment}
+Return = 200 with 0.5 probability \\
+\[ EV = 100 \]
+A risk-averse investor may reject it.
+
+\end{document}

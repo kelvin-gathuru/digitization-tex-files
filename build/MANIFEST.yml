@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: bnu.pdf
+    url: eco801.pdf
   is_hidden: false
-  pdf_url: bnu.pdf
-  slug: bnu
-  source: bnu.tex
+  pdf_url: eco801.pdf
+  slug: eco801
+  source: eco801.tex
   splitlevel: -2
-  title: bnu
+  title: eco801
   type: standalone
   url: index.html
 themes:
