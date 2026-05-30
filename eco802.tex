@@ -1,0 +1,610 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+
+\begin{document}
+
+\section*{Reading Notes: Introduction}
+Module 3 studied how business cycles can arise in dynamic stochastic general equilibrium models. Module 4 moves deeper into the household sector by asking how households decide how much to consume today and how much to save for the future.
+
+Consumption is central to macroeconomics because it is usually the largest component of aggregate demand and because household saving determines asset accumulation, investment finance, and intertemporal welfare.
+
+The main idea in this module is simple but powerful:
+\begin{quote}
+A forward-looking household does not base consumption only on current income. It bases consumption on expected lifetime resources.
+\end{quote}
+
+This idea changes how we think about fiscal stimulus, tax cuts, transfers, retirement saving, credit markets, recessions, and inequality. If households smooth consumption, then temporary income changes may have small effects on spending. If households are liquidity constrained or rule-of-thumb consumers, the same income changes may have large effects.
+
+This module therefore begins with the Fisher model, then develops the Permanent Income Hypothesis, Life-Cycle Hypothesis, Hall random-walk result, elasticity of intertemporal substitution, habits, durables, and aggregation problems.
+
+\section*{4.1 Fisher's Intertemporal Choice Model}
+\subsection*{The Basic Concept: Consumption Today versus Consumption Tomorrow}
+The Fisher model is the foundation of modern consumption theory. It treats the household as a forward-looking decision-maker that allocates resources across time.
+
+A household receives income today and income tomorrow. It may consume exactly its current income, save part of current income, or borrow against future income. The interest rate determines the price of moving consumption across time.
+
+The key question is:
+\begin{quote}
+How should a household allocate lifetime resources between present and future consumption?
+\end{quote}
+
+\subsection*{The Advanced Concept: The Two-Period Model}
+Consider a household that lives for two periods. It receives income:
+\[ Y_1 \quad \text{and} \quad Y_2. \]
+It chooses consumption:
+\[ C_1 \quad \text{and} \quad C_2. \]
+The household maximizes:
+\[ U(C_1, C_2) = u(C_1) + \beta u(C_2), \]
+subject to the lifetime budget constraint:
+\[ C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}. \]
+The right-hand side is the present value of lifetime income:
+\[ W = Y_1 + \frac{Y_2}{1+r}. \]
+The household chooses $C_1$ and $C_2$ to maximize utility subject to lifetime wealth.
+
+\subsection*{Decoding the Math}
+The lifetime budget constraint is:
+\[ C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}. \]
+This says:
+\[ \text{Present value of consumption} = \text{Present value of income}. \]
+If the household consumes less than current income in period 1, it saves:
+\[ S_1 = Y_1 - C_1 > 0. \]
+If the household consumes more than current income in period 1, it borrows:
+\[ S_1 = Y_1 - C_1 < 0. \]
+The slope of the intertemporal budget line is:
+\[ -(1+r). \]
+This means that giving up one unit of consumption today allows the household to consume $1+r$ units tomorrow.
+
+At the optimum, the marginal rate of substitution equals the relative price of intertemporal consumption:
+\[ \frac{u'(C_1)}{\beta u'(C_2)} = 1+r. \]
+Equivalently:
+\[ u'(C_1) = \beta(1+r)u'(C_2). \]
+This is the consumption Euler equation.
+
+\subsection*{Worked Example 4.1: Solving a Two-Period Consumption Problem}
+\textbf{Scenario:} A household has:
+\[ Y_1 = 100, \quad Y_2 = 121, \quad r = 0.10, \quad \beta = \frac{1}{1+r}. \]
+Utility is:
+\[ U = \ln C_1 + \beta \ln C_2. \]
+The lifetime budget constraint is:
+\[ C_1 + \frac{C_2}{1.10} = 100 + \frac{121}{1.10}. \]
+\[ C_1 + \frac{C_2}{1.10} = 100 + 110 = 210. \]
+The Euler equation for log utility is:
+\[ \frac{1}{C_1} = \beta(1+r) \frac{1}{C_2}. \]
+Since $\beta(1+r) = 1$, we have:
+\[ C_1 = C_2. \]
+Let $C_1 = C_2 = C$. Then:
+\[ C + \frac{C}{1.10} = 210. \]
+\[ 1.9091C = 210. \]
+\[ C \approx 110. \]
+\textbf{Result:}
+\[ C_1 = 110, \quad C_2 = 110. \]
+\textbf{Interpretation:} The household smooths consumption even though income is lower in period 1 and higher in period 2.
+
+\subsection*{Worked Example 4.2: Borrowing and Saving}
+Using the result from Worked Example 4.1:
+\[ Y_1 = 100, \quad C_1 = 110. \]
+Saving in period 1 is:
+\[ S_1 = Y_1 - C_1. \]
+\[ S_1 = 100 - 110 = -10. \]
+\textbf{Result:} The household borrows 10 units in period 1.
+
+In period 2, it must repay:
+\[ 10(1.10) = 11. \]
+Second-period income is:
+\[ Y_2 = 121. \]
+After repayment, second-period consumption is:
+\[ C_2 = 121 - 11 = 110. \]
+\textbf{Interpretation:} Borrowing allows the household to smooth consumption across time.
+
+\subsection*{Worked Example 4.3: A Temporary Income Increase}
+Suppose income in period 1 rises temporarily from 100 to 120, while:
+\[ Y_2 = 121, \quad r = 0.10, \quad \beta = \frac{1}{1+r}. \]
+Lifetime wealth becomes:
+\[ W = 120 + \frac{121}{1.10} = 120 + 110 = 230. \]
+With log utility and $\beta(1+r) = 1$, consumption is equal across both periods:
+\[ C + \frac{C}{1.10} = 230. \]
+\[ 1.9091C = 230. \]
+\[ C \approx 120.48. \]
+\textbf{Result:} Current consumption rises from 110 to approximately 120.48, not to 130 or 140.
+
+\textbf{Interpretation:} The temporary income gain is spread across both periods. Consumption rises by less than the full temporary increase in current income.
+
+\section*{4.2 Permanent Income and Life-Cycle Consumption}
+\subsection*{The Basic Concept: Consumption Depends on Lifetime Resources}
+The Permanent Income Hypothesis and the Life-Cycle Hypothesis extend Fisher's logic to many periods.
+
+The Permanent Income Hypothesis states that households base consumption mainly on permanent income, not current income. Permanent income is the sustainable level of income implied by lifetime resources.
+
+The Life-Cycle Hypothesis emphasizes that income and saving vary over age. Young households may borrow, middle-aged households may save, and retired households may dissave.
+
+Both theories share a common idea:
+\begin{quote}
+Households smooth consumption over time by borrowing and saving.
+\end{quote}
+
+\subsection*{The Advanced Concept: Permanent Income as an Annuity}
+Suppose a household expects lifetime resources with present value:
+\[ W_t = A_t + \sum_{j=0}^{\infty} \frac{E_t Y_{t+j}}{(1+r)^j}, \]
+where:
+\begin{itemize}
+    \item $A_t$ is current financial wealth.
+    \item $Y_{t+j}$ is future labour income.
+    \item $r$ is the real interest rate.
+    \item $E_t$ denotes expectations formed at time $t$.
+\end{itemize}
+
+If the household wants to consume a constant amount forever, consumption is the annuity value of wealth:
+\[ C_t = \frac{r}{1+r} W_t, \]
+for an infinite horizon with constant $r$.
+
+In a finite horizon of $T$ periods, the constant-consumption rule is:
+\[ C = \frac{W}{\sum_{j=0}^{T-1} (1+r)^{-j}}. \]
+The denominator is the present value of one unit of consumption in each period.
+
+\subsection*{Temporary versus Permanent Income Shocks}
+A temporary income shock affects one period's income. A permanent income shock affects income in many future periods.
+
+The PIH predicts:
+\begin{itemize}
+    \item A temporary income increase should be spread across many periods, so current consumption rises only modestly.
+    \item A permanent income increase raises lifetime resources substantially, so current consumption rises strongly.
+\end{itemize}
+
+This gives an important policy implication:
+\begin{quote}
+Temporary tax cuts may have limited effects on consumption if households are forward-looking and unconstrained.
+\end{quote}
+
+\subsection*{Worked Example 4.4: Permanent Income from Lifetime Wealth}
+\textbf{Scenario:} A household has financial wealth:
+\[ A = 50. \]
+It expects income of 100 in each of the next two periods. The interest rate is:
+\[ r = 0.10. \]
+Lifetime wealth is:
+\[ W = A + Y_1 + \frac{Y_2}{1+r}. \]
+\[ W = 50 + 100 + \frac{100}{1.10}. \]
+\[ W = 50 + 100 + 90.91 = 240.91. \]
+If the household consumes the same amount in both periods, then:
+\[ C + \frac{C}{1.10} = 240.91. \]
+\[ 1.9091C = 240.91. \]
+\[ C \approx 126.19. \]
+\textbf{Result:} Permanent-income consumption is approximately 126.19 per period.
+
+\textbf{Interpretation:} Consumption exceeds current labour income because the household also has financial wealth.
+
+\subsection*{Worked Example 4.5: Temporary versus Permanent Income Shock}
+\textbf{Scenario:} A household lives for 10 periods and the interest rate is zero. It initially expects income of 100 in each period.
+
+Initial lifetime resources are:
+\[ W = 10(100) = 1000. \]
+Permanent-income consumption is:
+\[ C = \frac{1000}{10} = 100. \]
+
+Now suppose the household receives a temporary one-period bonus of 50.
+New lifetime resources are:
+\[ W = 1050. \]
+New consumption is:
+\[ C = \frac{1050}{10} = 105. \]
+\textbf{Temporary Shock Result:} Consumption rises by only 5.
+
+Now suppose income rises permanently by 50 in every period.
+New lifetime resources are:
+\[ W = 10(150) = 1500. \]
+New consumption is:
+\[ C = \frac{1500}{10} = 150. \]
+\textbf{Permanent Shock Result:} Consumption rises by 50.
+
+\textbf{Interpretation:} A temporary income shock has a small effect on consumption, while a permanent income shock has a large effect.
+
+\subsection*{Worked Example 4.6: Life-Cycle Saving}
+A household expects the following income profile over four periods:
+\[ Y_1 = 50, \quad Y_2 = 100, \quad Y_3 = 150, \quad Y_4 = 0. \]
+Assume the interest rate is zero.
+Lifetime income is:
+\[ W = 50 + 100 + 150 + 0 = 300. \]
+Constant consumption is:
+\[ C = \frac{300}{4} = 75. \]
+Saving in each period is:
+\[ S_t = Y_t - C. \]
+Therefore:
+\[ S_1 = 50 - 75 = -25, \]
+\[ S_2 = 100 - 75 = 25, \]
+\[ S_3 = 150 - 75 = 75, \]
+\[ S_4 = 0 - 75 = -75. \]
+\textbf{Result:} The household borrows when young, saves during working life, and dissaves in retirement.
+
+\textbf{Interpretation:} This is the central life-cycle pattern.
+
+\section*{4.3 Hall's Random-Walk Model of Consumption}
+\subsection*{The Basic Concept: Predictable Income Changes Should Not Predict Consumption Changes}
+Hall's random-walk result combines the Permanent Income Hypothesis with rational expectations.
+
+If households use all available information efficiently, then expected future income changes are already incorporated into current consumption. Consumption should change only when households receive new information.
+
+The key implication is:
+\begin{quote}
+Under the PIH with rational expectations, changes in consumption should be unpredictable.
+\end{quote}
+
+This does not mean consumption is constant. It means that predictable changes in income should not systematically predict changes in consumption.
+
+\subsection*{The Advanced Concept: Deriving the Random Walk}
+Start with the Euler equation:
+\[ u'(C_t) = \beta(1+r)E_t[u'(C_{t+1})]. \]
+Assume:
+\[ \beta(1+r) = 1. \]
+Then:
+\[ u'(C_t) = E_t[u'(C_{t+1})]. \]
+If utility is quadratic, marginal utility is linear in consumption. This implies:
+\[ C_t = E_t(C_{t+1}). \]
+Therefore:
+\[ C_{t+1} = C_t + \varepsilon_{t+1}, \]
+where:
+\[ E_t(\varepsilon_{t+1}) = 0. \]
+The term $\varepsilon_{t+1}$ is new information arriving between $t$ and $t+1$.
+
+\subsection*{Decoding the Math}
+The equation:
+\[ C_{t+1} = C_t + \varepsilon_{t+1} \]
+says that tomorrow's consumption equals today's consumption plus an unpredictable innovation.
+
+If households learn that lifetime income is higher than expected, then:
+\[ \varepsilon_{t+1} > 0, \]
+and consumption rises.
+
+If households learn that lifetime income is lower than expected, then:
+\[ \varepsilon_{t+1} < 0, \]
+and consumption falls.
+
+If there is no new information, then:
+\[ \varepsilon_{t+1} = 0, \]
+and consumption remains unchanged.
+
+\subsection*{Worked Example 4.7: Forecastable Income and Unchanged Consumption}
+\textbf{Scenario:} A household knows today that it will receive a salary increase of 10 next year. The increase is fully anticipated.
+
+According to Hall's model, the household has already incorporated this future income into current lifetime resources. Therefore, consumption should adjust today, not only when the income arrives.
+
+\textbf{Result:} The future predictable salary increase should not cause a predictable jump in consumption next year.
+
+\textbf{Interpretation:} Only news changes consumption.
+
+\subsection*{Worked Example 4.8: Unexpected Promotion}
+Suppose a household currently consumes:
+\[ C_t = 100. \]
+It unexpectedly receives news of a permanent promotion that raises lifetime resources. The consumption innovation is:
+\[ \varepsilon_{t+1} = 12. \]
+Then:
+\[ C_{t+1} = C_t + \varepsilon_{t+1}. \]
+\[ C_{t+1} = 100 + 12 = 112. \]
+\textbf{Result:} Consumption rises to 112.
+
+\textbf{Interpretation:} Consumption changes because the promotion was unexpected.
+
+\subsection*{Worked Example 4.9: Excess Sensitivity}
+Suppose consumption growth follows:
+\[ \Delta C_{t+1} = a + b \Delta Y_t + \varepsilon_{t+1}. \]
+Under the strict Hall random-walk model:
+\[ b = 0. \]
+If empirical estimates find:
+\[ b = 0.40, \]
+then predictable income growth helps predict consumption growth.
+
+\textbf{Result:} Consumption displays excess sensitivity to income.
+
+\textbf{Interpretation:} This may reflect liquidity constraints, rule-of-thumb consumers, myopia, measurement error, or incomplete information.
+
+\section*{4.4 Elasticity of Intertemporal Substitution and Interest-Rate Effects}
+\subsection*{The Basic Concept: How Strongly Does Consumption Respond to Interest Rates?}
+The interest rate is the reward for postponing consumption. If the real interest rate rises, saving becomes more attractive because one unit of consumption today can purchase more consumption tomorrow.
+
+However, households do not all respond strongly to interest-rate changes. The strength of the response depends on the elasticity of intertemporal substitution.
+
+The key question is:
+\begin{quote}
+How willing is the household to shift consumption across time when the interest rate changes?
+\end{quote}
+
+\subsection*{The Advanced Concept: CRRA Utility and the EIS}
+Let household utility be CRRA:
+\[ u(C) = \frac{C^{1-\sigma}}{1-\sigma}, \]
+where:
+\[ \sigma > 0. \]
+Marginal utility is:
+\[ u'(C) = C^{-\sigma}. \]
+The Euler equation is:
+\[ C_t^{-\sigma} = \beta(1+r)E_t[C_{t+1}^{-\sigma}]. \]
+Ignoring uncertainty for simplicity:
+\[ C_t^{-\sigma} = \beta(1+r)C_{t+1}^{-\sigma}. \]
+Rearranging:
+\[ \frac{C_{t+1}}{C_t} = [\beta(1+r)]^{1/\sigma}. \]
+The elasticity of intertemporal substitution is:
+\[ EIS = \frac{1}{\sigma}. \]
+
+\subsection*{Decoding the Math}
+The consumption growth equation is:
+\[ \frac{C_{t+1}}{C_t} = [\beta(1+r)]^{1/\sigma}. \]
+If $r$ rises, the term $\beta(1+r)$ rises. This tends to raise future consumption relative to current consumption.
+
+If $\sigma$ is high, then $\frac{1}{\sigma}$ is low, so consumption growth responds weakly to interest-rate changes.
+
+If $\sigma$ is low, then EIS is high, so consumption growth responds strongly to interest-rate changes.
+
+\subsection*{Worked Example 4.10: Consumption Growth with CRRA Utility}
+Suppose:
+\[ \beta = 0.96, \quad r = 0.06, \quad \sigma = 2. \]
+Then:
+\[ \frac{C_{t+1}}{C_t} = [0.96(1.06)]^{1/2} = [1.0176]^{1/2} \approx 1.0088. \]
+\textbf{Result:} Consumption grows by approximately 0.88 percent.
+
+\textbf{Interpretation:} The real return is slightly high relative to impatience, so consumption rises over time.
+
+\subsection*{Worked Example 4.11: Comparing High and Low EIS}
+Suppose:
+\[ \beta(1+r) = 1.04. \]
+\textbf{Case A:} $\sigma = 1$. Then:
+\[ \frac{C_{t+1}}{C_t} = 1.04. \]
+Consumption grows by 4 percent.
+
+\textbf{Case B:} $\sigma = 4$. Then:
+\[ \frac{C_{t+1}}{C_t} = 1.04^{1/4} \approx 1.0099. \]
+Consumption grows by approximately 0.99 percent.
+
+\textbf{Result:} The household with lower $\sigma$ responds more strongly.
+
+\textbf{Interpretation:} A high EIS means the household is more willing to shift consumption across time.
+
+\subsection*{Worked Example 4.12: Substitution and Income Effects}
+A higher interest rate has two effects:
+\begin{enumerate}
+    \item \textbf{Substitution effect:} Future consumption becomes cheaper relative to current consumption, so the household saves more.
+    \item \textbf{Income effect:} A saver becomes wealthier because assets earn a higher return, so the household may consume more today and tomorrow.
+\end{enumerate}
+For borrowers, a higher interest rate makes repayment more expensive and may reduce current consumption.
+
+\textbf{Interpretation:} The effect of interest rates on saving is theoretically ambiguous because substitution and income effects can move in opposite directions.
+
+\section*{4.5 Habits, Durable Goods, and Slow Consumption Adjustment}
+\subsection*{The Basic Concept: Consumption Is Not Always Freely Adjustable}
+The simple PIH model assumes that households can adjust consumption smoothly and immediately. Real households often cannot.
+
+Two important complications are habits and durable goods.
+
+Habits mean that past consumption affects current utility. Durable goods mean that some consumption purchases provide services over many periods.
+
+Both mechanisms make consumption adjustment slower and more persistent.
+
+\subsection*{Habit Formation}
+With internal habits, utility depends on current consumption relative to past consumption:
+\[ u(C_t - \theta C_{t-1}), \]
+where:
+\[ 0 < \theta < 1. \]
+The term:
+\[ \theta C_{t-1} \]
+is the habit stock.
+
+If current consumption falls close to or below the habit level, utility falls sharply.
+
+\subsection*{Decoding Habit Formation}
+Suppose:
+\[ C_{t-1} = 100, \quad \theta = 0.80. \]
+The habit stock is:
+\[ \theta C_{t-1} = 0.80(100) = 80. \]
+If current consumption is:
+\[ C_t = 110, \]
+then surplus consumption over habit is:
+\[ C_t - \theta C_{t-1} = 110 - 80 = 30. \]
+If current consumption is:
+\[ C_t = 85, \]
+then surplus consumption is:
+\[ 85 - 80 = 5. \]
+\textbf{Interpretation:} A decline from 110 to 85 may be psychologically severe because consumption approaches the habit threshold.
+
+\subsection*{Durable Goods}
+Durable goods generate service flows over time. Let $D_t$ be the durable stock. It evolves as:
+\[ D_t = (1 - \delta_D) D_{t-1} + X_t, \]
+where:
+\begin{itemize}
+    \item $D_t$ is the durable stock.
+    \item $X_t$ is new durable expenditure.
+    \item $\delta_D$ is the depreciation rate of durable goods.
+\end{itemize}
+Utility depends on the service flow from the durable stock, not only on current purchases.
+
+This creates a stock-flow distinction:
+\begin{quote}
+Expenditure on durables may be volatile, while the service flow from durables is smoother.
+\end{quote}
+
+\subsection*{Worked Example 4.13: Habit Stock Calculation}
+Suppose:
+\[ C_{t-1} = 200, \quad \theta = 0.60. \]
+The habit stock is:
+\[ \theta C_{t-1} = 0.60(200) = 120. \]
+If:
+\[ C_t = 180, \]
+surplus consumption is:
+\[ C_t - \theta C_{t-1} = 180 - 120 = 60. \]
+\textbf{Result:} Current consumption exceeds the habit stock by 60.
+
+\textbf{Interpretation:} The household remains above its accustomed consumption standard.
+
+\subsection*{Worked Example 4.14: Durable Goods Stock}
+Suppose:
+\[ D_{t-1} = 1000, \quad \delta_D = 0.10, \quad X_t = 200. \]
+The durable stock is:
+\[ D_t = (1 - \delta_D) D_{t-1} + X_t. \]
+\[ D_t = 0.90(1000) + 200. \]
+\[ D_t = 900 + 200 = 1100. \]
+\textbf{Result:} The durable stock rises to 1100.
+
+\textbf{Interpretation:} New purchases exceed depreciation, so the stock of durables increases.
+
+\subsection*{Worked Example 4.15: Durables and Volatile Expenditure}
+Suppose a household owns a car that provides transportation services for several years. The household buys the car in one year, so measured durable expenditure rises sharply in that year. But the household enjoys transportation services over many future years.
+
+\textbf{Result:} Durable expenditure is lumpy, but durable consumption services are smoother.
+
+\textbf{Interpretation:} Macroeconomic data on consumption expenditure may overstate short-run volatility in actual consumption services.
+
+
+\section*{4.6 Rule-of-Thumb Consumers, Liquidity Constraints, and Aggregation}
+\subsection*{The Basic Concept: Not Every Household Behaves Like the Representative Agent}
+The standard PIH model assumes that households can borrow and lend freely at the same interest rate, understand their lifetime resources, and optimize intertemporally.
+
+In reality, many households cannot borrow freely, have little wealth, face uncertainty, or follow simple spending rules. These households may consume mainly out of current income.
+
+Such households are often called rule-of-thumb consumers, hand-to-mouth consumers, or liquidity-constrained households.
+
+\subsection*{The Advanced Concept: A Simple Two-Type Consumption Model}
+Suppose a fraction $\lambda$ of households are rule-of-thumb consumers. They consume current income:
+\[ C_t^R = Y_t. \]
+The remaining fraction $1 - \lambda$ are optimizing consumers. Their consumption is:
+\[ C_t^O = C_t^*. \]
+Aggregate consumption is:
+\[ C_t = \lambda Y_t + (1 - \lambda) C_t^*. \]
+This model implies that current income can affect aggregate consumption even if optimizing households follow the Permanent Income Hypothesis.
+
+\subsection*{Decoding the Math}
+If:
+\[ \lambda = 0, \]
+then all households are optimizing consumers, and aggregate consumption follows the PIH logic.
+
+If:
+\[ \lambda = 1, \]
+then all households consume current income, and aggregate consumption is highly sensitive to current income.
+
+If:
+\[ 0 < \lambda < 1, \]
+then aggregate consumption partly follows current income and partly follows permanent-income logic.
+
+This helps explain excess sensitivity:
+\[ \Delta C_t \]
+may respond to predictable changes in:
+\[ \Delta Y_t. \]
+
+\subsection*{Aggregation Problems}
+Aggregation asks whether the behaviour of many different households can be represented by one representative consumer.
+
+This is difficult because households differ in:
+\begin{itemize}
+    \item Age.
+    \item Wealth.
+    \item Income risk.
+    \item Borrowing constraints.
+    \item Expectations.
+    \item Access to credit.
+    \item Family structure.
+    \item Employment status.
+    \item Marginal propensity to consume.
+\end{itemize}
+The representative-agent model is useful, but it may hide distributional mechanisms that are crucial for policy.
+
+\subsection*{Worked Example 4.16: Aggregate Consumption with Rule-of-Thumb Consumers}
+Suppose:
+\[ \lambda = 0.30, \quad Y_t = 1000, \quad C_t^* = 900. \]
+Aggregate consumption is:
+\[ C_t = \lambda Y_t + (1 - \lambda) C_t^*. \]
+\[ C_t = 0.30(1000) + 0.70(900). \]
+\[ C_t = 300 + 630 = 930. \]
+\textbf{Result:} Aggregate consumption is 930.
+
+\textbf{Interpretation:} The presence of rule-of-thumb consumers raises aggregate consumption above the optimizing-consumer level.
+
+\subsection*{Worked Example 4.17: Temporary Transfer and MPC}
+Suppose the government gives a temporary transfer of 100 to each household.
+
+Optimizing households spread the transfer across 10 periods, so their current MPC is:
+\[ 0.10. \]
+Rule-of-thumb households spend the entire transfer, so their MPC is:
+\[ 1. \]
+If:
+\[ \lambda = 0.40, \]
+the aggregate MPC is:
+\[ MPC = \lambda(1) + (1 - \lambda)(0.10). \]
+\[ MPC = 0.40(1) + 0.60(0.10). \]
+\[ MPC = 0.40 + 0.06 = 0.46. \]
+\textbf{Result:} The aggregate MPC is 0.46.
+
+\textbf{Interpretation:} Liquidity constraints and hand-to-mouth behaviour make temporary transfers more expansionary.
+
+\subsection*{Worked Example 4.18: Why Aggregation Matters for Fiscal Policy}
+Suppose two households each receive a 100 transfer.
+
+Household A is wealthy and unconstrained. It spends 10. \\
+Household B is liquidity constrained. It spends 90.
+
+The average MPC is:
+\[ \frac{10 + 90}{200} = 0.50. \]
+
+If the government gives more transfers to constrained households, aggregate consumption rises more strongly.
+
+\textbf{Result:} The distribution of transfers matters.
+
+\textbf{Interpretation:} A representative-agent model may understate the effect of targeted fiscal policy.
+
+\section*{4.7 A Practical Guide to Solving Consumption Models}
+When solving a consumption model, use the following steps.
+
+\subsection*{Step 1: Identify the Household's Horizon}
+Ask:
+\begin{itemize}
+    \item Is the model two-period, finite-horizon, or infinite-horizon?
+    \item Is the household young, working-age, or retired?
+    \item Does the household care about bequests?
+\end{itemize}
+
+\subsection*{Step 2: Write the Intertemporal Budget Constraint}
+For a two-period household:
+\[ C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}. \]
+For an infinite-horizon household:
+\[ \sum_{j=0}^{\infty} \frac{C_{t+j}}{(1+r)^j} = A_t + \sum_{j=0}^{\infty} \frac{Y_{t+j}}{(1+r)^j}. \]
+
+\subsection*{Step 3: Derive the Euler Equation}
+Use the first-order condition:
+\[ u'(C_t) = \beta(1+r)E_t[u'(C_{t+1})]. \]
+Then specify utility. For CRRA utility:
+\[ \frac{C_{t+1}}{C_t} = [\beta(1+r)]^{1/\sigma}. \]
+
+\subsection*{Step 4: Distinguish Temporary and Permanent Shocks}
+Ask:
+\begin{itemize}
+    \item Does the income shock last one period or many periods?
+    \item Does the shock change lifetime resources significantly?
+    \item Is the household able to borrow and save freely?
+\end{itemize}
+
+\subsection*{Step 5: Test the Random-Walk Implication}
+Under the strict Hall model:
+\[ C_{t+1} = C_t + \varepsilon_{t+1}. \]
+Ask:
+\begin{itemize}
+    \item Are consumption changes predictable?
+    \item Does current income predict consumption growth?
+    \item Is there evidence of excess sensitivity?
+\end{itemize}
+
+\subsection*{Step 6: Add Realistic Frictions}
+If the model fails, consider:
+\begin{itemize}
+    \item Liquidity constraints.
+    \item Rule-of-thumb behaviour.
+    \item Habits.
+    \item Durable goods.
+    \item Precautionary saving.
+    \item Heterogeneous households.
+    \item Incomplete markets.
+\end{itemize}
+
+\subsection*{Step 7: Interpret Policy Implications}
+Ask:
+\begin{itemize}
+    \item Will a temporary tax cut raise consumption substantially?
+    \item Which households have the highest MPC?
+    \item Does the policy change permanent income or only current income?
+    \item Are households able to smooth consumption?
+    \item Does aggregation hide important distributional effects?
+\end{itemize}
+
+\end{document}

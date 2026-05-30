@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: eco801.pdf
+    url: eco802.pdf
   is_hidden: false
-  pdf_url: eco801.pdf
-  slug: eco801
-  source: eco801.tex
+  pdf_url: eco802.pdf
+  slug: eco802
+  source: eco802.tex
   splitlevel: -2
-  title: eco801
+  title: eco802
   type: standalone
   url: index.html
 themes:

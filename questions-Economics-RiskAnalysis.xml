@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- question: 1 -->
+  <question type="stack">
+    <name><text>Economics - Risk Preference and Expected Utility</text></name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A lottery gives:</p>
+<ul>
+  <li><strong>{@x1@}</strong> with probability <strong>{@p_val@}</strong></li>
+  <li><strong>{@x2@}</strong> with probability <strong>{@1-p_val@}</strong></li>
+</ul>
+<p>Given the utility function \( U(x) = \sqrt{x} \):</p>
+
+<p><strong>Question 1: Expected Value</strong> (2 marks)<br/>
+Compute the expected value (EV) of the lottery.<br/>
+EV = [[input:ans1]] [[validation:ans1]]</p>
+
+<p><strong>Question 2: Expected Utility</strong> (2 marks)<br/>
+Compute the expected utility (EU) of the lottery.<br/>
+EU = [[input:ans2]] [[validation:ans2]]</p>
+
+<p><strong>Question 3: Risk Preference</strong> (2 marks)<br/>
+If the certain income is equal to the EV, compare \( U(EV) \) with the expected utility from Question 2. State whether the individual is:<br/>
+[[input:ans3]] [[validation:ans3]]</p>
+
+<p><strong>Question 4: Certainty Equivalent</strong> (2 marks)<br/>
+Using your answer from Question 2, find the certainty equivalent (CE).<br/>
+CE = [[input:ans4]] [[validation:ans4]]</p>
+
+<p><strong>Question 5: Risk Premium</strong> (2 marks)<br/>
+Compute the risk premium using \( RP = EV - CE \).<br/>
+RP = [[input:ans5]] [[validation:ans5]]</p>
+
+<p>[[feedback:prt1]]<br/>[[feedback:prt2]]<br/>[[feedback:prt3]]<br/>[[feedback:prt4]]<br/>[[feedback:prt5]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p><strong>1. Expected Value (EV):</strong><br/>
+\( EV = p \cdot x_1 + (1-p) \cdot x_2 = {@p_val@} \times {@x1@} + {@1-p_val@} \times {@x2@} = {@EV@} \)</p>
+
+<p><strong>2. Expected Utility (EU):</strong><br/>
+\( EU = p \cdot U(x_1) + (1-p) \cdot U(x_2) = {@p_val@} \times \sqrt{{@x1@}} + {@1-p_val@} \times \sqrt{{@x2@}} \approx {@ta2@} \)</p>
+
+<p><strong>3. Risk Preference:</strong><br/>
+Since \( U(EV) = \sqrt{{@EV@}} \approx {@U_EV@} \) is greater than \( EU \approx {@ta2@} \), the individual prefers the certain expected value over the lottery. This means the individual is <strong>Risk-averse</strong>. This is mathematically true for any strictly concave utility function like \( \sqrt{x} \).</p>
+
+<p><strong>4. Certainty Equivalent (CE):</strong><br/>
+The CE is the guaranteed amount that yields the same utility as the lottery's expected utility.<br/>
+\( U(CE) = EU \implies \sqrt{CE} = {@ta2@} \implies CE = ({@ta2@})^2 \approx {@ta4@} \)</p>
+
+<p><strong>5. Risk Premium (RP):</strong><br/>
+\( RP = EV - CE = {@EV@} - {@ta4@} \approx {@ta5@} \)</p>]]></text>
+    </generalfeedback>
+    <questionvariables>
+      <text>p_val: rand([0.4, 0.5, 0.6]);
+x1: rand([80, 100, 120]);
+x2: rand([10, 20, 30]);
+
+ta1: float(p_val*x1 + (1-p_val)*x2);
+EV: ta1;
+
+ta2: float(p_val*sqrt(x1) + (1-p_val)*sqrt(x2));
+U_EV: float(sqrt(EV));
+
+ta3: [[1, true, "Risk-averse"], [2, false, "Risk-neutral"], [3, false, "Risk-loving"]];
+
+ta4: float(ta2^2);
+ta5: float(EV - ta4);</text>
+    </questionvariables>
+    <input>
+      <name>ans1</name><type>numerical</type><tans>ta1</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation>
+    </input>
+    <input>
+      <name>ans2</name><type>numerical</type><tans>ta2</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation>
+    </input>
+    <input>
+      <name>ans3</name><type>radio</type><tans>ta3</tans>
+      <checkanswertype>0</checkanswertype><mustverify>0</mustverify><showvalidation>0</showvalidation>
+    </input>
+    <input>
+      <name>ans4</name><type>numerical</type><tans>ta4</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation>
+    </input>
+    <input>
+      <name>ans5</name><type>numerical</type><tans>ta5</tans><boxsize>8</boxsize>
+      <strictsyntax>1</strictsyntax><insertstars>0</insertstars>
+      <checkanswertype>0</checkanswertype><mustverify>1</mustverify><showvalidation>3</showvalidation>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions>0.01</testoptions>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+    <prt>
+      <name>prt2</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans2</sans>
+        <tans>ta2</tans>
+        <testoptions>0.05</testoptions>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+    <prt>
+      <name>prt3</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans3</sans>
+        <tans>mcq_correct(ta3)</tans>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+    <prt>
+      <name>prt4</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans4</sans>
+        <tans>ta4</tans>
+        <testoptions>0.5</testoptions>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+    <prt>
+      <name>prt5</name>
+      <value>1.0000000</value>
+      <node>
+        <name>0</name>
+        <answertest>NumAbsolute</answertest>
+        <sans>ans5</sans>
+        <tans>ta5</tans>
+        <testoptions>0.5</testoptions>
+        <truescore>1</truescore>
+      </node>
+    </prt>
+  </question>
+
+</quiz>
