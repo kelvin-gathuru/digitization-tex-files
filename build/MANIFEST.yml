@@ -3,7 +3,7 @@ build_zip: true
 format_version: 2
 license: null
 locale: en
-mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+mathjax_url: https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js
 num_pdf_runs: 1
 root_url: /{base}/
 structure:
@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: eco802.pdf
+    url: sstm4.pdf
   is_hidden: false
-  pdf_url: eco802.pdf
-  slug: eco802
-  source: eco802.tex
+  pdf_url: sstm4.pdf
+  slug: sstm4
+  source: sstm4.tex
   splitlevel: -2
-  title: eco802
+  title: sstm4
   type: standalone
   url: index.html
 themes:

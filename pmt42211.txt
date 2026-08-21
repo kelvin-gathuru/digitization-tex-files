@@ -1,0 +1,69 @@
+Which of the following best describes a fuel?
+A. A substance used to cool engines
+B. A combustible substance that releases energy during combustion
+C. A material that absorbs heat from the surroundings
+D. A substance used only for electricity generation
+ANSWER: B
+
+Which of the following fuels is classified as a solid fuel?
+A. Natural gas
+B. Diesel
+C. Coal
+D. LPG
+ANSWER: C
+
+Which of the following statements about Lower Calorific Value (LCV) is correct?
+A. It includes the latent heat of vaporization of water
+B. It excludes the latent heat of vaporization of water
+C. It is always greater than HCV
+D. It is used only for gaseous fuels
+ANSWER: B
+
+A coal sample has the following proximate analysis: Moisture = 6%, Volatile matter = 28%, Ash = 14%. What is the fixed carbon percentage?
+A. 48%
+B. 50%
+C. 52%
+D. 54%
+ANSWER: C
+
+Which component of ultimate analysis is determined by difference?
+A. Carbon
+B. Hydrogen
+C. Sulfur
+D. Oxygen
+ANSWER: D
+
+Which element in fuel contributes most to the heating value?
+A. Nitrogen
+B. Carbon
+C. Ash
+D. Moisture
+ANSWER: B
+
+How much oxygen is required for complete combustion of 1 kg of hydrogen?
+A. 2 kg
+B. 4 kg
+C. 8 kg
+D. 16 kg
+ANSWER: C
+
+A combustion system operates with AFR_actual greater than AFR_stoich. This condition is known as:
+A. Rich mixture
+B. Lean mixture
+C. Stoichiometric mixture
+D. Saturated mixture
+ANSWER: B
+
+Which of the following gases is a major greenhouse gas produced during combustion?
+A. CO2
+B. O2
+C. N2
+D. H2
+ANSWER: A
+
+Why is excess air supplied in practical combustion systems?
+A. To reduce combustion temperature only
+B. To ensure complete combustion of fuel
+C. To increase ash production
+D. To reduce oxygen in the exhaust
+ANSWER: B

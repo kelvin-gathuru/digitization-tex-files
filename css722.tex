@@ -1,0 +1,100 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+
+\begin{document}
+
+\section*{Access Control: Models, Zero Trust, and Identity Management}
+
+Access control is the primary technical control for protecting confidentiality and, to a significant extent, integrity. This module explores the evolution of access control from perimeter-based models to modern Zero Trust Architecture (ZTA), examining access control models, identity management frameworks, and authentication technologies, all applied to Kenyan organisational contexts.
+
+% ============================================================
+\section{Access Control Models}
+% ============================================================
+
+Access control determines who (subject) can do what (action) to which resource (object) under what conditions. Four primary models are used in practice:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|l|p{4cm}|p{4.5cm}|}
+\hline
+\textbf{Model} & \textbf{Full Name} & \textbf{Core Mechanism} & \textbf{Best Used For} \\
+\hline
+RBAC & Role-Based Access Control & Permissions assigned to roles; users assigned to roles & Enterprises with well-defined job functions: banks, hospitals, government \\
+\hline
+ABAC & Attribute-Based Access Control & Access decisions based on user, resource, and environment attributes & Dynamic, fine-grained access: cloud services, cross-organisational access \\
+\hline
+MAC & Mandatory Access Control & Access determined by security labels/classifications set by administrators & High-security environments: military, intelligence, critical infrastructure \\
+\hline
+DAC & Discretionary Access Control & Resource owners control access to their own resources & Desktop environments: file sharing, personal documents \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Choosing the Right Model for Kenyan Organisations}
+
+\begin{itemize}
+    \item \textbf{Kenyan banks:} RBAC with ABAC extensions for context-aware decisions (e.g., branch location, time of day).
+    \item \textbf{Kenyan hospitals:} ABAC to enforce patient-specific access so a doctor can only access records of their own patients.
+    \item \textbf{Government classified systems:} MAC with security labels assigned by administrators.
+    \item \textbf{County government administrative files:} DAC supplemented by RBAC for departmental files.
+\end{itemize}
+
+% ============================================================
+\section{Zero Trust Architecture}
+% ============================================================
+
+Zero Trust Architecture (ZTA) is built on the principle of ``never trust, always verify.'' It rejects the traditional perimeter-based security assumption that everything inside the network can be trusted, replacing it with continuous verification of identity, device health, and access context for every request, regardless of network location.
+
+\subsection{The Five Key Principles of Zero Trust}
+
+\begin{enumerate}
+    \item \textbf{Verify explicitly:} Always authenticate and authorise using all available data points including identity, location, device health, service, workload, and data classification.
+    \item \textbf{Use least privilege access:} Limit user access with just-in-time and just-enough-access, risk-based adaptive policies.
+    \item \textbf{Assume breach:} Minimise blast radius. Segment access. Encrypt all sessions end-to-end. Use analytics for threat detection.
+    \item \textbf{Protect all resources:} Treat all assets as if they are exposed to the internet, whether on-premises or in the cloud.
+    \item \textbf{Inspect and log all traffic:} All traffic must be inspected and logged, even traffic already inside the network perimeter.
+\end{enumerate}
+
+\subsection{ZTA in Kenya's Context}
+
+ZTA is particularly relevant in Kenya where remote working, mobile-first service delivery, and cloud adoption have dissolved the traditional network perimeter. Organisations like Safaricom and Kenyan banks with branch networks across the country cannot rely on network location as a proxy for trust.
+
+% ============================================================
+\section{Identity Lifecycle Management and Privileged Access}
+% ============================================================
+
+\subsection{The Joiner-Mover-Leaver (JML) Framework}
+
+The JML framework provides a structured approach to managing identity lifecycle events:
+
+\begin{itemize}
+    \item \textbf{Joiner:} Provision accounts with minimum necessary access rights aligned to the new role; enrol MFA; brief on security policies.
+    \item \textbf{Mover:} Review and adjust access rights to reflect the new role; remove rights no longer required; add rights needed for the new function.
+    \item \textbf{Leaver:} Promptly revoke all access; deactivate credentials; remove privileged access on or before the departure date; recover devices.
+\end{itemize}
+
+\subsection{Privileged Access Management (PAM)}
+
+PAM is a specialised subset of identity management focused on accounts with elevated permissions. Key PAM controls include:
+
+\begin{itemize}
+    \item \textbf{Just-in-time access provisioning:} Grants elevated access only for the duration of a specific authorised task.
+    \item \textbf{Privileged session recording:} Creates an audit trail of all actions taken under a privileged account.
+    \item \textbf{Password vaulting:} Stores privileged credentials in an encrypted vault and rotates them automatically after each use.
+    \item \textbf{Dual-person integrity:} Requires two authorised individuals to approve and execute highly sensitive privileged operations.
+\end{itemize}
+
+\subsection{Access Certification and Privilege Creep}
+
+Over time, users accumulate access rights through role changes, project assignments, and temporary elevated permissions that were never revoked --- a phenomenon known as \textbf{privilege creep}. \textbf{Access certification} is the periodic process of verifying that each user's access rights remain appropriate. For Kenyan financial institutions regulated by the CBK, quarterly reviews are required for privileged accounts and annual reviews for standard user accounts.
+
+\subsection{Single Sign-On and Identity Federation}
+
+SSO enables users to authenticate once and access multiple systems without re-entering credentials, reducing password fatigue and centralising authentication. Standards such as SAML 2.0, OpenID Connect, and OAuth 2.0 underpin modern SSO and federation implementations. Kenya's e-government integration initiatives, including cross-agency access to eCitizen services, rely on similar federated identity principles.
+
+\subsection{Service Accounts and Non-Human Identities}
+
+Service accounts are accounts used by applications, automated processes, and services rather than human users. They frequently have elevated permissions, rarely have their passwords rotated, and are often shared between multiple applications. ISO/IEC 27001:2022 Annex A Control 5.17 specifically requires that service account credentials be managed and controlled.
+
+\end{document}

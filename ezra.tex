@@ -1,0 +1,212 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+
+\begin{document}
+
+\section*{Reliability Metrics: Understanding Terms and Jargon}
+
+% ============================================================
+\section{What Are Reliability Metrics?}
+% ============================================================
+
+Reliability metrics are the numerical measures used to quantify the reliability performance of a system or component. They help engineers answer key operational questions:
+\begin{itemize}
+    \item How often does the system fail?
+    \item How long does it operate before failure?
+    \item How available is the system during operation?
+\end{itemize}
+
+By using reliability metrics, engineers can identify weak components, improve maintenance strategies, and design systems that operate more reliably over time. They are widely used in industries such as manufacturing, energy systems, transportation, telecommunications, and aerospace.
+
+Common reliability metrics include:
+\begin{itemize}
+    \item \textbf{Failure rate} $(\lambda)$ --- the number of failures per unit time
+    \item \textbf{Mean Time Between Failures (MTBF)} --- the average operating time between failures in repairable systems
+    \item \textbf{Mean Time To Failure (MTTF)} --- the average lifetime before failure in non-repairable components
+    \item \textbf{Availability} --- the proportion of time a system is operational
+    \item \textbf{Reliability function} $R(t)$ --- the probability that a system operates without failure up to time $t$
+\end{itemize}
+
+% ============================================================
+\section{Failure Rate ($\lambda$)}
+% ============================================================
+
+The \textbf{failure rate} represents the number of failures per unit time:
+
+\begin{equation}
+\lambda = \frac{\text{Number of failures}}{\text{Total operating time}}
+\end{equation}
+
+\begin{example}
+A pump operates for 2000 hours and experiences 4 failures.
+\[
+\lambda = \frac{4}{2000} = 0.002 \text{ failures/hour}
+\]
+\textbf{Interpretation:} The system fails 0.002 times per hour, meaning a failure occurs roughly every 500 hours.
+\end{example}
+
+% ============================================================
+\section{Mean Time Between Failures (MTBF)}
+% ============================================================
+
+\textbf{MTBF} is the average time between consecutive failures for \emph{repairable} systems:
+
+\begin{equation}
+\text{MTBF} = \frac{\text{Total operating time}}{\text{Number of failures}}
+\end{equation}
+
+MTBF is the appropriate metric when a system can fail, be repaired, and return to operation --- for example, water pumps, generators, industrial machines, and compressors.
+
+\begin{example}
+A compressor operates for 5000 hours and fails 10 times.
+\[
+\text{MTBF} = \frac{5000}{10} = 500 \text{ hours}
+\]
+\textbf{Interpretation:} On average, the system fails once every 500 hours.
+\end{example}
+
+The relationship between MTBF and failure rate is:
+\begin{equation}
+\text{MTBF} = \frac{1}{\lambda}
+\end{equation}
+
+% ============================================================
+\section{Mean Time To Failure (MTTF)}
+% ============================================================
+
+\textbf{MTTF} is the average time before failure for \emph{non-repairable} components --- items that are replaced rather than repaired after failure (e.g., light bulbs, electronic chips, fuses, batteries):
+
+\begin{equation}
+\text{MTTF} = \frac{\text{Total operating time of all units}}{\text{Number of units}}
+\end{equation}
+
+\begin{example}
+Five light bulbs fail after the following operating times: 900, 1000, 1100, 950, and 1050 hours.
+\[
+\text{MTTF} = \frac{900 + 1000 + 1100 + 950 + 1050}{5} = \frac{5000}{5} = 1000 \text{ hours}
+\]
+\textbf{Interpretation:} On average, a bulb lasts 1000 hours before failure.
+\end{example}
+
+\subsection*{MTBF vs MTTF: Choosing the Correct Metric}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Metric} & \textbf{System Type} & \textbf{Examples} \\
+\hline
+MTBF & Repairable systems & Pumps, generators, compressors \\
+MTTF & Non-repairable components & Light bulbs, chips, fuses, batteries \\
+\hline
+\end{tabular}
+\end{center}
+
+Understanding this distinction is important because it ensures the correct reliability metric is applied when analysing system performance.
+
+% ============================================================
+\section{Availability}
+% ============================================================
+
+\textbf{Availability} is the proportion of time a system is operational and able to perform its intended function:
+
+\begin{equation}
+A = \frac{\text{MTBF}}{\text{MTBF} + \text{MTTR}}
+\end{equation}
+
+where $\text{MTTR}$ is the \textbf{Mean Time To Repair}.
+
+Availability is a critical performance measure in engineering because many systems must operate continuously or with minimal downtime --- power generation, water supply, telecommunications networks, and manufacturing lines all depend on high availability.
+
+\begin{example}
+A system has $\text{MTBF} = 500$ hours and $\text{MTTR} = 10$ hours.
+\[
+A = \frac{500}{500 + 10} = \frac{500}{510} \approx 0.98 \quad (98\%)
+\]
+\textbf{Interpretation:} The system is operational 98\% of the time.
+\end{example}
+
+\subsection{Effect of Repair Time on Availability}
+
+Availability depends on two key factors:
+\begin{enumerate}
+    \item \textbf{How often failures occur} (governed by MTBF)
+    \item \textbf{How quickly the system is repaired} (governed by MTTR)
+\end{enumerate}
+
+\begin{example}
+Using the same machine ($\text{MTBF} = 500$ hours), compare two repair time scenarios:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{MTTR (hours)} & \textbf{Calculation} & \textbf{Availability} \\
+\hline
+10 & $500 / 510$ & $\approx 98\%$ \\
+50 & $500 / 550$ & $\approx 91\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Interpretation:} Increasing repair time from 10 to 50 hours drops availability by approximately 7 percentage points, even though the failure frequency has not changed.
+\end{example}
+
+Engineers improve availability by:
+\begin{itemize}
+    \item Reducing failure frequency through better design, material selection, and preventive maintenance (increasing MTBF)
+    \item Reducing repair time through improved maintenance procedures, spare parts inventory, and modular system design (decreasing MTTR)
+\end{itemize}
+
+% ============================================================
+\section{The Reliability Function and Failure Rate}
+% ============================================================
+
+The \textbf{reliability function} $R(t)$ gives the probability that a system will operate without failure up to time $t$. Under the assumption of a constant failure rate (the exponential reliability model):
+
+\begin{equation}
+R(t) = e^{-\lambda t}
+\label{eq:exponential-reliability}
+\end{equation}
+
+\begin{example}
+Given a constant failure rate $\lambda = 0.002$ failures/hour, find the reliability after 100 hours.
+\[
+R(100) = e^{-0.002 \times 100} = e^{-0.2} \approx 0.82
+\]
+\textbf{Interpretation:} There is approximately an 82\% probability that the system will operate for 100 hours without failure.
+\end{example}
+
+% ============================================================
+\section{The Bathtub Curve}
+% ============================================================
+
+If a large number of identical items are placed on a life test and run until every unit has failed, plotting the observed failure rate against time produces a characteristic shape known as the \textbf{bathtub curve} (named for its resemblance to the cross-section of a bathtub). It has three distinct phases:
+
+\begin{enumerate}
+    \item \textbf{Infant Mortality (Decreasing Failure Rate):} Early failures caused by manufacturing defects, poor assembly, or substandard materials. Failure rate decreases rapidly as weak units are eliminated.
+    \item \textbf{Useful Life (Constant Failure Rate):} The failure rate stabilises at a low level. Random failures dominate and the exponential model (Equation~\ref{eq:exponential-reliability}) applies. This is the period of normal operation.
+    \item \textbf{Wear-Out (Increasing Failure Rate):} Failure rate rises as components age and wear beyond design limits. Preventive replacement and major overhaul are required.
+\end{enumerate}
+
+% ============================================================
+\section{Summary of Key Relationships}
+% ============================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Metric} & \textbf{Formula} & \textbf{Meaning} \\
+\hline
+Failure rate & $\lambda = \dfrac{\text{failures}}{\text{operating time}}$ & Failures per unit time \\[6pt]
+MTBF & $\text{MTBF} = \dfrac{1}{\lambda}$ & Avg.\ time between failures (repairable) \\[6pt]
+MTTF & $\text{MTTF} = \dfrac{\sum t_i}{n}$ & Avg.\ time to failure (non-repairable) \\[6pt]
+Availability & $A = \dfrac{\text{MTBF}}{\text{MTBF}+\text{MTTR}}$ & Fraction of time system is operational \\[6pt]
+Reliability & $R(t) = e^{-\lambda t}$ & Probability of no failure up to time $t$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

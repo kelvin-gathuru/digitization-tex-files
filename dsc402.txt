@@ -1,0 +1,69 @@
+What is the graph Laplacian \(L\) in terms of the degree matrix \(D\) and adjacency matrix \(A\)?
+A. \(L = D + A\)
+B. \(L = A - D\)
+C. \(L = D - A\)
+D. \(L = DA\)
+ANSWER: C
+
+Why can't a graph's adjacency matrix and node features simply be flattened into a single vector and used as input to a standard multilayer perceptron (MLP)?
+A. Because graphs always contain cycles that MLPs cannot process.
+B. Because the number of graph nodes is always too large for an MLP.
+C. Because there is no canonical ordering of graph nodes, so different node labelings of the same graph would produce different input vectors.
+D. Because adjacency matrices cannot be represented numerically.
+ANSWER: C
+
+Which statement correctly describes permutation invariance and permutation equivariance in graph learning?
+A. Permutation invariance means outputs are reordered like the inputs, while permutation equivariance means outputs remain unchanged.
+B. Permutation invariance means outputs remain unchanged under node permutations and is required for graph classification, whereas permutation equivariance means outputs are permuted in the same way as the inputs and is required for node classification.
+C. Both permutation invariance and permutation equivariance are only required for graph classification.
+D. Both concepts refer to the same property and are interchangeable.
+ANSWER: B
+
+Which of the following is an example of a graph-structured dataset with correctly identified nodes and edges?
+A. A grayscale image where pixels are nodes and colors are edges.
+B. A text document where words are nodes and sentences are edges.
+C. A molecule where atoms are nodes and chemical bonds are edges.
+D. A spreadsheet where rows are nodes and columns are edges.
+ANSWER: C
+
+A citation network node classification task is typically studied in which learning setting?
+A. Supervised learning, where all node labels are known during training.
+B. Inductive learning, where the model is trained only on completely unseen graphs.
+C. Reinforcement learning, where the model learns through rewards.
+D. Transductive learning, where the entire graph structure is available during training but labels for the test nodes are hidden.
+ANSWER: D
+
+What is meant by a heterophilic graph?
+A. A graph in which connected nodes tend to have similar features or labels.
+B. A graph in which every node has the same degree.
+C. A graph in which connected nodes tend to be dissimilar in their features or labels, making neighborhood averaging less effective.
+D. A graph that contains only directed edges.
+ANSWER: C
+
+What are the two main components of a cellular sheaf on a graph?
+A. A node embedding matrix and an adjacency matrix.
+B. A vector space (stalk) assigned to each node and edge, together with linear restriction maps from node stalks to incident edge stalks.
+C. A Laplacian matrix and a feature matrix.
+D. A graph convolution layer and an attention mechanism.
+ANSWER: B
+
+Under which conditions does the sheaf Laplacian reduce exactly to the standard graph Laplacian?
+A. When every stalk is \(\mathbb{R}\) and every restriction map is the identity.
+B. When every node has the same degree.
+C. When the graph contains only self-loops.
+D. When the restriction maps are all zero matrices.
+ANSWER: A
+
+Why can two connected nodes in a Sheaf Neural Network have different raw feature values while still being considered consistent?
+A. Because consistency depends only on the graph topology.
+B. Because the node features are ignored during message passing.
+C. Because consistency is evaluated after applying learned restriction maps that transform node features into a shared edge representation.
+D. Because the model forces all node features to become identical after training.
+ANSWER: C
+
+How does sheaf diffusion help reduce the over-smoothing problem found in standard Graph Neural Networks?
+A. It prevents any information from being exchanged between neighboring nodes.
+B. It converges toward a space of global sections that can contain multiple non-constant consistent configurations rather than a single constant value.
+C. It removes the need for graph Laplacians entirely.
+D. It replaces message passing with fully connected neural networks.
+ANSWER: B

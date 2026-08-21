@@ -4,7 +4,12 @@ const plastex_labels = document.getElementById('plastex-labels');
 if(plastex_labels) {
     Object.assign(body_refs, JSON.parse(plastex_labels.textContent));
 }
-window.MathJax = {
+
+const packages_url = new URL(chirun_static_url);
+packages_url.pathname += '/mathjax-packages';
+packages_url.search = '';
+
+window.MathJax = Object.assign({
     tex: {
         macros: {
             mathsterling: '{\\unicode{xA3}}',
@@ -12,17 +17,22 @@ window.MathJax = {
             euro: '\\unicode{x20AC}',
             bm: ["\\boldsymbol{ #1 }",1],
             lefteqn: ["\\rlap{ #1 }\\quad",1],
-            qedhere: "\\tag*{$\\blacksquare$}"
+            qedhere: "\\tag*{$\\blacksquare$}",
+            qed: "□",
         },
         inlineMath: [['\\(','\\)']],
         autoload: {},
         packages: {'[+]': [
             'noerrors',
             'mhchem',
-            'textmacros',
             'mathtools',
             'tagformat',
-            'chirun-eqref'
+            'chirun-eqref',
+            'siunitx',
+            'gensymb',
+            'color',
+            'html',
+            'cancel'
         ]},
         textmacros: {
             packages: {'[+]': ['bbox']}
@@ -45,7 +55,7 @@ window.MathJax = {
         typeset: true,
         ready: () => {
             const Configuration = MathJax._.input.tex.Configuration.Configuration;
-            const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+            const CommandMap = MathJax._.input.tex.TokenMap.CommandMap;
             const Label = MathJax._.input.tex.Tags.Label;
             const BaseMethods = MathJax._.input.tex.base.BaseMethods.default;
 
@@ -84,31 +94,44 @@ window.MathJax = {
         }
     },
     options: {
+        enableEnrichment: true,
         ignoreHtmlClass: 'tex2jax_ignore',
         processHtmlClass: 'tex2jax_process',
         renderActions: {
-            findScript: [10, function (doc) {
-                for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
-                    const display = !!node.type.match(/; *mode=display/);
-                    const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-                    const text = document.createTextNode('');
-                    node.parentNode.replaceChild(text, node);
-                    math.start = {node: text, delim: '', n: 0};
-                    math.end = {node: text, delim: '', n: 0};
-                    doc.math.push(math);
-                }
-            }, '']
+            findScript: [
+                10, 
+                function (doc) {
+                    for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                        const display = !!node.type.match(/; *mode=display/);
+                        const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                        const text = document.createTextNode('');
+                        node.parentNode.replaceChild(text, node);
+                        math.start = {node: text, delim: '', n: 0};
+                        math.end = {node: text, delim: '', n: 0};
+                        doc.math.push(math);
+                    }
+                }, 
+                () => {}
+            ]
         }
     },
     loader: {
         load: [
+            '[chirun]/siunitx.js',
+            '[tex]/gensymb',
+            '[tex]/color',
+            '[tex]/html',
+            '[tex]/cancel',
             '[tex]/noerrors',
             '[tex]/mhchem',
-            '[tex]/textmacros',
             '[tex]/bbox',
             '[tex]/mathtools',
             '[tex]/tagformat'
-        ]
+        ],
+
+        paths: {
+            chirun: packages_url,
+        }
     }
-};
+}, window.MathJax);
 })();

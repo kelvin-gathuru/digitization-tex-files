@@ -4,9 +4,26 @@
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
 \usepackage{xcolor}
+\definecolor{oukblue}{RGB}{22,54,92}
+\definecolor{oukgrey}{RGB}{100,100,100}
+\definecolor{oukgreylt}{RGB}{240,240,240}
+\definecolor{ouklight}{RGB}{230,240,250}
+\definecolor{oukteal}{RGB}{0,128,128}
+\definecolor{oukteallt}{RGB}{230,245,245}
+\definecolor{oukgold}{RGB}{180,140,20}
+\definecolor{oukgoldlt}{RGB}{255,250,230}
+\definecolor{oukred}{RGB}{180,40,40}
 \usepackage{chirun}
 \usepackage{amssymb}
 \usepackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc}
+\tikzset{
+  proc/.style={draw=oukgrey!70, fill=ouklight, rectangle, rounded corners=2pt},
+  serve/.style={draw=oukgrey!70, fill=oukteallt, rectangle, rounded corners=2pt},
+  good/.style={draw=oukgrey!70, fill=oukgoldlt, rectangle, rounded corners=2pt}
+}
 
 \usepackage{amsmath,multirow}
 \usepackage{amsthm,amssymb}

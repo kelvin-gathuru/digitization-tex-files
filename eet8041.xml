@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="essay">
+    <name>
+      <text>Plant-Based Natural Fibers</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>What are two major plant-based natural fibers commonly used in construction materials, and what properties make them suitable?</strong></p>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>10</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>12</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+<h3>Expected Model Answer</h3>
+
+<p>Examples of suitable plant-based natural fibers include <strong>jute</strong>, <strong>sisal</strong>, <strong>hemp</strong>, <strong>flax</strong>, and <strong>coir</strong>.</p>
+
+<p>Suitable properties include:</p>
+
+<ul>
+<li>High tensile strength</li>
+<li>Low density (lightweight)</li>
+<li>Renewable and biodegradable</li>
+<li>Good thermal and acoustic insulation</li>
+<li>Low environmental impact</li>
+<li>Good reinforcement capability in composite materials</li>
+</ul>
+
+<p>Full marks should identify at least two fibers and explain the properties that make them suitable for construction.</p>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>Natural Fiber Composites</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>What is a natural fiber composite, and how does combining natural fibers with a matrix material benefit construction applications?</strong></p>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>10</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>12</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+<h3>Expected Model Answer</h3>
+
+<p>A natural fiber composite is a material made by combining natural fibers with a matrix material such as polymer, cement, or resin.</p>
+
+<p>The matrix binds the fibers together and transfers loads, while the fibers improve mechanical properties.</p>
+
+<p>Benefits include:</p>
+
+<ul>
+<li>Improved strength and stiffness</li>
+<li>Reduced weight</li>
+<li>Better crack resistance</li>
+<li>Improved durability</li>
+<li>Enhanced sustainability</li>
+<li>Reduced environmental impact</li>
+</ul>
+
+<p>Full marks should define a natural fiber composite and explain at least two benefits of combining fibers with a matrix.</p>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+  <question type="essay">
+    <name>
+      <text>Applications of Natural Fiber Composites</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Give an example of how natural fiber composites are used in modern building materials and one advantage they offer over traditional materials.</strong></p>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>10</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>12</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+<h3>Expected Model Answer</h3>
+
+<p>Examples include:</p>
+
+<ul>
+<li>Fiber-reinforced cement boards</li>
+<li>Wall panels</li>
+<li>Roofing sheets</li>
+<li>Insulation panels</li>
+<li>Composite doors</li>
+<li>Partition boards</li>
+</ul>
+
+<p>Advantages over traditional materials may include:</p>
+
+<ul>
+<li>Lower weight</li>
+<li>Improved sustainability</li>
+<li>Reduced carbon footprint</li>
+<li>Better thermal insulation</li>
+<li>Improved crack resistance</li>
+<li>Renewable and biodegradable reinforcement materials</li>
+</ul>
+
+<p>Full marks should provide one appropriate application and explain one clear advantage.</p>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+</quiz>

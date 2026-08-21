@@ -1,0 +1,55 @@
+Which SQL statement is used to give a user specific privileges on a database object?
+A. ALLOW
+B. GRANT
+C. ASSIGN
+D. PERMIT
+ANSWER: B
+
+What is the main purpose of SQL roles in access control?
+A. To store user credentials
+B. To organize users into groups for easier privilege management
+C. To back up user data
+D. To monitor database performance
+ANSWER: B
+
+What does the REVOKE command do in SQL access control?
+A. Grants new privileges
+B. Creates new roles
+C. Removes previously granted privileges
+D. Deletes user accounts
+ANSWER: C
+
+Which of the following commands correctly grants SELECT permission on a table to a user?
+A. GRANT ALL ON TABLE employees TO John;
+B. GIVE SELECT ON employees TO John;
+C. GRANT SELECT ON employees TO John;
+D. PERMIT SELECT FROM employees TO John;
+ANSWER: C
+
+What is a key characteristic of Discretionary Access Control (DAC)?
+A. Access is based solely on user roles
+B. Permissions are assigned automatically by the system
+C. The object owner determines who has access
+D. Users cannot share their privileges
+ANSWER: C
+
+In Role-Based Access Control (RBAC), what determines a user's access to database resources?
+A. User's password strength
+B. User's assigned role(s)
+C. Number of logins
+D. Object owner's preferences
+ANSWER: B
+
+Which of the following is essential when designing an effective SQL-based access control scheme?
+A. Limiting all users to read-only access
+B. Avoiding the use of GRANT and REVOKE
+C. Defining roles and assigning the minimum required privileges
+D. Allowing all privileges by default
+ANSWER: C
+
+What principle is commonly applied when assigning access privileges in secure database systems?
+A. Maximum exposure
+B. Least privilege
+C. Open access
+D. Privilege inheritance
+ANSWER: B

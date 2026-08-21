@@ -1,0 +1,368 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+
+\begin{document}
+
+\section*{Understanding SQL Access Control}
+
+The SQL standard provides a set of commands and concepts for managing how users access and interact with database objects. This is crucial for database security, ensuring that only authorized individuals can access specific data and perform certain operations.
+
+\section{Core Concepts}
+
+\subsection{Principals}
+Entities that can be granted or denied access to database objects. These include:
+\begin{itemize}
+    \item \textbf{Users:} Individual accounts that can log in to the database.
+    \item \textbf{Roles:} Named collections of privileges that can be assigned to users or other roles.
+\end{itemize}
+
+\subsection{Objects}
+Database entities that can be accessed, such as:
+\begin{itemize}
+    \item Tables
+    \item Views
+    \item Schemas
+    \item Stored procedures
+    \item Functions
+\end{itemize}
+
+\subsection{Privileges}
+Actions that can be performed on database objects. Common SQL privileges include:
+\begin{itemize}
+    \item \textbf{SELECT:} Read data from a table or view.
+    \item \textbf{INSERT:} Add new data to a table.
+    \item \textbf{UPDATE:} Modify existing data in a table.
+    \item \textbf{DELETE:} Remove data from a table.
+    \item \textbf{EXECUTE:} Run a stored procedure or function.
+    \item \textbf{CREATE:} Create new database objects.
+    \item \textbf{ALTER:} Modify the structure of existing database objects.
+    \item \textbf{DROP:} Delete database objects.
+    \item \textbf{ALL PRIVILEGES:} Grants all available privileges on an object.
+\end{itemize}
+
+\section{SQL Commands for Access Control}
+
+\subsection{GRANT}
+Used to assign privileges to users or roles.
+
+\textbf{Syntax:}
+\begin{verbatim}
+GRANT privilege_list ON object_name TO principal_list [WITH GRANT OPTION];
+\end{verbatim}
+
+\begin{itemize}
+    \item \texttt{privilege\_list}: A comma-separated list of privileges (e.g., \texttt{SELECT}, \texttt{INSERT}).
+    \item \texttt{object\_name}: The name of the database object (e.g., \texttt{mytable}, \texttt{myview}).
+    \item \texttt{principal\_list}: A comma-separated list of users or roles (e.g., \texttt{user1}, \texttt{role1}).
+    \item \textbf{WITH GRANT OPTION:} Allows the recipient of the privileges to grant them to other users or roles (use with caution).
+\end{itemize}
+
+\subsection{REVOKE}
+Used to remove previously granted privileges from users or roles.
+
+\textbf{Syntax:}
+\begin{verbatim}
+REVOKE [GRANT OPTION FOR] privilege_list ON object_name FROM principal_list;
+\end{verbatim}
+
+\begin{itemize}
+    \item \textbf{GRANT OPTION FOR:} Revokes the right to grant the privilege to others. If omitted, the privilege itself is revoked.
+\end{itemize}
+
+\subsection{CREATE ROLE}
+Used to create a new role.
+
+\textbf{Syntax:}
+\begin{verbatim}
+CREATE ROLE role_name;
+\end{verbatim}
+
+\subsection{DROP ROLE}
+Used to delete an existing role.
+
+\textbf{Syntax:}
+\begin{verbatim}
+DROP ROLE role_name;
+\end{verbatim}
+
+\subsection{SET ROLE}
+Used to enable an active role for the current database session.
+
+\textbf{Syntax:}
+\begin{verbatim}
+SET ROLE role_name;
+\end{verbatim}
+
+\section{The Role of Roles}
+\begin{itemize}
+    \item Roles simplify access control management by grouping privileges.
+    \item Instead of granting privileges directly to individual users, privileges are granted to roles, and users are assigned to those roles.
+    \item This approach makes it easier to manage permissions for large numbers of users and ensures consistency in access control.
+    \item Roles can also be granted to other roles, creating a role hierarchy.
+\end{itemize}
+
+\section{Privileges and Schemas}
+\begin{itemize}
+    \item Schemas are logical containers for database objects (tables, views, etc.).
+    \item Privileges can be granted at the schema level, affecting all objects within the schema.
+    \item This can simplify access control for groups of related objects.
+\end{itemize}
+
+\section{Important Considerations}
+\begin{itemize}
+    \item \textbf{Principle of Least Privilege:} Always grant the minimum necessary privileges to users and roles. This minimizes the potential damage from accidental or malicious actions.
+    \item \textbf{Regular Review:} Access control configurations should be reviewed regularly to ensure they remain appropriate as user roles and application requirements change.
+    \item \textbf{Documentation:} Maintain clear documentation of all roles, privileges, and user assignments. This is essential for auditing and troubleshooting.
+    \item \textbf{Database-Specific Implementations:} While the SQL standard provides the basic commands, specific database systems (e.g., MySQL, PostgreSQL, SQL Server) may have their own extensions or variations in how access control is implemented.
+\end{itemize}
+
+\vspace{0.5cm}
+
+% ============================================================
+\section{Implement SQL Commands to Control Access to Database Objects}
+% ============================================================
+
+This section focuses on the practical application of the SQL standard for access control using the \texttt{GRANT} and \texttt{REVOKE} commands to manage privileges on database objects.
+
+\subsection{The GRANT Command}
+The \texttt{GRANT} command is used to assign privileges to users or roles, enabling them to perform specific actions on database objects.
+
+\textbf{Syntax:}
+\begin{verbatim}
+GRANT privilege_list ON object_name TO principal_list [WITH GRANT OPTION];
+\end{verbatim}
+
+\subsubsection*{Parameters:}
+\begin{itemize}
+    \item \texttt{privilege\_list}: A comma-separated list of the privileges being granted.
+    \begin{itemize}
+        \item \textbf{SELECT:} Allows the grantee to retrieve data from a table or view.
+        \item \textbf{INSERT:} Allows the grantee to add new rows to a table.
+        \item \textbf{UPDATE:} Allows the grantee to modify existing data in a table.
+        \item \textbf{DELETE:} Allows the grantee to remove rows from a table.
+        \item \textbf{EXECUTE:} Allows the grantee to run a stored procedure or function.
+        \item \textbf{CREATE:} Allows the grantee to create new objects (e.g., tables, views).
+        \item \textbf{ALTER:} Allows the grantee to modify the structure of an object.
+        \item \textbf{DROP:} Allows the grantee to delete an object.
+        \item \textbf{ALL [PRIVILEGES]:} Grants all available privileges on the specified object. Use with caution.
+    \end{itemize}
+    \item \texttt{object\_name}: The name of the database object (Table, View, Schema, Stored procedure, or Function).
+    \item \texttt{principal\_list}: A comma-separated list of users or roles.
+    \begin{itemize}
+        \item \texttt{username}: A specific database user.
+        \item \texttt{role\_name}: A predefined role.
+        \item \texttt{PUBLIC}: Grants privileges to all users (use with caution).
+    \end{itemize}
+    \item \textbf{WITH GRANT OPTION:} Allows the grantee to grant the specified privileges to other users or roles.
+\end{itemize}
+
+\subsubsection*{Examples:}
+
+Grant \texttt{SELECT} privilege on the \texttt{Customers} table to the user \texttt{john}:
+\begin{verbatim}
+GRANT SELECT ON Customers TO john;
+\end{verbatim}
+
+Grant \texttt{SELECT}, \texttt{INSERT}, and \texttt{UPDATE} privileges on the \texttt{Orders} table to the role \texttt{sales\_role}:
+\begin{verbatim}
+GRANT SELECT, INSERT, UPDATE ON Orders TO sales_role;
+\end{verbatim}
+
+Grant \texttt{ALL} privileges on the \texttt{Products} table to the user \texttt{admin\_user}:
+\begin{verbatim}
+GRANT ALL ON Products TO admin_user;
+\end{verbatim}
+
+Grant \texttt{SELECT} privilege on the \texttt{Employees} table to the user \texttt{manager} and allow them to grant this privilege to others:
+\begin{verbatim}
+GRANT SELECT ON Employees TO manager WITH GRANT OPTION;
+\end{verbatim}
+
+\subsection{The REVOKE Command}
+The \texttt{REVOKE} command is used to remove privileges that have been previously granted with the \texttt{GRANT} command.
+
+\textbf{Syntax:}
+\begin{verbatim}
+REVOKE [GRANT OPTION FOR] privilege_list ON object_name FROM principal_list;
+\end{verbatim}
+
+\subsubsection*{Parameters:}
+\begin{itemize}
+    \item \texttt{privilege\_list}: A comma-separated list of the privileges being revoked.
+    \item \texttt{object\_name}: The name of the database object.
+    \item \texttt{principal\_list}: A comma-separated list of users or roles.
+    \item \textbf{GRANT OPTION FOR:} Revokes only the \texttt{WITH GRANT OPTION}. If omitted, the specified privileges are revoked entirely.
+\end{itemize}
+
+\subsubsection*{Important Considerations with REVOKE:}
+\begin{itemize}
+    \item Revoking a privilege can have cascading effects. For example, if a privilege is revoked from a role, users possessing that role lose the privilege.
+    \item Dependencies between users, roles, and privileges should be carefully managed during revocation.
+\end{itemize}
+
+\subsubsection*{Examples:}
+
+Revoke the \texttt{SELECT} privilege on the \texttt{Customers} table from the user \texttt{john}:
+\begin{verbatim}
+REVOKE SELECT ON Customers FROM john;
+\end{verbatim}
+
+Revoke the \texttt{SELECT}, \texttt{INSERT}, and \texttt{UPDATE} privileges on the \texttt{Orders} table from the role \texttt{sales\_role}:
+\begin{verbatim}
+REVOKE SELECT, INSERT, UPDATE ON Orders FROM sales_role;
+\end{verbatim}
+
+Revoke the \texttt{GRANT OPTION} for the \texttt{SELECT} privilege on the \texttt{Employees} table from the user \texttt{manager}:
+\begin{verbatim}
+REVOKE GRANT OPTION FOR SELECT ON Employees FROM manager;
+\end{verbatim}
+\textit{Note: This does not revoke the \texttt{SELECT} privilege itself from \texttt{manager}, but prevents \texttt{manager} from granting it to others.}
+
+\subsection{Best Practices for Using GRANT and REVOKE}
+\begin{itemize}
+    \item \textbf{Principle of Least Privilege:} Grant only the privileges absolutely necessary for users or roles to perform their tasks.
+    \item \textbf{Use Roles:} Use roles to manage privileges whenever possible to simplify administration.
+    \item \textbf{Regularly Review Privileges:} Periodically audit granted privileges and revoke unneeded access.
+    \item \textbf{Document Access Control:} Maintain clear, up-to-date documentation of all roles, privileges, and assignments.
+    \item \textbf{Testing:} Thoroughly test access control configurations in non-production environments.
+    \item \textbf{Granular Privileges:} Grant privileges at the finest level possible (e.g., column-level privileges instead of table-level privileges).
+\end{itemize}
+
+\vspace{0.5cm}
+
+% ============================================================
+\section{SQL Access Control Models}
+% ============================================================
+
+Two primary access control models commonly implemented in SQL databases are Discretionary Access Control (DAC) and Role-Based Access Control (RBAC).
+
+\subsection{Discretionary Access Control (DAC)}
+
+\textbf{Concept:}
+\begin{itemize}
+    \item DAC grants object owners the ability to control access to the objects they own.
+    \item Users can grant or revoke privileges on their objects to other users.
+    \item Characterized by high flexibility.
+\end{itemize}
+
+\textbf{Implementation:}
+In SQL, DAC is implemented using \texttt{GRANT} and \texttt{REVOKE} statements.
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item \textbf{Flexibility:} Fine-grained control over object access.
+    \item \textbf{Simplicity:} Straightforward to set up in small systems.
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item \textbf{Management Complexity:} Difficult to maintain in large systems with many users.
+    \item \textbf{Security Risks:} Vulnerable to Trojan Horse attacks and lacks centralized oversight.
+\end{itemize}
+
+\subsection{Role-Based Access Control (RBAC)}
+
+\textbf{Concept:}
+\begin{itemize}
+    \item RBAC controls access based on roles assigned to users within an organization.
+    \item Privileges are associated with roles, and users are assigned to roles.
+\end{itemize}
+
+\textbf{Implementation:}
+In SQL, RBAC uses \texttt{CREATE ROLE}, \texttt{GRANT}, and \texttt{REVOKE} statements.
+
+\textbf{Advantages:}
+\begin{itemize}
+    \item \textbf{Simplified Management:} Centralized privilege management across user groups.
+    \item \textbf{Improved Security:} Enforces consistent security policies.
+    \item \textbf{Scalability:} Easily adapts to organizational changes.
+\end{itemize}
+
+\textbf{Disadvantages:}
+\begin{itemize}
+    \item \textbf{Initial Setup Complexity:} Requires upfront role and privilege planning.
+    \item \textbf{Less Flexibility:} Slightly less individual customizability compared to pure DAC.
+\end{itemize}
+
+\subsection{Comparison Matrix}
+
+\begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|p{4.5cm}|p{4.5cm}|}
+\hline
+\textbf{Feature} & \textbf{Discretionary Access Control (DAC)} & \textbf{Role-Based Access Control (RBAC)} \\
+\hline
+Control & Object owners & System administrator / Security officer \\
+Granularity & Fine-grained (object-level) & Role-based (typically broader) \\
+Management & Complex in large systems & Simplified in large systems \\
+Security & More vulnerable, decentralized & More secure, centralized control \\
+Scalability & Poor & Good \\
+Flexibility & High & High (requires planning) \\
+SQL Commands & \texttt{GRANT}, \texttt{REVOKE} & \texttt{CREATE ROLE}, \texttt{GRANT}, \texttt{REVOKE} \\
+\hline
+\end{tabular}
+\caption{Comparison between DAC and RBAC Access Control Models}
+\end{table}
+
+\subsection{Choosing an Access Control Model}
+\begin{itemize}
+    \item Small applications with few users: DAC may be sufficient.
+    \item Enterprise applications: RBAC is preferred due to scalability and auditability.
+    \item Hybrid approach: Combine RBAC for broad role assignments with DAC for specific object-level exceptions.
+\end{itemize}
+
+\vspace{0.5cm}
+
+% ============================================================
+\section{Design Principles for SQL Access Control}
+% ============================================================
+
+Designing an SQL-based access control scheme involves defining how users and applications interact with a database, ensuring only authorized actions are permitted.
+
+\subsection{Step 1: Understanding the Application and Data}
+\begin{enumerate}
+    \item \textbf{Identify Data Assets:} List tables, views, and stored procedures, classifying data by sensitivity (public, confidential, highly sensitive).
+    \item \textbf{Analyze User Roles:} Map job responsibilities to required database actions.
+    \item \textbf{Map Business Processes:} Identify required SQL operations (\texttt{SELECT}, \texttt{INSERT}, \texttt{UPDATE}, \texttt{DELETE}, \texttt{EXECUTE}).
+    \item \textbf{Enforce Least Privilege:} Grant only the minimum permissions required for each role.
+\end{enumerate}
+
+\subsection{Step 2: Selecting an Access Control Model}
+Choose DAC, RBAC, or a hybrid model based on system size, security needs, and administrative overhead.
+
+\subsection{Step 3: Designing the SQL Access Control Scheme}
+
+\subsubsection*{1. Create Roles}
+\begin{verbatim}
+CREATE ROLE sales_manager;
+\end{verbatim}
+
+\subsubsection*{2. Grant Privileges to Roles}
+\begin{verbatim}
+GRANT SELECT, UPDATE ON customers TO sales_manager;
+GRANT EXECUTE ON stored_procedure_x TO sales_manager;
+\end{verbatim}
+
+\subsubsection*{3. Assign Users to Roles}
+\begin{verbatim}
+GRANT sales_manager TO user1;
+\end{verbatim}
+
+\subsubsection*{4. Define Object-Level and Column-Level Privileges}
+\begin{verbatim}
+GRANT SELECT (customer_id, customer_name, email) ON customers TO customer_service_rep;
+\end{verbatim}
+
+\subsubsection*{5. Use Views and Stored Procedures for Encapsulation}
+Create views and stored procedures to restrict row/column access and enforce business logic before data modification.
+
+\subsection{Step 4: Documentation and Maintenance}
+\begin{itemize}
+    \item \textbf{Document Scheme:} Maintain comprehensive records of all roles, privileges, and user assignments for auditing.
+    \item \textbf{Regular Audits:} Review permissions periodically and revoke stale privileges.
+    \item \textbf{Automate Management:} Use database security tools for provisioning and compliance tracking.
+\end{itemize}
+
+\end{document}

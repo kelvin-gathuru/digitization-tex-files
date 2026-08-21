@@ -1,0 +1,69 @@
+Which of the following best defines a fuel?
+A. A substance used only for heating water
+B. A substance that releases heat energy during combustion
+C. A material used only in engines
+D. A chemical used for cooling systems
+ANSWER: B
+
+Which of the following fuels is classified as a gaseous fuel?
+A. Diesel
+B. Coal
+C. Natural gas
+D. Coke
+ANSWER: C
+
+Fuels that occur naturally in nature without processing are called:
+A. Manufactured fuels
+B. Synthetic fuels
+C. Natural fuels
+D. Artificial fuels
+ANSWER: C
+
+What is the main difference between Higher Calorific Value (HCV) and Lower Calorific Value (LCV)?
+A. HCV excludes the latent heat of water vapor
+B. LCV includes the latent heat of condensation
+C. HCV includes latent heat of vaporization while LCV excludes it
+D. Both values are always equal
+ANSWER: C
+
+Which component of proximate analysis represents the non-combustible residue remaining after complete combustion?
+A. Moisture
+B. Volatile matter
+C. Ash
+D. Fixed carbon
+ANSWER: C
+
+In proximate analysis, fixed carbon is determined by:
+A. Direct measurement in the furnace
+B. Subtracting moisture and volatile matter only
+C. Calculating by difference from the other components
+D. Measuring oxygen content
+ANSWER: C
+
+Ultimate analysis of fuel determines which of the following elements?
+A. Carbon, hydrogen, oxygen, nitrogen, and sulfur
+B. Moisture, ash, and volatile matter
+C. Carbon dioxide and oxygen
+D. Carbon and ash only
+ANSWER: A
+
+The stoichiometric air-fuel ratio refers to:
+A. The maximum air used in combustion
+B. The exact amount of air required for complete combustion
+C. The minimum amount of air required
+D. The amount of fuel burned in excess air
+ANSWER: B
+
+If the actual air-fuel ratio is greater than the stoichiometric air-fuel ratio, the mixture is called:
+A. Rich mixture
+B. Stoichiometric mixture
+C. Lean mixture
+D. Saturated mixture
+ANSWER: C
+
+Which of the following gases indicates incomplete combustion in flue gas analysis?
+A. CO2
+B. O2
+C. CO
+D. N2
+ANSWER: C

@@ -1,0 +1,69 @@
+Which SQL command is used to grant privileges to a user or role?
+A. REVOKE
+B. GRANT
+C. SET
+D. CREATE
+ANSWER: B
+
+In SQL, what is a role?
+A. An individual user account
+B. A set of privileges that can be assigned to users or other roles
+C. A database object, like a table or view
+D. A specific type of privilege
+ANSWER: B
+
+Which of the following is NOT a valid SQL privilege?
+A. SELECT
+B. INSERT
+C. UPDATE
+D. ACCESS
+ANSWER: D
+
+Which SQL command is used to remove privileges from a user or role?
+A. GRANT
+B. SET
+C. REVOKE
+D. DELETE
+ANSWER: C
+
+What does the SQL SELECT privilege allow a user to do?
+A. Modify existing data in a table.
+B. Add new data to a table.
+C. Retrieve data from a table or view.
+D. Delete data from a table.
+ANSWER: C
+
+What is the purpose of the WITH GRANT OPTION clause in a GRANT statement?
+A. It allows the recipient to grant the privileges to other users or roles.
+B. It revokes the privileges from the user.
+C. It specifies the duration for which the privileges are granted.
+D. It limits the number of times a privilege can be used.
+ANSWER: A
+
+Which access control model is characterized by granting privileges to roles rather than directly to users?
+A. Discretionary Access Control (DAC)
+B. Mandatory Access Control (MAC)
+C. Role-Based Access Control (RBAC)
+D. Rule-Based Access Control
+ANSWER: C
+
+In a database, what is a schema?
+A. A collection of database objects (tables, views, etc.)
+B. A graphical representation of the database structure
+C. A set of rules for data integrity
+D. A type of user role
+ANSWER: A
+
+What is the primary advantage of using roles in SQL access control?
+A. It simplifies access control management.
+B. It provides more granular control over individual user privileges.
+C. It eliminates the need for GRANT and REVOKE statements.
+D. It automatically audits all database access.
+ANSWER: A
+
+What should be the guiding principle when granting privileges in a database system?
+A. Grant all privileges to all users for ease of use.
+B. Grant privileges based on the user's job responsibilities.
+C. Grant the minimum necessary privileges to perform required tasks.
+D. Grant privileges only to database administrators.
+ANSWER: C

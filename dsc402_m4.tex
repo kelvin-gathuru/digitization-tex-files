@@ -1,0 +1,445 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{preamble}
+\usepackage{chirun}
+\tcbuselibrary{skins,breakable}
+\usepackage{url}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    urlcolor=blue!50!black,
+    citecolor=blue!50!black
+}
+
+% ==================== COLORS ====================
+\definecolor{moduleblue}{RGB}{22,54,92}
+\definecolor{quizgreen}{RGB}{20,90,50}
+\definecolor{examred}{RGB}{140,20,20}
+\definecolor{lightbg}{RGB}{240,245,250}
+
+% ==================== CUSTOM BOXES ====================
+\newtcolorbox{defbox}[1][]{
+  colback=lightbg, colframe=moduleblue, fonttitle=\bfseries,
+  title={Definition}, breakable, boxrule=0.8pt, arc=2mm, #1
+}
+
+\newtcolorbox{keyidea}[1][]{
+  colback=yellow!8, colframe=orange!70!black, fonttitle=\bfseries,
+  title={Key Idea}, breakable, boxrule=0.8pt, arc=2mm, #1
+}
+
+\newtcolorbox{masteryquiz}[1][]{
+  colback=green!5, colframe=quizgreen, fonttitle=\bfseries,
+  title={Mastery Check}, breakable, boxrule=1pt, arc=2mm, #1
+}
+
+\newtcolorbox{examquiz}[1][]{
+  colback=red!4, colframe=examred, fonttitle=\bfseries,
+  breakable, boxrule=1pt, arc=2mm, #1
+}
+
+\newcounter{globalq}
+\newcommand{\qn}{\stepcounter{globalq}\noindent\textbf{Question \theglobalq.}}
+
+\title{\color{moduleblue}\Huge \textbf{Module 4}\\[0.3em]
+\Large Graph Neural Networks}
+\author{}
+\date{}
+
+% ==================== DOCUMENT ====================
+\begin{document}
+
+\maketitle
+
+\begin{tcolorbox}[colback=moduleblue!6, colframe=moduleblue, arc=2mm, boxrule=1pt]
+\subsection*{Module Overview}
+ This module introduces \textbf{Graph Neural Networks (GNNs)}, the family of architectures designed to learn directly from graph-structured data. You will begin with the fundamentals of representing and reasoning about graphs, develop the general \emph{message passing} framework underlying essentially all modern GNNs, and then study two of the most influential concrete architectures -- the \textbf{Graph Convolutional Network (GCN)} and the \textbf{Graph Attention Network (GAT)} -- in detail.  By the end of this module, you should be able to implement the GCN and GAT propagation rules from first principles, explain why permutation invariance is central to GNN design, and describe how sheaf-theoretic ideas generalize the graph Laplacian.
+\end{tcolorbox}
+
+\subsection*{Learning Outcomes}
+
+By the end of this module, students should be able to:
+\begin{enumerate}
+    \item \textbf{Explain} the fundamental concepts of graph-structured data.
+    \item \textbf{Implement} Graph Convolutional Networks (GCNs) and Graph Attention Networks (GATs).
+    \item \textbf{Analyze} the strengths and limitations of Graph Convolutional Networks and Graph Attention Networks.
+    \item \textbf{Evaluate} the principles of Sheaf Neural Networks.
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section{Introduction to Graph-Structured Data}
+% ============================================================
+
+\subsection{What Is a Graph?}
+
+\begin{defbox}
+A \textbf{graph} is a pair $G = (V, E)$, where $V = \{v_1, \ldots, v_n\}$ is a set of $n$ \textbf{nodes} (or \textbf{vertices}), and $E \subseteq V \times V$ is a set of \textbf{edges} connecting pairs of nodes. A graph may additionally carry:
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Node features:} a feature vector $x_v \in \mathbb{R}^d$ for every node $v \in V$, collected into a matrix $X \in \mathbb{R}^{n \times d}$.
+    \item \textbf{Edge features:} a feature vector for every edge (e.g., edge type, weight, distance).
+    \item \textbf{Graph-level features:} a global feature vector describing the graph as a whole.
+\end{itemize}
+\end{defbox}
+
+Graphs are described as \textbf{directed} if edges $(u,v)$ have a direction (distinct from $(v,u)$), or \textbf{undirected} otherwise; as \textbf{weighted} if each edge carries a real-valued weight, or \textbf{unweighted} otherwise; and as \textbf{homogeneous} if all nodes/edges are of a single type, or \textbf{heterogeneous} if multiple node/edge types coexist (e.g., a knowledge graph with ``person,'' ``movie,'' and ``genre'' node types connected by ``acted in'' and ``belongs to'' edge types).
+
+\begin{defbox}
+The \textbf{adjacency matrix} $A \in \{0,1\}^{n\times n}$ (or $\mathbb{R}^{n\times n}$ if weighted) of a graph encodes its connectivity: $A_{ij} = 1$ if there is an edge from node $i$ to node $j$ (and $A_{ij}$ equals the edge weight for weighted graphs), and $A_{ij}=0$ otherwise. For an undirected graph, $A$ is symmetric.
+
+The \textbf{degree matrix} $D \in \mathbb{R}^{n\times n}$ is a diagonal matrix with $D_{ii} = \sum_j A_{ij}$, the degree (number of neighbors, or sum of incident edge weights) of node $i$.
+
+The (combinatorial) \textbf{graph Laplacian} is defined as:
+\[
+L = D - A
+\]
+\end{defbox}
+
+\begin{keyidea}
+The graph Laplacian $L$ is the discrete analogue of the continuous Laplacian (second-derivative / divergence-of-gradient) operator from calculus. Just as the continuous Laplacian measures how much a function at a point differs from its local average, $(Lx)_i = \sum_j A_{ij}(x_i - x_j)$ measures how much node $i$'s value differs from a (degree-weighted) average of its neighbors' values. This makes $L$ the natural operator for defining notions of \emph{smoothness} over a graph, and it underlies both the spectral theory in Section 3 and the sheaf-theoretic generalization in Section 5.
+\end{keyidea}
+
+\subsection{Why Graphs Require New Architectures}
+
+Standard deep learning architectures rely on strong assumptions about input structure that graphs violate:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{CNNs} assume inputs live on a regular grid, where every ``pixel'' has a fixed, ordered set of neighbors (e.g., the 8 surrounding pixels), allowing a single shared convolutional kernel to be applied identically everywhere.
+    \item \textbf{RNNs/Transformers} assume inputs form a sequence (or, for Transformers, at least a fixed, orderable set of tokens).
+    \item \textbf{Graphs} have \emph{no fixed ordering of nodes}, and different nodes can have wildly different, variable numbers of neighbors. A node's neighbors have no inherent order either (unlike, say, ``the pixel to the left'').
+\end{itemize}
+
+\begin{keyidea}
+Any architecture operating on graphs must be \textbf{permutation invariant} (for graph-level outputs) or \textbf{permutation equivariant} (for node-level outputs): if we relabel/reorder the nodes of a graph (and correspondingly permute the rows/columns of $A$ and rows of $X$), the graph itself has not changed, so a graph-level prediction must be identical, and node-level predictions must simply be permuted in the same way. This single requirement -- rather than any specific architecture -- is the central design constraint that defines the entire field of GNNs, and it rules out simply ``flattening'' a graph's adjacency matrix and feeding it to a standard MLP (which would treat different node orderings as different inputs).
+\end{keyidea}
+
+\begin{defbox}
+Formally, a function $f$ operating on a graph is \textbf{permutation equivariant} if, for every permutation matrix $P$:
+\[
+f(PX, PAP^\top) = P f(X, A)
+\]
+and \textbf{permutation invariant} if:
+\[
+f(PX, PAP^\top) = f(X, A)
+\]
+Node-level tasks (e.g., node classification) require equivariance; graph-level tasks (e.g., graph classification) require invariance, typically achieved by applying an equivariant function followed by a permutation-invariant \textbf{readout} (e.g., sum, mean, or max over all nodes).
+\end{defbox}
+
+\subsection{Common Graph Learning Tasks}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Node classification:} Predict a label for each node (e.g., classifying papers into research topics in a citation network), typically in a \emph{transductive} setting where the whole graph, including test nodes' features and connectivity (but not their labels), is visible during training.
+    \item \textbf{Link prediction:} Predict whether an edge should exist between two nodes (e.g., recommending new friend connections, or predicting missing protein-protein interactions).
+    \item \textbf{Graph classification / regression:} Predict a single label or value for an entire graph (e.g., predicting a molecule's toxicity or solubility from its atomic structure).
+    \item \textbf{Graph generation:} Generate new graphs with desired properties (e.g., generating novel candidate drug molecules).
+\end{itemize}
+
+\subsection{Real-World Examples}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|p{3.2cm}|p{3.2cm}|p{3.5cm}|}
+\hline
+\textbf{Domain} & \textbf{Nodes} & \textbf{Edges} & \textbf{Typical task} \\
+\hline
+Social networks & Users & Friendships/follows & Node classification, link prediction \\
+Molecules & Atoms & Chemical bonds & Graph classification (property prediction) \\
+Citation networks & Papers & Citations & Node classification \\
+Knowledge graphs & Entities & Typed relations & Link prediction \\
+Road networks & Intersections & Road segments & ETA prediction, routing \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+% ============================================================
+\section{Graph Neural Networks: The Message Passing Framework}
+% ============================================================
+
+Almost every modern GNN architecture -- including GCN and GAT, studied in detail below -- is an instance of a single general computational pattern known as \textbf{Message Passing} (or, equivalently, \textbf{neighborhood aggregation}).
+
+\subsection{The Message Passing Recipe}
+
+\begin{defbox}
+A \textbf{Message Passing Neural Network (MPNN)} layer updates every node's representation by (1) computing a \textbf{message} from each of its neighbors, (2) \textbf{aggregating} these messages with a permutation-invariant function, and (3) \textbf{updating} the node's own representation using the aggregated message. Formally, for layer $k$:
+\[
+m_v^{(k)} = \text{AGGREGATE}^{(k)}\Big(\big\{\, \text{MESSAGE}^{(k)}(h_v^{(k-1)}, h_u^{(k-1)}, e_{uv}) \;:\; u \in \mathcal{N}(v) \,\big\}\Big)
+\]
+\[
+h_v^{(k)} = \text{UPDATE}^{(k)}\big(h_v^{(k-1)}, m_v^{(k)}\big)
+\]
+where $\mathcal{N}(v)$ is the set of neighbors of node $v$, $h_v^{(k)}$ is node $v$'s representation (\emph{embedding}) after $k$ layers, $h_v^{(0)} = x_v$ (the input node features), and $e_{uv}$ is the (optional) feature of the edge between $u$ and $v$.
+\end{defbox}
+
+\begin{keyidea}
+Because AGGREGATE is required to be a \textbf{permutation-invariant} function of the (unordered) set of incoming messages -- typically sum, mean, or max -- the entire MPNN layer is automatically permutation equivariant: relabeling the nodes simply relabels which message goes where, without changing the computation itself. This is precisely how GNNs satisfy the structural requirement identified in Section 1.2, and it is the single unifying idea beneath GCN, GAT, GraphSAGE, and most other GNN variants -- they differ from one another primarily in their specific choice of MESSAGE, AGGREGATE, and UPDATE functions.
+\end{keyidea}
+
+\subsection{Stacking Layers and the Receptive Field}
+
+After $k$ layers of message passing, node $v$'s representation $h_v^{(k)}$ has aggregated information from every node within $k$ hops in the graph -- its $k$-hop neighborhood. This is directly analogous to how stacking convolutional layers in a CNN enlarges the receptive field of each unit.
+
+\begin{example}
+Consider a simple chain graph $A - B - C - D - E$. After one message-passing layer, node $C$'s representation incorporates information from $B$ and $D$ (its direct neighbors). After two layers, $C$'s representation has indirectly incorporated information from $A$ and $E$ as well (since $B$'s layer-1 representation already included $A$, and $D$'s included $E$). In general, $k$ layers are required for information to travel a graph distance of $k$.
+\end{example}
+
+\subsection{Readout for Graph-Level Tasks}
+
+For graph classification/regression, after $K$ layers of message passing produce final node embeddings $h_v^{(K)}$ for every node, a \textbf{readout} (or \emph{pooling}) function combines all node embeddings into a single graph-level embedding:
+\[
+h_G = \text{READOUT}\big(\{h_v^{(K)} : v \in V\}\big)
+\]
+Common choices include sum, mean, or max pooling over nodes, or more sophisticated learned pooling mechanisms (e.g., attention-based pooling, or hierarchical graph pooling that progressively coarsens the graph).
+
+\begin{keyidea}
+Just as AGGREGATE must be permutation-invariant within a node's neighborhood, READOUT must be permutation-invariant over the \emph{whole graph's} nodes, for exactly the same reason: the graph-level output must not depend on how the nodes happen to be numbered.
+\end{keyidea}
+
+\subsection{Fundamental Limitations: Over-smoothing and Over-squashing}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Over-smoothing:} As more message-passing layers are stacked, node representations tend to converge toward similar (indistinguishable) values, since repeatedly averaging with neighbors acts like repeated low-pass filtering. This is analogous to what happens if you were to apply a heat-diffusion / blurring operation to an image many times -- eventually every pixel converges to the same value. In practice, this limits most standard GNNs to a small number of layers (often just 2--4), which in turn limits their effective receptive field.
+    \item \textbf{Over-squashing:} Information from an exponentially growing number of distant nodes must be compressed into a single fixed-size vector as it propagates toward a target node, creating an information bottleneck that makes it difficult for long-range dependencies to be preserved, particularly across graph regions connected by a small number of edges (bottlenecks in the graph's topology).
+\end{itemize}
+
+\begin{keyidea}
+Over-smoothing and over-squashing are two sides of the same underlying tension: a GNN needs enough layers to reach distant, potentially relevant nodes, but adding layers degrades the distinctiveness of node representations and compresses ever more information through narrow graph bottlenecks. Much of the ongoing research in GNN architecture design (including the Sheaf Neural Networks discussed in Section 5) is aimed directly at mitigating one or both of these problems.
+\end{keyidea}
+
+\newpage
+
+% ============================================================
+\section{Graph Convolutional Networks (GCN)}
+% ============================================================
+
+The \textbf{Graph Convolutional Network} (Kipf \& Welling, 2017) is one of the most influential and widely used GNN architectures, arising as a first-order approximation of earlier spectral graph convolution methods.
+
+\subsection{Spectral Motivation}
+
+\begin{keyidea}
+The name ``graph convolution'' originates from an analogy with the Convolution Theorem in signal processing: convolution in the spatial domain corresponds to multiplication in the frequency domain. For graphs, the appropriate notion of ``frequency'' comes from the eigenvectors of the graph Laplacian $L = D - A$ (the \textbf{graph Fourier basis}), and a \textbf{spectral graph convolution} is defined as an operation that multiplies a signal's graph-Fourier-transformed representation by some filter, then transforms back. Early spectral GNNs (e.g., ChebNet) approximated arbitrary spectral filters using Chebyshev polynomials of $L$, which are $K$-localized (a degree-$K$ polynomial filter only involves information from within $K$ hops) but still require an eigendecomposition-free but computationally involved recursive formulation.
+\end{keyidea}
+
+GCN simplifies this framework substantially by restricting the Chebyshev polynomial filter to a first-order ($K=1$) approximation and tying/simplifying its parameters, yielding an extremely simple and efficient propagation rule that in practice performs very well.
+
+\subsection{The GCN Propagation Rule}
+
+\begin{defbox}
+Given node feature matrix $H^{(l)} \in \mathbb{R}^{n \times d_l}$ at layer $l$ (with $H^{(0)} = X$), the \textbf{GCN layer} computes:
+\[
+H^{(l+1)} = \sigma\Big(\hat{D}^{-1/2} \hat{A} \hat{D}^{-1/2} H^{(l)} W^{(l)}\Big)
+\]
+where:
+\begin{itemize}[leftmargin=1.5em]
+    \item $\hat{A} = A + I$ is the adjacency matrix with added \textbf{self-loops} (so that a node's own previous-layer representation is included when aggregating).
+    \item $\hat{D}$ is the degree matrix of $\hat{A}$ (i.e., $\hat{D}_{ii} = \sum_j \hat{A}_{ij}$).
+    \item $W^{(l)} \in \mathbb{R}^{d_l \times d_{l+1}}$ is a learned weight matrix, shared across all nodes.
+    \item $\sigma$ is a nonlinearity (typically ReLU).
+\end{itemize}
+\end{defbox}
+
+Let us unpack why each piece is needed:
+
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Self-loops ($\hat{A} = A+I$):} Without self-loops, a node's aggregation would only involve its neighbors, entirely discarding the node's own previous representation. Adding self-loops ensures each node's update includes (an appropriately weighted share of) its own features -- this is sometimes called the \textbf{renormalization trick}.
+    \item \textbf{Symmetric normalization ($\hat{D}^{-1/2}\hat{A}\hat{D}^{-1/2}$):} Using the raw adjacency matrix $\hat{A}$ alone would cause high-degree nodes' representations to have much larger magnitude after aggregation (since they sum over more neighbors) than low-degree nodes, causing instability during training. Symmetric normalization rescales each entry $\hat{A}_{ij}$ by $\frac{1}{\sqrt{\hat{D}_{ii}}\sqrt{\hat{D}_{jj}}}$, so that both the source and target node's degree are accounted for -- keeping the propagated signal at a numerically stable, comparable scale regardless of degree, and preventing the operator's largest eigenvalues from exploding.
+    \item \textbf{Shared weight matrix $W^{(l)}$:} As in a CNN, the same weight matrix is applied identically to every node, keeping the number of parameters independent of graph size and providing the same permutation-equivariance guarantee established in Section 2.
+\end{enumerate}
+
+\begin{keyidea}
+A single GCN layer can be understood, at the level of an individual node $v$, as: \emph{take a (degree-normalized) average of your own and your neighbors' previous-layer representations, linearly transform the result with a shared weight matrix, then apply a nonlinearity.} This is a highly efficient, simple instantiation of the general message-passing recipe from Section 2, where MESSAGE is a normalized copy of the neighbor's features, AGGREGATE is a (normalized) sum, and UPDATE applies $W^{(l)}$ and $\sigma$.
+\end{keyidea}
+
+\subsection{Node-Level View of the Propagation Rule}
+
+Writing the matrix equation out per node makes the neighborhood-averaging interpretation explicit:
+\[
+h_v^{(l+1)} = \sigma\left(\sum_{u \in \mathcal{N}(v) \cup \{v\}} \frac{1}{\sqrt{\hat{d}_v \hat{d}_u}}\, W^{(l)} h_u^{(l)}\right)
+\]
+where $\hat{d}_v = \hat{D}_{vv}$ is node $v$'s degree after adding the self-loop.
+
+\begin{example}
+Consider a small graph with 3 nodes: $A$ connected to $B$, and $B$ connected to $C$ (a chain, no edge between $A$ and $C$). With self-loops added, node $B$ has degree $\hat{d}_B = 3$ (itself, $A$, $C$), while $A$ and $C$ each have degree $\hat{d}_A = \hat{d}_C = 2$ (themselves and $B$). For node $A$'s update, the normalization coefficient for its message from itself is $\frac{1}{\sqrt{2 \times 2}} = 0.5$, and from $B$ is $\frac{1}{\sqrt{2 \times 3}} \approx 0.408$. Node $B$, having a higher degree, contributes a slightly \emph{smaller}-magnitude normalized message to its neighbors than a low-degree node would, illustrating how symmetric normalization down-weights the influence of high-degree ``hub'' nodes relative to what an unnormalized sum would give.
+\end{example}
+
+\subsection{Practical Considerations and Limitations}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Fixed, uniform neighbor weighting:} Every neighbor's contribution is weighted purely by the (fixed, data-independent) degree-based normalization -- the model cannot learn to pay more attention to some neighbors than others based on their content. This is the primary limitation that Graph Attention Networks (Section 4) address.
+    \item \textbf{Requires the full graph structure:} The original GCN formulation processes the entire graph's normalized adjacency matrix at once, making it naturally suited to the transductive node classification setting, though sampling-based extensions (e.g., GraphSAGE) adapt the same underlying idea to large-scale or inductive settings.
+    \item \textbf{Susceptible to over-smoothing:} As discussed in Section 2.4, stacking many GCN layers causes node representations to converge, so GCNs are typically shallow (2--3 layers) in practice.
+\end{itemize}
+
+\newpage
+
+% ============================================================
+\section{Graph Attention Networks (GAT)}
+% ============================================================
+
+The \textbf{Graph Attention Network} (Veličković et al., 2018) replaces GCN's fixed, degree-based neighbor weighting with \textbf{learned, content-dependent attention weights}, directly borrowing the attention mechanism studied in Module 3 and adapting it to the graph setting.
+
+\subsection{Attention Coefficients}
+
+\begin{defbox}
+For each edge $(u,v)$ (with $u \in \mathcal{N}(v)$), GAT computes an unnormalized \textbf{attention coefficient}:
+\[
+e_{vu} = \text{LeakyReLU}\Big(a^\top \big[W h_v \,\|\, W h_u\big]\Big)
+\]
+where $W \in \mathbb{R}^{d' \times d}$ is a shared linear transformation applied to every node's features, $\|$ denotes vector concatenation, and $a \in \mathbb{R}^{2d'}$ is a learned attention vector (equivalently, a single-layer feed-forward network mapping the concatenated pair of transformed features to a scalar score).
+
+These coefficients are then normalized via softmax over each node's neighborhood:
+\[
+\alpha_{vu} = \frac{\exp(e_{vu})}{\sum_{u' \in \mathcal{N}(v)} \exp(e_{vu'})}
+\]
+and used to compute node $v$'s updated representation as an attention-weighted combination of its (transformed) neighbors:
+\[
+h_v' = \sigma\left(\sum_{u \in \mathcal{N}(v)} \alpha_{vu}\, W h_u\right)
+\]
+\end{defbox}
+
+\begin{keyidea}
+Compare this directly to GCN's propagation rule: GCN uses the \emph{fixed} coefficient $\frac{1}{\sqrt{\hat{d}_v \hat{d}_u}}$, determined purely by graph structure (node degrees) and identical for every input; GAT instead learns $\alpha_{vu}$ as a function of the actual node \emph{features} $h_v, h_u$, allowing the model to assign different importance to different neighbors depending on their content, and allowing this importance to vary across different graphs or different feature values on the \emph{same} graph structure. This closely mirrors the distinction between self-attention (content-based, learned weighting) and a fixed uniform or positionally-determined weighting scheme in sequence models.
+\end{keyidea}
+
+\subsection{Multi-Head Attention in GAT}
+
+Exactly as in the Transformer (Module 3), GAT typically uses \textbf{multiple attention heads} to stabilize learning and allow the model to attend to different aspects of the neighborhood simultaneously:
+\[
+h_v' = \Big\|_{k=1}^{K} \sigma\left(\sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(k)} W^{(k)} h_u\right)
+\]
+where $K$ heads' outputs are \textbf{concatenated} (denoted $\|$) at intermediate layers. At the \emph{final} layer, outputs are typically \textbf{averaged} rather than concatenated (to keep the final output dimension fixed and interpretable, e.g., matching the number of classes):
+\[
+h_v' = \sigma\left(\frac{1}{K}\sum_{k=1}^{K} \sum_{u \in \mathcal{N}(v)} \alpha_{vu}^{(k)} W^{(k)} h_u\right)
+\]
+
+\subsection{Worked Example: Computing Attention Coefficients}
+
+\begin{example}
+Suppose node $v$ has two neighbors, $u_1$ and $u_2$, and after applying $W$, the raw scores (before softmax) are $e_{vu_1} = 2.0$ and $e_{vu_2} = 0.5$. The normalized attention weights are:
+\[
+\alpha_{vu_1} = \frac{e^{2.0}}{e^{2.0}+e^{0.5}} = \frac{7.389}{7.389+1.649} \approx 0.818, \qquad
+\alpha_{vu_2} \approx 0.182
+\]
+Node $v$'s update is therefore dominated by $u_1$'s (transformed) features, with a smaller contribution from $u_2$ -- a data-dependent weighting that GCN's fixed degree-based normalization could not express (GCN would weight both neighbors purely by $1/\sqrt{\hat d_v \hat d_{u_i}}$, regardless of the actual content of $h_{u_1}$ or $h_{u_2}$).
+\end{example}
+
+\subsection{GATv2: Fixing Static Attention}
+
+A subtle but important limitation of the original GAT was identified by Brody et al. (2021): because the LeakyReLU nonlinearity is applied \emph{after} the linear combination $a^\top[Wh_v \| Wh_u]$, and $a$ is a single shared vector, the \emph{ranking} of attention scores across different neighbors $u$ of a fixed query node $v$ turns out to be independent of $v$'s own features in certain settings -- a phenomenon termed \textbf{static attention}, which limits the expressivity of the attention mechanism. \textbf{GATv2} fixes this by reordering the operations, applying the learned vector $a$ \emph{after} the nonlinearity:
+\[
+e_{vu} = a^\top \text{LeakyReLU}\Big(W\big[h_v \,\|\, h_u\big]\Big)
+\]
+This seemingly small reordering restores full (\emph{dynamic}) attention expressivity, where the relative ranking of a node's neighbors can genuinely depend on the query node's own features, and GATv2 has since become a common drop-in replacement for the original GAT layer.
+
+\subsection{GCN vs.\ GAT: Summary Comparison}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|p{4.2cm}|p{4.2cm}|}
+\hline
+& \textbf{GCN} & \textbf{GAT} \\
+\hline
+Neighbor weighting & Fixed, determined by graph degree ($\hat D^{-1/2}\hat A \hat D^{-1/2}$) & Learned, determined by node content (softmax attention) \\
+Adapts to features? & No -- same weighting for any feature values on a fixed graph & Yes -- weighting changes with node features \\
+Parameter count & Lower (one weight matrix per layer) & Higher (weight matrix + attention vector per head, multiple heads) \\
+Interpretability & Weighting is transparent but content-agnostic & Attention weights offer a direct view into neighbor importance \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+% ============================================================
+\section{Sheaf Neural Networks}
+% ============================================================
+
+Standard GNNs -- including GCN and GAT -- share an implicit assumption that turns out to be a significant limitation: they assume connected nodes should end up with \emph{similar} representations. \textbf{Sheaf Neural Networks} (Bodnar et al., 2022) generalize the mathematical foundation of GNNs using tools from \textbf{cellular sheaf theory}, directly addressing this limitation.
+
+\subsection{Motivation: The Homophily Assumption}
+
+\begin{keyidea}
+Message passing, as defined in Section 2, and GCN's averaging in particular, implicitly assumes \textbf{homophily}: the idea that connected nodes tend to be similar, and that averaging a node's representation with its neighbors' should therefore produce a more useful representation. Many important real-world graphs are, however, \textbf{heterophilic}: connected nodes are often \emph{dissimilar} (e.g., in a predator-prey food web, an edge connects two \emph{different} kinds of organisms; in some fraud-detection networks, fraudulent nodes deliberately connect to legitimate-looking ones). On heterophilic graphs, standard GNNs' tendency to smooth node representations toward their neighbors' values actively \emph{destroys} useful signal rather than enhancing it, and this same tendency is closely related to the over-smoothing problem from Section 2.4.
+\end{keyidea}
+
+\subsection{From Graphs to Cellular Sheaves}
+
+The key idea of a \textbf{cellular sheaf} on a graph is to move beyond a single scalar or vector value per node, and instead track how each node's information should be \emph{translated} before being compared to each of its neighbors -- rather than assuming all nodes share one common, global coordinate system (frame of reference).
+
+\begin{defbox}
+A \textbf{cellular sheaf} $\mathcal{F}$ on a graph $G=(V,E)$ consists of:
+\begin{itemize}[leftmargin=1.5em]
+    \item A vector space $\mathcal{F}(v)$, called the \textbf{stalk} at node $v$, for every $v \in V$ (and similarly a stalk $\mathcal{F}(e)$ for every edge $e$).
+    \item For every incident (node, edge) pair $v \triangleleft e$, a linear \textbf{restriction map} $\mathcal{F}_{v \triangleleft e}: \mathcal{F}(v) \to \mathcal{F}(e)$.
+\end{itemize}
+A choice of vector $x_v \in \mathcal{F}(v)$ for every node is called a \textbf{$0$-cochain}; the sheaf is \textbf{consistent} (the cochain is a \textbf{global section}) at edge $e = (v,u)$ if $\mathcal{F}_{v \triangleleft e}(x_v) = \mathcal{F}_{u \triangleleft e}(x_u)$ -- i.e., both endpoints agree once translated into the edge's shared stalk.
+\end{defbox}
+
+\begin{keyidea}
+The restriction maps play the role of ``translation dictionaries'' between each node's local frame of reference and the shared meaning at an edge. If every stalk is $\mathbb{R}$ (a single scalar) and every restriction map is the identity, disagreement across an edge reduces exactly to $x_v - x_u$, and the resulting sheaf Laplacian (defined next) reduces exactly to the standard graph Laplacian $L$ from Section 1.1 -- so an ordinary graph is precisely the special case of a cellular sheaf with trivial (identity) restriction maps. Allowing \emph{non-trivial}, and crucially \emph{learned}, restriction maps is what gives Sheaf Neural Networks their extra expressive power.
+\end{keyidea}
+
+\subsection{The Sheaf Laplacian}
+
+\begin{defbox}
+Collecting all restriction maps into a block \textbf{coboundary matrix} $B$ (analogous to the incidence matrix of a graph, but built from the linear restriction maps rather than simple $\pm 1$ entries), the \textbf{sheaf Laplacian} is defined as:
+\[
+L_{\mathcal{F}} = B^\top B
+\]
+For a $0$-cochain $x = (x_v)_{v\in V}$, the quadratic form:
+\[
+x^\top L_{\mathcal{F}} x = \sum_{e=(v,u)\in E} \big\| \mathcal{F}_{v \triangleleft e}(x_v) - \mathcal{F}_{u \triangleleft e}(x_u) \big\|^2
+\]
+measures the total disagreement across all edges, generalizing the standard graph Laplacian's quadratic form $x^\top L x = \sum_{(v,u)\in E}(x_v - x_u)^2$.
+\end{defbox}
+
+\begin{keyidea}
+This generalization is precisely what allows Sheaf Neural Networks to represent heterophily naturally: with a well-chosen (typically \emph{learned}) restriction map, two connected nodes can hold genuinely different raw feature vectors $x_v \neq x_u$ while still being perfectly ``consistent'' according to the sheaf (i.e., contributing zero to the disagreement term), \emph{provided} the learned restriction maps correctly capture the systematic relationship/transformation between them. A standard GNN, using the trivial-sheaf assumption, has no such flexibility: it can only reduce disagreement by making $x_v$ and $x_u$ literally similar, which is exactly the mechanism that fails on heterophilic graphs.
+\end{keyidea}
+
+\subsection{Sheaf Diffusion and Sheaf Neural Network Layers}
+
+Just as GCN can be derived from (an approximation to) the diffusion equation $\frac{dX}{dt} = -LX$ using the standard graph Laplacian, a \textbf{Sheaf Neural Network} layer is derived from the analogous \textbf{sheaf diffusion} equation using the sheaf Laplacian $L_{\mathcal{F}}$:
+\[
+\frac{dX}{dt} = -L_{\mathcal{F}} X
+\]
+Discretizing this with a single (Euler) step, and adding a learned per-node linear transformation $W$ and nonlinearity (exactly mirroring how GCN was derived), yields a propagation rule of the same general shape as GCN:
+\[
+X^{(l+1)} = \sigma\Big(X^{(l)} - \Delta t\, L_{\mathcal{F}}^{(l)} X^{(l)} W^{(l)}\Big)
+\]
+where, crucially, the restriction maps that determine $L_{\mathcal{F}}^{(l)}$ are themselves typically \textbf{learned} (often as a function of the two endpoint nodes' features), allowing the model to discover, per edge, what kind of ``translation'' should relate its two endpoints -- rather than assuming, as GCN and GAT implicitly do, that the appropriate relationship is always ``become more similar.''
+
+\begin{keyidea}
+Learned, non-trivial restriction maps also directly mitigate over-smoothing: whereas repeated application of the standard graph Laplacian's diffusion process drives all connected node values toward a single shared constant (the well-known over-smoothing failure mode), sheaf diffusion converges instead toward the space of \emph{global sections} (cochains consistent with the learned restriction maps) -- a potentially much richer space than ``all nodes equal,'' since a global section can hold genuinely different (but consistently related, via the restriction maps) values at different nodes.
+\end{keyidea}
+
+\subsection{Summary: How Sheaf Neural Networks Generalize GCN and GAT}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|p{4.2cm}|p{4.2cm}|}
+\hline
+& \textbf{Standard GNN (GCN/GAT)} & \textbf{Sheaf Neural Network} \\
+\hline
+Underlying operator & Graph Laplacian $L = D-A$ & Sheaf Laplacian $L_{\mathcal{F}} = B^\top B$ \\
+Implicit assumption & Connected nodes should become similar (homophily) & Connected nodes should be \emph{consistent under learned translation} \\
+Handles heterophily? & Poorly -- averaging degrades signal when neighbors are dissimilar & Well -- learned restriction maps encode non-identity neighbor relationships \\
+Special case relation & -- & Reduces to standard GNN when restriction maps are identity \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+% ============================================================
+\subsection*{REFERENCES}
+\begin{itemize}
+    \item Prince, Simon JD. Understanding deep learning. MIT press, 2023.
+    \item Goodfellow, I., Bengio, Y., Courville, A., \& Bengio, Y. (2016). Deep learning (Vol. 1, No. 2, pp. 1-800). Cambridge: MIT press. \url{https://www.deeplearningbook.org/}
+    \item Bishop, Christopher M., and Hugh Bishop. Deep learning: Foundations and concepts. Vol. 1. Cham, Switzerland: Springer, 2024.
+    \item Torralba, A., Isola, P., \& Freeman, W. T. (2024). Foundations of computer vision. MIT Press.
+\end{itemize}
+
+\end{document}

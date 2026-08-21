@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<!-- question: State Transition Matrix LTIV (Randomised) -->
+  <question type="stack">
+    <name>
+      <text>State Transition Matrix - LTIV System</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>The state equations of an LTIV system is represented by \(\dot{x} = Ax + Bu\). Find the state transition matrix \(\phi(t)\).</p>
+<p>Given:</p>
+<p>\[ A = \begin{bmatrix} -{@a@} & 0 & 0 \\ 0 & -{@b@} & 1 \\ 0 & 0 & -{@b@} \end{bmatrix}, \quad B = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix} \]</p>
+<p>Enter the state transition matrix \(\phi(t)\) as a \(3 \times 3\) matrix:</p>
+<p>[[input:ans1]] [[validation:ans1]] [[feedback:prt1]]</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<h3>Worked Solution</h3>
+<p>The state transition matrix is \(\phi(t) = \mathcal{L}^{-1}\{(sI - A)^{-1}\}\). Note it does <strong>not</strong> depend on \(B\).</p>
+
+<p><strong>Step 1: Compute \(sI - A\)</strong></p>
+<p>\[ [sI - A] = \begin{bmatrix} s+{@a@} & 0 & 0 \\ 0 & s+{@b@} & -1 \\ 0 & 0 & s+{@b@} \end{bmatrix} \]</p>
+
+<p><strong>Step 2: Compute the determinant</strong></p>
+<p>\[ |sI - A| = (s+{@a@})(s+{@b@})^2 \]</p>
+
+<p><strong>Step 3: Compute the adjugate</strong></p>
+<p>\[ \text{Adj}(sI - A) = \begin{bmatrix} (s+{@b@})^2 & 0 & 0 \\ 0 & (s+{@a@})(s+{@b@}) & (s+{@a@}) \\ 0 & 0 & (s+{@a@})(s+{@b@}) \end{bmatrix} \]</p>
+
+<p><strong>Step 4: Compute \((sI - A)^{-1} = \dfrac{\text{Adj}(sI-A)}{|sI-A|}\)</strong></p>
+<p>\[ (sI - A)^{-1} = \begin{bmatrix} \dfrac{1}{s+{@a@}} & 0 & 0 \\[8pt] 0 & \dfrac{1}{s+{@b@}} & \dfrac{1}{(s+{@b@})^2} \\[8pt] 0 & 0 & \dfrac{1}{s+{@b@}} \end{bmatrix} \]</p>
+
+<p><strong>Step 5: Take the inverse Laplace transform</strong></p>
+<p>Using \(\mathcal{L}^{-1}\left\{\dfrac{1}{s+\alpha}\right\} = e^{-\alpha t}\) and \(\mathcal{L}^{-1}\left\{\dfrac{1}{(s+\alpha)^2}\right\} = te^{-\alpha t}\):</p>
+<p>\[ \therefore \quad \phi(t) = \begin{bmatrix} e^{-{@a@}t} & 0 & 0 \\ 0 & e^{-{@b@}t} & te^{-{@b@}t} \\ 0 & 0 & e^{-{@b@}t} \end{bmatrix} \]</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.1</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <stackversion>
+      <text>2025073100</text>
+    </stackversion>
+    <questionvariables>
+      <text>/* Randomise eigenvalues: a in {1,2,3,4}, b in {1,2,3,4}, b != a */
+a: rand(4) + 1;
+b: rand(4) + 1;
+b: if b = a then mod(a, 4) + 1 else b;
+
+/* Correct state transition matrix */
+ta1: matrix(
+  [exp(-a*t),    0,           0        ],
+  [0,       exp(-b*t),   t*exp(-b*t)  ],
+  [0,            0,       exp(-b*t)   ]
+);</text>
+    </questionvariables>
+    <specificfeedback format="html">
+      <text></text>
+    </specificfeedback>
+    <questionnote format="html">
+      <text><![CDATA[<p>A = diag(-{@a@}, -{@b@}, -{@b@}) with off-diagonal 1. Answer: \(\phi(t)=\begin{bmatrix}e^{-{@a@}t}&0&0\\0&e^{-{@b@}t}&te^{-{@b@}t}\\0&0&e^{-{@b@}t}\end{bmatrix}\).</p>]]></text>
+    </questionnote>
+    <questiondescription format="html">
+      <text></text>
+    </questiondescription>
+    <questionsimplify>1</questionsimplify>
+    <assumepositive>0</assumepositive>
+    <assumereal>1</assumereal>
+    <prtcorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:green;"><i class="fa fa-check"></i></span> Correct answer, well done.]]></text>
+    </prtcorrect>
+    <prtpartiallycorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:orange;"><i class="fa fa-adjust"></i></span> Your answer is partially correct.]]></text>
+    </prtpartiallycorrect>
+    <prtincorrect format="html">
+      <text><![CDATA[<span style="font-size: 1.5em; color:red;"><i class="fa fa-times"></i></span> Incorrect answer.]]></text>
+    </prtincorrect>
+    <decimals>.</decimals>
+    <scientificnotation>*10</scientificnotation>
+    <multiplicationsign>dot</multiplicationsign>
+    <sqrtsign>1</sqrtsign>
+    <complexno>i</complexno>
+    <inversetrig>cos-1</inversetrig>
+    <logicsymbol>lang</logicsymbol>
+    <matrixparens>[</matrixparens>
+    <isbroken>0</isbroken>
+    <variantsselectionseed></variantsselectionseed>
+    <input>
+      <name>ans1</name>
+      <type>matrix</type>
+      <tans>ta1</tans>
+      <boxsize>12</boxsize>
+      <strictsyntax>1</strictsyntax>
+      <insertstars>0</insertstars>
+      <syntaxhint></syntaxhint>
+      <syntaxattribute>0</syntaxattribute>
+      <forbidwords></forbidwords>
+      <allowwords></allowwords>
+      <forbidfloat>0</forbidfloat>
+      <requirelowestterms>0</requirelowestterms>
+      <checkanswertype>0</checkanswertype>
+      <mustverify>1</mustverify>
+      <showvalidation>3</showvalidation>
+      <options></options>
+    </input>
+    <prt>
+      <name>prt1</name>
+      <value>1.0000000</value>
+      <autosimplify>1</autosimplify>
+      <feedbackstyle>1</feedbackstyle>
+      <feedbackvariables>
+        <text></text>
+      </feedbackvariables>
+      <node>
+        <name>0</name>
+        <description></description>
+        <answertest>AlgEquiv</answertest>
+        <sans>ans1</sans>
+        <tans>ta1</tans>
+        <testoptions></testoptions>
+        <quiet>0</quiet>
+        <truescoremode>=</truescoremode>
+        <truescore>1</truescore>
+        <truepenalty></truepenalty>
+        <truenextnode>-1</truenextnode>
+        <trueanswernote>prt1-1-T</trueanswernote>
+        <truefeedback format="html">
+          <text></text>
+        </truefeedback>
+        <falsescoremode>=</falsescoremode>
+        <falsescore>0</falsescore>
+        <falsepenalty></falsepenalty>
+        <falsenextnode>-1</falsenextnode>
+        <falseanswernote>prt1-1-F</falseanswernote>
+        <falsefeedback format="html">
+          <text></text>
+        </falsefeedback>
+      </node>
+    </prt>
+  </question>
+
+</quiz>

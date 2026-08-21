@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="essay">
+
+    <name>
+      <text>Plant vs Animal Fibers in Construction</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<h3>Assignment: Plant vs Animal Fibers in Construction</h3>
+
+<p><strong>Instructions</strong></p>
+
+<ol>
+<li>Create a table comparing <strong>plant fibers</strong> and <strong>animal fibers</strong> used in construction. Include examples, properties, extraction/processing methods, and construction applications.</li>
+
+<li>Create a concise flowchart showing:</li>
+</ol>
+
+<p><strong>Fiber Type → Extraction → Treatment → Construction Application</strong></p>
+
+<p>Your work should be original, well organized, and clearly labelled.</p>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>20</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editorfilepicker</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>20</responsefieldlines>
+
+    <attachments>5</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <graderinfo format="html">
+      <text><![CDATA[
+<h3>Grading Rubric</h3>
+
+<ul>
+<li><strong>Classification (4):</strong> All plant and animal fibers correctly identified with examples.</li>
+<li><strong>Properties &amp; Uses (4):</strong> Fiber properties clearly linked to construction uses.</li>
+<li><strong>Processing / Extraction (4):</strong> Correct sequence of extraction and treatment steps.</li>
+<li><strong>Applications (4):</strong> Each fiber linked to an appropriate construction application.</li>
+<li><strong>Clarity (4):</strong> Table and flowchart are neat, organized, and easy to follow.</li>
+</ul>
+      ]]></text>
+    </graderinfo>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+<h3>Expected Components</h3>
+
+<ul>
+<li>A comparison table of plant and animal fibers.</li>
+<li>Examples of plant fibers such as Jute, Sisal, Hemp, Flax, and Coir.</li>
+<li>Examples of animal fibers such as Wool, Silk, and Horsehair.</li>
+<li>For each fiber include:
+<ul>
+<li>Source</li>
+<li>Properties</li>
+<li>Extraction or processing</li>
+<li>Construction application</li>
+</ul>
+</li>
+<li>A flowchart showing:</li>
+</ul>
+
+<p><strong>Fiber Type → Extraction → Treatment → Construction Application</strong></p>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+</quiz>

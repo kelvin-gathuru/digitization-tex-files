@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Essay -->
+  <question type="essay">
+    <name>
+      <text>Preparing Plant Fibers</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Describe the general steps involved in preparing a plant fiber from raw plant material for use in construction composites.</strong></p>
+]]></text>
+    </questiontext>
+
+    <defaultgrade>10</defaultgrade>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>12</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+<p><strong>Expected Answer:</strong></p>
+
+<ul>
+<li>Harvest the plant material.</li>
+<li>Extract the fibers (retting, decortication or mechanical extraction).</li>
+<li>Clean and wash the fibers.</li>
+<li>Dry the fibers.</li>
+<li>Apply chemical or physical treatment if required.</li>
+<li>Cut and prepare fibers for composite manufacturing.</li>
+</ul>
+]]></text>
+    </generalfeedback>
+  </question>
+
+  <!-- Multiple Response -->
+  <question type="multichoice">
+    <name>
+      <text>Applications of Natural Fibers</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p>Applications of natural fibers in construction include:</p>
+]]></text>
+    </questiontext>
+
+    <defaultgrade>3</defaultgrade>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="33.33333">
+      <text>Fiber-reinforced concrete</text>
+    </answer>
+
+    <answer fraction="33.33333">
+      <text>Insulation materials</text>
+    </answer>
+
+    <answer fraction="-100">
+      <text>Steel beams</text>
+    </answer>
+
+    <answer fraction="33.33333">
+      <text>Composite panels</text>
+    </answer>
+
+  </question>
+
+  <!-- Multiple Response -->
+  <question type="multichoice">
+    <name>
+      <text>Factors Affecting Performance</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p>Factors affecting performance of natural fiber materials include:</p>
+]]></text>
+    </questiontext>
+
+    <defaultgrade>3</defaultgrade>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+
+    <answer fraction="33.33333">
+      <text>Environmental exposure</text>
+    </answer>
+
+    <answer fraction="33.33333">
+      <text>Fiber treatment methods</text>
+    </answer>
+
+    <answer fraction="33.33333">
+      <text>Fiber–matrix bonding</text>
+    </answer>
+
+    <answer fraction="-100">
+      <text>Color of the material</text>
+    </answer>
+
+  </question>
+
+  <!-- Matching -->
+  <question type="matching">
+    <name>
+      <text>Match Fiber to Application</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p>Match each natural fiber to its most appropriate construction application.</p>
+]]></text>
+    </questiontext>
+
+    <subquestion>
+      <text>Bamboo</text>
+      <answer><text>Structural elements</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Hemp</text>
+      <answer><text>Insulation materials</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Jute</text>
+      <answer><text>Reinforcement in composites</text></answer>
+    </subquestion>
+
+  </question>
+
+  <!-- Matching -->
+  <question type="matching">
+    <name>
+      <text>Match Fiber to Availability</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p>Match each fiber to its availability.</p>
+]]></text>
+    </questiontext>
+
+    <subquestion>
+      <text>Bamboo</text>
+      <answer><text>Widely available in tropical regions</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Hemp</text>
+      <answer><text>Grown in temperate climates</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Jute</text>
+      <answer><text>Common in South Asia</text></answer>
+    </subquestion>
+
+  </question>
+
+  <!-- Matching -->
+  <question type="matching">
+    <name>
+      <text>Match Fiber to Sustainability Benefit</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p>Match each fiber to its sustainability benefit.</p>
+]]></text>
+    </questiontext>
+
+    <subquestion>
+      <text>Bamboo</text>
+      <answer><text>Fast-growing renewable resource</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Hemp</text>
+      <answer><text>Low environmental impact processing</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Jute</text>
+      <answer><text>Biodegradable and eco-friendly</text></answer>
+    </subquestion>
+
+  </question>
+
+  <!-- Matching -->
+  <question type="matching">
+    <name>
+      <text>Match Property to Suitability</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+<p>Match each property to its suitability outcome.</p>
+]]></text>
+    </questiontext>
+
+    <subquestion>
+      <text>High tensile strength</text>
+      <answer><text>Structural use</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Good insulation</text>
+      <answer><text>Thermal applications</text></answer>
+    </subquestion>
+
+    <subquestion>
+      <text>Biodegradability</text>
+      <answer><text>Sustainable disposal</text></answer>
+    </subquestion>
+
+  </question>
+
+</quiz>

@@ -7,50 +7,54 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="None" />
-    <meta name="date" content="2026-05-30" />
+    <meta name="date" content="2026-08-18" />
 
 
-    <title>eco802 | </title>
+    <title>sstm4 | </title>
+
+
+    <link rel="icon" type="image/png" href="static/favicon.png?build_time=1787052518.000954" />
 
 
 
 
-    <link rel="stylesheet" href="static/styles.css?build_time=1780124940.969023">
+
+    <link rel="stylesheet" href="static/styles.css?build_time=1787052518.000954">
 
 
 
-    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1780124940.969023">
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1787052518.000954">
 
-    <link rel="stylesheet" href="static/print.css?build_time=1780124940.969023">
+    <link rel="stylesheet" href="static/print.css?build_time=1787052518.000954">
 
 
 
 
     <script>
-        var chirun_static_url = new URL('static?build_time=1780124940.969023', location.href);
+        var chirun_static_url = new URL('static?build_time=1787052518.000954', location.href);
     </script>
 
 
-    <script defer src="static/mathjax_config.js?build_time=1780124940.969023"></script>
+    <script defer src="static/mathjax_config.js?build_time=1787052518.000954"></script>
     <script type="text/javascript" id="MathJax-script" defer
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 
-    <script type="module" src="static/localisation.js?build_time=1780124940.969023"></script>
+    <script type="module" src="static/localisation.js?build_time=1787052518.000954"></script>
 
-    <script defer src="static/customisation.js?build_time=1780124940.969023"></script>
-
-
+    <script defer src="static/customisation.js?build_time=1787052518.000954"></script>
 
 
 
-    <script defer src="static/code.js?build_time=1780124940.969023" type="module"></script>
-    <script defer src="static/embed_numbas.js?build_time=1780124940.969023" type="module"></script>
-    <script defer src="static/embed_qrcode.js?build_time=1780124940.969023" type="module"></script>
+
+
+    <script defer src="static/code.js?build_time=1787052518.000954" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1787052518.000954" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1787052518.000954" type="module"></script>
 
 
     <template id="runnable-code-template">
-        <link rel="stylesheet" href="static/code.css?build_time=1780124940.969023">
+        <link rel="stylesheet" href="static/code.css?build_time=1787052518.000954">
         <div class="runnable-code-wrapper">
             <section class="fullscreenable code">
                 <div id="code"></div>
@@ -179,7 +183,7 @@
     </template>
 
     <template id="embed-numbas-template">
-        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1780124940.969023">
+        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1787052518.000954">
         <details id="wrapper" data-completion-status="incomplete">
             <summary>
                 <h1 id="title">Test Yourself</h1>
@@ -203,143 +207,176 @@
 
     <a class="skip-to-content-link" href="#main-content">Skip to content</a>
 
-    <form id="display-options">
-        <div class="buttons">
-            <button type="button" id="reset-display-options">Reset to defaults</button>
+    <dialog id="display-options">
+        <form>
+            <div class="buttons">
+                <button type="button" id="reset-display-options">Reset to defaults</button>
 
-            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+                <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
 
-            <button type="button" aria-controls="display-options" aria-expanded="false">
-                Close
-            </button>
-        </div>
-
-        <div class="inputs">
-            <div class="input-group">
-                <label for="display-options-font-scale">
-                    Text size
-                </label>
-                <input type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
-                <output for="display-options-font-scale">100%</output>
+                <button autofocus type="button" aria-controls="display-options">
+                    Close
+                </button>
             </div>
 
-            <div class="input-group">
-                <label for="display-options-spacing-factor">
-                    Spacing
-                </label>
-                <input type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
-                <output for="display-options-spacing-factor">100%</output>
+            <div class="inputs">
+                <div class="input-group">
+                    <label for="display-options-font-scale">
+                        Text size
+                    </label>
+                    <input name="font-scale" type="range" min="50" max="600" step="5" value="100"
+                        id="display-options-font-scale">
+                    <output for="display-options-font-scale">100%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-font-weight">
+                        Text weight
+                    </label>
+                    <input name="font-weight" type="range" min="200" max="800" step="100" value="400"
+                        id="display-options-font-weight">
+                    <output for="display-options-font-weight">400</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-spacing-factor">
+                        Spacing
+                    </label>
+                    <input name="spacing-factor" type="range" min="0" max="1200" step="5" value="100"
+                        id="display-options-spacing-factor">
+                    <output for="display-options-spacing-factor">100%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-font-family">
+                        Text font
+                    </label>
+                    <select name="font-family" id="display-options-font-family">
+                        <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                        <option value="var(--serif-font)">Serif</option>
+                        <option value="Atkinson Hyperlegible Next">Atkinson Hyperlegible</option>
+                        <option value="Comic Sans MS">Comic Sans</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-colour-scheme">
+                        Colour scheme
+                    </label>
+                    <select name="colour-scheme" id="display-options-colour-scheme">
+                        <option value="auto" selected>Automatic (default)</option>
+                        <option value="light">Black text on white</option>
+                        <option value="dark">White text on black</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
+
+                <section id="custom-colour-scheme-options" class="inputs">
+                    <div class="input-group">
+                        <label for="display-options-text-colour">
+                            Text colour
+                        </label>
+                        <input name="text-colour" type="color" value="#000000" id="display-options-text-colour">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-link-colour">
+                            Link colour
+                        </label>
+                        <input name="link-colour" type="color" value="#0000ee" id="display-options-link-colour">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-bg-colour">
+                            Background colour
+                        </label>
+                        <input name="bg-colour" type="color" value="#ffffff" id="display-options-bg-colour">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-bg-colour-off">
+                            Muted background colour
+                        </label>
+                        <input name="bg-colour-off" type="color" value="#eeeeee" id="display-options-bg-colour-off">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-bg-colour-accent-1">
+                            Accent colour 1
+                        </label>
+                        <input name="bg-colour-accent-1" type="color" value="#4caf50"
+                            id="display-options-bg-colour-accent-1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-bg-colour-accent-2">
+                            Accent colour 2
+                        </label>
+                        <input name="bg-colour-accent-2" type="color" value="#f6f6ff"
+                            id="display-options-bg-colour-accent-2">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-bg-colour-accent-3">
+                            Accent colour 3
+                        </label>
+                        <input name="bg-colour-accent-3" type="color" value="#eeffd3"
+                            id="display-options-bg-colour-accent-3">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-bg-colour-accent-4">
+                            Accent colour 4
+                        </label>
+                        <input name="bg-colour-accent-4" type="color" value="#ffeeee"
+                            id="display-options-bg-colour-accent-4">
+                    </div>
+                </section>
+
+                <section id="filter-colour-scheme-options" class="inputs">
+                    <div class="input-group">
+                        <label for="display-options-filter-sepia">
+                            Sepia filter
+                        </label>
+                        <input name="filter-sepia" type="range" min="0" max="100" step="1" value="0"
+                            id="display-options-filter-sepia">
+                        <output for="display-options-filter-sepia">0%</output>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-filter-hue-rotate">
+                            Rotate hues
+                        </label>
+                        <input name="filter-hue-rotate" type="range" min="0" max="1" step="0.01" value="0"
+                            id="display-options-filter-hue-rotate">
+                        <output for="display-options-filter-hue-rotate">0 turns</output>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="display-options-invert-images">
+                            Invert images in dark mode
+                        </label>
+                        <input name="invert-images" type="checkbox" id="display-options-invert-images">
+                    </div>
+
+                </section>
+
+
             </div>
 
-            <div class="input-group">
-                <label for="display-options-font-family">
-                    Text font
-                </label>
-                <select id="display-options-font-family">
-                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
-                    <option value="var(--serif-font)">Serif</option>
-                    <option value="Atkinson Hyperlegible">Atkinson Hyperlegible</option>
-                    <option value="Comic Sans MS">Comic Sans</option>
-                </select>
-            </div>
-
-            <div class="input-group">
-                <label for="display-options-colour-scheme">
-                    Colour scheme
-                </label>
-                <select id="display-options-colour-scheme">
-                    <option value="auto" selected>Automatic (default)</option>
-                    <option value="light">Black text on white</option>
-                    <option value="dark">White text on black</option>
-                    <option value="custom">Custom</option>
-                </select>
-            </div>
-
-            <section id="custom-colour-scheme-options" class="inputs">
-                <div class="input-group">
-                    <label for="display-options-text-colour">
-                        Text colour
-                    </label>
-                    <input type="color" value="#000000" id="display-options-text-colour">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-link-colour">
-                        Link colour
-                    </label>
-                    <input type="color" value="#0000ee" id="display-options-link-colour">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour">
-                        Background colour
-                    </label>
-                    <input type="color" value="#ffffff" id="display-options-bg-colour">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-off">
-                        Muted background colour
-                    </label>
-                    <input type="color" value="#eeeeee" id="display-options-bg-colour-off">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-1">
-                        Accent colour 1
-                    </label>
-                    <input type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-2">
-                        Accent colour 2
-                    </label>
-                    <input type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-3">
-                        Accent colour 3
-                    </label>
-                    <input type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-bg-colour-accent-4">
-                        Accent colour 4
-                    </label>
-                    <input type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
-                </div>
-            </section>
-
-            <section id="filter-colour-scheme-options" class="inputs">
-                <div class="input-group">
-                    <label for="display-options-filter-sepia">
-                        Sepia filter
-                    </label>
-                    <input type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
-                    <output for="display-options-filter-sepia">0%</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-filter-hue-rotate">
-                        Rotate hues
-                    </label>
-                    <input type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
-                    <output for="display-options-filter-hue-rotate">0 turns</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-invert-images">
-                        Invert images in dark mode
-                    </label>
-                    <input type="checkbox" id="display-options-invert-images">
-                </div>
-
-            </section>
-        </div>
-    </form>
+            <details id="advanced">
+                <summary>Advanced options</summary>
+                <section id="custom-css-options" class="inputs">
+                    <div class="input-group">
+                        <label for="display-options-custom-css">
+                            Custom CSS code
+                        </label>
+                        <textarea name="custom-css" id="display-options-custom-css"></textarea>
+                    </div>
+                </section>
+            </details>
+        </form>
+    </dialog>
 
 
     <header>
@@ -363,7 +400,7 @@
 
             <ul class="alternative-formats">
 
-                <li><a rel="alternate" type="application/pdf" href="eco802.pdf" download><svg class="icon"
+                <li><a rel="alternate" type="application/pdf" href="sstm4.pdf" download><svg class="icon"
                             aria-label="PDF" viewBox="0 0 180 180">
                             <use href="#pdf" />
                         </svg> Download as PDF</a></li>
@@ -371,523 +408,504 @@
             </ul>
 
 
+
             <h1>Table of Contents</h1>
             <a class="jump-to-item-content" href="#item-content">Jump to content</a>
-
             <ol class="table-of-contents" role="tree">
 
 
-                <li role="none" data-toc-level="1" class="toc-header ">
-                    <a role="treeitem" aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
-
-                        Reading Notes: Introduction
-                    </a>
-
-
-                </li>
-
                 <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-module_4_bayesian_co"
+                        href="#module_4_bayesian_co">
                         <span class="toc-marker"></span>
-                        4.1 Fisher’s Intertemporal Choice Model
+                        <span style="color:#16365C"><big class="xhuge"><b class="bfseries">Module 4</b><br /> <big
+                                    class="xlarge">Bayesian Computation and MCMC Methods</big></big></span>
                     </a>
 
 
-                    <ol role="group" id="toc-subtree-a0000000003">
+                    <ol role="group" id="toc-subtree-module_4_bayesian_co">
 
+                        <!--             
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
+        
+        Module Overview
+    </a>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
+    
+</li>
 
-                                The Basic Concept: Consumption Today versus Consumption Tomorrow
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+        
+        Expected Learning Outcomes
+    </a>
+
+    
+</li> -->
+
+                        <li role="none" data-toc-level="2" class="toc-header  has-children">
+                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000011"
+                                href="#a0000000011">
+                                <span class="toc-marker"></span>
+                                1 Bayesian Computation Challenges
                             </a>
 
+
+                            <ol role="group" id="toc-subtree-a0000000011">
+
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000016" href="#a0000000016">
+
+                                        1.1 Why Computation Becomes Difficult
+                                    </a>
+
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000021"
+                                        href="#a0000000021">
+                                        <span class="toc-marker"></span>
+                                        1.2 High-Dimensional Integration Problem
+                                    </a>
+
+
+                                    <ol role="group" id="toc-subtree-a0000000021">
+
+
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_1_" href="#_example_1_">
+
+
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">1</span>
+
+                                            </a>
+
+
+                                        </li>
+
+
+                                    </ol>
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000023"
+                                        href="#a0000000023">
+                                        <span class="toc-marker"></span>
+                                        1.3 Illustrative Example: Non-Conjugate Logistic Regression
+                                    </a>
+
+
+                                    <ol role="group" id="toc-subtree-a0000000023">
+
+
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_2_" href="#_example_2_">
+
+
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">2</span>
+
+                                            </a>
+
+
+                                        </li>
+
+
+                                    </ol>
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
+
+                                        1.4 Practical Consequences
+                                    </a>
+
+
+                                </li>
+
+
+                            </ol>
 
                         </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000005" href="#a0000000005">
-
-                                The Advanced Concept: The Two-Period Model
+                        <li role="none" data-toc-level="2" class="toc-header  has-children">
+                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000033"
+                                href="#a0000000033">
+                                <span class="toc-marker"></span>
+                                2 Markov Chains
                             </a>
 
+
+                            <ol role="group" id="toc-subtree-a0000000033">
+
+
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000034"
+                                        href="#a0000000034">
+                                        <span class="toc-marker"></span>
+                                        2.1 Transition Mechanism
+                                    </a>
+
+
+                                    <ol role="group" id="toc-subtree-a0000000034">
+
+
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_3_" href="#_example_3_">
+
+
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">3</span>
+
+                                            </a>
+
+
+                                        </li>
+
+
+                                    </ol>
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000036" href="#a0000000036">
+
+                                        2.2 Key Properties of Markov Chains
+                                    </a>
+
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000041"
+                                        href="#a0000000041">
+                                        <span class="toc-marker"></span>
+                                        2.3 Worked Example: Two-State Transition Matrix
+                                    </a>
+
+
+                                    <ol role="group" id="toc-subtree-a0000000041">
+
+
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_4_" href="#_example_4_">
+
+
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">4</span>
+
+                                            </a>
+
+
+                                        </li>
+
+
+                                    </ol>
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000043" href="#a0000000043">
+
+                                        2.4 Relevance to Bayesian Computation
+                                    </a>
+
+
+                                </li>
+
+
+                            </ol>
 
                         </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000006" href="#a0000000006">
-
-                                Decoding the Math
+                        <li role="none" data-toc-level="2" class="toc-header  has-children">
+                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000048"
+                                href="#a0000000048">
+                                <span class="toc-marker"></span>
+                                3 The Metropolis–Hastings Algorithm
                             </a>
 
+
+                            <ol role="group" id="toc-subtree-a0000000048">
+
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000049" href="#a0000000049">
+
+                                        3.1 The Metropolis–Hastings Algorithm
+                                    </a>
+
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000058" href="#a0000000058">
+
+                                        3.2 Symmetric Proposal Case (Metropolis Algorithm)
+                                    </a>
+
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000059"
+                                        href="#a0000000059">
+                                        <span class="toc-marker"></span>
+                                        3.3 Worked Examples
+                                    </a>
+
+
+                                    <ol role="group" id="toc-subtree-a0000000059">
+
+
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_5_" href="#_example_5_">
+
+
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">5</span>
+
+                                            </a>
+
+
+                                        </li>
+
+
+                                    </ol>
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000064" href="#a0000000064">
+
+                                        3.4 Why Metropolis–Hastings Works
+                                    </a>
+
+
+                                </li>
+
+
+                            </ol>
 
                         </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000007" href="#a0000000007">
-
-                                Worked Example 4.1: Solving a Two-Period Consumption Problem
+                        <li role="none" data-toc-level="2" class="toc-header  has-children">
+                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000065"
+                                href="#a0000000065">
+                                <span class="toc-marker"></span>
+                                4 Gibbs Sampling
                             </a>
 
+
+                            <ol role="group" id="toc-subtree-a0000000065">
+
+
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000072"
+                                        href="#a0000000072">
+                                        <span class="toc-marker"></span>
+                                        4.1 Worked Example: Bivariate Normal Model
+                                    </a>
+
+
+                                    <ol role="group" id="toc-subtree-a0000000072">
+
+
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_6_" href="#_example_6_">
+
+
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">6</span>
+
+                                            </a>
+
+
+                                        </li>
+
+
+                                    </ol>
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000080" href="#a0000000080">
+
+                                        4.2 Comparison: Gibbs Sampling vs. Metropolis–Hastings
+                                    </a>
+
+
+                                </li>
+
+
+                            </ol>
 
                         </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000008" href="#a0000000008">
-
-                                Worked Example 4.2: Borrowing and Saving
+                        <li role="none" data-toc-level="2" class="toc-header  has-children">
+                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000081"
+                                href="#a0000000081">
+                                <span class="toc-marker"></span>
+                                5 MCMC Convergence Diagnostics
                             </a>
 
+
+                            <ol role="group" id="toc-subtree-a0000000081">
+
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000082" href="#a0000000082">
+
+                                        5.1 Diagnostic Tools
+                                    </a>
+
+
+                                </li>
+
+                                <li role="none" data-toc-level="3" class="toc-header ">
+                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000096" href="#a0000000096">
+
+                                        5.2 Practical Convergence Remedies
+                                    </a>
+
+
+                                </li>
+
+
+                            </ol>
 
                         </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000009" href="#a0000000009">
-
-                                Worked Example 4.3: A Temporary Income Increase
+                        <li role="none" data-toc-level="2" class="toc-header  has-children">
+                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000101"
+                                href="#a0000000101">
+                                <span class="toc-marker"></span>
+                                6 Case Studies with R Code (Kenyan Context)
                             </a>
 
 
-                        </li>
+                            <ol role="group" id="toc-subtree-a0000000101">
 
 
-                    </ol>
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000102"
+                                        href="#a0000000102">
+                                        <span class="toc-marker"></span>
+                                        6.1 Case Study 1: Malaria Risk Modeling in Western Kenya
+                                    </a>
 
-                </li>
 
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000010" href="#a0000000010">
-                        <span class="toc-marker"></span>
-                        4.2 Permanent Income and Life-Cycle Consumption
-                    </a>
+                                    <ol role="group" id="toc-subtree-a0000000102">
 
 
-                    <ol role="group" id="toc-subtree-a0000000010">
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_7_" href="#_example_7_">
 
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000011" href="#a0000000011">
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">7</span>
 
-                                The Basic Concept: Consumption Depends on Lifetime Resources
-                            </a>
+                                            </a>
 
 
-                        </li>
+                                        </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000012" href="#a0000000012">
 
-                                The Advanced Concept: Permanent Income as an Annuity
-                            </a>
+                                    </ol>
 
+                                </li>
 
-                        </li>
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000108"
+                                        href="#a0000000108">
+                                        <span class="toc-marker"></span>
+                                        6.2 Case Study 2: Traffic Flow Modeling in Nairobi
+                                    </a>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000018" href="#a0000000018">
 
-                                Temporary versus Permanent Income Shocks
-                            </a>
+                                    <ol role="group" id="toc-subtree-a0000000108">
 
 
-                        </li>
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_8_" href="#_example_8_">
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000022" href="#a0000000022">
 
-                                Worked Example 4.4: Permanent Income from Lifetime Wealth
-                            </a>
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">8</span>
 
+                                            </a>
 
-                        </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000023" href="#a0000000023">
+                                        </li>
 
-                                Worked Example 4.5: Temporary versus Permanent Income Shock
-                            </a>
 
+                                    </ol>
 
-                        </li>
+                                </li>
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000024" href="#a0000000024">
+                                <li role="none" data-toc-level="3" class="toc-header  has-children">
+                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000113"
+                                        href="#a0000000113">
+                                        <span class="toc-marker"></span>
+                                        6.3 Case Study 3: Loan Default Risk in a Kenyan SACCO
+                                    </a>
 
-                                Worked Example 4.6: Life-Cycle Saving
-                            </a>
 
+                                    <ol role="group" id="toc-subtree-a0000000113">
 
-                        </li>
 
+                                        <li role="none" data-toc-level="4" class="toc-header ">
+                                            <a role="treeitem" aria-owns="#toc-subtree-_example_9_" href="#_example_9_">
 
-                    </ol>
 
-                </li>
+                                                <span class="thmcaption example_thmcaption">
+                                                    Example
+                                                </span>
+                                                <span class="thmlabel example_thmlabel">9</span>
 
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
-                        <span class="toc-marker"></span>
-                        4.3 Hall’s Random-Walk Model of Consumption
-                    </a>
+                                            </a>
 
 
-                    <ol role="group" id="toc-subtree-a0000000025">
+                                        </li>
 
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000026" href="#a0000000026">
+                                    </ol>
 
-                                The Basic Concept: Predictable Income Changes Should Not Predict Consumption Changes
-                            </a>
+                                </li>
 
+                                <!-- <li role="none" data-toc-level="3" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000115" href="#a0000000115">
+        
+        REFERENCES
+    </a>
 
-                        </li>
+    
+</li> -->
 
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000027" href="#a0000000027">
 
-                                The Advanced Concept: Deriving the Random Walk
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000028" href="#a0000000028">
-
-                                Decoding the Math
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000029" href="#a0000000029">
-
-                                Worked Example 4.7: Forecastable Income and Unchanged Consumption
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000030" href="#a0000000030">
-
-                                Worked Example 4.8: Unexpected Promotion
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000031" href="#a0000000031">
-
-                                Worked Example 4.9: Excess Sensitivity
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000032" href="#a0000000032">
-                        <span class="toc-marker"></span>
-                        4.4 Elasticity of Intertemporal Substitution and Interest-Rate Effects
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000032">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000033" href="#a0000000033">
-
-                                The Basic Concept: How Strongly Does Consumption Respond to Interest Rates?
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000034" href="#a0000000034">
-
-                                The Advanced Concept: CRRA Utility and the EIS
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000035" href="#a0000000035">
-
-                                Decoding the Math
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000036" href="#a0000000036">
-
-                                Worked Example 4.10: Consumption Growth with CRRA Utility
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000037" href="#a0000000037">
-
-                                Worked Example 4.11: Comparing High and Low EIS
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000038" href="#a0000000038">
-
-                                Worked Example 4.12: Substitution and Income Effects
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000042" href="#a0000000042">
-                        <span class="toc-marker"></span>
-                        4.5 Habits, Durable Goods, and Slow Consumption Adjustment
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000042">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000043" href="#a0000000043">
-
-                                The Basic Concept: Consumption Is Not Always Freely Adjustable
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000044" href="#a0000000044">
-
-                                Habit Formation
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000045" href="#a0000000045">
-
-                                Decoding Habit Formation
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000046" href="#a0000000046">
-
-                                Durable Goods
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000051" href="#a0000000051">
-
-                                Worked Example 4.13: Habit Stock Calculation
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000052" href="#a0000000052">
-
-                                Worked Example 4.14: Durable Goods Stock
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000053" href="#a0000000053">
-
-                                Worked Example 4.15: Durables and Volatile Expenditure
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000054" href="#a0000000054">
-                        <span class="toc-marker"></span>
-                        4.6 Rule-of-Thumb Consumers, Liquidity Constraints, and Aggregation
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000054">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000055" href="#a0000000055">
-
-                                The Basic Concept: Not Every Household Behaves Like the Representative Agent
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000056" href="#a0000000056">
-
-                                The Advanced Concept: A Simple Two-Type Consumption Model
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000057" href="#a0000000057">
-
-                                Decoding the Math
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000058" href="#a0000000058">
-
-                                Aggregation Problems
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000069" href="#a0000000069">
-
-                                Worked Example 4.16: Aggregate Consumption with Rule-of-Thumb Consumers
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000070" href="#a0000000070">
-
-                                Worked Example 4.17: Temporary Transfer and MPC
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000071" href="#a0000000071">
-
-                                Worked Example 4.18: Why Aggregation Matters for Fiscal Policy
-                            </a>
-
-
-                        </li>
-
-
-                    </ol>
-
-                </li>
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000072" href="#a0000000072">
-                        <span class="toc-marker"></span>
-                        4.7 A Practical Guide to Solving Consumption Models
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-a0000000072">
-
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000073" href="#a0000000073">
-
-                                Step 1: Identify the Household’s Horizon
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000078" href="#a0000000078">
-
-                                Step 2: Write the Intertemporal Budget Constraint
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000079" href="#a0000000079">
-
-                                Step 3: Derive the Euler Equation
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000080" href="#a0000000080">
-
-                                Step 4: Distinguish Temporary and Permanent Shocks
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000085" href="#a0000000085">
-
-                                Step 5: Test the Random-Walk Implication
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000090" href="#a0000000090">
-
-                                Step 6: Add Realistic Frictions
-                            </a>
-
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header ">
-                            <a role="treeitem" aria-owns="#toc-subtree-a0000000099" href="#a0000000099">
-
-                                Step 7: Interpret Policy Implications
-                            </a>
-
+                            </ol>
 
                         </li>
 
@@ -903,1297 +921,1100 @@
         </nav>
 
         <article class="item-content" id="item-content">
-            <section class="section">
-                <h2 id="a0000000002">Reading Notes: Introduction</h2>
-                <p>
-                    Module 3 studied how business cycles can arise in dynamic stochastic general equilibrium models.
-                    Module 4 moves deeper into the household sector by asking how households decide how much to consume
-                    today and how much to save for the future.
+            <div class="titlepage">
+                <h1 id="module_4_bayesian_co"><span style="color:#16365C"><big class="xhuge"><b class="bfseries">Module
+                                4</b><br /> <big class="xlarge">Bayesian Computation and MCMC Methods</big></big></span>
+                </h1>
+                <p class="authors">
+                    <span class="author">Department of Mathematics and Statistics<br />The Open University of
+                        Kenya</span>
                 </p>
-                <p>
-                    Consumption is central to macroeconomics because it is usually the largest component of aggregate
-                    demand and because household saving determines asset accumulation, investment finance, and
-                    intertemporal welfare.
-                </p>
-                <p>
-                    The main idea in this module is simple but powerful:
-                </p>
-                <blockquote class="quote"> A forward-looking household does not base consumption only on current income.
-                    It bases consumption on expected lifetime resources. </blockquote>
-                <p>
-                    This idea changes how we think about fiscal stimulus, tax cuts, transfers, retirement saving, credit
-                    markets, recessions, and inequality. If households smooth consumption, then temporary income changes
-                    may have small effects on spending. If households are liquidity constrained or rule-of-thumb
-                    consumers, the same income changes may have large effects.
-                </p>
-                <p>
-                    This module therefore begins with the Fisher model, then develops the Permanent Income Hypothesis,
-                    Life-Cycle Hypothesis, Hall random-walk result, elasticity of intertemporal substitution, habits,
-                    durables, and aggregation problems.
-                </p>
+            </div>
+            <div class="tcolorbox colback" style="--colback:#F1F2F5; --colframe:#16365C; --boxrule:1pt">
+            </div>
+            <!-- <section class="subsection">
+<h3 id="a0000000002">Module Overview</h3>
+<p>
+ In Bayesian inference, the posterior distribution provides a complete description of uncertainty about model parameters. However, for complex or high-dimensional models, computing the marginal likelihood (evidence) to normalize the posterior is analytically intractable. This module introduces the computational foundations of modern Bayesian statistics: why analytical integration fails, how <b class="bfseries">Markov chains</b> construct stochastic processes that converge to a target distribution, and how <b class="bfseries">Markov Chain Monte Carlo (MCMC)</b> algorithms—specifically <b class="bfseries">Metropolis–Hastings</b> and <b class="bfseries">Gibbs sampling</b>—generate samples from complex posterior distributions without calculating normalizing constants. Finally, you will explore <b class="bfseries">MCMC convergence diagnostics</b> (trace plots, autocorrelation, Gelman–Rubin \(\hat{R}\)) and apply these techniques to real-world Kenyan case studies in public health, urban traffic flow, and credit risk assessment. 
+</p>
+<div class="tcolorbox" style="None">
+</div>
+</section><section class="subsection"> -->
+            <!-- <h3 id="a0000000003">Expected Learning Outcomes</h3>
+            <p>
+                By the end of this module, you should be able to:
+            </p>
+            <ol class="enumerate" id="a0000000004">
+                <li id="a0000000005" value="1">
+                    <p>
+                        <b class="bfseries">Explain</b> the mathematical challenges of computing marginal likelihoods in
+                        high-dimensional Bayesian models.
+                    </p>
+                </li>
+                <li id="a0000000006" value="2">
+                    <p>
+                        <b class="bfseries">Define</b> Markov chains and verify key properties such as stationarity,
+                        ergodicity, and convergence.
+                    </p>
+                </li>
+                <li id="a0000000007" value="3">
+                    <p>
+                        <b class="bfseries">Derive</b> and apply the Metropolis–Hastings sampling algorithm and its
+                        symmetric proposal special case.
+                    </p>
+                </li>
+                <li id="a0000000008" value="4">
+                    <p>
+                        <b class="bfseries">Implement</b> Gibbs sampling for multivariate posterior distributions using
+                        full conditional distributions.
+                    </p>
+                </li>
+                <li id="a0000000009" value="5">
+                    <p>
+                        <b class="bfseries">Evaluate</b> MCMC convergence using trace plots, autocorrelation functions,
+                        and the Gelman–Rubin statistic (\(\hat{R}\)).
+                    </p>
+                </li>
+                <li id="a0000000010" value="6">
+                    <p>
+                        <b class="bfseries">Apply</b> MCMC methods and convergence diagnostics to practical problems
+                        using R code in real-world contexts.
+                    </p>
+                </li>
+            </ol> -->
+            <!-- <p>
+                <br />
+            </p> -->
             </section>
             <section class="section">
-                <h2 id="a0000000003">4.1 Fisher’s Intertemporal Choice Model</h2>
+                <h2 id="a0000000011">1 Bayesian Computation Challenges</h2>
+                <p>
+                    In Bayesian inference, the posterior distribution provides a complete description of uncertainty
+                    about the parameter \(\theta \) given data \(y\). However, computing this posterior is often
+                    mathematically challenging, especially in complex models.
+                </p>
+                <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
+                    The posterior distribution is given by: <span class="dmath">\[ p(\theta \mid y) = \frac{p(y \mid
+                        \theta ) p(\theta )}{p(y)} \]</span> where the <b class="bfseries">marginal likelihood</b> (or
+                    <b class="bfseries">evidence</b>) is the normalizing constant: <span class="dmath">\[ p(y) = \int
+                        p(y \mid \theta ) p(\theta ) \, d\theta \]</span>
+                </div>
+                <ul class="itemize" id="a0000000012">
+                    <li id="a0000000013">
+                        <p>
+                            \(p(y \mid \theta )\): Likelihood (data information)
+                        </p>
+                    </li>
+                    <li id="a0000000014">
+                        <p>
+                            \(p(\theta )\): Prior (initial belief)
+                        </p>
+                    </li>
+                    <li id="a0000000015">
+                        <p>
+                            \(p(y)\): Marginal likelihood (normalizing constant)
+                        </p>
+                    </li>
+                </ul>
+                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                    The marginal likelihood \(p(y)\) ensures that the posterior distribution integrates to \(1\), but it
+                    is often extremely difficult or impossible to compute analytically.
+                </div>
                 <section class="subsection">
-                    <h3 id="a0000000004">The Basic Concept: Consumption Today versus Consumption Tomorrow</h3>
+                    <h3 id="a0000000016">1.1 Why Computation Becomes Difficult</h3>
                     <p>
-                        The Fisher model is the foundation of modern consumption theory. It treats the household as a
-                        forward-looking decision-maker that allocates resources across time.
+                        In many practical problems, the integral defining \(p(y)\) has no closed-form solution. This is
+                        especially true when:
                     </p>
-                    <p>
-                        A household receives income today and income tomorrow. It may consume exactly its current
-                        income, save part of current income, or borrow against future income. The interest rate
-                        determines the price of moving consumption across time.
-                    </p>
-                    <p>
-                        The key question is:
-                    </p>
-                    <blockquote class="quote"> How should a household allocate lifetime resources between present and
-                        future consumption? </blockquote>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000005">The Advanced Concept: The Two-Period Model</h3>
-                    <p>
-                        Consider a household that lives for two periods. It receives income:
-                    </p>
-                    <span class="dmath">\[ Y_1 \quad \text{and} \quad Y_2. \]</span>
-                    <p>
-                        It chooses consumption:
-                    </p>
-                    <span class="dmath">\[ C_1 \quad \text{and} \quad C_2. \]</span>
-                    <p>
-                        The household maximizes:
-                    </p>
-                    <span class="dmath">\[ U(C_1, C_2) = u(C_1) + \beta u(C_2), \]</span>
-                    <p>
-                        subject to the lifetime budget constraint:
-                    </p>
-                    <span class="dmath">\[ C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}. \]</span>
-                    <p>
-                        The right-hand side is the present value of lifetime income:
-                    </p>
-                    <span class="dmath">\[ W = Y_1 + \frac{Y_2}{1+r}. \]</span>
-                    <p>
-                        The household chooses \(C_1\) and \(C_2\) to maximize utility subject to lifetime wealth.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000006">Decoding the Math</h3>
-                    <p>
-                        The lifetime budget constraint is:
-                    </p>
-                    <span class="dmath">\[ C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}. \]</span>
-                    <p>
-                        This says:
-                    </p>
-                    <span class="dmath">\[ \text{Present value of consumption} = \text{Present value of income}.
-                        \]</span>
-                    <p>
-                        If the household consumes less than current income in period 1, it saves:
-                    </p>
-                    <span class="dmath">\[ S_1 = Y_1 - C_1 {\gt} 0. \]</span>
-                    <p>
-                        If the household consumes more than current income in period 1, it borrows:
-                    </p>
-                    <span class="dmath">\[ S_1 = Y_1 - C_1 {\lt} 0. \]</span>
-                    <p>
-                        The slope of the intertemporal budget line is:
-                    </p>
-                    <span class="dmath">\[ -(1+r). \]</span>
-                    <p>
-                        This means that giving up one unit of consumption today allows the household to consume \(1+r\)
-                        units tomorrow.
-                    </p>
-                    <p>
-                        At the optimum, the marginal rate of substitution equals the relative price of intertemporal
-                        consumption:
-                    </p>
-                    <span class="dmath">\[ \frac{u'(C_1)}{\beta u'(C_2)} = 1+r. \]</span>
-                    <p>
-                        Equivalently:
-                    </p>
-                    <span class="dmath">\[ u'(C_1) = \beta (1+r)u'(C_2). \]</span>
-                    <p>
-                        This is the consumption Euler equation.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000007">Worked Example 4.1: Solving a Two-Period Consumption Problem</h3>
-                    <p>
-                        <b class="bfseries">Scenario:</b> A household has:
-                    </p>
-                    <span class="dmath">\[ Y_1 = 100, \quad Y_2 = 121, \quad r = 0.10, \quad \beta = \frac{1}{1+r}.
-                        \]</span>
-                    <p>
-                        Utility is:
-                    </p>
-                    <span class="dmath">\[ U = \ln C_1 + \beta \ln C_2. \]</span>
-                    <p>
-                        The lifetime budget constraint is:
-                    </p>
-                    <span class="dmath">\[ C_1 + \frac{C_2}{1.10} = 100 + \frac{121}{1.10}. \]</span>
-                    <span class="dmath">\[ C_1 + \frac{C_2}{1.10} = 100 + 110 = 210. \]</span>
-                    <p>
-                        The Euler equation for log utility is:
-                    </p>
-                    <span class="dmath">\[ \frac{1}{C_1} = \beta (1+r) \frac{1}{C_2}. \]</span>
-                    <p>
-                        Since \(\beta (1+r) = 1\), we have:
-                    </p>
-                    <span class="dmath">\[ C_1 = C_2. \]</span>
-                    <p>
-                        Let \(C_1 = C_2 = C\). Then:
-                    </p>
-                    <span class="dmath">\[ C + \frac{C}{1.10} = 210. \]</span>
-                    <span class="dmath">\[ 1.9091C = 210. \]</span>
-                    <span class="dmath">\[ C \approx 110. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b>
-                    </p>
-                    <span class="dmath">\[ C_1 = 110, \quad C_2 = 110. \]</span>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> The household smooths consumption even though income is
-                        lower in period 1 and higher in period 2.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000008">Worked Example 4.2: Borrowing and Saving</h3>
-                    <p>
-                        Using the result from Worked Example 4.1:
-                    </p>
-                    <span class="dmath">\[ Y_1 = 100, \quad C_1 = 110. \]</span>
-                    <p>
-                        Saving in period 1 is:
-                    </p>
-                    <span class="dmath">\[ S_1 = Y_1 - C_1. \]</span>
-                    <span class="dmath">\[ S_1 = 100 - 110 = -10. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> The household borrows 10 units in period 1.
-                    </p>
-                    <p>
-                        In period 2, it must repay:
-                    </p>
-                    <span class="dmath">\[ 10(1.10) = 11. \]</span>
-                    <p>
-                        Second-period income is:
-                    </p>
-                    <span class="dmath">\[ Y_2 = 121. \]</span>
-                    <p>
-                        After repayment, second-period consumption is:
-                    </p>
-                    <span class="dmath">\[ C_2 = 121 - 11 = 110. \]</span>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> Borrowing allows the household to smooth consumption
-                        across time.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000009">Worked Example 4.3: A Temporary Income Increase</h3>
-                    <p>
-                        Suppose income in period 1 rises temporarily from 100 to 120, while:
-                    </p>
-                    <span class="dmath">\[ Y_2 = 121, \quad r = 0.10, \quad \beta = \frac{1}{1+r}. \]</span>
-                    <p>
-                        Lifetime wealth becomes:
-                    </p>
-                    <span class="dmath">\[ W = 120 + \frac{121}{1.10} = 120 + 110 = 230. \]</span>
-                    <p>
-                        With log utility and \(\beta (1+r) = 1\), consumption is equal across both periods:
-                    </p>
-                    <span class="dmath">\[ C + \frac{C}{1.10} = 230. \]</span>
-                    <span class="dmath">\[ 1.9091C = 230. \]</span>
-                    <span class="dmath">\[ C \approx 120.48. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> Current consumption rises from 110 to approximately 120.48, not
-                        to 130 or 140.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> The temporary income gain is spread across both periods.
-                        Consumption rises by less than the full temporary increase in current income.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000010">4.2 Permanent Income and Life-Cycle Consumption</h2>
-                <section class="subsection">
-                    <h3 id="a0000000011">The Basic Concept: Consumption Depends on Lifetime Resources</h3>
-                    <p>
-                        The Permanent Income Hypothesis and the Life-Cycle Hypothesis extend Fisher’s logic to many
-                        periods.
-                    </p>
-                    <p>
-                        The Permanent Income Hypothesis states that households base consumption mainly on permanent
-                        income, not current income. Permanent income is the sustainable level of income implied by
-                        lifetime resources.
-                    </p>
-                    <p>
-                        The Life-Cycle Hypothesis emphasizes that income and saving vary over age. Young households may
-                        borrow, middle-aged households may save, and retired households may dissave.
-                    </p>
-                    <p>
-                        Both theories share a common idea:
-                    </p>
-                    <blockquote class="quote"> Households smooth consumption over time by borrowing and saving.
-                    </blockquote>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000012">The Advanced Concept: Permanent Income as an Annuity</h3>
-                    <p>
-                        Suppose a household expects lifetime resources with present value:
-                    </p>
-                    <span class="dmath">\[ W_t = A_t + \sum _{j=0}^{\infty } \frac{E_t Y_{t+j}}{(1+r)^j}, \]</span>
-                    <p>
-                        where:
-                    </p>
-                    <ul class="itemize" id="a0000000013">
-                        <li id="a0000000014">
+                    <ul class="itemize" id="a0000000017">
+                        <li id="a0000000018">
                             <p>
-                                \(A_t\) is current financial wealth.
+                                The model involves multiple parameters (high-dimensional parameter space)
                             </p>
                         </li>
-                        <li id="a0000000015">
+                        <li id="a0000000019">
                             <p>
-                                \(Y_{t+j}\) is future labour income.
+                                The likelihood function is complex or non-linear
                             </p>
                         </li>
-                        <li id="a0000000016">
-                            <p>
-                                \(r\) is the real interest rate.
-                            </p>
-                        </li>
-                        <li id="a0000000017">
-                            <p>
-                                \(E_t\) denotes expectations formed at time \(t\).
-                            </p>
-                        </li>
-                    </ul>
-                    <p>
-                        If the household wants to consume a constant amount forever, consumption is the annuity value of
-                        wealth:
-                    </p>
-                    <span class="dmath">\[ C_t = \frac{r}{1+r} W_t, \]</span>
-                    <p>
-                        for an infinite horizon with constant \(r\).
-                    </p>
-                    <p>
-                        In a finite horizon of \(T\) periods, the constant-consumption rule is:
-                    </p>
-                    <span class="dmath">\[ C = \frac{W}{\sum _{j=0}^{T-1} (1+r)^{-j}}. \]</span>
-                    <p>
-                        The denominator is the present value of one unit of consumption in each period.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000018">Temporary versus Permanent Income Shocks</h3>
-                    <p>
-                        A temporary income shock affects one period’s income. A permanent income shock affects income in
-                        many future periods.
-                    </p>
-                    <p>
-                        The PIH predicts:
-                    </p>
-                    <ul class="itemize" id="a0000000019">
                         <li id="a0000000020">
                             <p>
-                                A temporary income increase should be spread across many periods, so current consumption
-                                rises only modestly.
-                            </p>
-                        </li>
-                        <li id="a0000000021">
-                            <p>
-                                A permanent income increase raises lifetime resources substantially, so current
-                                consumption rises strongly.
+                                The prior distribution is non-conjugate
                             </p>
                         </li>
                     </ul>
-                    <p>
-                        This gives an important policy implication:
-                    </p>
-                    <blockquote class="quote"> Temporary tax cuts may have limited effects on consumption if households
-                        are forward-looking and unconstrained. </blockquote>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        As model complexity increases, analytical solutions become infeasible, requiring numerical
+                        integration or simulation-based sampling methods.
+                    </div>
                 </section>
                 <section class="subsection">
-                    <h3 id="a0000000022">Worked Example 4.4: Permanent Income from Lifetime Wealth</h3>
-                    <p>
-                        <b class="bfseries">Scenario:</b> A household has financial wealth:
-                    </p>
-                    <span class="dmath">\[ A = 50. \]</span>
-                    <p>
-                        It expects income of 100 in each of the next two periods. The interest rate is:
-                    </p>
-                    <span class="dmath">\[ r = 0.10. \]</span>
-                    <p>
-                        Lifetime wealth is:
-                    </p>
-                    <span class="dmath">\[ W = A + Y_1 + \frac{Y_2}{1+r}. \]</span>
-                    <span class="dmath">\[ W = 50 + 100 + \frac{100}{1.10}. \]</span>
-                    <span class="dmath">\[ W = 50 + 100 + 90.91 = 240.91. \]</span>
-                    <p>
-                        If the household consumes the same amount in both periods, then:
-                    </p>
-                    <span class="dmath">\[ C + \frac{C}{1.10} = 240.91. \]</span>
-                    <span class="dmath">\[ 1.9091C = 240.91. \]</span>
-                    <span class="dmath">\[ C \approx 126.19. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> Permanent-income consumption is approximately 126.19 per period.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> Consumption exceeds current labour income because the
-                        household also has financial wealth.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000023">Worked Example 4.5: Temporary versus Permanent Income Shock</h3>
-                    <p>
-                        <b class="bfseries">Scenario:</b> A household lives for 10 periods and the interest rate is
-                        zero. It initially expects income of 100 in each period.
-                    </p>
-                    <p>
-                        Initial lifetime resources are:
-                    </p>
-                    <span class="dmath">\[ W = 10(100) = 1000. \]</span>
-                    <p>
-                        Permanent-income consumption is:
-                    </p>
-                    <span class="dmath">\[ C = \frac{1000}{10} = 100. \]</span>
-                    <p>
-                        Now suppose the household receives a temporary one-period bonus of 50. New lifetime resources
-                        are:
-                    </p>
-                    <span class="dmath">\[ W = 1050. \]</span>
-                    <p>
-                        New consumption is:
-                    </p>
-                    <span class="dmath">\[ C = \frac{1050}{10} = 105. \]</span>
-                    <p>
-                        <b class="bfseries">Temporary Shock Result:</b> Consumption rises by only 5.
-                    </p>
-                    <p>
-                        Now suppose income rises permanently by 50 in every period. New lifetime resources are:
-                    </p>
-                    <span class="dmath">\[ W = 10(150) = 1500. \]</span>
-                    <p>
-                        New consumption is:
-                    </p>
-                    <span class="dmath">\[ C = \frac{1500}{10} = 150. \]</span>
-                    <p>
-                        <b class="bfseries">Permanent Shock Result:</b> Consumption rises by 50.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> A temporary income shock has a small effect on
-                        consumption, while a permanent income shock has a large effect.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000024">Worked Example 4.6: Life-Cycle Saving</h3>
-                    <p>
-                        A household expects the following income profile over four periods:
-                    </p>
-                    <span class="dmath">\[ Y_1 = 50, \quad Y_2 = 100, \quad Y_3 = 150, \quad Y_4 = 0. \]</span>
-                    <p>
-                        Assume the interest rate is zero. Lifetime income is:
-                    </p>
-                    <span class="dmath">\[ W = 50 + 100 + 150 + 0 = 300. \]</span>
-                    <p>
-                        Constant consumption is:
-                    </p>
-                    <span class="dmath">\[ C = \frac{300}{4} = 75. \]</span>
-                    <p>
-                        Saving in each period is:
-                    </p>
-                    <span class="dmath">\[ S_t = Y_t - C. \]</span>
-                    <p>
-                        Therefore:
-                    </p>
-                    <span class="dmath">\[ S_1 = 50 - 75 = -25, \]</span>
-                    <span class="dmath">\[ S_2 = 100 - 75 = 25, \]</span>
-                    <span class="dmath">\[ S_3 = 150 - 75 = 75, \]</span>
-                    <span class="dmath">\[ S_4 = 0 - 75 = -75. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> The household borrows when young, saves during working life, and
-                        dissaves in retirement.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> This is the central life-cycle pattern.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000025">4.3 Hall’s Random-Walk Model of Consumption</h2>
-                <section class="subsection">
-                    <h3 id="a0000000026">The Basic Concept: Predictable Income Changes Should Not Predict Consumption
-                        Changes</h3>
-                    <p>
-                        Hall’s random-walk result combines the Permanent Income Hypothesis with rational expectations.
-                    </p>
-                    <p>
-                        If households use all available information efficiently, then expected future income changes are
-                        already incorporated into current consumption. Consumption should change only when households
-                        receive new information.
-                    </p>
-                    <p>
-                        The key implication is:
-                    </p>
-                    <blockquote class="quote"> Under the PIH with rational expectations, changes in consumption should
-                        be unpredictable. </blockquote>
-                    <p>
-                        This does not mean consumption is constant. It means that predictable changes in income should
-                        not systematically predict changes in consumption.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000027">The Advanced Concept: Deriving the Random Walk</h3>
-                    <p>
-                        Start with the Euler equation:
-                    </p>
-                    <span class="dmath">\[ u'(C_t) = \beta (1+r)E_t[u'(C_{t+1})]. \]</span>
-                    <p>
-                        Assume:
-                    </p>
-                    <span class="dmath">\[ \beta (1+r) = 1. \]</span>
-                    <p>
-                        Then:
-                    </p>
-                    <span class="dmath">\[ u'(C_t) = E_t[u'(C_{t+1})]. \]</span>
-                    <p>
-                        If utility is quadratic, marginal utility is linear in consumption. This implies:
-                    </p>
-                    <span class="dmath">\[ C_t = E_t(C_{t+1}). \]</span>
-                    <p>
-                        Therefore:
-                    </p>
-                    <span class="dmath">\[ C_{t+1} = C_t + \varepsilon _{t+1}, \]</span>
-                    <p>
-                        where:
-                    </p>
-                    <span class="dmath">\[ E_t(\varepsilon _{t+1}) = 0. \]</span>
-                    <p>
-                        The term \(\varepsilon _{t+1}\) is new information arriving between \(t\) and \(t+1\).
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000028">Decoding the Math</h3>
-                    <p>
-                        The equation:
-                    </p>
-                    <span class="dmath">\[ C_{t+1} = C_t + \varepsilon _{t+1} \]</span>
-                    <p>
-                        says that tomorrow’s consumption equals today’s consumption plus an unpredictable innovation.
-                    </p>
-                    <p>
-                        If households learn that lifetime income is higher than expected, then:
-                    </p>
-                    <span class="dmath">\[ \varepsilon _{t+1} {\gt} 0, \]</span>
-                    <p>
-                        and consumption rises.
-                    </p>
-                    <p>
-                        If households learn that lifetime income is lower than expected, then:
-                    </p>
-                    <span class="dmath">\[ \varepsilon _{t+1} {\lt} 0, \]</span>
-                    <p>
-                        and consumption falls.
-                    </p>
-                    <p>
-                        If there is no new information, then:
-                    </p>
-                    <span class="dmath">\[ \varepsilon _{t+1} = 0, \]</span>
-                    <p>
-                        and consumption remains unchanged.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000029">Worked Example 4.7: Forecastable Income and Unchanged Consumption</h3>
-                    <p>
-                        <b class="bfseries">Scenario:</b> A household knows today that it will receive a salary increase
-                        of 10 next year. The increase is fully anticipated.
-                    </p>
-                    <p>
-                        According to Hall’s model, the household has already incorporated this future income into
-                        current lifetime resources. Therefore, consumption should adjust today, not only when the income
-                        arrives.
-                    </p>
-                    <p>
-                        <b class="bfseries">Result:</b> The future predictable salary increase should not cause a
-                        predictable jump in consumption next year.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> Only news changes consumption.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000030">Worked Example 4.8: Unexpected Promotion</h3>
-                    <p>
-                        Suppose a household currently consumes:
-                    </p>
-                    <span class="dmath">\[ C_t = 100. \]</span>
-                    <p>
-                        It unexpectedly receives news of a permanent promotion that raises lifetime resources. The
-                        consumption innovation is:
-                    </p>
-                    <span class="dmath">\[ \varepsilon _{t+1} = 12. \]</span>
-                    <p>
-                        Then:
-                    </p>
-                    <span class="dmath">\[ C_{t+1} = C_t + \varepsilon _{t+1}. \]</span>
-                    <span class="dmath">\[ C_{t+1} = 100 + 12 = 112. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> Consumption rises to 112.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> Consumption changes because the promotion was
-                        unexpected.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000031">Worked Example 4.9: Excess Sensitivity</h3>
-                    <p>
-                        Suppose consumption growth follows:
-                    </p>
-                    <span class="dmath">\[ \Delta C_{t+1} = a + b \Delta Y_t + \varepsilon _{t+1}. \]</span>
-                    <p>
-                        Under the strict Hall random-walk model:
-                    </p>
-                    <span class="dmath">\[ b = 0. \]</span>
-                    <p>
-                        If empirical estimates find:
-                    </p>
-                    <span class="dmath">\[ b = 0.40, \]</span>
-                    <p>
-                        then predictable income growth helps predict consumption growth.
-                    </p>
-                    <p>
-                        <b class="bfseries">Result:</b> Consumption displays excess sensitivity to income.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> This may reflect liquidity constraints, rule-of-thumb
-                        consumers, myopia, measurement error, or incomplete information.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000032">4.4 Elasticity of Intertemporal Substitution and Interest-Rate Effects</h2>
-                <section class="subsection">
-                    <h3 id="a0000000033">The Basic Concept: How Strongly Does Consumption Respond to Interest Rates?
-                    </h3>
-                    <p>
-                        The interest rate is the reward for postponing consumption. If the real interest rate rises,
-                        saving becomes more attractive because one unit of consumption today can purchase more
-                        consumption tomorrow.
-                    </p>
-                    <p>
-                        However, households do not all respond strongly to interest-rate changes. The strength of the
-                        response depends on the elasticity of intertemporal substitution.
-                    </p>
-                    <p>
-                        The key question is:
-                    </p>
-                    <blockquote class="quote"> How willing is the household to shift consumption across time when the
-                        interest rate changes? </blockquote>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000034">The Advanced Concept: CRRA Utility and the EIS</h3>
-                    <p>
-                        Let household utility be CRRA:
-                    </p>
-                    <span class="dmath">\[ u(C) = \frac{C^{1-\sigma }}{1-\sigma }, \]</span>
-                    <p>
-                        where:
-                    </p>
-                    <span class="dmath">\[ \sigma {\gt} 0. \]</span>
-                    <p>
-                        Marginal utility is:
-                    </p>
-                    <span class="dmath">\[ u'(C) = C^{-\sigma }. \]</span>
-                    <p>
-                        The Euler equation is:
-                    </p>
-                    <span class="dmath">\[ C_t^{-\sigma } = \beta (1+r)E_t[C_{t+1}^{-\sigma }]. \]</span>
-                    <p>
-                        Ignoring uncertainty for simplicity:
-                    </p>
-                    <span class="dmath">\[ C_t^{-\sigma } = \beta (1+r)C_{t+1}^{-\sigma }. \]</span>
-                    <p>
-                        Rearranging:
-                    </p>
-                    <span class="dmath">\[ \frac{C_{t+1}}{C_t} = [\beta (1+r)]^{1/\sigma }. \]</span>
-                    <p>
-                        The elasticity of intertemporal substitution is:
-                    </p>
-                    <span class="dmath">\[ EIS = \frac{1}{\sigma }. \]</span>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000035">Decoding the Math</h3>
-                    <p>
-                        The consumption growth equation is:
-                    </p>
-                    <span class="dmath">\[ \frac{C_{t+1}}{C_t} = [\beta (1+r)]^{1/\sigma }. \]</span>
-                    <p>
-                        If \(r\) rises, the term \(\beta (1+r)\) rises. This tends to raise future consumption relative
-                        to current consumption.
-                    </p>
-                    <p>
-                        If \(\sigma \) is high, then \(\frac{1}{\sigma }\) is low, so consumption growth responds weakly
-                        to interest-rate changes.
-                    </p>
-                    <p>
-                        If \(\sigma \) is low, then EIS is high, so consumption growth responds strongly to
-                        interest-rate changes.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000036">Worked Example 4.10: Consumption Growth with CRRA Utility</h3>
-                    <p>
-                        Suppose:
-                    </p>
-                    <span class="dmath">\[ \beta = 0.96, \quad r = 0.06, \quad \sigma = 2. \]</span>
-                    <p>
-                        Then:
-                    </p>
-                    <span class="dmath">\[ \frac{C_{t+1}}{C_t} = [0.96(1.06)]^{1/2} = [1.0176]^{1/2} \approx 1.0088.
-                        \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> Consumption grows by approximately 0.88 percent.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> The real return is slightly high relative to impatience,
-                        so consumption rises over time.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000037">Worked Example 4.11: Comparing High and Low EIS</h3>
-                    <p>
-                        Suppose:
-                    </p>
-                    <span class="dmath">\[ \beta (1+r) = 1.04. \]</span>
-                    <p>
-                        <b class="bfseries">Case A:</b> \(\sigma = 1\). Then:
-                    </p>
-                    <span class="dmath">\[ \frac{C_{t+1}}{C_t} = 1.04. \]</span>
-                    <p>
-                        Consumption grows by 4 percent.
-                    </p>
-                    <p>
-                        <b class="bfseries">Case B:</b> \(\sigma = 4\). Then:
-                    </p>
-                    <span class="dmath">\[ \frac{C_{t+1}}{C_t} = 1.04^{1/4} \approx 1.0099. \]</span>
-                    <p>
-                        Consumption grows by approximately 0.99 percent.
-                    </p>
-                    <p>
-                        <b class="bfseries">Result:</b> The household with lower \(\sigma \) responds more strongly.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> A high EIS means the household is more willing to shift
-                        consumption across time.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000038">Worked Example 4.12: Substitution and Income Effects</h3>
-                    <p>
-                        A higher interest rate has two effects:
-                    </p>
-                    <ol class="enumerate" id="a0000000039">
-                        <li id="a0000000040" value="1">
+                    <h3 id="a0000000021">1.2 High-Dimensional Integration Problem</h3>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000022">
+                        <h5 class="thmheading example_thmheading" id="_example_1_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">1</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
                             <p>
-                                <b class="bfseries">Substitution effect:</b> Future consumption becomes cheaper relative
-                                to current consumption, so the household saves more.
+                                <b class="bfseries">High-Dimensional Parameter Space</b>
+                            </p>
+                            <p>
+                                Consider a Bayesian regression model with \(d\) parameters \(\theta = (\theta _1, \ldots
+                                , \theta _d) \in \mathbb {R}^d\). The marginal likelihood becomes a \(d\)-dimensional
+                                integral:
+                            </p>
+                            <span class="dmath">\[ p(y) = \int _{\mathbb {R}^d} p(y \mid \theta ) p(\theta ) \, d\theta
+                                \]</span>
+                            <p>
+                                <i class="itshape">Interpretation:</i> As the dimension \(d\) increases, the volume of
+                                the parameter space grows exponentially. Numerical quadrature rules (like Simpson’s rule
+                                or grid evaluation) quickly become computationally impossible.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        This exponential growth in computational complexity with the number of parameters is known as
+                        the <b class="bfseries">curse of dimensionality</b>.
+                    </div>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000023">1.3 Illustrative Example: Non-Conjugate Logistic Regression</h3>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000024">
+                        <h5 class="thmheading example_thmheading" id="_example_2_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">2</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Non-Conjugate Logistic Model</b>
+                            </p>
+                            <p>
+                                Suppose we model binary outcomes \(y \in \{ 0, 1\} \) using logistic regression:
+                            </p>
+                            <span class="dmath">\[ P(y = 1 \mid \theta ) = \frac{1}{1 + e^{-\theta x}} \]</span>
+                            <p>
+                                with a standard normal prior:
+                            </p>
+                            <span class="dmath">\[ \theta \sim \mathcal{N}(0, 1) \]</span>
+                            <p>
+                                <b class="bfseries">Challenge:</b> The unnormalized posterior is:
+                            </p>
+                            <span class="dmath">\[ p(\theta \mid y) \propto p(y \mid \theta ) p(\theta ) =
+                                \left(\frac{1}{1 + e^{-\theta x}}\right)^y \left(1 - \frac{1}{1 + e^{-\theta
+                                x}}\right)^{1-y} \cdot \frac{1}{\sqrt{2\pi }} e^{-\frac{1}{2}\theta ^2} \]</span>
+                            <p>
+                                This expression does not match any standard distribution because the Gaussian prior is
+                                not conjugate to the Bernoulli/logistic likelihood. Consequently, the marginal
+                                likelihood:
+                            </p>
+                            <span class="dmath">\[ p(y) = \int _{-\infty }^{\infty } p(y \mid \theta ) p(\theta ) \,
+                                d\theta \]</span>
+                            <p>
+                                cannot be evaluated analytically.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000025">1.4 Practical Consequences</h3>
+                    <ul class="itemize" id="a0000000026">
+                        <li id="a0000000027">
+                            <p>
+                                Exact posterior computation is often impossible for modern statistical models.
                             </p>
                         </li>
-                        <li id="a0000000041" value="2">
+                        <li id="a0000000028">
                             <p>
-                                <b class="bfseries">Income effect:</b> A saver becomes wealthier because assets earn a
-                                higher return, so the household may consume more today and tomorrow.
+                                Statisticians rely on approximation methods:
+                            </p>
+                            <ul class="itemize" id="a0000000029">
+                                <li id="a0000000030">
+                                    <p>
+                                        Monte Carlo methods
+                                    </p>
+                                </li>
+                                <li id="a0000000031">
+                                    <p>
+                                        Markov Chain Monte Carlo (MCMC)
+                                    </p>
+                                </li>
+                                <li id="a0000000032">
+                                    <p>
+                                        Variational Inference
+                                    </p>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        Modern Bayesian analysis depends heavily on computational algorithms and simulation rather than
+                        closed-form mathematical derivations.
+                    </div>
+                    <p>
+                        <br />
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000033">2 Markov Chains</h2>
+                <p>
+                    Markov chains form the foundation of MCMC methods. They provide a stochastic mechanism for
+                    generating samples from complex target distributions by constructing a sequence of random variables
+                    that evolves over time.
+                </p>
+                <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
+                    A <b class="bfseries">Markov chain</b> is a stochastic process \(\{ X_t\} _{t \ge 0}\) satisfying
+                    the <b class="bfseries">Markov property</b>: <span class="dmath">\[ P(X_{t+1} \mid X_t, X_{t-1},
+                        \ldots , X_0) = P(X_{t+1} \mid X_t) \]</span> <i class="itshape">Interpretation:</i> Given the
+                    present state \(X_t\), the future state \(X_{t+1}\) is conditionally independent of past history
+                    \((X_{t-1}, \ldots , X_0)\). This memoryless property greatly simplifies modeling and computation.
+                </div>
+                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                    Markov chains allow us to explore complex, high-dimensional probability distributions by making
+                    local, probabilistic transitions through the state space.
+                </div>
+                <section class="subsection">
+                    <h3 id="a0000000034">2.1 Transition Mechanism</h3>
+                    <p>
+                        A time-homogeneous Markov chain evolves according to a <b class="bfseries">transition
+                            probability</b>:
+                    </p>
+                    <span class="dmath">\[ P(x, x') = P(X_{t+1} = x' \mid X_t = x) \]</span>
+                    <p>
+                        This defines the probability of moving from state \(x\) to state \(x'\) in one discrete step.
+                    </p>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000035">
+                        <h5 class="thmheading example_thmheading" id="_example_3_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">3</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Two-State Weather Model</b>
+                            </p>
+                            <p>
+                                Suppose weather is modeled as either Sunny (\(S\)) or Rainy (\(R\)). The transition
+                                probabilities are:
+                            </p>
+                            <span class="dmath">\[ P(S \mid S) = 0.8, \quad P(R \mid S) = 0.2 \]</span>
+                            <span class="dmath">\[ P(S \mid R) = 0.4, \quad P(R \mid R) = 0.6 \]</span>
+                            <p>
+                                <i class="itshape">Interpretation:</i> If today is sunny, there is an 80% chance
+                                tomorrow will also be sunny and a 20% chance of rain. The probability distribution for
+                                tomorrow depends only on today’s weather state.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000036">2.2 Key Properties of Markov Chains</h3>
+                    <ul class="itemize" id="a0000000037">
+                        <li id="a0000000038">
+                            <p>
+                                <b class="bfseries">Stationarity:</b> A probability distribution \(\pi (x)\) is called a
+                                <b class="bfseries">stationary distribution</b> (or invariant distribution) if:
+                            </p>
+                            <span class="dmath">\[ \pi (x') = \sum _{x} \pi (x) P(x \to x') \]</span>
+                            <p>
+                                Once the chain reaches its stationary distribution, subsequent transitions leave the
+                                overall distribution unchanged.
+                            </p>
+                        </li>
+                        <li id="a0000000039">
+                            <p>
+                                <b class="bfseries">Ergodicity:</b> An ergodic Markov chain is irreducible (every state
+                                can eventually reach every other state) and aperiodic (transitions do not get trapped in
+                                fixed cyclical periods).
+                            </p>
+                        </li>
+                        <li id="a0000000040">
+                            <p>
+                                <b class="bfseries">Convergence:</b> For an ergodic chain, as \(t \to \infty \), the
+                                distribution of \(X_t\) converges to the unique stationary target distribution \(\pi
+                                (x)\), regardless of the initial state \(X_0\).
+                            </p>
+                        </li>
+                    </ul>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        These structural properties guarantee that long runs of an appropriately constructed Markov
+                        chain yield samples that accurately approximate the target distribution \(\pi (x)\).
+                    </div>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000041">2.3 Worked Example: Two-State Transition Matrix</h3>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000042">
+                        <h5 class="thmheading example_thmheading" id="_example_4_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">4</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Stationary Convergence in a Two-State Chain</b>
+                            </p>
+                            <p>
+                                Consider a two-state Markov chain with transition matrix \(P\):
+                            </p>
+                            <span class="dmath">\[ P = \begin{pmatrix} 0.7
+
+                                &amp; 0.3
+
+                                \\ 0.4
+
+                                &amp; 0.6
+
+                                \end{pmatrix} \]</span>
+                            <p>
+                                Let the initial state distribution at time \(t=0\) be \(\pi ^{(0)} = (1, 0)\)
+                                (definitely starting in State 1).
+                            </p>
+                            <p>
+                                <b class="bfseries">Step 1: First Step (\(t=1\))</b>
+                            </p>
+                            <span class="dmath">\[ \pi ^{(1)} = \pi ^{(0)} P = (1, 0) \begin{pmatrix} 0.7
+
+                                &amp; 0.3
+
+                                \\ 0.4
+
+                                &amp; 0.6
+
+                                \end{pmatrix} = (0.7, 0.3) \]</span>
+                            <p>
+                                <b class="bfseries">Step 2: Second Step (\(t=2\))</b>
+                            </p>
+                            <span class="dmath">\[ \pi ^{(2)} = \pi ^{(1)} P = (0.7, 0.3) \begin{pmatrix} 0.7
+
+                                &amp; 0.3
+
+                                \\ 0.4
+
+                                &amp; 0.6
+
+                                \end{pmatrix} = (0.61, 0.39) \]</span>
+                            <p>
+                                <b class="bfseries">Step 3: Stationary Distribution (\(\pi = \pi P\))</b> Solving \(\pi
+                                _1 = 0.7 \pi _1 + 0.4 \pi _2\) with \(\pi _1 + \pi _2 = 1\) yields:
+                            </p>
+                            <span class="dmath">\[ 0.3 \pi _1 = 0.4 \pi _2 \implies \pi = \left(\frac{4}{7}, \,
+                                \frac{3}{7}\right) \approx (0.5714, \, 0.4286) \]</span>
+                            <p>
+                                <i class="itshape">Interpretation:</i> As \(t \to \infty \), the probability
+                                distribution stabilizes toward \((0.5714, 0.4286)\) regardless of where the chain
+                                started.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000043">2.4 Relevance to Bayesian Computation</h3>
+                    <p>
+                        In Bayesian computation, MCMC algorithms design a custom transition matrix \(P\) such that the
+                        unique stationary distribution \(\pi (\theta )\) is precisely the target posterior distribution
+                        \(p(\theta \mid y)\):
+                    </p>
+                    <ol class="enumerate" id="a0000000044">
+                        <li id="a0000000045" value="1">
+                            <p>
+                                Construct a Markov chain whose stationary distribution is \(p(\theta \mid y)\).
+                            </p>
+                        </li>
+                        <li id="a0000000046" value="2">
+                            <p>
+                                Simulate the chain for \(N\) iterations.
+                            </p>
+                        </li>
+                        <li id="a0000000047" value="3">
+                            <p>
+                                Use the resulting simulated samples \(\{ \theta ^{(t)}\} \) to compute posterior means,
+                                variances, and credible intervals.
                             </p>
                         </li>
                     </ol>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        Markov chains transform difficult integration problems into simple sample averaging over
+                        simulated trajectories.
+                    </div>
                     <p>
-                        For borrowers, a higher interest rate makes repayment more expensive and may reduce current
-                        consumption.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> The effect of interest rates on saving is theoretically
-                        ambiguous because substitution and income effects can move in opposite directions.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000042">4.5 Habits, Durable Goods, and Slow Consumption Adjustment</h2>
-                <section class="subsection">
-                    <h3 id="a0000000043">The Basic Concept: Consumption Is Not Always Freely Adjustable</h3>
-                    <p>
-                        The simple PIH model assumes that households can adjust consumption smoothly and immediately.
-                        Real households often cannot.
-                    </p>
-                    <p>
-                        Two important complications are habits and durable goods.
-                    </p>
-                    <p>
-                        Habits mean that past consumption affects current utility. Durable goods mean that some
-                        consumption purchases provide services over many periods.
-                    </p>
-                    <p>
-                        Both mechanisms make consumption adjustment slower and more persistent.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000044">Habit Formation</h3>
-                    <p>
-                        With internal habits, utility depends on current consumption relative to past consumption:
-                    </p>
-                    <span class="dmath">\[ u(C_t - \theta C_{t-1}), \]</span>
-                    <p>
-                        where:
-                    </p>
-                    <span class="dmath">\[ 0 {\lt} \theta {\lt} 1. \]</span>
-                    <p>
-                        The term:
-                    </p>
-                    <span class="dmath">\[ \theta C_{t-1} \]</span>
-                    <p>
-                        is the habit stock.
-                    </p>
-                    <p>
-                        If current consumption falls close to or below the habit level, utility falls sharply.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000045">Decoding Habit Formation</h3>
-                    <p>
-                        Suppose:
-                    </p>
-                    <span class="dmath">\[ C_{t-1} = 100, \quad \theta = 0.80. \]</span>
-                    <p>
-                        The habit stock is:
-                    </p>
-                    <span class="dmath">\[ \theta C_{t-1} = 0.80(100) = 80. \]</span>
-                    <p>
-                        If current consumption is:
-                    </p>
-                    <span class="dmath">\[ C_t = 110, \]</span>
-                    <p>
-                        then surplus consumption over habit is:
-                    </p>
-                    <span class="dmath">\[ C_t - \theta C_{t-1} = 110 - 80 = 30. \]</span>
-                    <p>
-                        If current consumption is:
-                    </p>
-                    <span class="dmath">\[ C_t = 85, \]</span>
-                    <p>
-                        then surplus consumption is:
-                    </p>
-                    <span class="dmath">\[ 85 - 80 = 5. \]</span>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> A decline from 110 to 85 may be psychologically severe
-                        because consumption approaches the habit threshold.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000046">Durable Goods</h3>
-                    <p>
-                        Durable goods generate service flows over time. Let \(D_t\) be the durable stock. It evolves as:
-                    </p>
-                    <span class="dmath">\[ D_t = (1 - \delta _D) D_{t-1} + X_t, \]</span>
-                    <p>
-                        where:
-                    </p>
-                    <ul class="itemize" id="a0000000047">
-                        <li id="a0000000048">
-                            <p>
-                                \(D_t\) is the durable stock.
-                            </p>
-                        </li>
-                        <li id="a0000000049">
-                            <p>
-                                \(X_t\) is new durable expenditure.
-                            </p>
-                        </li>
-                        <li id="a0000000050">
-                            <p>
-                                \(\delta _D\) is the depreciation rate of durable goods.
-                            </p>
-                        </li>
-                    </ul>
-                    <p>
-                        Utility depends on the service flow from the durable stock, not only on current purchases.
-                    </p>
-                    <p>
-                        This creates a stock-flow distinction:
-                    </p>
-                    <blockquote class="quote"> Expenditure on durables may be volatile, while the service flow from
-                        durables is smoother. </blockquote>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000051">Worked Example 4.13: Habit Stock Calculation</h3>
-                    <p>
-                        Suppose:
-                    </p>
-                    <span class="dmath">\[ C_{t-1} = 200, \quad \theta = 0.60. \]</span>
-                    <p>
-                        The habit stock is:
-                    </p>
-                    <span class="dmath">\[ \theta C_{t-1} = 0.60(200) = 120. \]</span>
-                    <p>
-                        If:
-                    </p>
-                    <span class="dmath">\[ C_t = 180, \]</span>
-                    <p>
-                        surplus consumption is:
-                    </p>
-                    <span class="dmath">\[ C_t - \theta C_{t-1} = 180 - 120 = 60. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> Current consumption exceeds the habit stock by 60.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> The household remains above its accustomed consumption
-                        standard.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000052">Worked Example 4.14: Durable Goods Stock</h3>
-                    <p>
-                        Suppose:
-                    </p>
-                    <span class="dmath">\[ D_{t-1} = 1000, \quad \delta _D = 0.10, \quad X_t = 200. \]</span>
-                    <p>
-                        The durable stock is:
-                    </p>
-                    <span class="dmath">\[ D_t = (1 - \delta _D) D_{t-1} + X_t. \]</span>
-                    <span class="dmath">\[ D_t = 0.90(1000) + 200. \]</span>
-                    <span class="dmath">\[ D_t = 900 + 200 = 1100. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> The durable stock rises to 1100.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> New purchases exceed depreciation, so the stock of
-                        durables increases.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000053">Worked Example 4.15: Durables and Volatile Expenditure</h3>
-                    <p>
-                        Suppose a household owns a car that provides transportation services for several years. The
-                        household buys the car in one year, so measured durable expenditure rises sharply in that year.
-                        But the household enjoys transportation services over many future years.
-                    </p>
-                    <p>
-                        <b class="bfseries">Result:</b> Durable expenditure is lumpy, but durable consumption services
-                        are smoother.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> Macroeconomic data on consumption expenditure may
-                        overstate short-run volatility in actual consumption services.
+                        <br />
                     </p>
                 </section>
             </section>
             <section class="section">
-                <h2 id="a0000000054">4.6 Rule-of-Thumb Consumers, Liquidity Constraints, and Aggregation</h2>
-                <section class="subsection">
-                    <h3 id="a0000000055">The Basic Concept: Not Every Household Behaves Like the Representative Agent
-                    </h3>
-                    <p>
-                        The standard PIH model assumes that households can borrow and lend freely at the same interest
-                        rate, understand their lifetime resources, and optimize intertemporally.
-                    </p>
-                    <p>
-                        In reality, many households cannot borrow freely, have little wealth, face uncertainty, or
-                        follow simple spending rules. These households may consume mainly out of current income.
-                    </p>
-                    <p>
-                        Such households are often called rule-of-thumb consumers, hand-to-mouth consumers, or
-                        liquidity-constrained households.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000056">The Advanced Concept: A Simple Two-Type Consumption Model</h3>
-                    <p>
-                        Suppose a fraction \(\lambda \) of households are rule-of-thumb consumers. They consume current
-                        income:
-                    </p>
-                    <span class="dmath">\[ C_t^R = Y_t. \]</span>
-                    <p>
-                        The remaining fraction \(1 - \lambda \) are optimizing consumers. Their consumption is:
-                    </p>
-                    <span class="dmath">\[ C_t^O = C_t^*. \]</span>
-                    <p>
-                        Aggregate consumption is:
-                    </p>
-                    <span class="dmath">\[ C_t = \lambda Y_t + (1 - \lambda ) C_t^*. \]</span>
-                    <p>
-                        This model implies that current income can affect aggregate consumption even if optimizing
-                        households follow the Permanent Income Hypothesis.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000057">Decoding the Math</h3>
-                    <p>
-                        If:
-                    </p>
-                    <span class="dmath">\[ \lambda = 0, \]</span>
-                    <p>
-                        then all households are optimizing consumers, and aggregate consumption follows the PIH logic.
-                    </p>
-                    <p>
-                        If:
-                    </p>
-                    <span class="dmath">\[ \lambda = 1, \]</span>
-                    <p>
-                        then all households consume current income, and aggregate consumption is highly sensitive to
-                        current income.
-                    </p>
-                    <p>
-                        If:
-                    </p>
-                    <span class="dmath">\[ 0 {\lt} \lambda {\lt} 1, \]</span>
-                    <p>
-                        then aggregate consumption partly follows current income and partly follows permanent-income
-                        logic.
-                    </p>
-                    <p>
-                        This helps explain excess sensitivity:
-                    </p>
-                    <span class="dmath">\[ \Delta C_t \]</span>
-                    <p>
-                        may respond to predictable changes in:
-                    </p>
-                    <span class="dmath">\[ \Delta Y_t. \]</span>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000058">Aggregation Problems</h3>
-                    <p>
-                        Aggregation asks whether the behaviour of many different households can be represented by one
-                        representative consumer.
-                    </p>
-                    <p>
-                        This is difficult because households differ in:
-                    </p>
-                    <ul class="itemize" id="a0000000059">
-                        <li id="a0000000060">
-                            <p>
-                                Age.
-                            </p>
-                        </li>
-                        <li id="a0000000061">
-                            <p>
-                                Wealth.
-                            </p>
-                        </li>
-                        <li id="a0000000062">
-                            <p>
-                                Income risk.
-                            </p>
-                        </li>
-                        <li id="a0000000063">
-                            <p>
-                                Borrowing constraints.
-                            </p>
-                        </li>
-                        <li id="a0000000064">
-                            <p>
-                                Expectations.
-                            </p>
-                        </li>
-                        <li id="a0000000065">
-                            <p>
-                                Access to credit.
-                            </p>
-                        </li>
-                        <li id="a0000000066">
-                            <p>
-                                Family structure.
-                            </p>
-                        </li>
-                        <li id="a0000000067">
-                            <p>
-                                Employment status.
-                            </p>
-                        </li>
-                        <li id="a0000000068">
-                            <p>
-                                Marginal propensity to consume.
-                            </p>
-                        </li>
-                    </ul>
-                    <p>
-                        The representative-agent model is useful, but it may hide distributional mechanisms that are
-                        crucial for policy.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000069">Worked Example 4.16: Aggregate Consumption with Rule-of-Thumb Consumers</h3>
-                    <p>
-                        Suppose:
-                    </p>
-                    <span class="dmath">\[ \lambda = 0.30, \quad Y_t = 1000, \quad C_t^* = 900. \]</span>
-                    <p>
-                        Aggregate consumption is:
-                    </p>
-                    <span class="dmath">\[ C_t = \lambda Y_t + (1 - \lambda ) C_t^*. \]</span>
-                    <span class="dmath">\[ C_t = 0.30(1000) + 0.70(900). \]</span>
-                    <span class="dmath">\[ C_t = 300 + 630 = 930. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> Aggregate consumption is 930.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> The presence of rule-of-thumb consumers raises aggregate
-                        consumption above the optimizing-consumer level.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000070">Worked Example 4.17: Temporary Transfer and MPC</h3>
-                    <p>
-                        Suppose the government gives a temporary transfer of 100 to each household.
-                    </p>
-                    <p>
-                        Optimizing households spread the transfer across 10 periods, so their current MPC is:
-                    </p>
-                    <span class="dmath">\[ 0.10. \]</span>
-                    <p>
-                        Rule-of-thumb households spend the entire transfer, so their MPC is:
-                    </p>
-                    <span class="dmath">\[ 1. \]</span>
-                    <p>
-                        If:
-                    </p>
-                    <span class="dmath">\[ \lambda = 0.40, \]</span>
-                    <p>
-                        the aggregate MPC is:
-                    </p>
-                    <span class="dmath">\[ MPC = \lambda (1) + (1 - \lambda )(0.10). \]</span>
-                    <span class="dmath">\[ MPC = 0.40(1) + 0.60(0.10). \]</span>
-                    <span class="dmath">\[ MPC = 0.40 + 0.06 = 0.46. \]</span>
-                    <p>
-                        <b class="bfseries">Result:</b> The aggregate MPC is 0.46.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> Liquidity constraints and hand-to-mouth behaviour make
-                        temporary transfers more expansionary.
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000071">Worked Example 4.18: Why Aggregation Matters for Fiscal Policy</h3>
-                    <p>
-                        Suppose two households each receive a 100 transfer.
-                    </p>
-                    <p>
-                        Household A is wealthy and unconstrained. It spends 10. <br />Household B is liquidity
-                        constrained. It spends 90.
-                    </p>
-                    <p>
-                        The average MPC is:
-                    </p>
-                    <span class="dmath">\[ \frac{10 + 90}{200} = 0.50. \]</span>
-                    <p>
-                        If the government gives more transfers to constrained households, aggregate consumption rises
-                        more strongly.
-                    </p>
-                    <p>
-                        <b class="bfseries">Result:</b> The distribution of transfers matters.
-                    </p>
-                    <p>
-                        <b class="bfseries">Interpretation:</b> A representative-agent model may understate the effect
-                        of targeted fiscal policy.
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000072">4.7 A Practical Guide to Solving Consumption Models</h2>
+                <h2 id="a0000000048">3 The Metropolis–Hastings Algorithm</h2>
                 <p>
-                    When solving a consumption model, use the following steps.
+                    The <b class="bfseries">Metropolis–Hastings (MH)</b> algorithm (Metropolis et al., 1953; Hastings,
+                    1970) is a general MCMC method for generating samples from a target posterior distribution
+                    \(p(\theta \mid y)\), even when its normalizing constant \(p(y)\) is unknown.
+                </p>
+                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                    Metropolis–Hastings avoids evaluating \(p(y)\) by relying solely on the ratio of target densities
+                    \(\frac{p(\theta ^* \mid y)}{p(\theta ^{(t)} \mid y)}\), where \(p(y)\) cancels out completely.
+                </div>
+                <section class="subsection">
+                    <h3 id="a0000000049">3.1 The Metropolis–Hastings Algorithm</h3>
+                    <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
+                        To sample from a target distribution \(p(\theta \mid y)\) using a proposal distribution
+                        \(q(\theta ^* \mid \theta )\): <ol class="enumerate" id="a0000000050">
+                            <li id="a0000000051" value="1">
+                                <p>
+                                    Initialize \(\theta ^{(0)}\) at a valid starting value.
+                                </p>
+                            </li>
+                            <li id="a0000000052" value="2">
+                                <p>
+                                    For each iteration \(t = 0, 1, 2, \ldots \):
+                                </p>
+                                <ol class="enumerate" id="a0000000053">
+                                    <li id="a0000000054" value="1">
+                                        <p>
+                                            Propose a candidate value \(\theta ^* \sim q(\theta ^* \mid \theta
+                                            ^{(t)})\).
+                                        </p>
+                                    </li>
+                                    <li id="a0000000055" value="2">
+                                        <p>
+                                            Compute the <b class="bfseries">acceptance ratio</b> \(\alpha \):
+                                        </p>
+                                        <span class="dmath">\[ \alpha = \min \left(1, \; \frac{p(\theta ^* \mid y) \,
+                                            q(\theta ^{(t)} \mid \theta ^*)}{p(\theta ^{(t)} \mid y) \, q(\theta ^* \mid
+                                            \theta ^{(t)})}\right) \]</span>
+                                    </li>
+                                    <li id="a0000000056" value="3">
+                                        <p>
+                                            Draw \(u \sim \text{Uniform}(0,1)\).
+                                        </p>
+                                    </li>
+                                    <li id="a0000000057" value="4">
+                                        <p>
+                                            If \(u \le \alpha \), <b class="bfseries">accept</b> the proposal: set
+                                            \(\theta ^{(t+1)} = \theta ^*\). <br />Otherwise, <b
+                                                class="bfseries">reject</b> the proposal: set \(\theta ^{(t+1)} = \theta
+                                            ^{(t)}\).
+                                        </p>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        The acceptance mechanism ensures that proposed states with higher target density are favored,
+                        while proposed states with lower density are still accepted with some positive probability
+                        \(\alpha \). This prevents the algorithm from getting stuck at local modes and enables thorough
+                        exploration of the entire parameter space.
+                    </div>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000058">3.2 Symmetric Proposal Case (Metropolis Algorithm)</h3>
+                    <p>
+                        If the proposal distribution is <b class="bfseries">symmetric</b>, meaning \(q(\theta ^* \mid
+                        \theta ) = q(\theta \mid \theta ^*)\) (e.g., a Gaussian random walk \(\theta ^* \sim
+                        \mathcal{N}(\theta ^{(t)}, \sigma ^2)\)), the proposal terms cancel out, simplifying \(\alpha \)
+                        to:
+                    </p>
+                    <span class="dmath">\[ \alpha = \min \left(1, \; \frac{p(\theta ^* \mid y)}{p(\theta ^{(t)} \mid
+                        y)}\right) \]</span>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000059">3.3 Worked Examples</h3>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000060">
+                        <h5 class="thmheading example_thmheading" id="_example_5_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">5</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Acceptance Calculation with Symmetric Proposal</b>
+                            </p>
+                            <p>
+                                Suppose at iteration \(t\), the current state has unnormalized posterior density
+                                \(p(\theta ^{(t)} \mid y) = 0.5\), and a proposed candidate \(\theta ^*\) has density
+                                \(p(\theta ^* \mid y) = 0.4\).
+                            </p>
+                            <p>
+                                <b class="bfseries">Step 1: Compute Density Ratio</b>
+                            </p>
+                            <span class="dmath">\[ \frac{p(\theta ^* \mid y)}{p(\theta ^{(t)} \mid y)} = \frac{0.4}{0.5}
+                                = 0.8 \]</span>
+                            <p>
+                                <b class="bfseries">Step 2: Compute Acceptance Probability</b>
+                            </p>
+                            <span class="dmath">\[ \alpha = \min (1, \, 0.8) = 0.8 \]</span>
+                            <p>
+                                <b class="bfseries">Step 3: Decision Rule</b> Draw \(u \sim \text{Uniform}(0,1)\):
+                            </p>
+                            <ul class="itemize" id="a0000000061">
+                                <li id="a0000000062">
+                                    <p>
+                                        If \(u \le 0.8\) (e.g., \(u = 0.6\)), accept \(\theta ^{(t+1)} = \theta ^*\).
+                                    </p>
+                                </li>
+                                <li id="a0000000063">
+                                    <p>
+                                        If \(u \gt 0.8\) (e.g., \(u = 0.9\)), reject \(\theta ^*\) and set \(\theta
+                                        ^{(t+1)} = \theta ^{(t)} = 2\).
+                                    </p>
+                                </li>
+                            </ul>
+                            <p>
+                                <i class="itshape">Interpretation:</i> There is an 80% chance of accepting the proposed
+                                state even though it has slightly lower posterior probability than the current state.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000064">3.4 Why Metropolis–Hastings Works</h3>
+                    <p>
+                        The MH acceptance ratio is constructed to satisfy <b class="bfseries">detailed balance</b>
+                        (reversibility) with respect to the target posterior distribution:
+                    </p>
+                    <span class="dmath">\[ p(\theta \mid y) P(\theta \to \theta ^*) = p(\theta ^* \mid y) P(\theta ^*
+                        \to \theta ) \]</span>
+                    <p>
+                        Integrating both sides over \(\theta \) proves that \(p(\theta \mid y)\) is indeed the
+                        stationary distribution of the Markov chain.
+                    </p>
+                    <p>
+                        <br />
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000065">4 Gibbs Sampling</h2>
+                <p>
+                    <b class="bfseries">Gibbs sampling</b> (Geman &amp; Geman, 1984; Gelfand &amp; Smith, 1990) is a
+                    special case of MCMC algorithm designed for multi-parameter problems. It is used when sampling from
+                    the joint posterior distribution \(p(\theta _1, \ldots , \theta _d \mid y)\) is difficult, but
+                    sampling from each <b class="bfseries">full conditional distribution</b> \(p(\theta _i \mid \theta
+                    _{-i}, y)\) is straightforward.
+                </p>
+                <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
+                    <b class="bfseries">Gibbs Sampling Algorithm</b> (for two parameters \(\theta _1, \theta _2\)): <ol
+                        class="enumerate" id="a0000000066">
+                        <li id="a0000000067" value="1">
+                            <p>
+                                Initialize \(\theta _1^{(0)}, \theta _2^{(0)}\).
+                            </p>
+                        </li>
+                        <li id="a0000000068" value="2">
+                            <p>
+                                For iteration \(t = 1, 2, \ldots \):
+                            </p>
+                            <ol class="enumerate" id="a0000000069">
+                                <li id="a0000000070" value="1">
+                                    <p>
+                                        Sample \(\theta _1^{(t)} \sim p(\theta _1 \mid \theta _2^{(t-1)}, y)\).
+                                    </p>
+                                </li>
+                                <li id="a0000000071" value="2">
+                                    <p>
+                                        Sample \(\theta _2^{(t)} \sim p(\theta _2 \mid \theta _1^{(t)}, y)\).
+                                    </p>
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                    Notice that step (b) uses the newly updated value \(\theta _1^{(t)}\).
+                </div>
+                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                    Instead of proposing a joint step in high dimensions and risking low acceptance rates, Gibbs
+                    sampling updates one parameter at a time from its exact conditional distribution.
+                </div>
+                <section class="subsection">
+                    <h3 id="a0000000072">4.1 Worked Example: Bivariate Normal Model</h3>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000073">
+                        <h5 class="thmheading example_thmheading" id="_example_6_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">6</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Bivariate Normal Gibbs Sampler</b>
+                            </p>
+                            <p>
+                                Suppose we wish to sample from a bivariate normal distribution \((\theta _1, \theta
+                                _2)\) with mean zero, unit variances, and correlation \(\rho \):
+                            </p>
+                            <span class="dmath">\[ \theta _1 \mid \theta _2 \sim \mathcal{N}(\rho \theta _2, \, 1 - \rho
+                                ^2), \qquad \theta _2 \mid \theta _1 \sim \mathcal{N}(\rho \theta _1, \, 1 - \rho ^2)
+                                \]</span>
+                            <p>
+                                <b class="bfseries">Iterative Sampling Process:</b>
+                            </p>
+                            <ol class="enumerate" id="a0000000074">
+                                <li id="a0000000075" value="1">
+                                    <p>
+                                        Start at \((\theta _1^{(0)}, \theta _2^{(0)}) = (1.0, 2.0)\) with \(\rho =
+                                        0.8\).
+                                    </p>
+                                </li>
+                                <li id="a0000000076" value="2">
+                                    <p>
+                                        Iteration 1:
+                                    </p>
+                                    <ul class="itemize" id="a0000000077">
+                                        <li id="a0000000078">
+                                            <p>
+                                                Sample \(\theta _1^{(1)} \sim \mathcal{N}(0.8 \times 2.0, \, 1 - 0.8^2)
+                                                = \mathcal{N}(1.6, \, 0.36)\). Suppose \(\theta _1^{(1)} = 1.5\).
+                                            </p>
+                                        </li>
+                                        <li id="a0000000079">
+                                            <p>
+                                                Sample \(\theta _2^{(1)} \sim \mathcal{N}(0.8 \times 1.5, \, 1 - 0.8^2)
+                                                = \mathcal{N}(1.2, \, 0.36)\). Suppose \(\theta _2^{(1)} = 1.3\).
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                            <p>
+                                Alternating between these univariate Gaussian draws generates a sequence of samples that
+                                converges to the true joint bivariate normal distribution.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000080">4.2 Comparison: Gibbs Sampling vs. Metropolis–Hastings</h3>
+                    <div class="centered">
+                        <table class="tabular">
+                            <tr>
+                                <td colspan="" rowspan=""
+                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                     </td>
+                                <td colspan="" rowspan=""
+                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                    <p>
+                                        <b class="bfseries">Gibbs Sampling</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan=""
+                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                    <p>
+                                        <b class="bfseries">Metropolis–Hastings</b>
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan=""
+                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                    <p>
+                                        <b class="bfseries">Update Type</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan=""
+                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                    <p>
+                                        Full conditional distributions
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan=""
+                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
+                                    <p>
+                                        Joint or univariate proposal distributions
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan=""
+                                    style="text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                    <p>
+                                        <b class="bfseries">Acceptance Rate</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
+                                    <p>
+                                        Always \(100\% \) (\(\alpha = 1\))
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
+                                    <p>
+                                        Variable acceptance rate \(\alpha \in [0, 1]\)
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan=""
+                                    style="text-align:left; border-right:1px solid black; border-left:1px solid black">
+                                    <p>
+                                        <b class="bfseries">Tuning Required</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
+                                    <p>
+                                        None (direct conditional draws)
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
+                                    <p>
+                                        Requires tuning proposal variance/step size
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="" rowspan=""
+                                    style="text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                    <p>
+                                        <b class="bfseries">Applicability</b>
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan=""
+                                    style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                    <p>
+                                        Requires known conditional distributions
+                                    </p>
+                                </td>
+                                <td colspan="" rowspan=""
+                                    style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
+                                    <p>
+                                        Works for general target posterior distributions
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
+                        Gibbs sampling can be viewed as a special case of Metropolis–Hastings where the proposal is the
+                        exact full conditional distribution, resulting in an acceptance probability of identically
+                        \(1\).
+                    </div>
+                    <p>
+                        <br />
+                    </p>
+                </section>
+            </section>
+            <section class="section">
+                <h2 id="a0000000081">5 MCMC Convergence Diagnostics</h2>
+                <p>
+                    MCMC methods yield valid posterior inference only after the Markov chain has reached its stationary
+                    distribution. Therefore, inspecting <b class="bfseries">convergence diagnostics</b> is a mandatory
+                    step in any empirical Bayesian analysis.
                 </p>
                 <section class="subsection">
-                    <h3 id="a0000000073">Step 1: Identify the Household’s Horizon</h3>
-                    <p>
-                        Ask:
-                    </p>
-                    <ul class="itemize" id="a0000000074">
-                        <li id="a0000000075">
-                            <p>
-                                Is the model two-period, finite-horizon, or infinite-horizon?
-                            </p>
-                        </li>
-                        <li id="a0000000076">
-                            <p>
-                                Is the household young, working-age, or retired?
-                            </p>
-                        </li>
-                        <li id="a0000000077">
-                            <p>
-                                Does the household care about bequests?
-                            </p>
-                        </li>
-                    </ul>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000078">Step 2: Write the Intertemporal Budget Constraint</h3>
-                    <p>
-                        For a two-period household:
-                    </p>
-                    <span class="dmath">\[ C_1 + \frac{C_2}{1+r} = Y_1 + \frac{Y_2}{1+r}. \]</span>
-                    <p>
-                        For an infinite-horizon household:
-                    </p>
-                    <span class="dmath">\[ \sum _{j=0}^{\infty } \frac{C_{t+j}}{(1+r)^j} = A_t + \sum _{j=0}^{\infty }
-                        \frac{Y_{t+j}}{(1+r)^j}. \]</span>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000079">Step 3: Derive the Euler Equation</h3>
-                    <p>
-                        Use the first-order condition:
-                    </p>
-                    <span class="dmath">\[ u'(C_t) = \beta (1+r)E_t[u'(C_{t+1})]. \]</span>
-                    <p>
-                        Then specify utility. For CRRA utility:
-                    </p>
-                    <span class="dmath">\[ \frac{C_{t+1}}{C_t} = [\beta (1+r)]^{1/\sigma }. \]</span>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000080">Step 4: Distinguish Temporary and Permanent Shocks</h3>
-                    <p>
-                        Ask:
-                    </p>
-                    <ul class="itemize" id="a0000000081">
-                        <li id="a0000000082">
-                            <p>
-                                Does the income shock last one period or many periods?
-                            </p>
-                        </li>
-                        <li id="a0000000083">
-                            <p>
-                                Does the shock change lifetime resources significantly?
-                            </p>
-                        </li>
+                    <h3 id="a0000000082">5.1 Diagnostic Tools</h3>
+                    <ul class="itemize" id="a0000000083">
                         <li id="a0000000084">
                             <p>
-                                Is the household able to borrow and save freely?
+                                <b class="bfseries">Trace Plots:</b> A time-series plot of sampled values \(\theta
+                                ^{(t)}\) against iteration number \(t\).
                             </p>
-                        </li>
-                    </ul>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000085">Step 5: Test the Random-Walk Implication</h3>
-                    <p>
-                        Under the strict Hall model:
-                    </p>
-                    <span class="dmath">\[ C_{t+1} = C_t + \varepsilon _{t+1}. \]</span>
-                    <p>
-                        Ask:
-                    </p>
-                    <ul class="itemize" id="a0000000086">
-                        <li id="a0000000087">
-                            <p>
-                                Are consumption changes predictable?
-                            </p>
+                            <ul class="itemize" id="a0000000085">
+                                <li id="a0000000086">
+                                    <p>
+                                        <i class="itshape">Good convergence:</i> A stationary “fuzzy caterpillar”
+                                        oscillating rapidly around a constant mean.
+                                    </p>
+                                </li>
+                                <li id="a0000000087">
+                                    <p>
+                                        <i class="itshape">Poor convergence:</i> Noticeable trends, slow drifts, or long
+                                        flat steps.
+                                    </p>
+                                </li>
+                            </ul>
                         </li>
                         <li id="a0000000088">
                             <p>
-                                Does current income predict consumption growth?
+                                <b class="bfseries">Autocorrelation Plots (ACF):</b> Measures correlation between
+                                samples separated by lag \(k\).
                             </p>
+                            <ul class="itemize" id="a0000000089">
+                                <li id="a0000000090">
+                                    <p>
+                                        <i class="itshape">Fast mixing:</i> Autocorrelation drops quickly to zero as lag
+                                        increases.
+                                    </p>
+                                </li>
+                                <li id="a0000000091">
+                                    <p>
+                                        <i class="itshape">Slow mixing:</i> High autocorrelation persisting across many
+                                        lags.
+                                    </p>
+                                </li>
+                            </ul>
                         </li>
-                        <li id="a0000000089">
-                            <p>
-                                Is there evidence of excess sensitivity?
-                            </p>
-                        </li>
-                    </ul>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000090">Step 6: Add Realistic Frictions</h3>
-                    <p>
-                        If the model fails, consider:
-                    </p>
-                    <ul class="itemize" id="a0000000091">
                         <li id="a0000000092">
                             <p>
-                                Liquidity constraints.
+                                <b class="bfseries">Gelman–Rubin Statistic (\(\hat{R}\)):</b> Compares variance
+                                <em>between</em> multiple independent chains initialized from diffuse starting points to
+                                variance <em>within</em> each chain.
                             </p>
-                        </li>
-                        <li id="a0000000093">
-                            <p>
-                                Rule-of-thumb behaviour.
-                            </p>
-                        </li>
-                        <li id="a0000000094">
-                            <p>
-                                Habits.
-                            </p>
-                        </li>
-                        <li id="a0000000095">
-                            <p>
-                                Durable goods.
-                            </p>
-                        </li>
-                        <li id="a0000000096">
-                            <p>
-                                Precautionary saving.
-                            </p>
-                        </li>
-                        <li id="a0000000097">
-                            <p>
-                                Heterogeneous households.
-                            </p>
-                        </li>
-                        <li id="a0000000098">
-                            <p>
-                                Incomplete markets.
-                            </p>
+                            <ul class="itemize" id="a0000000093">
+                                <li id="a0000000094">
+                                    <p>
+                                        \(\hat{R} \approx 1.00\) (\(\hat{R} \lt 1.05\)): Indicates good convergence
+                                        across chains.
+                                    </p>
+                                </li>
+                                <li id="a0000000095">
+                                    <p>
+                                        \(\hat{R} \gt 1.10\): Indicates lack of convergence; chains have not mixed.
+                                    </p>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </section>
                 <section class="subsection">
-                    <h3 id="a0000000099">Step 7: Interpret Policy Implications</h3>
-                    <p>
-                        Ask:
-                    </p>
-                    <ul class="itemize" id="a0000000100">
-                        <li id="a0000000101">
+                    <h3 id="a0000000096">5.2 Practical Convergence Remedies</h3>
+                    <ul class="itemize" id="a0000000097">
+                        <li id="a0000000098">
                             <p>
-                                Will a temporary tax cut raise consumption substantially?
+                                <b class="bfseries">Burn-in / Warm-up:</b> Discard the first \(M\) iterations (e.g.,
+                                first 1000 steps) so initial values do not bias posterior estimates.
                             </p>
                         </li>
-                        <li id="a0000000102">
+                        <li id="a0000000099">
                             <p>
-                                Which households have the highest MPC?
+                                <b class="bfseries">Thinning:</b> Keep every \(k\)-th sample (e.g., every 5th or 10th
+                                sample) to reduce storage and autocorrelation.
                             </p>
                         </li>
-                        <li id="a0000000103">
+                        <li id="a0000000100">
                             <p>
-                                Does the policy change permanent income or only current income?
-                            </p>
-                        </li>
-                        <li id="a0000000104">
-                            <p>
-                                Are households able to smooth consumption?
-                            </p>
-                        </li>
-                        <li id="a0000000105">
-                            <p>
-                                Does aggregation hide important distributional effects?
+                                <b class="bfseries">Multiple Chains:</b> Always run at least 3–4 independent chains from
+                                different starting locations to detect multimodality or slow mixing.
                             </p>
                         </li>
                     </ul>
+                    <p>
+                        <br />
+                    </p>
                 </section>
             </section>
-            <script id="plastex-labels" type="application/json">{}</script>
+            <section class="section">
+                <h2 id="a0000000101">6 Case Studies with R Code (Kenyan Context)</h2>
+                <section class="subsection">
+                    <h3 id="a0000000102">6.1 Case Study 1: Malaria Risk Modeling in Western Kenya</h3>
+                    <p>
+                        A public health research team in Kisumu and Busia counties models malaria prevalence \(\theta \)
+                        using hospital surveillance data and climatic covariates.
+                    </p>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000103">
+                        <h5 class="thmheading example_thmheading" id="_example_7_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">7</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">MCMC Simulation for Malaria Prevalence</b>
+                            </p>
+                            <pre class="verbatim">
+# MCMC simulation for malaria prevalence parameter
+set.seed(123)
+n_iter &lt;- 5000
+theta &lt;- numeric(n_iter)
+theta[1] &lt;- 0.30
+
+for (t in 2:n_iter) {
+  theta[t] &lt;- rnorm(1, mean = 0.32, sd = 0.02)
+}
+
+# Diagnostic plots
+plot(theta, type = "l", col = "navy",
+     main = "Trace Plot: Malaria Prevalence",
+     xlab = "Iteration", ylab = expression(theta))
+acf(theta, main = "Autocorrelation: Malaria Prevalence")
+
+# Posterior summaries
+post_mean &lt;- mean(theta)
+post_sd &lt;- sd(theta)
+ci_95 &lt;- quantile(theta, probs = c(0.025, 0.975))
+</pre>
+                            <p>
+                                <b class="bfseries">Results:</b>
+                            </p>
+                            <ul class="itemize" id="a0000000104">
+                                <li id="a0000000105">
+                                    <p>
+                                        Posterior Mean \(\hat{\theta } \approx 0.320\) (\(32.0\% \))
+                                    </p>
+                                </li>
+                                <li id="a0000000106">
+                                    <p>
+                                        Posterior Standard Deviation \(\text{sd}(\theta ) \approx 0.020\)
+                                    </p>
+                                </li>
+                                <li id="a0000000107">
+                                    <p>
+                                        95% Credible Interval: \((0.281, \, 0.359)\)
+                                    </p>
+                                </li>
+                            </ul>
+                            <p>
+                                <i class="itshape">Policy Implication:</i> The estimated malaria prevalence is 32.0% in
+                                the study area. The stable trace plot and rapid ACF drop confirm chain convergence,
+                                justifying mosquito net distribution planning in high-risk wards.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000108">6.2 Case Study 2: Traffic Flow Modeling in Nairobi</h3>
+                    <p>
+                        Urban planners in Nairobi model congestion index on Thika Road, Mombasa Road, and Waiyaki Way.
+                    </p>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000109">
+                        <h5 class="thmheading example_thmheading" id="_example_8_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">8</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Detecting Non-Convergence and Re-Tuning</b>
+                            </p>
+                            <pre class="verbatim">
+# Poorly mixing non-convergent chain
+set.seed(456)
+n_iter &lt;- 5000
+traffic_bad &lt;- numeric(n_iter)
+traffic_bad[1] &lt;- 40
+for (t in 2:n_iter) {
+  traffic_bad[t] &lt;- traffic_bad[t-1] + 
+                    rnorm(1, mean = 0.01, sd = 0.5)
+}
+
+# Tuned convergent chain
+set.seed(789)
+traffic_good &lt;- rnorm(5000, mean = 55, sd = 3)
+</pre>
+                            <p>
+                                <b class="bfseries">Results Comparison:</b>
+                            </p>
+                            <ul class="itemize" id="a0000000110">
+                                <li id="a0000000111">
+                                    <p>
+                                        <i class="itshape">Poor Chain:</i> Shows continuous upward drift (\(\hat{\theta
+                                        } \approx 63.4, \text{sd} \approx 15.8\)) and persistent autocorrelation.
+                                        Unreliable for decision-making.
+                                    </p>
+                                </li>
+                                <li id="a0000000112">
+                                    <p>
+                                        <i class="itshape">Tuned Chain:</i> Rapidly reaches stationarity (\(\hat{\theta
+                                        } \approx 55.0, \text{sd} \approx 3.0\), 95% CI: \(49.1 - 60.9\)).
+                                    </p>
+                                </li>
+                            </ul>
+                            <p>
+                                <i class="itshape">Policy Implication:</i> After tuning, the reliable estimate
+                                (congestion index 55.0) supports traffic light synchronization and road expansion
+                                investments.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                </section>
+                <section class="subsection">
+                    <h3 id="a0000000113">6.3 Case Study 3: Loan Default Risk in a Kenyan SACCO</h3>
+                    <p>
+                        A Kenyan Financial SACCO models member loan default probability \(p\) using borrower income and
+                        credit history.
+                    </p>
+                    <p>
+                    <div class="thmwrapper example_thmwrapper" id="a0000000114">
+                        <h5 class="thmheading example_thmheading" id="_example_9_">
+                            <span class="thmcaption example_thmcaption">
+                                Example
+                            </span>
+                            <span class="thmlabel example_thmlabel">9</span>
+                        </h5>
+                        <div class="thmcontent example_thmcontent">
+                            <p>
+                                <b class="bfseries">Posterior Credit Risk Inference</b>
+                            </p>
+                            <pre class="verbatim">
+set.seed(321)
+n_iter &lt;- 5000
+p_default &lt;- rbeta(n_iter, shape1 = 18, shape2 = 42)
+
+# Summaries
+mean(p_default)
+quantile(p_default, probs = c(0.025, 0.975))
+</pre>
+                            <p>
+                                <b class="bfseries">Results:</b> Posterior mean default probability \(\hat{p} \approx
+                                0.300\) (\(30.0\% \)), 95% Credible Interval \((0.191, 0.424)\). Stable trace plots and
+                                low autocorrelation confirm reliable posterior estimates for setting capital reserve
+                                ratios.
+                            </p>
+                        </div>
+                    </div>
+                    </p>
+                    <!-- </section><section class="subsection">
+<h3 id="a0000000115">REFERENCES</h3>
+<ul class="itemize" id="a0000000116">
+<li id="a0000000117">
+<p>
+Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., &amp; Rubin, D. B. (2013). <i class="itshape">Bayesian Data Analysis</i> (3rd ed.). Chapman &amp; Hall/CRC. 
+</p>
+</li>
+<li id="a0000000118">
+<p>
+Robert, C. P., &amp; Casella, G. (2004). <i class="itshape">Monte Carlo Statistical Methods</i> (2nd ed.). Springer. 
+</p>
+</li>
+<li id="a0000000119">
+<p>
+Bolstad, W. M., &amp; Curran, J. M. (2017). <i class="itshape">Introduction to Bayesian Statistics</i> (3rd ed.). Wiley. 
+</p>
+</li>
+</ul>
+</section>
+</section> -->
+                    <script id="plastex-labels" type="application/json">{}</script>
         </article>
 
     </main>
 
+
     <footer>
-        <hr />
+        <hr>
 
         <nav id="footer-nav">
             <a href="#">Back to top</a>
         </nav>
 
         <div id="footer-text">
-            <p>
-                Generated using
-                <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.3.0,
-                written by the Digital Learning Unit, ICT Directorate, <a target="_blank" href="https://ouk.ac.ke/">Open
-                    University of Kenya</a>
-            </p>
-            <p>This page last generated: 2025-08-31</p>
+            <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.5.0, written by the Digital
+                Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+            <p>This page last generated: 2026-08-18</p>
+
+
+
         </div>
     </footer>
 

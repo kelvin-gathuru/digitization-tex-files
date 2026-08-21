@@ -1,0 +1,398 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+\usepackage{amsmath,amssymb}
+
+\begin{document}
+
+\section*{Fuels, Combustion, and Air--Fuel Ratios}
+
+% ============================================================
+\section{Fuel Definitions and Classification}
+% ============================================================
+
+\subsection{What is a Fuel?}
+A fuel is a combustible substance that releases heat energy when it undergoes combustion (a chemical reaction with oxygen) under controlled conditions. Traditionally, fuels were defined as combustible organic substances used solely or mainly for the production of useful heat.
+
+\textbf{Key Characteristics of Fuels:}
+\begin{itemize}
+    \item Contain stored chemical energy
+    \item Release energy through combustion
+    \item Used for heating, power generation, or transportation
+    \item Can be natural (occurring in nature) or manufactured
+\end{itemize}
+
+\subsection{Classification of Fuels}
+Fuels can be classified in several ways:
+
+\subsubsection{By Physical State (State of Aggregation)}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|p{5.5cm}|p{6.5cm}|}
+\hline
+\textbf{Type} & \textbf{Examples} & \textbf{Typical Applications} \\
+\hline
+Solid Fuels & Wood, coal, lignite, peat, coke, biomass & Power generation, industrial heating, steam locomotives \\
+\hline
+Liquid Fuels & Petroleum oils, diesel, gasoline, kerosene, fuel oil, ethanol & Transportation (IC engines), heating, gas turbines \\
+\hline
+Gaseous Fuels & Natural gas, LPG, hydrogen, biogas, producer gas & Heating, power generation, IC engines, domestic use \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{By Origin}
+\begin{itemize}
+    \item \textbf{Natural (Primary) Fuels:} Occur in nature (coal, crude oil, natural gas, wood, peat).
+    \item \textbf{Manufactured (Secondary) Fuels:} Produced from natural fuels through processing:
+    \begin{itemize}
+        \item \textit{From Coal:} Coke, charcoal, coal gas
+        \item \textit{From Petroleum:} Petrol (gasoline), diesel, kerosene, LPG, fuel oil
+        \item \textit{From Biomass:} Biogas, producer gas
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{By Occurrence in Nature}
+\begin{itemize}
+    \item \textbf{Fossil Fuels:} Formed from organic remains over millions of years (coal, petroleum, natural gas).
+    \item \textbf{Renewable Fuels:} Can be replenished naturally (wood, biomass, biogas).
+\end{itemize}
+
+\subsubsection{Based on Combustion Characteristics}
+\begin{itemize}
+    \item \textbf{Spark Ignition (SI) Engine Fuels:} Petrol, alcohol, gas (require a spark for ignition).
+    \item \textbf{Compression Ignition (CI) Engine Fuels:} Diesel (ignite by the heat of compression).
+\end{itemize}
+
+\subsection{Calorific Value (Heating Value)}
+The energy content of a fuel is specified as its \emph{calorific value} --- the amount of heat released during complete combustion of a unit mass of fuel.
+
+\begin{itemize}
+    \item \textbf{Higher Calorific Value (HCV) / Gross Calorific Value (GCV):}
+    \begin{itemize}
+        \item Includes the latent heat of vaporization of water vapor in combustion products.
+        \item Assumes all products are cooled to initial temperature and water vapor is condensed.
+        \item Represents maximum theoretical heat release (also called "Gross Heating Value").
+    \end{itemize}
+    \item \textbf{Lower Calorific Value (LCV) / Net Calorific Value (NCV):}
+    \begin{itemize}
+        \item Excludes the latent heat of vaporization of water.
+        \item Assumes water leaves as vapor (as in actual engines and furnaces).
+        \item Represents practical application heat release (also called "Net Heating Value").
+    \end{itemize}
+\end{itemize}
+
+\textbf{Relationship:}
+\[ \mathrm{HCV} = \mathrm{LCV} + m \times h_{\mathrm{fg}} \]
+where $m$ is the mass of water vapor formed per unit mass of fuel, and $h_{\mathrm{fg}}$ is the latent heat of vaporization of water ($\approx 2442\,\text{kJ/kg}$ at $25^\circ\text{C}$). For fuels containing no chemically bound hydrogen, both calorific values are equal.
+
+\textbf{Units of Calorific Value:}
+\begin{itemize}
+    \item Solid/Liquid Fuels: $\text{kJ/kg}$ or $\text{MJ/kg}$
+    \item Gaseous Fuels: $\text{kJ/m}^3$ or $\text{MJ/m}^3$ (at specified temperature and pressure)
+\end{itemize}
+
+\subsection{Dulong's Formula for Calorific Value}
+For solid and liquid fuels where ultimate analysis is known, Dulong's formula provides an estimate of the higher calorific value (in $\text{kJ/kg}$):
+\[ \mathrm{HCV} = 33800\,C + 144000\left(H - \frac{O}{8}\right) + 9270\,S \]
+where $C, H, O, S$ are mass fractions of carbon, hydrogen, oxygen, and sulfur (in decimal form). The term $(H - O/8)$ accounts for hydrogen chemically bound with oxygen as moisture, which is unavailable for combustion.
+
+\subsection{Typical Calorific Values of Common Fuels}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Fuel} & \textbf{Approximate HCV (MJ/kg)} & \textbf{Approximate LCV (MJ/kg)} \\
+\hline
+Wood (dry) & 16--19 & 15--18 \\
+Peat & 14--16 & 13--15 \\
+Lignite & 16--20 & 15--19 \\
+Bituminous coal & 28--33 & 27--32 \\
+Anthracite & 32--36 & 31--35 \\
+Petroleum & 45--46 & 42--44 \\
+Diesel & 44--45 & 41--42 \\
+Gasoline (Petrol) & 46--47 & 43--44 \\
+Natural Gas (Methane) & 52--55 ($\text{MJ/m}^3$) & 47--50 ($\text{MJ/m}^3$) \\
+Hydrogen & 142 & 120 \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{Fuel Analysis Methods}
+% ============================================================
+
+Fuel characterization concerns the analysis and energy content determination. Two primary methods are used: proximate analysis and ultimate analysis.
+
+\subsection{Proximate Analysis}
+Proximate analysis separates fuel components into four groups: moisture, volatile matter, fixed carbon, and ash.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|p{3.5cm}|p{5cm}|p{6cm}|}
+\hline
+\textbf{Component} & \textbf{Definition} & \textbf{Significance} \\
+\hline
+Moisture (M) & Water content in fuel & Adds weight without heating value; affects combustion; increases transport cost \\
+\hline
+Volatile Matter (VM) & Gases/vapors driven off during heating to 950$^\circ$C without air & Represents easily combustible portion; high VM means rapid combustion and longer flame \\
+\hline
+Fixed Carbon (FC) & Non-volatile solid combustible material remaining & Burns slowly as char; main source of solid heat release \\
+\hline
+Ash (A) & Inorganic residue remaining after complete combustion & Non-combustible residue; disposal issue; can cause slagging and fouling \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Determination Methods (Proximate Analysis)}
+
+\textbf{Moisture Content Determination:}
+\begin{enumerate}
+    \item Take $1\,\text{g}$ of fuel sample in a clean, dry crucible.
+    \item Heat in an oven at 105--110$^\circ$C for 1 hour.
+    \item Cool in a desiccator and weigh.
+\end{enumerate}
+\[ \text{Moisture \%} = \frac{\text{Loss in weight}}{\text{Initial weight of sample}} \times 100 \]
+
+\textbf{Ash Content Determination:}
+\begin{enumerate}
+    \item After volatile matter determination, heat sample in a muffle furnace at 700--750$^\circ$C until complete combustion.
+    \item Cool in a desiccator and weigh residue.
+\end{enumerate}
+\[ \text{Ash \%} = \frac{\text{Weight of residue}}{\text{Initial weight of sample}} \times 100 \]
+
+\textbf{Fixed Carbon Calculation:}
+\[ \text{FC \%} = 100 - (\text{Moisture \%} + \text{VM \%} + \text{Ash \%}) \]
+
+\subsubsection{Example Proximate Analysis Data}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Material} & \textbf{Moisture (\%)} & \textbf{Volatile Matter (\%)} & \textbf{Fixed Carbon (\%)} & \textbf{Ash (\%)} \\
+\hline
+Wood (dry) & 10--15 & 70--80 & 15--20 & 1--3 \\
+Peat & 20--40 & 50--60 & 20--30 & 5--10 \\
+Lignite & 30--45 & 40--50 & 25--35 & 5--15 \\
+Bituminous coal & 2--15 & 20--40 & 45--60 & 5--15 \\
+Anthracite & 1--5 & 5--10 & 80--90 & 5--10 \\
+Walnut shell & 11.00 & 71.80 & 15.90 & 1.30 \\
+Almond shell & 10.00 & 80.30 & 9.10 & 0.60 \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Ultimate Analysis}
+Ultimate analysis determines the elemental composition of fuel: C, H, S, N, and O (by difference).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|p{6cm}|}
+\hline
+\textbf{Element} & \textbf{Symbol} & \textbf{Coal Range (\%)} & \textbf{Significance} \\
+\hline
+Carbon & C & 60--95\% & Main heat-producing element \\
+Hydrogen & H & 2--6\% & Contributes to heat release; forms water vapor \\
+Sulfur & S & 0.5--4\% & Undesirable; forms $\text{SO}_2$ (pollutant, corrosive) \\
+Nitrogen & N & 0.5--2\% & Usually small; forms $\text{NO}_x$ pollutants \\
+Oxygen & O & 2--25\% & Reduces heating value; calculated by difference \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{Oxygen by Difference:}
+\[ \text{O \%} = 100 - (\text{C} + \text{H} + \text{S} + \text{N} + \text{M} + \text{A}) \]
+
+\subsection{Reporting Bases and Conversion}
+Analysis results can be expressed on different bases:
+\begin{itemize}
+    \item \textbf{As-received (ar):} Includes all moisture as the fuel arrives.
+    \item \textbf{Dry basis (d):} Excluding moisture.
+    \item \textbf{Dry ash-free (daf):} Excluding moisture and ash (pure combustible matter).
+\end{itemize}
+
+\textbf{Conversion Relationships:}
+\[ \text{Component (dry)} = \frac{\text{Component (ar)}}{100 - M_{\mathrm{ar}}} \times 100 \]
+\[ \text{Component (daf)} = \frac{\text{Component (d)}}{100 - A_{\mathrm{d}}} \times 100 \]
+
+\subsection{Practice-Based Activity}
+
+\begin{example}
+\textbf{Problem 1:} A coal sample has an as-received proximate analysis of Moisture = 5\%, Volatile Matter = 28\%, and Ash = 12\%. Calculate the fixed carbon. If dried completely, calculate the new percentages of VM, Ash, and Fixed Carbon.
+
+\textbf{Solution:}
+\begin{itemize}
+    \item $\text{Fixed Carbon (ar)} = 100 - (5 + 28 + 12) = 55\%$
+    \item Total dry mass = $100 - 5 = 95$ parts
+    \item $\text{VM (dry)} = \frac{28}{95} \times 100 = 29.47\%$
+    \item $\text{Ash (dry)} = \frac{12}{95} \times 100 = 12.63\%$
+    \item $\text{Fixed Carbon (dry)} = \frac{55}{95} \times 100 = 57.90\%$
+\end{itemize}
+\end{example}
+
+\begin{example}
+\textbf{Problem 2:} A fuel oil ultimate analysis gives C = 84\%, H = 12\%, S = 3\%, N = 1\%. Calculate oxygen content and estimate HCV using Dulong's formula.
+
+\textbf{Solution:}
+\begin{itemize}
+    \item $\text{Oxygen \%} = 100 - (84 + 12 + 3 + 1) = 0\%$
+    \item $\mathrm{HCV} = 33800(0.84) + 144000\left(0.12 - \frac{0}{8}\right) + 9270(0.03)$
+    \item $\mathrm{HCV} = 28392 + 17280 + 278.1 = 45950.1\,\text{kJ/kg} \approx 45.95\,\text{MJ/kg}$
+\end{itemize}
+\end{example}
+
+% ============================================================
+\section{Stoichiometric Air--Fuel Ratio}
+% ============================================================
+
+\subsection{Definition and Concepts}
+The \textbf{stoichiometric air--fuel ratio (AFR)} is the theoretical mass (or volume) of air required to completely burn a unit mass (or volume) of fuel with no excess oxygen or unburned fuel.
+
+\[ \text{Air--Fuel Ratio (AFR)} = \frac{\text{Mass of Air}}{\text{Mass of Fuel}} \]
+\[ \text{Fuel--Air Ratio (FAR)} = \frac{\text{Mass of Fuel}}{\text{Mass of Air}} = \frac{1}{\text{AFR}} \]
+
+\subsection{Basic Combustion Chemistry}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Element} & \textbf{Reaction} & \textbf{Oxygen Required} \\
+\hline
+Carbon (to $\text{CO}_2$) & $\text{C} + \text{O}_2 \rightarrow \text{CO}_2$ & $2.67\,\text{kg O}_2 / \text{kg C}$ \\
+Carbon (to $\text{CO}$) & $2\text{C} + \text{O}_2 \rightarrow 2\text{CO}$ & $1.33\,\text{kg O}_2 / \text{kg C}$ \\
+Hydrogen & $2\text{H}_2 + \text{O}_2 \rightarrow 2\text{H}_2\text{O}$ & $8\,\text{kg O}_2 / \text{kg H}$ \\
+Sulfur & $\text{S} + \text{O}_2 \rightarrow \text{SO}_2$ & $1\,\text{kg O}_2 / \text{kg S}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+For a general hydrocarbon fuel $\text{C}_x\text{H}_y$:
+\[ \text{C}_x\text{H}_y + \left(x + \frac{y}{4}\right)\text{O}_2 \rightarrow x\text{CO}_2 + \frac{y}{2}\text{H}_2\text{O} \]
+
+\subsection{Calculation from Fuel Composition}
+\[ O_{\mathrm{required}} = 2.67\,C + 8\left(H - \frac{O}{8}\right) + S \quad (\text{kg O}_2 / \text{kg fuel}) \]
+Since air contains $23.2\%$ oxygen by mass:
+\[ \text{AFR}_{\mathrm{stoich}} = \frac{O_{\mathrm{required}}}{0.232} \]
+
+\begin{example}
+\textbf{Sample Calculation:} Calculate stoichiometric AFR for a fuel with C = 86\% and H = 14\% by mass.
+\begin{enumerate}
+    \item $O_{\text{carbon}} = 2.67 \times 0.86 = 2.2962\,\text{kg O}_2$
+    \item $O_{\text{hydrogen}} = 8 \times 0.14 = 1.12\,\text{kg O}_2$
+    \item $O_{\mathrm{total}} = 2.2962 + 1.12 = 3.4162\,\text{kg O}_2$
+    \item $\text{AFR}_{\mathrm{stoich}} = \frac{3.4162}{0.232} = 14.73 : 1$
+\end{enumerate}
+\end{example}
+
+\subsection{Stoichiometric AFR for Common Fuels}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Fuel} & \textbf{Formula} & \textbf{Stoichiometric AFR (mass basis)} \\
+\hline
+Methane & $\text{CH}_4$ & $17.2 : 1$ \\
+Propane & $\text{C}_3\text{H}_8$ & $15.6 : 1$ \\
+Gasoline (approx.) & $\text{C}_8\text{H}_{18}$ & $14.7 : 1$ \\
+Diesel (approx.) & $\text{C}_{12}\text{H}_{23}$ & $14.5 : 1$ \\
+Ethanol & $\text{C}_2\text{H}_5\text{OH}$ & $9.0 : 1$ \\
+Methanol & $\text{CH}_3\text{OH}$ & $6.5 : 1$ \\
+Hydrogen & $\text{H}_2$ & $34.3 : 1$ \\
+Carbon Monoxide & $\text{CO}$ & $2.46 : 1$ \\
+Acetylene & $\text{C}_2\text{H}_2$ & $13.2 : 1$ \\
+Coal (bituminous) & --- & $11\text{--}12 : 1$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Equivalence Ratio ($\phi$), Lambda ($\lambda$), and Excess Air}
+\begin{itemize}
+    \item \textbf{Equivalence Ratio ($\phi$):} $\phi = \frac{\text{AFR}_{\mathrm{stoich}}}{\text{AFR}_{\mathrm{actual}}} = \frac{\text{FAR}_{\mathrm{actual}}}{\text{FAR}_{\mathrm{stoich}}}$
+    \begin{itemize}
+        \item $\phi < 1$: Lean mixture (excess air)
+        \item $\phi = 1$: Stoichiometric mixture
+        \item $\phi > 1$: Rich mixture (excess fuel)
+    \end{itemize}
+    \item \textbf{Lambda ($\lambda$):} $\lambda = \frac{\text{AFR}_{\mathrm{actual}}}{\text{AFR}_{\mathrm{stoich}}} = \frac{1}{\phi}$
+    \item \textbf{Excess Air (\%):} $\text{Excess Air \%} = \frac{\text{AFR}_{\mathrm{actual}} - \text{AFR}_{\mathrm{stoich}}}{\text{AFR}_{\mathrm{stoich}}} \times 100$
+\end{itemize}
+
+\begin{example}
+\textbf{Practice Problem:} A diesel engine ($\text{AFR}_{\mathrm{stoich}} = 14.73:1$) operates with $20\%$ excess air. Calculate actual AFR, $\phi$, and $\lambda$.
+\begin{itemize}
+    \item $\text{AFR}_{\mathrm{actual}} = 14.73 \times (1 + 0.20) = 17.68 : 1$
+    \item $\phi = \frac{14.73}{17.68} = 0.833$ (Lean)
+    \item $\lambda = \frac{1}{0.833} = 1.20$
+\end{itemize}
+\end{example}
+
+% ============================================================
+\section{Combustion Products and Environmental Considerations}
+% ============================================================
+
+\subsection{Complete vs. Incomplete Combustion Products}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|l|p{6.5cm}|}
+\hline
+\textbf{Element} & \textbf{Combustion Product} & \textbf{Environmental Impact} \\
+\hline
+Carbon & $\text{CO}_2$ (Complete) / $\text{CO}$, Soot (Incomplete) & Greenhouse gas ($\text{CO}_2$), toxic gas ($\text{CO}$), particulate matter \\
+\hline
+Hydrogen & $\text{H}_2\text{O}$ & Water vapor, condensation plume \\
+\hline
+Sulfur & $\text{SO}_2, \text{SO}_3$ & Acid rain, respiratory issues, equipment corrosion \\
+\hline
+Nitrogen & $\text{NO}_x$ ($\text{NO}, \text{NO}_2$) & Smog, acid rain, ozone depletion \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Orsat Apparatus for Flue Gas Analysis}
+The Orsat apparatus measures volumetric dry flue gas composition using selective chemical absorbents:
+\begin{itemize}
+    \item \textbf{$\text{CO}_2$ Absorbent:} Potassium hydroxide (KOH)
+    \item \textbf{$\text{O}_2$ Absorbent:} Alkaline pyrogallol
+    \item \textbf{$\text{CO}$ Absorbent:} Cuprous chloride ($\text{Cu}_2\text{Cl}_2$) in HCl
+\end{itemize}
+
+\textbf{Excess Air Formula (from Orsat data):}
+\[ \text{Excess Air \%} = \frac{0.264\,N_2 - (O_2 - 0.5\,CO)}{O_2 - 0.5\,CO} \times 100 \]
+
+\begin{example}
+\textbf{Orsat Problem:} Flue gas analysis gives $\text{CO}_2 = 12\%$, $\text{O}_2 = 6\%$, $\text{CO} = 0.5\%$.
+\begin{enumerate}
+    \item $N_2 = 100 - (12 + 6 + 0.5) = 81.5\%$
+    \item $\text{Excess Air \%} = \frac{0.264(81.5) - (6 - 0.25)}{6 - 0.25} \times 100 = \frac{21.516 - 5.75}{5.75} \times 100 = 274.2\%$
+\end{enumerate}
+\end{example}
+
+\subsection{Emission Control Technologies}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|p{6.5cm}|l|}
+\hline
+\textbf{Pollutant} & \textbf{Control Technology} & \textbf{Application} \\
+\hline
+CO & Catalytic converters, excess air optimization & Vehicles, industrial furnaces \\
+$\text{NO}_x$ & EGR, selective catalytic reduction (SCR), low-$\text{NO}_x$ burners & Vehicles, power plants \\
+$\text{SO}_x$ & Fuel desulfurization, flue gas desulfurization (FGD) & Power plants \\
+Particulates & Electrostatic precipitators, baghouse filters, cyclones & Power plants, industrial boilers \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{Summary of Key Formulas}
+% ============================================================
+
+\begin{itemize}
+    \item \textbf{Fixed Carbon:} $\text{FC} = 100 - (M + \text{VM} + A)$
+    \item \textbf{Oxygen (by difference):} $O = 100 - (C + H + S + N + M + A)$
+    \item \textbf{Dulong's Formula:} $\mathrm{HCV} = 33800\,C + 144000\left(H - \frac{O}{8}\right) + 9270\,S \quad (\text{kJ/kg})$
+    \item \textbf{Oxygen Required:} $O_{\mathrm{req}} = 2.67\,C + 8\left(H - \frac{O}{8}\right) + S \quad (\text{kg/kg fuel})$
+    \item \textbf{Stoichiometric AFR:} $\text{AFR}_{\mathrm{stoich}} = \frac{O_{\mathrm{req}}}{0.232}$
+    \item \textbf{Equivalence Ratio:} $\phi = \frac{\text{AFR}_{\mathrm{stoich}}}{\text{AFR}_{\mathrm{actual}}}, \quad \lambda = \frac{1}{\phi}$
+\end{itemize}
+
+\end{document}

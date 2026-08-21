@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Question 1 -->
+<question type="multichoice">
+  <name>
+    <text>Definition of a Fuel</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>Which of the following best defines a <strong>fuel</strong>?</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>A fuel is a combustible substance that releases heat energy during combustion with oxygen.</p>
+    ]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. A substance used only for generating electricity]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[B. A combustible substance that releases heat when it reacts with oxygen]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. A fuel releases heat energy during combustion with oxygen.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[C. Any chemical compound found in nature]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. A material used only in engines]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 2 -->
+<question type="multichoice">
+  <name>
+    <text>Classification of Gaseous Fuels</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>Which of the following is correctly classified as a <strong>gaseous fuel</strong>?</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>Gaseous fuels include natural gas, LPG, hydrogen, and biogas.</p>
+    ]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. Diesel]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[B. Coal]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[C. Natural gas]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. Natural gas is a gaseous fuel.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. Peat]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 3 -->
+<question type="multichoice">
+  <name>
+    <text>HCV and LCV</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>What is the main difference between <strong>Higher Calorific Value (HCV)</strong> and <strong>Lower Calorific Value (LCV)</strong>?</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>HCV includes the latent heat of condensation of water vapor, while LCV excludes it.</p>
+    ]]></text>
+  </questiontext>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. HCV excludes latent heat of water vapor]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[B. LCV includes latent heat of water vapor]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[C. HCV includes latent heat of water vapor while LCV excludes it]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. HCV accounts for the latent heat recovered when water vapor condenses, while LCV does not.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. There is no difference]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 4 -->
+<question type="numerical">
+  <name>
+    <text>Fixed Carbon Calculation</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>A coal sample has the following proximate analysis:</p>
+      <ul>
+        <li>Moisture = 8%</li>
+        <li>Volatile matter = 30%</li>
+        <li>Ash = 12%</li>
+      </ul>
+
+      <p>Calculate the <strong>fixed carbon percentage</strong>.</p>
+
+      <p>Use the formula:</p>
+
+      <p>
+        <strong>FC = 100 - (M + VM + A)</strong>
+      </p>
+
+      <p>Enter your answer as a percentage value.</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>FC = 100 - (8 + 30 + 12) = 50%.</p>
+      <p>Therefore, the fixed carbon content is <strong>50%</strong>.</p>
+    ]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+
+  <answer fraction="100">
+    <text>50</text>
+    <tolerance>0</tolerance>
+    <feedback format="html">
+      <text><![CDATA[Correct. The fixed carbon percentage is 50%.]]></text>
+    </feedback>
+  </answer>
+</question>
+
+
+<!-- Question 5 -->
+<question type="multichoice">
+  <name>
+    <text>Non-combustible Component of Fuel</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>Which of the following components is <strong>non-combustible</strong> and remains after complete combustion?</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>Ash is the inorganic residue remaining after combustion.</p>
+    ]]></text>
+  </questiontext>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. Volatile matter]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[B. Moisture]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[C. Ash]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. Ash is the non-combustible inorganic residue left after combustion.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. Fixed carbon]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 6 -->
+<question type="multichoice">
+  <name>
+    <text>Ultimate Analysis of Fuel</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>Ultimate analysis of a fuel determines which of the following?</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>Ultimate analysis determines the elemental composition of a fuel, including carbon, hydrogen, oxygen, nitrogen, and sulfur.</p>
+    ]]></text>
+  </questiontext>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. Moisture and volatile matter]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[B. Carbon, hydrogen, oxygen, nitrogen, and sulfur]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. These elements form the main components determined by ultimate analysis.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[C. Fixed carbon only]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. Ash and moisture only]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 7 -->
+<question type="numerical">
+  <name>
+    <text>Oxygen Percentage Calculation</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>A fuel has the following ultimate analysis:</p>
+      <ul>
+        <li>Carbon = 80%</li>
+        <li>Hydrogen = 10%</li>
+        <li>Sulfur = 2%</li>
+        <li>Nitrogen = 3%</li>
+      </ul>
+
+      <p>Calculate the <strong>oxygen percentage</strong>.</p>
+
+      <p>Use the formula:</p>
+
+      <p>
+        <strong>O = 100 - (C + H + S + N)</strong>
+      </p>
+
+      <p>Enter your answer as a percentage value.</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>O = 100 - (80 + 10 + 2 + 3)</p>
+      <p>O = 100 - 95 = 5%</p>
+      <p>Therefore, the oxygen content is <strong>5%</strong>.</p>
+    ]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+
+  <answer fraction="100">
+    <text>5</text>
+    <tolerance>0</tolerance>
+    <feedback format="html">
+      <text><![CDATA[Correct. The oxygen percentage is 5%.]]></text>
+    </feedback>
+  </answer>
+</question>
+
+
+<!-- Question 8 -->
+<question type="multichoice">
+  <name>
+    <text>Stoichiometric Air Fuel Ratio</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>The <strong>stoichiometric air–fuel ratio</strong> refers to:</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>The stoichiometric air–fuel ratio is the exact amount of air theoretically required for complete combustion of a given quantity of fuel.</p>
+    ]]></text>
+  </questiontext>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. Minimum fuel needed for combustion]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[B. Exact air required for complete combustion]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. Stoichiometric air is the theoretical amount required for complete combustion.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[C. Maximum air used in combustion]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. Air supplied in excess of combustion requirements]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 9 -->
+<question type="multichoice">
+  <name>
+    <text>Oxygen Required for Carbon Combustion</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>How much oxygen is required to burn <strong>1 kg of carbon completely to CO₂</strong>?</p>
+
+      <p>
+        Reaction: <strong>C + O₂ → CO₂</strong>
+      </p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>One kilogram of carbon requires approximately 2.67 kg of oxygen for complete combustion to carbon dioxide.</p>
+    ]]></text>
+  </questiontext>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>true</shuffleanswers>
+  <answernumbering>ABCD</answernumbering>
+
+  <answer fraction="0" format="html">
+    <text><![CDATA[A. 1 kg O₂]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[B. 2.67 kg O₂]]></text>
+    <feedback format="html">
+      <text><![CDATA[Correct. 1 kg of carbon requires approximately 2.67 kg of oxygen.]]></text>
+    </feedback>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[C. 8 kg O₂]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[D. 0.5 kg O₂]]></text>
+  </answer>
+</question>
+
+
+<!-- Question 10 -->
+<question type="numerical">
+  <name>
+    <text>Percentage Excess Air Calculation</text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[
+      <p>A combustion system has:</p>
+
+      <ul>
+        <li>Stoichiometric AFR = 14.5</li>
+        <li>Actual AFR = 17.4</li>
+      </ul>
+
+      <p>Calculate the <strong>percentage excess air</strong>.</p>
+
+      <p>Use the formula:</p>
+
+      <p>
+        <strong>Percentage Excess Air = ((Actual AFR - Stoichiometric AFR) / Stoichiometric AFR) × 100</strong>
+      </p>
+
+      <p>Enter your answer as a percentage value.</p>
+    ]]></text>
+  </questiontext>
+  <generalfeedback format="html">
+    <text><![CDATA[
+      <p>Percentage Excess Air = ((17.4 - 14.5) / 14.5) × 100</p>
+      <p>= (2.9 / 14.5) × 100</p>
+      <p>= 20%</p>
+      <p>Therefore, the percentage excess air is <strong>20%</strong>.</p>
+    ]]></text>
+  </generalfeedback>
+  <defaultgrade>1.0000000</defaultgrade>
+  <penalty>0.3333333</penalty>
+  <hidden>0</hidden>
+
+  <answer fraction="100">
+    <text>20</text>
+    <tolerance>0.01</tolerance>
+    <feedback format="html">
+      <text><![CDATA[Correct. The percentage excess air is 20%.]]></text>
+    </feedback>
+  </answer>
+</question>
+
+</quiz>

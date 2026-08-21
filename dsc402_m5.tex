@@ -1,0 +1,465 @@
+\documentclass[12pt,a4paper]{article}
+
+\input{preamble}
+\usepackage{chirun}
+\tcbuselibrary{skins,breakable}
+\usepackage{url}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!50!black,
+    urlcolor=blue!50!black,
+    citecolor=blue!50!black
+}
+
+% ==================== COLORS ====================
+\definecolor{moduleblue}{RGB}{22,54,92}
+\definecolor{quizgreen}{RGB}{20,90,50}
+\definecolor{examred}{RGB}{140,20,20}
+\definecolor{lightbg}{RGB}{240,245,250}
+
+% ==================== CUSTOM ENVIRONMENTS ====================
+\newtcolorbox{defbox}[1][]{
+  colback=lightbg, colframe=moduleblue, fonttitle=\bfseries,
+  title={Definition}, breakable, boxrule=0.8pt, arc=2mm, #1
+}
+
+\newtcolorbox{keyidea}[1][]{
+  colback=yellow!8, colframe=orange!70!black, fonttitle=\bfseries,
+  title={Key Idea}, breakable, boxrule=0.8pt, arc=2mm, #1
+}
+
+\newtcolorbox{masteryquiz}[1][]{
+  colback=green!5, colframe=quizgreen, fonttitle=\bfseries,
+  title={Mastery Check}, breakable, boxrule=1pt, arc=2mm, #1
+}
+
+\newtcolorbox{examquiz}[1][]{
+  colback=red!4, colframe=examred, fonttitle=\bfseries,
+  breakable, boxrule=1pt, arc=2mm, #1
+}
+
+\newcounter{globalq}
+\newcommand{\qn}{\stepcounter{globalq}\noindent\textbf{Question \theglobalq.}}
+
+\title{\color{moduleblue}\Huge \textbf{Module 5}\\[0.3em]
+\Large Generative Modelling}
+\author{Selina Ochukut}
+\date{}
+
+% ==================== DOCUMENT ====================
+\begin{document}
+
+\maketitle
+
+\begin{tcolorbox}[colback=moduleblue!6, colframe=moduleblue, arc=2mm, boxrule=1pt]
+\subsection*{Module Overview}
+ While previous modules focused on models that map an input to a label or structured output (\emph{discriminative} modeling), this module studies \textbf{generative modelling}: which is learning to produce new data samples that plausibly could have come from the same distribution as a training dataset. This includes the \textbf{autoencoder}, a simple architecture for learning compressed representations that motivates, but ultimately falls short of, being a true generative model. We then develop the \textbf{Variational Autoencoder (VAE)}, which repairs the autoencoder's shortcomings using a principled probabilistic framework and the evidence lower bound. Next, you will explore \textbf{Generative Adversarial Networks (GANs)}, which replace explicit likelihood modeling with an adversarial game between two networks, and survey the most influential GAN variants. Finally, you will learn about \textbf{diffusion models}, the current state of the art for high-fidelity generation, and trace their surprising origin in \textbf{non-equilibrium thermodynamics}.
+\end{tcolorbox}
+
+\subsection*{Expected Learning Outcomes}
+
+By the end of this module, you should be able to:
+\begin{enumerate}
+    \item \textbf{Explain} the principles of generative modelling and distinguish it from discriminative modelling.
+    \item \textbf{Implement} autoencoders, Variational Autoencoders (VAEs), and Generative Adversarial Networks (GANs) to generate synthetic data and learn meaningful latent representations from real-world datasets.
+    \item \textbf{Analyze} the theoretical foundations, strengths, and limitations of autoencoders, VAEs, GANs, and diffusion models.
+    \item \textbf{Evaluate} the suitability of different generative modelling approaches for a given application.
+\end{enumerate}
+
+\newpage
+
+% ============================================================
+\section{Autoencoders}
+% ============================================================
+
+\subsection{Generative vs.\ Discriminative Modeling}
+
+Every model studied in earlier modules -- classifiers, detectors, segmentation networks -- learns a mapping from input to some target output, implicitly or explicitly modeling a conditional distribution $p(y \mid x)$. A \textbf{generative model}, by contrast, aims to model the data distribution $p(x)$ itself (or a distribution $p(x \mid y)$ conditioned only on a coarse label, or nothing at all), so that new, realistic samples $x$ can be drawn from it.
+
+\begin{keyidea}
+Learning $p(x)$ is a fundamentally harder problem than learning $p(y\mid x)$: a classifier only needs to find a decision boundary that separates classes, while a generative model must capture the full structure, variability, and correlations present in the data distribution well enough to produce convincing new examples. This added difficulty is precisely what motivates the increasingly sophisticated architectures studied in this module.
+\end{keyidea}
+
+\subsection{Video: Autoencoders}
+\youtube{7mRfwaGGAPg}
+
+\subsection{Autoencoder Architecture}
+
+\begin{defbox}
+An \textbf{autoencoder} consists of two neural networks trained jointly:
+\begin{itemize}[leftmargin=1.5em]
+    \item An \textbf{encoder} $f_\theta: x \mapsto z$, mapping an input $x \in \mathbb{R}^d$ to a lower-dimensional \textbf{latent code} (or \textbf{bottleneck representation}) $z \in \mathbb{R}^k$, typically with $k \ll d$.
+    \item A \textbf{decoder} $g_\phi: z \mapsto \hat x$, mapping the latent code back to a reconstruction $\hat x \in \mathbb{R}^d$ of the original input.
+\end{itemize}
+The two networks are trained end-to-end to minimize a \textbf{reconstruction loss} between $x$ and $\hat x = g_\phi(f_\theta(x))$, most commonly mean squared error $\|x - \hat x\|^2$ for continuous data, or binary cross-entropy for data normalized to $[0,1]$.
+\end{defbox}
+
+\begin{keyidea}
+The bottleneck (the low-dimensional latent space, with $k \ll d$) is the single most important design element of an autoencoder: without it, the network could trivially learn the identity function $g_\phi(f_\theta(x)) = x$ (e.g., simply copying the input through), learning nothing useful. Forcing information through a narrow bottleneck compels the encoder to discover a compressed representation that captures the most important, informative structure of the data -- the defining goal of \textbf{unsupervised representation learning}. An autoencoder with $k \geq d$ is called \textbf{overcomplete} and requires additional constraints (e.g., sparsity penalties, or the noise-based corruption used in denoising autoencoders below) to avoid learning a trivial identity mapping.
+\end{keyidea}
+
+\subsection{Connection to PCA}
+
+\begin{example}
+Consider an autoencoder with a \emph{single} linear layer for both the encoder and decoder (no nonlinearity), trained with mean-squared reconstruction error: $z = Wx$, $\hat x = W'z$. It can be shown that the optimal solution learned by such a linear autoencoder spans the same subspace as the top-$k$ principal components found by \textbf{Principal Component Analysis (PCA)}. This gives a useful, concrete anchor for intuition: a (linear) autoencoder is a nonlinear generalization of PCA, learning a (possibly curved, nonlinear) low-dimensional manifold that best explains the data under reconstruction error, rather than being restricted to a linear subspace.
+\end{example}
+
+\subsection{Denoising and Sparse Autoencoders}
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Denoising Autoencoder (DAE):} The encoder is given a \emph{corrupted} version $\tilde x$ of the input (e.g., $x$ with added Gaussian noise, or randomly zeroed-out pixels), but the reconstruction loss is computed against the \emph{original, clean} $x$. This forces the network to learn robust features that capture the underlying data manifold rather than memorizing exact pixel values, and it also permits an overcomplete latent space (since perfectly copying the corrupted input would not minimize the loss).
+    \item \textbf{Sparse Autoencoder:} An explicit sparsity penalty (e.g., an $L_1$ penalty on the latent activations, or a penalty encouraging the average activation of each latent unit to stay near some small target value) is added to the loss, encouraging most latent units to be inactive (near zero) for any given input, even when the latent dimension $k$ is large.
+\end{itemize}
+
+\subsection{Why Autoencoders Are Not (Good) Generative Models}
+
+A natural idea: once an autoencoder is trained, could we generate new samples by feeding a \emph{random} latent vector $z$ into the decoder $g_\phi$? In practice, this fails badly.
+
+\begin{keyidea}
+A standard autoencoder's training objective (reconstruction loss alone) places \textbf{no constraint whatsoever on the structure of the latent space}. The encoder is free to map training examples to arbitrary, scattered, or disconnected regions of latent space, as long as the decoder can reconstruct them -- there is no pressure for the latent space to be smooth, continuous, or well-covered. Consequently:
+\begin{itemize}[leftmargin=1.5em]
+    \item There may be large ``holes'' in latent space that no training example maps to; decoding a randomly sampled $z$ from such a region typically produces unrealistic, garbled output.
+    \item Even interpolating between the latent codes of two real, valid inputs may pass through regions the decoder has never learned to handle well, producing blurry or nonsensical intermediate reconstructions.
+    \item There is no specified \emph{prior distribution} over $z$ to sample from in the first place -- we would have to arbitrarily guess a plausible range or distribution for latent vectors, with no guarantee it matches where the encoder actually placed the data.
+\end{itemize}
+This is precisely the gap that Variational Autoencoders are designed to close: by explicitly regularizing the latent space to follow a known, fixed prior distribution (typically a standard Gaussian) from which new samples can be validly and reliably drawn.
+\end{keyidea}
+
+\newpage
+
+% ============================================================
+\section{Variational Autoencoders (VAEs)}
+% ============================================================
+
+\subsection{Video: Variational Autoencoders}
+\youtube{fcvYpzHmhvA}
+
+The \textbf{Variational Autoencoder} (Kingma \& Welling, 2013) reformulates the autoencoder as a proper probabilistic generative model, trained via principled approximate Bayesian inference, directly solving the latent-space regularization problem identified in Section 1.6.
+
+\subsection{The Probabilistic Generative Model}
+
+\begin{defbox}
+A VAE assumes data $x$ is generated by the following process: first, a latent variable $z$ is drawn from a fixed \textbf{prior distribution} $p(z)$ (typically $\mathcal{N}(0, I)$); then, $x$ is drawn from a \textbf{likelihood} (decoder) distribution $p_\theta(x \mid z)$, parameterized by a neural network. The marginal likelihood of the data is:
+\[
+p_\theta(x) = \int p_\theta(x \mid z)\, p(z)\, dz
+\]
+\end{defbox}
+
+\begin{keyidea}
+If we could compute $p_\theta(x)$ and its gradient, we could train the decoder by direct maximum likelihood. Unfortunately, this integral is intractable for any reasonably expressive neural network decoder -- it would require integrating over the entire (typically continuous, high-dimensional) latent space. Similarly, the true posterior $p_\theta(z \mid x) = \frac{p_\theta(x\mid z) p(z)}{p_\theta(x)}$, which we would need in order to infer a good latent code for a given $x$, is intractable for the same reason. VAEs solve both problems simultaneously by introducing an \textbf{approximate posterior} $q_\phi(z\mid x)$ (the encoder), and optimizing a tractable \emph{lower bound} on $\log p_\theta(x)$ instead of the intractable quantity itself.
+\end{keyidea}
+
+\subsection{Deriving the Evidence Lower Bound (ELBO)}
+
+\begin{defbox}
+For any choice of approximate posterior $q_\phi(z\mid x)$, the following identity holds exactly:
+\[
+\log p_\theta(x) = \underbrace{\mathbb{E}_{q_\phi(z\mid x)}\big[\log p_\theta(x\mid z)\big] - D_{KL}\big(q_\phi(z\mid x) \,\|\, p(z)\big)}_{\text{ELBO}(\theta,\phi; x)} \;+\; D_{KL}\big(q_\phi(z\mid x) \,\|\, p_\theta(z\mid x)\big)
+\]
+Since KL divergence is always non-negative, the \textbf{Evidence Lower BOund (ELBO)} satisfies $\text{ELBO}(\theta,\phi;x) \leq \log p_\theta(x)$, with equality exactly when $q_\phi(z\mid x)$ matches the true (intractable) posterior $p_\theta(z\mid x)$.
+\end{defbox}
+
+\begin{keyidea}
+This identity is the crux of the entire VAE framework: since the ELBO is a \emph{lower bound} on the (intractable) data log-likelihood, and the ELBO itself is fully tractable (both terms can be computed and differentiated), we can train the model by \emph{maximizing the ELBO} with respect to both the decoder parameters $\theta$ and the encoder parameters $\phi$. Maximizing the ELBO simultaneously (a) increases (a lower bound on) how well the model explains the data, and (b) tightens the bound by pushing $q_\phi(z\mid x)$ closer to the true posterior -- so a good encoder and a good decoder are learned jointly, using a single unified objective.
+\end{keyidea}
+
+\subsection{Interpreting the ELBO's Two Terms}
+
+The VAE training objective, for a single data point $x$, is (equivalently, taking the negative to get a loss to minimize):
+\[
+\mathcal{L}(\theta,\phi; x) = -\underbrace{\mathbb{E}_{q_\phi(z\mid x)}\big[\log p_\theta(x\mid z)\big]}_{\text{reconstruction term}} + \underbrace{D_{KL}\big(q_\phi(z\mid x) \,\|\, p(z)\big)}_{\text{regularization term}}
+\]
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Reconstruction term:} Encourages the decoder, given a latent code sampled from the encoder's approximate posterior, to accurately reconstruct the original input -- exactly analogous to the standard autoencoder's reconstruction loss from Section 1.
+    \item \textbf{Regularization (KL) term:} Encourages the encoder's approximate posterior $q_\phi(z\mid x)$ to stay close to the fixed prior $p(z) = \mathcal{N}(0,I)$ for \emph{every} input $x$. This is precisely the missing ingredient identified in Section 1.6: it directly forces the latent space to be well-organized around a known distribution, with no ``holes,'' so that sampling $z \sim \mathcal{N}(0,I)$ and decoding it reliably produces realistic outputs.
+\end{itemize}
+
+\subsection{The Reparameterization Trick}
+
+A key implementation challenge: to train by backpropagation, we need gradients of the ELBO with respect to $\phi$, but the reconstruction term involves an expectation over $z \sim q_\phi(z\mid x)$ -- i.e., we need to differentiate \emph{through a random sampling operation}, which is not directly possible.
+
+\begin{defbox}
+The encoder is designed to output the parameters of a distribution -- typically a diagonal Gaussian, $q_\phi(z\mid x) = \mathcal{N}(\mu_\phi(x), \sigma_\phi^2(x))$ -- rather than a sample directly. The \textbf{reparameterization trick} rewrites sampling $z \sim \mathcal{N}(\mu_\phi(x), \sigma_\phi^2(x))$ as a deterministic, differentiable function of the encoder's outputs and an independent noise source:
+\[
+z = \mu_\phi(x) + \sigma_\phi(x) \odot \epsilon, \qquad \epsilon \sim \mathcal{N}(0, I)
+\]
+where $\odot$ denotes elementwise multiplication and $\epsilon$ is sampled independently of any learnable parameters.
+\end{defbox}
+
+\begin{keyidea}
+By moving all the ``randomness'' into $\epsilon$ (which does not depend on $\theta$ or $\phi$), the sampling operation becomes a simple, differentiable arithmetic expression in terms of $\mu_\phi(x)$ and $\sigma_\phi(x)$. Gradients can now flow from the reconstruction loss, through the sampled $z$, back into the encoder's parameters $\phi$ via ordinary backpropagation -- exactly as they would through any other differentiable layer. This trick is what makes end-to-end training of the whole VAE (encoder and decoder jointly) possible with standard gradient-based optimizers.
+\end{keyidea}
+
+\subsection{Closed-Form KL Term for Gaussians}
+
+When both $q_\phi(z\mid x) = \mathcal{N}(\mu, \sigma^2 I)$ and the prior $p(z) = \mathcal{N}(0, I)$ are Gaussian, the KL divergence term has a simple closed form (per latent dimension $j$, summed over all $k$ dimensions):
+\[
+D_{KL}\big(q_\phi(z\mid x)\,\|\,p(z)\big) = \frac{1}{2}\sum_{j=1}^{k}\Big(\mu_j^2 + \sigma_j^2 - \log(\sigma_j^2) - 1\Big)
+\]
+
+\begin{example}
+Suppose a 1-dimensional latent code has $\mu = 2.0$, $\sigma^2 = 0.5$. The KL penalty for this dimension is:
+\[
+\frac{1}{2}\big(2.0^2 + 0.5 - \log(0.5) - 1\big) = \frac{1}{2}\big(4 + 0.5 + 0.693 - 1\big) = \frac{1}{2}(4.193) \approx 2.097
+\]
+This penalty is minimized (equal to zero) exactly when $\mu = 0$ and $\sigma^2 = 1$ -- i.e., when the encoder's output distribution for this input exactly matches the standard normal prior -- and grows as $\mu$ moves away from 0 or $\sigma^2$ moves away from 1 in either direction, directly enforcing the desired latent-space regularization.
+\end{example}
+
+\subsection{Generating New Samples}
+
+Once trained, generating new data with a VAE is simple: sample $z \sim \mathcal{N}(0, I)$ directly from the prior (no encoder needed at generation time), and pass it through the trained decoder $p_\theta(x\mid z)$ to obtain a new sample $\hat x$.
+
+\subsection{The Beta-VAE and the Reconstruction-Regularization Trade-off}
+
+\begin{keyidea}
+In practice, a tension exists between the two ELBO terms: strongly minimizing the KL term pushes every input's latent code toward the same generic prior distribution, which can cause the decoder to ignore fine-grained information in $z$ and produce blurry reconstructions, while over-prioritizing reconstruction can leave the latent space poorly regularized. The \textbf{$\beta$-VAE} introduces a tunable weight $\beta$ on the KL term: $\mathcal{L} = -\mathbb{E}_q[\log p_\theta(x\mid z)] + \beta \cdot D_{KL}(q_\phi(z\mid x)\|p(z))$. Larger $\beta$ ($>1$) more strongly enforces the prior, often encouraging a more \textbf{disentangled} latent space (where individual latent dimensions correspond to independent, interpretable factors of variation in the data), at some cost to reconstruction fidelity; $\beta=1$ recovers the standard VAE.
+\end{keyidea}
+
+\newpage
+
+% ============================================================
+\section{GANs and GAN Variants}
+% ============================================================
+
+\textbf{Generative Adversarial Networks} (Goodfellow et al., 2014) take a radically different approach from VAEs: rather than explicitly modeling and optimizing a likelihood (even approximately), a GAN trains a generative model implicitly, by setting up an adversarial game between two competing networks.
+
+\subsection{Video: Generative Adversarial Networks}
+\youtube{ye5P78eKOVM}
+
+\subsection{The Adversarial Framework}
+
+\begin{defbox}
+A GAN consists of two networks trained simultaneously in competition:
+\begin{itemize}[leftmargin=1.5em]
+    \item A \textbf{Generator} $G_\theta: z \mapsto x$, mapping a random noise vector $z \sim p(z)$ (e.g., $\mathcal{N}(0,I)$) to a synthetic sample $G_\theta(z)$, trying to produce samples indistinguishable from real data.
+    \item A \textbf{Discriminator} $D_\phi: x \mapsto [0,1]$, a binary classifier trying to distinguish real data samples from the generator's synthetic (``fake'') samples.
+\end{itemize}
+The two are trained via the following two-player minimax game:
+\[
+\min_{G} \max_{D} \; V(D,G) = \mathbb{E}_{x \sim p_{data}}\big[\log D(x)\big] + \mathbb{E}_{z\sim p(z)}\big[\log(1 - D(G(z)))\big]
+\]
+\end{defbox}
+
+\begin{keyidea}
+The discriminator is trained to \emph{maximize} $V(D,G)$: assign a high probability $D(x)\to 1$ to real data and a low probability $D(G(z)) \to 0$ to generated data. The generator is trained to \emph{minimize} $V(D,G)$: produce samples $G(z)$ that fool the discriminator into assigning $D(G(z)) \to 1$. Crucially, the generator \emph{never sees real data directly} -- it only ever receives a training signal indirectly, through the discriminator's gradients, learning purely from the discriminator's feedback about which of its samples were and were not convincing.
+\end{keyidea}
+
+\subsection{Training Procedure}
+
+In practice, $D$ and $G$ are updated in alternation (not via a single joint optimization), typically:
+\begin{enumerate}[leftmargin=1.5em]
+    \item \textbf{Discriminator step:} Sample a batch of real data and a batch of generator samples (with $G$'s parameters held fixed); update $\phi$ to increase $V(D,G)$ (better distinguish real from fake).
+    \item \textbf{Generator step:} Sample a batch of noise vectors $z$; update $\theta$ to decrease $V(D,G)$ (produce samples the current discriminator finds more convincing).
+\end{enumerate}
+
+\begin{keyidea}
+In practice, the original minimax generator loss $\log(1 - D(G(z)))$ provides very weak gradients early in training, when the discriminator easily distinguishes fake from real (since $D(G(z)) \approx 0$, this term saturates). A standard practical fix is to instead train the generator to \emph{maximize} $\log D(G(z))$ directly (the ``non-saturating'' loss) -- driving the same qualitative behavior (fool the discriminator) but with much stronger gradients when the generator is performing poorly.
+\end{keyidea}
+
+\subsection{The Theoretical Optimum: Jensen-Shannon Divergence}
+
+Goodfellow et al. showed that, for a fixed generator, the optimal discriminator is $D^*(x) = \frac{p_{data}(x)}{p_{data}(x) + p_g(x)}$ (where $p_g$ is the distribution induced by the generator), and that with this optimal discriminator, the generator's objective reduces to minimizing (a shifted, scaled version of) the \textbf{Jensen-Shannon (JS) divergence}:
+\[
+V(D^*, G) = 2 \cdot D_{JS}(p_{data} \,\|\, p_g) - \log 4
+\]
+
+\begin{keyidea}
+This result establishes what GAN training is theoretically doing: at the global optimum (an idealized discriminator perfectly tracking the current generator), the generator is driven to minimize the JS divergence between the real data distribution and its own generated distribution, which is minimized (equal to zero) exactly when $p_g = p_{data}$. In practice, the discriminator is a finite neural network trained with a finite number of gradient steps, not the theoretically optimal $D^*$, so real GAN training only approximates this idealized picture -- and much of the practical difficulty of training GANs stems from this gap between theory and practice.
+\end{keyidea}
+
+\subsection{Training Instabilities}
+
+GANs are notoriously difficult to train reliably, due to several well-documented failure modes:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Mode collapse:} The generator discovers a small number of outputs (or even a single output) that reliably fool the current discriminator, and collapses to producing only these, failing to capture the full diversity of the data distribution.
+    \item \textbf{Vanishing gradients:} If the discriminator becomes too good too quickly (perfectly separating real from fake), $D(G(z)) \to 0$ for all generator outputs, and the generator's gradient signal vanishes, halting learning.
+    \item \textbf{Non-convergence / oscillation:} Because the min and max players in the minimax game are updated in alternation rather than jointly, training can oscillate rather than converge to the theoretical equilibrium, especially when $G$ and $D$'s relative capacities/learning rates are poorly balanced.
+\end{itemize}
+
+\subsection{GAN Variants}
+
+\subsubsection{DCGAN (Deep Convolutional GAN)}
+
+DCGAN (Radford et al., 2015) established a set of architectural conventions for using convolutional networks reliably in both $G$ and $D$: replacing pooling with strided convolutions (in $D$) and fractionally-strided/transposed convolutions (in $G$), using batch normalization in both networks, and avoiding fully-connected hidden layers -- guidelines that stabilized GAN training on image data and became a template for later convolutional GAN architectures.
+
+\subsubsection{Conditional GAN (cGAN)}
+
+A \textbf{Conditional GAN} (Mirza \& Osindero, 2014) conditions both $G$ and $D$ on auxiliary information $y$ (e.g., a class label): $G(z, y)$ and $D(x, y)$. This allows controllable generation -- e.g., specifying which digit class to generate -- rather than sampling an unconditional, uncontrolled output.
+
+\subsubsection{Wasserstein GAN (WGAN)}
+
+\begin{keyidea}
+WGAN (Arjovsky et al., 2017) replaces the JS-divergence-based objective with the \textbf{Wasserstein (Earth Mover's) distance}, which remains well-behaved (provides useful gradients) even when the real and generated distributions have little or no overlap in their support -- a common situation early in training that causes the JS divergence (and its gradients) to become uninformative. The discriminator is reframed as a ``critic'' that outputs an unbounded real-valued score (rather than a probability), and must satisfy a 1-Lipschitz constraint, originally enforced via \textbf{weight clipping} and later, more effectively, via a \textbf{gradient penalty} (WGAN-GP) that directly penalizes deviation of the critic's gradient norm from 1. WGAN's loss also correlates much better with actual perceptual sample quality, making training progress far easier to monitor than with the original GAN's loss.
+\end{keyidea}
+
+\subsubsection{CycleGAN}
+
+\textbf{CycleGAN} (Zhu et al., 2017) performs \textbf{unpaired} image-to-image translation (e.g., converting horse photos to zebra photos) without requiring matched pairs of images in the two domains. It trains two generators ($G: X\to Y$ and $F: Y \to X$) and two discriminators, and introduces a \textbf{cycle-consistency loss} $\|F(G(x)) - x\|_1 + \|G(F(y)) - y\|_1$, which enforces that translating an image to the other domain and back should approximately recover the original -- providing a training signal even without any paired ground-truth examples.
+
+\subsubsection{StyleGAN}
+
+\textbf{StyleGAN} (Karras et al., 2019) introduced a \textbf{style-based generator} architecture: rather than feeding the latent code $z$ directly into the first generator layer, an intermediate ``style'' vector $w$ (obtained by passing $z$ through a learned mapping network) is injected at \emph{every} resolution level of the generator via adaptive instance normalization, giving fine-grained, disentangled control over different levels of visual detail (e.g., coarse pose at low resolution, fine texture at high resolution) and enabling high-fidelity, controllable image synthesis.
+
+\subsection{VAE vs.\ GAN: Summary Comparison}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|p{5.0cm}|p{5.0cm}|}
+\hline
+& \textbf{VAE} & \textbf{GAN} \\
+\hline
+Training objective & Explicit (approximate) likelihood maximization via ELBO & Implicit, adversarial minimax game (no explicit likelihood) \\
+Training stability & Generally stable, well-behaved optimization & Can be unstable (mode collapse, vanishing gradients) \\
+Sample quality & Often somewhat blurry (due to reconstruction term) & Often sharper, more perceptually realistic samples \\
+Latent space & Explicitly regularized, structured & Less directly regularized; structure emerges implicitly \\
+Likelihood evaluation & Can (approximately) evaluate data point likelihood & Cannot directly evaluate likelihood of a data point \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+% ============================================================
+\section{Diffusion and Thermodynamic Generative Modelling}
+% ============================================================
+
+\textbf{Diffusion models} are the current state of the art for high-fidelity image, audio, and video generation. Remarkably, their foundational idea did not originate in machine learning, but was explicitly imported from \textbf{non-equilibrium statistical thermodynamics} (Sohl-Dickstein et al., 2015): the same mathematics that describes a physical system relaxing toward thermal equilibrium is used to describe data being progressively destroyed by noise, and generation is framed as \emph{learning to run this physical process in reverse}.
+
+\subsection{Video: Diffusion Models}
+\youtube{3qLq-4Tmd3g}
+
+\subsection{The Forward (Noising) Process}
+
+\begin{defbox}
+The \textbf{forward diffusion process} is a fixed (non-learned) Markov chain that gradually adds a small amount of Gaussian noise to a data sample $x_0 \sim p_{data}$ over $T$ discrete timesteps:
+\[
+q(x_t \mid x_{t-1}) = \mathcal{N}\big(x_t;\, \sqrt{1-\beta_t}\, x_{t-1},\, \beta_t I\big), \qquad t = 1, \ldots, T
+\]
+where $\beta_t \in (0,1)$ is a small, fixed (or scheduled) \textbf{noise variance} at step $t$. Using the reparameterization trick and the properties of Gaussians, the marginal distribution of $x_t$ given $x_0$ (skipping all intermediate steps) has a convenient closed form:
+\[
+q(x_t \mid x_0) = \mathcal{N}\big(x_t;\, \sqrt{\bar\alpha_t}\, x_0,\, (1-\bar\alpha_t) I\big), \qquad
+\alpha_t := 1-\beta_t, \quad \bar\alpha_t := \prod_{s=1}^{t}\alpha_s
+\]
+\end{defbox}
+
+\begin{keyidea}
+As $t$ increases, $\bar\alpha_t \to 0$ (given a suitable noise schedule), so $x_t$'s distribution approaches $\mathcal{N}(0, I)$ regardless of the original data $x_0$ -- the forward process gradually erases all information about the original sample, converging to pure, structureless Gaussian noise. This is directly analogous to a physical system evolving toward its maximum-entropy thermal equilibrium state: just as a drop of ink diffuses through water until it is uniformly (and irreversibly, from a practical standpoint) spread out, the forward process diffuses a structured data distribution into a simple, fixed, high-entropy Gaussian distribution. This origin in physical diffusion processes is the literal source of the model family's name.
+\end{keyidea}
+
+\subsection{The Reverse (Denoising) Process}
+
+The generative model is the \emph{reverse} of the forward process: starting from pure noise $x_T \sim \mathcal{N}(0,I)$, we want to iteratively remove noise, step by step, to recover a realistic data sample $x_0$.
+
+\begin{defbox}
+Since the true reverse conditional $q(x_{t-1}\mid x_t)$ is intractable in general (it technically depends on the entire data distribution), we learn an approximation using a neural network:
+\[
+p_\theta(x_{t-1} \mid x_t) = \mathcal{N}\big(x_{t-1};\, \mu_\theta(x_t, t),\, \Sigma_\theta(x_t,t)\big)
+\]
+Generation proceeds by sampling $x_T \sim \mathcal{N}(0,I)$ and then repeatedly sampling $x_{t-1} \sim p_\theta(x_{t-1}\mid x_t)$ for $t = T, T-1, \ldots, 1$, finally producing $x_0$.
+\end{defbox}
+
+\begin{keyidea}
+Crucially, if each forward noising step $\beta_t$ is small enough, the true reverse step $q(x_{t-1}\mid x_t)$ is well-approximated by a Gaussian, which is exactly the functional form we assumed for $p_\theta$ above -- this is why the forward process uses \emph{many small} noise steps rather than a single large one: it makes the reverse transitions tractable to model with a simple Gaussian, at the cost of requiring many steps (often hundreds to thousands in early diffusion models) to fully generate a sample.
+\end{keyidea}
+
+\subsection{Training Objective: A Hierarchical VAE}
+
+A diffusion model can be viewed as a special case of a (deep, hierarchical) VAE: $x_1, \ldots, x_T$ play the role of a sequence of latent variables, and the fixed forward process plays the role of the (non-learned, fixed-form) approximate posterior $q$. Applying the same ELBO derivation as in Section 2 to this hierarchical setting yields a training objective that decomposes into a sum of KL divergence terms, one per timestep, each comparing the learned reverse step to the (tractable, closed-form) \emph{forward posterior conditioned on $x_0$}, $q(x_{t-1}\mid x_t, x_0)$.
+
+\subsection{Simplified Training: Predicting the Noise (DDPM)}
+
+Ho et al. (2020), in the \textbf{Denoising Diffusion Probabilistic Model (DDPM)} paper, showed that this seemingly complex objective simplifies enormously with the right parameterization.
+
+\begin{keyidea}
+Rather than having the network directly predict the mean $\mu_\theta(x_t,t)$ of the reverse step, DDPM reparameterizes the network to predict the \textbf{noise} $\epsilon$ that was added to produce $x_t$ from $x_0$ in the forward process. Since $x_t = \sqrt{\bar\alpha_t}\,x_0 + \sqrt{1-\bar\alpha_t}\,\epsilon$ for some $\epsilon \sim \mathcal{N}(0,I)$, predicting $\epsilon$ from $x_t$ (and the timestep $t$) is equivalent, via simple algebra, to predicting $\mu_\theta$. With this reparameterization, the (re-weighted) training objective reduces to an extremely simple mean-squared-error loss:
+\[
+L_{simple}(\theta) = \mathbb{E}_{x_0, \epsilon \sim \mathcal{N}(0,I), t}\Big[\big\|\epsilon - \epsilon_\theta(x_t, t)\big\|^2\Big]
+\]
+i.e., sample a real data point $x_0$, a random timestep $t$, and random noise $\epsilon$; construct the noised sample $x_t$; and train a single network $\epsilon_\theta$ to predict which noise was added, given the noisy sample and the timestep.
+\end{keyidea}
+
+\begin{example}
+Suppose $\bar\alpha_t = 0.36$ at some timestep $t$, and a training image $x_0$ is corrupted with a sampled noise vector $\epsilon$ to produce $x_t = \sqrt{0.36}\, x_0 + \sqrt{1-0.36}\,\epsilon = 0.6\, x_0 + 0.8\,\epsilon$. The network $\epsilon_\theta$ receives $(x_t, t)$ as input and is trained (via ordinary gradient descent on the squared error between its output and the true $\epsilon$) to recover the specific noise vector $\epsilon$ that was used -- a simple, direct, and highly stable supervised regression task, in stark contrast to the adversarial minimax game required for GAN training.
+\end{example}
+
+\subsection{Score-Based Generative Models and the Connection to Physics}
+
+An illuminating, mathematically equivalent perspective (Song \& Ermon, 2019; Song et al., 2021) frames diffusion models in terms of the \textbf{score function} $\nabla_x \log p(x)$ -- the gradient of the log-density of the data distribution.
+
+\begin{defbox}
+Learning to predict the added noise $\epsilon_\theta(x_t,t)$ is, up to a known scaling factor, equivalent to learning the score function of the noised data distribution $p_t(x_t)$ at each noise level $t$:
+\[
+\nabla_{x_t} \log p_t(x_t) \approx -\frac{\epsilon_\theta(x_t,t)}{\sqrt{1-\bar\alpha_t}}
+\]
+Generation can then be understood as running \textbf{Langevin dynamics} -- a classical technique from statistical physics for sampling from a distribution given only its score function -- at each noise level:
+\[
+x \leftarrow x + \frac{\eta}{2}\nabla_x \log p(x) + \sqrt{\eta}\,\xi, \qquad \xi \sim \mathcal{N}(0,I)
+\]
+where $\eta$ is a small step size. Iterating this update moves samples, on average, toward regions of higher data density, while the injected noise $\xi$ prevents collapse to a single mode and ensures the correct target distribution is sampled from in the long run.
+\end{defbox}
+
+\begin{keyidea}
+Langevin dynamics is itself a foundational tool from statistical physics, originally developed to describe the motion of a particle under both a deterministic force (here, the score, pulling toward high-density regions -- analogous to a potential energy gradient) and random thermal fluctuations (here, the injected noise $\xi$, analogous to molecular collisions in a fluid at a given temperature). This is not a superficial analogy: the mathematics of score-based diffusion sampling \emph{is} the mathematics of a particle undergoing Brownian motion in a potential landscape defined by $-\log p(x)$, placing diffusion models on a rigorous footing shared with statistical mechanics.
+\end{keyidea}
+
+\subsection{Diffusion as Stochastic Differential Equations}
+
+Song et al. (2021) showed that the discrete-time forward and reverse processes above are both discretizations of continuous-time \textbf{stochastic differential equations (SDEs)}:
+\[
+\text{Forward SDE:} \quad dx = f(x,t)\,dt + g(t)\,dw
+\]
+\[
+\text{Reverse-time SDE:} \quad dx = \big[f(x,t) - g(t)^2 \nabla_x \log p_t(x)\big]dt + g(t)\,d\bar w
+\]
+where $w$ is a standard Wiener process (Brownian motion) and $\bar w$ is a Wiener process running backward in time. This reverse-time SDE result is a direct application of a classical theorem (Anderson, 1982) on the time-reversal of diffusion processes, itself a foundational result in the stochastic-thermodynamics literature.
+
+\begin{keyidea}
+This continuous-time view unifies DDPM (a particular discretization choice) with score-based models under a single mathematical framework, and directly exposes the model family's roots in the physics of diffusion: the forward SDE is mathematically identical in form to the Fokker-Planck description of a physical particle diffusing under Brownian motion, and generation amounts to exactly reversing this physical diffusion process using a learned score function -- something only possible in expectation, using a model, since a real physical diffusion process cannot literally be run backward in time.
+\end{keyidea}
+
+\subsection{Thermodynamic Origins and Physical Computing}
+
+\begin{keyidea}
+The very first diffusion model paper (Sohl-Dickstein et al., 2015, \emph{``Deep Unsupervised Learning using Nonequilibrium Thermodynamics''}) drew its central idea directly from \textbf{non-equilibrium statistical mechanics}: the forward process is framed explicitly as a physical system being driven away from a complex, structured state and toward thermal equilibrium (maximum entropy) via a sequence of small, reversible-in-principle perturbations, closely mirroring techniques such as \textbf{simulated annealing} and \textbf{annealed importance sampling}, both of which likewise bridge a simple, easy-to-sample distribution and a complex target distribution via a sequence of intermediate distributions.
+\end{keyidea}
+
+Two deeper thermodynamic connections are worth noting for a complete picture:
+
+\begin{itemize}[leftmargin=1.5em]
+    \item \textbf{Entropy production and fluctuation theorems:} Each step of the forward noising process can be shown to increase the system's entropy (in the thermodynamic, not just information-theoretic, sense), and the KL-divergence terms comprising the diffusion training objective have a direct interpretation in terms of the (average) entropy produced by the forward process versus the entropy the learned reverse process must ``remove'' to successfully denoise -- connecting diffusion model training to fluctuation theorems (such as the Jarzynski equality) from stochastic thermodynamics, which relate the work done on a non-equilibrium system to free energy differences.
+    \item \textbf{Physical (analog) thermodynamic computing:} A very recent and active research direction asks whether the stochastic, noise-driven dynamics used in diffusion sampling could be implemented directly in physical hardware that exploits real thermal noise, rather than being simulated step-by-step on conventional digital processors. Since Langevin dynamics and diffusion sampling are mathematically a description of a physical system relaxing under noise, specialized \textbf{thermodynamic computing} hardware (analog circuits whose natural thermal fluctuations directly realize the required stochastic dynamics) has been proposed as a potentially far more energy- and time-efficient substrate for running diffusion-style sampling and optimization, compared to explicitly simulating Gaussian noise addition on a digital GPU.
+\end{itemize}
+
+\begin{keyidea}
+The throughline across this entire section is that diffusion models are not merely \emph{inspired by} thermodynamics as a loose metaphor: their forward process, training objective, and sampling procedure are each directly derived from, and mathematically identical in form to, established results in non-equilibrium statistical physics (diffusion/Fokker-Planck equations, Langevin dynamics, time-reversal of stochastic processes, and entropy-production identities). This is a rare and notable case in modern deep learning where a highly successful architecture is best understood as an application of pre-existing physical theory, rather than an architecture designed from empirical trial-and-error first.
+\end{keyidea}
+
+\subsection{Comparison: Diffusion Models vs.\ VAEs and GANs}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|l|p{3.2cm}|p{3.2cm}|p{3.8cm}|}
+\hline
+& \textbf{VAE} & \textbf{GAN} & \textbf{Diffusion Model} \\
+\hline
+Training objective & ELBO (approximate likelihood) & Adversarial minimax game & Simple denoising MSE \\
+Training stability & Stable & Can be unstable & Very stable \\
+Sample quality & Often blurry & Often sharp, but mode collapse risk & State of the art, sharp \\
+Generation speed & Fast (single pass) & Fast (single pass) & Slow (many steps) \\
+Theoretical grounding & Variational inference & Game theory / $f$-divergence & Thermodynamics, SDEs \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection*{REFERENCES}
+\begin{itemize}
+    \item Prince, Simon JD. Understanding deep learning. MIT press, 2023.
+    \item Goodfellow, I., Bengio, Y., Courville, A., \& Bengio, Y. (2016). Deep learning (Vol. 1, No. 2, pp. 1-800). Cambridge: MIT press. \url{https://www.deeplearningbook.org/}
+    \item Bishop, Christopher M., and Hugh Bishop. Deep learning: Foundations and concepts. Vol. 1. Cham, Switzerland: Springer, 2024.
+    \item Torralba, A., Isola, P., \& Freeman, W. T. (2024). Foundations of computer vision. MIT Press.
+\end{itemize}
+
+\end{document}

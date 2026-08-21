@@ -1,0 +1,177 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+
+\begin{document}
+
+\section*{AI in Cybersecurity: Defensive Techniques, Governance, and Adversarial Threats}
+
+% ============================================================
+\section{Introduction: AI as Both Shield and Sword}
+% ============================================================
+
+The cybersecurity industry has always been an arms race. For decades, defenders relied on signature databases --- known-bad file hashes, IP blocklists, and YARA patterns --- while attackers responded with polymorphism, obfuscation, and novel exploit chains. Machine learning changed this contest fundamentally, giving both sides capabilities that signatures alone could never provide.
+
+For defenders, AI enables detecting threats that have no signature: an attacker using only legitimate tools (Living off the Land), a user account that suddenly downloads 50\,GB of data at 2\,AM, or a TLS-encrypted command-and-control channel blending into normal web traffic. For attackers, AI enables crafting spear-phishing emails that pass grammar checks and mimic trusted contacts, generating deepfake audio for business email compromise, and probing defences to identify the exact evasion technique that bypasses a target's detection system.
+
+This module focuses on the defensive AI toolkit --- what it does, why it works, where it fails, and how to govern it responsibly.
+
+\subsection{Key Terms}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{3cm}|p{10.5cm}|}
+\hline
+\textbf{Term} & \textbf{Definition} \\
+\hline
+UEBA & User and Entity Behaviour Analytics: ML-powered systems that detect anomalous behaviour by profiling normal patterns for users and devices over time, flagging deviations such as unusual login times, abnormal data volume, or access to atypical resources. \\
+\hline
+SOAR & Security Orchestration, Automation and Response: platforms that use playbooks and AI to automate incident triage, investigation, and response, reducing analyst workload and mean time to respond (MTTR). \\
+\hline
+Supervised Learning & A machine learning approach trained on labelled examples (known malicious and benign samples) to classify new inputs; used in spam filters, phishing detectors, and malware classifiers. \\
+\hline
+Unsupervised Learning & ML approach that identifies patterns in unlabelled data; used for anomaly detection where `normal' is learned from historical data and deviations are flagged without predefined malicious labels. \\
+\hline
+Adversarial ML & Techniques used to attack machine learning models: evasion (manipulating inputs at inference time), poisoning (corrupting training data), extraction (stealing the model), and inference (revealing training data). \\
+\hline
+NIST AI RMF & The NIST Artificial Intelligence Risk Management Framework (January 2023): a structured voluntary framework for governing AI trustworthiness across four functions: GOVERN, MAP, MEASURE, and MANAGE. \\
+\hline
+False Positive Rate & The proportion of legitimate activity incorrectly flagged as malicious; high FPR erodes SOC analyst trust and creates alert fatigue. \\
+\hline
+False Negative Rate & The proportion of genuinely malicious activity not detected; high FNR means threats evade detection --- the primary concern in security AI deployment. \\
+\hline
+MITRE ATLAS & Adversarial Threat Landscape for AI Systems: MITRE's framework cataloguing real-world adversarial ML attack techniques against AI systems, analogous to ATT\&CK for AI. \\
+\hline
+OWASP LLM Top 10 & OWASP's 2025 list of the top 10 security risks in large language model applications: prompt injection, insecure output handling, training data poisoning, model denial-of-service, supply chain vulnerabilities, and others. \\
+\hline
+Model Drift & The degradation of a deployed ML model's performance over time as real-world data distributions diverge from training data; a critical maintenance risk in AI security tools. \\
+\hline
+XDR & Extended Detection and Response: an evolution of EDR that correlates telemetry across endpoints, network, cloud, email, and identity layers to detect multi-stage attacks invisible in any single data stream. \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{The Defensive AI Toolkit: Core Techniques}
+% ============================================================
+
+Modern cybersecurity AI deploys three distinct machine learning paradigms, each suited to different detection challenges. Understanding the distinctions is essential for evaluating AI tool claims and for diagnosing detection failures.
+
+\subsection{Supervised Classification}
+Supervised classification is the simplest form of security AI to understand: a model is trained on a labelled dataset of malicious and benign samples and learns to distinguish between them. Email spam filters and malware classifiers are the canonical examples.
+
+The critical weakness is \textbf{dataset dependence} --- a model trained on historical phishing campaigns will fail against novel attack patterns that diverge from the training distribution. Supervised models also require continuous retraining as the threat landscape evolves.
+
+\subsection{Unsupervised Anomaly Detection}
+Unsupervised anomaly detection sidesteps the labelling problem by learning what `normal' looks like from historical data and flagging statistically significant deviations. \textbf{User and Entity Behavior Analytics (UEBA)} systems use this approach to profile individual users and devices: what hours does a user typically work, what volumes of data do they access, which systems do they authenticate to? When behaviour deviates significantly from the learned baseline, an alert fires.
+
+\begin{itemize}
+    \item \textbf{Advantage:} Detects completely novel threats with no known signature.
+    \item \textbf{Disadvantage:} High false positive rate when legitimate behaviour changes --- an employee starting a new project may trigger hundreds of alerts before the model adapts.
+\end{itemize}
+
+\begin{example}
+A University IT security team managing over 20,000 student accounts reports that UEBA false positives during semester start are their primary SOC workload challenge.
+\end{example}
+
+\subsection{Reinforcement Learning for Threat Hunting}
+Reinforcement learning for threat hunting represents the frontier of defensive AI. An agent learns to navigate an environment (a network, a log stream, a knowledge graph of alert data) by receiving rewards for finding real threats and penalties for false positives. Google DeepMind's research into automated threat hunting agents demonstrated that RL agents could learn to correlate low-fidelity signals from multiple sources into high-confidence threat identifications, outperforming supervised classifiers on novel attack patterns. Commercial implementations are emerging in autonomous SOC platforms, though human oversight remains the industry standard for decisive actions.
+
+% ============================================================
+\section{NIST AI RMF: Governing AI in the Security Operations Centre}
+% ============================================================
+
+The NIST AI Risk Management Framework (January 2023) provides the most authoritative governance structure for AI deployment in enterprise contexts, including AI-powered security tools. Its four core functions form a lifecycle model for responsible AI deployment.
+
+\subsection{GOVERN}
+The GOVERN function establishes organisational policies, roles, and accountabilities for AI risk management. For a SOC deploying AI-powered alert triage, GOVERN requires:
+\begin{itemize}
+    \item A defined owner for the AI system (the AI model itself needs a responsible owner, not just the security team).
+    \item Documented policies for when AI decisions can be autonomous versus when human review is mandatory.
+    \item Integration of AI risk into the organisation's enterprise risk register.
+\end{itemize}
+GOVERN is the function most commonly absent in AI security tool deployments --- organisations purchase a product, connect it to their SIEM, and accept vendor default settings without defining their own governance posture.
+
+\subsection{MAP}
+The MAP function contextualises the AI system within its operational environment: who are the AI actors, what are the intended uses, and what potential harms could result from errors? For a UEBA system at a Kenyan bank, MAP analysis must consider:
+\begin{itemize}
+    \item False positives that freeze legitimate transactions and cause reputational harm.
+    \item False negatives that miss genuine insider threat indicators.
+    \item Bias risks if the model was trained on Western user behaviour patterns that do not match typical Kenyan banking employee behaviour.
+\end{itemize}
+Contextualisation is particularly critical in cross-border AI deployments.
+
+\subsection{MEASURE}
+The MEASURE function applies quantitative and qualitative methods to assess AI risk, including testing for adversarial robustness. Standard metrics include precision, recall, F1 score, and area under the ROC curve. MEASURE should also test explicitly for adversarial vulnerability: can the model be evaded by minor input perturbations?
+
+\subsection{MANAGE}
+The MANAGE function closes the loop, prioritising and addressing identified risks through:
+\begin{itemize}
+    \item \textbf{Technical controls:} Retraining schedules, uncertainty thresholds, and fallback rules.
+    \item \textbf{Governance controls:} Mandatory human review for high-impact decisions.
+    \item \textbf{Monitoring:} Model drift detection and alert pattern analysis.
+\end{itemize}
+
+% ============================================================
+\section{Adversarial ML: The Four Attack Categories}
+% ============================================================
+
+MITRE ATLAS (Adversarial Threat Landscape for AI Systems) catalogues real-world adversarial ML attacks observed against deployed AI systems. Four categories are particularly relevant to AI-powered security tools.
+
+\subsection{Evasion Attacks}
+Evasion attacks manipulate inputs at \emph{inference time} to cause misclassification. In a security context, a malware sample can be perturbed --- by appending benign code sections or modifying metadata --- so that a supervised malware classifier assigns a benign label while the core malicious functionality remains intact.
+
+\begin{example}
+Research published in 2023 demonstrated that 10 of the 14 leading commercial antivirus AI engines could be evaded with fewer than 100 bytes of binary modification to known malware samples.
+\end{example}
+
+\subsection{Poisoning Attacks}
+Poisoning attacks corrupt the \emph{training data} used to build or retrain an AI model, causing systematic misclassification of specific inputs. An insider with access to a SIEM's labelling interface could label genuine intrusion alerts as false positives over several months, gradually degrading the AI triage model's performance for that alert category. Data poisoning is particularly concerning for AI systems that incorporate continuous learning from analyst feedback --- a mechanism designed to improve performance becomes an attack surface.
+
+\subsection{Model Extraction Attacks}
+Model extraction attacks systematically query an AI system's API to reconstruct a functional copy of the proprietary model. A well-resourced attacker who succeeds in extracting a copy of an email security gateway's phishing classifier can then craft phishing emails offline that maximise evasion probability before deployment. Countermeasures include query rate limiting, output perturbation, and monitoring for systematic query patterns.
+
+\subsection{Inference Attacks}
+Inference attacks (also called \emph{membership inference}) exploit the information contained in a model's output probabilities to infer properties of the training data. In a security AI context, this most commonly threatens models trained on sensitive internal data: if a UEBA model was trained on actual employee behaviour logs, inference attacks may reveal whether specific individuals' data was included in training. This creates privacy obligations under the \textbf{Kenya Data Protection Act 2019} for any AI system processing employee data.
+
+% ============================================================
+\section{Comparative Analysis: AI Security Approaches vs Signature-Based Detection}
+% ============================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{2.8cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2.2cm}|}
+\hline
+\textbf{Approach} & \textbf{Novel Threat Detection} & \textbf{False Positive Rate} & \textbf{Adversarial Robustness} & \textbf{Explainability} & \textbf{Maintenance Burden} \\
+\hline
+Signature-based (AV/IDS) & Very Low & Very Low & High & Very High & Low \\
+\hline
+Supervised ML classifier & Medium & Medium & Low & Medium & High \\
+\hline
+Unsupervised anomaly detection & High & High & Medium & Low & Medium \\
+\hline
+UEBA (behavioural profiling) & High & Medium--High & Medium & Medium & High \\
+\hline
+LLM-augmented analysis & High & Medium & Low & Medium & Very High \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{SOAR Platforms and the Human-in-the-Loop Question}
+% ============================================================
+
+Security Orchestration, Automation and Response (SOAR) platforms represent the operational frontier where defensive AI meets autonomous action. A SOAR playbook triggered by an AI alert can automatically:
+\begin{itemize}
+    \item Isolate an endpoint from the network.
+    \item Block an IP address at the firewall.
+    \item Disable a user account.
+    \item Notify the incident response team.
+\end{itemize}
+All of these actions can complete within seconds, compared to minutes or hours for manual response. Both MTTD (Mean Time to Detect) and MTTR (Mean Time to Respond) metrics improve dramatically with SOAR automation.
+
+However, SOAR automation introduces a new category of risk: \textbf{automated actions taken on false positive alerts}. An automated account disable based on a false positive UEBA alert can lock out a senior bank executive at a critical moment --- a business impact that may be more immediate than the security risk the automation was designed to prevent.
+
+The \textbf{NIST AI RMF GOVERN function} requires explicit policy on which alert categories and confidence thresholds permit autonomous action and which require human authorisation. The \textbf{Communications Authority of Kenya's draft AI Governance Guidelines (2024)} similarly recommend human oversight for any automated AI action with significant operational or privacy impact.
+
+\end{document}

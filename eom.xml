@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Question 1 -->
+  <question type="essay">
+    <name>
+      <text>Encapsulation in the TCP/IP Model</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+        <p><strong>Explain the process of encapsulation in the TCP/IP model.</strong></p>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>10.0000000</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <h4>Expected Model Answer</h4>
+        <p>Encapsulation is the process of wrapping data with protocol headers as it travels down the TCP/IP stack.</p>
+
+        <ul>
+          <li><strong>Application Layer:</strong> User data is generated.</li>
+          <li><strong>Transport Layer:</strong> A TCP or UDP header is added, creating a <strong>segment</strong>.</li>
+          <li><strong>Internet Layer:</strong> An IP header is added, creating a <strong>packet</strong>.</li>
+          <li><strong>Network Access Layer:</strong> An Ethernet header and trailer are added, creating a <strong>frame</strong>.</li>
+          <li>The frame is converted into bits and transmitted over the physical medium.</li>
+        </ul>
+
+        <p><strong>Key points for full marks:</strong></p>
+        <ul>
+          <li>Defines encapsulation correctly.</li>
+          <li>Mentions all TCP/IP layers in the correct order.</li>
+          <li>Explains the addition of protocol headers.</li>
+          <li>Correctly identifies segment, packet, and frame.</li>
+        </ul>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+  <!-- Question 2 -->
+  <question type="essay">
+    <name>
+      <text>TCP vs UDP Reliability</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+        <p><strong>Why is TCP considered reliable while UDP is not? Give one use case for each.</strong></p>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>10.0000000</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <h4>Expected Model Answer</h4>
+
+        <p><strong>TCP</strong> is reliable because it is connection-oriented and uses:</p>
+
+        <ul>
+          <li>Sequencing</li>
+          <li>Acknowledgments (ACKs)</li>
+          <li>Retransmission of lost packets</li>
+          <li>Error detection</li>
+        </ul>
+
+        <p>TCP is commonly used for applications that require accurate and complete delivery, such as:</p>
+
+        <ul>
+          <li>HTTP/HTTPS (web browsing)</li>
+          <li>SMTP (email)</li>
+        </ul>
+
+        <p><strong>UDP</strong> is connectionless and does not guarantee delivery, ordering, or retransmission, making it faster but less reliable.</p>
+
+        <p>Typical UDP applications include:</p>
+
+        <ul>
+          <li>Video/audio streaming</li>
+          <li>DNS queries</li>
+        </ul>
+
+        <p><strong>Key points for full marks:</strong></p>
+        <ul>
+          <li>Explains why TCP is reliable.</li>
+          <li>Explains why UDP is unreliable.</li>
+          <li>Provides one correct TCP use case.</li>
+          <li>Provides one correct UDP use case.</li>
+        </ul>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+  <!-- Question 3 -->
+  <question type="essay">
+    <name>
+      <text>OSI Layers and Security Relevance</text>
+    </name>
+
+    <questiontext format="html">
+      <text><![CDATA[
+        <p><strong>State the OSI layer for each of the following and give one security or forensic relevance:</strong></p>
+
+        <ol type="a">
+          <li>IP</li>
+          <li>DNS</li>
+          <li>Ethernet</li>
+        </ol>
+      ]]></text>
+    </questiontext>
+
+    <defaultgrade>15.0000000</defaultgrade>
+    <penalty>0</penalty>
+    <hidden>0</hidden>
+
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>18</responsefieldlines>
+    <attachments>0</attachments>
+    <attachmentsrequired>0</attachmentsrequired>
+
+    <generalfeedback format="html">
+      <text><![CDATA[
+        <h4>Expected Model Answer</h4>
+
+        <table border="1" cellpadding="6" cellspacing="0">
+          <tr>
+            <th>Protocol</th>
+            <th>OSI Layer</th>
+            <th>Security / Forensic Relevance</th>
+          </tr>
+
+          <tr>
+            <td>IP</td>
+            <td>Network Layer (Layer 3)</td>
+            <td>IP spoofing attacks occur at this layer. Investigators analyze IP headers to trace communication sources.</td>
+          </tr>
+
+          <tr>
+            <td>DNS</td>
+            <td>Application Layer (Layer 7)</td>
+            <td>DNS poisoning and DNS tunneling attacks. DNS logs can reveal Command-and-Control (C2) communication during forensic investigations.</td>
+          </tr>
+
+          <tr>
+            <td>Ethernet</td>
+            <td>Data Link Layer (Layer 2)</td>
+            <td>MAC spoofing and ARP poisoning attacks. Ethernet frames help identify devices on a local network during investigations.</td>
+          </tr>
+
+        </table>
+
+        <p><strong>Key points for full marks:</strong></p>
+        <ul>
+          <li>Correctly identifies the OSI layer for all three protocols.</li>
+          <li>Provides an appropriate security or forensic relevance for each protocol.</li>
+        </ul>
+      ]]></text>
+    </generalfeedback>
+
+  </question>
+
+</quiz>

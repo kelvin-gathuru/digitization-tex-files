@@ -1,0 +1,390 @@
+\documentclass[12pt,a4paper]{article}
+\input{preamble}
+\usepackage{chirun}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\tikzset{
+  proc/.style={draw=gray!70, fill=blue!10, rectangle, rounded corners=2pt},
+  serve/.style={draw=gray!70, fill=teal!10, rectangle, rounded corners=2pt},
+  good/.style={draw=gray!70, fill=yellow!15, rectangle, rounded corners=2pt}
+}
+
+\begin{document}
+
+\section*{Latent Factor Models, Dimensionality Reduction, and Graph Methods}
+
+% ============================================================
+\section{The Latent Factor Hypothesis}
+% ============================================================
+
+Neighbourhood methods work directly on observed co-occurrence. Latent factor models take a different route: they assume that both users and items live in a shared, low-dimensional space of unobserved characteristics, and that preference is the inner product of the two positions:
+
+\begin{equation}
+\hat{r}_{ui} = p_u^{\top} q_i = \sum_{f=1}^{k} p_{uf}\, q_{if}
+\label{eq:m4-dot}
+\end{equation}
+
+Here $q_i \in \mathbb{R}^k$ describes the item on $k$ latent dimensions and $p_u \in \mathbb{R}^k$ describes how much user $u$ cares about each. Nobody specifies the dimensions; they are discovered automatically during model training.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.95, transform shape]
+% R
+\draw[draw=gray!60, fill=gray!15] (0,0) rectangle (3.4,2.6);
+\node[font=\scriptsize\sffamily\bfseries, text=blue!80!black] at (1.7,1.3) {$R$};
+\node[font=\tiny\sffamily, text=gray] at (1.7,0.75) {$m \times n$};
+\node[font=\tiny\sffamily, text=gray] at (1.7,-0.32) {mostly missing};
+\node[font=\tiny\sffamily, text=gray, rotate=90] at (-0.28,1.3) {$m$ users};
+\node[font=\tiny\sffamily, text=gray] at (1.7,2.85) {$n$ items};
+
+\node[font=\Large\sffamily, text=gray] at (3.95,1.3) {$\approx$};
+
+% P
+\draw[draw=blue!80!black, fill=blue!10] (4.5,0) rectangle (5.55,2.6);
+\node[font=\scriptsize\sffamily\bfseries, text=blue!80!black] at (5.02,1.3) {$P$};
+\node[font=\tiny\sffamily, text=gray] at (5.02,0.75) {$m \times k$};
+\node[font=\tiny\sffamily, text=gray] at (5.02,-0.32) {user factors};
+
+\node[font=\Large\sffamily, text=gray] at (6.0,1.3) {$\times$};
+
+% Q^T
+\draw[draw=teal, fill=teal!10] (6.5,1.7) rectangle (9.9,2.6);
+\node[font=\scriptsize\sffamily\bfseries, text=teal] at (8.2,2.15) {$Q^{\top}$};
+\node[font=\tiny\sffamily, text=gray] at (8.2,1.45) {$k \times n$};
+\node[font=\tiny\sffamily, text=gray] at (8.2,1.13) {item factors};
+
+\draw[decorate, decoration={brace, amplitude=4pt}, draw=gray]
+     (4.5,-0.55) -- (9.9,-0.55);
+\node[font=\tiny\sffamily\itshape, text=gray, align=center] at (7.2,-1.15)
+  {$(m+n)k$ parameters instead of $mn$ cells.\\
+   With $m=10^6$, $n=10^5$, $k=50$: 55 million instead of 100 billion.};
+\end{tikzpicture}
+\caption{Matrix factorisation. Two thin matrices approximate one enormous sparse one. The compression is not merely storage --- forcing the data through $k$ dimensions is what makes the model generalise to unobserved cells.}
+\label{fig:m4-factorisation}
+\end{figure}
+
+\subsection{What the Factors Mean}
+
+Often, nothing nameable. Sometimes, strikingly interpretable. In film data, the first few dimensions typically separate serious from escapist, mainstream from niche, and male-skewed from female-skewed audiences --- without anyone having supplied those labels. In music, dimensions frequently align with genre and energy.
+
+\begin{example}
+\textbf{Pitfall --- Do Not Over-Interpret Factors:} Factors are only identified up to rotation: any invertible matrix $M$ yields $P M$ and $M^{-1}Q^{\top}$ with identical predictions. A dimension that looks like ``seriousness'' in one training run may be a mixture of two concepts in the next. Interpret factor \emph{geometry} (which items are near which) rather than individual axes.
+\end{example}
+
+% ============================================================
+\section{Why Not Just Use SVD?}
+% ============================================================
+
+Linear algebra offers Singular Value Decomposition (SVD), which provides the optimal rank-$k$ approximation to a matrix. Three problems prevent applying it directly to recommendation systems:
+
+\begin{enumerate}
+    \item \textbf{SVD is undefined for matrices with missing entries.} It requires a completely populated matrix.
+    \item \textbf{Filling gaps with zeros is wrong and harmful.} A zero on a 1--5 rating scale is not a neutral statement; it is a strong negative claim about 99\% of the matrix, and the decomposition will expend capacity reproducing it.
+    \item \textbf{Filling with means distorts the variance structure} and biases factors toward the mean-filled majority.
+\end{enumerate}
+
+The resolution --- which is the central methodological move of latent factor modeling --- is to stop treating recommendation as a matrix-completion problem and treat it as an \emph{optimisation over observed entries only}.
+
+\begin{center}
+\begin{tcolorbox}[enhanced,width=0.94\textwidth,colback=yellow!15,colframe=orange!80!black,
+  boxrule=1.2pt,arc=3pt,halign=center,fontupper=\normalsize\sffamily\itshape\color{blue!80!black}]
+Fit the observed entries; never impute the missing ones.
+\end{tcolorbox}
+\end{center}
+
+% ============================================================
+\section{Regularised Matrix Factorisation}
+% ============================================================
+
+Minimise squared error over the observed set $\mathcal{K} = \{(u,i) : r_{ui} \text{ observed}\}$, with a penalty that prevents the model from memorising:
+
+\begin{equation}
+\min_{P,Q} \sum_{(u,i) \in \mathcal{K}}
+  \left(r_{ui} - p_u^{\top} q_i\right)^2
+  + \lambda\left(\|p_u\|^2 + \|q_i\|^2\right)
+\label{eq:m4-objective}
+\end{equation}
+
+The regularisation term $\lambda$ is not optional. A user with three ratings can be fitted perfectly by a sufficiently large $p_u$; $\lambda$ prevents overfitting and forces the model to explain that user using structure learned from everyone else.
+
+\subsection{Adding Biases: The Step That Matters Most}
+
+Equation~\ref{eq:m4-dot} forces every effect through the interaction term, which is wasteful. Much of the variance in ratings has nothing to do with the match between user and item --- it is simply that some users are generous and some items are universally acclaimed. Separate these out:
+
+\begin{equation}
+\hat{r}_{ui} = \mu + b_u + b_i + p_u^{\top} q_i
+\label{eq:m4-biased}
+\end{equation}
+
+with the objective becoming:
+
+\begin{equation}
+\min \sum_{(u,i) \in \mathcal{K}}
+  \left(r_{ui} - \mu - b_u - b_i - p_u^{\top}q_i\right)^2
+  + \lambda\left(b_u^2 + b_i^2 + \|p_u\|^2 + \|q_i\|^2\right)
+\label{eq:m4-biased-obj}
+\end{equation}
+
+\begin{example}
+\textbf{Pitfall --- Bias Terms Capture More Variance Than Factors:} In benchmark datasets like Netflix, a model with only $\mu + b_u + b_i$ recovers a large majority of the achievable improvement over the global mean. Implementing factorisation without biases leads to poor performance because the factors are forced to absorb main effects. Always include biases.
+\end{example}
+
+\subsection{Stochastic Gradient Descent (SGD)}
+
+For each observed rating, compute the error $e_{ui} = r_{ui} - \hat{r}_{ui}$ and step all four parameter groups against the gradient:
+
+\begin{align}
+b_u &\leftarrow b_u + \eta\,(e_{ui} - \lambda\, b_u) \label{eq:m4-sgd-bu}\\
+b_i &\leftarrow b_i + \eta\,(e_{ui} - \lambda\, b_i) \label{eq:m4-sgd-bi}\\
+p_u &\leftarrow p_u + \eta\,(e_{ui}\, q_i - \lambda\, p_u) \label{eq:m4-sgd-pu}\\
+q_i &\leftarrow q_i + \eta\,(e_{ui}\, p_u - \lambda\, q_i) \label{eq:m4-sgd-qi}
+\end{align}
+
+Note the symmetry of the factor updates, and note that $p_u$ must be updated using the \emph{old} value of $q_i$ before updating $q_i$.
+
+\subsection{Alternating Least Squares (ALS)}
+
+Equation~\ref{eq:m4-objective} is not jointly convex in $P$ and $Q$, but it is convex in each when the other is held fixed --- yielding ordinary ridge regression with a closed-form solution:
+
+\begin{equation}
+p_u = \left(Q_{I_u}^{\top} Q_{I_u} + \lambda I\right)^{-1} Q_{I_u}^{\top} r_u
+\label{eq:m4-als}
+\end{equation}
+
+Alternate: solve for all $p_u$ with $Q$ fixed, then all $q_i$ with $P$ fixed, and repeat. Each user's solve is independent of every other, making ALS embarrassingly parallel in distributed settings.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|p{5.5cm}|p{6.5cm}|}
+\hline
+\textbf{Feature} & \textbf{SGD} & \textbf{ALS} \\
+\hline
+Convergence & Fast per pass, needs learning-rate tuning & Fewer iterations, no learning rate needed \\
+Parallelism & Awkward --- updates conflict & Embarrassingly parallel by user or item \\
+Sparse explicit data & Excellent; only touches observed entries & Fine \\
+Dense implicit data & Poor --- cannot enumerate all negatives & Excellent; closed-form handles all zeros \\
+Memory & Low & Higher; forms $k \times k$ systems \\
+Typical use & Explicit ratings, single machine & Implicit feedback, distributed processing \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{example}
+\textbf{Worked Example: Two SGD Steps by Hand}
+
+Set $k=2$, $\eta = 0.05$, $\lambda = 0.1$, $\mu = 3.5$. Current state for one pair:
+\[
+b_u = 0.20, \quad b_i = -0.30, \quad p_u = (0.50, -0.20), \quad q_i = (0.40, 0.60)
+\]
+True rating $r_{ui} = 5$.
+
+\begin{itemize}
+    \item \textbf{Predict:} $p_u^{\top} q_i = 0.50(0.40) + (-0.20)(0.60) = 0.08$. $\hat{r}_{ui} = 3.5 + 0.20 - 0.30 + 0.08 = 3.48$. Error $e_{ui} = 5 - 3.48 = 1.52$.
+    \item \textbf{Update Biases:}
+    \[ b_u \leftarrow 0.20 + 0.05(1.52 - 0.1 \times 0.20) = 0.275 \]
+    \[ b_i \leftarrow -0.30 + 0.05(1.52 - 0.1 \times (-0.30)) = -0.2225 \]
+    \item \textbf{Update Factors:}
+    \[ p_u \leftarrow (0.50, -0.20) + 0.05\big(1.52 \cdot (0.40, 0.60) - 0.1 \cdot (0.50, -0.20)\big) = (0.5279, -0.1534) \]
+    \[ q_i \leftarrow (0.40, 0.60) + 0.05\big(1.52 \cdot (0.50, -0.20) - 0.1 \cdot (0.40, 0.60)\big) = (0.4360, 0.5818) \]
+    \item \textbf{Re-predict:} $p_u^{\top} q_i = 0.5279(0.4360) + (-0.1534)(0.5818) = 0.1410$. New prediction $= 3.5 + 0.275 - 0.2225 + 0.1410 = 3.694$. Error falls from $1.52$ to $1.31$.
+\end{itemize}
+\end{example}
+
+\subsection{Practical Activity: Matrix Factorisation from Scratch}
+
+\begin{verbatim}
+import numpy as np, pandas as pd
+
+def fit_mf(train, n_users, n_items, k=40, epochs=30,
+           lr=0.005, reg=0.05, seed=0, val=None):
+    rng = np.random.default_rng(seed)
+    P  = rng.normal(0, 0.1, (n_users, k))
+    Q  = rng.normal(0, 0.1, (n_items, k))
+    bu = np.zeros(n_users); bi = np.zeros(n_items)
+    mu = train.rating.mean()
+
+    u = train.uidx.to_numpy(); i = train.iidx.to_numpy()
+    r = train.rating.to_numpy(float)
+    history = []
+
+    for ep in range(epochs):
+        order = rng.permutation(len(r))
+        for n in order:
+            uu, ii, rr = u[n], i[n], r[n]
+            pred = mu + bu[uu] + bi[ii] + P[uu] @ Q[ii]
+            e = rr - pred
+            bu[uu] += lr * (e - reg * bu[uu])
+            bi[ii] += lr * (e - reg * bi[ii])
+            pu_old = P[uu].copy()
+            P[uu]  += lr * (e * Q[ii] - reg * P[uu])
+            Q[ii]  += lr * (e * pu_old - reg * Q[ii])
+
+        if val is not None:
+            history.append((ep, rmse(val, mu, bu, bi, P, Q)))
+    return mu, bu, bi, P, Q, history
+
+def rmse(df, mu, bu, bi, P, Q):
+    p = (mu + bu[df.uidx.to_numpy()] + bi[df.iidx.to_numpy()]
+         + np.sum(P[df.uidx.to_numpy()] * Q[df.iidx.to_numpy()], axis=1))
+    return float(np.sqrt(np.mean((np.clip(p, 1, 5) - df.rating.to_numpy()) ** 2)))
+\end{verbatim}
+
+\textbf{Required Experiments:}
+\begin{enumerate}
+    \item \emph{Plot training and validation RMSE against epoch:} Observe classic overfitting where validation error bottoms out before rising.
+    \item \emph{Sweep $k \in \{5,10,20,40,80,160\}$:} Evaluate impact of latent factor capacity.
+    \item \emph{Sweep $\lambda \in \{0.001, 0.01, 0.05, 0.1, 0.5\}$:} Observe regularisation effects.
+    \item \emph{Ablate biases:} Freeze \texttt{bu} and \texttt{bi} at zero to observe the RMSE penalty.
+\end{enumerate}
+
+% ============================================================
+\section{Implicit Feedback: Two Formulations}
+% ============================================================
+
+Explicit MF minimises error on observed ratings. With implicit data, zeros carry weak information, necessitating modified objectives.
+
+\subsection{Implicit ALS (Weighted Regularised MF)}
+
+Sum over all $m \times n$ pairs, weighting each by confidence $\alpha_{ui}$:
+
+\begin{equation}
+\min_{P,Q} \sum_{u}\sum_{i}
+  \alpha_{ui}\left(p_{ui} - p_u^{\top} q_i\right)^2
+  + \lambda\left(\|p_u\|^2 + \|q_i\|^2\right)
+\label{eq:m4-ials}
+\end{equation}
+
+Although summing over $m \times n$ pairs seems computationally heavy, the ALS update rearranges into $Q^{\top}Q + Q^{\top}(C_u - I)Q$, where $Q^{\top}Q$ is precomputed once per iteration.
+
+\subsection{Bayesian Personalised Ranking (BPR)}
+
+BPR optimises pairwise ranking: for user $u$, observed item $i$, and unobserved item $j$, it enforces $\hat{r}_{ui} > \hat{r}_{uj}$:
+
+\begin{equation}
+\max \sum_{(u,i,j) \in D_S} \ln \sigma\!\left(\hat{r}_{ui} - \hat{r}_{uj}\right) - \lambda \|\Theta\|^2
+\label{eq:m4-bpr}
+\end{equation}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|p{5.5cm}|p{6.5cm}|}
+\hline
+\textbf{Property} & \textbf{Implicit ALS} & \textbf{BPR} \\
+\hline
+Objective & Pointwise, confidence-weighted & Pairwise ranking \\
+Negatives & All unobserved (downweighted) & Sampled per positive interaction \\
+Optimiser & Closed-form alternating solve & Stochastic Gradient Descent (SGD) \\
+Scales by & Observed interactions & Sampled triples \\
+Strength & Stable, parallelizable & Directly optimizes top-$k$ ranking \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{Choosing $k$ and $\lambda$}
+% ============================================================
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=11.8cm, height=5.0cm,
+  xlabel={Number of latent factors $k$}, ylabel={RMSE},
+  xlabel style={font=\scriptsize\sffamily}, ylabel style={font=\scriptsize\sffamily},
+  tick label style={font=\tiny\sffamily},
+  xmin=0, xmax=170, ymin=0.82, ymax=1.02,
+  axis line style={draw=gray}, grid=major, grid style={draw=gray!18},
+  legend style={font=\tiny\sffamily, draw=gray!40, at={(0.97,0.95)}, anchor=north east}]
+\addplot[draw=blue!80!black, line width=1.1pt, mark=*, mark size=1.4pt]
+  coordinates {(5,0.945)(10,0.930)(20,0.918)(40,0.912)(80,0.916)(160,0.931)};
+\addlegendentry{validation, $\lambda = 0.05$}
+\addplot[draw=red!80!black, line width=1.1pt, dashed, mark=square*, mark size=1.3pt]
+  coordinates {(5,0.938)(10,0.912)(20,0.881)(40,0.851)(80,0.836)(160,0.827)};
+\addlegendentry{training}
+\addplot[draw=orange!80!black, line width=1pt, dotted] coordinates {(40,0.82)(40,1.02)};
+\addlegendentry{chosen $k$}
+\end{axis}
+\end{tikzpicture}
+\caption{Training error falls monotonically with capacity; validation error reaches an optimal minimum before rising due to overfitting.}
+\label{fig:m4-kcurve}
+\end{figure}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|p{4.5cm}|p{6.5cm}|}
+\hline
+\textbf{Symptom} & \textbf{Diagnosis} & \textbf{Response} \\
+\hline
+Train $\ll$ Validation & Overfitting & Increase $\lambda$, reduce $k$, stop earlier \\
+Train $\approx$ Validation (both high) & Underfitting & Increase $k$, decrease $\lambda$, train longer \\
+Validation rises after epoch $t$ & Overfitting over time & Apply early stopping at epoch $t$ \\
+Great RMSE, poor NDCG & Wrong optimization target & Switch to ranking objective (e.g., BPR) \\
+\hline
+\end{tabular}
+\end{center}
+
+% ============================================================
+\section{Graph-Based Methods}
+% ============================================================
+
+Latent factor models and graph methods exploit bipartite user-item graphs. Personalized PageRank computes:
+
+\begin{equation}
+\pi = \alpha\, e_u + (1-\alpha)\, W^{\top} \pi
+\label{eq:m4-ppr}
+\end{equation}
+
+where $e_u$ is the restart distribution on user $u$, $W$ is the normalized adjacency matrix, and $\alpha$ is the restart probability.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[node distance=5mm]
+\node[proc, minimum width=0.7cm, minimum height=0.4cm, inner sep=1pt,
+      font=\tiny\sffamily] (u) at (0,1.2) {$u$};
+\foreach \j/\y in {1/2.1, 2/1.2, 3/0.3}
+  \node[serve, minimum width=0.7cm, minimum height=0.4cm, inner sep=1pt,
+        font=\tiny\sffamily] (i\j) at (2.0,\y) {$i_\j$};
+\foreach \j/\y in {1/2.55, 2/1.65, 3/0.75, 4/-0.15}
+  \node[proc, minimum width=0.7cm, minimum height=0.4cm, inner sep=1pt,
+        font=\tiny\sffamily] (v\j) at (4.0,\y) {$v_\j$};
+\foreach \j/\y in {4/2.1, 5/1.2, 6/0.3}
+  \node[good, minimum width=0.7cm, minimum height=0.4cm, inner sep=1pt,
+        font=\tiny\sffamily] (t\j) at (6.0,\y) {$i_\j$};
+
+\foreach \a/\b in {u/i1, u/i2, u/i3} \draw[draw=gray!70] (\a)--(\b);
+\foreach \a/\b in {i1/v1, i1/v2, i2/v2, i2/v3, i3/v3, i3/v4}
+  \draw[draw=gray!70] (\a)--(\b);
+\foreach \a/\b in {v1/t4, v2/t4, v2/t5, v3/t5, v3/t6, v4/t6}
+  \draw[draw=gray!70] (\a)--(\b);
+
+\node[font=\tiny\sffamily, text=gray] at (0,0.55) {step 0};
+\node[font=\tiny\sffamily, text=gray] at (2.0,-0.35) {step 1};
+\node[font=\tiny\sffamily, text=gray] at (4.0,-0.75) {step 2};
+\node[font=\tiny\sffamily, text=gray] at (6.0,-0.35) {step 3};
+
+\node[font=\tiny\sffamily, text=gray, align=left, anchor=west] at (7.0,1.2)
+  {Score $i_j$ by probability\\
+   a random walk from $u$ lands\\
+   there, with restart probability\\
+   $\alpha$ back to $u$.};
+\end{tikzpicture}
+\caption{Personalised PageRank on a bipartite graph. Random walks propagate transitively across paths to reach the long tail.}
+\label{fig:m4-walk}
+\end{figure}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|l|p{5.5cm}|p{6.5cm}|}
+\hline
+\textbf{Dimension} & \textbf{Latent Factor Models} & \textbf{Graph / Random Walk} \\
+\hline
+Strength & Compresses global structure; high accuracy in dense regions & Reaches sparse long-tail items through transitive paths \\
+Weakness & Requires sufficient interaction density per entity & Computationally expensive at query time \\
+New Items & Cannot embed without interactions & Instantly reachable once connected by one edge \\
+Explainability & Poor (abstract factors) & Good (paths provide transparent explanations) \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

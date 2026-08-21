@@ -1,0 +1,69 @@
+Neural networks are mainly used for?
+A. Increasing voltage gain
+B. Performing intelligent tasks and decision-making
+C. Generating oscillations
+D. Amplifying signals
+ANSWER: B
+
+Artificial neural networks are part of which field?
+A. Electronics
+B. Artificial Intelligence
+C. Mechanical Engineering
+D. Thermodynamics
+ANSWER: B
+
+Which architecture separates memory and processing units?
+A. Parallel architecture
+B. Neural architecture
+C. Von Neumann architecture
+D. Distributed system
+ANSWER: C
+
+What was the limitation of early computers?
+A. Slow processing speed
+B. Inability to learn
+C. High power consumption
+D. Lack of memory
+ANSWER: B
+
+The perceptron model was developed by?
+A. McCulloch
+B. Pitts
+C. Rosenblatt
+D. Papert
+ANSWER: C
+
+Which decade introduced parallel processing concepts?
+A. 1940s
+B. 1960s
+C. 1980s
+D. 2000s
+ANSWER: C
+
+Neural networks process information mainly using?
+A. Sequential logic only
+B. Parallel connections
+C. Mechanical systems
+D. Analog circuits only
+ANSWER: B
+
+Which method is used to train neural networks?
+A. Boolean algebra
+B. Gradient descent
+C. Ohm's law
+D. Kirchhoff's law
+ANSWER: B
+
+Which side of the brain inspired parallel processing?
+A. Left side
+B. Right side
+C. Central part
+D. Lower section
+ANSWER: B
+
+Neural networks are best suited for?
+A. Simple arithmetic only
+B. Fixed rule-based problems
+C. Pattern recognition and learning tasks
+D. Signal amplification
+ANSWER: C

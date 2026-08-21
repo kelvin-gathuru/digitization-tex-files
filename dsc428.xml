@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- ========================================= -->
+  <!-- CATEGORY: Module 4 - Latent Factor Models Kevo -->
+  <!-- ========================================= -->
+  <question type="category">
+    <category>
+      <text>$course$/DSC 428/Module 4: Latent Factor Models</text>
+    </category>
+    <info format="moodle_auto_format">
+      <text>Questions for Module 4: Latent Factor Models (DSC 428)</text>
+    </info>
+  </question>
+
+  <!-- ========================================= -->
+  <!-- SECTION A: SHORT ANSWER / ESSAY (6 MARKS) -->
+  <!-- ========================================= -->
+
+  <!-- Question 1 -->
+  <question type="essay">
+    <name>
+      <text>A1: Latent Factor Hypothesis &amp; Factor Axes Interpretation</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section A — Question 1 (6 marks)</strong></p>
+<p>Explain the latent factor hypothesis and why factor axes should not be interpreted individually.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<p>The hypothesis is that users and items can each be represented as vectors in a shared \(k\)-dimensional space of unobserved characteristics, and that preference is well approximated by the inner product \(p_u^\top q_i\).</p>
+<p>Individual axes should not be interpreted because the factorisation is identified only up to an invertible linear transformation: \(P M\) and \(M^{-1} Q^\top\) give identical predictions for any invertible \(M\), so what one run calls a single axis another run may split across two. Interpret the geometry — relative distances and neighbourhoods — rather than named dimensions.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>6.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>10</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- Question 2 -->
+  <question type="essay">
+    <name>
+      <text>A2: Three Reasons Classical SVD Cannot Be Applied</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section A — Question 2 (6 marks)</strong></p>
+<p>Give three reasons classical SVD cannot be applied to a rating matrix.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<ol>
+  <li><strong>Missing Data:</strong> SVD is defined only for complete matrices, and a rating matrix is overwhelmingly missing.</li>
+  <li><strong>Zero Imputation Bias:</strong> Imputing zeros is not neutral: on a 1–5 scale, zero is an extreme negative assertion about roughly 99% of entries, and the decomposition will expend its limited rank reproducing that assertion rather than the signal.</li>
+  <li><strong>Mean Imputation Distortion:</strong> Imputing means distorts the variance structure and biases factors toward the imputed majority, which also dominates the objective by sheer count.</li>
+</ol>
+<p><em>Resolution Note:</em> The resolution is to optimise squared error over observed entries only, which is no longer an SVD but an optimisation problem.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>6.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>10</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- Question 3 -->
+  <question type="essay">
+    <name>
+      <text>A3: Importance of Bias Terms in Matrix Factorization</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section A — Question 3 (6 marks)</strong></p>
+<p>Why do bias terms matter so much, and what does omitting them cost?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<p>Much of the variance in observed ratings is not interaction at all: it is that some users rate generously, some items are simply good, and the population uses the scale in a particular way. Bias terms \(\mu + b_u + b_i\) model these directly and cheaply.</p>
+<p>Omitting them forces the interaction term \(p_u^\top q_i\) to reproduce main effects, consuming capacity that should be modelling genuine user–item affinity, and typically leaves a large fraction of the achievable improvement on the table. In practice, a bias-only model recovers most of the gain over the global mean, so omitting biases is the most common reason a from-scratch MF implementation underperforms a trivial baseline.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>6.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>10</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- Question 4 -->
+  <question type="essay">
+    <name>
+      <text>A4: Contrast SGD and ALS</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section A — Question 4 (6 marks)</strong></p>
+<p>Contrast SGD and ALS on convergence, parallelism, and suitability for implicit data.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<ul>
+  <li><strong>Convergence:</strong> SGD makes rapid progress per pass but requires tuning a learning rate and a schedule; ALS needs no learning rate and converges in relatively few iterations, though each iteration is computationally more expensive.</li>
+  <li><strong>Parallelism:</strong> SGD updates to shared parameters conflict, making parallelisation awkward; ALS solves each user independently given fixed \(Q\), so it is embarrassingly parallel and suits distributed execution.</li>
+  <li><strong>Implicit Data:</strong> SGD cannot enumerate the \(m \times n\) negative pairs and must sample; ALS has a closed form in which the all-pairs term reduces to a precomputed \(Q^\top Q\) plus a per-user correction over observed items, making the full sum tractable.</li>
+</ul>
+<p><em>Takeaway:</em> Use SGD for sparse explicit data on a single machine; use ALS for implicit data at scale.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>6.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>10</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- ========================================= -->
+  <!-- SECTION B: APPLIED (12 MARKS EACH)        -->
+  <!-- ========================================= -->
+
+  <!-- Question 5 -->
+  <question type="essay">
+    <name>
+      <text>B5: SGD Hand Calculation Step</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section B — Question 5 (12 marks)</strong></p>
+<p>Perform one full SGD update by hand for:</p>
+<ul>
+  <li>\(\mu = 3.2\)</li>
+  <li>\(b_u = -0.10\)</li>
+  <li>\(b_i = 0.40\)</li>
+  <li>\(p_u = (0.30, 0.10)\)</li>
+  <li>\(q_i = (0.20, -0.50)\)</li>
+  <li>\(r_{ui} = 2\)</li>
+  <li>\(\eta = 0.05\)</li>
+  <li>\(\lambda = 0.1\)</li>
+</ul>
+<p>Show the prediction, the error, and all four updated parameters (\(b_u\), \(b_i\), \(p_u\), \(q_i\)).</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<p><strong>1. Prediction (\(\hat{r}_{ui}\)):</strong><br/>
+\(p_u^\top q_i = 0.30(0.20) + 0.10(-0.50) = 0.06 - 0.05 = 0.01\)<br/>
+\(\hat{r}_{ui} = 3.2 - 0.10 + 0.40 + 0.01 = \mathbf{3.51}\)</p>
+
+<p><strong>2. Error (\(e_{ui}\)):</strong><br/>
+\(e_{ui} = 2 - 3.51 = \mathbf{-1.51}\)</p>
+
+<p><strong>3. Bias Updates:</strong><br/>
+\(b_u \leftarrow -0.10 + 0.05(-1.51 - 0.1(-0.10)) = -0.10 + 0.05(-1.500) = \mathbf{-0.175}\)<br/>
+\(b_i \leftarrow 0.40 + 0.05(-1.51 - 0.1(0.40)) = 0.40 + 0.05(-1.550) = \mathbf{0.3225}\)</p>
+
+<p><strong>4. Factor Vector Updates (using old parameter values on RHS):</strong><br/>
+\(p_u \leftarrow (0.30, 0.10) + 0.05 \left[ -1.51(0.20, -0.50) - 0.1(0.30, 0.10) \right]\)<br/>
+\(= (0.30, 0.10) + 0.05 \left[ (-0.302, 0.755) - (0.03, 0.01) \right]\)<br/>
+\(= (0.30, 0.10) + 0.05(-0.332, 0.745) = \mathbf{(0.2834, 0.1373)}\)</p>
+
+<p>\(q_i \leftarrow (0.20, -0.50) + 0.05 \left[ -1.51(0.30, 0.10) - 0.1(0.20, -0.50) \right]\)<br/>
+\(= (0.20, -0.50) + 0.05 \left[ (-0.453, -0.151) - (0.02, -0.05) \right]\)<br/>
+\(= (0.20, -0.50) + 0.05(-0.473, -0.101) = \mathbf{(0.1764, -0.5051)}\)</p>
+
+<p><em>Marking Note:</em> Full credit requires noting that the prediction was too high (so corrections move parameters down/negatively), and correctly using old \(p_u\) values when updating \(q_i\).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>12.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- Question 6 -->
+  <question type="essay">
+    <name>
+      <text>B6: Implicit ALS vs. BPR and Mziki Recommendation</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section B — Question 6 (12 marks)</strong></p>
+<p>Explain the difference between implicit ALS and BPR in objective, negatives, and optimiser. For Mziki, which would you choose and why?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<ul>
+  <li><strong>Objective:</strong> Implicit ALS is <em>pointwise</em>—it minimises confidence-weighted squared error between a binarised preference and the inner product, summed over all user–item pairs. BPR is <em>pairwise</em>—it maximises the log-likelihood that an observed item is ranked above a sampled unobserved one.</li>
+  <li><strong>Negatives:</strong> ALS treats every unobserved pair as a negative with low confidence, so all of them contribute. BPR samples one negative per positive per update, so most unobserved pairs are never seen.</li>
+  <li><strong>Optimiser:</strong> ALS alternates closed-form ridge solves and is parallel per user or item. BPR uses SGD over sampled triples.</li>
+</ul>
+
+<p><strong>Choice for Mziki:</strong><br/>
+Both choices are defensible if properly justified:</p>
+<ul>
+  <li><strong>BPR:</strong> Better fit if the deliverable is a top-\(k\) playlist and the team can afford sampling and tuning, because it directly optimises the ranking objective the product actually exposes.</li>
+  <li><strong>ALS:</strong> Better fit if the priority is a stable, easily parallelised model with few hyperparameters over a very large play log, and it also yields item factors usable for similar-track lookups.</li>
+  <li><strong>Production Hybrid Answer:</strong> ALS for candidate generation and a pairwise-trained model for re-ranking.</li>
+</ul>
+<p><em>Marking Note:</em> Full marks require a clear choice with a reason grounded in product requirements, not just a technical comparison.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>12.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- Question 7 -->
+  <question type="essay">
+    <name>
+      <text>B7: Soko's 200-Factor Failure Analysis</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section B — Question 7 (12 marks)</strong></p>
+<p>Analyse Soko’s 200-factor failure. Identify both root causes, explain why RMSE improved despite them, and specify the evaluation that would have caught each.</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Model Answer &amp; Marking Guide:</strong></p>
+<ol>
+  <li><strong>Root Cause One — Capacity Without Data:</strong> A 200-dimensional factor vector estimated from four interactions is underdetermined. Regularisation shrinks it, but the residual is fitted noise, so predictions for low-activity users are confident and arbitrary.</li>
+  <li><strong>Root Cause Two — Silent Architectural Regression:</strong> The new pipeline computed factors for all items including brand-new ones, which received near-zero vectors and hence near-zero scores, displacing the content-based fallback that had previously surfaced them. No error was raised because nothing failed programmatically; new items simply never ranked.</li>
+  <li><strong>Why RMSE Improved Anyway:</strong> RMSE is computed over observed test ratings, which are dominated by active users and established items — precisely the region where extra capacity helps. Users with four interactions and items with none contribute almost nothing to the global average RMSE, masking both failures.</li>
+  <li><strong>Evaluations That Would Have Caught Each:</strong>
+    <ul>
+      <li><em>For Root Cause One:</em> Stratified RMSE and ranking metrics computed within user activity buckets (e.g., users bucketed by interaction count), which would show severe degradation in the lowest activity bucket.</li>
+      <li><em>For Root Cause Two:</em> Tracking exposure share and coverage for items under 30 days old as a standing metric, which would have dropped to near zero on the day of release.</li>
+    </ul>
+  </li>
+</ol>
+<p><em>Additional Creditable Points:</em> Implementing a cold-user policy with a minimum-interaction threshold, or reporting results across multiple random seeds since high-\(k\) models are structurally unstable.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>12.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <responseformat>editor</responseformat>
+    <responserequired>1</responserequired>
+    <responsefieldlines>15</responsefieldlines>
+    <attachments>0</attachments>
+  </question>
+
+  <!-- ========================================= -->
+  <!-- SECTION C: MULTIPLE CHOICE (2 MARKS EACH) -->
+  <!-- ========================================= -->
+
+  <!-- Question 8 -->
+  <question type="multichoice">
+    <name>
+      <text>C8: Problem with Zero Imputation Before SVD</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section C — Question 8 (2 marks)</strong></p>
+<p>Filling missing entries with zeros before SVD is wrong because:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Correct Answer: (b)</strong></p>
+<p>On a 1–5 rating scale, zero is an extreme negative assertion about roughly 99% of entries. The decomposition will waste capacity reproducing that false negative claim rather than capturing the actual rating signal.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[it is slow]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. While computational cost is a concern, the core theoretical reason is conceptual distortion of ratings.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[zero is a strong negative claim about most of the matrix]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct. Imputing zeros asserts a strong negative preference for unobserved entries.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[SVD needs square matrices]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Standard SVD works on rectangular matrices of shape m x n.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[it breaks sparsity only]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Breaking sparsity is a computational consequence, but the main issue is introducing extreme negative bias.]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Question 9 -->
+  <question type="multichoice">
+    <name>
+      <text>C9: Tractability of Implicit ALS Sum</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section C — Question 9 (2 marks)</strong></p>
+<p>In implicit ALS, the sum over all \(m \times n\) pairs is tractable because:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Correct Answer: (b)</strong></p>
+<p>The key property of implicit ALS is that \(Y^\top C^u Y = Y^\top Y + Y^\top (C^u - I) Y\). Since \(C^u - I\) is non-zero only for observed items, \(Y^\top Y\) can be precomputed once for all users, leaving a fast local update over observed items.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[most pairs are dropped]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Implicit ALS considers all pairs rather than dropping them.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[the solve factors into a term computed once plus a correction over observed items]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct. The global Y^T Y is computed once, and per-user solves only add corrections for observed interactions.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[k is small]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. While small k helps matrix inversion, it does not solve the m x n summation without the algebraic factorization trick.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[it is approximated by sampling]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Sampling is used in SGD / BPR, not exact implicit ALS.]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <!-- Question 10 -->
+  <question type="multichoice">
+    <name>
+      <text>C10: Why BPR Beats Pointwise MF on NDCG</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p><strong>Section C — Question 10 (2 marks)</strong></p>
+<p>BPR often beats pointwise MF on NDCG because it:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><strong>Correct Answer: (b)</strong></p>
+<p>BPR (Bayesian Personalized Ranking) directly optimizes a pairwise ranking objective function (maximizing the margin between observed and unobserved items), which aligns directly with rank-based metrics like NDCG.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>2.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[uses more data]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. BPR samples pairs and actually processes fewer item pairs per epoch than full implicit ALS.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[optimises pairwise order directly]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct. Directly optimizing relative order aligns directly with ranking metrics like NDCG.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[has more parameters]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. BPR uses the exact same matrix factorization parameters (P and Q) as pointwise MF.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[converges faster]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Convergence speed is not the primary reason for superior NDCG performance.]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>
