@@ -1,2127 +1,1198 @@
+
 <!doctype html>
 <html lang="en">
+    <head>
+        
+            <meta charset="utf-8">
+            <meta name="robots" content="noindex">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="None" />
+            <meta name="date" content="2026-09-02" />
+        
 
-<head>
+        <title>eetm6 | </title>
 
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="None" />
-    <meta name="date" content="2026-08-18" />
+        
+            <link rel="icon" type="image/png" href="static/favicon.png?build_time=1788335496.550151"/>
+        
 
+        
+    
+    
+            <link rel="stylesheet" href="static/styles.css?build_time=1788335496.550151">
+            
+            
+        
+    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1788335496.550151">
 
-    <title>sstm4 | </title>
-
-
-    <link rel="icon" type="image/png" href="static/favicon.png?build_time=1787052518.000954" />
-
-
-
-
-
-    <link rel="stylesheet" href="static/styles.css?build_time=1787052518.000954">
-
-
-
-    <link rel="stylesheet" id="customiseCodeCSS" href="static/pygmentize.css?build_time=1787052518.000954">
-
-    <link rel="stylesheet" href="static/print.css?build_time=1787052518.000954">
-
+    <link rel="stylesheet" href="static/print.css?build_time=1788335496.550151">
 
 
+        
+    
+			<script>
+				var chirun_static_url = new URL('static?build_time=1788335496.550151', location.href);
+			</script>
 
-    <script>
-        var chirun_static_url = new URL('static?build_time=1787052518.000954', location.href);
-    </script>
+            
+                <script defer src="static/mathjax_config.js?build_time=1788335496.550151"></script>
+                <script type="text/javascript" id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+            
 
+            <script type="module" src="static/localisation.js?build_time=1788335496.550151"></script>
 
-    <script defer src="static/mathjax_config.js?build_time=1787052518.000954"></script>
-    <script type="text/javascript" id="MathJax-script" defer
-        src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+            <script defer src="static/customisation.js?build_time=1788335496.550151"></script>
 
+            
 
-    <script type="module" src="static/localisation.js?build_time=1787052518.000954"></script>
-
-    <script defer src="static/customisation.js?build_time=1787052518.000954"></script>
-
-
-
-
-
-    <script defer src="static/code.js?build_time=1787052518.000954" type="module"></script>
-    <script defer src="static/embed_numbas.js?build_time=1787052518.000954" type="module"></script>
-    <script defer src="static/embed_qrcode.js?build_time=1787052518.000954" type="module"></script>
-
-
-    <template id="runnable-code-template">
-        <link rel="stylesheet" href="static/code.css?build_time=1787052518.000954">
-        <div class="runnable-code-wrapper">
-            <section class="fullscreenable code">
-                <div id="code"></div>
-                <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon"
-                        aria-label="Fullscreen code" viewBox="0 0 180 180">
-                        <use href="#fullscreen" />
-                    </svg></button>
-            </section>
-            <section class="fullscreenable output">
-                <div id="output" aria-live="polite">
-                    <pre class="stdout"></pre>
-                    <pre class="result"></pre>
-                    <div class="images"></div>
-                </div>
-                <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon"
-                        aria-label="Fullscreen output" viewBox="0 0 180 180">
-                        <use href="#fullscreen" />
-                    </svg></button>
-            </section>
-            <div class="buttons">
-                <button type="button" class="run-code">Run code</button>
-            </div>
-            <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
-                xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-                <defs>
-                    <g id="cog">
-                        <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
-                            d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
-                    </g>
-                    <g id="pdf">
-                        <path
-                            style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
-                    </g>
-                    <g id="slides">
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,21.25 30,137.5" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="M 90,21.25 60,158.75" />
-                        <rect
-                            style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                            width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675"
-                            rx="4.7737675" />
-                        <rect
-                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                            width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,66.25 h 50" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,76.25 h 50" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,86.25 h 50" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 90,56.25 h 50" />
-                        <path
-                            style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                            d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
-                    </g>
-
-                    <g id="notebook">
-                        <path
-                            style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
-                            d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
-                        <circle
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            cx="58.699139" cy="59.503937" r="3.8077738" />
-                        <circle
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            cx="113.59385" cy="52.885151" r="4.9348516" />
-                        <path
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
-                        <path
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
-                        <ellipse
-                            style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                            cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="M 34,46.266514 V 62.316215" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="M 34,77.849849 V 93.89955" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 34,109.43318 v 16.0497" />
-                        <path
-                            style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                            d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
-                    </g>
-
-                    <g id="fullscreen">
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
-                            d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
-                        />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                            d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
-                        <path
-                            style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                            d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
-                    </g>
-                </defs>
-            </svg>
-        </div>
-    </template>
-
-    <template id="embed-numbas-template">
-        <link rel="stylesheet" href="static/embed_numbas.css?build_time=1787052518.000954">
-        <details id="wrapper" data-completion-status="incomplete">
-            <summary>
-                <h1 id="title">Test Yourself</h1>
-                <div id="completion-status" data-completion-status="unknown">
-                    <span class="complete">Complete</span>
-                    <span class="incomplete">Incomplete</span>
-                </div>
-                <label id="score-feedback">
-                    Score:
-                    <progress min="0"></progress>
-                </label>
-            </summary>
-            <iframe class="embed" title="Numbas"></iframe>
-        </details>
-    </template>
-
-</head>
-
-<body class="">
+            
+        
+    <script defer src="static/code.js?build_time=1788335496.550151" type="module"></script>
+    <script defer src="static/embed_numbas.js?build_time=1788335496.550151" type="module"></script>
+    <script defer src="static/embed_qrcode.js?build_time=1788335496.550151" type="module"></script>
 
 
-    <a class="skip-to-content-link" href="#main-content">Skip to content</a>
-
-    <dialog id="display-options">
-        <form>
-            <div class="buttons">
-                <button type="button" id="reset-display-options">Reset to defaults</button>
-
-                <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
-
-                <button autofocus type="button" aria-controls="display-options">
-                    Close
-                </button>
-            </div>
-
-            <div class="inputs">
-                <div class="input-group">
-                    <label for="display-options-font-scale">
-                        Text size
-                    </label>
-                    <input name="font-scale" type="range" min="50" max="600" step="5" value="100"
-                        id="display-options-font-scale">
-                    <output for="display-options-font-scale">100%</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-font-weight">
-                        Text weight
-                    </label>
-                    <input name="font-weight" type="range" min="200" max="800" step="100" value="400"
-                        id="display-options-font-weight">
-                    <output for="display-options-font-weight">400</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-spacing-factor">
-                        Spacing
-                    </label>
-                    <input name="spacing-factor" type="range" min="0" max="1200" step="5" value="100"
-                        id="display-options-spacing-factor">
-                    <output for="display-options-spacing-factor">100%</output>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-font-family">
-                        Text font
-                    </label>
-                    <select name="font-family" id="display-options-font-family">
-                        <option value="var(--sans-serif-font)" selected>Sans-serif</option>
-                        <option value="var(--serif-font)">Serif</option>
-                        <option value="Atkinson Hyperlegible Next">Atkinson Hyperlegible</option>
-                        <option value="Comic Sans MS">Comic Sans</option>
-                    </select>
-                </div>
-
-                <div class="input-group">
-                    <label for="display-options-colour-scheme">
-                        Colour scheme
-                    </label>
-                    <select name="colour-scheme" id="display-options-colour-scheme">
-                        <option value="auto" selected>Automatic (default)</option>
-                        <option value="light">Black text on white</option>
-                        <option value="dark">White text on black</option>
-                        <option value="custom">Custom</option>
-                    </select>
-                </div>
-
-                <section id="custom-colour-scheme-options" class="inputs">
-                    <div class="input-group">
-                        <label for="display-options-text-colour">
-                            Text colour
-                        </label>
-                        <input name="text-colour" type="color" value="#000000" id="display-options-text-colour">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-link-colour">
-                            Link colour
-                        </label>
-                        <input name="link-colour" type="color" value="#0000ee" id="display-options-link-colour">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-bg-colour">
-                            Background colour
-                        </label>
-                        <input name="bg-colour" type="color" value="#ffffff" id="display-options-bg-colour">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-bg-colour-off">
-                            Muted background colour
-                        </label>
-                        <input name="bg-colour-off" type="color" value="#eeeeee" id="display-options-bg-colour-off">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-bg-colour-accent-1">
-                            Accent colour 1
-                        </label>
-                        <input name="bg-colour-accent-1" type="color" value="#4caf50"
-                            id="display-options-bg-colour-accent-1">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-bg-colour-accent-2">
-                            Accent colour 2
-                        </label>
-                        <input name="bg-colour-accent-2" type="color" value="#f6f6ff"
-                            id="display-options-bg-colour-accent-2">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-bg-colour-accent-3">
-                            Accent colour 3
-                        </label>
-                        <input name="bg-colour-accent-3" type="color" value="#eeffd3"
-                            id="display-options-bg-colour-accent-3">
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-bg-colour-accent-4">
-                            Accent colour 4
-                        </label>
-                        <input name="bg-colour-accent-4" type="color" value="#ffeeee"
-                            id="display-options-bg-colour-accent-4">
-                    </div>
+        <template id="runnable-code-template">
+            <link rel="stylesheet" href="static/code.css?build_time=1788335496.550151">
+            <div class="runnable-code-wrapper">
+                <section class="fullscreenable code">
+                    <div id="code"></div>
+                    <button class="fullscreen icon-button" title="Fullscreen code"><svg class="icon" aria-label="Fullscreen code" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
                 </section>
-
-                <section id="filter-colour-scheme-options" class="inputs">
-                    <div class="input-group">
-                        <label for="display-options-filter-sepia">
-                            Sepia filter
-                        </label>
-                        <input name="filter-sepia" type="range" min="0" max="100" step="1" value="0"
-                            id="display-options-filter-sepia">
-                        <output for="display-options-filter-sepia">0%</output>
+                <section class="fullscreenable output">
+                    <div id="output" aria-live="polite">
+                        <pre class="stdout"></pre>
+                        <pre class="result"></pre>
+                        <div class="images"></div>
                     </div>
-
-                    <div class="input-group">
-                        <label for="display-options-filter-hue-rotate">
-                            Rotate hues
-                        </label>
-                        <input name="filter-hue-rotate" type="range" min="0" max="1" step="0.01" value="0"
-                            id="display-options-filter-hue-rotate">
-                        <output for="display-options-filter-hue-rotate">0 turns</output>
-                    </div>
-
-                    <div class="input-group">
-                        <label for="display-options-invert-images">
-                            Invert images in dark mode
-                        </label>
-                        <input name="invert-images" type="checkbox" id="display-options-invert-images">
-                    </div>
-
+                    <button class="fullscreen icon-button" title="Fullscreen output"><svg class="icon" aria-label="Fullscreen output" viewBox="0 0 180 180">
+    <use href="#fullscreen"/>
+</svg></button>
                 </section>
+                <div class="buttons">
+                    <button type="button" class="run-code">Run code</button>
+                </div>
+                <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
 
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
 
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
             </div>
+        </template>
 
-            <details id="advanced">
-                <summary>Advanced options</summary>
-                <section id="custom-css-options" class="inputs">
-                    <div class="input-group">
-                        <label for="display-options-custom-css">
-                            Custom CSS code
-                        </label>
-                        <textarea name="custom-css" id="display-options-custom-css"></textarea>
+        <template id="embed-numbas-template">
+            <link rel="stylesheet" href="static/embed_numbas.css?build_time=1788335496.550151">
+            <details id="wrapper" data-completion-status="incomplete">
+                <summary>
+                    <h1 id="title">Test Yourself</h1>
+                    <div id="completion-status" data-completion-status="unknown">
+                        <span class="complete">Complete</span>
+                        <span class="incomplete">Incomplete</span>
                     </div>
-                </section>
+                    <label id="score-feedback">
+                        Score:
+                        <progress min="0"></progress>
+                    </label>
+                </summary>
+                <iframe class="embed" title="Numbas"></iframe>
             </details>
-        </form>
-    </dialog>
+        </template>
+
+    </head>
+    <body class="" >
+        
+
+        <a class="skip-to-content-link" href="#main-content">Skip to content</a>
+        
+            <dialog id="display-options">
+    <form>
+        <div class="buttons">
+            <button type="button" id="reset-display-options">Reset to defaults</button>
+
+            <a href="https://chirun.org.uk/accessibility-statement/material">Accessibility statement</a>
+
+            <button autofocus type="button" aria-controls="display-options">
+                Close
+            </button>
+        </div>
+
+        <div class="inputs">
+            <div class="input-group">
+                <label for="display-options-font-scale">
+                    Text size
+                </label>
+                <input name="font-scale" type="range" min="50" max="600" step="5" value="100" id="display-options-font-scale">
+                <output for="display-options-font-scale">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-font-weight">
+                    Text weight
+                </label>
+                <input name="font-weight" type="range" min="200" max="800" step="100" value="400" id="display-options-font-weight">
+                <output for="display-options-font-weight">400</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-spacing-factor">
+                    Spacing
+                </label>
+                <input name="spacing-factor" type="range" min="0" max="1200" step="5" value="100" id="display-options-spacing-factor">
+                <output for="display-options-spacing-factor">100%</output>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-font-family">
+                    Text font
+                </label>
+                <select name="font-family" id="display-options-font-family">
+                    <option value="var(--sans-serif-font)" selected>Sans-serif</option>
+                    <option value="var(--serif-font)">Serif</option>
+                    <option value="Atkinson Hyperlegible Next">Atkinson Hyperlegible</option>
+                    <option value="Comic Sans MS">Comic Sans</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="display-options-colour-scheme">
+                    Colour scheme
+                </label>
+                <select name="colour-scheme" id="display-options-colour-scheme">
+                    <option value="auto" selected>Automatic (default)</option>
+                    <option value="light">Black text on white</option>
+                    <option value="dark">White text on black</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+
+            <section id="custom-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-text-colour">
+                        Text colour
+                    </label>
+                    <input name="text-colour" type="color" value="#000000" id="display-options-text-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-link-colour">
+                        Link colour
+                    </label>
+                    <input name="link-colour" type="color" value="#0000ee" id="display-options-link-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour">
+                        Background colour
+                    </label>
+                    <input name="bg-colour" type="color" value="#ffffff" id="display-options-bg-colour">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-off">
+                        Muted background colour
+                    </label>
+                    <input name="bg-colour-off" type="color" value="#eeeeee" id="display-options-bg-colour-off">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-1">
+                        Accent colour 1
+                    </label>
+                    <input name="bg-colour-accent-1" type="color" value="#4caf50" id="display-options-bg-colour-accent-1">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-2">
+                        Accent colour 2
+                    </label>
+                    <input name="bg-colour-accent-2" type="color" value="#f6f6ff" id="display-options-bg-colour-accent-2">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-3">
+                        Accent colour 3
+                    </label>
+                    <input name="bg-colour-accent-3" type="color" value="#eeffd3" id="display-options-bg-colour-accent-3">
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-bg-colour-accent-4">
+                        Accent colour 4
+                    </label>
+                    <input name="bg-colour-accent-4" type="color" value="#ffeeee" id="display-options-bg-colour-accent-4">
+                </div>
+            </section>
+
+            <section id="filter-colour-scheme-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-filter-sepia">
+                        Sepia filter
+                    </label>
+                    <input name="filter-sepia" type="range" min="0" max="100" step="1" value="0" id="display-options-filter-sepia">
+                    <output for="display-options-filter-sepia">0%</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-filter-hue-rotate">
+                        Rotate hues
+                    </label>
+                    <input name="filter-hue-rotate" type="range" min="0" max="1" step="0.01" value="0" id="display-options-filter-hue-rotate">
+                    <output for="display-options-filter-hue-rotate">0 turns</output>
+                </div>
+
+                <div class="input-group">
+                    <label for="display-options-invert-images">
+                        Invert images in dark mode
+                    </label>
+                    <input name="invert-images" type="checkbox" id="display-options-invert-images">
+                </div>
+
+            </section>
 
 
-    <header>
+        </div>
 
-        <button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false"
-            title="Display options">
-            <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
-                <use href="#cog" />
-            </svg>
-        </button>
+        <details id="advanced">
+            <summary>Advanced options</summary>
+            <section id="custom-css-options" class="inputs">
+                <div class="input-group">
+                    <label for="display-options-custom-css">
+                        Custom CSS code
+                    </label>
+                    <textarea name="custom-css" id="display-options-custom-css"></textarea>
+                </div>
+            </section>
+        </details>
+    </form>
+</dialog>
+        
 
+        <header>
+            
+<button class="icon-button" type="button" aria-controls="display-options" aria-expanded="false" title="Display options">
+    <svg class="icon" aria-label="Display options" viewBox="0 0 180 180">
+    <use href="#cog"/>
+</svg>
+</button>
+            
+    
 
+            
+            
+        </header>
 
+        <main id="main-content">
+            
+    <nav id="sidebar">
+        
+        <ul class="alternative-formats">
+            
+            <li><a rel="alternate" type="application/pdf" href="eetm6.pdf"download><svg class="icon" aria-label="PDF" viewBox="0 0 180 180">
+    <use href="#pdf"/>
+</svg> Download as PDF</a></li>
+            
+        </ul>
+        
 
-
-    </header>
-
-    <main id="main-content">
-
-        <nav id="sidebar">
-
-            <ul class="alternative-formats">
-
-                <li><a rel="alternate" type="application/pdf" href="sstm4.pdf" download><svg class="icon"
-                            aria-label="PDF" viewBox="0 0 180 180">
-                            <use href="#pdf" />
-                        </svg> Download as PDF</a></li>
-
-            </ul>
-
-
-
+        
             <h1>Table of Contents</h1>
             <a class="jump-to-item-content" href="#item-content">Jump to content</a>
             <ol class="table-of-contents" role="tree">
-
-
-                <li role="none" data-toc-level="1" class="toc-header  has-children">
-                    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-module_4_bayesian_co"
-                        href="#module_4_bayesian_co">
-                        <span class="toc-marker"></span>
-                        <span style="color:#16365C"><big class="xhuge"><b class="bfseries">Module 4</b><br /> <big
-                                    class="xlarge">Bayesian Computation and MCMC Methods</big></big></span>
-                    </a>
-
-
-                    <ol role="group" id="toc-subtree-module_4_bayesian_co">
-
-                        <!--             
-<li role="none" data-toc-level="2" class="toc-header ">
+                
+                    
+<li role="none" data-toc-level="1" class="toc-header ">
     <a role="treeitem"  aria-owns="#toc-subtree-a0000000002" href="#a0000000002">
         
-        Module Overview
+        Advanced Control Strategies and Intelligent Solutions in Power Electronics
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+        <span class="toc-marker"></span>
+        1 Principles of Advanced Control Strategies
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000003">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000004" href="#a0000000004">
+        
+        1.1 Core Control Methodologies
     </a>
 
     
 </li>
 
 <li role="none" data-toc-level="2" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-a0000000003" href="#a0000000003">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000009" href="#a0000000009">
         
-        Expected Learning Outcomes
+        1.2 System Non-Idealities and Integration
     </a>
 
     
-</li> -->
+</li>
 
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000011"
-                                href="#a0000000011">
-                                <span class="toc-marker"></span>
-                                1 Bayesian Computation Challenges
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000011">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000016" href="#a0000000016">
-
-                                        1.1 Why Computation Becomes Difficult
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000021"
-                                        href="#a0000000021">
-                                        <span class="toc-marker"></span>
-                                        1.2 High-Dimensional Integration Problem
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000021">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_1_" href="#_example_1_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">1</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000023"
-                                        href="#a0000000023">
-                                        <span class="toc-marker"></span>
-                                        1.3 Illustrative Example: Non-Conjugate Logistic Regression
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000023">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_2_" href="#_example_2_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">2</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
-
-                                        1.4 Practical Consequences
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000033"
-                                href="#a0000000033">
-                                <span class="toc-marker"></span>
-                                2 Markov Chains
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000033">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000034"
-                                        href="#a0000000034">
-                                        <span class="toc-marker"></span>
-                                        2.1 Transition Mechanism
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000034">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_3_" href="#_example_3_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">3</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000036" href="#a0000000036">
-
-                                        2.2 Key Properties of Markov Chains
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000041"
-                                        href="#a0000000041">
-                                        <span class="toc-marker"></span>
-                                        2.3 Worked Example: Two-State Transition Matrix
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000041">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_4_" href="#_example_4_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">4</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000043" href="#a0000000043">
-
-                                        2.4 Relevance to Bayesian Computation
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000048"
-                                href="#a0000000048">
-                                <span class="toc-marker"></span>
-                                3 The Metropolis–Hastings Algorithm
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000048">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000049" href="#a0000000049">
-
-                                        3.1 The Metropolis–Hastings Algorithm
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000058" href="#a0000000058">
-
-                                        3.2 Symmetric Proposal Case (Metropolis Algorithm)
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000059"
-                                        href="#a0000000059">
-                                        <span class="toc-marker"></span>
-                                        3.3 Worked Examples
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000059">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_5_" href="#_example_5_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">5</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000064" href="#a0000000064">
-
-                                        3.4 Why Metropolis–Hastings Works
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000065"
-                                href="#a0000000065">
-                                <span class="toc-marker"></span>
-                                4 Gibbs Sampling
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000065">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000072"
-                                        href="#a0000000072">
-                                        <span class="toc-marker"></span>
-                                        4.1 Worked Example: Bivariate Normal Model
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000072">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_6_" href="#_example_6_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">6</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000080" href="#a0000000080">
-
-                                        4.2 Comparison: Gibbs Sampling vs. Metropolis–Hastings
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000081"
-                                href="#a0000000081">
-                                <span class="toc-marker"></span>
-                                5 MCMC Convergence Diagnostics
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000081">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000082" href="#a0000000082">
-
-                                        5.1 Diagnostic Tools
-                                    </a>
-
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header ">
-                                    <a role="treeitem" aria-owns="#toc-subtree-a0000000096" href="#a0000000096">
-
-                                        5.2 Practical Convergence Remedies
-                                    </a>
-
-
-                                </li>
-
-
-                            </ol>
-
-                        </li>
-
-                        <li role="none" data-toc-level="2" class="toc-header  has-children">
-                            <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000101"
-                                href="#a0000000101">
-                                <span class="toc-marker"></span>
-                                6 Case Studies with R Code (Kenyan Context)
-                            </a>
-
-
-                            <ol role="group" id="toc-subtree-a0000000101">
-
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000102"
-                                        href="#a0000000102">
-                                        <span class="toc-marker"></span>
-                                        6.1 Case Study 1: Malaria Risk Modeling in Western Kenya
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000102">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_7_" href="#_example_7_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">7</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000108"
-                                        href="#a0000000108">
-                                        <span class="toc-marker"></span>
-                                        6.2 Case Study 2: Traffic Flow Modeling in Nairobi
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000108">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_8_" href="#_example_8_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">8</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <li role="none" data-toc-level="3" class="toc-header  has-children">
-                                    <a role="treeitem" aria-expanded="false" aria-owns="#toc-subtree-a0000000113"
-                                        href="#a0000000113">
-                                        <span class="toc-marker"></span>
-                                        6.3 Case Study 3: Loan Default Risk in a Kenyan SACCO
-                                    </a>
-
-
-                                    <ol role="group" id="toc-subtree-a0000000113">
-
-
-                                        <li role="none" data-toc-level="4" class="toc-header ">
-                                            <a role="treeitem" aria-owns="#toc-subtree-_example_9_" href="#_example_9_">
-
-
-                                                <span class="thmcaption example_thmcaption">
-                                                    Example
-                                                </span>
-                                                <span class="thmlabel example_thmlabel">9</span>
-
-                                            </a>
-
-
-                                        </li>
-
-
-                                    </ol>
-
-                                </li>
-
-                                <!-- <li role="none" data-toc-level="3" class="toc-header ">
-    <a role="treeitem"  aria-owns="#toc-subtree-a0000000115" href="#a0000000115">
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000013" href="#a0000000013">
         
-        REFERENCES
+        1.3 Foundational Importance
     </a>
 
     
-</li> -->
+</li>
 
+            
+        </ol>
+    
+</li>
 
-                            </ol>
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000014" href="#a0000000014">
+        <span class="toc-marker"></span>
+        2 Application of Advanced Control Strategies
+    </a>
 
-                        </li>
+    
+        <ol role="group" id="toc-subtree-a0000000014">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000015" href="#a0000000015">
+        
+        2.1 Practical Implementation and Converter Topologies
+    </a>
 
+    
+</li>
 
-                    </ol>
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000020" href="#a0000000020">
+        
+        2.2 Renewable Energy Integration and Grid Interfaces
+    </a>
 
-                </li>
+    
+</li>
 
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000025" href="#a0000000025">
+        
+        2.3 Implementation Workflow
+    </a>
 
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000026" href="#a0000000026">
+        <span class="toc-marker"></span>
+        3 Evaluation of Control Strategies
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000026">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000027" href="#a0000000027">
+        
+        3.1 Evaluation Metrics and Comparative Framework
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000032" href="#a0000000032">
+        
+        3.2 Simulation Accuracy and Modeling Non-Idealities
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000033" href="#a0000000033">
+        
+        3.3 Thermal Behavior and Loss Considerations
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000034" href="#a0000000034">
+        
+        3.4 Microgrid Evaluation and Trade-offs
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000035" href="#a0000000035">
+        
+        3.5 Integrated Professional Selection
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+<li role="none" data-toc-level="1" class="toc-header  has-children">
+    <a role="treeitem" aria-expanded="true" aria-owns="#toc-subtree-a0000000036" href="#a0000000036">
+        <span class="toc-marker"></span>
+        4 Intelligent Control Solutions
+    </a>
+
+    
+        <ol role="group" id="toc-subtree-a0000000036">
+            
+            
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000037" href="#a0000000037">
+        
+        4.1 Microgrid Complexities and AI Integration
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000041" href="#a0000000041">
+        
+        4.2 Continuous Evaluation and Adaptive Mechanisms
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000042" href="#a0000000042">
+        
+        4.3 Design Trade-offs in Intelligent Systems
+    </a>
+
+    
+</li>
+
+<li role="none" data-toc-level="2" class="toc-header ">
+    <a role="treeitem"  aria-owns="#toc-subtree-a0000000043" href="#a0000000043">
+        
+        4.4 Conclusion
+    </a>
+
+    
+</li>
+
+            
+        </ol>
+    
+</li>
+
+                
             </ol>
+        
 
+    </nav>
 
-        </nav>
-
-        <article class="item-content" id="item-content">
-            <div class="titlepage">
-                <h1 id="module_4_bayesian_co"><span style="color:#16365C"><big class="xhuge"><b class="bfseries">Module
-                                4</b><br /> <big class="xlarge">Bayesian Computation and MCMC Methods</big></big></span>
-                </h1>
-                <p class="authors">
-                    <span class="author">Department of Mathematics and Statistics<br />The Open University of
-                        Kenya</span>
-                </p>
-            </div>
-            <div class="tcolorbox colback" style="--colback:#F1F2F5; --colframe:#16365C; --boxrule:1pt">
-            </div>
-            <!-- <section class="subsection">
-<h3 id="a0000000002">Module Overview</h3>
+    <article class="item-content" id="item-content">
+        <section class="section">
+<h2 id="a0000000002">Advanced Control Strategies and Intelligent Solutions in Power Electronics</h2>
+</section><section class="section">
+<h2 id="a0000000003">1 Principles of Advanced Control Strategies</h2>
 <p>
- In Bayesian inference, the posterior distribution provides a complete description of uncertainty about model parameters. However, for complex or high-dimensional models, computing the marginal likelihood (evidence) to normalize the posterior is analytically intractable. This module introduces the computational foundations of modern Bayesian statistics: why analytical integration fails, how <b class="bfseries">Markov chains</b> construct stochastic processes that converge to a target distribution, and how <b class="bfseries">Markov Chain Monte Carlo (MCMC)</b> algorithms—specifically <b class="bfseries">Metropolis–Hastings</b> and <b class="bfseries">Gibbs sampling</b>—generate samples from complex posterior distributions without calculating normalizing constants. Finally, you will explore <b class="bfseries">MCMC convergence diagnostics</b> (trace plots, autocorrelation, Gelman–Rubin \(\hat{R}\)) and apply these techniques to real-world Kenyan case studies in public health, urban traffic flow, and credit risk assessment. 
+Advanced control strategies in power electronics are essential for handling nonlinear, time-varying, and highly dynamic electrical systems. Traditional linear control techniques often fail to maintain acceptable performance across wide operating ranges, driving the adoption of model-based and nonlinear control methods. 
 </p>
-<div class="tcolorbox" style="None">
-</div>
-</section><section class="subsection"> -->
-            <!-- <h3 id="a0000000003">Expected Learning Outcomes</h3>
-            <p>
-                By the end of this module, you should be able to:
-            </p>
-            <ol class="enumerate" id="a0000000004">
-                <li id="a0000000005" value="1">
-                    <p>
-                        <b class="bfseries">Explain</b> the mathematical challenges of computing marginal likelihoods in
-                        high-dimensional Bayesian models.
-                    </p>
-                </li>
-                <li id="a0000000006" value="2">
-                    <p>
-                        <b class="bfseries">Define</b> Markov chains and verify key properties such as stationarity,
-                        ergodicity, and convergence.
-                    </p>
-                </li>
-                <li id="a0000000007" value="3">
-                    <p>
-                        <b class="bfseries">Derive</b> and apply the Metropolis–Hastings sampling algorithm and its
-                        symmetric proposal special case.
-                    </p>
-                </li>
-                <li id="a0000000008" value="4">
-                    <p>
-                        <b class="bfseries">Implement</b> Gibbs sampling for multivariate posterior distributions using
-                        full conditional distributions.
-                    </p>
-                </li>
-                <li id="a0000000009" value="5">
-                    <p>
-                        <b class="bfseries">Evaluate</b> MCMC convergence using trace plots, autocorrelation functions,
-                        and the Gelman–Rubin statistic (\(\hat{R}\)).
-                    </p>
-                </li>
-                <li id="a0000000010" value="6">
-                    <p>
-                        <b class="bfseries">Apply</b> MCMC methods and convergence diagnostics to practical problems
-                        using R code in real-world contexts.
-                    </p>
-                </li>
-            </ol> -->
-            <!-- <p>
-                <br />
-            </p> -->
-            </section>
-            <section class="section">
-                <h2 id="a0000000011">1 Bayesian Computation Challenges</h2>
-                <p>
-                    In Bayesian inference, the posterior distribution provides a complete description of uncertainty
-                    about the parameter \(\theta \) given data \(y\). However, computing this posterior is often
-                    mathematically challenging, especially in complex models.
-                </p>
-                <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
-                    The posterior distribution is given by: <span class="dmath">\[ p(\theta \mid y) = \frac{p(y \mid
-                        \theta ) p(\theta )}{p(y)} \]</span> where the <b class="bfseries">marginal likelihood</b> (or
-                    <b class="bfseries">evidence</b>) is the normalizing constant: <span class="dmath">\[ p(y) = \int
-                        p(y \mid \theta ) p(\theta ) \, d\theta \]</span>
-                </div>
-                <ul class="itemize" id="a0000000012">
-                    <li id="a0000000013">
-                        <p>
-                            \(p(y \mid \theta )\): Likelihood (data information)
-                        </p>
-                    </li>
-                    <li id="a0000000014">
-                        <p>
-                            \(p(\theta )\): Prior (initial belief)
-                        </p>
-                    </li>
-                    <li id="a0000000015">
-                        <p>
-                            \(p(y)\): Marginal likelihood (normalizing constant)
-                        </p>
-                    </li>
-                </ul>
-                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                    The marginal likelihood \(p(y)\) ensures that the posterior distribution integrates to \(1\), but it
-                    is often extremely difficult or impossible to compute analytically.
-                </div>
-                <section class="subsection">
-                    <h3 id="a0000000016">1.1 Why Computation Becomes Difficult</h3>
-                    <p>
-                        In many practical problems, the integral defining \(p(y)\) has no closed-form solution. This is
-                        especially true when:
-                    </p>
-                    <ul class="itemize" id="a0000000017">
-                        <li id="a0000000018">
-                            <p>
-                                The model involves multiple parameters (high-dimensional parameter space)
-                            </p>
-                        </li>
-                        <li id="a0000000019">
-                            <p>
-                                The likelihood function is complex or non-linear
-                            </p>
-                        </li>
-                        <li id="a0000000020">
-                            <p>
-                                The prior distribution is non-conjugate
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        As model complexity increases, analytical solutions become infeasible, requiring numerical
-                        integration or simulation-based sampling methods.
-                    </div>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000021">1.2 High-Dimensional Integration Problem</h3>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000022">
-                        <h5 class="thmheading example_thmheading" id="_example_1_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">1</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">High-Dimensional Parameter Space</b>
-                            </p>
-                            <p>
-                                Consider a Bayesian regression model with \(d\) parameters \(\theta = (\theta _1, \ldots
-                                , \theta _d) \in \mathbb {R}^d\). The marginal likelihood becomes a \(d\)-dimensional
-                                integral:
-                            </p>
-                            <span class="dmath">\[ p(y) = \int _{\mathbb {R}^d} p(y \mid \theta ) p(\theta ) \, d\theta
-                                \]</span>
-                            <p>
-                                <i class="itshape">Interpretation:</i> As the dimension \(d\) increases, the volume of
-                                the parameter space grows exponentially. Numerical quadrature rules (like Simpson’s rule
-                                or grid evaluation) quickly become computationally impossible.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        This exponential growth in computational complexity with the number of parameters is known as
-                        the <b class="bfseries">curse of dimensionality</b>.
-                    </div>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000023">1.3 Illustrative Example: Non-Conjugate Logistic Regression</h3>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000024">
-                        <h5 class="thmheading example_thmheading" id="_example_2_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">2</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Non-Conjugate Logistic Model</b>
-                            </p>
-                            <p>
-                                Suppose we model binary outcomes \(y \in \{ 0, 1\} \) using logistic regression:
-                            </p>
-                            <span class="dmath">\[ P(y = 1 \mid \theta ) = \frac{1}{1 + e^{-\theta x}} \]</span>
-                            <p>
-                                with a standard normal prior:
-                            </p>
-                            <span class="dmath">\[ \theta \sim \mathcal{N}(0, 1) \]</span>
-                            <p>
-                                <b class="bfseries">Challenge:</b> The unnormalized posterior is:
-                            </p>
-                            <span class="dmath">\[ p(\theta \mid y) \propto p(y \mid \theta ) p(\theta ) =
-                                \left(\frac{1}{1 + e^{-\theta x}}\right)^y \left(1 - \frac{1}{1 + e^{-\theta
-                                x}}\right)^{1-y} \cdot \frac{1}{\sqrt{2\pi }} e^{-\frac{1}{2}\theta ^2} \]</span>
-                            <p>
-                                This expression does not match any standard distribution because the Gaussian prior is
-                                not conjugate to the Bernoulli/logistic likelihood. Consequently, the marginal
-                                likelihood:
-                            </p>
-                            <span class="dmath">\[ p(y) = \int _{-\infty }^{\infty } p(y \mid \theta ) p(\theta ) \,
-                                d\theta \]</span>
-                            <p>
-                                cannot be evaluated analytically.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000025">1.4 Practical Consequences</h3>
-                    <ul class="itemize" id="a0000000026">
-                        <li id="a0000000027">
-                            <p>
-                                Exact posterior computation is often impossible for modern statistical models.
-                            </p>
-                        </li>
-                        <li id="a0000000028">
-                            <p>
-                                Statisticians rely on approximation methods:
-                            </p>
-                            <ul class="itemize" id="a0000000029">
-                                <li id="a0000000030">
-                                    <p>
-                                        Monte Carlo methods
-                                    </p>
-                                </li>
-                                <li id="a0000000031">
-                                    <p>
-                                        Markov Chain Monte Carlo (MCMC)
-                                    </p>
-                                </li>
-                                <li id="a0000000032">
-                                    <p>
-                                        Variational Inference
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        Modern Bayesian analysis depends heavily on computational algorithms and simulation rather than
-                        closed-form mathematical derivations.
-                    </div>
-                    <p>
-                        <br />
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000033">2 Markov Chains</h2>
-                <p>
-                    Markov chains form the foundation of MCMC methods. They provide a stochastic mechanism for
-                    generating samples from complex target distributions by constructing a sequence of random variables
-                    that evolves over time.
-                </p>
-                <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
-                    A <b class="bfseries">Markov chain</b> is a stochastic process \(\{ X_t\} _{t \ge 0}\) satisfying
-                    the <b class="bfseries">Markov property</b>: <span class="dmath">\[ P(X_{t+1} \mid X_t, X_{t-1},
-                        \ldots , X_0) = P(X_{t+1} \mid X_t) \]</span> <i class="itshape">Interpretation:</i> Given the
-                    present state \(X_t\), the future state \(X_{t+1}\) is conditionally independent of past history
-                    \((X_{t-1}, \ldots , X_0)\). This memoryless property greatly simplifies modeling and computation.
-                </div>
-                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                    Markov chains allow us to explore complex, high-dimensional probability distributions by making
-                    local, probabilistic transitions through the state space.
-                </div>
-                <section class="subsection">
-                    <h3 id="a0000000034">2.1 Transition Mechanism</h3>
-                    <p>
-                        A time-homogeneous Markov chain evolves according to a <b class="bfseries">transition
-                            probability</b>:
-                    </p>
-                    <span class="dmath">\[ P(x, x') = P(X_{t+1} = x' \mid X_t = x) \]</span>
-                    <p>
-                        This defines the probability of moving from state \(x\) to state \(x'\) in one discrete step.
-                    </p>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000035">
-                        <h5 class="thmheading example_thmheading" id="_example_3_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">3</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Two-State Weather Model</b>
-                            </p>
-                            <p>
-                                Suppose weather is modeled as either Sunny (\(S\)) or Rainy (\(R\)). The transition
-                                probabilities are:
-                            </p>
-                            <span class="dmath">\[ P(S \mid S) = 0.8, \quad P(R \mid S) = 0.2 \]</span>
-                            <span class="dmath">\[ P(S \mid R) = 0.4, \quad P(R \mid R) = 0.6 \]</span>
-                            <p>
-                                <i class="itshape">Interpretation:</i> If today is sunny, there is an 80% chance
-                                tomorrow will also be sunny and a 20% chance of rain. The probability distribution for
-                                tomorrow depends only on today’s weather state.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000036">2.2 Key Properties of Markov Chains</h3>
-                    <ul class="itemize" id="a0000000037">
-                        <li id="a0000000038">
-                            <p>
-                                <b class="bfseries">Stationarity:</b> A probability distribution \(\pi (x)\) is called a
-                                <b class="bfseries">stationary distribution</b> (or invariant distribution) if:
-                            </p>
-                            <span class="dmath">\[ \pi (x') = \sum _{x} \pi (x) P(x \to x') \]</span>
-                            <p>
-                                Once the chain reaches its stationary distribution, subsequent transitions leave the
-                                overall distribution unchanged.
-                            </p>
-                        </li>
-                        <li id="a0000000039">
-                            <p>
-                                <b class="bfseries">Ergodicity:</b> An ergodic Markov chain is irreducible (every state
-                                can eventually reach every other state) and aperiodic (transitions do not get trapped in
-                                fixed cyclical periods).
-                            </p>
-                        </li>
-                        <li id="a0000000040">
-                            <p>
-                                <b class="bfseries">Convergence:</b> For an ergodic chain, as \(t \to \infty \), the
-                                distribution of \(X_t\) converges to the unique stationary target distribution \(\pi
-                                (x)\), regardless of the initial state \(X_0\).
-                            </p>
-                        </li>
-                    </ul>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        These structural properties guarantee that long runs of an appropriately constructed Markov
-                        chain yield samples that accurately approximate the target distribution \(\pi (x)\).
-                    </div>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000041">2.3 Worked Example: Two-State Transition Matrix</h3>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000042">
-                        <h5 class="thmheading example_thmheading" id="_example_4_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">4</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Stationary Convergence in a Two-State Chain</b>
-                            </p>
-                            <p>
-                                Consider a two-state Markov chain with transition matrix \(P\):
-                            </p>
-                            <span class="dmath">\[ P = \begin{pmatrix} 0.7
-
-                                &amp; 0.3
-
-                                \\ 0.4
-
-                                &amp; 0.6
-
-                                \end{pmatrix} \]</span>
-                            <p>
-                                Let the initial state distribution at time \(t=0\) be \(\pi ^{(0)} = (1, 0)\)
-                                (definitely starting in State 1).
-                            </p>
-                            <p>
-                                <b class="bfseries">Step 1: First Step (\(t=1\))</b>
-                            </p>
-                            <span class="dmath">\[ \pi ^{(1)} = \pi ^{(0)} P = (1, 0) \begin{pmatrix} 0.7
-
-                                &amp; 0.3
-
-                                \\ 0.4
-
-                                &amp; 0.6
-
-                                \end{pmatrix} = (0.7, 0.3) \]</span>
-                            <p>
-                                <b class="bfseries">Step 2: Second Step (\(t=2\))</b>
-                            </p>
-                            <span class="dmath">\[ \pi ^{(2)} = \pi ^{(1)} P = (0.7, 0.3) \begin{pmatrix} 0.7
-
-                                &amp; 0.3
-
-                                \\ 0.4
-
-                                &amp; 0.6
-
-                                \end{pmatrix} = (0.61, 0.39) \]</span>
-                            <p>
-                                <b class="bfseries">Step 3: Stationary Distribution (\(\pi = \pi P\))</b> Solving \(\pi
-                                _1 = 0.7 \pi _1 + 0.4 \pi _2\) with \(\pi _1 + \pi _2 = 1\) yields:
-                            </p>
-                            <span class="dmath">\[ 0.3 \pi _1 = 0.4 \pi _2 \implies \pi = \left(\frac{4}{7}, \,
-                                \frac{3}{7}\right) \approx (0.5714, \, 0.4286) \]</span>
-                            <p>
-                                <i class="itshape">Interpretation:</i> As \(t \to \infty \), the probability
-                                distribution stabilizes toward \((0.5714, 0.4286)\) regardless of where the chain
-                                started.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000043">2.4 Relevance to Bayesian Computation</h3>
-                    <p>
-                        In Bayesian computation, MCMC algorithms design a custom transition matrix \(P\) such that the
-                        unique stationary distribution \(\pi (\theta )\) is precisely the target posterior distribution
-                        \(p(\theta \mid y)\):
-                    </p>
-                    <ol class="enumerate" id="a0000000044">
-                        <li id="a0000000045" value="1">
-                            <p>
-                                Construct a Markov chain whose stationary distribution is \(p(\theta \mid y)\).
-                            </p>
-                        </li>
-                        <li id="a0000000046" value="2">
-                            <p>
-                                Simulate the chain for \(N\) iterations.
-                            </p>
-                        </li>
-                        <li id="a0000000047" value="3">
-                            <p>
-                                Use the resulting simulated samples \(\{ \theta ^{(t)}\} \) to compute posterior means,
-                                variances, and credible intervals.
-                            </p>
-                        </li>
-                    </ol>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        Markov chains transform difficult integration problems into simple sample averaging over
-                        simulated trajectories.
-                    </div>
-                    <p>
-                        <br />
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000048">3 The Metropolis–Hastings Algorithm</h2>
-                <p>
-                    The <b class="bfseries">Metropolis–Hastings (MH)</b> algorithm (Metropolis et al., 1953; Hastings,
-                    1970) is a general MCMC method for generating samples from a target posterior distribution
-                    \(p(\theta \mid y)\), even when its normalizing constant \(p(y)\) is unknown.
-                </p>
-                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                    Metropolis–Hastings avoids evaluating \(p(y)\) by relying solely on the ratio of target densities
-                    \(\frac{p(\theta ^* \mid y)}{p(\theta ^{(t)} \mid y)}\), where \(p(y)\) cancels out completely.
-                </div>
-                <section class="subsection">
-                    <h3 id="a0000000049">3.1 The Metropolis–Hastings Algorithm</h3>
-                    <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
-                        To sample from a target distribution \(p(\theta \mid y)\) using a proposal distribution
-                        \(q(\theta ^* \mid \theta )\): <ol class="enumerate" id="a0000000050">
-                            <li id="a0000000051" value="1">
-                                <p>
-                                    Initialize \(\theta ^{(0)}\) at a valid starting value.
-                                </p>
-                            </li>
-                            <li id="a0000000052" value="2">
-                                <p>
-                                    For each iteration \(t = 0, 1, 2, \ldots \):
-                                </p>
-                                <ol class="enumerate" id="a0000000053">
-                                    <li id="a0000000054" value="1">
-                                        <p>
-                                            Propose a candidate value \(\theta ^* \sim q(\theta ^* \mid \theta
-                                            ^{(t)})\).
-                                        </p>
-                                    </li>
-                                    <li id="a0000000055" value="2">
-                                        <p>
-                                            Compute the <b class="bfseries">acceptance ratio</b> \(\alpha \):
-                                        </p>
-                                        <span class="dmath">\[ \alpha = \min \left(1, \; \frac{p(\theta ^* \mid y) \,
-                                            q(\theta ^{(t)} \mid \theta ^*)}{p(\theta ^{(t)} \mid y) \, q(\theta ^* \mid
-                                            \theta ^{(t)})}\right) \]</span>
-                                    </li>
-                                    <li id="a0000000056" value="3">
-                                        <p>
-                                            Draw \(u \sim \text{Uniform}(0,1)\).
-                                        </p>
-                                    </li>
-                                    <li id="a0000000057" value="4">
-                                        <p>
-                                            If \(u \le \alpha \), <b class="bfseries">accept</b> the proposal: set
-                                            \(\theta ^{(t+1)} = \theta ^*\). <br />Otherwise, <b
-                                                class="bfseries">reject</b> the proposal: set \(\theta ^{(t+1)} = \theta
-                                            ^{(t)}\).
-                                        </p>
-                                    </li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        The acceptance mechanism ensures that proposed states with higher target density are favored,
-                        while proposed states with lower density are still accepted with some positive probability
-                        \(\alpha \). This prevents the algorithm from getting stuck at local modes and enables thorough
-                        exploration of the entire parameter space.
-                    </div>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000058">3.2 Symmetric Proposal Case (Metropolis Algorithm)</h3>
-                    <p>
-                        If the proposal distribution is <b class="bfseries">symmetric</b>, meaning \(q(\theta ^* \mid
-                        \theta ) = q(\theta \mid \theta ^*)\) (e.g., a Gaussian random walk \(\theta ^* \sim
-                        \mathcal{N}(\theta ^{(t)}, \sigma ^2)\)), the proposal terms cancel out, simplifying \(\alpha \)
-                        to:
-                    </p>
-                    <span class="dmath">\[ \alpha = \min \left(1, \; \frac{p(\theta ^* \mid y)}{p(\theta ^{(t)} \mid
-                        y)}\right) \]</span>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000059">3.3 Worked Examples</h3>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000060">
-                        <h5 class="thmheading example_thmheading" id="_example_5_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">5</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Acceptance Calculation with Symmetric Proposal</b>
-                            </p>
-                            <p>
-                                Suppose at iteration \(t\), the current state has unnormalized posterior density
-                                \(p(\theta ^{(t)} \mid y) = 0.5\), and a proposed candidate \(\theta ^*\) has density
-                                \(p(\theta ^* \mid y) = 0.4\).
-                            </p>
-                            <p>
-                                <b class="bfseries">Step 1: Compute Density Ratio</b>
-                            </p>
-                            <span class="dmath">\[ \frac{p(\theta ^* \mid y)}{p(\theta ^{(t)} \mid y)} = \frac{0.4}{0.5}
-                                = 0.8 \]</span>
-                            <p>
-                                <b class="bfseries">Step 2: Compute Acceptance Probability</b>
-                            </p>
-                            <span class="dmath">\[ \alpha = \min (1, \, 0.8) = 0.8 \]</span>
-                            <p>
-                                <b class="bfseries">Step 3: Decision Rule</b> Draw \(u \sim \text{Uniform}(0,1)\):
-                            </p>
-                            <ul class="itemize" id="a0000000061">
-                                <li id="a0000000062">
-                                    <p>
-                                        If \(u \le 0.8\) (e.g., \(u = 0.6\)), accept \(\theta ^{(t+1)} = \theta ^*\).
-                                    </p>
-                                </li>
-                                <li id="a0000000063">
-                                    <p>
-                                        If \(u \gt 0.8\) (e.g., \(u = 0.9\)), reject \(\theta ^*\) and set \(\theta
-                                        ^{(t+1)} = \theta ^{(t)} = 2\).
-                                    </p>
-                                </li>
-                            </ul>
-                            <p>
-                                <i class="itshape">Interpretation:</i> There is an 80% chance of accepting the proposed
-                                state even though it has slightly lower posterior probability than the current state.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000064">3.4 Why Metropolis–Hastings Works</h3>
-                    <p>
-                        The MH acceptance ratio is constructed to satisfy <b class="bfseries">detailed balance</b>
-                        (reversibility) with respect to the target posterior distribution:
-                    </p>
-                    <span class="dmath">\[ p(\theta \mid y) P(\theta \to \theta ^*) = p(\theta ^* \mid y) P(\theta ^*
-                        \to \theta ) \]</span>
-                    <p>
-                        Integrating both sides over \(\theta \) proves that \(p(\theta \mid y)\) is indeed the
-                        stationary distribution of the Markov chain.
-                    </p>
-                    <p>
-                        <br />
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000065">4 Gibbs Sampling</h2>
-                <p>
-                    <b class="bfseries">Gibbs sampling</b> (Geman &amp; Geman, 1984; Gelfand &amp; Smith, 1990) is a
-                    special case of MCMC algorithm designed for multi-parameter problems. It is used when sampling from
-                    the joint posterior distribution \(p(\theta _1, \ldots , \theta _d \mid y)\) is difficult, but
-                    sampling from each <b class="bfseries">full conditional distribution</b> \(p(\theta _i \mid \theta
-                    _{-i}, y)\) is straightforward.
-                </p>
-                <div class="tcolorbox" data-tcolorbox-name="defbox" style="None">
-                    <b class="bfseries">Gibbs Sampling Algorithm</b> (for two parameters \(\theta _1, \theta _2\)): <ol
-                        class="enumerate" id="a0000000066">
-                        <li id="a0000000067" value="1">
-                            <p>
-                                Initialize \(\theta _1^{(0)}, \theta _2^{(0)}\).
-                            </p>
-                        </li>
-                        <li id="a0000000068" value="2">
-                            <p>
-                                For iteration \(t = 1, 2, \ldots \):
-                            </p>
-                            <ol class="enumerate" id="a0000000069">
-                                <li id="a0000000070" value="1">
-                                    <p>
-                                        Sample \(\theta _1^{(t)} \sim p(\theta _1 \mid \theta _2^{(t-1)}, y)\).
-                                    </p>
-                                </li>
-                                <li id="a0000000071" value="2">
-                                    <p>
-                                        Sample \(\theta _2^{(t)} \sim p(\theta _2 \mid \theta _1^{(t)}, y)\).
-                                    </p>
-                                </li>
-                            </ol>
-                        </li>
-                    </ol>
-                    Notice that step (b) uses the newly updated value \(\theta _1^{(t)}\).
-                </div>
-                <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                    Instead of proposing a joint step in high dimensions and risking low acceptance rates, Gibbs
-                    sampling updates one parameter at a time from its exact conditional distribution.
-                </div>
-                <section class="subsection">
-                    <h3 id="a0000000072">4.1 Worked Example: Bivariate Normal Model</h3>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000073">
-                        <h5 class="thmheading example_thmheading" id="_example_6_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">6</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Bivariate Normal Gibbs Sampler</b>
-                            </p>
-                            <p>
-                                Suppose we wish to sample from a bivariate normal distribution \((\theta _1, \theta
-                                _2)\) with mean zero, unit variances, and correlation \(\rho \):
-                            </p>
-                            <span class="dmath">\[ \theta _1 \mid \theta _2 \sim \mathcal{N}(\rho \theta _2, \, 1 - \rho
-                                ^2), \qquad \theta _2 \mid \theta _1 \sim \mathcal{N}(\rho \theta _1, \, 1 - \rho ^2)
-                                \]</span>
-                            <p>
-                                <b class="bfseries">Iterative Sampling Process:</b>
-                            </p>
-                            <ol class="enumerate" id="a0000000074">
-                                <li id="a0000000075" value="1">
-                                    <p>
-                                        Start at \((\theta _1^{(0)}, \theta _2^{(0)}) = (1.0, 2.0)\) with \(\rho =
-                                        0.8\).
-                                    </p>
-                                </li>
-                                <li id="a0000000076" value="2">
-                                    <p>
-                                        Iteration 1:
-                                    </p>
-                                    <ul class="itemize" id="a0000000077">
-                                        <li id="a0000000078">
-                                            <p>
-                                                Sample \(\theta _1^{(1)} \sim \mathcal{N}(0.8 \times 2.0, \, 1 - 0.8^2)
-                                                = \mathcal{N}(1.6, \, 0.36)\). Suppose \(\theta _1^{(1)} = 1.5\).
-                                            </p>
-                                        </li>
-                                        <li id="a0000000079">
-                                            <p>
-                                                Sample \(\theta _2^{(1)} \sim \mathcal{N}(0.8 \times 1.5, \, 1 - 0.8^2)
-                                                = \mathcal{N}(1.2, \, 0.36)\). Suppose \(\theta _2^{(1)} = 1.3\).
-                                            </p>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ol>
-                            <p>
-                                Alternating between these univariate Gaussian draws generates a sequence of samples that
-                                converges to the true joint bivariate normal distribution.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000080">4.2 Comparison: Gibbs Sampling vs. Metropolis–Hastings</h3>
-                    <div class="centered">
-                        <table class="tabular">
-                            <tr>
-                                <td colspan="" rowspan=""
-                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                     </td>
-                                <td colspan="" rowspan=""
-                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
-                                    <p>
-                                        <b class="bfseries">Gibbs Sampling</b>
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan=""
-                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
-                                    <p>
-                                        <b class="bfseries">Metropolis–Hastings</b>
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="" rowspan=""
-                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                    <p>
-                                        <b class="bfseries">Update Type</b>
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan=""
-                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
-                                    <p>
-                                        Full conditional distributions
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan=""
-                                    style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black">
-                                    <p>
-                                        Joint or univariate proposal distributions
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="" rowspan=""
-                                    style="text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                    <p>
-                                        <b class="bfseries">Acceptance Rate</b>
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
-                                    <p>
-                                        Always \(100\% \) (\(\alpha = 1\))
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
-                                    <p>
-                                        Variable acceptance rate \(\alpha \in [0, 1]\)
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="" rowspan=""
-                                    style="text-align:left; border-right:1px solid black; border-left:1px solid black">
-                                    <p>
-                                        <b class="bfseries">Tuning Required</b>
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
-                                    <p>
-                                        None (direct conditional draws)
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan="" style="text-align:left; border-right:1px solid black">
-                                    <p>
-                                        Requires tuning proposal variance/step size
-                                    </p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="" rowspan=""
-                                    style="text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                    <p>
-                                        <b class="bfseries">Applicability</b>
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan=""
-                                    style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                    <p>
-                                        Requires known conditional distributions
-                                    </p>
-                                </td>
-                                <td colspan="" rowspan=""
-                                    style="text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px">
-                                    <p>
-                                        Works for general target posterior distributions
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="tcolorbox" data-tcolorbox-name="keyidea" style="None">
-                        Gibbs sampling can be viewed as a special case of Metropolis–Hastings where the proposal is the
-                        exact full conditional distribution, resulting in an acceptance probability of identically
-                        \(1\).
-                    </div>
-                    <p>
-                        <br />
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000081">5 MCMC Convergence Diagnostics</h2>
-                <p>
-                    MCMC methods yield valid posterior inference only after the Markov chain has reached its stationary
-                    distribution. Therefore, inspecting <b class="bfseries">convergence diagnostics</b> is a mandatory
-                    step in any empirical Bayesian analysis.
-                </p>
-                <section class="subsection">
-                    <h3 id="a0000000082">5.1 Diagnostic Tools</h3>
-                    <ul class="itemize" id="a0000000083">
-                        <li id="a0000000084">
-                            <p>
-                                <b class="bfseries">Trace Plots:</b> A time-series plot of sampled values \(\theta
-                                ^{(t)}\) against iteration number \(t\).
-                            </p>
-                            <ul class="itemize" id="a0000000085">
-                                <li id="a0000000086">
-                                    <p>
-                                        <i class="itshape">Good convergence:</i> A stationary “fuzzy caterpillar”
-                                        oscillating rapidly around a constant mean.
-                                    </p>
-                                </li>
-                                <li id="a0000000087">
-                                    <p>
-                                        <i class="itshape">Poor convergence:</i> Noticeable trends, slow drifts, or long
-                                        flat steps.
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="a0000000088">
-                            <p>
-                                <b class="bfseries">Autocorrelation Plots (ACF):</b> Measures correlation between
-                                samples separated by lag \(k\).
-                            </p>
-                            <ul class="itemize" id="a0000000089">
-                                <li id="a0000000090">
-                                    <p>
-                                        <i class="itshape">Fast mixing:</i> Autocorrelation drops quickly to zero as lag
-                                        increases.
-                                    </p>
-                                </li>
-                                <li id="a0000000091">
-                                    <p>
-                                        <i class="itshape">Slow mixing:</i> High autocorrelation persisting across many
-                                        lags.
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                        <li id="a0000000092">
-                            <p>
-                                <b class="bfseries">Gelman–Rubin Statistic (\(\hat{R}\)):</b> Compares variance
-                                <em>between</em> multiple independent chains initialized from diffuse starting points to
-                                variance <em>within</em> each chain.
-                            </p>
-                            <ul class="itemize" id="a0000000093">
-                                <li id="a0000000094">
-                                    <p>
-                                        \(\hat{R} \approx 1.00\) (\(\hat{R} \lt 1.05\)): Indicates good convergence
-                                        across chains.
-                                    </p>
-                                </li>
-                                <li id="a0000000095">
-                                    <p>
-                                        \(\hat{R} \gt 1.10\): Indicates lack of convergence; chains have not mixed.
-                                    </p>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000096">5.2 Practical Convergence Remedies</h3>
-                    <ul class="itemize" id="a0000000097">
-                        <li id="a0000000098">
-                            <p>
-                                <b class="bfseries">Burn-in / Warm-up:</b> Discard the first \(M\) iterations (e.g.,
-                                first 1000 steps) so initial values do not bias posterior estimates.
-                            </p>
-                        </li>
-                        <li id="a0000000099">
-                            <p>
-                                <b class="bfseries">Thinning:</b> Keep every \(k\)-th sample (e.g., every 5th or 10th
-                                sample) to reduce storage and autocorrelation.
-                            </p>
-                        </li>
-                        <li id="a0000000100">
-                            <p>
-                                <b class="bfseries">Multiple Chains:</b> Always run at least 3–4 independent chains from
-                                different starting locations to detect multimodality or slow mixing.
-                            </p>
-                        </li>
-                    </ul>
-                    <p>
-                        <br />
-                    </p>
-                </section>
-            </section>
-            <section class="section">
-                <h2 id="a0000000101">6 Case Studies with R Code (Kenyan Context)</h2>
-                <section class="subsection">
-                    <h3 id="a0000000102">6.1 Case Study 1: Malaria Risk Modeling in Western Kenya</h3>
-                    <p>
-                        A public health research team in Kisumu and Busia counties models malaria prevalence \(\theta \)
-                        using hospital surveillance data and climatic covariates.
-                    </p>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000103">
-                        <h5 class="thmheading example_thmheading" id="_example_7_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">7</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">MCMC Simulation for Malaria Prevalence</b>
-                            </p>
-                            <pre class="verbatim">
-# MCMC simulation for malaria prevalence parameter
-set.seed(123)
-n_iter &lt;- 5000
-theta &lt;- numeric(n_iter)
-theta[1] &lt;- 0.30
-
-for (t in 2:n_iter) {
-  theta[t] &lt;- rnorm(1, mean = 0.32, sd = 0.02)
-}
-
-# Diagnostic plots
-plot(theta, type = "l", col = "navy",
-     main = "Trace Plot: Malaria Prevalence",
-     xlab = "Iteration", ylab = expression(theta))
-acf(theta, main = "Autocorrelation: Malaria Prevalence")
-
-# Posterior summaries
-post_mean &lt;- mean(theta)
-post_sd &lt;- sd(theta)
-ci_95 &lt;- quantile(theta, probs = c(0.025, 0.975))
-</pre>
-                            <p>
-                                <b class="bfseries">Results:</b>
-                            </p>
-                            <ul class="itemize" id="a0000000104">
-                                <li id="a0000000105">
-                                    <p>
-                                        Posterior Mean \(\hat{\theta } \approx 0.320\) (\(32.0\% \))
-                                    </p>
-                                </li>
-                                <li id="a0000000106">
-                                    <p>
-                                        Posterior Standard Deviation \(\text{sd}(\theta ) \approx 0.020\)
-                                    </p>
-                                </li>
-                                <li id="a0000000107">
-                                    <p>
-                                        95% Credible Interval: \((0.281, \, 0.359)\)
-                                    </p>
-                                </li>
-                            </ul>
-                            <p>
-                                <i class="itshape">Policy Implication:</i> The estimated malaria prevalence is 32.0% in
-                                the study area. The stable trace plot and rapid ACF drop confirm chain convergence,
-                                justifying mosquito net distribution planning in high-risk wards.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000108">6.2 Case Study 2: Traffic Flow Modeling in Nairobi</h3>
-                    <p>
-                        Urban planners in Nairobi model congestion index on Thika Road, Mombasa Road, and Waiyaki Way.
-                    </p>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000109">
-                        <h5 class="thmheading example_thmheading" id="_example_8_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">8</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Detecting Non-Convergence and Re-Tuning</b>
-                            </p>
-                            <pre class="verbatim">
-# Poorly mixing non-convergent chain
-set.seed(456)
-n_iter &lt;- 5000
-traffic_bad &lt;- numeric(n_iter)
-traffic_bad[1] &lt;- 40
-for (t in 2:n_iter) {
-  traffic_bad[t] &lt;- traffic_bad[t-1] + 
-                    rnorm(1, mean = 0.01, sd = 0.5)
-}
-
-# Tuned convergent chain
-set.seed(789)
-traffic_good &lt;- rnorm(5000, mean = 55, sd = 3)
-</pre>
-                            <p>
-                                <b class="bfseries">Results Comparison:</b>
-                            </p>
-                            <ul class="itemize" id="a0000000110">
-                                <li id="a0000000111">
-                                    <p>
-                                        <i class="itshape">Poor Chain:</i> Shows continuous upward drift (\(\hat{\theta
-                                        } \approx 63.4, \text{sd} \approx 15.8\)) and persistent autocorrelation.
-                                        Unreliable for decision-making.
-                                    </p>
-                                </li>
-                                <li id="a0000000112">
-                                    <p>
-                                        <i class="itshape">Tuned Chain:</i> Rapidly reaches stationarity (\(\hat{\theta
-                                        } \approx 55.0, \text{sd} \approx 3.0\), 95% CI: \(49.1 - 60.9\)).
-                                    </p>
-                                </li>
-                            </ul>
-                            <p>
-                                <i class="itshape">Policy Implication:</i> After tuning, the reliable estimate
-                                (congestion index 55.0) supports traffic light synchronization and road expansion
-                                investments.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                </section>
-                <section class="subsection">
-                    <h3 id="a0000000113">6.3 Case Study 3: Loan Default Risk in a Kenyan SACCO</h3>
-                    <p>
-                        A Kenyan Financial SACCO models member loan default probability \(p\) using borrower income and
-                        credit history.
-                    </p>
-                    <p>
-                    <div class="thmwrapper example_thmwrapper" id="a0000000114">
-                        <h5 class="thmheading example_thmheading" id="_example_9_">
-                            <span class="thmcaption example_thmcaption">
-                                Example
-                            </span>
-                            <span class="thmlabel example_thmlabel">9</span>
-                        </h5>
-                        <div class="thmcontent example_thmcontent">
-                            <p>
-                                <b class="bfseries">Posterior Credit Risk Inference</b>
-                            </p>
-                            <pre class="verbatim">
-set.seed(321)
-n_iter &lt;- 5000
-p_default &lt;- rbeta(n_iter, shape1 = 18, shape2 = 42)
-
-# Summaries
-mean(p_default)
-quantile(p_default, probs = c(0.025, 0.975))
-</pre>
-                            <p>
-                                <b class="bfseries">Results:</b> Posterior mean default probability \(\hat{p} \approx
-                                0.300\) (\(30.0\% \)), 95% Credible Interval \((0.191, 0.424)\). Stable trace plots and
-                                low autocorrelation confirm reliable posterior estimates for setting capital reserve
-                                ratios.
-                            </p>
-                        </div>
-                    </div>
-                    </p>
-                    <!-- </section><section class="subsection">
-<h3 id="a0000000115">REFERENCES</h3>
-<ul class="itemize" id="a0000000116">
-<li id="a0000000117">
+<section class="subsection">
+<h3 id="a0000000004">1.1 Core Control Methodologies</h3>
 <p>
-Gelman, A., Carlin, J. B., Stern, H. S., Dunson, D. B., Vehtari, A., &amp; Rubin, D. B. (2013). <i class="itshape">Bayesian Data Analysis</i> (3rd ed.). Chapman &amp; Hall/CRC. 
+ Primary advanced control paradigms implemented in power electronic converters include: 
+</p>
+<ul class="itemize" id="a0000000005">
+<li id="a0000000006">
+<p>
+<b class="bfseries">Model Predictive Control (MPC):</b> Predicts future system behavior across a defined time horizon using discrete mathematical models and selects optimal control actions by minimizing a pre-defined cost function. 
 </p>
 </li>
-<li id="a0000000118">
+<li id="a0000000007">
 <p>
-Robert, C. P., &amp; Casella, G. (2004). <i class="itshape">Monte Carlo Statistical Methods</i> (2nd ed.). Springer. 
+<b class="bfseries">Deadbeat Control:</b> A specialized form of predictive control that forces system variables (such as inductor currents or output voltages) to track desired reference values in minimal time, typically within a single sampling period. 
 </p>
 </li>
-<li id="a0000000119">
+<li id="a0000000008">
 <p>
-Bolstad, W. M., &amp; Curran, J. M. (2017). <i class="itshape">Introduction to Bayesian Statistics</i> (3rd ed.). Wiley. 
+<b class="bfseries">Sliding Mode Control (SMC):</b> A variable-structure nonlinear control technique renowned for its inherent robustness against external disturbances, grid parameter fluctuations, and system uncertainties. 
 </p>
 </li>
 </ul>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">Control Strategy</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<b class="bfseries">Operating Principle</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<b class="bfseries">Primary Strengths</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+Model Predictive Control (MPC) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Multi-step model prediction &amp; cost function optimization 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Direct constraint handling &amp; multivariable control 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+Deadbeat Control 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Deadbeat error elimination within sampling intervals 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Extremely fast dynamic response 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+Sliding Mode Control (SMC) 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Switching control law forcing state to sliding surface 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ High robustness to parameter drifts &amp; noise 
+</p>
+</td>
+</tr>
+</table> </div>
+</section><section class="subsection">
+<h3 id="a0000000009">1.2 System Non-Idealities and Integration</h3>
+<p>
+ Simulation-based studies emphasize that realistic control strategies must account for physical non-idealities. Key factors influencing dynamic response include: 
+</p>
+<ul class="itemize" id="a0000000010">
+<li id="a0000000011">
+<p>
+<b class="bfseries">Parasitic Elements:</b> Stray inductance, trace capacitance, and winding resistances. 
+</p>
+</li>
+<li id="a0000000012">
+<p>
+<b class="bfseries">Switching Dynamics:</b> Non-zero rise/fall times, propagation delays, and dead-time insertion. 
+</p>
+</li>
+</ul>
+<p>
+Furthermore, modern electrical grids increasingly integrate renewable energy sources (e.g., photovoltaics and wind power), requiring advanced control methods to maintain system frequency, voltage stability, and overall efficiency across grid-connected converters, inverters, and distributed energy resources (DERs). 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000013">1.3 Foundational Importance</h3>
+<p>
+ Mastering these advanced control methodologies provides the theoretical and practical foundation necessary for designing efficient, resilient, and high-performance power electronic systems. 
+</p>
 </section>
-</section> -->
-                    <script id="plastex-labels" type="application/json">{}</script>
-        </article>
+</section><section class="section">
+<h2 id="a0000000014">2 Application of Advanced Control Strategies</h2>
+<p>
+Applying advanced control strategies in power electronics involves the seamless integration of mathematical modeling, operational system constraints, and real-time discrete control loops. 
+</p>
+<section class="subsection">
+<h3 id="a0000000015">2.1 Practical Implementation and Converter Topologies</h3>
+<p>
+ Each control methodology addresses specific converter operational demands: 
+</p>
+<ul class="itemize" id="a0000000016">
+<li id="a0000000017">
+<p>
+<b class="bfseries">MPC Implementations:</b> Widely adopted in multi-phase converters, neutral-point-clamped (NPC) inverters, and active front-end rectifiers due to its natural ability to enforce current limits, switching frequency bounds, and voltage balance constraints simultaneously. 
+</p>
+</li>
+<li id="a0000000018">
+<p>
+<b class="bfseries">Deadbeat Control Applications:</b> Preferred in high-frequency grid-tied inverters where low computational overhead and immediate transient settlement are required. 
+</p>
+</li>
+<li id="a0000000019">
+<p>
+<b class="bfseries">Sliding Mode Control Applications:</b> Applied extensively in DC-DC converters and renewable energy interfaces subject to heavy load variations and supply disturbances. 
+</p>
+</li>
+</ul>
+</section><section class="subsection">
+<h3 id="a0000000020">2.2 Renewable Energy Integration and Grid Interfaces</h3>
+<p>
+ In renewable energy systems, power electronic converters serve as the primary interface between variable generation sources (solar panels, wind turbines, fuel cells) and the utility grid or local loads. Control strategies play a vital role in: 
+</p>
+<ul class="itemize" id="a0000000021">
+<li id="a0000000022">
+<p>
+Regulating output voltage and frequency within strict grid-code tolerances. 
+</p>
+</li>
+<li id="a0000000023">
+<p>
+Minimizing Total Harmonic Distortion (THD) and maximizing power quality. 
+</p>
+</li>
+<li id="a0000000024">
+<p>
+Managing stochastic power fluctuations from solar irradiance or wind speed. 
+</p>
+</li>
+</ul>
+<p>
+Engineers rely heavily on simulation platforms such as <b class="bfseries">PSpice</b> and <b class="bfseries">MATLAB / Simulink</b> to validate control algorithm execution and switching patterns prior to hardware deployment. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000025">2.3 Implementation Workflow</h3>
+<p>
+ Successful application demands a complete understanding of converter dynamic modeling, precise sensor feedback acquisition, optimal control law execution, and tuning under diverse load and grid conditions. 
+</p>
+</section>
+</section><section class="section">
+<h2 id="a0000000026">3 Evaluation of Control Strategies</h2>
+<p>
+Evaluating control performance requires assessing quantitative trade-offs between theoretical performance metrics, numerical simulation fidelity, and real-world operational constraints. 
+</p>
+<section class="subsection">
+<h3 id="a0000000027">3.1 Evaluation Metrics and Comparative Framework</h3>
+<p>
+ Engineers evaluate control performance using key operational criteria: 
+</p>
+<ul class="itemize" id="a0000000028">
+<li id="a0000000029">
+<p>
+<b class="bfseries">Dynamic Response &amp; Stability:</b> Settlement time, overshoot, and gain/phase margins. 
+</p>
+</li>
+<li id="a0000000030">
+<p>
+<b class="bfseries">Efficiency &amp; Robustness:</b> Power conversion losses, parameter sensitivity, and noise immunity. 
+</p>
+</li>
+<li id="a0000000031">
+<p>
+<b class="bfseries">Computational Complexity:</b> Processing burden per sampling cycle on digital signal processors (DSPs) or microcontrollers. 
+</p>
+</li>
+</ul>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">Strategy</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<b class="bfseries">Performance Highlights</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<b class="bfseries">Key Trade-offs / Limitations</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+MPC 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Exceptional multivariable tracking &amp; constraint enforcement 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ High computational burden; requires accurate parameter models 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+SMC 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Insensitive to matched disturbances &amp; grid fluctuations 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ High-frequency chattering can cause acoustic noise &amp; switching stress 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+Deadbeat 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Ultra-fast single-cycle settling time 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Highly sensitive to parameter mismatched inductance/capacitance 
+</p>
+</td>
+</tr>
+</table> </div>
+</section><section class="subsection">
+<h3 id="a0000000032">3.2 Simulation Accuracy and Modeling Non-Idealities</h3>
+<p>
+ Numerical simulation enables safe analysis of fault conditions, short-circuit transients, and extreme grid disturbances without destroying physical equipment. However, simulation reliability relies on high-fidelity component models. Neglecting parasitic inductances, ESR of capacitors, or switching dynamics leads to overly optimistic performance estimates and potential instability during rapid switching transitions. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000033">3.3 Thermal Behavior and Loss Considerations</h3>
+<p>
+ Semiconductor switches generate significant heat through switching and conduction losses. Temperature rises alter internal device parameters (such as \(R_{\mathrm{DS(on)}}\) or diode forward voltage drop), which directly affect efficiency and thermal reliability. Thus, comprehensive control evaluation must incorporate coupled electro-thermal models. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000034">3.4 Microgrid Evaluation and Trade-offs</h3>
+<p>
+ In microgrids with low physical inertia, control evaluation must balance competing priorities. For instance, while MPC offers precise power-sharing capabilities, its computational intensity may restrict sampling rates. Conversely, SMC provides superior disturbance rejection but requires filtering to suppress high-frequency chattering. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000035">3.5 Integrated Professional Selection</h3>
+<p>
+ Selecting the optimal control strategy requires synthesizing numerical simulation insights, mathematical stability analysis, and physical implementation constraints tailored to the target application. 
+</p>
+</section>
+</section><section class="section">
+<h2 id="a0000000036">4 Intelligent Control Solutions</h2>
+<p>
+Designing intelligent control solutions for modern power electronics requires advanced analytical capabilities and metacognitive engineering judgment. Engineers must continuously evaluate system behavior, anticipate dynamic shifts, and adapt control strategies dynamically. 
+</p>
+<section class="subsection">
+<h3 id="a0000000037">4.1 Microgrid Complexities and AI Integration</h3>
+<p>
+ Microgrids comprise multiple interconnected converters, battery energy storage systems (BESS), and distributed generators. These systems display complex nonlinear dynamics, low effective inertia, and strong cross-coupling between nodes. 
+</p>
+<p>
+To address these challenges, intelligent control paradigms are increasingly deployed: 
+</p>
+<ul class="itemize" id="a0000000038">
+<li id="a0000000039">
+<p>
+<b class="bfseries">Adaptive Control:</b> Dynamically updates controller gain parameters in real time based on estimated system changes or grid impedance shifts. 
+</p>
+</li>
+<li id="a0000000040">
+<p>
+<b class="bfseries">AI-Based Control:</b> Utilizes Neural Networks, Fuzzy Logic Inference, and Reinforcement Learning (RL) to execute real-time decision-making and optimal power flow management without requiring exact analytical mathematical models. 
+</p>
+</li>
+</ul>
+</section><section class="subsection">
+<h3 id="a0000000041">4.2 Continuous Evaluation and Adaptive Mechanisms</h3>
+<p>
+ Fixed-parameter classical controllers designed for nominal conditions often degrade or destabilize when subjected to structural grid shifts or severe disturbances. Incorporating adaptive and self-tuning mechanisms ensures continuous performance optimization across all operating regimes. 
+</p>
+</section><section class="subsection">
+<h3 id="a0000000042">4.3 Design Trade-offs in Intelligent Systems</h3>
+<p>
+ Implementing intelligent control entails clear engineering trade-offs: 
+</p>
+<div class="centered"> <table class="tabular">
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+<b class="bfseries">Intelligent Approach</b>
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+<b class="bfseries">Engineering Trade-off / Implementation Consideration</b>
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+AI / Machine Learning Control 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Delivers high adaptability; requires substantial training datasets &amp; intense processing hardware. 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black"><p>
+Adaptive Parameter Tuning 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black"><p>
+ Enhances operational flexibility; risk of transient instability if parameter estimation drifts. 
+</p>
+</td>
+</tr>
+<tr><td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-left:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+Fuzzy Logic Systems 
+</p>
+</td>
+<td colspan="" rowspan="" style="border-top-style:solid; border-top-color:black; border-top-width:1px; text-align:left; border-right:1px solid black; border-bottom-style:solid; border-bottom-color:black; border-bottom-width:1px"><p>
+ Robust heuristic rule handling; challenging to establish formal mathematical stability proofs. 
+</p>
+</td>
+</tr>
+</table> </div>
+</section><section class="subsection">
+<h3 id="a0000000043">4.4 Conclusion</h3>
+<p>
+ Developing intelligent control solutions demands a holistic engineering methodology that combines theoretical control principles, high-fidelity electro-thermal simulations, real-time computational awareness, and empirical validation to achieve robust and sustainable energy conversion systems. 
+</p>
+</section>
+</section>
+<script id="plastex-labels" type="application/json">{}</script>
+    </article>
 
-    </main>
+        </main>
 
+		
+		<footer>
+	<hr>
 
-    <footer>
-        <hr>
+    <nav id="footer-nav">
+        <a href="#">Back to top</a>
+    </nav>
 
-        <nav id="footer-nav">
-            <a href="#">Back to top</a>
-        </nav>
+    <div id="footer-text">
+        <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.5.0, written by the Digital Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
+        <p>This page last generated: 2026-09-02</p>
+        
+        
+        
+    </div>
+</footer>
+		
 
-        <div id="footer-text">
-            <p>Generated using <a target="_blank" href="https://chirun.org.uk">Chirun</a> v1.5.0, written by the Digital
-                Learning Unit, School of Mathematics &amp; Statistics, Newcastle University</p>
-            <p>This page last generated: 2026-08-18</p>
+        
 
+        <svg
+   width="180"
+   height="180"
+   viewBox="0 0 180 180"
+   version="1.1"
+   id="icon-defs"
+   xml:space="preserve"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+>
+    <defs>
+        <g id="cog">
+            <path 
+                style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
+                d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z"
+            />
+        </g>
+        <g id="pdf">
+            <path
+                style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+                d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z"
+            />
+        </g>
+        <g id="slides">
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,21.25 30,137.5"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="M 90,21.25 60,158.75"
+            />
+            <rect
+                style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="119.79137"
+                height="82.273766"
+                x="30.104315"
+                y="36.476234"
+                ry="4.7737675"
+                rx="4.7737675"
+            />
+            <rect
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                width="140"
+                height="5.2262344"
+                x="20"
+                y="31.25"
+                ry="1.6724058"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,66.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,76.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,86.25 h 50"
+            />
+            <path
+                style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+                d="m 90,56.25 h 50"
+            />
+            <path
+                style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
+                d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z"
+            />
+        </g>
 
+        <g id="notebook">
+            <path
+                style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
+                d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="58.699139"
+               cy="59.503937"
+               r="3.8077738"
+            />
+            <circle
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="113.59385"
+               cy="52.885151"
+               r="4.9348516"
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z"
+           
+            />
+            <path
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z"
+              
+            />
+            <ellipse
+               style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+               cx="63.813011"
+               cy="125.96338"
+               rx="6.4332962"
+               ry="6.4347191"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0"
+            />
+            <path
+                style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+                d="M 34,46.266514 V 62.316215"
+            
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="M 34,77.849849 V 93.89955"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 34,109.43318 v 16.0497"
+            />
+            <path
+             style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+             d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0"
+            />
+        </g>
 
-        </div>
-    </footer>
-
-
-
-
-    <svg width="180" height="180" viewBox="0 0 180 180" version="1.1" id="icon-defs" xml:space="preserve"
-        xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
-        <defs>
-            <g id="cog">
-                <path style="fill:currentColor;fill-opacity:1;stroke:none;stroke-width:2.91107"
-                    d="m 97.752501,14.130132 -9.381402,13.321575 -0.875593,3.780985 0.153413,10.126218 -15.231962,2.683646 -3.320429,-9.569021 -2.115099,-3.246528 -13.372747,-9.313164 -6.817124,3.940185 1.375919,16.23265 1.756892,3.456901 6.623829,7.658625 -9.938582,11.848983 -8.693428,-5.196724 -3.712755,-1.125768 -16.226967,1.461225 -2.695014,7.397083 11.490766,11.553325 3.570636,1.518082 10.001112,1.609049 v 15.465082 l -10.001112,1.609049 -3.570636,1.51808 -11.490766,11.55333 2.695014,7.39707 16.226967,1.46124 3.712755,-1.12577 8.693428,-5.19673 9.938582,11.849 -6.623829,7.6586 -1.756892,3.4569 -1.375919,16.23267 6.817124,3.94017 13.372747,-9.31317 2.115099,-3.24651 3.320429,-9.56902 15.231962,2.68363 -0.153413,10.12623 0.875593,3.78099 9.381402,13.32157 7.749599,-1.37024 4.25858,-15.72665 -0.46624,-3.84919 -3.60472,-9.46099 13.3898,-7.73254 6.39641,7.85192 3.09872,2.33113 15.74934,4.17332 5.06027,-6.02683 -6.84557,-14.78849 -2.83716,-2.64385 -8.84125,-4.93518 5.28767,-14.532632 9.94426,1.910392 3.8777,-0.21038 14.74863,-6.925177 v -7.868995 l -14.74863,-6.925174 -3.8777,-0.210383 -9.94426,1.910392 -5.28767,-14.532629 8.84125,-4.935179 2.83716,-2.643849 6.84557,-14.788484 -5.06027,-6.026831 -15.74934,4.173298 -3.09872,2.331133 -6.39641,7.851938 -13.3898,-7.73254 3.60472,-9.460991 0.46624,-3.849211 -4.25858,-15.726624 z M 88.371099,75.44463 A 14.55537,14.55537 0 0 1 102.92647,90 14.55537,14.55537 0 0 1 88.371099,104.55537 14.55537,14.55537 0 0 1 73.815728,90 14.55537,14.55537 0 0 1 88.371099,75.44463 Z" />
-            </g>
-            <g id="pdf">
-                <path
-                    style="fill:var(--bg-colour);fill-opacity:1;fill-rule:nonzero;stroke:currentColor;stroke-width:5.73751;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 115.96038,9.1011226 31.41471,31.7977544 m 0,11.232914 V 159.42386 c 0,6.35716 -5.11786,11.47502 -11.47502,11.47502 H 44.099928 c -6.35716,0 -11.475018,-5.11786 -11.475018,-11.47502 V 20.576141 c 0,-6.35716 5.117858,-11.4750184 11.475018,-11.4750184 h 71.860452 l -0.14159,20.0812814 c -0.0449,6.357008 5.11832,11.398586 11.47503,11.475018 l 20.08127,0.241455" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:4.74634;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="M 56.949794,109.50753 C 70.723931,123.86069 104.41318,45.431956 83.05466,47.805125 61.696136,50.178294 111.53269,116.62705 123.39853,100.01485 135.26439,83.402664 43.175657,95.15437 56.949794,109.50753 Z" />
-            </g>
-            <g id="slides">
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,21.25 30,137.5" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="M 90,21.25 60,158.75" />
-                <rect
-                    style="fill:var(--bg-colour);fill-opacity:1;stroke:currentColor;stroke-width:10.4525;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                    width="119.79137" height="82.273766" x="30.104315" y="36.476234" ry="4.7737675" rx="4.7737675" />
-                <rect
-                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5.90268;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                    width="140" height="5.2262344" x="20" y="31.25" ry="1.6724058" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,66.25 h 50" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,76.25 h 50" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,86.25 h 50" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 90,56.25 h 50" />
-                <path
-                    style="fill:currentColor;fill-opacity:1;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke markers fill"
-                    d="M 80.000002,78.84906 A 20.099062,20.099062 0 0 1 67.592518,97.418172 20.099062,20.099062 0 0 1 45.688757,93.061243 20.099062,20.099062 0 0 1 41.331828,71.157482 20.099062,20.099062 0 0 1 59.90094,58.749998 V 78.84906 Z" />
-            </g>
-
-            <g id="notebook">
-                <path
-                    style="fill:var(--bg-colour);stroke:currentColor;stroke-width:4.964;stroke-linecap:butt;stroke-linejoin:round;paint-order:stroke fill markers;stroke-dasharray:none"
-                    d="M 34.482063,31.89923 V 16.261703 c 0,-5.41792 4.36172,-9.7796397 9.77964,-9.7796397 H 135.7383 c 5.41792,0 9.77964,4.3617197 9.77964,9.7796397 V 163.7383 c 0,5.41792 -4.36172,9.77964 -9.77964,9.77964 H 44.261703 c -5.41792,0 -9.77964,-4.36172 -9.77964,-9.77964 v -23.96224" />
-                <circle
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    cx="58.699139" cy="59.503937" r="3.8077738" />
-                <circle
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    cx="113.59385" cy="52.885151" r="4.9348516" />
-                <path
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    d="M 88.900432,54.782256 C 74.053011,55.067917 59.927013,65.025096 57.261258,76.89961 69.209289,67.830932 79.817786,64.804678 88.900432,64.855157 97.983077,64.804678 108.59157,67.830932 120.53961,76.89961 117.87385,65.025096 103.74785,55.067917 88.900432,54.782256 Z" />
-                <path
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    d="M 88.900432,121.58085 C 74.053011,121.29519 59.927013,111.33801 57.261258,99.46349 c 11.948031,9.06868 22.556528,12.09494 31.639174,12.04445 9.082643,0.0505 19.691138,-2.97577 31.639178,-12.04445 -2.66576,11.87452 -16.79176,21.8317 -31.639178,22.11736 z" />
-                <ellipse
-                    style="fill:currentColor;stroke-width:9.43913;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
-                    cx="63.813011" cy="125.96338" rx="6.4332962" ry="6.4347191" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,40 c 2.806997,-4.320074 9.452509,-3.66881 12,0" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="M 34,46.266514 V 62.316215" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,71.583335 c 2.806997,-4.320073 9.452509,-3.668809 12,0" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="M 34,77.849849 V 93.89955" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,103.16667 c 2.806997,-4.320071 9.452509,-3.668807 12,0" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 34,109.43318 v 16.0497" />
-                <path
-                    style="fill:none;fill-opacity:1;stroke:currentColor;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-                    d="m 28,134.75 c 2.806997,-4.32007 9.452509,-3.66881 12,0" />
-            </g>
-
-            <g id="fullscreen">
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
-                    d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
-                />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                    d="M 150.95833,68.801471 V 28.958332 h -39.84314" />
-                <path
-                    style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-                    d="m 28.958332,111.11519 v 39.84314 h 39.843139" />
-            </g>
-        </defs>
-    </svg>
-</body>
-
+        <g id="fullscreen">
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:10;stroke-dasharray:none;paint-order:stroke markers fill"
+               d="M 19.402776,9.9953678 H 160.51388 c 5.2117,0 9.40741,4.1957032 9.40741,9.4074042 V 160.51388 c 0,5.2117 -4.19571,9.40741 -9.40741,9.40741 H 19.402776 c -5.211704,0 -9.4074082,-4.19571 -9.4074082,-9.40741 V 19.402772 c 0,-5.211701 4.1957042,-9.4074042 9.4074082,-9.4074042 z" />
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="M 150.95833,68.801471 V 28.958332 h -39.84314"
+            />
+            <path
+               style="fill:none;stroke:currentColor;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+               d="m 28.958332,111.11519 v 39.84314 h 39.843139"
+            />
+        </g>
+    </defs>
+</svg>
+    </body>
 </html>

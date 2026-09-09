@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Question 1: MCQ 1 -->
+  <question type="multichoice">
+    <name>
+      <text>Q1: Modeling Approach</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which modeling approach represents system dynamics using differential equations and state variables?</p>]]></text>
+    </questiontext>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Circuit diagram modeling</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>State-space modeling</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Graphical modeling</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Thermal modeling</p>]]></text>
+    </answer>
+  </question>
+
+  <!-- Question 2: MCQ 2 -->
+  <question type="multichoice">
+    <name>
+      <text>Q2: Simulation Tools Purpose</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>What is the primary purpose of simulation tools in power electronics?</p>]]></text>
+    </questiontext>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Replace hardware permanently</p>]]></text>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>Predict system behavior</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Increase system cost</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>Eliminate modeling</p>]]></text>
+    </answer>
+  </question>
+
+  <!-- Question 3: Gap Filling -->
+  <question type="multichoice">
+    <name>
+      <text>Q3: Simulation Accuracy</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Simulation accuracy mainly depends on the correctness of __________.</p>]]></text>
+    </questiontext>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<p>component models</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>screen resolution</p>]]></text>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<p>software color themes</p>]]></text>
+    </answer>
+  </question>
+
+  <!-- Question 4: MAQ 1 -->
+  <question type="multichoice">
+    <name>
+      <text>Q4: State-Space Characteristics</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which of the following statements describe characteristics of state-space modeling? (Select all that apply)</p>]]></text>
+    </questiontext>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Uses differential equations</p>]]></text>
+    </answer>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Represents internal system states</p>]]></text>
+    </answer>
+    <answer fraction="-25" format="html">
+      <text><![CDATA[<p>Only applies to thermal systems</p>]]></text>
+    </answer>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Supports multi-variable systems</p>]]></text>
+    </answer>
+    <answer fraction="-25" format="html">
+      <text><![CDATA[<p>Ignores system inputs</p>]]></text>
+    </answer>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Enables dynamic analysis</p>]]></text>
+    </answer>
+  </question>
+
+  <!-- Question 5: MAQ 2 -->
+  <question type="multichoice">
+    <name>
+      <text>Q5: System Stability Factors</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Which factors influence system stability in power electronic systems? (Select all that apply)</p>]]></text>
+    </questiontext>
+    <single>false</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>System parameters</p>]]></text>
+    </answer>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Control strategies</p>]]></text>
+    </answer>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Load variations</p>]]></text>
+    </answer>
+    <answer fraction="-25" format="html">
+      <text><![CDATA[<p>Screen brightness</p>]]></text>
+    </answer>
+    <answer fraction="25" format="html">
+      <text><![CDATA[<p>Filter components</p>]]></text>
+    </answer>
+    <answer fraction="-25" format="html">
+      <text><![CDATA[<p>Cable color</p>]]></text>
+    </answer>
+  </question>
+
+  <!-- Question 6: True/False -->
+  <question type="truefalse">
+    <name>
+      <text>Q6: Small-Signal Modeling Definition</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Small-signal modeling is used to analyze system response to small disturbances around an operating point.</p>]]></text>
+    </questiontext>
+    <answer fraction="100" format="moodle_auto_format">
+      <text>true</text>
+    </answer>
+    <answer fraction="0" format="moodle_auto_format">
+      <text>false</text>
+    </answer>
+  </question>
+
+  <!-- Question 7: Matching Question -->
+  <question type="match">
+    <name>
+      <text>Q7: Concept Description Matching</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Match the concept to its correct description:</p>]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>State-space model</p>]]></text>
+      <answer>
+        <text>Mathematical representation of system dynamics</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Simulation tool</p>]]></text>
+      <answer>
+        <text>Software used to analyze system behavior</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Stability analysis</p>]]></text>
+      <answer>
+        <text>Determines system response to disturbances</text>
+      </answer>
+    </subquestion>
+  </question>
+
+  <!-- Question 8: Ordering Question (Converted to Core Native Match Type) -->
+  <question type="match">
+    <name>
+      <text>Q8: Simulation Workflow Sequence</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Match each step in the simulation workflow to its correct sequence position:</p>]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>Develop model</p>]]></text>
+      <answer>
+        <text>Step 1</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Run simulation</p>]]></text>
+      <answer>
+        <text>Step 2</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Analyze results</p>]]></text>
+      <answer>
+        <text>Step 3</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Validate results</p>]]></text>
+      <answer>
+        <text>Step 4</text>
+      </answer>
+    </subquestion>
+  </question>
+
+  <!-- Question 9: Drag and Drop 1 -->
+  <question type="match">
+    <name>
+      <text>Q9: Decision-Making Factors</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Match decision-making factors with their correct purpose:</p>]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>Accuracy</p>]]></text>
+      <answer>
+        <text>Ensures reliable results</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Complexity</p>]]></text>
+      <answer>
+        <text>Affects computational effort</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Cost</p>]]></text>
+      <answer>
+        <text>Influences design feasibility</text>
+      </answer>
+    </subquestion>
+  </question>
+
+  <!-- Question 10: Drag and Drop 2 -->
+  <question type="match">
+    <name>
+      <text>Q10: System Evaluation Stages</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Classify actions into appropriate stages of system evaluation:</p>]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <subquestion format="html">
+      <text><![CDATA[<p>Define assumptions</p>]]></text>
+      <answer>
+        <text>Modeling stage</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Run simulation</p>]]></text>
+      <answer>
+        <text>Analysis stage</text>
+      </answer>
+    </subquestion>
+    <subquestion format="html">
+      <text><![CDATA[<p>Interpret results</p>]]></text>
+      <answer>
+        <text>Decision-making stage</text>
+      </answer>
+    </subquestion>
+  </question>
+
+</quiz>

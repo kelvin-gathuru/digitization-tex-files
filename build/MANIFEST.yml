@@ -15,13 +15,13 @@ structure:
     url: index.html
   - filetype: pdf
     format: default
-    url: sstm4.pdf
+    url: eetm6.pdf
   is_hidden: false
-  pdf_url: sstm4.pdf
-  slug: sstm4
-  source: sstm4.tex
+  pdf_url: eetm6.pdf
+  slug: eetm6
+  source: eetm6.tex
   splitlevel: -2
-  title: sstm4
+  title: eetm6
   type: standalone
   url: index.html
 themes:
